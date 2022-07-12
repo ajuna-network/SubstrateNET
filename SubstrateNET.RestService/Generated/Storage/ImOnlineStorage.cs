@@ -13,6 +13,7 @@ using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
 using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -47,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4 GetKeys();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 GetKeys();
         
         /// <summary>
         /// >> ReceivedHeartbeats
@@ -78,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keysTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4> _keysTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4> _keysTypedStorage;
         
         /// <summary>
         /// _receivedHeartbeatsTypedStorage typed storage field
@@ -96,7 +97,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         public ImOnlineStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
             this.HeartbeatAfterTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.HeartbeatAfter", storageDataProvider, storageChangeDelegate);
-            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4>("ImOnline.Keys", storageDataProvider, storageChangeDelegate);
+            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4>("ImOnline.Keys", storageDataProvider, storageChangeDelegate);
             this.ReceivedHeartbeatsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque>("ImOnline.ReceivedHeartbeats", storageDataProvider, storageChangeDelegate);
             this.AuthoredBlocksTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.AuthoredBlocks", storageDataProvider, storageChangeDelegate);
         }
@@ -119,7 +120,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keysTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4> KeysTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4> KeysTypedStorage
         {
             get
             {
@@ -213,7 +214,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4 GetKeys()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 GetKeys()
         {
             return KeysTypedStorage.Get();
         }

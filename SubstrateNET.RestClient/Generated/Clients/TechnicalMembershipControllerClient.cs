@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseVec<AccountId32>> GetMembers()
+      public async Task<BoundedVecT15> GetMembers()
       {
-         return await SendRequestAsync<BaseVec<AccountId32>>(_httpClient, "technicalmembership/members");
+         return await SendRequestAsync<BoundedVecT15>(_httpClient, "technicalmembership/members");
       }
       public async Task<bool> SubscribeMembers()
       {

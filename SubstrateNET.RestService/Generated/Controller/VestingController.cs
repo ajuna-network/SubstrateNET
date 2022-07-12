@@ -10,9 +10,9 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletVesting;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,7 +45,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Information regarding the vesting of a given account.
         /// </summary>
         [HttpGet("Vesting")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingStorage), "VestingParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
         public IActionResult GetVesting(string key)
         {

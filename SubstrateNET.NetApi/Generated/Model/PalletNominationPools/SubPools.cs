@@ -10,8 +10,8 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     
     
     /// <summary>
-    /// >> 612 - Composite[pallet_nomination_pools.SubPools]
+    /// >> 646 - Composite[pallet_nomination_pools.SubPools]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SubPools : BaseType
@@ -34,7 +34,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// <summary>
         /// >> with_era
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3 _withEra;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 _withEra;
         
         public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool NoEra
         {
@@ -48,7 +48,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3 WithEra
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 WithEra
         {
             get
             {
@@ -78,7 +78,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             var start = p;
             NoEra = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool();
             NoEra.Decode(byteArray, ref p);
-            WithEra = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3();
+            WithEra = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3();
             WithEra.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

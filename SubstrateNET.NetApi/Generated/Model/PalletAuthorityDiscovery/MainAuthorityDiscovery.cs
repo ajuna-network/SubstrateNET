@@ -12,7 +12,7 @@ using Ajuna.NetApi.Model.Extrinsics;
 using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,8 +31,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAuthorityDiscovery
         public AuthorityDiscoveryStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorityDiscovery", "Keys"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorityDiscovery", "NextKeys"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorityDiscovery", "Keys"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorityDiscovery", "NextKeys"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7)));
         }
         
         /// <summary>
@@ -48,10 +48,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAuthorityDiscovery
         /// >> Keys
         ///  Keys of the current authority set.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7> Keys(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7> Keys(CancellationToken token)
         {
             string parameters = AuthorityDiscoveryStorage.KeysParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7>(parameters, token);
         }
         
         /// <summary>
@@ -67,10 +67,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAuthorityDiscovery
         /// >> NextKeys
         ///  Keys of the next authority set.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7> NextKeys(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7> NextKeys(CancellationToken token)
         {
             string parameters = AuthorityDiscoveryStorage.NextKeysParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7>(parameters, token);
         }
     }
     

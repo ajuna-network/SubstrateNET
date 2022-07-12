@@ -11,11 +11,11 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
 using SubstrateNET.NetApi.Generated.Model.PalletCollective;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -34,7 +34,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT9 GetProposals();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13 GetProposals();
         
         /// <summary>
         /// >> ProposalOf
@@ -76,7 +76,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT9> _proposalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13> _proposalsTypedStorage;
         
         /// <summary>
         /// _proposalOfTypedStorage typed storage field
@@ -108,7 +108,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public CouncilStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT9>("Council.Proposals", storageDataProvider, storageChangeDelegate);
+            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13>("Council.Proposals", storageDataProvider, storageChangeDelegate);
             this.ProposalOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall>("Council.ProposalOf", storageDataProvider, storageChangeDelegate);
             this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes>("Council.Voting", storageDataProvider, storageChangeDelegate);
             this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Council.ProposalCount", storageDataProvider, storageChangeDelegate);
@@ -119,7 +119,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT9> ProposalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13> ProposalsTypedStorage
         {
             get
             {
@@ -232,7 +232,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT9 GetProposals()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13 GetProposals()
         {
             return ProposalsTypedStorage.Get();
         }

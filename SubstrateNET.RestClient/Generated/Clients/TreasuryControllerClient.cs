@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class TreasuryControllerClient : BaseClient, ITreasuryControllerClient
@@ -42,9 +42,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Treasury.Proposals", TreasuryStorage.ProposalsParams(key));
       }
-      public async Task<BoundedVecT11> GetApprovals()
+      public async Task<BoundedVecT16> GetApprovals()
       {
-         return await SendRequestAsync<BoundedVecT11>(_httpClient, "treasury/approvals");
+         return await SendRequestAsync<BoundedVecT16>(_httpClient, "treasury/approvals");
       }
       public async Task<bool> SubscribeApprovals()
       {

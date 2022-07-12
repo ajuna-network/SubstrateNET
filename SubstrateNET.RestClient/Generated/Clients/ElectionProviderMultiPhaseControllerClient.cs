@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpNposElections;
    using SubstrateNET.RestClient.Generated.Interfaces;
    

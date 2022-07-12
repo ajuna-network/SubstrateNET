@@ -10,9 +10,9 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletPreimage;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -37,7 +37,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PreimageFor
         ///  The preimages stored by this pallet.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 GetPreimageFor(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 GetPreimageFor(string key);
     }
     
     /// <summary>
@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _preimageForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> _preimageForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27> _preimageForTypedStorage;
         
         /// <summary>
         /// PreimageStorage constructor.
@@ -62,7 +62,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         public PreimageStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
             this.StatusForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus>("Preimage.StatusFor", storageDataProvider, storageChangeDelegate);
-            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegate);
+            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _preimageForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> PreimageForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27> PreimageForTypedStorage
         {
             get
             {
@@ -146,13 +146,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PreimageFor
         ///  The preimages stored by this pallet.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 GetPreimageFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 GetPreimageFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 result))
+            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 result))
             {
                 return result;
             }

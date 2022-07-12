@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using SubstrateNET.NetApi.Generated.Model.PalletLottery;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface ILotteryControllerClient
    {
@@ -23,13 +23,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeLotteryIndex();
       Task<LotteryConfig> GetLottery();
       Task<bool> SubscribeLottery();
-      Task<BaseTuple<U32, BoundedVecT26>> GetParticipants(AccountId32 key);
+      Task<BaseTuple<U32, BoundedVecT31>> GetParticipants(AccountId32 key);
       Task<bool> SubscribeParticipants(AccountId32 key);
       Task<U32> GetTicketsCount();
       Task<bool> SubscribeTicketsCount();
       Task<AccountId32> GetTickets(U32 key);
       Task<bool> SubscribeTickets(U32 key);
-      Task<BoundedVecT26> GetCallIndices();
+      Task<BoundedVecT31> GetCallIndices();
       Task<bool> SubscribeCallIndices();
    }
 }

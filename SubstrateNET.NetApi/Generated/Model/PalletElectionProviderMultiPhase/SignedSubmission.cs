@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 393 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
+    /// >> 415 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SignedSubmission : BaseType

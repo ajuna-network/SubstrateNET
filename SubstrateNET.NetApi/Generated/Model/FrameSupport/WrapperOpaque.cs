@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 474 - Composite[frame_support.traits.misc.WrapperOpaque]
+    /// >> 496 - Composite[frame_support.traits.misc.WrapperOpaque]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class WrapperOpaque : BaseType

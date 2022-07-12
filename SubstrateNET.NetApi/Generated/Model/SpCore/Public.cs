@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpCore
     
     
     /// <summary>
-    /// >> 64 - Composite[sp_core.sr25519.Public]
+    /// >> 65 - Composite[sp_core.sr25519.Public]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

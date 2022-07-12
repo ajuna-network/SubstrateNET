@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IAuthorshipControllerClient
    {
-      Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>> GetUncles();
+      Task<BoundedVecT9> GetUncles();
       Task<bool> SubscribeUncles();
       Task<AccountId32> GetAuthor();
       Task<bool> SubscribeAuthor();

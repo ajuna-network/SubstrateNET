@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpNposElections;
    
    public interface IElectionProviderMultiPhaseControllerClient

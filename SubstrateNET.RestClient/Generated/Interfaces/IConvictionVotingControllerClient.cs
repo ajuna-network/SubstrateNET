@@ -12,13 +12,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IConvictionVotingControllerClient
    {
-      Task<EnumVoting> GetVotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key);
-      Task<bool> SubscribeVotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key);
-      Task<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8, Ajuna.NetApi.Model.Types.Primitive.U128>>> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<EnumVoting> GetVotingFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key);
+      Task<bool> SubscribeVotingFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key);
+      Task<BoundedVecT37> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
    }
 }

@@ -12,13 +12,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.PalletPreimage;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IPreimageControllerClient
    {
       Task<EnumRequestStatus> GetStatusFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribeStatusFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<BoundedVecT22> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<BoundedVecT27> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribePreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
    }
 }

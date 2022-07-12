@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSystem
     
     
     /// <summary>
-    /// >> 125 - Composite[frame_system.limits.BlockWeights]
+    /// >> 140 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

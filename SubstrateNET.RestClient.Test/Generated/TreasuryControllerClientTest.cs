@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public class TreasuryControllerClientTest : ClientTestBase
    {
@@ -177,10 +177,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U32[] {
                   this.GetTestValueU32()});
@@ -197,7 +197,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TreasuryControllerClient rpcClient = new TreasuryControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 mockupValue = this.GetTestValue7();
 
 
          Assert.IsTrue(await rpcClient.SubscribeApprovals());
@@ -210,7 +210,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 rpcResult = await rpcClient.GetApprovals();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 rpcResult = await rpcClient.GetApprovals();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     }
     
     /// <summary>
-    /// >> 351 - Variant[pallet_nomination_pools.ConfigOp]
+    /// >> 370 - Variant[pallet_nomination_pools.ConfigOp]
     /// </summary>
     public sealed class EnumConfigOp : BaseEnumExt<ConfigOp, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, BaseVoid>
     {

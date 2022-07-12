@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public class IdentityControllerClientTest : ClientTestBase
    {
@@ -31,17 +31,17 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.PalletIdentity.Registration result;
          result = new SubstrateNET.NetApi.Generated.Model.PalletIdentity.Registration();
-         result.Judgements = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17();
+         result.Judgements = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22();
          result.Judgements = this.GetTestValue3();
          result.Deposit = this.GetTestValueU128();
          result.Info = new SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityInfo();
          result.Info = this.GetTestValue6();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22 GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumJudgement>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumJudgement>[] {
                   this.GetTestValue4()});
@@ -65,7 +65,7 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityInfo result;
          result = new SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityInfo();
-         result.Additional = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4();
+         result.Additional = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6();
          result.Additional = this.GetTestValue7();
          result.Display = new SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData();
          result.Display.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletIdentity.Data>(), this.GetTestValueBaseVoid());
@@ -85,10 +85,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Twitter.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletIdentity.Data>(), this.GetTestValueBaseVoid());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4 GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6 GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData, SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData, SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData>[] {
                   this.GetTestValue8()});
@@ -334,17 +334,17 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18> GetTestValue19()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23> GetTestValue19()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23>();
          result.Create(this.GetTestValueU128(), this.GetTestValue20());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 GetTestValue20()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23 GetTestValue20()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
                   this.GetTestValue21()});
@@ -441,7 +441,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          IdentityControllerClient rpcClient = new IdentityControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18> mockupValue = this.GetTestValue19();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23> mockupValue = this.GetTestValue19();
          SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue22();
 
          Assert.IsTrue(await rpcClient.SubscribeSubsOf(mockupKey));
@@ -454,15 +454,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18> rpcResult = await rpcClient.GetSubsOf(mockupKey);
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23> rpcResult = await rpcClient.GetSubsOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19 GetTestValue24()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24 GetTestValue24()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>[] {
                   this.GetTestValue25()});
@@ -544,7 +544,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          IdentityControllerClient rpcClient = new IdentityControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19 mockupValue = this.GetTestValue24();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24 mockupValue = this.GetTestValue24();
 
 
          Assert.IsTrue(await rpcClient.SubscribeRegistrars());
@@ -557,7 +557,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19 rpcResult = await rpcClient.GetRegistrars();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24 rpcResult = await rpcClient.GetRegistrars();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

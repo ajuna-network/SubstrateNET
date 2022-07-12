@@ -11,8 +11,8 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 385 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
+    /// >> 407 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RoundSnapshot : BaseType
@@ -30,14 +30,14 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
         /// <summary>
         /// >> voters
         /// </summary>
-        private BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7>> _voters;
+        private BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11>> _voters;
         
         /// <summary>
         /// >> targets
         /// </summary>
         private BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _targets;
         
-        public BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7>> Voters
+        public BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11>> Voters
         {
             get
             {
@@ -77,7 +77,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Voters = new BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7>>();
+            Voters = new BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U64,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11>>();
             Voters.Decode(byteArray, ref p);
             Targets = new BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
             Targets.Decode(byteArray, ref p);

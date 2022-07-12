@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 38 - Composite[pallet_staking.ValidatorPrefs]
+    /// >> 39 - Composite[pallet_staking.ValidatorPrefs]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ValidatorPrefs : BaseType

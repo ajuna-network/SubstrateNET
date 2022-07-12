@@ -195,6 +195,18 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration
         MaxSignedLimits,
         
         /// <summary>
+        /// >> KeyTooLong
+        /// A key was longer than the configured maximum.
+        /// 
+        /// This means that the migration halted at the current [`Progress`] and
+        /// can be resumed with a larger [`crate::Config::MaxKeyLen`] value.
+        /// Retrying with the same [`crate::Config::MaxKeyLen`] value will not work.
+        /// The value should only be increased to avoid a storage migration for the currently
+        /// stored [`crate::Progress::LastKey`].
+        /// </summary>
+        KeyTooLong,
+        
+        /// <summary>
         /// >> NotEnoughFunds
         /// submitter does not have enough funds.
         /// </summary>

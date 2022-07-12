@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
    using Ajuna.NetApi.Model.Types.Primitive;
    
@@ -27,11 +27,12 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 GetTestValue2()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem[] {
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem[] {
                   this.GetTestValue3()});
          return result;
       }
@@ -53,7 +54,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          AuthorshipControllerClient rpcClient = new AuthorshipControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeUncles());
@@ -66,7 +67,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> rpcResult = await rpcClient.GetUncles();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 rpcResult = await rpcClient.GetUncles();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

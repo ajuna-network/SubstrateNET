@@ -11,6 +11,7 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15 GetMembers();
         
         /// <summary>
         /// >> Prime
@@ -47,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> _membersTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15> _membersTypedStorage;
         
         /// <summary>
         /// _primeTypedStorage typed storage field
@@ -59,14 +60,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public TechnicalMembershipStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.MembersTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>("TechnicalMembership.Members", storageDataProvider, storageChangeDelegate);
+            this.MembersTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15>("TechnicalMembership.Members", storageDataProvider, storageChangeDelegate);
             this.PrimeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("TechnicalMembership.Prime", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> MembersTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15> MembersTypedStorage
         {
             get
             {
@@ -115,7 +116,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15 GetMembers()
         {
             return MembersTypedStorage.Get();
         }

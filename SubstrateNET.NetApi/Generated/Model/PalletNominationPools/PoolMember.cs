@@ -11,7 +11,7 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     
     
     /// <summary>
-    /// >> 604 - Composite[pallet_nomination_pools.PoolMember]
+    /// >> 638 - Composite[pallet_nomination_pools.PoolMember]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PoolMember : BaseType
@@ -44,7 +44,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// <summary>
         /// >> unbonding_eras
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2 _unbondingEras;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 _unbondingEras;
         
         public Ajuna.NetApi.Model.Types.Primitive.U32 PoolId
         {
@@ -82,7 +82,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2 UnbondingEras
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 UnbondingEras
         {
             get
             {
@@ -118,7 +118,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             Points.Decode(byteArray, ref p);
             RewardPoolTotalEarnings = new Ajuna.NetApi.Model.Types.Primitive.U128();
             RewardPoolTotalEarnings.Decode(byteArray, ref p);
-            UnbondingEras = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2();
+            UnbondingEras = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2();
             UnbondingEras.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

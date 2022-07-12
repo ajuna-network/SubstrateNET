@@ -11,7 +11,7 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,7 +44,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Collection of transaction metadata by block number.
         /// </summary>
         [HttpGet("Transactions")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "TransactionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetTransactions(string key)
         {
@@ -88,30 +88,6 @@ namespace SubstrateNET.RestService.Generated.Controller
         }
         
         /// <summary>
-        /// >> MaxTransactionSize
-        ///  Maximum data set in a single transaction in bytes.
-        /// </summary>
-        [HttpGet("MaxTransactionSize")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "MaxTransactionSizeParams")]
-        public IActionResult GetMaxTransactionSize()
-        {
-            return this.Ok(_transactionStorageStorage.GetMaxTransactionSize());
-        }
-        
-        /// <summary>
-        /// >> MaxBlockTransactions
-        ///  Maximum number of indexed transactions in the block.
-        /// </summary>
-        [HttpGet("MaxBlockTransactions")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "MaxBlockTransactionsParams")]
-        public IActionResult GetMaxBlockTransactions()
-        {
-            return this.Ok(_transactionStorageStorage.GetMaxBlockTransactions());
-        }
-        
-        /// <summary>
         /// >> StoragePeriod
         ///  Storage period for data in blocks. Should match `sp_storage_proof::DEFAULT_STORAGE_PERIOD`
         ///  for block authoring.
@@ -128,7 +104,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> BlockTransactions
         /// </summary>
         [HttpGet("BlockTransactions")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "BlockTransactionsParams")]
         public IActionResult GetBlockTransactions()
         {

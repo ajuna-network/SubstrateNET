@@ -13,6 +13,7 @@ using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("VotingFor")]
         [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage), "VotingForParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U8>))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage), "VotingForParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U16>))]
         public IActionResult GetVotingFor(string key)
         {
             return this.Ok(_convictionVotingStorage.GetVotingFor(key));
@@ -60,7 +61,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  this list.
         /// </summary>
         [HttpGet("ClassLocksFor")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage), "ClassLocksForParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
         public IActionResult GetClassLocksFor(string key)
         {

@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ConvictionVotingControllerMockupClient : MockupBaseClient, IConvictionVotingControllerMockupClient
@@ -23,11 +23,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetVotingFor(EnumVoting value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key)
+      public async Task<bool> SetVotingFor(EnumVoting value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key)
       {
          return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/VotingFor", value.Encode(), ConvictionVotingStorage.VotingForParams(key));
       }
-      public async Task<bool> SetClassLocksFor(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8, Ajuna.NetApi.Model.Types.Primitive.U128>> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetClassLocksFor(BoundedVecT37 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/ClassLocksFor", value.Encode(), ConvictionVotingStorage.ClassLocksForParams(key));
       }

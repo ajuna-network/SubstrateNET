@@ -11,9 +11,9 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletUniques;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -132,8 +132,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Attributes of a collection.
         /// </summary>
         [HttpGet("Attribute")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AttributeParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2>))]
+        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AttributeParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2>))]
         public IActionResult GetAttribute(string key)
         {
             return this.Ok(_uniquesStorage.GetAttribute(key));

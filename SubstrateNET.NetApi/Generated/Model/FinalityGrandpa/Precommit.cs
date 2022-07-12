@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FinalityGrandpa
     
     
     /// <summary>
-    /// >> 245 - Composite[finality_grandpa.Precommit]
+    /// >> 260 - Composite[finality_grandpa.Precommit]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Precommit : BaseType

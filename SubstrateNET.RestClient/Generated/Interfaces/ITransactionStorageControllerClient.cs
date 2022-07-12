@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITransactionStorageControllerClient
    {
-      Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> GetTransactions(U32 key);
+      Task<BoundedVecT34> GetTransactions(U32 key);
       Task<bool> SubscribeTransactions(U32 key);
       Task<U32> GetChunkCount(U32 key);
       Task<bool> SubscribeChunkCount(U32 key);
@@ -24,13 +24,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeByteFee();
       Task<U128> GetEntryFee();
       Task<bool> SubscribeEntryFee();
-      Task<U32> GetMaxTransactionSize();
-      Task<bool> SubscribeMaxTransactionSize();
-      Task<U32> GetMaxBlockTransactions();
-      Task<bool> SubscribeMaxBlockTransactions();
       Task<U32> GetStoragePeriod();
       Task<bool> SubscribeStoragePeriod();
-      Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> GetBlockTransactions();
+      Task<BoundedVecT34> GetBlockTransactions();
       Task<bool> SubscribeBlockTransactions();
       Task<Bool> GetProofChecked();
       Task<bool> SubscribeProofChecked();

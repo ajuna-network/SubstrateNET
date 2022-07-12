@@ -11,11 +11,11 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IRandomnessCollectiveFlipControllerClient
    {
-      Task<BoundedVecT16> GetRandomMaterial();
+      Task<BoundedVecT21> GetRandomMaterial();
       Task<bool> SubscribeRandomMaterial();
    }
 }

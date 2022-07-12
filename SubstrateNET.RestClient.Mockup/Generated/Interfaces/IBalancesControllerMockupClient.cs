@@ -13,14 +13,14 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IBalancesControllerMockupClient
    {
       Task<bool> SetTotalIssuance(U128 value);
       Task<bool> SetAccount(AccountData value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetLocks(WeakBoundedVecT2 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetReserves(BoundedVecT6 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetReserves(BoundedVecT10 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetStorageVersion(EnumReleases value);
    }
 }

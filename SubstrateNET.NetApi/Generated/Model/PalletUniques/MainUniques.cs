@@ -13,7 +13,6 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletUniques;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.NetApi.Generated.Model.SpRuntime;
@@ -57,7 +56,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Uniques", "Attribute"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2>), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2>), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Uniques", "CollectionMaxSupply"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
         }
@@ -218,7 +217,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> AttributeParams
         ///  Attributes of a collection.
         /// </summary>
-        public static string AttributeParams(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
+        public static string AttributeParams(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
         {
             return RequestGenerator.GetStorage("Uniques", "Attribute", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -230,10 +229,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> Attribute(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key, CancellationToken token)
+        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> Attribute(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key, CancellationToken token)
         {
             string parameters = UniquesStorage.AttributeParams(key);
-            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
+            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
         
         /// <summary>
@@ -468,7 +467,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> set_attribute
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SetAttribute(Ajuna.NetApi.Model.Types.Primitive.U32 collection, BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32> maybe_item, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2 key, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3 value)
+        public static Method SetAttribute(Ajuna.NetApi.Model.Types.Primitive.U32 collection, BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32> maybe_item, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2 key, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3 value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -482,7 +481,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> clear_attribute
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ClearAttribute(Ajuna.NetApi.Model.Types.Primitive.U32 collection, BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32> maybe_item, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2 key)
+        public static Method ClearAttribute(Ajuna.NetApi.Model.Types.Primitive.U32 collection, BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32> maybe_item, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2 key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -495,7 +494,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> set_metadata
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SetMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 collection, Ajuna.NetApi.Model.Types.Primitive.U32 item, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT1 data, Ajuna.NetApi.Model.Types.Primitive.Bool is_frozen)
+        public static Method SetMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 collection, Ajuna.NetApi.Model.Types.Primitive.U32 item, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT1 data, Ajuna.NetApi.Model.Types.Primitive.Bool is_frozen)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -521,7 +520,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// >> set_collection_metadata
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SetCollectionMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 collection, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT1 data, Ajuna.NetApi.Model.Types.Primitive.Bool is_frozen)
+        public static Method SetCollectionMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 collection, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT1 data, Ajuna.NetApi.Model.Types.Primitive.Bool is_frozen)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());

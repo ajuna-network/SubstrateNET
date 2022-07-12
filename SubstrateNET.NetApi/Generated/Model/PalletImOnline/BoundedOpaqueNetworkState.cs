@@ -10,7 +10,7 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
     
     
     /// <summary>
-    /// >> 475 - Composite[pallet_im_online.BoundedOpaqueNetworkState]
+    /// >> 497 - Composite[pallet_im_online.BoundedOpaqueNetworkState]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedOpaqueNetworkState : BaseType
@@ -28,14 +28,14 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
         /// <summary>
         /// >> peer_id
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT5 _peerId;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 _peerId;
         
         /// <summary>
         /// >> external_addresses
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT6 _externalAddresses;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6 _externalAddresses;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT5 PeerId
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 PeerId
         {
             get
             {
@@ -47,7 +47,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT6 ExternalAddresses
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6 ExternalAddresses
         {
             get
             {
@@ -75,9 +75,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            PeerId = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT5();
+            PeerId = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5();
             PeerId.Decode(byteArray, ref p);
-            ExternalAddresses = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT6();
+            ExternalAddresses = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6();
             ExternalAddresses.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

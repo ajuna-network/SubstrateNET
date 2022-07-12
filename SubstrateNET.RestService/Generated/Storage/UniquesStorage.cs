@@ -11,9 +11,9 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletUniques;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -76,7 +76,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key);
+        BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key);
         
         /// <summary>
         /// >> CollectionMaxSupply
@@ -129,7 +129,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _attributeTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> _attributeTypedStorage;
+        private TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> _attributeTypedStorage;
         
         /// <summary>
         /// _collectionMaxSupplyTypedStorage typed storage field
@@ -148,7 +148,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails>("Uniques.Asset", storageDataProvider, storageChangeDelegate);
             this.ClassMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata>("Uniques.ClassMetadataOf", storageDataProvider, storageChangeDelegate);
             this.InstanceMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata>("Uniques.InstanceMetadataOf", storageDataProvider, storageChangeDelegate);
-            this.AttributeTypedStorage = new TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>>("Uniques.Attribute", storageDataProvider, storageChangeDelegate);
+            this.AttributeTypedStorage = new TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>>("Uniques.Attribute", storageDataProvider, storageChangeDelegate);
             this.CollectionMaxSupplyTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Uniques.CollectionMaxSupply", storageDataProvider, storageChangeDelegate);
         }
         
@@ -260,7 +260,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _attributeTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> AttributeTypedStorage
+        public TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> AttributeTypedStorage
         {
             get
             {
@@ -521,13 +521,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        public BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key)
+        public BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AttributeTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            if (AttributeTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }

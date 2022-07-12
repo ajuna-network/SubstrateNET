@@ -82,11 +82,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.InstanceMetadataOf", UniquesStorage.InstanceMetadataOfParams(key));
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
+      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128>>(_httpClient, "uniques/attribute", UniquesStorage.AttributeParams(key));
+         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>>(_httpClient, "uniques/attribute", UniquesStorage.AttributeParams(key));
       }
-      public async Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
+      public async Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.Attribute", UniquesStorage.AttributeParams(key));
       }

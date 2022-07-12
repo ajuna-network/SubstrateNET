@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 384 - Composite[pallet_election_provider_multi_phase.ReadySolution]
+    /// >> 406 - Composite[pallet_election_provider_multi_phase.ReadySolution]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ReadySolution : BaseType

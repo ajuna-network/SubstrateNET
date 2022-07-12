@@ -52,7 +52,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/InstanceMetadataOf", value.Encode(), UniquesStorage.InstanceMetadataOfParams(key));
       }
-      public async Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
+      public async Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/Attribute", value.Encode(), UniquesStorage.AttributeParams(key));
       }

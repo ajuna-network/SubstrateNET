@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletChildBounties;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ChildBountiesControllerClient : BaseClient, IChildBountiesControllerClient
@@ -50,9 +50,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ChildBounties.ChildBounties", ChildBountiesStorage.ChildBountiesParams(key));
       }
-      public async Task<BoundedVecT25> GetChildBountyDescriptions(U32 key)
+      public async Task<BoundedVecT30> GetChildBountyDescriptions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT25>(_httpClient, "childbounties/childbountydescriptions", ChildBountiesStorage.ChildBountyDescriptionsParams(key));
+         return await SendRequestAsync<BoundedVecT30>(_httpClient, "childbounties/childbountydescriptions", ChildBountiesStorage.ChildBountyDescriptionsParams(key));
       }
       public async Task<bool> SubscribeChildBountyDescriptions(U32 key)
       {

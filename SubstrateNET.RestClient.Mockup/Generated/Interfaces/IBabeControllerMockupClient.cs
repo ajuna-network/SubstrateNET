@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
    using SubstrateNET.NetApi.Generated.Model.Base;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
@@ -29,7 +29,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetNextRandomness(Arr32U8 value);
       Task<bool> SetNextAuthorities(WeakBoundedVecT1 value);
       Task<bool> SetSegmentIndex(U32 value);
-      Task<bool> SetUnderConstruction(BoundedVecT5 value, U32 key);
+      Task<bool> SetUnderConstruction(BoundedVecT8 value, U32 key);
       Task<bool> SetInitialized(BaseOpt<EnumPreDigest> value);
       Task<bool> SetAuthorVrfRandomness(BaseOpt<Arr32U8> value);
       Task<bool> SetEpochStart(BaseTuple<U32, U32> value);

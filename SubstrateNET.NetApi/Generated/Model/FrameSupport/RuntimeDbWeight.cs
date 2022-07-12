@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 130 - Composite[frame_support.weights.RuntimeDbWeight]
+    /// >> 145 - Composite[frame_support.weights.RuntimeDbWeight]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

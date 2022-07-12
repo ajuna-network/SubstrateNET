@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpRuntime
     
     
     /// <summary>
-    /// >> 112 - Composite[sp_runtime.DispatchErrorWithPostInfo]
+    /// >> 113 - Composite[sp_runtime.DispatchErrorWithPostInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DispatchErrorWithPostInfo : BaseType

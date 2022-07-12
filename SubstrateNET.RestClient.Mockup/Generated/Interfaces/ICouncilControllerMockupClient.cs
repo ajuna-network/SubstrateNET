@@ -11,7 +11,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletCollective;
    using Ajuna.NetApi.Model.Types.Primitive;
@@ -20,7 +20,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface ICouncilControllerMockupClient
    {
-      Task<bool> SetProposals(BoundedVecT9 value);
+      Task<bool> SetProposals(BoundedVecT13 value);
       Task<bool> SetProposalOf(EnumNodeCall value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SetProposalCount(U32 value);

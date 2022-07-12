@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IReferendaControllerClient
    {
@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeReferendumCount();
       Task<EnumReferendumInfo> GetReferendumInfoFor(U32 key);
       Task<bool> SubscribeReferendumInfoFor(U32 key);
-      Task<BoundedVecT29> GetTrackQueue(U8 key);
-      Task<bool> SubscribeTrackQueue(U8 key);
-      Task<U32> GetDecidingCount(U8 key);
-      Task<bool> SubscribeDecidingCount(U8 key);
+      Task<BoundedVecT35> GetTrackQueue(U16 key);
+      Task<bool> SubscribeTrackQueue(U16 key);
+      Task<U32> GetDecidingCount(U16 key);
+      Task<bool> SubscribeDecidingCount(U16 key);
    }
 }

@@ -31,8 +31,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeClassMetadataOf(U32 key);
       Task<ItemMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key);
       Task<bool> SubscribeInstanceMetadataOf(BaseTuple<U32, U32> key);
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
-      Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
+      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
+      Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
       Task<U32> GetCollectionMaxSupply(U32 key);
       Task<bool> SubscribeCollectionMaxSupply(U32 key);
    }

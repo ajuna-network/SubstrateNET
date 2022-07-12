@@ -13,7 +13,7 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.NetApi.Generated.Model.SpTransactionStorageProof;
 using System.Collections.Generic;
 using System.Threading;
@@ -34,15 +34,13 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "Transactions"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "ChunkCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "ByteFee"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "EntryFee"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U128)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "MaxTransactionSize"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "MaxBlockTransactions"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "StoragePeriod"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "BlockTransactions"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "BlockTransactions"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionStorage", "ProofChecked"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.Bool)));
         }
         
@@ -61,10 +59,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage
         /// >> Transactions
         ///  Collection of transaction metadata by block number.
         /// </summary>
-        public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> Transactions(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> Transactions(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = TransactionStorageStorage.TransactionsParams(key);
-            return await _client.GetStorageAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34>(parameters, token);
         }
         
         /// <summary>
@@ -127,44 +125,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage
         }
         
         /// <summary>
-        /// >> MaxTransactionSizeParams
-        ///  Maximum data set in a single transaction in bytes.
-        /// </summary>
-        public static string MaxTransactionSizeParams()
-        {
-            return RequestGenerator.GetStorage("TransactionStorage", "MaxTransactionSize", Ajuna.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> MaxTransactionSize
-        ///  Maximum data set in a single transaction in bytes.
-        /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> MaxTransactionSize(CancellationToken token)
-        {
-            string parameters = TransactionStorageStorage.MaxTransactionSizeParams();
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
-        }
-        
-        /// <summary>
-        /// >> MaxBlockTransactionsParams
-        ///  Maximum number of indexed transactions in the block.
-        /// </summary>
-        public static string MaxBlockTransactionsParams()
-        {
-            return RequestGenerator.GetStorage("TransactionStorage", "MaxBlockTransactions", Ajuna.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> MaxBlockTransactions
-        ///  Maximum number of indexed transactions in the block.
-        /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> MaxBlockTransactions(CancellationToken token)
-        {
-            string parameters = TransactionStorageStorage.MaxBlockTransactionsParams();
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
-        }
-        
-        /// <summary>
         /// >> StoragePeriodParams
         ///  Storage period for data in blocks. Should match `sp_storage_proof::DEFAULT_STORAGE_PERIOD`
         ///  for block authoring.
@@ -196,10 +156,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage
         /// <summary>
         /// >> BlockTransactions
         /// </summary>
-        public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> BlockTransactions(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> BlockTransactions(CancellationToken token)
         {
             string parameters = TransactionStorageStorage.BlockTransactionsParams();
-            return await _client.GetStorageAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34>(parameters, token);
         }
         
         /// <summary>

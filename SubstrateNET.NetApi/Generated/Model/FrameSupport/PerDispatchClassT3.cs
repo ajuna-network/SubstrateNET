@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 129 - Composite[frame_support.weights.PerDispatchClassT3]
+    /// >> 144 - Composite[frame_support.weights.PerDispatchClassT3]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType

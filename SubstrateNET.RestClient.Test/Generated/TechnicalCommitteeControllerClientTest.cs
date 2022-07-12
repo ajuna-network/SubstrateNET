@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletCollective;
    using Ajuna.NetApi.Model.Types.Primitive;
@@ -30,10 +30,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT10 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT10 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT10();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256[] {
                   this.GetTestValue3()});
@@ -90,7 +90,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TechnicalCommitteeControllerClient rpcClient = new TechnicalCommitteeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT10 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeProposals());
@@ -103,7 +103,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT10 rpcResult = await rpcClient.GetProposals();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14 rpcResult = await rpcClient.GetProposals();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

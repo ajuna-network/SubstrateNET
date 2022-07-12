@@ -28,6 +28,8 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         Balances,
         
+        TransactionPayment,
+        
         ElectionProviderMultiPhase,
         
         Staking,
@@ -100,7 +102,15 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         Whitelist,
         
+        AllianceMotion,
+        
+        Alliance,
+        
         NominationPools,
+        
+        RankedPolls,
+        
+        RankedCollective,
     }
     
     /// <summary>

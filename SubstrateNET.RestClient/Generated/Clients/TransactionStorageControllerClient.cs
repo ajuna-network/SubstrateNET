@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> GetTransactions(U32 key)
+      public async Task<BoundedVecT34> GetTransactions(U32 key)
       {
-         return await SendRequestAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
+         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
       }
       public async Task<bool> SubscribeTransactions(U32 key)
       {
@@ -57,22 +57,6 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("TransactionStorage.EntryFee");
       }
-      public async Task<U32> GetMaxTransactionSize()
-      {
-         return await SendRequestAsync<U32>(_httpClient, "transactionstorage/maxtransactionsize");
-      }
-      public async Task<bool> SubscribeMaxTransactionSize()
-      {
-         return await _subscriptionClient.SubscribeAsync("TransactionStorage.MaxTransactionSize");
-      }
-      public async Task<U32> GetMaxBlockTransactions()
-      {
-         return await SendRequestAsync<U32>(_httpClient, "transactionstorage/maxblocktransactions");
-      }
-      public async Task<bool> SubscribeMaxBlockTransactions()
-      {
-         return await _subscriptionClient.SubscribeAsync("TransactionStorage.MaxBlockTransactions");
-      }
       public async Task<U32> GetStoragePeriod()
       {
          return await SendRequestAsync<U32>(_httpClient, "transactionstorage/storageperiod");
@@ -81,9 +65,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("TransactionStorage.StoragePeriod");
       }
-      public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>> GetBlockTransactions()
+      public async Task<BoundedVecT34> GetBlockTransactions()
       {
-         return await SendRequestAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>>(_httpClient, "transactionstorage/blocktransactions");
+         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/blocktransactions");
       }
       public async Task<bool> SubscribeBlockTransactions()
       {

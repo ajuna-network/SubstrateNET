@@ -17,6 +17,7 @@ using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
 using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -39,9 +40,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "ReferendumInfoFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "TrackQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U8), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U16), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "DecidingCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U8), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U16), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
@@ -91,7 +92,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public static string TrackQueueParams(Ajuna.NetApi.Model.Types.Primitive.U8 key)
+        public static string TrackQueueParams(Ajuna.NetApi.Model.Types.Primitive.U16 key)
         {
             return RequestGenerator.GetStorage("Referenda", "TrackQueue", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Ajuna.NetApi.Model.Types.IType[] {
@@ -105,17 +106,17 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U8 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U16 key, CancellationToken token)
         {
             string parameters = ReferendaStorage.TrackQueueParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35>(parameters, token);
         }
         
         /// <summary>
         /// >> DecidingCountParams
         ///  The number of referenda being decided currently.
         /// </summary>
-        public static string DecidingCountParams(Ajuna.NetApi.Model.Types.Primitive.U8 key)
+        public static string DecidingCountParams(Ajuna.NetApi.Model.Types.Primitive.U16 key)
         {
             return RequestGenerator.GetStorage("Referenda", "DecidingCount", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Ajuna.NetApi.Model.Types.IType[] {
@@ -126,7 +127,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
         /// >> DecidingCount
         ///  The number of referenda being decided currently.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> DecidingCount(Ajuna.NetApi.Model.Types.Primitive.U8 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> DecidingCount(Ajuna.NetApi.Model.Types.Primitive.U16 key, CancellationToken token)
         {
             string parameters = ReferendaStorage.DecidingCountParams(key);
             return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
@@ -208,7 +209,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
         /// >> one_fewer_deciding
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method OneFewerDeciding(Ajuna.NetApi.Model.Types.Primitive.U8 track)
+        public static Method OneFewerDeciding(Ajuna.NetApi.Model.Types.Primitive.U16 track)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(track.Encode());

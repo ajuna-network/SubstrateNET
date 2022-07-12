@@ -13,13 +13,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IReferendaControllerMockupClient
    {
       Task<bool> SetReferendumCount(U32 value);
       Task<bool> SetReferendumInfoFor(EnumReferendumInfo value, U32 key);
-      Task<bool> SetTrackQueue(BoundedVecT29 value, U8 key);
-      Task<bool> SetDecidingCount(U32 value, U8 key);
+      Task<bool> SetTrackQueue(BoundedVecT35 value, U16 key);
+      Task<bool> SetDecidingCount(U32 value, U16 key);
    }
 }

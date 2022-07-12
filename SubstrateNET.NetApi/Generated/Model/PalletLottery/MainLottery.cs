@@ -13,10 +13,10 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
 using SubstrateNET.NetApi.Generated.Model.PalletLottery;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,11 +38,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletLottery
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "LotteryIndex"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "Lottery"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryConfig)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "Participants"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "TicketsCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "Tickets"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "CallIndices"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Lottery", "CallIndices"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31)));
         }
         
         /// <summary>
@@ -96,10 +96,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletLottery
         /// >> Participants
         ///  Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
         /// </summary>
-        public async Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>> Participants(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
+        public async Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31>> Participants(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
             string parameters = LotteryStorage.ParticipantsParams(key);
-            return await _client.GetStorageAsync<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>>(parameters, token);
+            return await _client.GetStorageAsync<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31>>(parameters, token);
         }
         
         /// <summary>
@@ -163,10 +163,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletLottery
         ///  The calls stored in this pallet to be used in an active lottery if configured
         ///  by `Config::ValidateCall`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> CallIndices(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31> CallIndices(CancellationToken token)
         {
             string parameters = LotteryStorage.CallIndicesParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31>(parameters, token);
         }
     }
     

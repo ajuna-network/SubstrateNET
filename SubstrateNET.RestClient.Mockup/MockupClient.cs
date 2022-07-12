@@ -18,6 +18,8 @@ namespace SubstrateNET.RestClient.Mockup
    public sealed class MockupClient
    {
       private HttpClient _httpClient;
+      public IAllianceControllerMockupClient AllianceControllerClient;
+      public IAllianceMotionControllerMockupClient AllianceMotionControllerClient;
       public IAssetsControllerMockupClient AssetsControllerClient;
       public IAuthorityDiscoveryControllerMockupClient AuthorityDiscoveryControllerClient;
       public IAuthorshipControllerMockupClient AuthorshipControllerClient;
@@ -45,6 +47,8 @@ namespace SubstrateNET.RestClient.Mockup
       public IPreimageControllerMockupClient PreimageControllerClient;
       public IProxyControllerMockupClient ProxyControllerClient;
       public IRandomnessCollectiveFlipControllerMockupClient RandomnessCollectiveFlipControllerClient;
+      public IRankedCollectiveControllerMockupClient RankedCollectiveControllerClient;
+      public IRankedPollsControllerMockupClient RankedPollsControllerClient;
       public IRecoveryControllerMockupClient RecoveryControllerClient;
       public IReferendaControllerMockupClient ReferendaControllerClient;
       public ISchedulerControllerMockupClient SchedulerControllerClient;
@@ -67,6 +71,8 @@ namespace SubstrateNET.RestClient.Mockup
       public MockupClient(HttpClient httpClient)
       {
          _httpClient = httpClient;
+         AllianceControllerClient = new AllianceControllerMockupClient(_httpClient);
+         AllianceMotionControllerClient = new AllianceMotionControllerMockupClient(_httpClient);
          AssetsControllerClient = new AssetsControllerMockupClient(_httpClient);
          AuthorityDiscoveryControllerClient = new AuthorityDiscoveryControllerMockupClient(_httpClient);
          AuthorshipControllerClient = new AuthorshipControllerMockupClient(_httpClient);
@@ -94,6 +100,8 @@ namespace SubstrateNET.RestClient.Mockup
          PreimageControllerClient = new PreimageControllerMockupClient(_httpClient);
          ProxyControllerClient = new ProxyControllerMockupClient(_httpClient);
          RandomnessCollectiveFlipControllerClient = new RandomnessCollectiveFlipControllerMockupClient(_httpClient);
+         RankedCollectiveControllerClient = new RankedCollectiveControllerMockupClient(_httpClient);
+         RankedPollsControllerClient = new RankedPollsControllerMockupClient(_httpClient);
          RecoveryControllerClient = new RecoveryControllerMockupClient(_httpClient);
          ReferendaControllerClient = new ReferendaControllerMockupClient(_httpClient);
          SchedulerControllerClient = new SchedulerControllerMockupClient(_httpClient);

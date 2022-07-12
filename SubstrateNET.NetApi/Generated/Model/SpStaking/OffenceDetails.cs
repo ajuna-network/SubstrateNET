@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpStaking
     
     
     /// <summary>
-    /// >> 482 - Composite[sp_staking.offence.OffenceDetails]
+    /// >> 504 - Composite[sp_staking.offence.OffenceDetails]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OffenceDetails : BaseType

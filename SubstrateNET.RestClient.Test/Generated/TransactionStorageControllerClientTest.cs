@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public class TransactionStorageControllerClientTest : ClientTestBase
@@ -26,11 +26,12 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTestValue2()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
                   this.GetTestValue3()});
          return result;
       }
@@ -137,7 +138,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 mockupValue = this.GetTestValue2();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeTransactions(mockupKey));
@@ -150,7 +151,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> rpcResult = await rpcClient.GetTransactions(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 rpcResult = await rpcClient.GetTransactions(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -243,64 +244,6 @@ namespace SubstrateNET.RestClient.Test.Generated
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
       [Test()]
-      public async System.Threading.Tasks.Task TestMaxTransactionSize()
-      {
-         // Construct new Mockup client to test with.
-         TransactionStorageControllerMockupClient mockupClient = new TransactionStorageControllerMockupClient(_httpClient);
-
-         // Construct new subscription client to test with.
-         var subscriptionClient = CreateSubscriptionClient();
-
-         // Construct new RPC client to test with.
-         TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-
-
-         Assert.IsTrue(await rpcClient.SubscribeMaxTransactionSize());
-
-         // Save the previously generated mockup value in RPC service storage.
-         bool mockupSetResult = await mockupClient.SetMaxTransactionSize(mockupValue);
-
-         // Test that the expected mockup value was handled successfully from RPC service.
-         Assert.IsTrue(mockupSetResult);
-         var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
-         Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
-
-         Ajuna.NetApi.Model.Types.Primitive.U32 rpcResult = await rpcClient.GetMaxTransactionSize();
-
-         // Test that the expected mockup value matches the actual result from RPC service.
-         Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
-      }
-      [Test()]
-      public async System.Threading.Tasks.Task TestMaxBlockTransactions()
-      {
-         // Construct new Mockup client to test with.
-         TransactionStorageControllerMockupClient mockupClient = new TransactionStorageControllerMockupClient(_httpClient);
-
-         // Construct new subscription client to test with.
-         var subscriptionClient = CreateSubscriptionClient();
-
-         // Construct new RPC client to test with.
-         TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-
-
-         Assert.IsTrue(await rpcClient.SubscribeMaxBlockTransactions());
-
-         // Save the previously generated mockup value in RPC service storage.
-         bool mockupSetResult = await mockupClient.SetMaxBlockTransactions(mockupValue);
-
-         // Test that the expected mockup value was handled successfully from RPC service.
-         Assert.IsTrue(mockupSetResult);
-         var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
-         Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
-
-         Ajuna.NetApi.Model.Types.Primitive.U32 rpcResult = await rpcClient.GetMaxBlockTransactions();
-
-         // Test that the expected mockup value matches the actual result from RPC service.
-         Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
-      }
-      [Test()]
       public async System.Threading.Tasks.Task TestStoragePeriod()
       {
          // Construct new Mockup client to test with.
@@ -329,27 +272,28 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTestValue11()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
-                  this.GetTestValue14()});
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
+                  this.GetTestValue12()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo GetTestValue12()
       {
          SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo result;
          result = new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo();
          result.ChunkRoot = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.ChunkRoot = this.GetTestValue15();
+         result.ChunkRoot = this.GetTestValue13();
          result.ContentHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.ContentHash = this.GetTestValue16();
+         result.ContentHash = this.GetTestValue14();
          result.Size = this.GetTestValueU32();
          result.BlockChunks = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue13()
       {
          SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
          result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
@@ -389,7 +333,7 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue14()
       {
          SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
          result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
@@ -440,7 +384,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> mockupValue = this.GetTestValue13();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 mockupValue = this.GetTestValue11();
 
 
          Assert.IsTrue(await rpcClient.SubscribeBlockTransactions());
@@ -453,7 +397,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> rpcResult = await rpcClient.GetBlockTransactions();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 rpcResult = await rpcClient.GetBlockTransactions();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

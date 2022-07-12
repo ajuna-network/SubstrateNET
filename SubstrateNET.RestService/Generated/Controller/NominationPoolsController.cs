@@ -11,9 +11,9 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -59,6 +59,9 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// 
         ///  This is the amount that the depositor must put as their initial stake in the pool, as an
         ///  indication of "skin in the game".
+        /// 
+        ///  This is the value that will always exist in the staking ledger of the pool bonded account
+        ///  while all other accounts leave.
         /// </summary>
         [HttpGet("MinCreateBond")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
@@ -210,7 +213,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata for the pool.
         /// </summary>
         [HttpGet("Metadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetMetadata(string key)
         {

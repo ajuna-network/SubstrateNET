@@ -11,9 +11,9 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
 using SubstrateNET.NetApi.Generated.Model.SpNposElections;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -154,7 +154,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  them one at a time instead of reading and decoding all of them at once.
         /// </summary>
         [HttpGet("SignedSubmissionIndices")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SignedSubmissionIndicesParams")]
         public IActionResult GetSignedSubmissionIndices()
         {

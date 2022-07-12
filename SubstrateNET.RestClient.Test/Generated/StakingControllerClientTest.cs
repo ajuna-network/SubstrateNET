@@ -406,7 +406,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Total.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
          result.Active = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Active.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
-         result.Unlocking = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8();
+         result.Unlocking = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12();
          result.Unlocking = this.GetTestValue17();
          result.ClaimedRewards = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.ClaimedRewards.Create(new Ajuna.NetApi.Model.Types.Primitive.U32[] {
@@ -453,10 +453,10 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8 GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12 GetTestValue17()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnlockChunk>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletStaking.UnlockChunk[] {
                   this.GetTestValue18()});
@@ -764,16 +764,16 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations result;
          result = new SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations();
-         result.Targets = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7();
+         result.Targets = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11();
          result.Targets = this.GetTestValue31();
          result.SubmittedIn = this.GetTestValueU32();
          result.Suppressed = this.GetTestValueBool();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7 GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11 GetTestValue31()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
                   this.GetTestValue32()});

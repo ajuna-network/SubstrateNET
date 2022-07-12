@@ -12,11 +12,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IConvictionVotingControllerMockupClient
    {
-      Task<bool> SetVotingFor(EnumVoting value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key);
-      Task<bool> SetClassLocksFor(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8, Ajuna.NetApi.Model.Types.Primitive.U128>> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetVotingFor(EnumVoting value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key);
+      Task<bool> SetClassLocksFor(BoundedVecT37 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
    }
 }

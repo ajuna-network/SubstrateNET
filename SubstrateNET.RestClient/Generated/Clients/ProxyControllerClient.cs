@@ -24,17 +24,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23, Ajuna.NetApi.Model.Types.Primitive.U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23, Ajuna.NetApi.Model.Types.Primitive.U128>>(_httpClient, "proxy/proxies", SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.ProxiesParams(key));
+         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>>(_httpClient, "proxy/proxies", SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.ProxiesParams(key));
       }
       public async Task<bool> SubscribeProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Proxy.Proxies", SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.ProxiesParams(key));
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24, Ajuna.NetApi.Model.Types.Primitive.U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24, Ajuna.NetApi.Model.Types.Primitive.U128>>(_httpClient, "proxy/announcements", SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.AnnouncementsParams(key));
+         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>>(_httpClient, "proxy/announcements", SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.AnnouncementsParams(key));
       }
       public async Task<bool> SubscribeAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {

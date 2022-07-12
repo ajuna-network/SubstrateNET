@@ -11,8 +11,8 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 395 - Composite[pallet_staking.StakingLedger]
+    /// >> 417 - Composite[pallet_staking.StakingLedger]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StakingLedger : BaseType
@@ -45,7 +45,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
         /// <summary>
         /// >> unlocking
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8 _unlocking;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12 _unlocking;
         
         /// <summary>
         /// >> claimed_rewards
@@ -88,7 +88,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8 Unlocking
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12 Unlocking
         {
             get
             {
@@ -137,7 +137,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
             Total.Decode(byteArray, ref p);
             Active = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
             Active.Decode(byteArray, ref p);
-            Unlocking = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT8();
+            Unlocking = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT12();
             Unlocking.Decode(byteArray, ref p);
             ClaimedRewards = new BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
             ClaimedRewards.Decode(byteArray, ref p);

@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletCollective;
    using Ajuna.NetApi.Model.Types.Primitive;
@@ -27,7 +27,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetProposals(BoundedVecT10 value)
+      public async Task<bool> SetProposals(BoundedVecT14 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TechnicalCommittee/Proposals", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage.ProposalsParams());
       }

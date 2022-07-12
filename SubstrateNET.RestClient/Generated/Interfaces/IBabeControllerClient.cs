@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
    using SubstrateNET.NetApi.Generated.Model.Base;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
@@ -38,7 +38,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeNextAuthorities();
       Task<U32> GetSegmentIndex();
       Task<bool> SubscribeSegmentIndex();
-      Task<BoundedVecT5> GetUnderConstruction(U32 key);
+      Task<BoundedVecT8> GetUnderConstruction(U32 key);
       Task<bool> SubscribeUnderConstruction(U32 key);
       Task<BaseOpt<EnumPreDigest>> GetInitialized();
       Task<bool> SubscribeInitialized();

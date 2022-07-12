@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     }
     
     /// <summary>
-    /// >> 335 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 351 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumExt<RawOrigin, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, BaseVoid>
     {

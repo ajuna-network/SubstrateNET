@@ -11,8 +11,8 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -35,13 +35,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The vector is indexed by duration in `Period`s, offset by one, so information on the queue
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetQueueTotals();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 GetQueueTotals();
         
         /// <summary>
         /// >> Queues
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 GetQueues(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 GetQueues(string key);
         
         /// <summary>
         /// >> ActiveTotal
@@ -65,12 +65,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queueTotalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> _queueTotalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32> _queueTotalsTypedStorage;
         
         /// <summary>
         /// _queuesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28> _queuesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33> _queuesTypedStorage;
         
         /// <summary>
         /// _activeTotalTypedStorage typed storage field
@@ -87,8 +87,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public GiltStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.QueueTotalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27>("Gilt.QueueTotals", storageDataProvider, storageChangeDelegate);
-            this.QueuesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28>("Gilt.Queues", storageDataProvider, storageChangeDelegate);
+            this.QueueTotalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32>("Gilt.QueueTotals", storageDataProvider, storageChangeDelegate);
+            this.QueuesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33>("Gilt.Queues", storageDataProvider, storageChangeDelegate);
             this.ActiveTotalTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal>("Gilt.ActiveTotal", storageDataProvider, storageChangeDelegate);
             this.ActiveTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt>("Gilt.Active", storageDataProvider, storageChangeDelegate);
         }
@@ -96,7 +96,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queueTotalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> QueueTotalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32> QueueTotalsTypedStorage
         {
             get
             {
@@ -111,7 +111,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queuesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28> QueuesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33> QueuesTypedStorage
         {
             get
             {
@@ -181,7 +181,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The vector is indexed by duration in `Period`s, offset by one, so information on the queue
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetQueueTotals()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 GetQueueTotals()
         {
             return QueueTotalsTypedStorage.Get();
         }
@@ -199,13 +199,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Queues
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 GetQueues(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 GetQueues(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (QueuesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 result))
+            if (QueuesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 result))
             {
                 return result;
             }

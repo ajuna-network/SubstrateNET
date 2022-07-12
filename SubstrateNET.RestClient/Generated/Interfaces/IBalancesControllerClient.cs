@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IBalancesControllerClient
    {
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<WeakBoundedVecT2> GetLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BoundedVecT6> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<EnumReleases> GetStorageVersion();
       Task<bool> SubscribeStorageVersion();

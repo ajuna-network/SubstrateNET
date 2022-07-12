@@ -11,8 +11,8 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -43,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Approvals
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 GetApprovals();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetApprovals();
     }
     
     /// <summary>
@@ -65,7 +65,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _approvalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11> _approvalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16> _approvalsTypedStorage;
         
         /// <summary>
         /// TreasuryStorage constructor.
@@ -74,7 +74,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Treasury.ProposalCount", storageDataProvider, storageChangeDelegate);
             this.ProposalsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletTreasury.Proposal>("Treasury.Proposals", storageDataProvider, storageChangeDelegate);
-            this.ApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11>("Treasury.Approvals", storageDataProvider, storageChangeDelegate);
+            this.ApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16>("Treasury.Approvals", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
@@ -110,7 +110,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _approvalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11> ApprovalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16> ApprovalsTypedStorage
         {
             get
             {
@@ -192,7 +192,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Approvals
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 GetApprovals()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetApprovals()
         {
             return ApprovalsTypedStorage.Get();
         }

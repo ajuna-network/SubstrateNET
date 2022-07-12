@@ -11,7 +11,7 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 458 - Composite[pallet_contracts.wasm.PrefabWasmModule]
+    /// >> 480 - Composite[pallet_contracts.wasm.PrefabWasmModule]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PrefabWasmModule : BaseType
@@ -44,7 +44,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// <summary>
         /// >> code
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13 _code;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT18 _code;
         
         public BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> InstructionWeightsVersion
         {
@@ -82,7 +82,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13 Code
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT18 Code
         {
             get
             {
@@ -118,7 +118,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             Initial.Decode(byteArray, ref p);
             Maximum = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
             Maximum.Decode(byteArray, ref p);
-            Code = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13();
+            Code = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT18();
             Code.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

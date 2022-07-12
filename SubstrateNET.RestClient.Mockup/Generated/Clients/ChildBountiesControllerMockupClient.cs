@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletChildBounties;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ChildBountiesControllerMockupClient : MockupBaseClient, IChildBountiesControllerMockupClient
@@ -36,7 +36,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBounties", value.Encode(), ChildBountiesStorage.ChildBountiesParams(key));
       }
-      public async Task<bool> SetChildBountyDescriptions(BoundedVecT25 value, U32 key)
+      public async Task<bool> SetChildBountyDescriptions(BoundedVecT30 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBountyDescriptions", value.Encode(), ChildBountiesStorage.ChildBountyDescriptionsParams(key));
       }

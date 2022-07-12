@@ -11,8 +11,8 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -49,7 +49,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
         [HttpGet("QueueTotals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "QueueTotalsParams")]
         public IActionResult GetQueueTotals()
         {
@@ -61,7 +61,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
         [HttpGet("Queues")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "QueuesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetQueues(string key)
         {

@@ -29,7 +29,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
     }
     
     /// <summary>
-    /// >> 447 - Variant[pallet_grandpa.StoredState]
+    /// >> 470 - Variant[pallet_grandpa.StoredState]
     /// </summary>
     public sealed class EnumStoredState : BaseEnumExt<StoredState, BaseVoid, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>
     {

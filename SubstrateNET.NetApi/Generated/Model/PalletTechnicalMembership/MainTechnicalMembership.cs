@@ -13,6 +13,7 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership
         public TechnicalMembershipStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Members"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Members"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Prime"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32)));
         }
         
@@ -48,10 +49,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership
         /// >> Members
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
-        public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> Members(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15> Members(CancellationToken token)
         {
             string parameters = TechnicalMembershipStorage.MembersParams();
-            return await _client.GetStorageAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT15>(parameters, token);
         }
         
         /// <summary>
@@ -169,5 +170,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership
         /// Not a member.
         /// </summary>
         NotMember,
+        
+        /// <summary>
+        /// >> TooManyMembers
+        /// Too many members.
+        /// </summary>
+        TooManyMembers,
     }
 }

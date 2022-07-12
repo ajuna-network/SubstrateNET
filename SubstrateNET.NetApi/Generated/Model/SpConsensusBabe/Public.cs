@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpConsensusBabe
     
     
     /// <summary>
-    /// >> 144 - Composite[sp_consensus_babe.app.Public]
+    /// >> 159 - Composite[sp_consensus_babe.app.Public]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

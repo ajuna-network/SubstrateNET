@@ -13,9 +13,9 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletPreimage;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -37,7 +37,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletPreimage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Preimage", "StatusFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Preimage", "PreimageFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27)));
         }
         
         /// <summary>
@@ -76,10 +76,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletPreimage
         /// >> PreimageFor
         ///  The preimages stored by this pallet.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> PreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27> PreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key, CancellationToken token)
         {
             string parameters = PreimageStorage.PreimageForParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27>(parameters, token);
         }
     }
     

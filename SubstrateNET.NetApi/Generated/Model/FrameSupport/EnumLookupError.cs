@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     }
     
     /// <summary>
-    /// >> 80 - Variant[frame_support.traits.schedule.LookupError]
+    /// >> 81 - Variant[frame_support.traits.schedule.LookupError]
     /// </summary>
     public sealed class EnumLookupError : BaseEnum<LookupError>
     {

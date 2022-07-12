@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface ITreasuryControllerClient
    {
@@ -21,7 +21,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeProposalCount();
       Task<Proposal> GetProposals(U32 key);
       Task<bool> SubscribeProposals(U32 key);
-      Task<BoundedVecT11> GetApprovals();
+      Task<BoundedVecT16> GetApprovals();
       Task<bool> SubscribeApprovals();
    }
 }

@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 410 - Composite[pallet_staking.slashing.SlashingSpans]
+    /// >> 432 - Composite[pallet_staking.slashing.SlashingSpans]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SlashingSpans : BaseType

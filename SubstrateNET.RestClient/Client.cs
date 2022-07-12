@@ -19,6 +19,8 @@ namespace SubstrateNET.RestClient
    {
       private HttpClient _httpClient;
       private BaseSubscriptionClient _subscriptionClient;
+      public IAllianceControllerClient AllianceControllerClient;
+      public IAllianceMotionControllerClient AllianceMotionControllerClient;
       public IAssetsControllerClient AssetsControllerClient;
       public IAuthorityDiscoveryControllerClient AuthorityDiscoveryControllerClient;
       public IAuthorshipControllerClient AuthorshipControllerClient;
@@ -46,6 +48,8 @@ namespace SubstrateNET.RestClient
       public IPreimageControllerClient PreimageControllerClient;
       public IProxyControllerClient ProxyControllerClient;
       public IRandomnessCollectiveFlipControllerClient RandomnessCollectiveFlipControllerClient;
+      public IRankedCollectiveControllerClient RankedCollectiveControllerClient;
+      public IRankedPollsControllerClient RankedPollsControllerClient;
       public IRecoveryControllerClient RecoveryControllerClient;
       public IReferendaControllerClient ReferendaControllerClient;
       public ISchedulerControllerClient SchedulerControllerClient;
@@ -69,6 +73,8 @@ namespace SubstrateNET.RestClient
       {
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
+         AllianceControllerClient = new AllianceControllerClient(_httpClient, _subscriptionClient);
+         AllianceMotionControllerClient = new AllianceMotionControllerClient(_httpClient, _subscriptionClient);
          AssetsControllerClient = new AssetsControllerClient(_httpClient, _subscriptionClient);
          AuthorityDiscoveryControllerClient = new AuthorityDiscoveryControllerClient(_httpClient, _subscriptionClient);
          AuthorshipControllerClient = new AuthorshipControllerClient(_httpClient, _subscriptionClient);
@@ -96,6 +102,8 @@ namespace SubstrateNET.RestClient
          PreimageControllerClient = new PreimageControllerClient(_httpClient, _subscriptionClient);
          ProxyControllerClient = new ProxyControllerClient(_httpClient, _subscriptionClient);
          RandomnessCollectiveFlipControllerClient = new RandomnessCollectiveFlipControllerClient(_httpClient, _subscriptionClient);
+         RankedCollectiveControllerClient = new RankedCollectiveControllerClient(_httpClient, _subscriptionClient);
+         RankedPollsControllerClient = new RankedPollsControllerClient(_httpClient, _subscriptionClient);
          RecoveryControllerClient = new RecoveryControllerClient(_httpClient, _subscriptionClient);
          ReferendaControllerClient = new ReferendaControllerClient(_httpClient, _subscriptionClient);
          SchedulerControllerClient = new SchedulerControllerClient(_httpClient, _subscriptionClient);

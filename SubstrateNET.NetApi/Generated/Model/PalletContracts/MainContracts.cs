@@ -13,7 +13,6 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletContracts;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
@@ -37,7 +36,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "PristineCode"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT17)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "CodeStorage"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.PrefabWasmModule)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "OwnerInfoOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
@@ -45,7 +44,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "Nonce"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "ContractInfoOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.RawContractInfo)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "DeletionQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "DeletionQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT20)));
         }
         
         /// <summary>
@@ -63,10 +62,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12> PristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT17> PristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key, CancellationToken token)
         {
             string parameters = ContractsStorage.PristineCodeParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT17>(parameters, token);
         }
         
         /// <summary>
@@ -216,10 +215,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15> DeletionQueue(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT20> DeletionQueue(CancellationToken token)
         {
             string parameters = ContractsStorage.DeletionQueueParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT20>(parameters, token);
         }
     }
     

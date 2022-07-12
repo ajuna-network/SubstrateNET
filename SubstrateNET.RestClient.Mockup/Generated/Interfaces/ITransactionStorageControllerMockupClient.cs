@@ -11,19 +11,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITransactionStorageControllerMockupClient
    {
-      Task<bool> SetTransactions(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> value, U32 key);
+      Task<bool> SetTransactions(BoundedVecT34 value, U32 key);
       Task<bool> SetChunkCount(U32 value, U32 key);
       Task<bool> SetByteFee(U128 value);
       Task<bool> SetEntryFee(U128 value);
-      Task<bool> SetMaxTransactionSize(U32 value);
-      Task<bool> SetMaxBlockTransactions(U32 value);
       Task<bool> SetStoragePeriod(U32 value);
-      Task<bool> SetBlockTransactions(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> value);
+      Task<bool> SetBlockTransactions(BoundedVecT34 value);
       Task<bool> SetProofChecked(Bool value);
    }
 }

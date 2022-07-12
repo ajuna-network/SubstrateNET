@@ -13,14 +13,14 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletChildBounties;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IChildBountiesControllerMockupClient
    {
       Task<bool> SetChildBountyCount(U32 value);
       Task<bool> SetParentChildBounties(U32 value, U32 key);
       Task<bool> SetChildBounties(ChildBounty value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
-      Task<bool> SetChildBountyDescriptions(BoundedVecT25 value, U32 key);
+      Task<bool> SetChildBountyDescriptions(BoundedVecT30 value, U32 key);
       Task<bool> SetChildrenCuratorFees(U128 value, U32 key);
    }
 }

@@ -11,9 +11,9 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,6 +40,9 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is the amount that the depositor must put as their initial stake in the pool, as an
         ///  indication of "skin in the game".
+        /// 
+        ///  This is the value that will always exist in the staking ledger of the pool bonded account
+        ///  while all other accounts leave.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U128 GetMinCreateBond();
         
@@ -118,7 +121,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 GetMetadata(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetMetadata(string key);
         
         /// <summary>
         /// >> CounterForMetadata
@@ -222,7 +225,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> _metadataTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43> _metadataTypedStorage;
         
         /// <summary>
         /// _counterForMetadataTypedStorage typed storage field
@@ -262,7 +265,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.CounterForRewardPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForRewardPools", storageDataProvider, storageChangeDelegate);
             this.SubPoolsStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools>("NominationPools.SubPoolsStorage", storageDataProvider, storageChangeDelegate);
             this.CounterForSubPoolsStorageTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForSubPoolsStorage", storageDataProvider, storageChangeDelegate);
-            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31>("NominationPools.Metadata", storageDataProvider, storageChangeDelegate);
+            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43>("NominationPools.Metadata", storageDataProvider, storageChangeDelegate);
             this.CounterForMetadataTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForMetadata", storageDataProvider, storageChangeDelegate);
             this.LastPoolIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.LastPoolId", storageDataProvider, storageChangeDelegate);
             this.ReversePoolIdLookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.ReversePoolIdLookup", storageDataProvider, storageChangeDelegate);
@@ -467,7 +470,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> MetadataTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43> MetadataTypedStorage
         {
             get
             {
@@ -597,6 +600,9 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is the amount that the depositor must put as their initial stake in the pool, as an
         ///  indication of "skin in the game".
+        /// 
+        ///  This is the value that will always exist in the staking ledger of the pool bonded account
+        ///  while all other accounts leave.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U128 GetMinCreateBond()
         {
@@ -863,13 +869,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 GetMetadata(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetMetadata(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 result))
+            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 result))
             {
                 return result;
             }

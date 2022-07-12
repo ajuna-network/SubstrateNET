@@ -11,8 +11,8 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletAuthorship;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,7 +31,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Uncles
         ///  Uncles
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> GetUncles();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 GetUncles();
         
         /// <summary>
         /// >> Author
@@ -55,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unclesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>> _unclesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9> _unclesTypedStorage;
         
         /// <summary>
         /// _authorTypedStorage typed storage field
@@ -72,7 +72,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public AuthorshipStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.UnclesTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>>("Authorship.Uncles", storageDataProvider, storageChangeDelegate);
+            this.UnclesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9>("Authorship.Uncles", storageDataProvider, storageChangeDelegate);
             this.AuthorTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Authorship.Author", storageDataProvider, storageChangeDelegate);
             this.DidSetUnclesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Authorship.DidSetUncles", storageDataProvider, storageChangeDelegate);
         }
@@ -80,7 +80,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unclesTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>> UnclesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9> UnclesTypedStorage
         {
             get
             {
@@ -145,7 +145,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Uncles
         ///  Uncles
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem> GetUncles()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9 GetUncles()
         {
             return UnclesTypedStorage.Get();
         }

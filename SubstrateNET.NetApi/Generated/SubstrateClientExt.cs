@@ -270,9 +270,29 @@ namespace SubstrateNET.NetApi.Generated
         public SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage WhitelistStorage;
         
         /// <summary>
+        /// AllianceMotionStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage AllianceMotionStorage;
+        
+        /// <summary>
+        /// AllianceStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage AllianceStorage;
+        
+        /// <summary>
         /// NominationPoolsStorage storage calls.
         /// </summary>
         public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage NominationPoolsStorage;
+        
+        /// <summary>
+        /// RankedPollsStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage RankedPollsStorage;
+        
+        /// <summary>
+        /// RankedCollectiveStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage RankedCollectiveStorage;
         
         public SubstrateClientExt(System.Uri uri) : 
                 base(uri)
@@ -327,7 +347,11 @@ namespace SubstrateNET.NetApi.Generated
             this.RemarkStorage = new SubstrateNET.NetApi.Generated.Model.PalletRemark.RemarkStorage(this);
             this.ConvictionVotingStorage = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage(this);
             this.WhitelistStorage = new SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage(this);
+            this.AllianceMotionStorage = new SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage(this);
+            this.AllianceStorage = new SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage(this);
             this.NominationPoolsStorage = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage(this);
+            this.RankedPollsStorage = new SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage(this);
+            this.RankedCollectiveStorage = new SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage(this);
         }
     }
 }

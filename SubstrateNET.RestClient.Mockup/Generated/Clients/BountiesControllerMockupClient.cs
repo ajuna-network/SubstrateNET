@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class BountiesControllerMockupClient : MockupBaseClient, IBountiesControllerMockupClient
@@ -32,11 +32,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Bounties/Bounties", value.Encode(), BountiesStorage.BountiesParams(key));
       }
-      public async Task<bool> SetBountyDescriptions(BoundedVecT25 value, U32 key)
+      public async Task<bool> SetBountyDescriptions(BoundedVecT30 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Bounties/BountyDescriptions", value.Encode(), BountiesStorage.BountyDescriptionsParams(key));
       }
-      public async Task<bool> SetBountyApprovals(BoundedVecT11 value)
+      public async Task<bool> SetBountyApprovals(BoundedVecT16 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Bounties/BountyApprovals", value.Encode(), BountiesStorage.BountyApprovalsParams());
       }

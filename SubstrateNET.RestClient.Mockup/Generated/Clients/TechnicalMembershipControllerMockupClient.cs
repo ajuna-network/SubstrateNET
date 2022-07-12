@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetMembers(BaseVec<AccountId32> value)
+      public async Task<bool> SetMembers(BoundedVecT15 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Members", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership.TechnicalMembershipStorage.MembersParams());
       }

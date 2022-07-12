@@ -11,10 +11,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IRandomnessCollectiveFlipControllerMockupClient
    {
-      Task<bool> SetRandomMaterial(BoundedVecT16 value);
+      Task<bool> SetRandomMaterial(BoundedVecT21 value);
    }
 }

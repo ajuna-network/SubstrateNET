@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public class NominationPoolsControllerClientTest : ClientTestBase
    {
@@ -179,14 +179,14 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.PoolId = this.GetTestValueU32();
          result.Points = this.GetTestValueU128();
          result.RewardPoolTotalEarnings = this.GetTestValueU128();
-         result.UnbondingEras = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2();
+         result.UnbondingEras = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2();
          result.UnbondingEras = this.GetTestValue8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT2();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2();
          result.Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT3();
          result.Value = this.GetTestValue9();
          return result;
@@ -635,7 +635,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools();
          result.NoEra = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool();
          result.NoEra = this.GetTestValue27();
-         result.WithEra = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3();
+         result.WithEra = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3();
          result.WithEra = this.GetTestValue28();
          return result;
       }
@@ -647,10 +647,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Balance = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3 GetTestValue28()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 GetTestValue28()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT3();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3();
          result.Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT4();
          result.Value = this.GetTestValue29();
          return result;
@@ -737,10 +737,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 GetTestValue34()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetTestValue34()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -757,7 +757,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 mockupValue = this.GetTestValue34();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 mockupValue = this.GetTestValue34();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeMetadata(mockupKey));
@@ -770,7 +770,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 rpcResult = await rpcClient.GetMetadata(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 rpcResult = await rpcClient.GetMetadata(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

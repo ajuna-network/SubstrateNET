@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpConsensusBabe
     
     
     /// <summary>
-    /// >> 360 - Composite[sp_consensus_babe.digests.PrimaryPreDigest]
+    /// >> 381 - Composite[sp_consensus_babe.digests.PrimaryPreDigest]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PrimaryPreDigest : BaseType

@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IIdentityControllerClient
    {
@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData>> GetSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BoundedVecT19> GetRegistrars();
+      Task<BoundedVecT24> GetRegistrars();
       Task<bool> SubscribeRegistrars();
    }
 }

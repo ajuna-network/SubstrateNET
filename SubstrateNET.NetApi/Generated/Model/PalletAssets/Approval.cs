@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAssets
     
     
     /// <summary>
-    /// >> 545 - Composite[pallet_assets.types.Approval]
+    /// >> 567 - Composite[pallet_assets.types.Approval]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Approval : BaseType

@@ -13,12 +13,12 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface ITreasuryControllerMockupClient
    {
       Task<bool> SetProposalCount(U32 value);
       Task<bool> SetProposals(Proposal value, U32 key);
-      Task<bool> SetApprovals(BoundedVecT11 value);
+      Task<bool> SetApprovals(BoundedVecT16 value);
    }
 }

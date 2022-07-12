@@ -15,15 +15,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using SubstrateNET.NetApi.Generated.Model.PalletLottery;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface ILotteryControllerMockupClient
    {
       Task<bool> SetLotteryIndex(U32 value);
       Task<bool> SetLottery(LotteryConfig value);
-      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT26> value, AccountId32 key);
+      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT31> value, AccountId32 key);
       Task<bool> SetTicketsCount(U32 value);
       Task<bool> SetTickets(AccountId32 value, U32 key);
-      Task<bool> SetCallIndices(BoundedVecT26 value);
+      Task<bool> SetCallIndices(BoundedVecT31 value);
    }
 }

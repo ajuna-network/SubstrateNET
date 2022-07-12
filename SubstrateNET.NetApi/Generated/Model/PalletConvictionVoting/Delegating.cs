@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
     
     
     /// <summary>
-    /// >> 599 - Composite[pallet_conviction_voting.vote.Delegating]
+    /// >> 622 - Composite[pallet_conviction_voting.vote.Delegating]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Delegating : BaseType

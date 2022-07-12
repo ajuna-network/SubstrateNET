@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class BalancesControllerClient : BaseClient, IBalancesControllerClient
@@ -50,9 +50,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Balances.Locks", BalancesStorage.LocksParams(key));
       }
-      public async Task<BoundedVecT6> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT6>(_httpClient, "balances/reserves", BalancesStorage.ReservesParams(key));
+         return await SendRequestAsync<BoundedVecT10>(_httpClient, "balances/reserves", BalancesStorage.ReservesParams(key));
       }
       public async Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {

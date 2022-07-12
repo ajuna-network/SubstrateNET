@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     }
     
     /// <summary>
-    /// >> 306 - Variant[frame_support.traits.schedule.MaybeHashed]
+    /// >> 321 - Variant[frame_support.traits.schedule.MaybeHashed]
     /// </summary>
     public sealed class EnumMaybeHashed : BaseEnumExt<MaybeHashed, SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>
     {

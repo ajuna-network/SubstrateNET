@@ -13,7 +13,6 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.PalletAuthorship;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
@@ -34,7 +33,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAuthorship
         public AuthorshipStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Authorship", "Uncles"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Authorship", "Uncles"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Authorship", "Author"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Authorship", "DidSetUncles"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.Bool)));
         }
@@ -52,10 +51,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAuthorship
         /// >> Uncles
         ///  Uncles
         /// </summary>
-        public async Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>> Uncles(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9> Uncles(CancellationToken token)
         {
             string parameters = AuthorshipStorage.UnclesParams();
-            return await _client.GetStorageAsync<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletAuthorship.EnumUncleEntryItem>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9>(parameters, token);
         }
         
         /// <summary>

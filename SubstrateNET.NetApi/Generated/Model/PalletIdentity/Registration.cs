@@ -11,8 +11,8 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
     
     
     /// <summary>
-    /// >> 485 - Composite[pallet_identity.types.Registration]
+    /// >> 507 - Composite[pallet_identity.types.Registration]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Registration : BaseType
@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// <summary>
         /// >> judgements
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 _judgements;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22 _judgements;
         
         /// <summary>
         /// >> deposit
@@ -42,7 +42,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityInfo _info;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 Judgements
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22 Judgements
         {
             get
             {
@@ -95,7 +95,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Judgements = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17();
+            Judgements = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT22();
             Judgements.Decode(byteArray, ref p);
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);

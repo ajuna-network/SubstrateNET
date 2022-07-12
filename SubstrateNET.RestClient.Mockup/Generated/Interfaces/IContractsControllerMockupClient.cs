@@ -11,17 +11,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletContracts;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IContractsControllerMockupClient
    {
-      Task<bool> SetPristineCode(BoundedVecT12 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SetCodeStorage(PrefabWasmModule value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SetOwnerInfoOf(OwnerInfo value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SetNonce(U64 value);
       Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetDeletionQueue(BoundedVecT15 value);
+      Task<bool> SetDeletionQueue(BoundedVecT20 value);
    }
 }

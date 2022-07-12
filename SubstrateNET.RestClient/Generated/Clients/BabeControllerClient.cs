@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
    using SubstrateNET.NetApi.Generated.Model.Base;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
@@ -101,9 +101,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Babe.SegmentIndex");
       }
-      public async Task<BoundedVecT5> GetUnderConstruction(U32 key)
+      public async Task<BoundedVecT8> GetUnderConstruction(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT5>(_httpClient, "babe/underconstruction", SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
+         return await SendRequestAsync<BoundedVecT8>(_httpClient, "babe/underconstruction", SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
       }
       public async Task<bool> SubscribeUnderConstruction(U32 key)
       {

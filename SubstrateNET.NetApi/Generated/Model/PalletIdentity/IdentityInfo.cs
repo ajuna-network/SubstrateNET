@@ -11,8 +11,8 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
     
     
     /// <summary>
-    /// >> 260 - Composite[pallet_identity.types.IdentityInfo]
+    /// >> 275 - Composite[pallet_identity.types.IdentityInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class IdentityInfo : BaseType
@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// <summary>
         /// >> additional
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4 _additional;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6 _additional;
         
         /// <summary>
         /// >> display
@@ -72,7 +72,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData _twitter;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4 Additional
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6 Additional
         {
             get
             {
@@ -203,7 +203,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Additional = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT4();
+            Additional = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT6();
             Additional.Decode(byteArray, ref p);
             Display = new SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData();
             Display.Decode(byteArray, ref p);

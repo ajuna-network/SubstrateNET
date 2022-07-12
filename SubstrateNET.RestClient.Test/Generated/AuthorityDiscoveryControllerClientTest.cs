@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public class AuthorityDiscoveryControllerClientTest : ClientTestBase
    {
@@ -25,10 +25,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public[] {
                   this.GetTestValue3()});
@@ -93,7 +93,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          AuthorityDiscoveryControllerClient rpcClient = new AuthorityDiscoveryControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeKeys());
@@ -106,15 +106,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 rpcResult = await rpcClient.GetKeys();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 rpcResult = await rpcClient.GetKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public[] {
                   this.GetTestValue7()});
@@ -179,7 +179,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          AuthorityDiscoveryControllerClient rpcClient = new AuthorityDiscoveryControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 mockupValue = this.GetTestValue6();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 mockupValue = this.GetTestValue6();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextKeys());
@@ -192,7 +192,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT7 rpcResult = await rpcClient.GetNextKeys();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 rpcResult = await rpcClient.GetNextKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpConsensusBabe
     
     
     /// <summary>
-    /// >> 362 - Composite[sp_consensus_babe.digests.SecondaryVRFPreDigest]
+    /// >> 383 - Composite[sp_consensus_babe.digests.SecondaryVRFPreDigest]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SecondaryVRFPreDigest : BaseType

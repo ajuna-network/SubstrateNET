@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSystem
     
     
     /// <summary>
-    /// >> 625 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+    /// >> 669 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonZeroSender : BaseType

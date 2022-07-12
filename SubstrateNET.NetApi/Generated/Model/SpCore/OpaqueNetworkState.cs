@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpCore
     
     
     /// <summary>
-    /// >> 253 - Composite[sp_core.offchain.OpaqueNetworkState]
+    /// >> 268 - Composite[sp_core.offchain.OpaqueNetworkState]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OpaqueNetworkState : BaseType

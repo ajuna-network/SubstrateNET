@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa
     
     
     /// <summary>
-    /// >> 240 - Composite[sp_finality_grandpa.app.Signature]
+    /// >> 255 - Composite[sp_finality_grandpa.app.Signature]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

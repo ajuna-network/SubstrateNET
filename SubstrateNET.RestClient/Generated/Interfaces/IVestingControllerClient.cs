@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletVesting;
    
    public interface IVestingControllerClient
    {
-      Task<BoundedVecT21> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BoundedVecT26> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<EnumReleases> GetStorageVersion();
       Task<bool> SubscribeStorageVersion();

@@ -26,13 +26,15 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         TechnicalCommittee,
         
+        AllianceMotion,
+        
         Void,
     }
     
     /// <summary>
-    /// >> 334 - Variant[node_runtime.OriginCaller]
+    /// >> 350 - Variant[node_runtime.OriginCaller]
     /// </summary>
-    public sealed class EnumOriginCaller : BaseEnumExt<OriginCaller, SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, Ajuna.NetApi.Model.Types.Base.BaseVoid>
+    public sealed class EnumOriginCaller : BaseEnumExt<OriginCaller, SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, Ajuna.NetApi.Model.Types.Base.BaseVoid>
     {
     }
 }

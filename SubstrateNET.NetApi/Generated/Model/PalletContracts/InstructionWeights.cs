@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 468 - Composite[pallet_contracts.schedule.InstructionWeights]
+    /// >> 490 - Composite[pallet_contracts.schedule.InstructionWeights]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class InstructionWeights : BaseType

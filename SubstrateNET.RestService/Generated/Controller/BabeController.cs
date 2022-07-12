@@ -12,9 +12,9 @@ using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
 using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -59,7 +59,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current epoch authorities.
         /// </summary>
         [HttpGet("Authorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "AuthoritiesParams")]
         public IActionResult GetAuthorities()
         {
@@ -141,7 +141,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Next epoch authorities.
         /// </summary>
         [HttpGet("NextAuthorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "NextAuthoritiesParams")]
         public IActionResult GetNextAuthorities()
         {
@@ -173,7 +173,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
         [HttpGet("UnderConstruction")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "UnderConstructionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetUnderConstruction(string key)
         {

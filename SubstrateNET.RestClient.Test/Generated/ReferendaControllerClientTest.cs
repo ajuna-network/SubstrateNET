@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public class ReferendaControllerClientTest : ClientTestBase
    {
@@ -63,11 +63,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumInfo>(), this.GetTestValue4());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatus GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatus result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatus();
-         result.Track = this.GetTestValueU8();
+         SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2 result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2();
+         result.Track = this.GetTestValueU16();
          result.Origin = new SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumOriginCaller();
          result.Origin.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.NodeRuntime.OriginCaller>(), this.GetTestValue5());
          result.ProposalHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
@@ -81,7 +81,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.DecisionDeposit.Create(this.GetTestValue9());
          result.Deciding = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletReferenda.DecidingStatus>();
          result.Deciding.Create(this.GetTestValue11());
-         result.Tally = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Tally();
+         result.Tally = new SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally();
          result.Tally = this.GetTestValue12();
          result.InQueue = this.GetTestValueBool();
          result.Alarm = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>>();
@@ -242,13 +242,13 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Confirming.Create(this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Tally GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Tally result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Tally();
-         result.Ayes = this.GetTestValueU128();
-         result.Nays = this.GetTestValueU128();
-         result.Support = this.GetTestValueU128();
+         SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally();
+         result.BareAyes = this.GetTestValueU32();
+         result.Ayes = this.GetTestValueU32();
+         result.Nays = this.GetTestValueU32();
          return result;
       }
       public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetTestValue13()
@@ -294,10 +294,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
                   this.GetTestValue17()});
@@ -321,8 +321,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ReferendaControllerClient rpcClient = new ReferendaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 mockupValue = this.GetTestValue16();
-         Ajuna.NetApi.Model.Types.Primitive.U8 mockupKey = this.GetTestValueU8();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 mockupValue = this.GetTestValue16();
+         Ajuna.NetApi.Model.Types.Primitive.U16 mockupKey = this.GetTestValueU16();
 
          Assert.IsTrue(await rpcClient.SubscribeTrackQueue(mockupKey));
 
@@ -334,7 +334,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -351,7 +351,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          ReferendaControllerClient rpcClient = new ReferendaControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-         Ajuna.NetApi.Model.Types.Primitive.U8 mockupKey = this.GetTestValueU8();
+         Ajuna.NetApi.Model.Types.Primitive.U16 mockupKey = this.GetTestValueU16();
 
          Assert.IsTrue(await rpcClient.SubscribeDecidingCount(mockupKey));
 

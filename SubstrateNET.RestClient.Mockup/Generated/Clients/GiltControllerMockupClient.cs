@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletGilt;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,11 +23,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetQueueTotals(BoundedVecT27 value)
+      public async Task<bool> SetQueueTotals(BoundedVecT32 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Gilt/QueueTotals", value.Encode(), GiltStorage.QueueTotalsParams());
       }
-      public async Task<bool> SetQueues(BoundedVecT28 value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<bool> SetQueues(BoundedVecT33 value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Gilt/Queues", value.Encode(), GiltStorage.QueuesParams(key));
       }

@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
    
    public interface ITechnicalMembershipControllerMockupClient
    {
-      Task<bool> SetMembers(BaseVec<AccountId32> value);
+      Task<bool> SetMembers(BoundedVecT15 value);
       Task<bool> SetPrime(AccountId32 value);
    }
 }

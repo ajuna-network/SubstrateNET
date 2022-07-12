@@ -13,13 +13,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IIdentityControllerMockupClient
    {
       Task<bool> SetIdentityOf(Registration value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetSuperOf(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetSubsOf(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetRegistrars(BoundedVecT19 value);
+      Task<bool> SetSubsOf(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetRegistrars(BoundedVecT24 value);
    }
 }

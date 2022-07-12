@@ -104,11 +104,19 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         Whitelist,
         
+        AllianceMotion,
+        
+        Alliance,
+        
         NominationPools,
+        
+        RankedPolls,
+        
+        RankedCollective,
     }
     
     /// <summary>
-    /// >> 139 - Variant[node_runtime.Call]
+    /// >> 154 - Variant[node_runtime.Call]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Variant)]
     public sealed class EnumNodeCall : BaseEnum<NodeCall>

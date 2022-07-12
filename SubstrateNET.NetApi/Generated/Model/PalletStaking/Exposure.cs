@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 67 - Composite[pallet_staking.Exposure]
+    /// >> 68 - Composite[pallet_staking.Exposure]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Exposure : BaseType

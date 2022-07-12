@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletCollective
     
     
     /// <summary>
-    /// >> 438 - Composite[pallet_collective.Votes]
+    /// >> 460 - Composite[pallet_collective.Votes]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Votes : BaseType

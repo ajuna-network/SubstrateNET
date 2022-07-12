@@ -13,9 +13,9 @@ using Ajuna.NetApi.Model.Meta;
 using Ajuna.NetApi.Model.Types;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -52,7 +52,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForSubPoolsStorage"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "Metadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForMetadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "LastPoolId"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "ReversePoolIdLookup"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
@@ -85,6 +85,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// 
         ///  This is the amount that the depositor must put as their initial stake in the pool, as an
         ///  indication of "skin in the game".
+        /// 
+        ///  This is the value that will always exist in the staking ledger of the pool bonded account
+        ///  while all other accounts leave.
         /// </summary>
         public static string MinCreateBondParams()
         {
@@ -97,6 +100,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// 
         ///  This is the amount that the depositor must put as their initial stake in the pool, as an
         ///  indication of "skin in the game".
+        /// 
+        ///  This is the value that will always exist in the staking ledger of the pool bonded account
+        ///  while all other accounts leave.
         /// </summary>
         public async Task<Ajuna.NetApi.Model.Types.Primitive.U128> MinCreateBond(CancellationToken token)
         {
@@ -346,10 +352,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = NominationPoolsStorage.MetadataParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43>(parameters, token);
         }
         
         /// <summary>
@@ -449,7 +455,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(pool_id.Encode());
-            return new Method(49, "NominationPools", 0, "join", byteArray.ToArray());
+            return new Method(51, "NominationPools", 0, "join", byteArray.ToArray());
         }
         
         /// <summary>
@@ -460,7 +466,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(extra.Encode());
-            return new Method(49, "NominationPools", 1, "bond_extra", byteArray.ToArray());
+            return new Method(51, "NominationPools", 1, "bond_extra", byteArray.ToArray());
         }
         
         /// <summary>
@@ -470,7 +476,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         public static Method ClaimPayout()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(49, "NominationPools", 2, "claim_payout", byteArray.ToArray());
+            return new Method(51, "NominationPools", 2, "claim_payout", byteArray.ToArray());
         }
         
         /// <summary>
@@ -482,7 +488,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(member_account.Encode());
             byteArray.AddRange(unbonding_points.Encode());
-            return new Method(49, "NominationPools", 3, "unbond", byteArray.ToArray());
+            return new Method(51, "NominationPools", 3, "unbond", byteArray.ToArray());
         }
         
         /// <summary>
@@ -494,7 +500,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(num_slashing_spans.Encode());
-            return new Method(49, "NominationPools", 4, "pool_withdraw_unbonded", byteArray.ToArray());
+            return new Method(51, "NominationPools", 4, "pool_withdraw_unbonded", byteArray.ToArray());
         }
         
         /// <summary>
@@ -506,7 +512,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(member_account.Encode());
             byteArray.AddRange(num_slashing_spans.Encode());
-            return new Method(49, "NominationPools", 5, "withdraw_unbonded", byteArray.ToArray());
+            return new Method(51, "NominationPools", 5, "withdraw_unbonded", byteArray.ToArray());
         }
         
         /// <summary>
@@ -520,7 +526,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             byteArray.AddRange(root.Encode());
             byteArray.AddRange(nominator.Encode());
             byteArray.AddRange(state_toggler.Encode());
-            return new Method(49, "NominationPools", 6, "create", byteArray.ToArray());
+            return new Method(51, "NominationPools", 6, "create", byteArray.ToArray());
         }
         
         /// <summary>
@@ -532,7 +538,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(validators.Encode());
-            return new Method(49, "NominationPools", 7, "nominate", byteArray.ToArray());
+            return new Method(51, "NominationPools", 7, "nominate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -544,7 +550,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(state.Encode());
-            return new Method(49, "NominationPools", 8, "set_state", byteArray.ToArray());
+            return new Method(51, "NominationPools", 8, "set_state", byteArray.ToArray());
         }
         
         /// <summary>
@@ -556,7 +562,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(metadata.Encode());
-            return new Method(49, "NominationPools", 9, "set_metadata", byteArray.ToArray());
+            return new Method(51, "NominationPools", 9, "set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -571,7 +577,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             byteArray.AddRange(max_pools.Encode());
             byteArray.AddRange(max_members.Encode());
             byteArray.AddRange(max_members_per_pool.Encode());
-            return new Method(49, "NominationPools", 10, "set_configs", byteArray.ToArray());
+            return new Method(51, "NominationPools", 10, "set_configs", byteArray.ToArray());
         }
         
         /// <summary>
@@ -585,7 +591,18 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             byteArray.AddRange(new_root.Encode());
             byteArray.AddRange(new_nominator.Encode());
             byteArray.AddRange(new_state_toggler.Encode());
-            return new Method(49, "NominationPools", 11, "update_roles", byteArray.ToArray());
+            return new Method(51, "NominationPools", 11, "update_roles", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> chill
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Chill(Ajuna.NetApi.Model.Types.Primitive.U32 pool_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(pool_id.Encode());
+            return new Method(51, "NominationPools", 12, "chill", byteArray.ToArray());
         }
     }
     
@@ -622,18 +639,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// pool at a time.
         /// </summary>
         AccountBelongsToOtherPool,
-        
-        /// <summary>
-        /// >> InsufficientBond
-        /// The pool has insufficient balance to bond as a nominator.
-        /// </summary>
-        InsufficientBond,
-        
-        /// <summary>
-        /// >> AlreadyUnbonding
-        /// The member is already unbonding in this era.
-        /// </summary>
-        AlreadyUnbonding,
         
         /// <summary>
         /// >> FullyUnbonding
@@ -729,11 +734,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         MetadataExceedsMaxLen,
         
         /// <summary>
-        /// >> DefensiveError
+        /// >> Defensive
         /// Some error occurred that should never happen. This should be reported to the
         /// maintainers.
         /// </summary>
-        DefensiveError,
+        Defensive,
         
         /// <summary>
         /// >> NotEnoughPointsToUnbond

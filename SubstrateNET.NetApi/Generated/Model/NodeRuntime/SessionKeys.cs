@@ -22,7 +22,7 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
     
     
     /// <summary>
-    /// >> 226 - Composite[node_runtime.SessionKeys]
+    /// >> 241 - Composite[node_runtime.SessionKeys]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
     
     
     /// <summary>
-    /// >> 63 - Composite[pallet_im_online.sr25519.app_sr25519.Public]
+    /// >> 64 - Composite[pallet_im_online.sr25519.app_sr25519.Public]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

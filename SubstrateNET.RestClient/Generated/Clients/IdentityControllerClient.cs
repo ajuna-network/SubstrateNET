@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class IdentityControllerClient : BaseClient, IIdentityControllerClient
@@ -42,17 +42,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Identity.SuperOf", IdentityStorage.SuperOfParams(key));
       }
-      public async Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18>>(_httpClient, "identity/subsof", IdentityStorage.SubsOfParams(key));
+         return await SendRequestAsync<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>>(_httpClient, "identity/subsof", IdentityStorage.SubsOfParams(key));
       }
       public async Task<bool> SubscribeSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Identity.SubsOf", IdentityStorage.SubsOfParams(key));
       }
-      public async Task<BoundedVecT19> GetRegistrars()
+      public async Task<BoundedVecT24> GetRegistrars()
       {
-         return await SendRequestAsync<BoundedVecT19>(_httpClient, "identity/registrars");
+         return await SendRequestAsync<BoundedVecT24>(_httpClient, "identity/registrars");
       }
       public async Task<bool> SubscribeRegistrars()
       {

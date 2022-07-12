@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class NominationPoolsControllerClient : BaseClient, INominationPoolsControllerClient
@@ -130,9 +130,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("NominationPools.CounterForSubPoolsStorage");
       }
-      public async Task<BoundedVecT31> GetMetadata(U32 key)
+      public async Task<BoundedVecT43> GetMetadata(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT31>(_httpClient, "nominationpools/metadata", NominationPoolsStorage.MetadataParams(key));
+         return await SendRequestAsync<BoundedVecT43>(_httpClient, "nominationpools/metadata", NominationPoolsStorage.MetadataParams(key));
       }
       public async Task<bool> SubscribeMetadata(U32 key)
       {

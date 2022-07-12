@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetTransactions(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> value, U32 key)
+      public async Task<bool> SetTransactions(BoundedVecT34 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/Transactions", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
       }
@@ -39,19 +39,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/EntryFee", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.EntryFeeParams());
       }
-      public async Task<bool> SetMaxTransactionSize(U32 value)
-      {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/MaxTransactionSize", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.MaxTransactionSizeParams());
-      }
-      public async Task<bool> SetMaxBlockTransactions(U32 value)
-      {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/MaxBlockTransactions", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.MaxBlockTransactionsParams());
-      }
       public async Task<bool> SetStoragePeriod(U32 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/StoragePeriod", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.StoragePeriodParams());
       }
-      public async Task<bool> SetBlockTransactions(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo> value)
+      public async Task<bool> SetBlockTransactions(BoundedVecT34 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/BlockTransactions", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.BlockTransactionsParams());
       }

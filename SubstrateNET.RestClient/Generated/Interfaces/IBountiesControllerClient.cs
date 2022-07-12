@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    
    public interface IBountiesControllerClient
    {
@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeBountyCount();
       Task<Bounty> GetBounties(U32 key);
       Task<bool> SubscribeBounties(U32 key);
-      Task<BoundedVecT25> GetBountyDescriptions(U32 key);
+      Task<BoundedVecT30> GetBountyDescriptions(U32 key);
       Task<bool> SubscribeBountyDescriptions(U32 key);
-      Task<BoundedVecT11> GetBountyApprovals();
+      Task<BoundedVecT16> GetBountyApprovals();
       Task<bool> SubscribeBountyApprovals();
    }
 }

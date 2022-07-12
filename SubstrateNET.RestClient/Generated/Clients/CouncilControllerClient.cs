@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletCollective;
    using Ajuna.NetApi.Model.Types.Primitive;
@@ -29,9 +29,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT9> GetProposals()
+      public async Task<BoundedVecT13> GetProposals()
       {
-         return await SendRequestAsync<BoundedVecT9>(_httpClient, "council/proposals");
+         return await SendRequestAsync<BoundedVecT13>(_httpClient, "council/proposals");
       }
       public async Task<bool> SubscribeProposals()
       {

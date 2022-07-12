@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSystem
     
     
     /// <summary>
-    /// >> 127 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 142 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

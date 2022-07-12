@@ -13,6 +13,7 @@ using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
 using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,7 +41,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>> GetClassLocksFor(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 GetClassLocksFor(string key);
     }
     
     /// <summary>
@@ -57,7 +58,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classLocksForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>> _classLocksForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37> _classLocksForTypedStorage;
         
         /// <summary>
         /// ConvictionVotingStorage constructor.
@@ -65,7 +66,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         public ConvictionVotingStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
             this.VotingForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting>("ConvictionVoting.VotingFor", storageDataProvider, storageChangeDelegate);
-            this.ClassLocksForTypedStorage = new TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegate);
+            this.ClassLocksForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
@@ -86,7 +87,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classLocksForTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>> ClassLocksForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37> ClassLocksForTypedStorage
         {
             get
             {
@@ -152,13 +153,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>> GetClassLocksFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 GetClassLocksFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>> result))
+            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 result))
             {
                 return result;
             }

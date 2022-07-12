@@ -12,9 +12,9 @@ using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
 using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
 using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,7 +39,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Authorities
         ///  Current epoch authorities.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1 GetAuthorities();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetAuthorities();
         
         /// <summary>
         /// >> GenesisSlot
@@ -85,7 +85,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextAuthorities
         ///  Next epoch authorities.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1 GetNextAuthorities();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetNextAuthorities();
         
         /// <summary>
         /// >> SegmentIndex
@@ -105,7 +105,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnderConstruction
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5 GetUnderConstruction(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 GetUnderConstruction(string key);
         
         /// <summary>
         /// >> Initialized
@@ -172,7 +172,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _authoritiesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1> _authoritiesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> _authoritiesTypedStorage;
         
         /// <summary>
         /// _genesisSlotTypedStorage typed storage field
@@ -202,7 +202,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextAuthoritiesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1> _nextAuthoritiesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> _nextAuthoritiesTypedStorage;
         
         /// <summary>
         /// _segmentIndexTypedStorage typed storage field
@@ -212,7 +212,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _underConstructionTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5> _underConstructionTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8> _underConstructionTypedStorage;
         
         /// <summary>
         /// _initializedTypedStorage typed storage field
@@ -250,15 +250,15 @@ namespace SubstrateNET.RestService.Generated.Storage
         public BabeStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
             this.EpochIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Babe.EpochIndex", storageDataProvider, storageChangeDelegate);
-            this.AuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1>("Babe.Authorities", storageDataProvider, storageChangeDelegate);
+            this.AuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1>("Babe.Authorities", storageDataProvider, storageChangeDelegate);
             this.GenesisSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot>("Babe.GenesisSlot", storageDataProvider, storageChangeDelegate);
             this.CurrentSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot>("Babe.CurrentSlot", storageDataProvider, storageChangeDelegate);
             this.RandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>("Babe.Randomness", storageDataProvider, storageChangeDelegate);
             this.PendingEpochConfigChangeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor>("Babe.PendingEpochConfigChange", storageDataProvider, storageChangeDelegate);
             this.NextRandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>("Babe.NextRandomness", storageDataProvider, storageChangeDelegate);
-            this.NextAuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1>("Babe.NextAuthorities", storageDataProvider, storageChangeDelegate);
+            this.NextAuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1>("Babe.NextAuthorities", storageDataProvider, storageChangeDelegate);
             this.SegmentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.SegmentIndex", storageDataProvider, storageChangeDelegate);
-            this.UnderConstructionTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5>("Babe.UnderConstruction", storageDataProvider, storageChangeDelegate);
+            this.UnderConstructionTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8>("Babe.UnderConstruction", storageDataProvider, storageChangeDelegate);
             this.InitializedTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>>("Babe.Initialized", storageDataProvider, storageChangeDelegate);
             this.AuthorVrfRandomnessTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>>("Babe.AuthorVrfRandomness", storageDataProvider, storageChangeDelegate);
             this.EpochStartTypedStorage = new TypedStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>("Babe.EpochStart", storageDataProvider, storageChangeDelegate);
@@ -285,7 +285,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _authoritiesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1> AuthoritiesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> AuthoritiesTypedStorage
         {
             get
             {
@@ -375,7 +375,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextAuthoritiesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1> NextAuthoritiesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> NextAuthoritiesTypedStorage
         {
             get
             {
@@ -405,7 +405,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _underConstructionTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5> UnderConstructionTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8> UnderConstructionTypedStorage
         {
             get
             {
@@ -561,7 +561,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Authorities
         ///  Current epoch authorities.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1 GetAuthorities()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetAuthorities()
         {
             return AuthoritiesTypedStorage.Get();
         }
@@ -679,7 +679,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextAuthorities
         ///  Next epoch authorities.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1 GetNextAuthorities()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetNextAuthorities()
         {
             return NextAuthoritiesTypedStorage.Get();
         }
@@ -723,13 +723,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnderConstruction
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5 GetUnderConstruction(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 GetUnderConstruction(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (UnderConstructionTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5 result))
+            if (UnderConstructionTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 result))
             {
                 return result;
             }

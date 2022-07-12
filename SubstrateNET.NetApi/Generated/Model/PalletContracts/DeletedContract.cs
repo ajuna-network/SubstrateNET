@@ -10,7 +10,7 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 464 - Composite[pallet_contracts.storage.DeletedContract]
+    /// >> 486 - Composite[pallet_contracts.storage.DeletedContract]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DeletedContract : BaseType
@@ -28,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// <summary>
         /// >> trie_id
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14 _trieId;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT19 _trieId;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14 TrieId
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT19 TrieId
         {
             get
             {
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            TrieId = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14();
+            TrieId = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT19();
             TrieId.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

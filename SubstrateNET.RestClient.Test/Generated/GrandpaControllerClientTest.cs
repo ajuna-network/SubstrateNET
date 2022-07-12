@@ -69,16 +69,16 @@ namespace SubstrateNET.RestClient.Test.Generated
          result = new SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange();
          result.ScheduledAt = this.GetTestValueU32();
          result.Delay = this.GetTestValueU32();
-         result.NextAuthorities = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3();
+         result.NextAuthorities = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3();
          result.NextAuthorities = this.GetTestValue5();
          result.Forced = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Forced.Create(this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3();
+         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 result;
+         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
                   this.GetTestValue6()});

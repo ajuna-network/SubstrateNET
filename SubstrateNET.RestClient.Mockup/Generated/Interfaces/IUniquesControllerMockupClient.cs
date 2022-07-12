@@ -24,7 +24,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetAsset(ItemDetails value, BaseTuple<U32, U32> key);
       Task<bool> SetClassMetadataOf(CollectionMetadata value, U32 key);
       Task<bool> SetInstanceMetadataOf(ItemMetadata value, BaseTuple<U32, U32> key);
-      Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
+      Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
       Task<bool> SetCollectionMaxSupply(U32 value, U32 key);
    }
 }

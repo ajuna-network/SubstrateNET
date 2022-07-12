@@ -15,6 +15,7 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,9 +36,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ConvictionVoting", "VotingFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U8>), typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U16>), typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ConvictionVoting", "ClassLocksFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37)));
         }
         
         /// <summary>
@@ -45,7 +46,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         ///  All voting for a particular voter in a particular voting class. We store the balance for the
         ///  number of votes that we have recorded.
         /// </summary>
-        public static string VotingForParams(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U8> key)
+        public static string VotingForParams(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U16> key)
         {
             return RequestGenerator.GetStorage("ConvictionVoting", "VotingFor", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -57,7 +58,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         ///  All voting for a particular voter in a particular voting class. We store the balance for the
         ///  number of votes that we have recorded.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting> VotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U8> key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting> VotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U16> key, CancellationToken token)
         {
             string parameters = ConvictionVotingStorage.VotingForParams(key);
             return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting>(parameters, token);
@@ -82,10 +83,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        public async Task<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>> ClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37> ClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
             string parameters = ConvictionVotingStorage.ClassLocksForParams(key);
-            return await _client.GetStorageAsync<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8,Ajuna.NetApi.Model.Types.Primitive.U128>>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37>(parameters, token);
         }
     }
     
@@ -108,7 +109,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         /// >> delegate
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Delegate(Ajuna.NetApi.Model.Types.Primitive.U8 @class, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 to, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumConviction conviction, Ajuna.NetApi.Model.Types.Primitive.U128 balance)
+        public static Method Delegate(Ajuna.NetApi.Model.Types.Primitive.U16 @class, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 to, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumConviction conviction, Ajuna.NetApi.Model.Types.Primitive.U128 balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
@@ -122,7 +123,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         /// >> undelegate
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Undelegate(Ajuna.NetApi.Model.Types.Primitive.U8 @class)
+        public static Method Undelegate(Ajuna.NetApi.Model.Types.Primitive.U16 @class)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
@@ -133,7 +134,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         /// >> unlock
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Unlock(Ajuna.NetApi.Model.Types.Primitive.U8 @class, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 target)
+        public static Method Unlock(Ajuna.NetApi.Model.Types.Primitive.U16 @class, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 target)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
@@ -145,7 +146,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         /// >> remove_vote
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveVote(BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U8> @class, Ajuna.NetApi.Model.Types.Primitive.U32 index)
+        public static Method RemoveVote(BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U16> @class, Ajuna.NetApi.Model.Types.Primitive.U32 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
@@ -157,7 +158,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         /// >> remove_other_vote
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveOtherVote(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 target, Ajuna.NetApi.Model.Types.Primitive.U8 @class, Ajuna.NetApi.Model.Types.Primitive.U32 index)
+        public static Method RemoveOtherVote(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 target, Ajuna.NetApi.Model.Types.Primitive.U16 @class, Ajuna.NetApi.Model.Types.Primitive.U32 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(target.Encode());

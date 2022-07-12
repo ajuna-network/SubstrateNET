@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     }
     
     /// <summary>
-    /// >> 406 - Variant[pallet_staking.Forcing]
+    /// >> 428 - Variant[pallet_staking.Forcing]
     /// </summary>
     public sealed class EnumForcing : BaseEnum<Forcing>
     {

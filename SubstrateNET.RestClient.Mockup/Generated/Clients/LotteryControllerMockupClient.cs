@@ -16,7 +16,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using SubstrateNET.NetApi.Generated.Model.PalletLottery;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class LotteryControllerMockupClient : MockupBaseClient, ILotteryControllerMockupClient
@@ -34,7 +34,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Lottery", value.Encode(), LotteryStorage.LotteryParams());
       }
-      public async Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT26> value, AccountId32 key)
+      public async Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT31> value, AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Participants", value.Encode(), LotteryStorage.ParticipantsParams(key));
       }
@@ -46,7 +46,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Tickets", value.Encode(), LotteryStorage.TicketsParams(key));
       }
-      public async Task<bool> SetCallIndices(BoundedVecT26 value)
+      public async Task<bool> SetCallIndices(BoundedVecT31 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/CallIndices", value.Encode(), LotteryStorage.CallIndicesParams());
       }

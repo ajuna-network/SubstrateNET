@@ -11,8 +11,8 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletBounties;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -43,13 +43,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BountyDescriptions
         ///  The description of each bounty.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetBountyDescriptions(string key);
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 GetBountyDescriptions(string key);
         
         /// <summary>
         /// >> BountyApprovals
         ///  Bounty indices that have been approved but not yet funded.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 GetBountyApprovals();
+        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetBountyApprovals();
     }
     
     /// <summary>
@@ -71,12 +71,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bountyDescriptionsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> _bountyDescriptionsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30> _bountyDescriptionsTypedStorage;
         
         /// <summary>
         /// _bountyApprovalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11> _bountyApprovalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16> _bountyApprovalsTypedStorage;
         
         /// <summary>
         /// BountiesStorage constructor.
@@ -85,8 +85,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.BountyCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Bounties.BountyCount", storageDataProvider, storageChangeDelegate);
             this.BountiesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty>("Bounties.Bounties", storageDataProvider, storageChangeDelegate);
-            this.BountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25>("Bounties.BountyDescriptions", storageDataProvider, storageChangeDelegate);
-            this.BountyApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11>("Bounties.BountyApprovals", storageDataProvider, storageChangeDelegate);
+            this.BountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30>("Bounties.BountyDescriptions", storageDataProvider, storageChangeDelegate);
+            this.BountyApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16>("Bounties.BountyApprovals", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
@@ -122,7 +122,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bountyDescriptionsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> BountyDescriptionsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30> BountyDescriptionsTypedStorage
         {
             get
             {
@@ -137,7 +137,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bountyApprovalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11> BountyApprovalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16> BountyApprovalsTypedStorage
         {
             get
             {
@@ -220,13 +220,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BountyDescriptions
         ///  The description of each bounty.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetBountyDescriptions(string key)
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 GetBountyDescriptions(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 result))
+            if (BountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 result))
             {
                 return result;
             }
@@ -249,7 +249,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BountyApprovals
         ///  Bounty indices that have been approved but not yet funded.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11 GetBountyApprovals()
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetBountyApprovals()
         {
             return BountyApprovalsTypedStorage.Get();
         }

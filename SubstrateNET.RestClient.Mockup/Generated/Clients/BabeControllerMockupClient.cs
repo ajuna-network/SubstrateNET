@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
    using SubstrateNET.NetApi.Generated.Model.Base;
    using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
@@ -63,7 +63,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/SegmentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.SegmentIndexParams());
       }
-      public async Task<bool> SetUnderConstruction(BoundedVecT5 value, U32 key)
+      public async Task<bool> SetUnderConstruction(BoundedVecT8 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/UnderConstruction", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
       }

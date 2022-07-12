@@ -13,6 +13,7 @@ using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -67,7 +68,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
         [HttpGet("Keys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT4), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage), "KeysParams")]
         public IActionResult GetKeys()
         {

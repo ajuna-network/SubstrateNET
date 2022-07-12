@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpCore
     
     
     /// <summary>
-    /// >> 622 - Composite[sp_core.ecdsa.Signature]
+    /// >> 666 - Composite[sp_core.ecdsa.Signature]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

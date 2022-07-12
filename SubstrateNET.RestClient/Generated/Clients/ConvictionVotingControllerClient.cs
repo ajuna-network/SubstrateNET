@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ConvictionVotingControllerClient : BaseClient, IConvictionVotingControllerClient
@@ -25,17 +25,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<EnumVoting> GetVotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key)
+      public async Task<EnumVoting> GetVotingFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key)
       {
          return await SendRequestAsync<EnumVoting>(_httpClient, "convictionvoting/votingfor", ConvictionVotingStorage.VotingForParams(key));
       }
-      public async Task<bool> SubscribeVotingFor(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U8> key)
+      public async Task<bool> SubscribeVotingFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key)
       {
          return await _subscriptionClient.SubscribeAsync("ConvictionVoting.VotingFor", ConvictionVotingStorage.VotingForParams(key));
       }
-      public async Task<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8, Ajuna.NetApi.Model.Types.Primitive.U128>>> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BoundedVecT37> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U8, Ajuna.NetApi.Model.Types.Primitive.U128>>>(_httpClient, "convictionvoting/classlocksfor", ConvictionVotingStorage.ClassLocksForParams(key));
+         return await SendRequestAsync<BoundedVecT37>(_httpClient, "convictionvoting/classlocksfor", ConvictionVotingStorage.ClassLocksForParams(key));
       }
       public async Task<bool> SubscribeClassLocksFor(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {

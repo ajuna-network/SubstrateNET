@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpNposElections
     
     
     /// <summary>
-    /// >> 211 - Composite[sp_npos_elections.ElectionScore]
+    /// >> 226 - Composite[sp_npos_elections.ElectionScore]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ElectionScore : BaseType

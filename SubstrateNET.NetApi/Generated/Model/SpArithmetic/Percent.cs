@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpArithmetic
     
     
     /// <summary>
-    /// >> 220 - Composite[sp_arithmetic.per_things.Percent]
+    /// >> 235 - Composite[sp_arithmetic.per_things.Percent]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Percent : BaseType

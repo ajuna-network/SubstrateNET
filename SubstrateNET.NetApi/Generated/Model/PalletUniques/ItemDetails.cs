@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
     
     
     /// <summary>
-    /// >> 562 - Composite[pallet_uniques.types.ItemDetails]
+    /// >> 584 - Composite[pallet_uniques.types.ItemDetails]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ItemDetails : BaseType

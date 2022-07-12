@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PrimitiveTypes
     
     
     /// <summary>
-    /// >> 610 - Composite[primitive_types.U256]
+    /// >> 644 - Composite[primitive_types.U256]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class U256 : BaseType

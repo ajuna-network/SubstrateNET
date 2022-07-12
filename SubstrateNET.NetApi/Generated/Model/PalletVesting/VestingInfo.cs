@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletVesting
     
     
     /// <summary>
-    /// >> 303 - Composite[pallet_vesting.vesting_info.VestingInfo]
+    /// >> 318 - Composite[pallet_vesting.vesting_info.VestingInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class VestingInfo : BaseType

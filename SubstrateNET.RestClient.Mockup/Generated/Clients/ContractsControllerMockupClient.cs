@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
    using SubstrateNET.NetApi.Generated.Model.PalletContracts;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
@@ -24,7 +24,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetPristineCode(BoundedVecT12 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/PristineCode", value.Encode(), ContractsStorage.PristineCodeParams(key));
       }
@@ -44,7 +44,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/ContractInfoOf", value.Encode(), ContractsStorage.ContractInfoOfParams(key));
       }
-      public async Task<bool> SetDeletionQueue(BoundedVecT15 value)
+      public async Task<bool> SetDeletionQueue(BoundedVecT20 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/DeletionQueue", value.Encode(), ContractsStorage.DeletionQueueParams());
       }

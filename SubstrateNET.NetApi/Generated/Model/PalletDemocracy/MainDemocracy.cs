@@ -806,5 +806,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletDemocracy
         /// Maximum number of proposals reached.
         /// </summary>
         TooManyProposals,
+        
+        /// <summary>
+        /// >> VotingPeriodLow
+        /// Voting period too low
+        /// </summary>
+        VotingPeriodLow,
     }
 }

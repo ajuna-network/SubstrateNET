@@ -11,7 +11,7 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
     
     
     /// <summary>
-    /// >> 448 - Composite[pallet_grandpa.StoredPendingChange]
+    /// >> 471 - Composite[pallet_grandpa.StoredPendingChange]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StoredPendingChange : BaseType
@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
         /// <summary>
         /// >> next_authorities
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3 _nextAuthorities;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 _nextAuthorities;
         
         /// <summary>
         /// >> forced
@@ -70,7 +70,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3 NextAuthorities
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 NextAuthorities
         {
             get
             {
@@ -116,7 +116,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
             ScheduledAt.Decode(byteArray, ref p);
             Delay = new Ajuna.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);
-            NextAuthorities = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT3();
+            NextAuthorities = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3();
             NextAuthorities.Decode(byteArray, ref p);
             Forced = new BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>();
             Forced.Decode(byteArray, ref p);

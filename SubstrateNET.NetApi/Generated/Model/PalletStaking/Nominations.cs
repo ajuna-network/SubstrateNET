@@ -11,7 +11,7 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 399 - Composite[pallet_staking.Nominations]
+    /// >> 421 - Composite[pallet_staking.Nominations]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Nominations : BaseType
@@ -29,7 +29,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
         /// <summary>
         /// >> targets
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7 _targets;
+        private SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11 _targets;
         
         /// <summary>
         /// >> submitted_in
@@ -41,7 +41,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.Bool _suppressed;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7 Targets
+        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11 Targets
         {
             get
             {
@@ -94,7 +94,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Targets = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT7();
+            Targets = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT11();
             Targets.Decode(byteArray, ref p);
             SubmittedIn = new Ajuna.NetApi.Model.Types.Primitive.U32();
             SubmittedIn.Decode(byteArray, ref p);

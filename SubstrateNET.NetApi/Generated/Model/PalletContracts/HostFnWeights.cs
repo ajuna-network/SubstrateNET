@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 469 - Composite[pallet_contracts.schedule.HostFnWeights]
+    /// >> 491 - Composite[pallet_contracts.schedule.HostFnWeights]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class HostFnWeights : BaseType

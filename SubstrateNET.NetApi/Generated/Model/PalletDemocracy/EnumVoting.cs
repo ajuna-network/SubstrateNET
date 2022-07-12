@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletDemocracy
     }
     
     /// <summary>
-    /// >> 428 - Variant[pallet_democracy.vote.Voting]
+    /// >> 450 - Variant[pallet_democracy.vote.Voting]
     /// </summary>
     public sealed class EnumVoting : BaseEnumExt<Voting, BaseTuple<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumConviction, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock>>
     {

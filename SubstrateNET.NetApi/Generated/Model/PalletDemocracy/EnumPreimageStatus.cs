@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletDemocracy
     }
     
     /// <summary>
-    /// >> 424 - Variant[pallet_democracy.PreimageStatus]
+    /// >> 446 - Variant[pallet_democracy.PreimageStatus]
     /// </summary>
     public sealed class EnumPreimageStatus : BaseEnumExt<PreimageStatus, Ajuna.NetApi.Model.Types.Primitive.U32, BaseTuple<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.U32, BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>>>
     {
