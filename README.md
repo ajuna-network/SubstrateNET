@@ -17,7 +17,7 @@ cargo build -p node-cli --release
 git clone -b monthly-2022-07 --single-branch https://github.com/ajuna-network/SubstrateNET.git
 ```
 
-3) Launch SubstrateNET.sln
+3) Launch `SubstrateNET.sln`
 start hacking with the SDK
 ```csharp
 using System;
