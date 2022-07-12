@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBalances
     }
     
     /// <summary>
-    /// >> 363 - Variant[pallet_balances.Releases]
+    /// >> 372 - Variant[pallet_balances.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

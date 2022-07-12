@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
     
     
     /// <summary>
-    /// >> 574 - Composite[pallet_conviction_voting.vote.Casting]
+    /// >> 584 - Composite[pallet_conviction_voting.vote.Casting]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Casting : BaseType

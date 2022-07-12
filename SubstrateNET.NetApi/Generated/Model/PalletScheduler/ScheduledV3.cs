@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletScheduler
     
     
     /// <summary>
-    /// >> 499 - Composite[pallet_scheduler.ScheduledV3]
+    /// >> 508 - Composite[pallet_scheduler.ScheduledV3]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ScheduledV3 : BaseType

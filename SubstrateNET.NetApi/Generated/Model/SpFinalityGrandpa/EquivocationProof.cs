@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa
     
     
     /// <summary>
-    /// >> 232 - Composite[sp_finality_grandpa.EquivocationProof]
+    /// >> 236 - Composite[sp_finality_grandpa.EquivocationProof]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EquivocationProof : BaseType

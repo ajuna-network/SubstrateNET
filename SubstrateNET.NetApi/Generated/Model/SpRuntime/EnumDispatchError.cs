@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 
 
@@ -36,12 +35,14 @@ namespace SubstrateNET.NetApi.Generated.Model.SpRuntime
         Token,
         
         Arithmetic,
+        
+        Transactional,
     }
     
     /// <summary>
     /// >> 22 - Variant[sp_runtime.DispatchError]
     /// </summary>
-    public sealed class EnumDispatchError : BaseEnumExt<DispatchError, BaseVoid, BaseVoid, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpRuntime.ModuleError, BaseVoid, BaseVoid, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumTokenError, SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumArithmeticError>
+    public sealed class EnumDispatchError : BaseEnumExt<DispatchError, BaseVoid>
     {
     }
 }

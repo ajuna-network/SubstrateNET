@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGrandpa
     
     
     /// <summary>
-    /// >> 435 - Composite[pallet_grandpa.StoredPendingChange]
+    /// >> 444 - Composite[pallet_grandpa.StoredPendingChange]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StoredPendingChange : BaseType

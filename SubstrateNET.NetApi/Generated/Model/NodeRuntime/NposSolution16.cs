@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
     
     
     /// <summary>
-    /// >> 154 - Composite[node_runtime.NposSolution16]
+    /// >> 160 - Composite[node_runtime.NposSolution16]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class NposSolution16 : BaseType

@@ -41,6 +41,7 @@ namespace SubstrateNET.RestClient
       public ILotteryControllerClient LotteryControllerClient;
       public IMmrControllerClient MmrControllerClient;
       public IMultisigControllerClient MultisigControllerClient;
+      public INominationPoolsControllerClient NominationPoolsControllerClient;
       public IOffencesControllerClient OffencesControllerClient;
       public IPreimageControllerClient PreimageControllerClient;
       public IProxyControllerClient ProxyControllerClient;
@@ -90,6 +91,7 @@ namespace SubstrateNET.RestClient
          LotteryControllerClient = new LotteryControllerClient(_httpClient, _subscriptionClient);
          MmrControllerClient = new MmrControllerClient(_httpClient, _subscriptionClient);
          MultisigControllerClient = new MultisigControllerClient(_httpClient, _subscriptionClient);
+         NominationPoolsControllerClient = new NominationPoolsControllerClient(_httpClient, _subscriptionClient);
          OffencesControllerClient = new OffencesControllerClient(_httpClient, _subscriptionClient);
          PreimageControllerClient = new PreimageControllerClient(_httpClient, _subscriptionClient);
          ProxyControllerClient = new ProxyControllerClient(_httpClient, _subscriptionClient);

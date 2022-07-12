@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen
     
     
     /// <summary>
-    /// >> 430 - Composite[pallet_elections_phragmen.SeatHolder]
+    /// >> 439 - Composite[pallet_elections_phragmen.SeatHolder]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SeatHolder : BaseType

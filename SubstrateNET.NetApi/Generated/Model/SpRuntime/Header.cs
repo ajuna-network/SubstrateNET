@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpRuntime
     
     
     /// <summary>
-    /// >> 136 - Composite[sp_runtime.generic.header.Header]
+    /// >> 142 - Composite[sp_runtime.generic.header.Header]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Header : BaseType

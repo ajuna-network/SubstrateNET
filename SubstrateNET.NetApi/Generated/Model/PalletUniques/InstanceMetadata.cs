@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
     
     
     /// <summary>
-    /// >> 547 - Composite[pallet_uniques.types.InstanceMetadata]
+    /// >> 556 - Composite[pallet_uniques.types.InstanceMetadata]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class InstanceMetadata : BaseType

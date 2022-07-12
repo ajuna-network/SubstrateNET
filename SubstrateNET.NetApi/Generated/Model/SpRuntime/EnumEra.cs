@@ -535,7 +535,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpRuntime
     }
     
     /// <summary>
-    /// >> 595 - Variant[sp_runtime.generic.era.Era]
+    /// >> 621 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumExt<Era, BaseVoid>
     {

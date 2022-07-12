@@ -68,7 +68,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletWhitelist
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call_hash.Encode());
-            return new Method(47, "Whitelist", 0, "whitelist_call", byteArray.ToArray());
+            return new Method(48, "Whitelist", 0, "whitelist_call", byteArray.ToArray());
         }
         
         /// <summary>
@@ -79,7 +79,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletWhitelist
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call_hash.Encode());
-            return new Method(47, "Whitelist", 1, "remove_whitelisted_call", byteArray.ToArray());
+            return new Method(48, "Whitelist", 1, "remove_whitelisted_call", byteArray.ToArray());
         }
         
         /// <summary>
@@ -91,7 +91,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletWhitelist
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call_hash.Encode());
             byteArray.AddRange(call_weight_witness.Encode());
-            return new Method(47, "Whitelist", 2, "dispatch_whitelisted_call", byteArray.ToArray());
+            return new Method(48, "Whitelist", 2, "dispatch_whitelisted_call", byteArray.ToArray());
         }
         
         /// <summary>
@@ -102,7 +102,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletWhitelist
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());
-            return new Method(47, "Whitelist", 3, "dispatch_whitelisted_call_with_preimage", byteArray.ToArray());
+            return new Method(48, "Whitelist", 3, "dispatch_whitelisted_call_with_preimage", byteArray.ToArray());
         }
     }
     

@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery
     
     
     /// <summary>
-    /// >> 223 - Composite[sp_authority_discovery.app.Public]
+    /// >> 227 - Composite[sp_authority_discovery.app.Public]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

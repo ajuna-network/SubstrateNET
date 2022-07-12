@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 105 - Composite[frame_support.weights.PostDispatchInfo]
+    /// >> 110 - Composite[frame_support.weights.PostDispatchInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PostDispatchInfo : BaseType

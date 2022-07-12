@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletProxy
     
     
     /// <summary>
-    /// >> 507 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 516 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType

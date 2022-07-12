@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> ParentChildBounties
-        ///  Number of child-bounties per parent bounty.
+        ///  Number of child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         [HttpGet("ParentChildBounties")]
@@ -67,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> ChildBounties
-        ///  Child-bounties that have been added.
+        ///  Child bounties that have been added.
         /// </summary>
         [HttpGet("ChildBounties")]
         [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty), 200)]

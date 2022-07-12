@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 444 - Composite[pallet_contracts.wasm.PrefabWasmModule]
+    /// >> 453 - Composite[pallet_contracts.wasm.PrefabWasmModule]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PrefabWasmModule : BaseType

@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 452 - Composite[pallet_contracts.schedule.HostFnWeights]
+    /// >> 461 - Composite[pallet_contracts.schedule.HostFnWeights]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class HostFnWeights : BaseType
@@ -289,6 +289,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// >> ecdsa_recover
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U64 _ecdsaRecover;
+        
+        /// <summary>
+        /// >> ecdsa_to_eth_address
+        /// </summary>
+        private Ajuna.NetApi.Model.Types.Primitive.U64 _ecdsaToEthAddress;
         
         public Ajuna.NetApi.Model.Types.Primitive.U64 Caller
         {
@@ -926,6 +931,18 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             }
         }
         
+        public Ajuna.NetApi.Model.Types.Primitive.U64 EcdsaToEthAddress
+        {
+            get
+            {
+                return this._ecdsaToEthAddress;
+            }
+            set
+            {
+                this._ecdsaToEthAddress = value;
+            }
+        }
+        
         public override string TypeName()
         {
             return "HostFnWeights";
@@ -987,6 +1004,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             result.AddRange(HashBlake2128.Encode());
             result.AddRange(HashBlake2128PerByte.Encode());
             result.AddRange(EcdsaRecover.Encode());
+            result.AddRange(EcdsaToEthAddress.Encode());
             return result.ToArray();
         }
         
@@ -1099,6 +1117,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             HashBlake2128PerByte.Decode(byteArray, ref p);
             EcdsaRecover = new Ajuna.NetApi.Model.Types.Primitive.U64();
             EcdsaRecover.Decode(byteArray, ref p);
+            EcdsaToEthAddress = new Ajuna.NetApi.Model.Types.Primitive.U64();
+            EcdsaToEthAddress.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 395 - Composite[pallet_staking.UnappliedSlash]
+    /// >> 404 - Composite[pallet_staking.UnappliedSlash]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class UnappliedSlash : BaseType

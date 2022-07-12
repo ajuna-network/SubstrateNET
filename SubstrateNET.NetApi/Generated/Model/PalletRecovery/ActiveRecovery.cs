@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletRecovery
     
     
     /// <summary>
-    /// >> 491 - Composite[pallet_recovery.ActiveRecovery]
+    /// >> 500 - Composite[pallet_recovery.ActiveRecovery]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveRecovery : BaseType

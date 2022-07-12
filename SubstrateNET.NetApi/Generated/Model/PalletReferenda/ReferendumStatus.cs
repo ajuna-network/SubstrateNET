@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
     
     
     /// <summary>
-    /// >> 563 - Composite[pallet_referenda.types.ReferendumStatus]
+    /// >> 572 - Composite[pallet_referenda.types.ReferendumStatus]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatus : BaseType

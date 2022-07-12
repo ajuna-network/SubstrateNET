@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 257 - Composite[frame_support.storage.bounded_vec.BoundedVecT4]
+    /// >> 261 - Composite[frame_support.storage.bounded_vec.BoundedVecT4]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT4 : BaseType

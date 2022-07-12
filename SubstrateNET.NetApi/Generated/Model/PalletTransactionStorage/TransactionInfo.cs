@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage
     
     
     /// <summary>
-    /// >> 552 - Composite[pallet_transaction_storage.TransactionInfo]
+    /// >> 561 - Composite[pallet_transaction_storage.TransactionInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class TransactionInfo : BaseType

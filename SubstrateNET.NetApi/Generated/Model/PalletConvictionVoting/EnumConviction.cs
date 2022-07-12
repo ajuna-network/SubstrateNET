@@ -34,7 +34,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
     }
     
     /// <summary>
-    /// >> 339 - Variant[pallet_conviction_voting.conviction.Conviction]
+    /// >> 344 - Variant[pallet_conviction_voting.conviction.Conviction]
     /// </summary>
     public sealed class EnumConviction : BaseEnum<Conviction>
     {

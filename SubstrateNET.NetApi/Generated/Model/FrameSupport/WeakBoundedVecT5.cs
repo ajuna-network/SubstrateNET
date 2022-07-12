@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 459 - Composite[frame_support.storage.weak_bounded_vec.WeakBoundedVecT5]
+    /// >> 468 - Composite[frame_support.storage.weak_bounded_vec.WeakBoundedVecT5]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT5 : BaseType

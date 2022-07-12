@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpArithmetic
     
     
     /// <summary>
-    /// >> 115 - Composite[sp_arithmetic.per_things.Perbill]
+    /// >> 40 - Composite[sp_arithmetic.per_things.Perbill]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Perbill : BaseType

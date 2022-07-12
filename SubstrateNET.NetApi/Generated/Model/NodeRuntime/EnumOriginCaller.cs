@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
     }
     
     /// <summary>
-    /// >> 330 - Variant[node_runtime.OriginCaller]
+    /// >> 334 - Variant[node_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumExt<OriginCaller, SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, SubstrateNET.NetApi.Generated.Model.PalletCollective.EnumRawOrigin, Ajuna.NetApi.Model.Types.Base.BaseVoid>
     {

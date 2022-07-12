@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration
     }
     
     /// <summary>
-    /// >> 327 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 331 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
     public sealed class EnumProgress : BaseEnumExt<Progress, BaseVoid, BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>, BaseVoid>
     {

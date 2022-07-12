@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletAssetTxPayment
     
     
     /// <summary>
-    /// >> 598 - Composite[pallet_asset_tx_payment.ChargeAssetTxPayment]
+    /// >> 624 - Composite[pallet_asset_tx_payment.ChargeAssetTxPayment]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeAssetTxPayment : BaseType

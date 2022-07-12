@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
     
     
     /// <summary>
-    /// >> 567 - Composite[pallet_referenda.types.DecidingStatus]
+    /// >> 576 - Composite[pallet_referenda.types.DecidingStatus]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DecidingStatus : BaseType

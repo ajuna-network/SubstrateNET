@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpCore
     
     
     /// <summary>
-    /// >> 252 - Composite[sp_core.offchain.OpaqueMultiaddr]
+    /// >> 256 - Composite[sp_core.offchain.OpaqueMultiaddr]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OpaqueMultiaddr : BaseType

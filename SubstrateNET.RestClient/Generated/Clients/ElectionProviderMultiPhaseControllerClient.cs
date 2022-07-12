@@ -83,9 +83,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ElectionProviderMultiPhase.SignedSubmissionNextIndex");
       }
-      public async Task<BoundedBTreeMap> GetSignedSubmissionIndices()
+      public async Task<BoundedBTreeMapT1> GetSignedSubmissionIndices()
       {
-         return await SendRequestAsync<BoundedBTreeMap>(_httpClient, "electionprovidermultiphase/signedsubmissionindices");
+         return await SendRequestAsync<BoundedBTreeMapT1>(_httpClient, "electionprovidermultiphase/signedsubmissionindices");
       }
       public async Task<bool> SubscribeSignedSubmissionIndices()
       {

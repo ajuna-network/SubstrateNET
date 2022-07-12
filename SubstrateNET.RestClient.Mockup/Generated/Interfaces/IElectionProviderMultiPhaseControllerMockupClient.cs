@@ -25,7 +25,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetDesiredTargets(U32 value);
       Task<bool> SetSnapshotMetadata(SolutionOrSnapshotSize value);
       Task<bool> SetSignedSubmissionNextIndex(U32 value);
-      Task<bool> SetSignedSubmissionIndices(BoundedBTreeMap value);
+      Task<bool> SetSignedSubmissionIndices(BoundedBTreeMapT1 value);
       Task<bool> SetSignedSubmissionsMap(SignedSubmission value, U32 key);
       Task<bool> SetMinimumUntrustedScore(ElectionScore value);
    }

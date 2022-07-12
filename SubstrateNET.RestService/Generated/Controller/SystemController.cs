@@ -155,8 +155,11 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> Events
         ///  Events deposited for the current block.
         /// 
-        ///  NOTE: This storage item is explicitly unbounded since it is never intended to be read
-        ///  from within the runtime.
+        ///  NOTE: The item is unbound and should therefore never be read on chain.
+        ///  It could otherwise inflate the PoV size of a block.
+        /// 
+        ///  Events have a large in-memory size. Box the events to not go out-of-memory
+        ///  just in case someone still reads them from within the runtime.
         /// </summary>
         [HttpGet("Events")]
         [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>), 200)]

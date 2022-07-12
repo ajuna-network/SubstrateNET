@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 153 - Composite[pallet_election_provider_multi_phase.RawSolution]
+    /// >> 159 - Composite[pallet_election_provider_multi_phase.RawSolution]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RawSolution : BaseType

@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletMultisig
     
     
     /// <summary>
-    /// >> 515 - Composite[pallet_multisig.Multisig]
+    /// >> 524 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType

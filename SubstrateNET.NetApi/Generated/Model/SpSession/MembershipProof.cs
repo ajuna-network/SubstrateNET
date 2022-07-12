@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpSession
     
     
     /// <summary>
-    /// >> 140 - Composite[sp_session.MembershipProof]
+    /// >> 146 - Composite[sp_session.MembershipProof]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class MembershipProof : BaseType

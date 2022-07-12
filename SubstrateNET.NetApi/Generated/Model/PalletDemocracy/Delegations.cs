@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletDemocracy
     
     
     /// <summary>
-    /// >> 418 - Composite[pallet_democracy.types.Delegations]
+    /// >> 427 - Composite[pallet_democracy.types.Delegations]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Delegations : BaseType

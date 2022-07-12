@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
     
     
     /// <summary>
-    /// >> 101 - Composite[pallet_conviction_voting.types.Tally]
+    /// >> 105 - Composite[pallet_conviction_voting.types.Tally]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

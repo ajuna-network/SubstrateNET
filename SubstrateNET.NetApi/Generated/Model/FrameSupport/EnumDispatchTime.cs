@@ -25,7 +25,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     }
     
     /// <summary>
-    /// >> 335 - Variant[frame_support.traits.schedule.DispatchTime]
+    /// >> 339 - Variant[frame_support.traits.schedule.DispatchTime]
     /// </summary>
     public sealed class EnumDispatchTime : BaseEnumExt<DispatchTime, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>
     {

@@ -10,27 +10,27 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.Base;
+using Ajuna.NetApi.Model.Types.Primitive;
 using System.Collections.Generic;
 
 
-namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
+namespace SubstrateNET.NetApi.Generated.Model.Base
 {
     
     
     /// <summary>
-    /// >> 376 - Composite[frame_support.storage.bounded_btree_map.BoundedBTreeMap]
+    /// >> 597 - Composite[BTreeMapT3]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
-    public sealed class BoundedBTreeMap : BaseType
+    public sealed class BTreeMapT3 : BaseType
     {
         
         /// <summary>
         /// >> value
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT1 _value;
+        private BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>> _value;
         
-        public SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT1 Value
+        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>> Value
         {
             get
             {
@@ -44,7 +44,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         
         public override string TypeName()
         {
-            return "BoundedBTreeMap";
+            return "BTreeMapT3";
         }
         
         public override byte[] Encode()
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT1();
+            Value = new BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

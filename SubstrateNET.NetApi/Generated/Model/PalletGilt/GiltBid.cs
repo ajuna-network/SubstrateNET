@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGilt
     
     
     /// <summary>
-    /// >> 538 - Composite[pallet_gilt.pallet.GiltBid]
+    /// >> 547 - Composite[pallet_gilt.pallet.GiltBid]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class GiltBid : BaseType

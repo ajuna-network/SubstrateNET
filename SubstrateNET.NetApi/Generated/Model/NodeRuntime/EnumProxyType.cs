@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
     }
     
     /// <summary>
-    /// >> 79 - Variant[node_runtime.ProxyType]
+    /// >> 83 - Variant[node_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

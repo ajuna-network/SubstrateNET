@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 382 - Composite[pallet_staking.StakingLedger]
+    /// >> 391 - Composite[pallet_staking.StakingLedger]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StakingLedger : BaseType

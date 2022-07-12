@@ -255,6 +255,11 @@ namespace SubstrateNET.NetApi.Generated
         public SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage ReferendaStorage;
         
         /// <summary>
+        /// RemarkStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletRemark.RemarkStorage RemarkStorage;
+        
+        /// <summary>
         /// ConvictionVotingStorage storage calls.
         /// </summary>
         public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage ConvictionVotingStorage;
@@ -263,6 +268,11 @@ namespace SubstrateNET.NetApi.Generated
         /// WhitelistStorage storage calls.
         /// </summary>
         public SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage WhitelistStorage;
+        
+        /// <summary>
+        /// NominationPoolsStorage storage calls.
+        /// </summary>
+        public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage NominationPoolsStorage;
         
         public SubstrateClientExt(System.Uri uri) : 
                 base(uri)
@@ -314,8 +324,10 @@ namespace SubstrateNET.NetApi.Generated
             this.StateTrieMigrationStorage = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.StateTrieMigrationStorage(this);
             this.ChildBountiesStorage = new SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage(this);
             this.ReferendaStorage = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage(this);
+            this.RemarkStorage = new SubstrateNET.NetApi.Generated.Model.PalletRemark.RemarkStorage(this);
             this.ConvictionVotingStorage = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage(this);
             this.WhitelistStorage = new SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage(this);
+            this.NominationPoolsStorage = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage(this);
         }
     }
 }

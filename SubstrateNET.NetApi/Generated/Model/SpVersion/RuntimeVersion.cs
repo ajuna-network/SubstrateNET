@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpVersion
     
     
     /// <summary>
-    /// >> 125 - Composite[sp_version.RuntimeVersion]
+    /// >> 131 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType

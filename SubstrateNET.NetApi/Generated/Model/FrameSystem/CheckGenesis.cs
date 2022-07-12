@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSystem
     
     
     /// <summary>
-    /// >> 593 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
+    /// >> 619 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckGenesis : BaseType

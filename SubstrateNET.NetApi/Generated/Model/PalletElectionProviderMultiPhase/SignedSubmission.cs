@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 380 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
+    /// >> 389 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SignedSubmission : BaseType
@@ -43,9 +43,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
         private SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.RawSolution _rawSolution;
         
         /// <summary>
-        /// >> reward
+        /// >> call_fee
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Primitive.U128 _reward;
+        private Ajuna.NetApi.Model.Types.Primitive.U128 _callFee;
         
         public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 Who
         {
@@ -83,15 +83,15 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Primitive.U128 Reward
+        public Ajuna.NetApi.Model.Types.Primitive.U128 CallFee
         {
             get
             {
-                return this._reward;
+                return this._callFee;
             }
             set
             {
-                this._reward = value;
+                this._callFee = value;
             }
         }
         
@@ -106,7 +106,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
             result.AddRange(Who.Encode());
             result.AddRange(Deposit.Encode());
             result.AddRange(RawSolution.Encode());
-            result.AddRange(Reward.Encode());
+            result.AddRange(CallFee.Encode());
             return result.ToArray();
         }
         
@@ -119,8 +119,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
             Deposit.Decode(byteArray, ref p);
             RawSolution = new SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.RawSolution();
             RawSolution.Decode(byteArray, ref p);
-            Reward = new Ajuna.NetApi.Model.Types.Primitive.U128();
-            Reward.Decode(byteArray, ref p);
+            CallFee = new Ajuna.NetApi.Model.Types.Primitive.U128();
+            CallFee.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

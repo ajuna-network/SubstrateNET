@@ -53,7 +53,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionNextIndex", value.Encode(), ElectionProviderMultiPhaseStorage.SignedSubmissionNextIndexParams());
       }
-      public async Task<bool> SetSignedSubmissionIndices(BoundedBTreeMap value)
+      public async Task<bool> SetSignedSubmissionIndices(BoundedBTreeMapT1 value)
       {
          return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionIndices", value.Encode(), ElectionProviderMultiPhaseStorage.SignedSubmissionIndicesParams());
       }

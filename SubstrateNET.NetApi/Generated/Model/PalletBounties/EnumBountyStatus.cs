@@ -34,7 +34,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBounties
     }
     
     /// <summary>
-    /// >> 519 - Variant[pallet_bounties.BountyStatus]
+    /// >> 528 - Variant[pallet_bounties.BountyStatus]
     /// </summary>
     public sealed class EnumBountyStatus : BaseEnumExt<BountyStatus, BaseVoid, BaseVoid, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>>
     {

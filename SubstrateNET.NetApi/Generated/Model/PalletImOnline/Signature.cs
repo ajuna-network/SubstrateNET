@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
     
     
     /// <summary>
-    /// >> 253 - Composite[pallet_im_online.sr25519.app_sr25519.Signature]
+    /// >> 257 - Composite[pallet_im_online.sr25519.app_sr25519.Signature]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

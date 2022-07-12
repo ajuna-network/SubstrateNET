@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 368 - Composite[frame_support.weights.WeightToFeeCoefficient]
+    /// >> 377 - Composite[frame_support.weights.WeightToFeeCoefficient]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class WeightToFeeCoefficient : BaseType

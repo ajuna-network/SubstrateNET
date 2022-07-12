@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletLottery
     
     
     /// <summary>
-    /// >> 531 - Composite[pallet_lottery.LotteryConfig]
+    /// >> 540 - Composite[pallet_lottery.LotteryConfig]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class LotteryConfig : BaseType

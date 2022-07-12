@@ -522,10 +522,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap GetTestValue24()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 GetTestValue24()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1();
          result.Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT1();
          result.Value = this.GetTestValue25();
          return result;
@@ -566,7 +566,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ElectionProviderMultiPhaseControllerClient rpcClient = new ElectionProviderMultiPhaseControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap mockupValue = this.GetTestValue24();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 mockupValue = this.GetTestValue24();
 
 
          Assert.IsTrue(await rpcClient.SubscribeSignedSubmissionIndices());
@@ -579,7 +579,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap rpcResult = await rpcClient.GetSignedSubmissionIndices();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 rpcResult = await rpcClient.GetSignedSubmissionIndices();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -593,7 +593,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Deposit = this.GetTestValueU128();
          result.RawSolution = new SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.RawSolution();
          result.RawSolution = this.GetTestValue31();
-         result.Reward = this.GetTestValueU128();
+         result.CallFee = this.GetTestValueU128();
          return result;
       }
       public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue30()

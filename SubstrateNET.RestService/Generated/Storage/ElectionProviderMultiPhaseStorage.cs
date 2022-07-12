@@ -98,7 +98,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  can be quite large, so we're willing to pay the cost of multiple database accesses to access
         ///  them one at a time instead of reading and decoding all of them at once.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap GetSignedSubmissionIndices();
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 GetSignedSubmissionIndices();
         
         /// <summary>
         /// >> SignedSubmissionsMap
@@ -166,7 +166,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _signedSubmissionIndicesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap> _signedSubmissionIndicesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1> _signedSubmissionIndicesTypedStorage;
         
         /// <summary>
         /// _signedSubmissionsMapTypedStorage typed storage field
@@ -190,7 +190,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.DesiredTargetsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ElectionProviderMultiPhase.DesiredTargets", storageDataProvider, storageChangeDelegate);
             this.SnapshotMetadataTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.SolutionOrSnapshotSize>("ElectionProviderMultiPhase.SnapshotMetadata", storageDataProvider, storageChangeDelegate);
             this.SignedSubmissionNextIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ElectionProviderMultiPhase.SignedSubmissionNextIndex", storageDataProvider, storageChangeDelegate);
-            this.SignedSubmissionIndicesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap>("ElectionProviderMultiPhase.SignedSubmissionIndices", storageDataProvider, storageChangeDelegate);
+            this.SignedSubmissionIndicesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1>("ElectionProviderMultiPhase.SignedSubmissionIndices", storageDataProvider, storageChangeDelegate);
             this.SignedSubmissionsMapTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.SignedSubmission>("ElectionProviderMultiPhase.SignedSubmissionsMap", storageDataProvider, storageChangeDelegate);
             this.MinimumUntrustedScoreTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpNposElections.ElectionScore>("ElectionProviderMultiPhase.MinimumUntrustedScore", storageDataProvider, storageChangeDelegate);
         }
@@ -303,7 +303,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _signedSubmissionIndicesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap> SignedSubmissionIndicesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1> SignedSubmissionIndicesTypedStorage
         {
             get
             {
@@ -525,7 +525,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  can be quite large, so we're willing to pay the cost of multiple database accesses to access
         ///  them one at a time instead of reading and decoding all of them at once.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMap GetSignedSubmissionIndices()
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedBTreeMapT1 GetSignedSubmissionIndices()
         {
             return SignedSubmissionIndicesTypedStorage.Get();
         }

@@ -98,13 +98,17 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         Referenda,
         
+        Remark,
+        
         ConvictionVoting,
         
         Whitelist,
+        
+        NominationPools,
     }
     
     /// <summary>
-    /// >> 133 - Variant[node_runtime.Call]
+    /// >> 139 - Variant[node_runtime.Call]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Variant)]
     public sealed class EnumNodeCall : BaseEnum<NodeCall>

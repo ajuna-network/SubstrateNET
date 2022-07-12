@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration
     
     
     /// <summary>
-    /// >> 325 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
+    /// >> 329 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationLimits : BaseType

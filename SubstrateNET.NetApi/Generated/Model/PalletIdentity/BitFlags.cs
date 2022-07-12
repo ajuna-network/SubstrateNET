@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
     
     
     /// <summary>
-    /// >> 292 - Composite[pallet_identity.types.BitFlags]
+    /// >> 296 - Composite[pallet_identity.types.BitFlags]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BitFlags : BaseType

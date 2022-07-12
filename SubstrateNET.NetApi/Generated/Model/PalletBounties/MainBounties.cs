@@ -291,7 +291,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBounties
         
         /// <summary>
         /// >> HasActiveChildBounty
-        /// The bounty cannot be closed because it has active child-bounties.
+        /// The bounty cannot be closed because it has active child bounties.
         /// </summary>
         HasActiveChildBounty,
         

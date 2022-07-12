@@ -40,6 +40,7 @@ namespace SubstrateNET.RestClient.Mockup
       public ILotteryControllerMockupClient LotteryControllerClient;
       public IMmrControllerMockupClient MmrControllerClient;
       public IMultisigControllerMockupClient MultisigControllerClient;
+      public INominationPoolsControllerMockupClient NominationPoolsControllerClient;
       public IOffencesControllerMockupClient OffencesControllerClient;
       public IPreimageControllerMockupClient PreimageControllerClient;
       public IProxyControllerMockupClient ProxyControllerClient;
@@ -88,6 +89,7 @@ namespace SubstrateNET.RestClient.Mockup
          LotteryControllerClient = new LotteryControllerMockupClient(_httpClient);
          MmrControllerClient = new MmrControllerMockupClient(_httpClient);
          MultisigControllerClient = new MultisigControllerMockupClient(_httpClient);
+         NominationPoolsControllerClient = new NominationPoolsControllerMockupClient(_httpClient);
          OffencesControllerClient = new OffencesControllerMockupClient(_httpClient);
          PreimageControllerClient = new PreimageControllerMockupClient(_httpClient);
          ProxyControllerClient = new ProxyControllerMockupClient(_httpClient);

@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletDemocracy
     
     
     /// <summary>
-    /// >> 414 - Composite[pallet_democracy.types.Tally]
+    /// >> 423 - Composite[pallet_democracy.types.Tally]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

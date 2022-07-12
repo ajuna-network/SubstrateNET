@@ -136,6 +136,17 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTreasury
             byteArray.AddRange(proposal_id.Encode());
             return new Method(18, "Treasury", 2, "approve_proposal", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> remove_approval
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method RemoveApproval(BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> proposal_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_id.Encode());
+            return new Method(18, "Treasury", 3, "remove_approval", byteArray.ToArray());
+        }
     }
     
     public enum TreasuryErrors
@@ -158,5 +169,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTreasury
         /// Too many approvals in the queue.
         /// </summary>
         TooManyApprovals,
+        
+        /// <summary>
+        /// >> ProposalNotApproved
+        /// Proposal has not been approved.
+        /// </summary>
+        ProposalNotApproved,
     }
 }

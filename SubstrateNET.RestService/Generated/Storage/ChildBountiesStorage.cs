@@ -35,14 +35,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ParentChildBounties
-        ///  Number of child-bounties per parent bounty.
+        ///  Number of child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetParentChildBounties(string key);
         
         /// <summary>
         /// >> ChildBounties
-        ///  Child-bounties that have been added.
+        ///  Child bounties that have been added.
         /// </summary>
         SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty GetChildBounties(string key);
         
@@ -218,7 +218,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ParentChildBounties
-        ///  Number of child-bounties per parent bounty.
+        ///  Number of child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U32 GetParentChildBounties(string key)
@@ -248,7 +248,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ChildBounties
-        ///  Child-bounties that have been added.
+        ///  Child bounties that have been added.
         /// </summary>
         public SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty GetChildBounties(string key)
         {

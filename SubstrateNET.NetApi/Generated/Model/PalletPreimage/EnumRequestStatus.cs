@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletPreimage
     }
     
     /// <summary>
-    /// >> 501 - Variant[pallet_preimage.RequestStatus]
+    /// >> 510 - Variant[pallet_preimage.RequestStatus]
     /// </summary>
     public sealed class EnumRequestStatus : BaseEnumExt<RequestStatus, BaseOpt<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>>, Ajuna.NetApi.Model.Types.Primitive.U32>
     {

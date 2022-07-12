@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 446 - Composite[pallet_contracts.storage.RawContractInfo]
+    /// >> 455 - Composite[pallet_contracts.storage.RawContractInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RawContractInfo : BaseType

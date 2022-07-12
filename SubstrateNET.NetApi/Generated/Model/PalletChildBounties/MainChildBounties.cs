@@ -67,7 +67,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletChildBounties
         
         /// <summary>
         /// >> ParentChildBountiesParams
-        ///  Number of child-bounties per parent bounty.
+        ///  Number of child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         public static string ParentChildBountiesParams(Ajuna.NetApi.Model.Types.Primitive.U32 key)
@@ -79,7 +79,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletChildBounties
         
         /// <summary>
         /// >> ParentChildBounties
-        ///  Number of child-bounties per parent bounty.
+        ///  Number of child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> ParentChildBounties(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
@@ -90,7 +90,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletChildBounties
         
         /// <summary>
         /// >> ChildBountiesParams
-        ///  Child-bounties that have been added.
+        ///  Child bounties that have been added.
         /// </summary>
         public static string ChildBountiesParams(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> key)
         {
@@ -101,7 +101,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletChildBounties
         
         /// <summary>
         /// >> ChildBounties
-        ///  Child-bounties that have been added.
+        ///  Child bounties that have been added.
         /// </summary>
         public async Task<SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty> ChildBounties(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> key, CancellationToken token)
         {
@@ -261,7 +261,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletChildBounties
         
         /// <summary>
         /// >> TooManyChildBounties
-        /// Number of child-bounties exceeds limit `MaxActiveChildBountyCount`.
+        /// Number of child bounties exceeds limit `MaxActiveChildBountyCount`.
         /// </summary>
         TooManyChildBounties,
     }

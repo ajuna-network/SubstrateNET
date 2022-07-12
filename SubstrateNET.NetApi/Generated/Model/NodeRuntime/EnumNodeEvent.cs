@@ -94,9 +94,13 @@ namespace SubstrateNET.NetApi.Generated.Model.NodeRuntime
         
         Referenda,
         
+        Remark,
+        
         ConvictionVoting,
         
         Whitelist,
+        
+        NominationPools,
     }
     
     /// <summary>

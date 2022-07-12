@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
     
     
     /// <summary>
-    /// >> 318 - Composite[pallet_uniques.types.DestroyWitness]
+    /// >> 322 - Composite[pallet_uniques.types.DestroyWitness]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DestroyWitness : BaseType

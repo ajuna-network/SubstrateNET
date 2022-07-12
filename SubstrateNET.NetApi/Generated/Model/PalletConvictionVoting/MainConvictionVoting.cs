@@ -101,7 +101,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(poll_index.Encode());
             byteArray.AddRange(vote.Encode());
-            return new Method(46, "ConvictionVoting", 0, "vote", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 0, "vote", byteArray.ToArray());
         }
         
         /// <summary>
@@ -115,7 +115,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             byteArray.AddRange(to.Encode());
             byteArray.AddRange(conviction.Encode());
             byteArray.AddRange(balance.Encode());
-            return new Method(46, "ConvictionVoting", 1, "delegate", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 1, "delegate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -126,7 +126,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
-            return new Method(46, "ConvictionVoting", 2, "undelegate", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 2, "undelegate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -138,7 +138,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
             byteArray.AddRange(target.Encode());
-            return new Method(46, "ConvictionVoting", 3, "unlock", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 3, "unlock", byteArray.ToArray());
         }
         
         /// <summary>
@@ -150,7 +150,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@class.Encode());
             byteArray.AddRange(index.Encode());
-            return new Method(46, "ConvictionVoting", 4, "remove_vote", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 4, "remove_vote", byteArray.ToArray());
         }
         
         /// <summary>
@@ -163,7 +163,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(@class.Encode());
             byteArray.AddRange(index.Encode());
-            return new Method(46, "ConvictionVoting", 5, "remove_other_vote", byteArray.ToArray());
+            return new Method(47, "ConvictionVoting", 5, "remove_other_vote", byteArray.ToArray());
         }
     }
     

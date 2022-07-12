@@ -100,7 +100,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
     }
     
     /// <summary>
-    /// >> 259 - Variant[pallet_identity.types.Data]
+    /// >> 263 - Variant[pallet_identity.types.Data]
     /// </summary>
     public sealed class EnumData : BaseEnumExt<Data, BaseVoid>
     {

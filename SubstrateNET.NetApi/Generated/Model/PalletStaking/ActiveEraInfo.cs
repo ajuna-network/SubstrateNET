@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 387 - Composite[pallet_staking.ActiveEraInfo]
+    /// >> 396 - Composite[pallet_staking.ActiveEraInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveEraInfo : BaseType

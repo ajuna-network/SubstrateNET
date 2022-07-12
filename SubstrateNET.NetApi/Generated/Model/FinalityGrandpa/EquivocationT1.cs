@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FinalityGrandpa
     
     
     /// <summary>
-    /// >> 234 - Composite[finality_grandpa.EquivocationT1]
+    /// >> 238 - Composite[finality_grandpa.EquivocationT1]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EquivocationT1 : BaseType

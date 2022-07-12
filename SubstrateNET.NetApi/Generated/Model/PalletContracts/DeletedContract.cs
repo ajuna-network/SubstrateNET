@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 448 - Composite[pallet_contracts.storage.DeletedContract]
+    /// >> 457 - Composite[pallet_contracts.storage.DeletedContract]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DeletedContract : BaseType

@@ -598,5 +598,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         /// The named owner has not signed ownership of the class is acceptable.
         /// </summary>
         Unaccepted,
+        
+        /// <summary>
+        /// >> Locked
+        /// The asset instance is locked.
+        /// </summary>
+        Locked,
     }
 }

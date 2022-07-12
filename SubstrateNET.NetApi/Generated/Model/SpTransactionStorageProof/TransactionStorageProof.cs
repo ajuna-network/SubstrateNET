@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpTransactionStorageProof
     
     
     /// <summary>
-    /// >> 321 - Composite[sp_transaction_storage_proof.TransactionStorageProof]
+    /// >> 325 - Composite[sp_transaction_storage_proof.TransactionStorageProof]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class TransactionStorageProof : BaseType

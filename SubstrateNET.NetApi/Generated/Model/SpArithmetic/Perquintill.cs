@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpArithmetic
     
     
     /// <summary>
-    /// >> 316 - Composite[sp_arithmetic.per_things.Perquintill]
+    /// >> 320 - Composite[sp_arithmetic.per_things.Perquintill]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Perquintill : BaseType
