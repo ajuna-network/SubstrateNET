@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "ajuna.dotnet": {
+      "version": "0.1.12",
+      "commands": [
+        "ajuna"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+   "projects": {
+      "net_api": "SubstrateNET.NetApi",
+      "rest_service": "SubstrateNET.RestService",
+      "rest_client": "SubstrateNET.RestClient"
+   },
+   "metadata": {
+      "websocket": "ws://127.0.0.1:9944"
+   },
+   "rest_client_settings": {
+      "service_assembly": "SubstrateNET.RestService.dll"
+   }
+}
