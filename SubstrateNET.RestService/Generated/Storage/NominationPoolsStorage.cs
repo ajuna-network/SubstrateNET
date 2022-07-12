@@ -118,7 +118,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetMetadata(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 GetMetadata(string key);
         
         /// <summary>
         /// >> CounterForMetadata
@@ -128,11 +128,16 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> LastPoolId
+        ///  Ever increasing number of all pools created so far.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetLastPoolId();
         
         /// <summary>
         /// >> ReversePoolIdLookup
+        ///  A reverse lookup from the pool's account id to its id.
+        /// 
+        ///  This is only used for slashing. In all other instances, the pool id is used, and the
+        ///  accounts are deterministically derived from it.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetReversePoolIdLookup(string key);
         
@@ -217,7 +222,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> _metadataTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> _metadataTypedStorage;
         
         /// <summary>
         /// _counterForMetadataTypedStorage typed storage field
@@ -257,7 +262,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.CounterForRewardPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForRewardPools", storageDataProvider, storageChangeDelegate);
             this.SubPoolsStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools>("NominationPools.SubPoolsStorage", storageDataProvider, storageChangeDelegate);
             this.CounterForSubPoolsStorageTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForSubPoolsStorage", storageDataProvider, storageChangeDelegate);
-            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27>("NominationPools.Metadata", storageDataProvider, storageChangeDelegate);
+            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31>("NominationPools.Metadata", storageDataProvider, storageChangeDelegate);
             this.CounterForMetadataTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForMetadata", storageDataProvider, storageChangeDelegate);
             this.LastPoolIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.LastPoolId", storageDataProvider, storageChangeDelegate);
             this.ReversePoolIdLookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.ReversePoolIdLookup", storageDataProvider, storageChangeDelegate);
@@ -462,7 +467,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> MetadataTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> MetadataTypedStorage
         {
             get
             {
@@ -858,13 +863,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetMetadata(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 GetMetadata(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 result))
+            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31 result))
             {
                 return result;
             }
@@ -903,6 +908,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> LastPoolId
+        ///  Ever increasing number of all pools created so far.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U32 GetLastPoolId()
         {
@@ -920,6 +926,10 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ReversePoolIdLookup
+        ///  A reverse lookup from the pool's account id to its id.
+        /// 
+        ///  This is only used for slashing. In all other instances, the pool id is used, and the
+        ///  accounts are deterministically derived from it.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U32 GetReversePoolIdLookup(string key)
         {

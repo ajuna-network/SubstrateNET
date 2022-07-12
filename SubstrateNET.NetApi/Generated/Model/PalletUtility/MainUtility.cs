@@ -83,6 +83,17 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUtility
             byteArray.AddRange(call.Encode());
             return new Method(1, "Utility", 3, "dispatch_as", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> force_batch
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method ForceBatch(BaseVec<SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall> calls)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(calls.Encode());
+            return new Method(1, "Utility", 4, "force_batch", byteArray.ToArray());
+        }
     }
     
     public enum UtilityErrors

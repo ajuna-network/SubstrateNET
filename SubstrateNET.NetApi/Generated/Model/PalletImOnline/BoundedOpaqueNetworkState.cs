@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletImOnline
     
     
     /// <summary>
-    /// >> 467 - Composite[pallet_im_online.BoundedOpaqueNetworkState]
+    /// >> 475 - Composite[pallet_im_online.BoundedOpaqueNetworkState]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedOpaqueNetworkState : BaseType

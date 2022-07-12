@@ -57,7 +57,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The preimages stored by this pallet.
         /// </summary>
         [HttpGet("PreimageFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletPreimage.PreimageStorage), "PreimageForParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
         public IActionResult GetPreimageFor(string key)
         {

@@ -11,6 +11,7 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
+using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using System.Collections.Generic;
 
@@ -20,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 455 - Composite[pallet_contracts.storage.RawContractInfo]
+    /// >> 461 - Composite[pallet_contracts.storage.RawContractInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RawContractInfo : BaseType
@@ -29,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// <summary>
         /// >> trie_id
         /// </summary>
-        private BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> _trieId;
+        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14 _trieId;
         
         /// <summary>
         /// >> code_hash
@@ -41,7 +42,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U128 _storageDeposit;
         
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> TrieId
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14 TrieId
         {
             get
             {
@@ -94,7 +95,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            TrieId = new BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
+            TrieId = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14();
             TrieId.Decode(byteArray, ref p);
             CodeHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
             CodeHash.Decode(byteArray, ref p);

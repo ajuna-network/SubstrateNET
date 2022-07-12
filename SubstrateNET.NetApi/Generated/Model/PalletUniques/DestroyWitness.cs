@@ -26,41 +26,41 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
     {
         
         /// <summary>
-        /// >> instances
+        /// >> items
         /// </summary>
-        private BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> _instances;
+        private BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> _items;
         
         /// <summary>
-        /// >> instance_metadatas
+        /// >> item_metadatas
         /// </summary>
-        private BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> _instanceMetadatas;
+        private BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> _itemMetadatas;
         
         /// <summary>
         /// >> attributes
         /// </summary>
         private BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> _attributes;
         
-        public BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> Instances
+        public BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> Items
         {
             get
             {
-                return this._instances;
+                return this._items;
             }
             set
             {
-                this._instances = value;
+                this._items = value;
             }
         }
         
-        public BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> InstanceMetadatas
+        public BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> ItemMetadatas
         {
             get
             {
-                return this._instanceMetadatas;
+                return this._itemMetadatas;
             }
             set
             {
-                this._instanceMetadatas = value;
+                this._itemMetadatas = value;
             }
         }
         
@@ -84,8 +84,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(Instances.Encode());
-            result.AddRange(InstanceMetadatas.Encode());
+            result.AddRange(Items.Encode());
+            result.AddRange(ItemMetadatas.Encode());
             result.AddRange(Attributes.Encode());
             return result.ToArray();
         }
@@ -93,10 +93,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletUniques
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Instances = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
-            Instances.Decode(byteArray, ref p);
-            InstanceMetadatas = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
-            InstanceMetadatas.Decode(byteArray, ref p);
+            Items = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
+            Items.Decode(byteArray, ref p);
+            ItemMetadatas = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
+            ItemMetadatas.Decode(byteArray, ref p);
             Attributes = new BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
             Attributes.Decode(byteArray, ref p);
             TypeSize = p - start;

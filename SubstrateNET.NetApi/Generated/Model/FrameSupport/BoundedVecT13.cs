@@ -11,7 +11,6 @@ using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
 using Ajuna.NetApi.Model.Types.Primitive;
-using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
 using System.Collections.Generic;
 
 
@@ -20,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 478 - Composite[frame_support.storage.bounded_vec.BoundedVecT13]
+    /// >> 459 - Composite[frame_support.storage.bounded_vec.BoundedVecT13]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT13 : BaseType
@@ -29,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         /// <summary>
         /// >> value
         /// </summary>
-        private BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumJudgement>> _value;
+        private BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> _value;
         
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumJudgement>> Value
+        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> Value
         {
             get
             {
@@ -58,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumJudgement>>();
+            Value = new BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.Base
     
     
     /// <summary>
-    /// >> 399 - Composite[BTreeMapT2]
+    /// >> 403 - Composite[BTreeMapT2]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT2 : BaseType

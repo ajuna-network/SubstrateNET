@@ -31,7 +31,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is arranged as a ring buffer with `block_number % 81` being the index into the `Vec` of
         ///  the oldest hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 GetRandomMaterial();
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 GetRandomMaterial();
     }
     
     /// <summary>
@@ -43,20 +43,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _randomMaterialTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12> _randomMaterialTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16> _randomMaterialTypedStorage;
         
         /// <summary>
         /// RandomnessCollectiveFlipStorage constructor.
         /// </summary>
         public RandomnessCollectiveFlipStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.RandomMaterialTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12>("RandomnessCollectiveFlip.RandomMaterial", storageDataProvider, storageChangeDelegate);
+            this.RandomMaterialTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16>("RandomnessCollectiveFlip.RandomMaterial", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
         /// _randomMaterialTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12> RandomMaterialTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16> RandomMaterialTypedStorage
         {
             get
             {
@@ -91,7 +91,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is arranged as a ring buffer with `block_number % 81` being the index into the `Vec` of
         ///  the oldest hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 GetRandomMaterial()
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 GetRandomMaterial()
         {
             return RandomMaterialTypedStorage.Get();
         }

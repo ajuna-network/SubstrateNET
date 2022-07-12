@@ -112,14 +112,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Temporary value (cleared at block finalization) which is `Some`
         ///  if per-block initialization has already been called for current block.
         /// </summary>
-        BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetInitialized();
+        BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> GetInitialized();
         
         /// <summary>
         /// >> AuthorVrfRandomness
         ///  This field should always be populated during block processing unless
         ///  secondary plain slots are enabled (which don't contain a VRF output).
         /// 
-        ///  It is set in `on_initialize`, before it will contain the value from the last block.
+        ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetAuthorVrfRandomness();
         
@@ -217,7 +217,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _initializedTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> _initializedTypedStorage;
+        private TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>> _initializedTypedStorage;
         
         /// <summary>
         /// _authorVrfRandomnessTypedStorage typed storage field
@@ -259,7 +259,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.NextAuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WeakBoundedVecT1>("Babe.NextAuthorities", storageDataProvider, storageChangeDelegate);
             this.SegmentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.SegmentIndex", storageDataProvider, storageChangeDelegate);
             this.UnderConstructionTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5>("Babe.UnderConstruction", storageDataProvider, storageChangeDelegate);
-            this.InitializedTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>>("Babe.Initialized", storageDataProvider, storageChangeDelegate);
+            this.InitializedTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>>("Babe.Initialized", storageDataProvider, storageChangeDelegate);
             this.AuthorVrfRandomnessTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>>("Babe.AuthorVrfRandomness", storageDataProvider, storageChangeDelegate);
             this.EpochStartTypedStorage = new TypedStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>("Babe.EpochStart", storageDataProvider, storageChangeDelegate);
             this.LatenessTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.Lateness", storageDataProvider, storageChangeDelegate);
@@ -420,7 +420,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _initializedTypedStorage property
         /// </summary>
-        public TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> InitializedTypedStorage
+        public TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>> InitializedTypedStorage
         {
             get
             {
@@ -753,7 +753,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Temporary value (cleared at block finalization) which is `Some`
         ///  if per-block initialization has already been called for current block.
         /// </summary>
-        public BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetInitialized()
+        public BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> GetInitialized()
         {
             return InitializedTypedStorage.Get();
         }
@@ -772,7 +772,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  This field should always be populated during block processing unless
         ///  secondary plain slots are enabled (which don't contain a VRF output).
         /// 
-        ///  It is set in `on_initialize`, before it will contain the value from the last block.
+        ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         public BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetAuthorVrfRandomness()
         {

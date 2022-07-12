@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
     
     
     /// <summary>
-    /// >> 459 - Composite[pallet_contracts.schedule.Limits]
+    /// >> 467 - Composite[pallet_contracts.schedule.Limits]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Limits : BaseType
@@ -74,11 +74,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
         /// >> payload_len
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U32 _payloadLen;
-        
-        /// <summary>
-        /// >> code_len
-        /// </summary>
-        private Ajuna.NetApi.Model.Types.Primitive.U32 _codeLen;
         
         public Ajuna.NetApi.Model.Types.Primitive.U32 EventTopics
         {
@@ -200,18 +195,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Primitive.U32 CodeLen
-        {
-            get
-            {
-                return this._codeLen;
-            }
-            set
-            {
-                this._codeLen = value;
-            }
-        }
-        
         public override string TypeName()
         {
             return "Limits";
@@ -230,7 +213,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             result.AddRange(SubjectLen.Encode());
             result.AddRange(CallDepth.Encode());
             result.AddRange(PayloadLen.Encode());
-            result.AddRange(CodeLen.Encode());
             return result.ToArray();
         }
         
@@ -257,8 +239,6 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletContracts
             CallDepth.Decode(byteArray, ref p);
             PayloadLen = new Ajuna.NetApi.Model.Types.Primitive.U32();
             PayloadLen.Decode(byteArray, ref p);
-            CodeLen = new Ajuna.NetApi.Model.Types.Primitive.U32();
-            CodeLen.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

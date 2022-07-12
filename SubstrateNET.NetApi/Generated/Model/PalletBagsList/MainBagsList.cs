@@ -140,21 +140,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
     {
         
         /// <summary>
-        /// >> NotInSameBag
-        /// Attempted to place node in front of a node in another bag.
+        /// >> List
+        /// A error in the list interface implementation.
         /// </summary>
-        NotInSameBag,
-        
-        /// <summary>
-        /// >> IdNotFound
-        /// Id not found in list.
-        /// </summary>
-        IdNotFound,
-        
-        /// <summary>
-        /// >> NotHeavier
-        /// An Id does not have a greater score than another Id.
-        /// </summary>
-        NotHeavier,
+        List,
     }
 }

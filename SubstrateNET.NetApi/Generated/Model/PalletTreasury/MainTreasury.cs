@@ -138,6 +138,18 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTreasury
         }
         
         /// <summary>
+        /// >> spend
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Spend(BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> amount, SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumMultiAddress beneficiary)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(amount.Encode());
+            byteArray.AddRange(beneficiary.Encode());
+            return new Method(18, "Treasury", 3, "spend", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> remove_approval
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
@@ -145,7 +157,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTreasury
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_id.Encode());
-            return new Method(18, "Treasury", 3, "remove_approval", byteArray.ToArray());
+            return new Method(18, "Treasury", 4, "remove_approval", byteArray.ToArray());
         }
     }
     
@@ -169,6 +181,13 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTreasury
         /// Too many approvals in the queue.
         /// </summary>
         TooManyApprovals,
+        
+        /// <summary>
+        /// >> InsufficientPermission
+        /// The spend origin is valid but the amount it is allowed to spend is lower than the
+        /// amount to be spent.
+        /// </summary>
+        InsufficientPermission,
         
         /// <summary>
         /// >> ProposalNotApproved

@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletGilt
     
     
     /// <summary>
-    /// >> 549 - Composite[pallet_gilt.pallet.ActiveGiltsTotal]
+    /// >> 557 - Composite[pallet_gilt.pallet.ActiveGiltsTotal]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveGiltsTotal : BaseType

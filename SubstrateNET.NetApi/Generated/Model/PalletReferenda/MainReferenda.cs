@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "ReferendumInfoFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "TrackQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U8), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U8), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "DecidingCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U8), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
         }
@@ -105,10 +105,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletReferenda
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U8 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U8 key, CancellationToken token)
         {
             string parameters = ReferendaStorage.TrackQueueParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29>(parameters, token);
         }
         
         /// <summary>

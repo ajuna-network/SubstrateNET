@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletTips
     
     
     /// <summary>
-    /// >> 531 - Composite[pallet_tips.OpenTip]
+    /// >> 539 - Composite[pallet_tips.OpenTip]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OpenTip : BaseType

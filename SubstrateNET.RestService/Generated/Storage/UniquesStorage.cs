@@ -30,53 +30,59 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> Class
-        ///  Details of an asset class.
+        ///  Details of a collection.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails GetClass(string key);
+        SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails GetClass(string key);
         
         /// <summary>
         /// >> OwnershipAcceptance
-        ///  The class, if any, of which an account is willing to take ownership.
+        ///  The collection, if any, of which an account is willing to take ownership.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetOwnershipAcceptance(string key);
         
         /// <summary>
         /// >> Account
-        ///  The assets held by any given account; set out this way so that assets owned by a single
+        ///  The items held by any given account; set out this way so that items owned by a single
         ///  account can be enumerated.
         /// </summary>
         BaseTuple GetAccount(string key);
         
         /// <summary>
         /// >> ClassAccount
-        ///  The classes owned by any given account; set out this way so that classes owned by a single
-        ///  account can be enumerated.
+        ///  The collections owned by any given account; set out this way so that collections owned by
+        ///  a single account can be enumerated.
         /// </summary>
         BaseTuple GetClassAccount(string key);
         
         /// <summary>
         /// >> Asset
-        ///  The assets in existence and their ownership details.
+        ///  The items in existence and their ownership details.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails GetAsset(string key);
+        SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails GetAsset(string key);
         
         /// <summary>
         /// >> ClassMetadataOf
-        ///  Metadata of an asset class.
+        ///  Metadata of a collection.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata GetClassMetadataOf(string key);
+        SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata GetClassMetadataOf(string key);
         
         /// <summary>
         /// >> InstanceMetadataOf
-        ///  Metadata of an asset instance.
+        ///  Metadata of an item.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata GetInstanceMetadataOf(string key);
+        SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata GetInstanceMetadataOf(string key);
         
         /// <summary>
         /// >> Attribute
-        ///  Metadata of an asset class.
+        ///  Attributes of a collection.
         /// </summary>
         BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key);
+        
+        /// <summary>
+        /// >> CollectionMaxSupply
+        ///  Keeps track of the number of items a collection might have.
+        /// </summary>
+        Ajuna.NetApi.Model.Types.Primitive.U32 GetCollectionMaxSupply(string key);
     }
     
     /// <summary>
@@ -88,7 +94,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails> _classTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails> _classTypedStorage;
         
         /// <summary>
         /// _ownershipAcceptanceTypedStorage typed storage field
@@ -108,17 +114,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _assetTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails> _assetTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails> _assetTypedStorage;
         
         /// <summary>
         /// _classMetadataOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata> _classMetadataOfTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata> _classMetadataOfTypedStorage;
         
         /// <summary>
         /// _instanceMetadataOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata> _instanceMetadataOfTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata> _instanceMetadataOfTypedStorage;
         
         /// <summary>
         /// _attributeTypedStorage typed storage field
@@ -126,24 +132,30 @@ namespace SubstrateNET.RestService.Generated.Storage
         private TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>> _attributeTypedStorage;
         
         /// <summary>
+        /// _collectionMaxSupplyTypedStorage typed storage field
+        /// </summary>
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _collectionMaxSupplyTypedStorage;
+        
+        /// <summary>
         /// UniquesStorage constructor.
         /// </summary>
         public UniquesStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.ClassTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails>("Uniques.Class", storageDataProvider, storageChangeDelegate);
+            this.ClassTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails>("Uniques.Class", storageDataProvider, storageChangeDelegate);
             this.OwnershipAcceptanceTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Uniques.OwnershipAcceptance", storageDataProvider, storageChangeDelegate);
             this.AccountTypedStorage = new TypedMapStorage<BaseTuple>("Uniques.Account", storageDataProvider, storageChangeDelegate);
             this.ClassAccountTypedStorage = new TypedMapStorage<BaseTuple>("Uniques.ClassAccount", storageDataProvider, storageChangeDelegate);
-            this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails>("Uniques.Asset", storageDataProvider, storageChangeDelegate);
-            this.ClassMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata>("Uniques.ClassMetadataOf", storageDataProvider, storageChangeDelegate);
-            this.InstanceMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata>("Uniques.InstanceMetadataOf", storageDataProvider, storageChangeDelegate);
+            this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails>("Uniques.Asset", storageDataProvider, storageChangeDelegate);
+            this.ClassMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata>("Uniques.ClassMetadataOf", storageDataProvider, storageChangeDelegate);
+            this.InstanceMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata>("Uniques.InstanceMetadataOf", storageDataProvider, storageChangeDelegate);
             this.AttributeTypedStorage = new TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>>("Uniques.Attribute", storageDataProvider, storageChangeDelegate);
+            this.CollectionMaxSupplyTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Uniques.CollectionMaxSupply", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
         /// _classTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails> ClassTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails> ClassTypedStorage
         {
             get
             {
@@ -203,7 +215,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _assetTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails> AssetTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails> AssetTypedStorage
         {
             get
             {
@@ -218,7 +230,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classMetadataOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata> ClassMetadataOfTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata> ClassMetadataOfTypedStorage
         {
             get
             {
@@ -233,7 +245,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _instanceMetadataOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata> InstanceMetadataOfTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata> InstanceMetadataOfTypedStorage
         {
             get
             {
@@ -261,6 +273,21 @@ namespace SubstrateNET.RestService.Generated.Storage
         }
         
         /// <summary>
+        /// _collectionMaxSupplyTypedStorage property
+        /// </summary>
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32> CollectionMaxSupplyTypedStorage
+        {
+            get
+            {
+                return _collectionMaxSupplyTypedStorage;
+            }
+            set
+            {
+                _collectionMaxSupplyTypedStorage = value;
+            }
+        }
+        
+        /// <summary>
         /// Connects to all storages and initializes the change subscription handling.
         /// </summary>
         public async Task InitializeAsync(Ajuna.ServiceLayer.Storage.IStorageDataProvider dataProvider)
@@ -273,6 +300,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             await ClassMetadataOfTypedStorage.InitializeAsync("Uniques", "ClassMetadataOf");
             await InstanceMetadataOfTypedStorage.InitializeAsync("Uniques", "InstanceMetadataOf");
             await AttributeTypedStorage.InitializeAsync("Uniques", "Attribute");
+            await CollectionMaxSupplyTypedStorage.InitializeAsync("Uniques", "CollectionMaxSupply");
         }
         
         /// <summary>
@@ -286,15 +314,15 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> Class
-        ///  Details of an asset class.
+        ///  Details of a collection.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails GetClass(string key)
+        public SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails GetClass(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ClassTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails result))
+            if (ClassTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails result))
             {
                 return result;
             }
@@ -315,7 +343,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> OwnershipAcceptance
-        ///  The class, if any, of which an account is willing to take ownership.
+        ///  The collection, if any, of which an account is willing to take ownership.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U32 GetOwnershipAcceptance(string key)
         {
@@ -344,7 +372,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> Account
-        ///  The assets held by any given account; set out this way so that assets owned by a single
+        ///  The items held by any given account; set out this way so that items owned by a single
         ///  account can be enumerated.
         /// </summary>
         public BaseTuple GetAccount(string key)
@@ -374,8 +402,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ClassAccount
-        ///  The classes owned by any given account; set out this way so that classes owned by a single
-        ///  account can be enumerated.
+        ///  The collections owned by any given account; set out this way so that collections owned by
+        ///  a single account can be enumerated.
         /// </summary>
         public BaseTuple GetClassAccount(string key)
         {
@@ -404,15 +432,15 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> Asset
-        ///  The assets in existence and their ownership details.
+        ///  The items in existence and their ownership details.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails GetAsset(string key)
+        public SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails GetAsset(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AssetTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails result))
+            if (AssetTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails result))
             {
                 return result;
             }
@@ -433,15 +461,15 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ClassMetadataOf
-        ///  Metadata of an asset class.
+        ///  Metadata of a collection.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata GetClassMetadataOf(string key)
+        public SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata GetClassMetadataOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ClassMetadataOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata result))
+            if (ClassMetadataOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata result))
             {
                 return result;
             }
@@ -462,15 +490,15 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> InstanceMetadataOf
-        ///  Metadata of an asset instance.
+        ///  Metadata of an item.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata GetInstanceMetadataOf(string key)
+        public SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata GetInstanceMetadataOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (InstanceMetadataOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata result))
+            if (InstanceMetadataOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata result))
             {
                 return result;
             }
@@ -491,7 +519,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> Attribute
-        ///  Metadata of an asset class.
+        ///  Attributes of a collection.
         /// </summary>
         public BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key)
         {
@@ -500,6 +528,35 @@ namespace SubstrateNET.RestService.Generated.Storage
                 return null;
             }
             if (AttributeTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            {
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
+        /// <summary>
+        /// Implements any storage change for Uniques.CollectionMaxSupply
+        /// </summary>
+        [StorageChange("Uniques", "CollectionMaxSupply")]
+        public void OnUpdateCollectionMaxSupply(string key, string data)
+        {
+            CollectionMaxSupplyTypedStorage.Update(key, data);
+        }
+        
+        /// <summary>
+        /// >> CollectionMaxSupply
+        ///  Keeps track of the number of items a collection might have.
+        /// </summary>
+        public Ajuna.NetApi.Model.Types.Primitive.U32 GetCollectionMaxSupply(string key)
+        {
+            if ((key == null))
+            {
+                return null;
+            }
+            if (CollectionMaxSupplyTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Primitive.U32 result))
             {
                 return result;
             }

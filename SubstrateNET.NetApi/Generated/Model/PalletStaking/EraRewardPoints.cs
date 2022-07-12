@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 398 - Composite[pallet_staking.EraRewardPoints]
+    /// >> 402 - Composite[pallet_staking.EraRewardPoints]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EraRewardPoints : BaseType

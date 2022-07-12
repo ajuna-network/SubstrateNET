@@ -45,7 +45,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  the oldest hash.
         /// </summary>
         [HttpGet("RandomMaterial")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRandomnessCollectiveFlip.RandomnessCollectiveFlipStorage), "RandomMaterialParams")]
         public IActionResult GetRandomMaterial()
         {

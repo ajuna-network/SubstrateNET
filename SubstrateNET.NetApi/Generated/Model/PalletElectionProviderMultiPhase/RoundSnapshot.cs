@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase
     
     
     /// <summary>
-    /// >> 381 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
+    /// >> 385 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RoundSnapshot : BaseType

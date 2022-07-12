@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
     
     
     /// <summary>
-    /// >> 563 - Composite[pallet_bags_list.list.Node]
+    /// >> 571 - Composite[pallet_bags_list.list.Node]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Node : BaseType
@@ -45,6 +45,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
         /// >> bag_upper
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U64 _bagUpper;
+        
+        /// <summary>
+        /// >> score
+        /// </summary>
+        private Ajuna.NetApi.Model.Types.Primitive.U64 _score;
         
         public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 Id
         {
@@ -94,6 +99,18 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
             }
         }
         
+        public Ajuna.NetApi.Model.Types.Primitive.U64 Score
+        {
+            get
+            {
+                return this._score;
+            }
+            set
+            {
+                this._score = value;
+            }
+        }
+        
         public override string TypeName()
         {
             return "Node";
@@ -106,6 +123,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
             result.AddRange(Prev.Encode());
             result.AddRange(Next.Encode());
             result.AddRange(BagUpper.Encode());
+            result.AddRange(Score.Encode());
             return result.ToArray();
         }
         
@@ -120,6 +138,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBagsList
             Next.Decode(byteArray, ref p);
             BagUpper = new Ajuna.NetApi.Model.Types.Primitive.U64();
             BagUpper.Decode(byteArray, ref p);
+            Score = new Ajuna.NetApi.Model.Types.Primitive.U64();
+            Score.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

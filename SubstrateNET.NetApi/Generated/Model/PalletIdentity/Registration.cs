@@ -21,7 +21,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
     
     
     /// <summary>
-    /// >> 477 - Composite[pallet_identity.types.Registration]
+    /// >> 485 - Composite[pallet_identity.types.Registration]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Registration : BaseType
@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// <summary>
         /// >> judgements
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13 _judgements;
+        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 _judgements;
         
         /// <summary>
         /// >> deposit
@@ -42,7 +42,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityInfo _info;
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13 Judgements
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 Judgements
         {
             get
             {
@@ -95,7 +95,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletIdentity
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Judgements = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT13();
+            Judgements = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17();
             Judgements.Decode(byteArray, ref p);
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);

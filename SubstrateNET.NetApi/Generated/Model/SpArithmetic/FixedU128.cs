@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpArithmetic
     
     
     /// <summary>
-    /// >> 374 - Composite[sp_arithmetic.fixed_point.FixedU128]
+    /// >> 380 - Composite[sp_arithmetic.fixed_point.FixedU128]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class FixedU128 : BaseType

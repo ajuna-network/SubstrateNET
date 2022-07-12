@@ -77,7 +77,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
         [HttpGet("SubsOf")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT14>), 200)]
+        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "SubsOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
         public IActionResult GetSubsOf(string key)
         {
@@ -92,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
         [HttpGet("Registrars")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "RegistrarsParams")]
         public IActionResult GetRegistrars()
         {

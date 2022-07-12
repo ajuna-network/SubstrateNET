@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 596 - Composite[frame_support.storage.bounded_btree_map.BoundedBTreeMapT2]
+    /// >> 605 - Composite[frame_support.storage.bounded_btree_map.BoundedBTreeMapT2]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMapT2 : BaseType

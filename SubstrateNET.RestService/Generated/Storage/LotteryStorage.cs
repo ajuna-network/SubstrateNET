@@ -43,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Participants
         ///  Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
         /// </summary>
-        BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> GetParticipants(string key);
+        BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> GetParticipants(string key);
         
         /// <summary>
         /// >> TicketsCount
@@ -65,7 +65,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The calls stored in this pallet to be used in an active lottery if configured
         ///  by `Config::ValidateCall`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 GetCallIndices();
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26 GetCallIndices();
     }
     
     /// <summary>
@@ -87,7 +87,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _participantsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>> _participantsTypedStorage;
+        private TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>> _participantsTypedStorage;
         
         /// <summary>
         /// _ticketsCountTypedStorage typed storage field
@@ -102,7 +102,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _callIndicesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> _callIndicesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> _callIndicesTypedStorage;
         
         /// <summary>
         /// LotteryStorage constructor.
@@ -111,10 +111,10 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.LotteryIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Lottery.LotteryIndex", storageDataProvider, storageChangeDelegate);
             this.LotteryTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryConfig>("Lottery.Lottery", storageDataProvider, storageChangeDelegate);
-            this.ParticipantsTypedStorage = new TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>>("Lottery.Participants", storageDataProvider, storageChangeDelegate);
+            this.ParticipantsTypedStorage = new TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>>("Lottery.Participants", storageDataProvider, storageChangeDelegate);
             this.TicketsCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Lottery.TicketsCount", storageDataProvider, storageChangeDelegate);
             this.TicketsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Lottery.Tickets", storageDataProvider, storageChangeDelegate);
-            this.CallIndicesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>("Lottery.CallIndices", storageDataProvider, storageChangeDelegate);
+            this.CallIndicesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>("Lottery.CallIndices", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
@@ -150,7 +150,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _participantsTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22>> ParticipantsTypedStorage
+        public TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26>> ParticipantsTypedStorage
         {
             get
             {
@@ -195,7 +195,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _callIndicesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> CallIndicesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> CallIndicesTypedStorage
         {
             get
             {
@@ -268,13 +268,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Participants
         ///  Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
         /// </summary>
-        public BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> GetParticipants(string key)
+        public BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> GetParticipants(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ParticipantsTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22> result))
+            if (ParticipantsTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26> result))
             {
                 return result;
             }
@@ -348,7 +348,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The calls stored in this pallet to be used in an active lottery if configured
         ///  by `Config::ValidateCall`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 GetCallIndices()
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26 GetCallIndices()
         {
             return CallIndicesTypedStorage.Get();
         }

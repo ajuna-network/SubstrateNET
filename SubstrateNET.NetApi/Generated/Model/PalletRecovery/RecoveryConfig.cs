@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletRecovery
     
     
     /// <summary>
-    /// >> 498 - Composite[pallet_recovery.RecoveryConfig]
+    /// >> 506 - Composite[pallet_recovery.RecoveryConfig]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RecoveryConfig : BaseType
@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletRecovery
         /// <summary>
         /// >> friends
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 _friends;
+        private SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 _friends;
         
         /// <summary>
         /// >> threshold
@@ -70,7 +70,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletRecovery
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 Friends
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 Friends
         {
             get
             {
@@ -116,7 +116,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletRecovery
             DelayPeriod.Decode(byteArray, ref p);
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
+            Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20();
             Friends.Decode(byteArray, ref p);
             Threshold = new Ajuna.NetApi.Model.Types.Primitive.U16();
             Threshold.Decode(byteArray, ref p);

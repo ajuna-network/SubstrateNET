@@ -50,7 +50,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ChildBountyDescriptions
         ///  The description of each child-bounty.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetChildBountyDescriptions(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetChildBountyDescriptions(string key);
         
         /// <summary>
         /// >> ChildrenCuratorFees
@@ -83,7 +83,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _childBountyDescriptionsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> _childBountyDescriptionsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> _childBountyDescriptionsTypedStorage;
         
         /// <summary>
         /// _childrenCuratorFeesTypedStorage typed storage field
@@ -98,7 +98,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.ChildBountyCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ChildBounties.ChildBountyCount", storageDataProvider, storageChangeDelegate);
             this.ParentChildBountiesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ChildBounties.ParentChildBounties", storageDataProvider, storageChangeDelegate);
             this.ChildBountiesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty>("ChildBounties.ChildBounties", storageDataProvider, storageChangeDelegate);
-            this.ChildBountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21>("ChildBounties.ChildBountyDescriptions", storageDataProvider, storageChangeDelegate);
+            this.ChildBountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25>("ChildBounties.ChildBountyDescriptions", storageDataProvider, storageChangeDelegate);
             this.ChildrenCuratorFeesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("ChildBounties.ChildrenCuratorFees", storageDataProvider, storageChangeDelegate);
         }
         
@@ -150,7 +150,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _childBountyDescriptionsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> ChildBountyDescriptionsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> ChildBountyDescriptionsTypedStorage
         {
             get
             {
@@ -279,13 +279,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ChildBountyDescriptions
         ///  The description of each child-bounty.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetChildBountyDescriptions(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetChildBountyDescriptions(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ChildBountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 result))
+            if (ChildBountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 result))
             {
                 return result;
             }

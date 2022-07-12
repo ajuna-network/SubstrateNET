@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletStaking
     
     
     /// <summary>
-    /// >> 395 - Composite[pallet_staking.Nominations]
+    /// >> 399 - Composite[pallet_staking.Nominations]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Nominations : BaseType

@@ -43,10 +43,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> Class
-        ///  Details of an asset class.
+        ///  Details of a collection.
         /// </summary>
         [HttpGet("Class")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "ClassParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetClass(string key)
         {
@@ -55,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> OwnershipAcceptance
-        ///  The class, if any, of which an account is willing to take ownership.
+        ///  The collection, if any, of which an account is willing to take ownership.
         /// </summary>
         [HttpGet("OwnershipAcceptance")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
@@ -67,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> Account
-        ///  The assets held by any given account; set out this way so that assets owned by a single
+        ///  The items held by any given account; set out this way so that items owned by a single
         ///  account can be enumerated.
         /// </summary>
         [HttpGet("Account")]
@@ -80,8 +80,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> ClassAccount
-        ///  The classes owned by any given account; set out this way so that classes owned by a single
-        ///  account can be enumerated.
+        ///  The collections owned by any given account; set out this way so that collections owned by
+        ///  a single account can be enumerated.
         /// </summary>
         [HttpGet("ClassAccount")]
         [ProducesResponseType(typeof(BaseTuple), 200)]
@@ -93,10 +93,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> Asset
-        ///  The assets in existence and their ownership details.
+        ///  The items in existence and their ownership details.
         /// </summary>
         [HttpGet("Asset")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AssetParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetAsset(string key)
         {
@@ -105,10 +105,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> ClassMetadataOf
-        ///  Metadata of an asset class.
+        ///  Metadata of a collection.
         /// </summary>
         [HttpGet("ClassMetadataOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "ClassMetadataOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetClassMetadataOf(string key)
         {
@@ -117,10 +117,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> InstanceMetadataOf
-        ///  Metadata of an asset instance.
+        ///  Metadata of an item.
         /// </summary>
         [HttpGet("InstanceMetadataOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "InstanceMetadataOfParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetInstanceMetadataOf(string key)
         {
@@ -129,7 +129,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> Attribute
-        ///  Metadata of an asset class.
+        ///  Attributes of a collection.
         /// </summary>
         [HttpGet("Attribute")]
         [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
@@ -137,6 +137,18 @@ namespace SubstrateNET.RestService.Generated.Controller
         public IActionResult GetAttribute(string key)
         {
             return this.Ok(_uniquesStorage.GetAttribute(key));
+        }
+        
+        /// <summary>
+        /// >> CollectionMaxSupply
+        ///  Keeps track of the number of items a collection might have.
+        /// </summary>
+        [HttpGet("CollectionMaxSupply")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "CollectionMaxSupplyParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        public IActionResult GetCollectionMaxSupply(string key)
+        {
+            return this.Ok(_uniquesStorage.GetCollectionMaxSupply(key));
         }
     }
 }

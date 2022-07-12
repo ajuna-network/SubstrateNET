@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
+using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 
 
@@ -27,9 +27,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     }
     
     /// <summary>
-    /// >> 350 - Variant[pallet_nomination_pools.ConfigOp]
+    /// >> 351 - Variant[pallet_nomination_pools.ConfigOp]
     /// </summary>
-    public sealed class EnumConfigOp : BaseEnumExt<ConfigOp, BaseVoid, Ajuna.NetApi.Model.Types.Primitive.U32, BaseVoid>
+    public sealed class EnumConfigOp : BaseEnumExt<ConfigOp, BaseVoid, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, BaseVoid>
     {
     }
 }

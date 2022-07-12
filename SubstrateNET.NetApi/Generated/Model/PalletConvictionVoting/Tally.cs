@@ -36,9 +36,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
         private Ajuna.NetApi.Model.Types.Primitive.U128 _nays;
         
         /// <summary>
-        /// >> turnout
+        /// >> support
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Primitive.U128 _turnout;
+        private Ajuna.NetApi.Model.Types.Primitive.U128 _support;
         
         public Ajuna.NetApi.Model.Types.Primitive.U128 Ayes
         {
@@ -64,15 +64,15 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Primitive.U128 Turnout
+        public Ajuna.NetApi.Model.Types.Primitive.U128 Support
         {
             get
             {
-                return this._turnout;
+                return this._support;
             }
             set
             {
-                this._turnout = value;
+                this._support = value;
             }
         }
         
@@ -86,7 +86,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             var result = new List<byte>();
             result.AddRange(Ayes.Encode());
             result.AddRange(Nays.Encode());
-            result.AddRange(Turnout.Encode());
+            result.AddRange(Support.Encode());
             return result.ToArray();
         }
         
@@ -97,8 +97,8 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting
             Ayes.Decode(byteArray, ref p);
             Nays = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Nays.Decode(byteArray, ref p);
-            Turnout = new Ajuna.NetApi.Model.Types.Primitive.U128();
-            Turnout.Decode(byteArray, ref p);
+            Support = new Ajuna.NetApi.Model.Types.Primitive.U128();
+            Support.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

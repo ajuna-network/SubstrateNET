@@ -47,7 +47,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBabe
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "SegmentIndex"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "UnderConstruction"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT5)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "Initialized"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "Initialized"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "AuthorVrfRandomness"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "EpochStart"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Babe", "Lateness"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
@@ -298,10 +298,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBabe
         ///  Temporary value (cleared at block finalization) which is `Some`
         ///  if per-block initialization has already been called for current block.
         /// </summary>
-        public async Task<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> Initialized(CancellationToken token)
+        public async Task<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>> Initialized(CancellationToken token)
         {
             string parameters = BabeStorage.InitializedParams();
-            return await _client.GetStorageAsync<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>>(parameters, token);
+            return await _client.GetStorageAsync<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>>(parameters, token);
         }
         
         /// <summary>
@@ -309,7 +309,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBabe
         ///  This field should always be populated during block processing unless
         ///  secondary plain slots are enabled (which don't contain a VRF output).
         /// 
-        ///  It is set in `on_initialize`, before it will contain the value from the last block.
+        ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         public static string AuthorVrfRandomnessParams()
         {
@@ -321,7 +321,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBabe
         ///  This field should always be populated during block processing unless
         ///  secondary plain slots are enabled (which don't contain a VRF output).
         /// 
-        ///  It is set in `on_initialize`, before it will contain the value from the last block.
+        ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         public async Task<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> AuthorVrfRandomness(CancellationToken token)
         {
@@ -485,5 +485,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletBabe
         /// A given equivocation report is valid but already previously reported.
         /// </summary>
         DuplicateOffenceReport,
+        
+        /// <summary>
+        /// >> InvalidConfiguration
+        /// Submitted configuration is invalid.
+        /// </summary>
+        InvalidConfiguration,
     }
 }

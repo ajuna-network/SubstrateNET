@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     
     
     /// <summary>
-    /// >> 595 - Composite[pallet_nomination_pools.PoolMember]
+    /// >> 604 - Composite[pallet_nomination_pools.PoolMember]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PoolMember : BaseType

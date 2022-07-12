@@ -36,7 +36,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletVesting
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Vesting", "Vesting"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Vesting", "StorageVersion"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases)));
         }
         
@@ -55,10 +55,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletVesting
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17> Vesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> Vesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
             string parameters = VestingStorage.VestingParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21>(parameters, token);
         }
         
         /// <summary>

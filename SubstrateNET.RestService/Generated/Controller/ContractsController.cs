@@ -11,6 +11,7 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
+using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletContracts;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
@@ -46,7 +47,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
         [HttpGet("PristineCode")]
-        [ProducesResponseType(typeof(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "PristineCodeParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
         public IActionResult GetPristineCode(string key)
         {
@@ -132,7 +133,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
         [HttpGet("DeletionQueue")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract>), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "DeletionQueueParams")]
         public IActionResult GetDeletionQueue()
         {

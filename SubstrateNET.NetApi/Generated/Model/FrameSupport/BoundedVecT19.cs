@@ -10,7 +10,7 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.PalletProxy;
+using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
 using System.Collections.Generic;
 
 
@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 515 - Composite[frame_support.storage.bounded_vec.BoundedVecT19]
+    /// >> 491 - Composite[frame_support.storage.bounded_vec.BoundedVecT19]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT19 : BaseType
@@ -28,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         /// <summary>
         /// >> value
         /// </summary>
-        private BaseVec<SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyDefinition> _value;
+        private BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>> _value;
         
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyDefinition> Value
+        public BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>> Value
         {
             get
             {
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new BaseVec<SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyDefinition>();
+            Value = new BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

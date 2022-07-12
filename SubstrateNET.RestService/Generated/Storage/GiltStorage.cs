@@ -35,13 +35,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The vector is indexed by duration in `Period`s, offset by one, so information on the queue
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23 GetQueueTotals();
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetQueueTotals();
         
         /// <summary>
         /// >> Queues
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24 GetQueues(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 GetQueues(string key);
         
         /// <summary>
         /// >> ActiveTotal
@@ -65,12 +65,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queueTotalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23> _queueTotalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> _queueTotalsTypedStorage;
         
         /// <summary>
         /// _queuesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24> _queuesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28> _queuesTypedStorage;
         
         /// <summary>
         /// _activeTotalTypedStorage typed storage field
@@ -87,8 +87,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public GiltStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.QueueTotalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23>("Gilt.QueueTotals", storageDataProvider, storageChangeDelegate);
-            this.QueuesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24>("Gilt.Queues", storageDataProvider, storageChangeDelegate);
+            this.QueueTotalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27>("Gilt.QueueTotals", storageDataProvider, storageChangeDelegate);
+            this.QueuesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28>("Gilt.Queues", storageDataProvider, storageChangeDelegate);
             this.ActiveTotalTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal>("Gilt.ActiveTotal", storageDataProvider, storageChangeDelegate);
             this.ActiveTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt>("Gilt.Active", storageDataProvider, storageChangeDelegate);
         }
@@ -96,7 +96,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queueTotalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23> QueueTotalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> QueueTotalsTypedStorage
         {
             get
             {
@@ -111,7 +111,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queuesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24> QueuesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28> QueuesTypedStorage
         {
             get
             {
@@ -181,7 +181,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The vector is indexed by duration in `Period`s, offset by one, so information on the queue
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23 GetQueueTotals()
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27 GetQueueTotals()
         {
             return QueueTotalsTypedStorage.Get();
         }
@@ -199,13 +199,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Queues
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24 GetQueues(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 GetQueues(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (QueuesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24 result))
+            if (QueuesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT28 result))
             {
                 return result;
             }

@@ -36,9 +36,9 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletProxy
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Proxies"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19,Ajuna.NetApi.Model.Types.Primitive.U128>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23,Ajuna.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Announcements"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20,Ajuna.NetApi.Model.Types.Primitive.U128>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24,Ajuna.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -58,10 +58,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletProxy
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19,Ajuna.NetApi.Model.Types.Primitive.U128>> Proxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
+        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23,Ajuna.NetApi.Model.Types.Primitive.U128>> Proxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
             string parameters = ProxyStorage.ProxiesParams(key);
-            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
+            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
         
         /// <summary>
@@ -79,10 +79,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletProxy
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20,Ajuna.NetApi.Model.Types.Primitive.U128>> Announcements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
+        public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24,Ajuna.NetApi.Model.Types.Primitive.U128>> Announcements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
             string parameters = ProxyStorage.AnnouncementsParams(key);
-            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
+            return await _client.GetStorageAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24,Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
     }
     

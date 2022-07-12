@@ -186,7 +186,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  if per-block initialization has already been called for current block.
         /// </summary>
         [HttpGet("Initialized")]
-        [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>), 200)]
+        [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "InitializedParams")]
         public IActionResult GetInitialized()
         {
@@ -198,7 +198,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This field should always be populated during block processing unless
         ///  secondary plain slots are enabled (which don't contain a VRF output).
         /// 
-        ///  It is set in `on_initialize`, before it will contain the value from the last block.
+        ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         [HttpGet("AuthorVrfRandomness")]
         [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>), 200)]

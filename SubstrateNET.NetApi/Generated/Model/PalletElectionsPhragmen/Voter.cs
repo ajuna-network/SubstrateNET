@@ -20,7 +20,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen
     
     
     /// <summary>
-    /// >> 440 - Composite[pallet_elections_phragmen.Voter]
+    /// >> 444 - Composite[pallet_elections_phragmen.Voter]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Voter : BaseType

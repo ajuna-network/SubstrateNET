@@ -69,7 +69,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The description of each bounty.
         /// </summary>
         [HttpGet("BountyDescriptions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.BountiesStorage), "BountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBountyDescriptions(string key)
         {

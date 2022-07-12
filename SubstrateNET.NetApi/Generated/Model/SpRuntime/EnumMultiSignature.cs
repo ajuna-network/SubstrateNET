@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.SpRuntime
     }
     
     /// <summary>
-    /// >> 612 - Variant[sp_runtime.MultiSignature]
+    /// >> 621 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumExt<MultiSignature, SubstrateNET.NetApi.Generated.Model.SpCore.Signature, SubstrateNET.NetApi.Generated.Model.SpCore.Signature, SubstrateNET.NetApi.Generated.Model.SpCore.Signature>
     {

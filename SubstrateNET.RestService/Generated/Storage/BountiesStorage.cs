@@ -43,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BountyDescriptions
         ///  The description of each bounty.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetBountyDescriptions(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetBountyDescriptions(string key);
         
         /// <summary>
         /// >> BountyApprovals
@@ -71,7 +71,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bountyDescriptionsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> _bountyDescriptionsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> _bountyDescriptionsTypedStorage;
         
         /// <summary>
         /// _bountyApprovalsTypedStorage typed storage field
@@ -85,7 +85,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.BountyCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Bounties.BountyCount", storageDataProvider, storageChangeDelegate);
             this.BountiesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty>("Bounties.Bounties", storageDataProvider, storageChangeDelegate);
-            this.BountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21>("Bounties.BountyDescriptions", storageDataProvider, storageChangeDelegate);
+            this.BountyDescriptionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25>("Bounties.BountyDescriptions", storageDataProvider, storageChangeDelegate);
             this.BountyApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT11>("Bounties.BountyApprovals", storageDataProvider, storageChangeDelegate);
         }
         
@@ -122,7 +122,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bountyDescriptionsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> BountyDescriptionsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25> BountyDescriptionsTypedStorage
         {
             get
             {
@@ -220,13 +220,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BountyDescriptions
         ///  The description of each bounty.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetBountyDescriptions(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetBountyDescriptions(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 result))
+            if (BountyDescriptionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 result))
             {
                 return result;
             }

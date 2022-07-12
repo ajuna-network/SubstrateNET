@@ -52,7 +52,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForSubPoolsStorage"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "Metadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForMetadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "LastPoolId"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "ReversePoolIdLookup"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
@@ -346,10 +346,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = NominationPoolsStorage.MetadataParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31>(parameters, token);
         }
         
         /// <summary>
@@ -373,6 +373,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         
         /// <summary>
         /// >> LastPoolIdParams
+        ///  Ever increasing number of all pools created so far.
         /// </summary>
         public static string LastPoolIdParams()
         {
@@ -381,6 +382,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         
         /// <summary>
         /// >> LastPoolId
+        ///  Ever increasing number of all pools created so far.
         /// </summary>
         public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> LastPoolId(CancellationToken token)
         {
@@ -390,6 +392,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         
         /// <summary>
         /// >> ReversePoolIdLookupParams
+        ///  A reverse lookup from the pool's account id to its id.
+        /// 
+        ///  This is only used for slashing. In all other instances, the pool id is used, and the
+        ///  accounts are deterministically derived from it.
         /// </summary>
         public static string ReversePoolIdLookupParams(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
         {
@@ -400,6 +406,10 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         
         /// <summary>
         /// >> ReversePoolIdLookup
+        ///  A reverse lookup from the pool's account id to its id.
+        /// 
+        ///  This is only used for slashing. In all other instances, the pool id is used, and the
+        ///  accounts are deterministically derived from it.
         /// </summary>
         public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> ReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key, CancellationToken token)
         {
@@ -563,6 +573,20 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             byteArray.AddRange(max_members_per_pool.Encode());
             return new Method(49, "NominationPools", 10, "set_configs", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> update_roles
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method UpdateRoles(Ajuna.NetApi.Model.Types.Primitive.U32 pool_id, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.EnumConfigOp new_root, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.EnumConfigOp new_nominator, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.EnumConfigOp new_state_toggler)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(pool_id.Encode());
+            byteArray.AddRange(new_root.Encode());
+            byteArray.AddRange(new_nominator.Encode());
+            byteArray.AddRange(new_state_toggler.Encode());
+            return new Method(49, "NominationPools", 11, "update_roles", byteArray.ToArray());
+        }
     }
     
     public enum NominationPoolsErrors
@@ -716,5 +740,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// Not enough points. Ty unbonding less.
         /// </summary>
         NotEnoughPointsToUnbond,
+        
+        /// <summary>
+        /// >> PartialUnbondNotAllowedPermissionlessly
+        /// Partial unbonding now allowed permissionlessly.
+        /// </summary>
+        PartialUnbondNotAllowedPermissionlessly,
     }
 }

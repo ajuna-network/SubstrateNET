@@ -31,7 +31,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 GetVesting(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetVesting(string key);
         
         /// <summary>
         /// >> StorageVersion
@@ -51,7 +51,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _vestingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17> _vestingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> _vestingTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
@@ -63,14 +63,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public VestingStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17>("Vesting.Vesting", storageDataProvider, storageChangeDelegate);
+            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21>("Vesting.Vesting", storageDataProvider, storageChangeDelegate);
             this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases>("Vesting.StorageVersion", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
         /// _vestingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17> VestingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21> VestingTypedStorage
         {
             get
             {
@@ -119,13 +119,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 GetVesting(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetVesting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 result))
+            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 result))
             {
                 return result;
             }

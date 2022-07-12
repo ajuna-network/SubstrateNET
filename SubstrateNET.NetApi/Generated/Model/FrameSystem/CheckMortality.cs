@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSystem
     
     
     /// <summary>
-    /// >> 620 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 629 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

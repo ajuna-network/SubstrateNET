@@ -210,7 +210,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata for the pool.
         /// </summary>
         [HttpGet("Metadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT27), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT31), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetMetadata(string key)
         {
@@ -231,6 +231,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> LastPoolId
+        ///  Ever increasing number of all pools created so far.
         /// </summary>
         [HttpGet("LastPoolId")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
@@ -242,6 +243,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> ReversePoolIdLookup
+        ///  A reverse lookup from the pool's account id to its id.
+        /// 
+        ///  This is only used for slashing. In all other instances, the pool id is used, and the
+        ///  accounts are deterministically derived from it.
         /// </summary>
         [HttpGet("ReversePoolIdLookup")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]

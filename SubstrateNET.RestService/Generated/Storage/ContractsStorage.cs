@@ -11,6 +11,7 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
+using SubstrateNET.NetApi.Generated.Model.FrameSupport;
 using SubstrateNET.NetApi.Generated.Model.PalletContracts;
 using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.NetApi.Generated.Model.SpCore;
@@ -32,7 +33,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetPristineCode(string key);
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 GetPristineCode(string key);
         
         /// <summary>
         /// >> CodeStorage
@@ -88,7 +89,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract> GetDeletionQueue();
+        SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15 GetDeletionQueue();
     }
     
     /// <summary>
@@ -100,7 +101,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _pristineCodeTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _pristineCodeTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12> _pristineCodeTypedStorage;
         
         /// <summary>
         /// _codeStorageTypedStorage typed storage field
@@ -125,25 +126,25 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _deletionQueueTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract>> _deletionQueueTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15> _deletionQueueTypedStorage;
         
         /// <summary>
         /// ContractsStorage constructor.
         /// </summary>
         public ContractsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
         {
-            this.PristineCodeTypedStorage = new TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("Contracts.PristineCode", storageDataProvider, storageChangeDelegate);
+            this.PristineCodeTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12>("Contracts.PristineCode", storageDataProvider, storageChangeDelegate);
             this.CodeStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletContracts.PrefabWasmModule>("Contracts.CodeStorage", storageDataProvider, storageChangeDelegate);
             this.OwnerInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletContracts.OwnerInfo>("Contracts.OwnerInfoOf", storageDataProvider, storageChangeDelegate);
             this.NonceTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Contracts.Nonce", storageDataProvider, storageChangeDelegate);
             this.ContractInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletContracts.RawContractInfo>("Contracts.ContractInfoOf", storageDataProvider, storageChangeDelegate);
-            this.DeletionQueueTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract>>("Contracts.DeletionQueue", storageDataProvider, storageChangeDelegate);
+            this.DeletionQueueTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15>("Contracts.DeletionQueue", storageDataProvider, storageChangeDelegate);
         }
         
         /// <summary>
         /// _pristineCodeTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> PristineCodeTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12> PristineCodeTypedStorage
         {
             get
             {
@@ -218,7 +219,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _deletionQueueTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract>> DeletionQueueTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15> DeletionQueueTypedStorage
         {
             get
             {
@@ -256,13 +257,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetPristineCode(string key)
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 GetPristineCode(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PristineCodeTypedStorage.Dictionary.TryGetValue(key, out BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
+            if (PristineCodeTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 result))
             {
                 return result;
             }
@@ -416,7 +417,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract> GetDeletionQueue()
+        public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT15 GetDeletionQueue()
         {
             return DeletionQueueTypedStorage.Get();
         }

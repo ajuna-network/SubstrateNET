@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
     
     
     /// <summary>
-    /// >> 599 - Composite[pallet_nomination_pools.PoolRoles]
+    /// >> 608 - Composite[pallet_nomination_pools.PoolRoles]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PoolRoles : BaseType
@@ -33,17 +33,17 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
         /// <summary>
         /// >> root
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 _root;
+        private BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _root;
         
         /// <summary>
         /// >> nominator
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 _nominator;
+        private BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _nominator;
         
         /// <summary>
         /// >> state_toggler
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 _stateToggler;
+        private BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _stateToggler;
         
         public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 Depositor
         {
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 Root
+        public BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> Root
         {
             get
             {
@@ -69,7 +69,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 Nominator
+        public BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> Nominator
         {
             get
             {
@@ -81,7 +81,7 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 StateToggler
+        public BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> StateToggler
         {
             get
             {
@@ -113,11 +113,11 @@ namespace SubstrateNET.NetApi.Generated.Model.PalletNominationPools
             var start = p;
             Depositor = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Root = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+            Root = new BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
             Root.Decode(byteArray, ref p);
-            Nominator = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+            Nominator = new BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
             Nominator.Decode(byteArray, ref p);
-            StateToggler = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+            StateToggler = new BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
             StateToggler.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

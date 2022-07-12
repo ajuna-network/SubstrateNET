@@ -10,7 +10,7 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+using Ajuna.NetApi.Model.Types.Primitive;
 using System.Collections.Generic;
 
 
@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 476 - Composite[frame_support.storage.bounded_vec.BoundedVecT12]
+    /// >> 457 - Composite[frame_support.storage.bounded_vec.BoundedVecT12]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT12 : BaseType
@@ -28,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         /// <summary>
         /// >> value
         /// </summary>
-        private BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _value;
+        private BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> _value;
         
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> Value
+        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> Value
         {
             get
             {
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>();
+            Value = new BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

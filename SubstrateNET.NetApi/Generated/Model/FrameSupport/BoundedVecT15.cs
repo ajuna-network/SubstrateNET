@@ -10,7 +10,7 @@
 using Ajuna.NetApi.Attributes;
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Metadata.V14;
-using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+using SubstrateNET.NetApi.Generated.Model.PalletContracts;
 using System.Collections.Generic;
 
 
@@ -19,7 +19,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
     
     
     /// <summary>
-    /// >> 483 - Composite[frame_support.storage.bounded_vec.BoundedVecT15]
+    /// >> 463 - Composite[frame_support.storage.bounded_vec.BoundedVecT15]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT15 : BaseType
@@ -28,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         /// <summary>
         /// >> value
         /// </summary>
-        private BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>> _value;
+        private BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract> _value;
         
-        public BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>> Value
+        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract> Value
         {
             get
             {
@@ -57,7 +57,7 @@ namespace SubstrateNET.NetApi.Generated.Model.FrameSupport
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletIdentity.RegistrarInfo>>();
+            Value = new BaseVec<SubstrateNET.NetApi.Generated.Model.PalletContracts.DeletedContract>();
             Value.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
