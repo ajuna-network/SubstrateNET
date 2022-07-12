@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetVesting(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetVesting(BoundedVecT21 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Vesting/Vesting", value.Encode(), VestingStorage.VestingParams(key));
       }

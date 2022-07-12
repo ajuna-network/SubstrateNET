@@ -67,7 +67,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/UnderConstruction", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
       }
-      public async Task<bool> SetInitialized(BaseOpt<Arr32U8> value)
+      public async Task<bool> SetInitialized(BaseOpt<EnumPreDigest> value)
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/Initialized", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.InitializedParams());
       }

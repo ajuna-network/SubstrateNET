@@ -21,7 +21,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeBountyCount();
       Task<Bounty> GetBounties(U32 key);
       Task<bool> SubscribeBounties(U32 key);
-      Task<BoundedVecT21> GetBountyDescriptions(U32 key);
+      Task<BoundedVecT25> GetBountyDescriptions(U32 key);
       Task<bool> SubscribeBountyDescriptions(U32 key);
       Task<BoundedVecT11> GetBountyApprovals();
       Task<bool> SubscribeBountyApprovals();

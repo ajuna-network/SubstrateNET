@@ -156,10 +156,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -216,7 +216,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          PreimageControllerClient rpcClient = new PreimageControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 mockupValue = this.GetTestValue8();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 mockupValue = this.GetTestValue8();
          SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue9();
 
          Assert.IsTrue(await rpcClient.SubscribePreimageFor(mockupKey));
@@ -229,7 +229,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT18 rpcResult = await rpcClient.GetPreimageFor(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT22 rpcResult = await rpcClient.GetPreimageFor(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

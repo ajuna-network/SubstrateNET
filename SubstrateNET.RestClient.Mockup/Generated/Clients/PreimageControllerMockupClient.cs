@@ -27,7 +27,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Preimage/StatusFor", value.Encode(), PreimageStorage.StatusForParams(key));
       }
-      public async Task<bool> SetPreimageFor(BoundedVecT18 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetPreimageFor(BoundedVecT22 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Preimage/PreimageFor", value.Encode(), PreimageStorage.PreimageForParams(key));
       }

@@ -24,9 +24,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT12> GetRandomMaterial()
+      public async Task<BoundedVecT16> GetRandomMaterial()
       {
-         return await SendRequestAsync<BoundedVecT12>(_httpClient, "randomnesscollectiveflip/randommaterial");
+         return await SendRequestAsync<BoundedVecT16>(_httpClient, "randomnesscollectiveflip/randommaterial");
       }
       public async Task<bool> SubscribeRandomMaterial()
       {

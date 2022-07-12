@@ -16,7 +16,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IVestingControllerMockupClient
    {
-      Task<bool> SetVesting(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetVesting(BoundedVecT21 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetStorageVersion(EnumReleases value);
    }
 }

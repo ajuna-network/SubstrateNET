@@ -19,7 +19,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    {
       Task<bool> SetBountyCount(U32 value);
       Task<bool> SetBounties(Bounty value, U32 key);
-      Task<bool> SetBountyDescriptions(BoundedVecT21 value, U32 key);
+      Task<bool> SetBountyDescriptions(BoundedVecT25 value, U32 key);
       Task<bool> SetBountyApprovals(BoundedVecT11 value);
    }
 }

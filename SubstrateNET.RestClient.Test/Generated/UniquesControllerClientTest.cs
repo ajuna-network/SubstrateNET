@@ -27,10 +27,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails();
          result.Owner = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
          result.Owner = this.GetTestValue3();
          result.Issuer = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
@@ -41,8 +41,8 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Freezer = this.GetTestValue6();
          result.TotalDeposit = this.GetTestValueU128();
          result.FreeHolding = this.GetTestValueBool();
-         result.Instances = this.GetTestValueU32();
-         result.InstanceMetadatas = this.GetTestValueU32();
+         result.Items = this.GetTestValueU32();
+         result.ItemMetadatas = this.GetTestValueU32();
          result.Attributes = this.GetTestValueU32();
          result.IsFrozen = this.GetTestValueBool();
          return result;
@@ -218,7 +218,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          UniquesControllerClient rpcClient = new UniquesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails mockupValue = this.GetTestValue2();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeClass(mockupKey));
@@ -231,7 +231,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassDetails rpcResult = await rpcClient.GetClass(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails rpcResult = await rpcClient.GetClass(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -469,10 +469,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails();
          result.Owner = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
          result.Owner = this.GetTestValue19();
          result.Approved = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
@@ -579,7 +579,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          UniquesControllerClient rpcClient = new UniquesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails mockupValue = this.GetTestValue18();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails mockupValue = this.GetTestValue18();
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> mockupKey = this.GetTestValue21();
 
          Assert.IsTrue(await rpcClient.SubscribeAsset(mockupKey));
@@ -592,15 +592,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceDetails rpcResult = await rpcClient.GetAsset(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails rpcResult = await rpcClient.GetAsset(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata GetTestValue23()
+      public SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata GetTestValue23()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata();
          result.Deposit = this.GetTestValueU128();
          result.Data = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT1();
          result.Data = this.GetTestValue24();
@@ -627,7 +627,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          UniquesControllerClient rpcClient = new UniquesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata mockupValue = this.GetTestValue23();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata mockupValue = this.GetTestValue23();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeClassMetadataOf(mockupKey));
@@ -640,15 +640,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.ClassMetadata rpcResult = await rpcClient.GetClassMetadataOf(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata rpcResult = await rpcClient.GetClassMetadataOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata GetTestValue26()
+      public SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata GetTestValue26()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata result;
+         result = new SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata();
          result.Deposit = this.GetTestValueU128();
          result.Data = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT1();
          result.Data = this.GetTestValue27();
@@ -682,7 +682,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          UniquesControllerClient rpcClient = new UniquesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata mockupValue = this.GetTestValue26();
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata mockupValue = this.GetTestValue26();
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> mockupKey = this.GetTestValue28();
 
          Assert.IsTrue(await rpcClient.SubscribeInstanceMetadataOf(mockupKey));
@@ -695,7 +695,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletUniques.InstanceMetadata rpcResult = await rpcClient.GetInstanceMetadataOf(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata rpcResult = await rpcClient.GetInstanceMetadataOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -764,6 +764,35 @@ namespace SubstrateNET.RestClient.Test.Generated
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
          Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> rpcResult = await rpcClient.GetAttribute(mockupKey);
+
+         // Test that the expected mockup value matches the actual result from RPC service.
+         Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
+      }
+      [Test()]
+      public async System.Threading.Tasks.Task TestCollectionMaxSupply()
+      {
+         // Construct new Mockup client to test with.
+         UniquesControllerMockupClient mockupClient = new UniquesControllerMockupClient(_httpClient);
+
+         // Construct new subscription client to test with.
+         var subscriptionClient = CreateSubscriptionClient();
+
+         // Construct new RPC client to test with.
+         UniquesControllerClient rpcClient = new UniquesControllerClient(_httpClient, subscriptionClient);
+         Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
+         Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
+
+         Assert.IsTrue(await rpcClient.SubscribeCollectionMaxSupply(mockupKey));
+
+         // Save the previously generated mockup value in RPC service storage.
+         bool mockupSetResult = await mockupClient.SetCollectionMaxSupply(mockupValue, mockupKey);
+
+         // Test that the expected mockup value was handled successfully from RPC service.
+         Assert.IsTrue(mockupSetResult);
+         var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
+         Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
+
+         Ajuna.NetApi.Model.Types.Primitive.U32 rpcResult = await rpcClient.GetCollectionMaxSupply(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

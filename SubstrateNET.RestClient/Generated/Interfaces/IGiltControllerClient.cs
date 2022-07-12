@@ -16,9 +16,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IGiltControllerClient
    {
-      Task<BoundedVecT23> GetQueueTotals();
+      Task<BoundedVecT27> GetQueueTotals();
       Task<bool> SubscribeQueueTotals();
-      Task<BoundedVecT24> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<BoundedVecT28> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SubscribeQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<ActiveGiltsTotal> GetActiveTotal();
       Task<bool> SubscribeActiveTotal();

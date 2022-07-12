@@ -34,7 +34,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Lottery", value.Encode(), LotteryStorage.LotteryParams());
       }
-      public async Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT22> value, AccountId32 key)
+      public async Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT26> value, AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Participants", value.Encode(), LotteryStorage.ParticipantsParams(key));
       }
@@ -46,7 +46,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/Tickets", value.Encode(), LotteryStorage.TicketsParams(key));
       }
-      public async Task<bool> SetCallIndices(BoundedVecT22 value)
+      public async Task<bool> SetCallIndices(BoundedVecT26 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Lottery/CallIndices", value.Encode(), LotteryStorage.CallIndicesParams());
       }

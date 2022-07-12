@@ -22,7 +22,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetRandomMaterial(BoundedVecT12 value)
+      public async Task<bool> SetRandomMaterial(BoundedVecT16 value)
       {
          return await SendMockupRequestAsync(_httpClient, "RandomnessCollectiveFlip/RandomMaterial", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletRandomnessCollectiveFlip.RandomnessCollectiveFlipStorage.RandomMaterialParams());
       }

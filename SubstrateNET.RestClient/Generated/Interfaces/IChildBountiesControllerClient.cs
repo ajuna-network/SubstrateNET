@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeParentChildBounties(U32 key);
       Task<ChildBounty> GetChildBounties(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
       Task<bool> SubscribeChildBounties(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
-      Task<BoundedVecT21> GetChildBountyDescriptions(U32 key);
+      Task<BoundedVecT25> GetChildBountyDescriptions(U32 key);
       Task<bool> SubscribeChildBountyDescriptions(U32 key);
       Task<U128> GetChildrenCuratorFees(U32 key);
       Task<bool> SubscribeChildrenCuratorFees(U32 key);

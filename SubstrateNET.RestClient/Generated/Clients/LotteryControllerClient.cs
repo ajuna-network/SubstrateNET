@@ -44,9 +44,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Lottery.Lottery");
       }
-      public async Task<BaseTuple<U32, BoundedVecT22>> GetParticipants(AccountId32 key)
+      public async Task<BaseTuple<U32, BoundedVecT26>> GetParticipants(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<U32, BoundedVecT22>>(_httpClient, "lottery/participants", LotteryStorage.ParticipantsParams(key));
+         return await SendRequestAsync<BaseTuple<U32, BoundedVecT26>>(_httpClient, "lottery/participants", LotteryStorage.ParticipantsParams(key));
       }
       public async Task<bool> SubscribeParticipants(AccountId32 key)
       {
@@ -68,9 +68,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Lottery.Tickets", LotteryStorage.TicketsParams(key));
       }
-      public async Task<BoundedVecT22> GetCallIndices()
+      public async Task<BoundedVecT26> GetCallIndices()
       {
-         return await SendRequestAsync<BoundedVecT22>(_httpClient, "lottery/callindices");
+         return await SendRequestAsync<BoundedVecT26>(_httpClient, "lottery/callindices");
       }
       public async Task<bool> SubscribeCallIndices()
       {

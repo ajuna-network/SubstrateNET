@@ -37,6 +37,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Next = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
          result.Next.Create(this.GetTestValue5());
          result.BagUpper = this.GetTestValueU64();
+         result.Score = this.GetTestValueU64();
          return result;
       }
       public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue3()

@@ -26,9 +26,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<ClassDetails> GetClass(U32 key)
+      public async Task<CollectionDetails> GetClass(U32 key)
       {
-         return await SendRequestAsync<ClassDetails>(_httpClient, "uniques/class", UniquesStorage.ClassParams(key));
+         return await SendRequestAsync<CollectionDetails>(_httpClient, "uniques/class", UniquesStorage.ClassParams(key));
       }
       public async Task<bool> SubscribeClass(U32 key)
       {
@@ -58,25 +58,25 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.ClassAccount", UniquesStorage.ClassAccountParams(key));
       }
-      public async Task<InstanceDetails> GetAsset(BaseTuple<U32, U32> key)
+      public async Task<ItemDetails> GetAsset(BaseTuple<U32, U32> key)
       {
-         return await SendRequestAsync<InstanceDetails>(_httpClient, "uniques/asset", UniquesStorage.AssetParams(key));
+         return await SendRequestAsync<ItemDetails>(_httpClient, "uniques/asset", UniquesStorage.AssetParams(key));
       }
       public async Task<bool> SubscribeAsset(BaseTuple<U32, U32> key)
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.Asset", UniquesStorage.AssetParams(key));
       }
-      public async Task<ClassMetadata> GetClassMetadataOf(U32 key)
+      public async Task<CollectionMetadata> GetClassMetadataOf(U32 key)
       {
-         return await SendRequestAsync<ClassMetadata>(_httpClient, "uniques/classmetadataof", UniquesStorage.ClassMetadataOfParams(key));
+         return await SendRequestAsync<CollectionMetadata>(_httpClient, "uniques/classmetadataof", UniquesStorage.ClassMetadataOfParams(key));
       }
       public async Task<bool> SubscribeClassMetadataOf(U32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.ClassMetadataOf", UniquesStorage.ClassMetadataOfParams(key));
       }
-      public async Task<InstanceMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key)
+      public async Task<ItemMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key)
       {
-         return await SendRequestAsync<InstanceMetadata>(_httpClient, "uniques/instancemetadataof", UniquesStorage.InstanceMetadataOfParams(key));
+         return await SendRequestAsync<ItemMetadata>(_httpClient, "uniques/instancemetadataof", UniquesStorage.InstanceMetadataOfParams(key));
       }
       public async Task<bool> SubscribeInstanceMetadataOf(BaseTuple<U32, U32> key)
       {
@@ -89,6 +89,14 @@ namespace SubstrateNET.RestClient.Generated.Clients
       public async Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.Attribute", UniquesStorage.AttributeParams(key));
+      }
+      public async Task<U32> GetCollectionMaxSupply(U32 key)
+      {
+         return await SendRequestAsync<U32>(_httpClient, "uniques/collectionmaxsupply", UniquesStorage.CollectionMaxSupplyParams(key));
+      }
+      public async Task<bool> SubscribeCollectionMaxSupply(U32 key)
+      {
+         return await _subscriptionClient.SubscribeAsync("Uniques.CollectionMaxSupply", UniquesStorage.CollectionMaxSupplyParams(key));
       }
    }
 }

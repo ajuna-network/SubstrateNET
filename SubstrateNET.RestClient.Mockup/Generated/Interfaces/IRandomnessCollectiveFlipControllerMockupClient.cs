@@ -15,6 +15,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IRandomnessCollectiveFlipControllerMockupClient
    {
-      Task<bool> SetRandomMaterial(BoundedVecT12 value);
+      Task<bool> SetRandomMaterial(BoundedVecT16 value);
    }
 }

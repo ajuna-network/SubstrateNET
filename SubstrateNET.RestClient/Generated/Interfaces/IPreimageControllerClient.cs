@@ -18,7 +18,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    {
       Task<EnumRequestStatus> GetStatusFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribeStatusFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<BoundedVecT18> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<BoundedVecT22> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribePreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
    }
 }

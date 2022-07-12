@@ -109,9 +109,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Babe.UnderConstruction", SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
       }
-      public async Task<BaseOpt<Arr32U8>> GetInitialized()
+      public async Task<BaseOpt<EnumPreDigest>> GetInitialized()
       {
-         return await SendRequestAsync<BaseOpt<Arr32U8>>(_httpClient, "babe/initialized");
+         return await SendRequestAsync<BaseOpt<EnumPreDigest>>(_httpClient, "babe/initialized");
       }
       public async Task<bool> SubscribeInitialized()
       {

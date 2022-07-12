@@ -32,15 +32,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          result = new SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig();
          result.DelayPeriod = this.GetTestValueU32();
          result.Deposit = this.GetTestValueU128();
-         result.Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
+         result.Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20();
          result.Friends = this.GetTestValue3();
          result.Threshold = this.GetTestValueU16();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
                   this.GetTestValue4()});
@@ -161,14 +161,14 @@ namespace SubstrateNET.RestClient.Test.Generated
          result = new SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery();
          result.Created = this.GetTestValueU32();
          result.Deposit = this.GetTestValueU128();
-         result.Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
+         result.Friends = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20();
          result.Friends = this.GetTestValue8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
                   this.GetTestValue9()});

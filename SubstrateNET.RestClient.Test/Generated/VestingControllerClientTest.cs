@@ -26,10 +26,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo[] {
                   this.GetTestValue3()});
@@ -95,7 +95,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          VestingControllerClient rpcClient = new VestingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 mockupValue = this.GetTestValue2();
          SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue4();
 
          Assert.IsTrue(await rpcClient.SubscribeVesting(mockupKey));
@@ -108,7 +108,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT17 rpcResult = await rpcClient.GetVesting(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 rpcResult = await rpcClient.GetVesting(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

@@ -33,9 +33,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Preimage.StatusFor", PreimageStorage.StatusForParams(key));
       }
-      public async Task<BoundedVecT18> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<BoundedVecT22> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {
-         return await SendRequestAsync<BoundedVecT18>(_httpClient, "preimage/preimagefor", PreimageStorage.PreimageForParams(key));
+         return await SendRequestAsync<BoundedVecT22>(_httpClient, "preimage/preimagefor", PreimageStorage.PreimageForParams(key));
       }
       public async Task<bool> SubscribePreimageFor(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {

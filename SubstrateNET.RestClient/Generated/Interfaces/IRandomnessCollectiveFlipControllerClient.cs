@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IRandomnessCollectiveFlipControllerClient
    {
-      Task<BoundedVecT12> GetRandomMaterial();
+      Task<BoundedVecT16> GetRandomMaterial();
       Task<bool> SubscribeRandomMaterial();
    }
 }

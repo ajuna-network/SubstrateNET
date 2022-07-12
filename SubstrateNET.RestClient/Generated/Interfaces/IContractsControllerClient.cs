@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
    using SubstrateNET.NetApi.Generated.Model.PalletContracts;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IContractsControllerClient
    {
-      Task<BaseVec<U8>> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<BoundedVecT12> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<PrefabWasmModule> GetCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
       Task<bool> SubscribeCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
@@ -27,7 +27,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeNonce();
       Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseVec<DeletedContract>> GetDeletionQueue();
+      Task<BoundedVecT15> GetDeletionQueue();
       Task<bool> SubscribeDeletionQueue();
    }
 }

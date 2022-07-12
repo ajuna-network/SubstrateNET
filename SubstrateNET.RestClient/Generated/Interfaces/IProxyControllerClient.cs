@@ -15,9 +15,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IProxyControllerClient
    {
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT19, Ajuna.NetApi.Model.Types.Primitive.U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT23, Ajuna.NetApi.Model.Types.Primitive.U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeProxies(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT20, Ajuna.NetApi.Model.Types.Primitive.U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT24, Ajuna.NetApi.Model.Types.Primitive.U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeAnnouncements(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
    }
 }

@@ -37,7 +37,7 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Casting result;
          result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Casting();
-         result.Votes = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26();
+         result.Votes = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT30();
          result.Votes = this.GetTestValue4();
          result.Delegations = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Delegations();
          result.Delegations = this.GetTestValue9();
@@ -45,10 +45,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Prior = this.GetTestValue10();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT30 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT26();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT30 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT30();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote>[] {
                   this.GetTestValue5()});

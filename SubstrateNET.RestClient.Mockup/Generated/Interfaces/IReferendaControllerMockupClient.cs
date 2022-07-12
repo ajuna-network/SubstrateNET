@@ -19,7 +19,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    {
       Task<bool> SetReferendumCount(U32 value);
       Task<bool> SetReferendumInfoFor(EnumReferendumInfo value, U32 key);
-      Task<bool> SetTrackQueue(BoundedVecT25 value, U8 key);
+      Task<bool> SetTrackQueue(BoundedVecT29 value, U8 key);
       Task<bool> SetDecidingCount(U32 value, U8 key);
    }
 }

@@ -25,10 +25,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256[] {
                   this.GetTestValue3()});
@@ -85,7 +85,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          RandomnessCollectiveFlipControllerClient rpcClient = new RandomnessCollectiveFlipControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeRandomMaterial());
@@ -98,7 +98,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT12 rpcResult = await rpcClient.GetRandomMaterial();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT16 rpcResult = await rpcClient.GetRandomMaterial();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

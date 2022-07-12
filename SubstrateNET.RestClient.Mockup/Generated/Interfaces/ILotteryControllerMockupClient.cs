@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    {
       Task<bool> SetLotteryIndex(U32 value);
       Task<bool> SetLottery(LotteryConfig value);
-      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT22> value, AccountId32 key);
+      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT26> value, AccountId32 key);
       Task<bool> SetTicketsCount(U32 value);
       Task<bool> SetTickets(AccountId32 value, U32 key);
-      Task<bool> SetCallIndices(BoundedVecT22 value);
+      Task<bool> SetCallIndices(BoundedVecT26 value);
    }
 }

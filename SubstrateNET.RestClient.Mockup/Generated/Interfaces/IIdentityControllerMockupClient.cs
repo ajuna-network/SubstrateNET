@@ -19,7 +19,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    {
       Task<bool> SetIdentityOf(Registration value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetSuperOf(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetSubsOf(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT14> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetRegistrars(BoundedVecT15 value);
+      Task<bool> SetSubsOf(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetRegistrars(BoundedVecT19 value);
    }
 }

@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IUniquesControllerClient
    {
-      Task<ClassDetails> GetClass(U32 key);
+      Task<CollectionDetails> GetClass(U32 key);
       Task<bool> SubscribeClass(U32 key);
       Task<U32> GetOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
@@ -25,13 +25,15 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key);
       Task<BaseTuple> GetClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
       Task<bool> SubscribeClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
-      Task<InstanceDetails> GetAsset(BaseTuple<U32, U32> key);
+      Task<ItemDetails> GetAsset(BaseTuple<U32, U32> key);
       Task<bool> SubscribeAsset(BaseTuple<U32, U32> key);
-      Task<ClassMetadata> GetClassMetadataOf(U32 key);
+      Task<CollectionMetadata> GetClassMetadataOf(U32 key);
       Task<bool> SubscribeClassMetadataOf(U32 key);
-      Task<InstanceMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key);
+      Task<ItemMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key);
       Task<bool> SubscribeInstanceMetadataOf(BaseTuple<U32, U32> key);
       Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
       Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
+      Task<U32> GetCollectionMaxSupply(U32 key);
+      Task<bool> SubscribeCollectionMaxSupply(U32 key);
    }
 }

@@ -76,7 +76,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "NominationPools/CounterForSubPoolsStorage", value.Encode(), NominationPoolsStorage.CounterForSubPoolsStorageParams());
       }
-      public async Task<bool> SetMetadata(BoundedVecT27 value, U32 key)
+      public async Task<bool> SetMetadata(BoundedVecT31 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "NominationPools/Metadata", value.Encode(), NominationPoolsStorage.MetadataParams(key));
       }

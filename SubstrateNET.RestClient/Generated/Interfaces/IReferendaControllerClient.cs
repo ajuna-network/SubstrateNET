@@ -21,7 +21,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeReferendumCount();
       Task<EnumReferendumInfo> GetReferendumInfoFor(U32 key);
       Task<bool> SubscribeReferendumInfoFor(U32 key);
-      Task<BoundedVecT25> GetTrackQueue(U8 key);
+      Task<BoundedVecT29> GetTrackQueue(U8 key);
       Task<bool> SubscribeTrackQueue(U8 key);
       Task<U32> GetDecidingCount(U8 key);
       Task<bool> SubscribeDecidingCount(U8 key);

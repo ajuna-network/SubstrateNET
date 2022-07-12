@@ -25,17 +25,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT23> GetQueueTotals()
+      public async Task<BoundedVecT27> GetQueueTotals()
       {
-         return await SendRequestAsync<BoundedVecT23>(_httpClient, "gilt/queuetotals");
+         return await SendRequestAsync<BoundedVecT27>(_httpClient, "gilt/queuetotals");
       }
       public async Task<bool> SubscribeQueueTotals()
       {
          return await _subscriptionClient.SubscribeAsync("Gilt.QueueTotals");
       }
-      public async Task<BoundedVecT24> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<BoundedVecT28> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<BoundedVecT24>(_httpClient, "gilt/queues", GiltStorage.QueuesParams(key));
+         return await SendRequestAsync<BoundedVecT28>(_httpClient, "gilt/queues", GiltStorage.QueuesParams(key));
       }
       public async Task<bool> SubscribeQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {

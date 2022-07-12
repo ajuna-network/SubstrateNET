@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData>> GetSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT14>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT18>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BoundedVecT15> GetRegistrars();
+      Task<BoundedVecT19> GetRegistrars();
       Task<bool> SubscribeRegistrars();
    }
 }

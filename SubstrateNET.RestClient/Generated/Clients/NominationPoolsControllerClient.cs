@@ -130,9 +130,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("NominationPools.CounterForSubPoolsStorage");
       }
-      public async Task<BoundedVecT27> GetMetadata(U32 key)
+      public async Task<BoundedVecT31> GetMetadata(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT27>(_httpClient, "nominationpools/metadata", NominationPoolsStorage.MetadataParams(key));
+         return await SendRequestAsync<BoundedVecT31>(_httpClient, "nominationpools/metadata", NominationPoolsStorage.MetadataParams(key));
       }
       public async Task<bool> SubscribeMetadata(U32 key)
       {

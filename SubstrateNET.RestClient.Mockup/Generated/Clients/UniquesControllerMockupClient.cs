@@ -24,7 +24,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetClass(ClassDetails value, U32 key)
+      public async Task<bool> SetClass(CollectionDetails value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/Class", value.Encode(), UniquesStorage.ClassParams(key));
       }
@@ -40,21 +40,25 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/ClassAccount", value.Encode(), UniquesStorage.ClassAccountParams(key));
       }
-      public async Task<bool> SetAsset(InstanceDetails value, BaseTuple<U32, U32> key)
+      public async Task<bool> SetAsset(ItemDetails value, BaseTuple<U32, U32> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/Asset", value.Encode(), UniquesStorage.AssetParams(key));
       }
-      public async Task<bool> SetClassMetadataOf(ClassMetadata value, U32 key)
+      public async Task<bool> SetClassMetadataOf(CollectionMetadata value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/ClassMetadataOf", value.Encode(), UniquesStorage.ClassMetadataOfParams(key));
       }
-      public async Task<bool> SetInstanceMetadataOf(InstanceMetadata value, BaseTuple<U32, U32> key)
+      public async Task<bool> SetInstanceMetadataOf(ItemMetadata value, BaseTuple<U32, U32> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/InstanceMetadataOf", value.Encode(), UniquesStorage.InstanceMetadataOfParams(key));
       }
       public async Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Uniques/Attribute", value.Encode(), UniquesStorage.AttributeParams(key));
+      }
+      public async Task<bool> SetCollectionMaxSupply(U32 value, U32 key)
+      {
+         return await SendMockupRequestAsync(_httpClient, "Uniques/CollectionMaxSupply", value.Encode(), UniquesStorage.CollectionMaxSupplyParams(key));
       }
    }
 }

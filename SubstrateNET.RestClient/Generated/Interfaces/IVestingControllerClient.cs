@@ -16,7 +16,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IVestingControllerClient
    {
-      Task<BoundedVecT17> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<BoundedVecT21> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<EnumReleases> GetStorageVersion();
       Task<bool> SubscribeStorageVersion();

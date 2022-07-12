@@ -17,6 +17,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    public interface IPreimageControllerMockupClient
    {
       Task<bool> SetStatusFor(EnumRequestStatus value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SetPreimageFor(BoundedVecT18 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetPreimageFor(BoundedVecT22 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
    }
 }

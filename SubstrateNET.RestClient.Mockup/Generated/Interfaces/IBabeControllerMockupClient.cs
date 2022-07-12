@@ -30,7 +30,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetNextAuthorities(WeakBoundedVecT1 value);
       Task<bool> SetSegmentIndex(U32 value);
       Task<bool> SetUnderConstruction(BoundedVecT5 value, U32 key);
-      Task<bool> SetInitialized(BaseOpt<Arr32U8> value);
+      Task<bool> SetInitialized(BaseOpt<EnumPreDigest> value);
       Task<bool> SetAuthorVrfRandomness(BaseOpt<Arr32U8> value);
       Task<bool> SetEpochStart(BaseTuple<U32, U32> value);
       Task<bool> SetLateness(U32 value);

@@ -42,9 +42,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Referenda.ReferendumInfoFor", ReferendaStorage.ReferendumInfoForParams(key));
       }
-      public async Task<BoundedVecT25> GetTrackQueue(U8 key)
+      public async Task<BoundedVecT29> GetTrackQueue(U8 key)
       {
-         return await SendRequestAsync<BoundedVecT25>(_httpClient, "referenda/trackqueue", ReferendaStorage.TrackQueueParams(key));
+         return await SendRequestAsync<BoundedVecT29>(_httpClient, "referenda/trackqueue", ReferendaStorage.TrackQueueParams(key));
       }
       public async Task<bool> SubscribeTrackQueue(U8 key)
       {

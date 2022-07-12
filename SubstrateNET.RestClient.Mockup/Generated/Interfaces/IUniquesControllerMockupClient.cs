@@ -17,13 +17,14 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IUniquesControllerMockupClient
    {
-      Task<bool> SetClass(ClassDetails value, U32 key);
+      Task<bool> SetClass(CollectionDetails value, U32 key);
       Task<bool> SetOwnershipAcceptance(U32 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
       Task<bool> SetAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key);
       Task<bool> SetClassAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
-      Task<bool> SetAsset(InstanceDetails value, BaseTuple<U32, U32> key);
-      Task<bool> SetClassMetadataOf(ClassMetadata value, U32 key);
-      Task<bool> SetInstanceMetadataOf(InstanceMetadata value, BaseTuple<U32, U32> key);
+      Task<bool> SetAsset(ItemDetails value, BaseTuple<U32, U32> key);
+      Task<bool> SetClassMetadataOf(CollectionMetadata value, U32 key);
+      Task<bool> SetInstanceMetadataOf(ItemMetadata value, BaseTuple<U32, U32> key);
       Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT2> key);
+      Task<bool> SetCollectionMaxSupply(U32 value, U32 key);
    }
 }

@@ -139,10 +139,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -159,7 +159,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BountiesControllerClient rpcClient = new BountiesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 mockupValue = this.GetTestValue6();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 mockupValue = this.GetTestValue6();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeBountyDescriptions(mockupKey));
@@ -172,7 +172,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT21 rpcResult = await rpcClient.GetBountyDescriptions(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 rpcResult = await rpcClient.GetBountyDescriptions(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

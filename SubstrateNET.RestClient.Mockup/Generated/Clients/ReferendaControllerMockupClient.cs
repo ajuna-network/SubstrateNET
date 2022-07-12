@@ -32,7 +32,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumInfoFor", value.Encode(), ReferendaStorage.ReferendumInfoForParams(key));
       }
-      public async Task<bool> SetTrackQueue(BoundedVecT25 value, U8 key)
+      public async Task<bool> SetTrackQueue(BoundedVecT29 value, U8 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Referenda/TrackQueue", value.Encode(), ReferendaStorage.TrackQueueParams(key));
       }

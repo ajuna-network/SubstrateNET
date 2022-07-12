@@ -23,13 +23,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeLotteryIndex();
       Task<LotteryConfig> GetLottery();
       Task<bool> SubscribeLottery();
-      Task<BaseTuple<U32, BoundedVecT22>> GetParticipants(AccountId32 key);
+      Task<BaseTuple<U32, BoundedVecT26>> GetParticipants(AccountId32 key);
       Task<bool> SubscribeParticipants(AccountId32 key);
       Task<U32> GetTicketsCount();
       Task<bool> SubscribeTicketsCount();
       Task<AccountId32> GetTickets(U32 key);
       Task<bool> SubscribeTickets(U32 key);
-      Task<BoundedVecT22> GetCallIndices();
+      Task<BoundedVecT26> GetCallIndices();
       Task<bool> SubscribeCallIndices();
    }
 }

@@ -16,8 +16,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IGiltControllerMockupClient
    {
-      Task<bool> SetQueueTotals(BoundedVecT23 value);
-      Task<bool> SetQueues(BoundedVecT24 value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<bool> SetQueueTotals(BoundedVecT27 value);
+      Task<bool> SetQueues(BoundedVecT28 value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SetActiveTotal(ActiveGiltsTotal value);
       Task<bool> SetActive(ActiveGilt value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
    }

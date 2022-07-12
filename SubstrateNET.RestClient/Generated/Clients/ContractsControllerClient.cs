@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
    using SubstrateNET.NetApi.Generated.Model.PalletContracts;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
@@ -26,9 +26,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseVec<U8>> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<BoundedVecT12> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {
-         return await SendRequestAsync<BaseVec<U8>>(_httpClient, "contracts/pristinecode", ContractsStorage.PristineCodeParams(key));
+         return await SendRequestAsync<BoundedVecT12>(_httpClient, "contracts/pristinecode", ContractsStorage.PristineCodeParams(key));
       }
       public async Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
       {
@@ -66,9 +66,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Contracts.ContractInfoOf", ContractsStorage.ContractInfoOfParams(key));
       }
-      public async Task<BaseVec<DeletedContract>> GetDeletionQueue()
+      public async Task<BoundedVecT15> GetDeletionQueue()
       {
-         return await SendRequestAsync<BaseVec<DeletedContract>>(_httpClient, "contracts/deletionqueue");
+         return await SendRequestAsync<BoundedVecT15>(_httpClient, "contracts/deletionqueue");
       }
       public async Task<bool> SubscribeDeletionQueue()
       {

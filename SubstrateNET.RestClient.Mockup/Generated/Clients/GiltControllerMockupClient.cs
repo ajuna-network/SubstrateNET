@@ -23,11 +23,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetQueueTotals(BoundedVecT23 value)
+      public async Task<bool> SetQueueTotals(BoundedVecT27 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Gilt/QueueTotals", value.Encode(), GiltStorage.QueueTotalsParams());
       }
-      public async Task<bool> SetQueues(BoundedVecT24 value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<bool> SetQueues(BoundedVecT28 value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Gilt/Queues", value.Encode(), GiltStorage.QueuesParams(key));
       }

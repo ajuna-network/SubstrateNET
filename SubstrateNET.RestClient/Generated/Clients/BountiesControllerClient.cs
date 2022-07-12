@@ -42,9 +42,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Bounties.Bounties", BountiesStorage.BountiesParams(key));
       }
-      public async Task<BoundedVecT21> GetBountyDescriptions(U32 key)
+      public async Task<BoundedVecT25> GetBountyDescriptions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT21>(_httpClient, "bounties/bountydescriptions", BountiesStorage.BountyDescriptionsParams(key));
+         return await SendRequestAsync<BoundedVecT25>(_httpClient, "bounties/bountydescriptions", BountiesStorage.BountyDescriptionsParams(key));
       }
       public async Task<bool> SubscribeBountyDescriptions(U32 key)
       {

@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT17> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BoundedVecT21> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT17>(_httpClient, "vesting/vesting", VestingStorage.VestingParams(key));
+         return await SendRequestAsync<BoundedVecT21>(_httpClient, "vesting/vesting", VestingStorage.VestingParams(key));
       }
       public async Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
       {

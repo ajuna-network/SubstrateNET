@@ -40,7 +40,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeSegmentIndex();
       Task<BoundedVecT5> GetUnderConstruction(U32 key);
       Task<bool> SubscribeUnderConstruction(U32 key);
-      Task<BaseOpt<Arr32U8>> GetInitialized();
+      Task<BaseOpt<EnumPreDigest>> GetInitialized();
       Task<bool> SubscribeInitialized();
       Task<BaseOpt<Arr32U8>> GetAuthorVrfRandomness();
       Task<bool> SubscribeAuthorVrfRandomness();

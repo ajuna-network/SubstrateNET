@@ -248,7 +248,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Tally();
          result.Ayes = this.GetTestValueU128();
          result.Nays = this.GetTestValueU128();
-         result.Turnout = this.GetTestValueU128();
+         result.Support = this.GetTestValueU128();
          return result;
       }
       public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetTestValue13()
@@ -294,10 +294,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 result;
+         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
                   this.GetTestValue17()});
@@ -321,7 +321,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ReferendaControllerClient rpcClient = new ReferendaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 mockupValue = this.GetTestValue16();
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 mockupValue = this.GetTestValue16();
          Ajuna.NetApi.Model.Types.Primitive.U8 mockupKey = this.GetTestValueU8();
 
          Assert.IsTrue(await rpcClient.SubscribeTrackQueue(mockupKey));
@@ -334,7 +334,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT25 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.FrameSupport.BoundedVecT29 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
