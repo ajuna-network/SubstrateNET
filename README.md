@@ -5,19 +5,37 @@ This is a NET playground repo for the published monthly substrate [tags](https:/
 
 ## How to use
 
-1) Launch a local substrate node on a monthly tag. ex. monthly-2022-07
+### Run local substrate node
+Currently you should find for the most actual monthly build a pre-generated tag in this repo, so make sure you chose a supported monthly substrate tag (ex. monthly-2022-07)
+
 ```bash
 git clone -b monthly-2022-07 --single-branch https://github.com/paritytech/substrate.git
 cargo build -p node-cli --release
 ./target/release/substrate --dev
 ```
 
-2) Load SubstrateNET on the same monthly tag as the node. ex. monthly-2022-07
+### Load SubstrateNET
+Use the same tag for the SubstrateNET.
+
 ```bash
 git clone -b monthly-2022-07 --single-branch https://github.com/ajuna-network/SubstrateNET.git
 ```
 
-3) Launch `SubstrateNET.sln`
+### Launch Solution
+Load solution `SubstrateNET.sln`
+
+### Launch Service
+Execute `SubstrateNET.RestService`
+- might ask you to accept certificates for ssl
+
+### Access Endpoints & Swagger
+- Rest API: http://localhost:61752/swagger/index.html 
+- WebSocket: http://localhost:61752/ws 
+
+## Simple Program
+
+A simple `Program.cs` to start hacking!
+
 start hacking with the SDK
 ```csharp
 using System;
