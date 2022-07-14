@@ -3,6 +3,8 @@ Generated Substrate NET SDK
 
 This is a NET playground repo for the published monthly substrate [tags](https://github.com/paritytech/substrate/tags). To build towards a specific node, please follow the documentation in the [Ajuna.SDK](https://github.com/ajuna-network/Ajuna.SDK) repo.
 
+![image](https://user-images.githubusercontent.com/17710198/179053169-72f64582-24f8-43cd-bf34-86d6660c7c81.png)
+
 ## How to use
 
 ### Run local substrate node
