@@ -19,14 +19,15 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
 
-    public TMP_Text TxtConnect, TxtFree, TxtReserved, BtnTxtConnect;
+    public TMP_Text TxtConnect, TxtFree, TxtReserved, TxtBalanceTime, TxtState, TxtBlockNumber, TxtBlockNumberTime, BtnTxtConnect;
 
-    public Toggle OptBalance;
+    public Toggle OptBlockNumber, OptBalance;
 
-    public Image ImgConnect, PgbBalanceFiller;
+    public Image ImgConnect, PgbBlockNumberFiller, PgbBalanceFiller, PgbStateFiller;
 
     private Task _connectTask;
-    private Task<AccountInfo> _queryBalancesTask;
+
+    private bool _queryBlockNumberFlag, _queryBalanceFlag;
 
     private int BalanceFiller = 0;
 
@@ -35,7 +36,7 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Network.ExtrinsicStateUpdateEvent += OnExtrinsicStateUpdateEvent;
     }
 
     // Update is called once per frame
@@ -53,25 +54,21 @@ public class MenuController : MonoBehaviour
                                 + Network.Client.RuntimeVersion.SpecVersion + "/"
                                 + Network.Client.RuntimeVersion.ImplVersion;
                 OptBalance.interactable = true;
+                OptBlockNumber.interactable = true;
             }
             else
             {
                 BtnTxtConnect.text = "CONNECT";
                 ImgConnect.color = new Color32(0xFF, 0x64, 0x64, 0xFF);
                 TxtConnect.text = "..." + "\n" + "...";
+                TxtBalanceTime.text = "... ms";
                 OptBalance.interactable = false;
+                OptBalance.isOn = false;
+                TxtBlockNumberTime.text = "... ms";
+                OptBlockNumber.interactable = false;
+                OptBlockNumber.isOn = false;
             }
             _connectTask = null;
-        }
-
-        if (_queryBalancesTask != null && _queryBalancesTask.IsCompleted)
-        {
-            if (_queryBalancesTask.Result != null)
-            {
-                TxtFree.text = _queryBalancesTask.Result.Data.Free.Value.ToString();
-                TxtReserved.text = _queryBalancesTask.Result.Data.Reserved.Value.ToString();
-            }
-            _queryBalancesTask = null;
         }
     }
 
@@ -93,31 +90,71 @@ public class MenuController : MonoBehaviour
             _connectTask = Network.Client.ConnectAsync();
         }
     }
+
+    public void OnChangedOptBlock(bool changed)
+    {
+        if (OptBlockNumber.isOn)
+        {
+            InvokeRepeating("QueryBlock", 0, 1f);
+        }
+        else
+        {
+            TxtBlockNumberTime.text = "... ms";
+            CancelInvoke("QueryBlock");
+        }
+    }
+
+    public async void QueryBlock()
+    {
+        if (!_queryBlockNumberFlag)
+        {
+            System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
+            _queryBlockNumberFlag = true;
+            stopWatch.Start();
+            var blockNumber = await Network.Client.SystemStorage.Number(CancellationToken.None);
+            stopWatch.Stop();
+            TxtBlockNumber.text = blockNumber.Value.ToString();
+            TxtBlockNumberTime.text = (float) stopWatch.ElapsedTicks / 10000 + " ms";
+            _queryBlockNumberFlag = false;
+        } 
+    }
+
     public void OnChangedOptBalance(bool changed)
     {
-        if (changed)
+        if (OptBalance.isOn)
         {
             BalanceFiller = 0;
             InvokeRepeating("QueryBalance", 0, 1);
         }
         else
         {
+            TxtBalanceTime.text = "... ms";
             CancelInvoke("QueryBalance");
             PgbBalanceFiller.rectTransform.localScale = Vector3.one;
         }
     }
 
-    public void QueryBalance()
+    public async void QueryBalance()
     {
-        if (BalanceFiller % 7 == 0)
+        if (BalanceFiller % 7 == 0 && !_queryBalanceFlag)
         {
-            Debug.Log("QueryBalance");
             var accountId32 = new AccountId32();
             accountId32.Create(Network.Alice.Bytes);
-            _queryBalancesTask = Network.Client.SystemStorage.Account(accountId32, CancellationToken.None);
+
+            System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
+            _queryBalanceFlag = true;
+            stopWatch.Start();
+            var account = await Network.Client.SystemStorage.Account(accountId32, CancellationToken.None);
+            stopWatch.Stop();
+
+            TxtFree.text = account.Data.Free.Value.ToString();
+            TxtReserved.text = account.Data.Reserved.Value.ToString();
+
+            TxtBalanceTime.text = (float)stopWatch.ElapsedTicks / 10000 + " ms";
+            _queryBalanceFlag = false;
+
         }
 
-        //PgbBalanceFiller.fillAmount = (float) BalanceFiller / 6;
         PgbBalanceFiller.rectTransform.localScale = new Vector3((float)BalanceFiller / 6, 1f, 1f);
 
         BalanceFiller++;
@@ -138,38 +175,58 @@ public class MenuController : MonoBehaviour
         var chargeAssetTx = new ChargeAssetTxPayment(0,0);
 
         var extrinsicMethod = BalancesCalls.Transfer(multiAddressBob, amount);
-        var subscription = Network.Client.Author.SubmitAndWatchExtrinsicAsync(ActionExtrinsicUpdate, extrinsicMethod, Network.Alice, chargeAssetTx, 64, CancellationToken.None);
+        var subscription = Network.Client.Author.SubmitAndWatchExtrinsicAsync(Network.ActionExtrinsicUpdate, extrinsicMethod, Network.Alice, chargeAssetTx, 64, CancellationToken.None);
     }
 
-    /// <summary>
-    /// Simple extrinsic tester
-    /// </summary>
-    /// <param name="subscriptionId"></param>
-    /// <param name="extrinsicUpdate"></param>
-    private void ActionExtrinsicUpdate(string subscriptionId, ExtrinsicStatus extrinsicUpdate)
+    private void OnExtrinsicStateUpdateEvent(string subscriptionId, ExtrinsicStatus extrinsicStatus)
     {
-        switch (extrinsicUpdate.ExtrinsicState)
+        var state = "Unknown";
+        var value = 0;
+        switch (extrinsicStatus.ExtrinsicState)
         {
             case ExtrinsicState.None:
-                if (extrinsicUpdate.InBlock?.Value.Length > 0)
+                if (extrinsicStatus.InBlock?.Value.Length > 0)
                 {
-                    Debug.Log($"{subscriptionId}: InBlock {extrinsicUpdate.InBlock.Value}");
+                    state = "InBlock";
+                    value = 5;
                 }
-                else if (extrinsicUpdate.Finalized?.Value.Length > 0)
+                else if (extrinsicStatus.Finalized?.Value.Length > 0)
                 {
-                    Debug.Log($"{subscriptionId}: Finalized {extrinsicUpdate.Finalized.Value}");
+                    state = "Finalized";
+                    value = 6;
+                }
+                else
+                {
+                    state = "None";
+                    value = 0;
                 }
                 break;
+
             case ExtrinsicState.Future:
+                state = "Future";
                 break;
+
             case ExtrinsicState.Ready:
+                state = "Ready";
+                value = 2;
                 break;
+
             case ExtrinsicState.Dropped:
+                state = "Dropped";
+                value = 0;
                 break;
+
             case ExtrinsicState.Invalid:
-                break;
-            default:
+                state = "Invalid";
+                value = 0;
                 break;
         }
+
+        UnityMainThreadDispatcher.DispatchAsync(() =>
+        {
+            TxtState.text = state;
+            PgbStateFiller.rectTransform.localScale = new Vector3((float)value / 6, 1f, 1f);
+        });
     }
+
 }
