@@ -95,17 +95,3 @@ namespace Ajuna.NetApi.RunConsole
     }
 }
 ```
-
-## Simple Unity Demo
-
-- Download Unity [LINK](https://unity.com/download)
-- Add project folder SubstrateNET.UnityDemo
-![image](https://user-images.githubusercontent.com/17710198/179782619-9b2b9bb4-bb4f-4526-ba34-b80c5f4a3d55.png)
-- spin up localnode monthly-2022-07
-- launch unity
-- add tmp essentials
-![image](https://user-images.githubusercontent.com/17710198/179970992-54e5b262-0efd-4191-881b-dbbe5b0a3201.png)
-- play project
-
-![image](https://user-images.githubusercontent.com/17710198/179059678-e8578c14-50bf-4ad7-95c1-252f7ac2503d.png)
-
