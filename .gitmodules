@@ -1,0 +1,3 @@
+[submodule "SubstrateNET.UnityDemo"]
+	path = SubstrateNET.UnityDemo
+	url = https://github.com/ajuna-network/SubstrateNET.UnityDemo.git
