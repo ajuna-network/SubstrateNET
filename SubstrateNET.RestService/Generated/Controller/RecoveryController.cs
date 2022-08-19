@@ -10,8 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletRecovery;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The set of recoverable accounts and their recovery configuration.
         /// </summary>
         [HttpGet("Recoverable")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryStorage), "RecoverableParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RecoveryStorage), "RecoverableParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetRecoverable(string key)
         {
             return this.Ok(_recoveryStorage.GetRecoverable(key));
@@ -59,8 +57,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  is the user trying to recover the account.
         /// </summary>
         [HttpGet("ActiveRecoveries")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryStorage), "ActiveRecoveriesParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RecoveryStorage), "ActiveRecoveriesParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetActiveRecoveries(string key)
         {
             return this.Ok(_recoveryStorage.GetActiveRecoveries(key));
@@ -73,8 +71,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Map from the user who can access it to the recovered account.
         /// </summary>
         [HttpGet("Proxy")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryStorage), "ProxyParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RecoveryStorage), "ProxyParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetProxy(string key)
         {
             return this.Ok(_recoveryStorage.GetProxy(key));

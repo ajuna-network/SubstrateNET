@@ -11,14 +11,9 @@ namespace SubstrateNET.NetApi.Demo
 
         public DateTime LastUpdated { get; private set; }
 
-        public bool IsSuccess => _state == "Finalized";
-
-        public bool IsFail => _state == "Invalid" 
+        public bool IsFail => _state == null
+                           || _state == "Invalid"
                            || _state == "Dropped";
-
-        public bool IsRunning => !IsSuccess && !IsFail;
-
-        public bool IsFinish =>  IsSuccess || IsFail;
 
         public double TimeElapsed => DateTime.Now.Subtract(LastUpdated).TotalSeconds;
 
@@ -42,7 +37,14 @@ namespace SubstrateNET.NetApi.Demo
         private int _ttl;
         private Dictionary<string, QueueInfo> _data;
 
-        public int Running => _data.Values.Where(p => p.IsRunning).Count();
+        public int Running => _data.Values.Count();
+
+        public int Finalized { get; private set; } = 0;
+        public int InBlock { get; private set; } = 0;
+        public int Future { get; private set; } = 0;
+        public int Ready { get; private set; } = 0;
+        public int Dropped { get; private set; } = 0;
+        public int Invalid { get; private set; } = 0;
 
         public ExtrinsicManager(int ttl)
         {
@@ -53,41 +55,17 @@ namespace SubstrateNET.NetApi.Demo
         public void Add(string subscription)
         {
             _data.Add(subscription, new QueueInfo());
-
-            if (_data.Count > 100)
-            {
-                Clean();
-            }
         }
 
         public QueueInfo? Get(string id)
         {
             if (!_data.TryGetValue(id, out QueueInfo? queueInfo))
             {
-                Log.Warning("Retrieving unregeistred or removed subscriptionId {id}", id);
+                Log.Debug("Trying to acess queue info for unregistered or removed subscriptionId {id}", id);
                 return queueInfo;
             }
 
             return queueInfo;
-        }
-
-        public void Clean()
-        {
-            var toRemove = new List<string>();
-            foreach (var kvp in _data)
-            {
-                if (kvp.Value.TimeElapsed > _ttl)
-                {
-                    toRemove.Add(kvp.Key);
-                }
-            }
-
-            foreach(var key in toRemove)
-            {
-                _data.Remove(key);
-            }
-
-            Log.Information("Removing {count} etrinsics", toRemove);
         }
 
         /// <summary>
@@ -99,7 +77,7 @@ namespace SubstrateNET.NetApi.Demo
         {
             if (!_data.TryGetValue(subscriptionId, out QueueInfo queueInfo))
             {
-                Log.Warning("Unregeistred or removed subscriptionId {id} got update", subscriptionId, extrinsicUpdate.ExtrinsicState);
+                Log.Debug("Unregistered or removed subscriptionId {id} got update", subscriptionId, extrinsicUpdate.ExtrinsicState);
                 return;
             }
 
@@ -108,11 +86,13 @@ namespace SubstrateNET.NetApi.Demo
                 case ExtrinsicState.None:
                     if (extrinsicUpdate.InBlock?.Value.Length > 0)
                     {
+                        InBlock += 1;
                         queueInfo.Update("InBlock");
                     }
                     else if (extrinsicUpdate.Finalized?.Value.Length > 0)
                     {
-                        queueInfo.Update("Finalized");
+                        Finalized += 1;
+                        _data.Remove(subscriptionId);
                     }
                     else
                     {
@@ -121,19 +101,23 @@ namespace SubstrateNET.NetApi.Demo
                     break;
 
                 case ExtrinsicState.Future:
+                    Future += 1;
                     queueInfo.Update("Future");
                     break;
 
                 case ExtrinsicState.Ready:
+                    Ready += 1;
                     queueInfo.Update("Ready");
                     break;
 
                 case ExtrinsicState.Dropped:
-                    queueInfo.Update("Dropped");
+                    Dropped += 1;
+                    _data.Remove(subscriptionId);
                     break;
 
                 case ExtrinsicState.Invalid:
-                    queueInfo.Update("Invalid");
+                    Invalid += 1;
+                    _data.Remove(subscriptionId);
                     break;
             }
         }

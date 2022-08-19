@@ -15,8 +15,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point;
+   using SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment;
    
    public class TransactionPaymentControllerClientTest : ClientTestBase
    {
@@ -26,10 +26,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128();
          result.Value = this.GetTestValueU128();
          return result;
       }
@@ -44,7 +44,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionPaymentControllerClient rpcClient = new TransactionPaymentControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextFeeMultiplier());
@@ -57,16 +57,16 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 rpcResult = await rpcClient.GetNextFeeMultiplier();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 rpcResult = await rpcClient.GetNextFeeMultiplier();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.Releases>());
+         SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.Releases>());
          return result;
       }
       [Test()]
@@ -80,7 +80,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionPaymentControllerClient rpcClient = new TransactionPaymentControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases mockupValue = this.GetTestValue4();
+         SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases mockupValue = this.GetTestValue4();
 
 
          Assert.IsTrue(await rpcClient.SubscribeStorageVersion());
@@ -93,7 +93,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
+         SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

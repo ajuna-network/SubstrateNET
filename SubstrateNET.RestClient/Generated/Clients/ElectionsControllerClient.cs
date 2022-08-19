@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ElectionsControllerClient : BaseClient, IElectionsControllerClient
@@ -42,9 +42,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Elections.RunnersUp");
       }
-      public async Task<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U128>>> GetCandidates()
+      public async Task<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U128>>> GetCandidates()
       {
-         return await SendRequestAsync<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U128>>>(_httpClient, "elections/candidates");
+         return await SendRequestAsync<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U128>>>(_httpClient, "elections/candidates");
       }
       public async Task<bool> SubscribeCandidates()
       {
@@ -58,13 +58,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Elections.ElectionRounds");
       }
-      public async Task<Voter> GetVoting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<Voter> GetVoting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<Voter>(_httpClient, "elections/voting", SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.VotingParams(key));
+         return await SendRequestAsync<Voter>(_httpClient, "elections/voting", SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.VotingParams(key));
       }
-      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Elections.Voting", SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.VotingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Elections.Voting", SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.VotingParams(key));
       }
    }
 }

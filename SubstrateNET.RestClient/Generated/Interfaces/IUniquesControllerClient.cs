@@ -11,29 +11,34 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletUniques;
+   using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface IUniquesControllerClient
    {
       Task<CollectionDetails> GetClass(U32 key);
       Task<bool> SubscribeClass(U32 key);
-      Task<U32> GetOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple> GetAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key);
-      Task<bool> SubscribeAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key);
-      Task<BaseTuple> GetClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
-      Task<bool> SubscribeClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
+      Task<U32> GetOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<BaseTuple> GetAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key);
+      Task<bool> SubscribeAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key);
+      Task<BaseTuple> GetClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key);
+      Task<bool> SubscribeClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key);
       Task<ItemDetails> GetAsset(BaseTuple<U32, U32> key);
       Task<bool> SubscribeAsset(BaseTuple<U32, U32> key);
       Task<CollectionMetadata> GetClassMetadataOf(U32 key);
       Task<bool> SubscribeClassMetadataOf(U32 key);
       Task<ItemMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key);
       Task<bool> SubscribeInstanceMetadataOf(BaseTuple<U32, U32> key);
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
-      Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
+      Task<BaseTuple<BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key);
+      Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key);
+      Task<BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> GetItemPriceOf(BaseTuple<U32, U32> key);
+      Task<bool> SubscribeItemPriceOf(BaseTuple<U32, U32> key);
       Task<U32> GetCollectionMaxSupply(U32 key);
       Task<bool> SubscribeCollectionMaxSupply(U32 key);
+      Task<U32> GetNextCollectionId();
+      Task<bool> SubscribeNextCollectionId();
    }
 }

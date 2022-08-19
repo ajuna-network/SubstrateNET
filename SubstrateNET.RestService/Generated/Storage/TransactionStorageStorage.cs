@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Transactions
         ///  Collection of transaction metadata by block number.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTransactions(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetTransactions(string key);
         
         /// <summary>
         /// >> ChunkCount
@@ -60,7 +58,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> BlockTransactions
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetBlockTransactions();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetBlockTransactions();
         
         /// <summary>
         /// >> ProofChecked
@@ -78,7 +76,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _transactionsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> _transactionsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34> _transactionsTypedStorage;
         
         /// <summary>
         /// _chunkCountTypedStorage typed storage field
@@ -103,7 +101,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockTransactionsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> _blockTransactionsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34> _blockTransactionsTypedStorage;
         
         /// <summary>
         /// _proofCheckedTypedStorage typed storage field
@@ -113,21 +111,21 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// TransactionStorageStorage constructor.
         /// </summary>
-        public TransactionStorageStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public TransactionStorageStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.TransactionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34>("TransactionStorage.Transactions", storageDataProvider, storageChangeDelegate);
-            this.ChunkCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("TransactionStorage.ChunkCount", storageDataProvider, storageChangeDelegate);
-            this.ByteFeeTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("TransactionStorage.ByteFee", storageDataProvider, storageChangeDelegate);
-            this.EntryFeeTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("TransactionStorage.EntryFee", storageDataProvider, storageChangeDelegate);
-            this.StoragePeriodTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("TransactionStorage.StoragePeriod", storageDataProvider, storageChangeDelegate);
-            this.BlockTransactionsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34>("TransactionStorage.BlockTransactions", storageDataProvider, storageChangeDelegate);
-            this.ProofCheckedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("TransactionStorage.ProofChecked", storageDataProvider, storageChangeDelegate);
+            this.TransactionsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34>("TransactionStorage.Transactions", storageDataProvider, storageChangeDelegates);
+            this.ChunkCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("TransactionStorage.ChunkCount", storageDataProvider, storageChangeDelegates);
+            this.ByteFeeTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("TransactionStorage.ByteFee", storageDataProvider, storageChangeDelegates);
+            this.EntryFeeTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("TransactionStorage.EntryFee", storageDataProvider, storageChangeDelegates);
+            this.StoragePeriodTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("TransactionStorage.StoragePeriod", storageDataProvider, storageChangeDelegates);
+            this.BlockTransactionsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34>("TransactionStorage.BlockTransactions", storageDataProvider, storageChangeDelegates);
+            this.ProofCheckedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("TransactionStorage.ProofChecked", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _transactionsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> TransactionsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34> TransactionsTypedStorage
         {
             get
             {
@@ -202,7 +200,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockTransactionsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34> BlockTransactionsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34> BlockTransactionsTypedStorage
         {
             get
             {
@@ -256,13 +254,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Transactions
         ///  Collection of transaction metadata by block number.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTransactions(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetTransactions(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (TransactionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 result))
+            if (TransactionsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 result))
             {
                 return result;
             }
@@ -368,7 +366,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> BlockTransactions
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetBlockTransactions()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetBlockTransactions()
         {
             return BlockTransactionsTypedStorage.Get();
         }

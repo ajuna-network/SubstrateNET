@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletAssets;
+   using SubstrateNET.NetApi.Generated.Model.pallet_assets.types;
    
    public interface IAssetsControllerMockupClient
    {
       Task<bool> SetAsset(AssetDetails value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
-      Task<bool> SetAccount(AssetAccount value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
-      Task<bool> SetApprovals(Approval value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
+      Task<bool> SetAccount(AssetAccount value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
+      Task<bool> SetApprovals(Approval value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
       Task<bool> SetMetadata(AssetMetadata value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
    }
 }

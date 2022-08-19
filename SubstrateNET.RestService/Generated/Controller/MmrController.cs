@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Latest MMR Root hash.
         /// </summary>
         [HttpGet("RootHash")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage), "RootHashParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MmrStorage), "RootHashParams")]
         public IActionResult GetRootHash()
         {
             return this.Ok(_mmrStorage.GetRootHash());
@@ -57,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("NumberOfLeaves")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U64), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage), "NumberOfLeavesParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MmrStorage), "NumberOfLeavesParams")]
         public IActionResult GetNumberOfLeaves()
         {
             return this.Ok(_mmrStorage.GetNumberOfLeaves());
@@ -71,8 +69,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  are pruned and only stored in the Offchain DB.
         /// </summary>
         [HttpGet("Nodes")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage), "NodesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MmrStorage), "NodesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
         public IActionResult GetNodes(string key)
         {
             return this.Ok(_mmrStorage.GetNodes(key));

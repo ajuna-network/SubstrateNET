@@ -13,9 +13,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpNposElections;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
+   using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ElectionProviderMultiPhaseControllerMockupClient : MockupBaseClient, IElectionProviderMultiPhaseControllerMockupClient
@@ -27,43 +28,43 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetRound(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/Round", value.Encode(), ElectionProviderMultiPhaseStorage.RoundParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/Round", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.RoundParams());
       }
       public async Task<bool> SetCurrentPhase(EnumPhase value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/CurrentPhase", value.Encode(), ElectionProviderMultiPhaseStorage.CurrentPhaseParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/CurrentPhase", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.CurrentPhaseParams());
       }
       public async Task<bool> SetQueuedSolution(ReadySolution value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/QueuedSolution", value.Encode(), ElectionProviderMultiPhaseStorage.QueuedSolutionParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/QueuedSolution", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.QueuedSolutionParams());
       }
       public async Task<bool> SetSnapshot(RoundSnapshot value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/Snapshot", value.Encode(), ElectionProviderMultiPhaseStorage.SnapshotParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/Snapshot", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SnapshotParams());
       }
       public async Task<bool> SetDesiredTargets(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/DesiredTargets", value.Encode(), ElectionProviderMultiPhaseStorage.DesiredTargetsParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/DesiredTargets", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.DesiredTargetsParams());
       }
       public async Task<bool> SetSnapshotMetadata(SolutionOrSnapshotSize value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SnapshotMetadata", value.Encode(), ElectionProviderMultiPhaseStorage.SnapshotMetadataParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SnapshotMetadata", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SnapshotMetadataParams());
       }
       public async Task<bool> SetSignedSubmissionNextIndex(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionNextIndex", value.Encode(), ElectionProviderMultiPhaseStorage.SignedSubmissionNextIndexParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionNextIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionNextIndexParams());
       }
       public async Task<bool> SetSignedSubmissionIndices(BoundedBTreeMapT1 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionIndices", value.Encode(), ElectionProviderMultiPhaseStorage.SignedSubmissionIndicesParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionIndices", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionIndicesParams());
       }
       public async Task<bool> SetSignedSubmissionsMap(SignedSubmission value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionsMap", value.Encode(), ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionsMap", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
       }
       public async Task<bool> SetMinimumUntrustedScore(ElectionScore value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/MinimumUntrustedScore", value.Encode(), ElectionProviderMultiPhaseStorage.MinimumUntrustedScoreParams());
+         return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/MinimumUntrustedScore", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.MinimumUntrustedScoreParams());
       }
    }
 }

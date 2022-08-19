@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Accounts
         ///  The lookup from index to account.
         /// </summary>
-        BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool> GetAccounts(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool> GetAccounts(string key);
     }
     
     /// <summary>
@@ -42,20 +40,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _accountsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool>> _accountsTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>> _accountsTypedStorage;
         
         /// <summary>
         /// IndicesStorage constructor.
         /// </summary>
-        public IndicesStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public IndicesStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.AccountsTypedStorage = new TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool>>("Indices.Accounts", storageDataProvider, storageChangeDelegate);
+            this.AccountsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>>("Indices.Accounts", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _accountsTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool>> AccountsTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>> AccountsTypedStorage
         {
             get
             {
@@ -88,13 +86,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Accounts
         ///  The lookup from index to account.
         /// </summary>
-        public BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool> GetAccounts(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool> GetAccounts(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AccountsTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128,Ajuna.NetApi.Model.Types.Primitive.Bool> result))
+            if (AccountsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool> result))
             {
                 return result;
             }

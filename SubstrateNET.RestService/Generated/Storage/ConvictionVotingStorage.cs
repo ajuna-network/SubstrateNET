@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,7 +29,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  All voting for a particular voter in a particular voting class. We store the balance for the
         ///  number of votes that we have recorded.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting GetVotingFor(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting GetVotingFor(string key);
         
         /// <summary>
         /// >> ClassLocksFor
@@ -41,7 +37,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 GetClassLocksFor(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 GetClassLocksFor(string key);
     }
     
     /// <summary>
@@ -53,26 +49,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting> _votingForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting> _votingForTypedStorage;
         
         /// <summary>
         /// _classLocksForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37> _classLocksForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37> _classLocksForTypedStorage;
         
         /// <summary>
         /// ConvictionVotingStorage constructor.
         /// </summary>
-        public ConvictionVotingStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public ConvictionVotingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.VotingForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting>("ConvictionVoting.VotingFor", storageDataProvider, storageChangeDelegate);
-            this.ClassLocksForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegate);
+            this.VotingForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting>("ConvictionVoting.VotingFor", storageDataProvider, storageChangeDelegates);
+            this.ClassLocksForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _votingForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting> VotingForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting> VotingForTypedStorage
         {
             get
             {
@@ -87,7 +83,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classLocksForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37> ClassLocksForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37> ClassLocksForTypedStorage
         {
             get
             {
@@ -122,13 +118,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  All voting for a particular voter in a particular voting class. We store the balance for the
         ///  number of votes that we have recorded.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting GetVotingFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting GetVotingFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting result))
+            if (VotingForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting result))
             {
                 return result;
             }
@@ -153,13 +149,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 GetClassLocksFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 GetClassLocksFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 result))
+            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 result))
             {
                 return result;
             }

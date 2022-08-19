@@ -12,9 +12,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+   using SubstrateNET.NetApi.Generated.Model.pallet_identity.types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class IdentityControllerMockupClient : MockupBaseClient, IIdentityControllerMockupClient
@@ -24,21 +26,21 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetIdentityOf(Registration value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetIdentityOf(Registration value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Identity/IdentityOf", value.Encode(), IdentityStorage.IdentityOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Identity/IdentityOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.IdentityOfParams(key));
       }
-      public async Task<bool> SetSuperOf(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetSuperOf(BaseTuple<AccountId32, EnumData> value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Identity/SuperOf", value.Encode(), IdentityStorage.SuperOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Identity/SuperOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SuperOfParams(key));
       }
-      public async Task<bool> SetSubsOf(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetSubsOf(BaseTuple<U128, BoundedVecT23> value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Identity/SubsOf", value.Encode(), IdentityStorage.SubsOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Identity/SubsOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SubsOfParams(key));
       }
       public async Task<bool> SetRegistrars(BoundedVecT24 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Identity/Registrars", value.Encode(), IdentityStorage.RegistrarsParams());
+         return await SendMockupRequestAsync(_httpClient, "Identity/Registrars", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.RegistrarsParams());
       }
    }
 }

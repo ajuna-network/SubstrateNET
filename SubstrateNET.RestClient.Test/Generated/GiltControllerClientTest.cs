@@ -15,8 +15,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    
    public class GiltControllerClientTest : ClientTestBase
    {
@@ -26,10 +26,10 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
                   this.GetTestValue3()});
@@ -53,7 +53,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GiltControllerClient rpcClient = new GiltControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeQueueTotals());
@@ -66,34 +66,34 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32 rpcResult = await rpcClient.GetQueueTotals();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32 rpcResult = await rpcClient.GetQueueTotals();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltBid>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltBid[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.GiltBid>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.GiltBid[] {
                   this.GetTestValue6()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltBid GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.GiltBid GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltBid result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltBid();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.GiltBid result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.GiltBid();
          result.Amount = this.GetTestValueU128();
-         result.Who = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Who = this.GetTestValue7();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -140,7 +140,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GiltControllerClient rpcClient = new GiltControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 mockupValue = this.GetTestValue5();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33 mockupValue = this.GetTestValue5();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeQueues(mockupKey));
@@ -153,34 +153,34 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33 rpcResult = await rpcClient.GetQueues(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33 rpcResult = await rpcClient.GetQueues(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal GetTestValue9()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal();
          result.Frozen = this.GetTestValueU128();
-         result.Proportion = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         result.Proportion = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Proportion = this.GetTestValue10();
          result.Index = this.GetTestValueU32();
-         result.Target = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         result.Target = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Target = this.GetTestValue11();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Value = this.GetTestValueU64();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill GetTestValue11()
       {
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Value = this.GetTestValueU64();
          return result;
       }
@@ -195,7 +195,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GiltControllerClient rpcClient = new GiltControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal mockupValue = this.GetTestValue9();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal mockupValue = this.GetTestValue9();
 
 
          Assert.IsTrue(await rpcClient.SubscribeActiveTotal());
@@ -208,35 +208,35 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal rpcResult = await rpcClient.GetActiveTotal();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal rpcResult = await rpcClient.GetActiveTotal();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt GetTestValue13()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt();
-         result.Proportion = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt();
+         result.Proportion = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Proportion = this.GetTestValue14();
          result.Amount = this.GetTestValueU128();
-         result.Who = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Who = this.GetTestValue15();
          result.Expiry = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill GetTestValue14()
       {
-         SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perquintill();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill();
          result.Value = this.GetTestValueU64();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue15()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -283,7 +283,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GiltControllerClient rpcClient = new GiltControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt mockupValue = this.GetTestValue13();
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt mockupValue = this.GetTestValue13();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeActive(mockupKey));
@@ -296,7 +296,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt rpcResult = await rpcClient.GetActive(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt rpcResult = await rpcClient.GetActive(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

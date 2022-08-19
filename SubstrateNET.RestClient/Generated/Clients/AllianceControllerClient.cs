@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletAlliance;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_alliance.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -42,29 +42,29 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Alliance.Announcements");
       }
-      public async Task<U128> GetDepositOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<U128> GetDepositOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<U128>(_httpClient, "alliance/depositof", AllianceStorage.DepositOfParams(key));
+         return await SendRequestAsync<U128>(_httpClient, "alliance/depositof", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.DepositOfParams(key));
       }
-      public async Task<bool> SubscribeDepositOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeDepositOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Alliance.DepositOf", AllianceStorage.DepositOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Alliance.DepositOf", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.DepositOfParams(key));
       }
-      public async Task<BoundedVecT40> GetMembers(EnumMemberRole key)
+      public async Task<BoundedVecT40> GetMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
       {
-         return await SendRequestAsync<BoundedVecT40>(_httpClient, "alliance/members", AllianceStorage.MembersParams(key));
+         return await SendRequestAsync<BoundedVecT40>(_httpClient, "alliance/members", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
       }
-      public async Task<bool> SubscribeMembers(EnumMemberRole key)
+      public async Task<bool> SubscribeMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
       {
-         return await _subscriptionClient.SubscribeAsync("Alliance.Members", AllianceStorage.MembersParams(key));
+         return await _subscriptionClient.SubscribeAsync("Alliance.Members", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
       }
-      public async Task<Bool> GetUpForKicking(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<Bool> GetUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<Bool>(_httpClient, "alliance/upforkicking", AllianceStorage.UpForKickingParams(key));
+         return await SendRequestAsync<Bool>(_httpClient, "alliance/upforkicking", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UpForKickingParams(key));
       }
-      public async Task<bool> SubscribeUpForKicking(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Alliance.UpForKicking", AllianceStorage.UpForKickingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Alliance.UpForKicking", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UpForKickingParams(key));
       }
       public async Task<BoundedVecT41> GetUnscrupulousAccounts()
       {

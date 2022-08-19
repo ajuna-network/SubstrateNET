@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class NominationPoolsControllerClient : BaseClient, INominationPoolsControllerClient
@@ -66,13 +66,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("NominationPools.MaxPoolMembersPerPool");
       }
-      public async Task<PoolMember> GetPoolMembers(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<PoolMember> GetPoolMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<PoolMember>(_httpClient, "nominationpools/poolmembers", NominationPoolsStorage.PoolMembersParams(key));
+         return await SendRequestAsync<PoolMember>(_httpClient, "nominationpools/poolmembers", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.PoolMembersParams(key));
       }
-      public async Task<bool> SubscribePoolMembers(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribePoolMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.PoolMembers", NominationPoolsStorage.PoolMembersParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.PoolMembers", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.PoolMembersParams(key));
       }
       public async Task<U32> GetCounterForPoolMembers()
       {
@@ -84,11 +84,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BondedPoolInner> GetBondedPools(U32 key)
       {
-         return await SendRequestAsync<BondedPoolInner>(_httpClient, "nominationpools/bondedpools", NominationPoolsStorage.BondedPoolsParams(key));
+         return await SendRequestAsync<BondedPoolInner>(_httpClient, "nominationpools/bondedpools", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.BondedPoolsParams(key));
       }
       public async Task<bool> SubscribeBondedPools(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.BondedPools", NominationPoolsStorage.BondedPoolsParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.BondedPools", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.BondedPoolsParams(key));
       }
       public async Task<U32> GetCounterForBondedPools()
       {
@@ -100,11 +100,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<RewardPool> GetRewardPools(U32 key)
       {
-         return await SendRequestAsync<RewardPool>(_httpClient, "nominationpools/rewardpools", NominationPoolsStorage.RewardPoolsParams(key));
+         return await SendRequestAsync<RewardPool>(_httpClient, "nominationpools/rewardpools", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.RewardPoolsParams(key));
       }
       public async Task<bool> SubscribeRewardPools(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.RewardPools", NominationPoolsStorage.RewardPoolsParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.RewardPools", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.RewardPoolsParams(key));
       }
       public async Task<U32> GetCounterForRewardPools()
       {
@@ -116,11 +116,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<SubPools> GetSubPoolsStorage(U32 key)
       {
-         return await SendRequestAsync<SubPools>(_httpClient, "nominationpools/subpoolsstorage", NominationPoolsStorage.SubPoolsStorageParams(key));
+         return await SendRequestAsync<SubPools>(_httpClient, "nominationpools/subpoolsstorage", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.SubPoolsStorageParams(key));
       }
       public async Task<bool> SubscribeSubPoolsStorage(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.SubPoolsStorage", NominationPoolsStorage.SubPoolsStorageParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.SubPoolsStorage", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.SubPoolsStorageParams(key));
       }
       public async Task<U32> GetCounterForSubPoolsStorage()
       {
@@ -132,11 +132,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BoundedVecT43> GetMetadata(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT43>(_httpClient, "nominationpools/metadata", NominationPoolsStorage.MetadataParams(key));
+         return await SendRequestAsync<BoundedVecT43>(_httpClient, "nominationpools/metadata", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.MetadataParams(key));
       }
       public async Task<bool> SubscribeMetadata(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.Metadata", NominationPoolsStorage.MetadataParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.Metadata", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.MetadataParams(key));
       }
       public async Task<U32> GetCounterForMetadata()
       {
@@ -154,13 +154,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("NominationPools.LastPoolId");
       }
-      public async Task<U32> GetReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<U32> GetReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "nominationpools/reversepoolidlookup", NominationPoolsStorage.ReversePoolIdLookupParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "nominationpools/reversepoolidlookup", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.ReversePoolIdLookupParams(key));
       }
-      public async Task<bool> SubscribeReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("NominationPools.ReversePoolIdLookup", NominationPoolsStorage.ReversePoolIdLookupParams(key));
+         return await _subscriptionClient.SubscribeAsync("NominationPools.ReversePoolIdLookup", SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.ReversePoolIdLookupParams(key));
       }
       public async Task<U32> GetCounterForReversePoolIdLookup()
       {

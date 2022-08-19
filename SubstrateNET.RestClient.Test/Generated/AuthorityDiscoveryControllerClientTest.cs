@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
    
    public class AuthorityDiscoveryControllerClientTest : ClientTestBase
    {
@@ -25,28 +25,28 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public[] {
                   this.GetTestValue3()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
+         SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
          result.Value = this.GetTestValue4();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -93,7 +93,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          AuthorityDiscoveryControllerClient rpcClient = new AuthorityDiscoveryControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeKeys());
@@ -106,33 +106,33 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 rpcResult = await rpcClient.GetKeys();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 rpcResult = await rpcClient.GetKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public[] {
                   this.GetTestValue7()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpAuthorityDiscovery.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
+         SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_authority_discovery.app.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
          result.Value = this.GetTestValue8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -179,7 +179,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          AuthorityDiscoveryControllerClient rpcClient = new AuthorityDiscoveryControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 mockupValue = this.GetTestValue6();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 mockupValue = this.GetTestValue6();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextKeys());
@@ -192,7 +192,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7 rpcResult = await rpcClient.GetNextKeys();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 rpcResult = await rpcClient.GetNextKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

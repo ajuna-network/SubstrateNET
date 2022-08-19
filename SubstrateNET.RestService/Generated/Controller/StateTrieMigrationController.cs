@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,8 +45,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  forward by any of the means provided by this pallet.
         /// </summary>
         [HttpGet("MigrationProcess")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.StateTrieMigrationStorage), "MigrationProcessParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage), "MigrationProcessParams")]
         public IActionResult GetMigrationProcess()
         {
             return this.Ok(_stateTrieMigrationStorage.GetMigrationProcess());
@@ -60,8 +59,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If set to None, then no automatic migration happens.
         /// </summary>
         [HttpGet("AutoLimits")]
-        [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.StateTrieMigrationStorage), "AutoLimitsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage), "AutoLimitsParams")]
         public IActionResult GetAutoLimits()
         {
             return this.Ok(_stateTrieMigrationStorage.GetAutoLimits());
@@ -74,8 +73,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If not set, no signed submission is allowed.
         /// </summary>
         [HttpGet("SignedMigrationMaxLimits")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.StateTrieMigrationStorage), "SignedMigrationMaxLimitsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage), "SignedMigrationMaxLimitsParams")]
         public IActionResult GetSignedMigrationMaxLimits()
         {
             return this.Ok(_stateTrieMigrationStorage.GetSignedMigrationMaxLimits());

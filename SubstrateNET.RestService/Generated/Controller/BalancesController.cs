@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("TotalIssuance")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.BalancesStorage), "TotalIssuanceParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "TotalIssuanceParams")]
         public IActionResult GetTotalIssuance()
         {
             return this.Ok(_balancesStorage.GetTotalIssuance());
@@ -81,8 +77,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  NOTE: This is only used in the case that this pallet is used to store balances.
         /// </summary>
         [HttpGet("Account")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.BalancesStorage), "AccountParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "AccountParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetAccount(string key)
         {
             return this.Ok(_balancesStorage.GetAccount(key));
@@ -94,8 +90,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
         [HttpGet("Locks")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.BalancesStorage), "LocksParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "LocksParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetLocks(string key)
         {
             return this.Ok(_balancesStorage.GetLocks(key));
@@ -106,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Named reserves on some account balances.
         /// </summary>
         [HttpGet("Reserves")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.BalancesStorage), "ReservesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "ReservesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetReserves(string key)
         {
             return this.Ok(_balancesStorage.GetReserves(key));
@@ -120,8 +116,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This is set to v2.0.0 for new networks.
         /// </summary>
         [HttpGet("StorageVersion")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBalances.BalancesStorage), "StorageVersionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "StorageVersionParams")]
         public IActionResult GetStorageVersion()
         {
             return this.Ok(_balancesStorage.GetStorageVersion());

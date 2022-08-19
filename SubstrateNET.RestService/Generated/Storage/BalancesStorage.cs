@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -61,20 +57,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  `Balances` pallet, which uses a `StorageMap` to store balances data only.
         ///  NOTE: This is only used in the case that this pallet is used to store balances.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData GetAccount(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData GetAccount(string key);
         
         /// <summary>
         /// >> Locks
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2 GetLocks(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key);
         
         /// <summary>
         /// >> Reserves
         ///  Named reserves on some account balances.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10 GetReserves(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 GetReserves(string key);
         
         /// <summary>
         /// >> StorageVersion
@@ -82,7 +78,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is set to v2.0.0 for new networks.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases GetStorageVersion();
+        SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases GetStorageVersion();
     }
     
     /// <summary>
@@ -99,33 +95,33 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _accountTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData> _accountTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData> _accountTypedStorage;
         
         /// <summary>
         /// _locksTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2> _locksTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2> _locksTypedStorage;
         
         /// <summary>
         /// _reservesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10> _reservesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10> _reservesTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases> _storageVersionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases> _storageVersionTypedStorage;
         
         /// <summary>
         /// BalancesStorage constructor.
         /// </summary>
-        public BalancesStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public BalancesStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.TotalIssuanceTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Balances.TotalIssuance", storageDataProvider, storageChangeDelegate);
-            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData>("Balances.Account", storageDataProvider, storageChangeDelegate);
-            this.LocksTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2>("Balances.Locks", storageDataProvider, storageChangeDelegate);
-            this.ReservesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10>("Balances.Reserves", storageDataProvider, storageChangeDelegate);
-            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases>("Balances.StorageVersion", storageDataProvider, storageChangeDelegate);
+            this.TotalIssuanceTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Balances.TotalIssuance", storageDataProvider, storageChangeDelegates);
+            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData>("Balances.Account", storageDataProvider, storageChangeDelegates);
+            this.LocksTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2>("Balances.Locks", storageDataProvider, storageChangeDelegates);
+            this.ReservesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10>("Balances.Reserves", storageDataProvider, storageChangeDelegates);
+            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases>("Balances.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -146,7 +142,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _accountTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData> AccountTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData> AccountTypedStorage
         {
             get
             {
@@ -161,7 +157,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _locksTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2> LocksTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2> LocksTypedStorage
         {
             get
             {
@@ -176,7 +172,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _reservesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10> ReservesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10> ReservesTypedStorage
         {
             get
             {
@@ -191,7 +187,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _storageVersionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases> StorageVersionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases> StorageVersionTypedStorage
         {
             get
             {
@@ -269,13 +265,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  `Balances` pallet, which uses a `StorageMap` to store balances data only.
         ///  NOTE: This is only used in the case that this pallet is used to store balances.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData GetAccount(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData GetAccount(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData result))
+            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData result))
             {
                 return result;
             }
@@ -299,13 +295,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2 GetLocks(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (LocksTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT2 result))
+            if (LocksTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 result))
             {
                 return result;
             }
@@ -328,13 +324,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Reserves
         ///  Named reserves on some account balances.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10 GetReserves(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 GetReserves(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReservesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT10 result))
+            if (ReservesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 result))
             {
                 return result;
             }
@@ -359,7 +355,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is set to v2.0.0 for new networks.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletBalances.EnumReleases GetStorageVersion()
+        public SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases GetStorageVersion()
         {
             return StorageVersionTypedStorage.Get();
         }

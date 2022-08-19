@@ -15,8 +15,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public class ConvictionVotingControllerClientTest : ClientTestBase
    {
@@ -26,90 +26,90 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Voting>(), this.GetTestValue3());
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Voting>(), this.GetTestValue3());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Casting GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Casting GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Casting result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Casting();
-         result.Votes = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT36();
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Casting result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Casting();
+         result.Votes = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36();
          result.Votes = this.GetTestValue4();
-         result.Delegations = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Delegations();
+         result.Delegations = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations();
          result.Delegations = this.GetTestValue9();
-         result.Prior = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.PriorLock();
+         result.Prior = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.PriorLock();
          result.Prior = this.GetTestValue10();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT36 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT36 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT36();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote>[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>[] {
                   this.GetTestValue5()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote> GetTestValue5()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote> GetTestValue5()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>();
          result.Create(this.GetTestValueU32(), this.GetTestValue6());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumAccountVote();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.AccountVote>(), this.GetTestValue7());
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.AccountVote>(), this.GetTestValue7());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue7()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue7()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote, Ajuna.NetApi.Model.Types.Primitive.U128>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Create(this.GetTestValue8(), this.GetTestValueU128());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Vote();
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote();
          result.Value = this.GetTestValueU8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Delegations GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations GetTestValue9()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Delegations result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.Delegations();
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations();
          result.Votes = this.GetTestValueU128();
          result.Capital = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.PriorLock GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.PriorLock GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.PriorLock result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.PriorLock();
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.PriorLock result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.PriorLock();
          result.BlockNumber = this.GetTestValueU32();
          result.Balance = this.GetTestValueU128();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue11()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue11()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(this.GetTestValue12(), this.GetTestValueU16());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -156,8 +156,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ConvictionVotingControllerClient rpcClient = new ConvictionVotingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting mockupValue = this.GetTestValue2();
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> mockupKey = this.GetTestValue11();
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting mockupValue = this.GetTestValue2();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> mockupKey = this.GetTestValue11();
 
          Assert.IsTrue(await rpcClient.SubscribeVotingFor(mockupKey));
 
@@ -169,15 +169,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting rpcResult = await rpcClient.GetVotingFor(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting rpcResult = await rpcClient.GetVotingFor(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 GetTestValue14()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
                   this.GetTestValue15()});
@@ -190,11 +190,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Create(this.GetTestValueU16(), this.GetTestValueU128());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -241,8 +241,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ConvictionVotingControllerClient rpcClient = new ConvictionVotingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 mockupValue = this.GetTestValue14();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue16();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 mockupValue = this.GetTestValue14();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue16();
 
          Assert.IsTrue(await rpcClient.SubscribeClassLocksFor(mockupKey));
 
@@ -254,7 +254,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37 rpcResult = await rpcClient.GetClassLocksFor(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 rpcResult = await rpcClient.GetClassLocksFor(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

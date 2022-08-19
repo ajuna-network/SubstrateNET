@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Uncles
         /// </summary>
         [HttpGet("Uncles")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT9), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage), "UnclesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage), "UnclesParams")]
         public IActionResult GetUncles()
         {
             return this.Ok(_authorshipStorage.GetUncles());
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Author of current block.
         /// </summary>
         [HttpGet("Author")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage), "AuthorParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage), "AuthorParams")]
         public IActionResult GetAuthor()
         {
             return this.Ok(_authorshipStorage.GetAuthor());
@@ -70,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("DidSetUncles")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage), "DidSetUnclesParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage), "DidSetUnclesParams")]
         public IActionResult GetDidSetUncles()
         {
             return this.Ok(_authorshipStorage.GetDidSetUncles());

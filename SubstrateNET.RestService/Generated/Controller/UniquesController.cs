@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletUniques;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Details of a collection.
         /// </summary>
         [HttpGet("Class")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionDetails), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "ClassParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.CollectionDetails), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "ClassParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetClass(string key)
         {
             return this.Ok(_uniquesStorage.GetClass(key));
@@ -59,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("OwnershipAcceptance")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "OwnershipAcceptanceParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "OwnershipAcceptanceParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetOwnershipAcceptance(string key)
         {
             return this.Ok(_uniquesStorage.GetOwnershipAcceptance(key));
@@ -71,8 +67,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  account can be enumerated.
         /// </summary>
         [HttpGet("Account")]
-        [ProducesResponseType(typeof(BaseTuple), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AccountParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "AccountParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetAccount(string key)
         {
             return this.Ok(_uniquesStorage.GetAccount(key));
@@ -84,8 +80,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  a single account can be enumerated.
         /// </summary>
         [HttpGet("ClassAccount")]
-        [ProducesResponseType(typeof(BaseTuple), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "ClassAccountParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "ClassAccountParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetClassAccount(string key)
         {
             return this.Ok(_uniquesStorage.GetClassAccount(key));
@@ -96,8 +92,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The items in existence and their ownership details.
         /// </summary>
         [HttpGet("Asset")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemDetails), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AssetParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.ItemDetails), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "AssetParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetAsset(string key)
         {
             return this.Ok(_uniquesStorage.GetAsset(key));
@@ -108,8 +104,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata of a collection.
         /// </summary>
         [HttpGet("ClassMetadataOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.CollectionMetadata), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "ClassMetadataOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.CollectionMetadata), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "ClassMetadataOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetClassMetadataOf(string key)
         {
             return this.Ok(_uniquesStorage.GetClassMetadataOf(key));
@@ -120,8 +116,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata of an item.
         /// </summary>
         [HttpGet("InstanceMetadataOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.ItemMetadata), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "InstanceMetadataOfParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.ItemMetadata), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "InstanceMetadataOfParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetInstanceMetadataOf(string key)
         {
             return this.Ok(_uniquesStorage.GetInstanceMetadataOf(key));
@@ -132,11 +128,23 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Attributes of a collection.
         /// </summary>
         [HttpGet("Attribute")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "AttributeParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "AttributeParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT2>))]
         public IActionResult GetAttribute(string key)
         {
             return this.Ok(_uniquesStorage.GetAttribute(key));
+        }
+        
+        /// <summary>
+        /// >> ItemPriceOf
+        ///  Price of an asset instance.
+        /// </summary>
+        [HttpGet("ItemPriceOf")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "ItemPriceOfParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        public IActionResult GetItemPriceOf(string key)
+        {
+            return this.Ok(_uniquesStorage.GetItemPriceOf(key));
         }
         
         /// <summary>
@@ -145,10 +153,23 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CollectionMaxSupply")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletUniques.UniquesStorage), "CollectionMaxSupplyParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "CollectionMaxSupplyParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetCollectionMaxSupply(string key)
         {
             return this.Ok(_uniquesStorage.GetCollectionMaxSupply(key));
+        }
+        
+        /// <summary>
+        /// >> NextCollectionId
+        ///  Stores the `CollectionId` that is going to be used for the next collection.
+        ///  This gets incremented by 1 whenever a new collection is created.
+        /// </summary>
+        [HttpGet("NextCollectionId")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "NextCollectionIdParams")]
+        public IActionResult GetNextCollectionId()
+        {
+            return this.Ok(_uniquesStorage.GetNextCollectionId());
         }
     }
 }

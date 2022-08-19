@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IWhitelistControllerClient
    {
-      Task<BaseTuple> GetWhitelistedCall(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeWhitelistedCall(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<BaseTuple> GetWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

@@ -12,8 +12,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletMultisig;
+   using SubstrateNET.NetApi.Generated.Model.pallet_multisig;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class MultisigControllerClient : BaseClient, IMultisigControllerClient
@@ -25,21 +28,21 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<Multisig> GetMultisigs(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> key)
+      public async Task<Multisig> GetMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
       {
-         return await SendRequestAsync<Multisig>(_httpClient, "multisig/multisigs", MultisigStorage.MultisigsParams(key));
+         return await SendRequestAsync<Multisig>(_httpClient, "multisig/multisigs", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.MultisigsParams(key));
       }
-      public async Task<bool> SubscribeMultisigs(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> key)
+      public async Task<bool> SubscribeMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Multisig.Multisigs", MultisigStorage.MultisigsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Multisig.Multisigs", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.MultisigsParams(key));
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetCalls(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 key)
+      public async Task<BaseTuple<WrapperKeepOpaque, AccountId32, U128>> GetCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>(_httpClient, "multisig/calls", MultisigStorage.CallsParams(key));
+         return await SendRequestAsync<BaseTuple<WrapperKeepOpaque, AccountId32, U128>>(_httpClient, "multisig/calls", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.CallsParams(key));
       }
-      public async Task<bool> SubscribeCalls(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 key)
+      public async Task<bool> SubscribeCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Multisig.Calls", MultisigStorage.CallsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Multisig.Calls", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.CallsParams(key));
       }
    }
 }

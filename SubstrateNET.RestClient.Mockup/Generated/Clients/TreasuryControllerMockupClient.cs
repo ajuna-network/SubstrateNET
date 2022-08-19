@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_treasury;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class TreasuryControllerMockupClient : MockupBaseClient, ITreasuryControllerMockupClient
@@ -26,15 +26,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetProposalCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Treasury/ProposalCount", value.Encode(), TreasuryStorage.ProposalCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Treasury/ProposalCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TreasuryStorage.ProposalCountParams());
       }
       public async Task<bool> SetProposals(Proposal value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Treasury/Proposals", value.Encode(), TreasuryStorage.ProposalsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Treasury/Proposals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TreasuryStorage.ProposalsParams(key));
       }
       public async Task<bool> SetApprovals(BoundedVecT16 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Treasury/Approvals", value.Encode(), TreasuryStorage.ApprovalsParams());
+         return await SendMockupRequestAsync(_httpClient, "Treasury/Approvals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TreasuryStorage.ApprovalsParams());
       }
    }
 }

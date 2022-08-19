@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletAlliance;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_alliance.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -26,31 +26,31 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetRule(Cid value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/Rule", value.Encode(), AllianceStorage.RuleParams());
+         return await SendMockupRequestAsync(_httpClient, "Alliance/Rule", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.RuleParams());
       }
       public async Task<bool> SetAnnouncements(BoundedVecT39 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/Announcements", value.Encode(), AllianceStorage.AnnouncementsParams());
+         return await SendMockupRequestAsync(_httpClient, "Alliance/Announcements", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.AnnouncementsParams());
       }
-      public async Task<bool> SetDepositOf(U128 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetDepositOf(U128 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/DepositOf", value.Encode(), AllianceStorage.DepositOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Alliance/DepositOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.DepositOfParams(key));
       }
-      public async Task<bool> SetMembers(BoundedVecT40 value, EnumMemberRole key)
+      public async Task<bool> SetMembers(BoundedVecT40 value, SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/Members", value.Encode(), AllianceStorage.MembersParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Alliance/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
       }
-      public async Task<bool> SetUpForKicking(Bool value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetUpForKicking(Bool value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/UpForKicking", value.Encode(), AllianceStorage.UpForKickingParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Alliance/UpForKicking", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UpForKickingParams(key));
       }
       public async Task<bool> SetUnscrupulousAccounts(BoundedVecT41 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/UnscrupulousAccounts", value.Encode(), AllianceStorage.UnscrupulousAccountsParams());
+         return await SendMockupRequestAsync(_httpClient, "Alliance/UnscrupulousAccounts", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UnscrupulousAccountsParams());
       }
       public async Task<bool> SetUnscrupulousWebsites(BoundedVecT42 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Alliance/UnscrupulousWebsites", value.Encode(), AllianceStorage.UnscrupulousWebsitesParams());
+         return await SendMockupRequestAsync(_httpClient, "Alliance/UnscrupulousWebsites", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UnscrupulousWebsitesParams());
       }
    }
 }

@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_treasury;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class TreasuryControllerClient : BaseClient, ITreasuryControllerClient
@@ -36,11 +36,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<Proposal> GetProposals(U32 key)
       {
-         return await SendRequestAsync<Proposal>(_httpClient, "treasury/proposals", TreasuryStorage.ProposalsParams(key));
+         return await SendRequestAsync<Proposal>(_httpClient, "treasury/proposals", SubstrateNET.NetApi.Generated.Storage.TreasuryStorage.ProposalsParams(key));
       }
       public async Task<bool> SubscribeProposals(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Treasury.Proposals", TreasuryStorage.ProposalsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Treasury.Proposals", SubstrateNET.NetApi.Generated.Storage.TreasuryStorage.ProposalsParams(key));
       }
       public async Task<BoundedVecT16> GetApprovals()
       {

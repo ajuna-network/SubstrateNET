@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ReferendaControllerMockupClient : MockupBaseClient, IReferendaControllerMockupClient
@@ -26,19 +26,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetReferendumCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumCount", value.Encode(), ReferendaStorage.ReferendumCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.ReferendumCountParams());
       }
       public async Task<bool> SetReferendumInfoFor(EnumReferendumInfo value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumInfoFor", value.Encode(), ReferendaStorage.ReferendumInfoForParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumInfoFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.ReferendumInfoForParams(key));
       }
       public async Task<bool> SetTrackQueue(BoundedVecT35 value, U16 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Referenda/TrackQueue", value.Encode(), ReferendaStorage.TrackQueueParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Referenda/TrackQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.TrackQueueParams(key));
       }
       public async Task<bool> SetDecidingCount(U32 value, U16 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Referenda/DecidingCount", value.Encode(), ReferendaStorage.DecidingCountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Referenda/DecidingCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.DecidingCountParams(key));
       }
    }
 }

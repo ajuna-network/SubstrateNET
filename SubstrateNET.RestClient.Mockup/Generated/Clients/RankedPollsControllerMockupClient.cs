@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RankedPollsControllerMockupClient : MockupBaseClient, IRankedPollsControllerMockupClient
@@ -26,19 +26,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetReferendumCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedPolls/ReferendumCount", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.ReferendumCountParams());
+         return await SendMockupRequestAsync(_httpClient, "RankedPolls/ReferendumCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.ReferendumCountParams());
       }
       public async Task<bool> SetReferendumInfoFor(EnumReferendumInfo value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedPolls/ReferendumInfoFor", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.ReferendumInfoForParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedPolls/ReferendumInfoFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.ReferendumInfoForParams(key));
       }
       public async Task<bool> SetTrackQueue(BoundedVecT44 value, U16 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedPolls/TrackQueue", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.TrackQueueParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedPolls/TrackQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.TrackQueueParams(key));
       }
       public async Task<bool> SetDecidingCount(U32 value, U16 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedPolls/DecidingCount", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.DecidingCountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedPolls/DecidingCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.DecidingCountParams(key));
       }
    }
 }

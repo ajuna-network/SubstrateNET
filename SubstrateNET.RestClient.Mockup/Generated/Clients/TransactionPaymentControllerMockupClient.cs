@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point;
+   using SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class TransactionPaymentControllerMockupClient : MockupBaseClient, ITransactionPaymentControllerMockupClient
@@ -25,11 +25,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetNextFeeMultiplier(FixedU128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionPayment/NextFeeMultiplier", value.Encode(), TransactionPaymentStorage.NextFeeMultiplierParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionPayment/NextFeeMultiplier", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionPaymentStorage.NextFeeMultiplierParams());
       }
       public async Task<bool> SetStorageVersion(EnumReleases value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionPayment/StorageVersion", value.Encode(), TransactionPaymentStorage.StorageVersionParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionPayment/StorageVersion", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionPaymentStorage.StorageVersionParams());
       }
    }
 }

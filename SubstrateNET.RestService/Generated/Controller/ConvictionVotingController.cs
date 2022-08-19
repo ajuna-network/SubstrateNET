@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +43,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  number of votes that we have recorded.
         /// </summary>
         [HttpGet("VotingFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.EnumVoting), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage), "VotingForParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U16>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage), "VotingForParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16>))]
         public IActionResult GetVotingFor(string key)
         {
             return this.Ok(_convictionVotingStorage.GetVotingFor(key));
@@ -61,8 +57,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  this list.
         /// </summary>
         [HttpGet("ClassLocksFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT37), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting.ConvictionVotingStorage), "ClassLocksForParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage), "ClassLocksForParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetClassLocksFor(string key)
         {
             return this.Ok(_convictionVotingStorage.GetClassLocksFor(key));

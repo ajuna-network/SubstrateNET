@@ -14,9 +14,10 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class StakingControllerClient : BaseClient, IStakingControllerClient
@@ -62,11 +63,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<AccountId32> GetBonded(AccountId32 key)
       {
-         return await SendRequestAsync<AccountId32>(_httpClient, "staking/bonded", StakingStorage.BondedParams(key));
+         return await SendRequestAsync<AccountId32>(_httpClient, "staking/bonded", SubstrateNET.NetApi.Generated.Storage.StakingStorage.BondedParams(key));
       }
       public async Task<bool> SubscribeBonded(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.Bonded", StakingStorage.BondedParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.Bonded", SubstrateNET.NetApi.Generated.Storage.StakingStorage.BondedParams(key));
       }
       public async Task<U128> GetMinNominatorBond()
       {
@@ -94,27 +95,27 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<StakingLedger> GetLedger(AccountId32 key)
       {
-         return await SendRequestAsync<StakingLedger>(_httpClient, "staking/ledger", StakingStorage.LedgerParams(key));
+         return await SendRequestAsync<StakingLedger>(_httpClient, "staking/ledger", SubstrateNET.NetApi.Generated.Storage.StakingStorage.LedgerParams(key));
       }
       public async Task<bool> SubscribeLedger(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.Ledger", StakingStorage.LedgerParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.Ledger", SubstrateNET.NetApi.Generated.Storage.StakingStorage.LedgerParams(key));
       }
       public async Task<EnumRewardDestination> GetPayee(AccountId32 key)
       {
-         return await SendRequestAsync<EnumRewardDestination>(_httpClient, "staking/payee", StakingStorage.PayeeParams(key));
+         return await SendRequestAsync<EnumRewardDestination>(_httpClient, "staking/payee", SubstrateNET.NetApi.Generated.Storage.StakingStorage.PayeeParams(key));
       }
       public async Task<bool> SubscribePayee(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.Payee", StakingStorage.PayeeParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.Payee", SubstrateNET.NetApi.Generated.Storage.StakingStorage.PayeeParams(key));
       }
       public async Task<ValidatorPrefs> GetValidators(AccountId32 key)
       {
-         return await SendRequestAsync<ValidatorPrefs>(_httpClient, "staking/validators", StakingStorage.ValidatorsParams(key));
+         return await SendRequestAsync<ValidatorPrefs>(_httpClient, "staking/validators", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorsParams(key));
       }
       public async Task<bool> SubscribeValidators(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.Validators", StakingStorage.ValidatorsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.Validators", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorsParams(key));
       }
       public async Task<U32> GetCounterForValidators()
       {
@@ -134,11 +135,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<Nominations> GetNominators(AccountId32 key)
       {
-         return await SendRequestAsync<Nominations>(_httpClient, "staking/nominators", StakingStorage.NominatorsParams(key));
+         return await SendRequestAsync<Nominations>(_httpClient, "staking/nominators", SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorsParams(key));
       }
       public async Task<bool> SubscribeNominators(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.Nominators", StakingStorage.NominatorsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.Nominators", SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorsParams(key));
       }
       public async Task<U32> GetCounterForNominators()
       {
@@ -174,59 +175,59 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<U32> GetErasStartSessionIndex(U32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "staking/erasstartsessionindex", StakingStorage.ErasStartSessionIndexParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "staking/erasstartsessionindex", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStartSessionIndexParams(key));
       }
       public async Task<bool> SubscribeErasStartSessionIndex(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasStartSessionIndex", StakingStorage.ErasStartSessionIndexParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasStartSessionIndex", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStartSessionIndexParams(key));
       }
       public async Task<Exposure> GetErasStakers(BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<Exposure>(_httpClient, "staking/erasstakers", StakingStorage.ErasStakersParams(key));
+         return await SendRequestAsync<Exposure>(_httpClient, "staking/erasstakers", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersParams(key));
       }
       public async Task<bool> SubscribeErasStakers(BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasStakers", StakingStorage.ErasStakersParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasStakers", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersParams(key));
       }
       public async Task<Exposure> GetErasStakersClipped(BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<Exposure>(_httpClient, "staking/erasstakersclipped", StakingStorage.ErasStakersClippedParams(key));
+         return await SendRequestAsync<Exposure>(_httpClient, "staking/erasstakersclipped", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersClippedParams(key));
       }
       public async Task<bool> SubscribeErasStakersClipped(BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasStakersClipped", StakingStorage.ErasStakersClippedParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasStakersClipped", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersClippedParams(key));
       }
       public async Task<ValidatorPrefs> GetErasValidatorPrefs(BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<ValidatorPrefs>(_httpClient, "staking/erasvalidatorprefs", StakingStorage.ErasValidatorPrefsParams(key));
+         return await SendRequestAsync<ValidatorPrefs>(_httpClient, "staking/erasvalidatorprefs", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorPrefsParams(key));
       }
       public async Task<bool> SubscribeErasValidatorPrefs(BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasValidatorPrefs", StakingStorage.ErasValidatorPrefsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasValidatorPrefs", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorPrefsParams(key));
       }
       public async Task<U128> GetErasValidatorReward(U32 key)
       {
-         return await SendRequestAsync<U128>(_httpClient, "staking/erasvalidatorreward", StakingStorage.ErasValidatorRewardParams(key));
+         return await SendRequestAsync<U128>(_httpClient, "staking/erasvalidatorreward", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorRewardParams(key));
       }
       public async Task<bool> SubscribeErasValidatorReward(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasValidatorReward", StakingStorage.ErasValidatorRewardParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasValidatorReward", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorRewardParams(key));
       }
       public async Task<EraRewardPoints> GetErasRewardPoints(U32 key)
       {
-         return await SendRequestAsync<EraRewardPoints>(_httpClient, "staking/erasrewardpoints", StakingStorage.ErasRewardPointsParams(key));
+         return await SendRequestAsync<EraRewardPoints>(_httpClient, "staking/erasrewardpoints", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasRewardPointsParams(key));
       }
       public async Task<bool> SubscribeErasRewardPoints(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasRewardPoints", StakingStorage.ErasRewardPointsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasRewardPoints", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasRewardPointsParams(key));
       }
       public async Task<U128> GetErasTotalStake(U32 key)
       {
-         return await SendRequestAsync<U128>(_httpClient, "staking/erastotalstake", StakingStorage.ErasTotalStakeParams(key));
+         return await SendRequestAsync<U128>(_httpClient, "staking/erastotalstake", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasTotalStakeParams(key));
       }
       public async Task<bool> SubscribeErasTotalStake(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ErasTotalStake", StakingStorage.ErasTotalStakeParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ErasTotalStake", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasTotalStakeParams(key));
       }
       public async Task<EnumForcing> GetForceEra()
       {
@@ -254,11 +255,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BaseVec<UnappliedSlash>> GetUnappliedSlashes(U32 key)
       {
-         return await SendRequestAsync<BaseVec<UnappliedSlash>>(_httpClient, "staking/unappliedslashes", StakingStorage.UnappliedSlashesParams(key));
+         return await SendRequestAsync<BaseVec<UnappliedSlash>>(_httpClient, "staking/unappliedslashes", SubstrateNET.NetApi.Generated.Storage.StakingStorage.UnappliedSlashesParams(key));
       }
       public async Task<bool> SubscribeUnappliedSlashes(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.UnappliedSlashes", StakingStorage.UnappliedSlashesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.UnappliedSlashes", SubstrateNET.NetApi.Generated.Storage.StakingStorage.UnappliedSlashesParams(key));
       }
       public async Task<BaseVec<BaseTuple<U32, U32>>> GetBondedEras()
       {
@@ -270,43 +271,35 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BaseTuple<Perbill, U128>> GetValidatorSlashInEra(BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<BaseTuple<Perbill, U128>>(_httpClient, "staking/validatorslashinera", StakingStorage.ValidatorSlashInEraParams(key));
+         return await SendRequestAsync<BaseTuple<Perbill, U128>>(_httpClient, "staking/validatorslashinera", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorSlashInEraParams(key));
       }
       public async Task<bool> SubscribeValidatorSlashInEra(BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.ValidatorSlashInEra", StakingStorage.ValidatorSlashInEraParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.ValidatorSlashInEra", SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorSlashInEraParams(key));
       }
       public async Task<U128> GetNominatorSlashInEra(BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<U128>(_httpClient, "staking/nominatorslashinera", StakingStorage.NominatorSlashInEraParams(key));
+         return await SendRequestAsync<U128>(_httpClient, "staking/nominatorslashinera", SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorSlashInEraParams(key));
       }
       public async Task<bool> SubscribeNominatorSlashInEra(BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.NominatorSlashInEra", StakingStorage.NominatorSlashInEraParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.NominatorSlashInEra", SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorSlashInEraParams(key));
       }
       public async Task<SlashingSpans> GetSlashingSpans(AccountId32 key)
       {
-         return await SendRequestAsync<SlashingSpans>(_httpClient, "staking/slashingspans", StakingStorage.SlashingSpansParams(key));
+         return await SendRequestAsync<SlashingSpans>(_httpClient, "staking/slashingspans", SubstrateNET.NetApi.Generated.Storage.StakingStorage.SlashingSpansParams(key));
       }
       public async Task<bool> SubscribeSlashingSpans(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.SlashingSpans", StakingStorage.SlashingSpansParams(key));
+         return await _subscriptionClient.SubscribeAsync("Staking.SlashingSpans", SubstrateNET.NetApi.Generated.Storage.StakingStorage.SlashingSpansParams(key));
       }
       public async Task<SpanRecord> GetSpanSlash(BaseTuple<AccountId32, U32> key)
       {
-         return await SendRequestAsync<SpanRecord>(_httpClient, "staking/spanslash", StakingStorage.SpanSlashParams(key));
+         return await SendRequestAsync<SpanRecord>(_httpClient, "staking/spanslash", SubstrateNET.NetApi.Generated.Storage.StakingStorage.SpanSlashParams(key));
       }
       public async Task<bool> SubscribeSpanSlash(BaseTuple<AccountId32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Staking.SpanSlash", StakingStorage.SpanSlashParams(key));
-      }
-      public async Task<U32> GetEarliestUnappliedSlash()
-      {
-         return await SendRequestAsync<U32>(_httpClient, "staking/earliestunappliedslash");
-      }
-      public async Task<bool> SubscribeEarliestUnappliedSlash()
-      {
-         return await _subscriptionClient.SubscribeAsync("Staking.EarliestUnappliedSlash");
+         return await _subscriptionClient.SubscribeAsync("Staking.SpanSlash", SubstrateNET.NetApi.Generated.Storage.StakingStorage.SpanSlashParams(key));
       }
       public async Task<U32> GetCurrentPlannedSession()
       {

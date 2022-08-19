@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ElectionsControllerMockupClient : MockupBaseClient, IElectionsControllerMockupClient
@@ -26,23 +26,23 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetMembers(BaseVec<SeatHolder> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Elections/Members", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.MembersParams());
+         return await SendMockupRequestAsync(_httpClient, "Elections/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.MembersParams());
       }
       public async Task<bool> SetRunnersUp(BaseVec<SeatHolder> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Elections/RunnersUp", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.RunnersUpParams());
+         return await SendMockupRequestAsync(_httpClient, "Elections/RunnersUp", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.RunnersUpParams());
       }
-      public async Task<bool> SetCandidates(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U128>> value)
+      public async Task<bool> SetCandidates(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U128>> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Elections/Candidates", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.CandidatesParams());
+         return await SendMockupRequestAsync(_httpClient, "Elections/Candidates", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.CandidatesParams());
       }
       public async Task<bool> SetElectionRounds(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Elections/ElectionRounds", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.ElectionRoundsParams());
+         return await SendMockupRequestAsync(_httpClient, "Elections/ElectionRounds", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.ElectionRoundsParams());
       }
-      public async Task<bool> SetVoting(Voter value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetVoting(Voter value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Elections/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage.VotingParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Elections/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionsStorage.VotingParams(key));
       }
    }
 }

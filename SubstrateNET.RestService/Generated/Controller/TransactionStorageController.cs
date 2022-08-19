@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Collection of transaction metadata by block number.
         /// </summary>
         [HttpGet("Transactions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "TransactionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "TransactionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetTransactions(string key)
         {
             return this.Ok(_transactionStorageStorage.GetTransactions(key));
@@ -57,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ChunkCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "ChunkCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "ChunkCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetChunkCount(string key)
         {
             return this.Ok(_transactionStorageStorage.GetChunkCount(key));
@@ -69,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ByteFee")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "ByteFeeParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "ByteFeeParams")]
         public IActionResult GetByteFee()
         {
             return this.Ok(_transactionStorageStorage.GetByteFee());
@@ -81,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("EntryFee")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "EntryFeeParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "EntryFeeParams")]
         public IActionResult GetEntryFee()
         {
             return this.Ok(_transactionStorageStorage.GetEntryFee());
@@ -94,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("StoragePeriod")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "StoragePeriodParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "StoragePeriodParams")]
         public IActionResult GetStoragePeriod()
         {
             return this.Ok(_transactionStorageStorage.GetStoragePeriod());
@@ -104,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> BlockTransactions
         /// </summary>
         [HttpGet("BlockTransactions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "BlockTransactionsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "BlockTransactionsParams")]
         public IActionResult GetBlockTransactions()
         {
             return this.Ok(_transactionStorageStorage.GetBlockTransactions());
@@ -117,7 +115,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ProofChecked")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage), "ProofCheckedParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "ProofCheckedParams")]
         public IActionResult GetProofChecked()
         {
             return this.Ok(_transactionStorageStorage.GetProofChecked());

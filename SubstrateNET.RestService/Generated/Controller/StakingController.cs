@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletStaking;
-using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -53,7 +49,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("HistoryDepth")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "HistoryDepthParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "HistoryDepthParams")]
         public IActionResult GetHistoryDepth()
         {
             return this.Ok(_stakingStorage.GetHistoryDepth());
@@ -65,7 +61,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ValidatorCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ValidatorCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ValidatorCountParams")]
         public IActionResult GetValidatorCount()
         {
             return this.Ok(_stakingStorage.GetValidatorCount());
@@ -77,7 +73,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MinimumValidatorCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MinimumValidatorCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MinimumValidatorCountParams")]
         public IActionResult GetMinimumValidatorCount()
         {
             return this.Ok(_stakingStorage.GetMinimumValidatorCount());
@@ -90,8 +86,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  invulnerables) and restricted to testnets.
         /// </summary>
         [HttpGet("Invulnerables")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "InvulnerablesParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "InvulnerablesParams")]
         public IActionResult GetInvulnerables()
         {
             return this.Ok(_stakingStorage.GetInvulnerables());
@@ -102,8 +98,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Map from all locked "stash" accounts to the controller account.
         /// </summary>
         [HttpGet("Bonded")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "BondedParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "BondedParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetBonded(string key)
         {
             return this.Ok(_stakingStorage.GetBonded(key));
@@ -115,7 +111,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MinNominatorBond")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MinNominatorBondParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MinNominatorBondParams")]
         public IActionResult GetMinNominatorBond()
         {
             return this.Ok(_stakingStorage.GetMinNominatorBond());
@@ -127,7 +123,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MinValidatorBond")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MinValidatorBondParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MinValidatorBondParams")]
         public IActionResult GetMinValidatorBond()
         {
             return this.Ok(_stakingStorage.GetMinValidatorBond());
@@ -140,8 +136,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If set to `0`, no limit exists.
         /// </summary>
         [HttpGet("MinCommission")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MinCommissionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MinCommissionParams")]
         public IActionResult GetMinCommission()
         {
             return this.Ok(_stakingStorage.GetMinCommission());
@@ -152,8 +148,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Map from all (unlocked) "controller" accounts to the info regarding the staking.
         /// </summary>
         [HttpGet("Ledger")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "LedgerParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "LedgerParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetLedger(string key)
         {
             return this.Ok(_stakingStorage.GetLedger(key));
@@ -164,8 +160,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Where the reward payment should be made. Keyed by stash.
         /// </summary>
         [HttpGet("Payee")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "PayeeParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "PayeeParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetPayee(string key)
         {
             return this.Ok(_stakingStorage.GetPayee(key));
@@ -176,8 +172,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The map from (wannabe) validator stash key to the preferences of that validator.
         /// </summary>
         [HttpGet("Validators")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ValidatorsParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ValidatorsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetValidators(string key)
         {
             return this.Ok(_stakingStorage.GetValidators(key));
@@ -189,7 +185,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForValidators")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "CounterForValidatorsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "CounterForValidatorsParams")]
         public IActionResult GetCounterForValidators()
         {
             return this.Ok(_stakingStorage.GetCounterForValidators());
@@ -203,7 +199,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxValidatorsCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MaxValidatorsCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MaxValidatorsCountParams")]
         public IActionResult GetMaxValidatorsCount()
         {
             return this.Ok(_stakingStorage.GetMaxValidatorsCount());
@@ -229,8 +225,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  [`Call::chill_other`] dispatchable by anyone.
         /// </summary>
         [HttpGet("Nominators")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "NominatorsParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "NominatorsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetNominators(string key)
         {
             return this.Ok(_stakingStorage.GetNominators(key));
@@ -242,7 +238,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForNominators")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "CounterForNominatorsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "CounterForNominatorsParams")]
         public IActionResult GetCounterForNominators()
         {
             return this.Ok(_stakingStorage.GetCounterForNominators());
@@ -256,7 +252,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxNominatorsCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "MaxNominatorsCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "MaxNominatorsCountParams")]
         public IActionResult GetMaxNominatorsCount()
         {
             return this.Ok(_stakingStorage.GetMaxNominatorsCount());
@@ -271,7 +267,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CurrentEra")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "CurrentEraParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "CurrentEraParams")]
         public IActionResult GetCurrentEra()
         {
             return this.Ok(_stakingStorage.GetCurrentEra());
@@ -285,8 +281,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  equal to [`SessionInterface::validators`].
         /// </summary>
         [HttpGet("ActiveEra")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ActiveEraParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ActiveEraParams")]
         public IActionResult GetActiveEra()
         {
             return this.Ok(_stakingStorage.GetActiveEra());
@@ -301,7 +297,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ErasStartSessionIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasStartSessionIndexParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasStartSessionIndexParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetErasStartSessionIndex(string key)
         {
             return this.Ok(_stakingStorage.GetErasStartSessionIndex(key));
@@ -317,8 +313,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
         [HttpGet("ErasStakers")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasStakersParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasStakersParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetErasStakers(string key)
         {
             return this.Ok(_stakingStorage.GetErasStakers(key));
@@ -339,8 +335,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
         [HttpGet("ErasStakersClipped")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasStakersClippedParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasStakersClippedParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetErasStakersClipped(string key)
         {
             return this.Ok(_stakingStorage.GetErasStakersClipped(key));
@@ -355,8 +351,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Is it removed after `HISTORY_DEPTH` eras.
         /// </summary>
         [HttpGet("ErasValidatorPrefs")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasValidatorPrefsParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasValidatorPrefsParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetErasValidatorPrefs(string key)
         {
             return this.Ok(_stakingStorage.GetErasValidatorPrefs(key));
@@ -370,7 +366,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ErasValidatorReward")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasValidatorRewardParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasValidatorRewardParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetErasValidatorReward(string key)
         {
             return this.Ok(_stakingStorage.GetErasValidatorReward(key));
@@ -382,8 +378,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  If reward hasn't been set or has been removed then 0 reward is returned.
         /// </summary>
         [HttpGet("ErasRewardPoints")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasRewardPointsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasRewardPointsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetErasRewardPoints(string key)
         {
             return this.Ok(_stakingStorage.GetErasRewardPoints(key));
@@ -396,7 +392,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ErasTotalStake")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ErasTotalStakeParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ErasTotalStakeParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetErasTotalStake(string key)
         {
             return this.Ok(_stakingStorage.GetErasTotalStake(key));
@@ -407,8 +403,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Mode of era forcing.
         /// </summary>
         [HttpGet("ForceEra")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ForceEraParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ForceEraParams")]
         public IActionResult GetForceEra()
         {
             return this.Ok(_stakingStorage.GetForceEra());
@@ -421,8 +417,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The rest of the slashed value is handled by the `Slash`.
         /// </summary>
         [HttpGet("SlashRewardFraction")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "SlashRewardFractionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "SlashRewardFractionParams")]
         public IActionResult GetSlashRewardFraction()
         {
             return this.Ok(_stakingStorage.GetSlashRewardFraction());
@@ -435,7 +431,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CanceledSlashPayout")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "CanceledSlashPayoutParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "CanceledSlashPayoutParams")]
         public IActionResult GetCanceledSlashPayout()
         {
             return this.Ok(_stakingStorage.GetCanceledSlashPayout());
@@ -446,8 +442,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  All unapplied slashes that are queued for later.
         /// </summary>
         [HttpGet("UnappliedSlashes")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "UnappliedSlashesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "UnappliedSlashesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetUnappliedSlashes(string key)
         {
             return this.Ok(_stakingStorage.GetUnappliedSlashes(key));
@@ -461,8 +457,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  `[active_era - bounding_duration; active_era]`
         /// </summary>
         [HttpGet("BondedEras")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "BondedErasParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "BondedErasParams")]
         public IActionResult GetBondedEras()
         {
             return this.Ok(_stakingStorage.GetBondedEras());
@@ -474,8 +470,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  and slash value of the era.
         /// </summary>
         [HttpGet("ValidatorSlashInEra")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ValidatorSlashInEraParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ValidatorSlashInEraParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetValidatorSlashInEra(string key)
         {
             return this.Ok(_stakingStorage.GetValidatorSlashInEra(key));
@@ -487,7 +483,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("NominatorSlashInEra")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "NominatorSlashInEraParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "NominatorSlashInEraParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetNominatorSlashInEra(string key)
         {
             return this.Ok(_stakingStorage.GetNominatorSlashInEra(key));
@@ -498,8 +494,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Slashing spans for stash accounts.
         /// </summary>
         [HttpGet("SlashingSpans")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "SlashingSpansParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "SlashingSpansParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetSlashingSpans(string key)
         {
             return this.Ok(_stakingStorage.GetSlashingSpans(key));
@@ -511,23 +507,11 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  as well as how much reward has been paid out.
         /// </summary>
         [HttpGet("SpanSlash")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "SpanSlashParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "SpanSlashParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetSpanSlash(string key)
         {
             return this.Ok(_stakingStorage.GetSpanSlash(key));
-        }
-        
-        /// <summary>
-        /// >> EarliestUnappliedSlash
-        ///  The earliest era for which we have a pending, unapplied slash.
-        /// </summary>
-        [HttpGet("EarliestUnappliedSlash")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "EarliestUnappliedSlashParams")]
-        public IActionResult GetEarliestUnappliedSlash()
-        {
-            return this.Ok(_stakingStorage.GetEarliestUnappliedSlash());
         }
         
         /// <summary>
@@ -538,7 +522,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CurrentPlannedSession")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "CurrentPlannedSessionParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "CurrentPlannedSessionParams")]
         public IActionResult GetCurrentPlannedSession()
         {
             return this.Ok(_stakingStorage.GetCurrentPlannedSession());
@@ -557,8 +541,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  the era ends.
         /// </summary>
         [HttpGet("OffendingValidators")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "OffendingValidatorsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "OffendingValidatorsParams")]
         public IActionResult GetOffendingValidators()
         {
             return this.Ok(_stakingStorage.GetOffendingValidators());
@@ -572,8 +556,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This is set to v7.0.0 for new networks.
         /// </summary>
         [HttpGet("StorageVersion")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "StorageVersionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "StorageVersionParams")]
         public IActionResult GetStorageVersion()
         {
             return this.Ok(_stakingStorage.GetStorageVersion());
@@ -586,8 +570,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  (`CountFor*`) in the system compared to the configured max (`Max*Count`).
         /// </summary>
         [HttpGet("ChillThreshold")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingStorage), "ChillThresholdParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "ChillThresholdParams")]
         public IActionResult GetChillThreshold()
         {
             return this.Ok(_stakingStorage.GetChillThreshold());

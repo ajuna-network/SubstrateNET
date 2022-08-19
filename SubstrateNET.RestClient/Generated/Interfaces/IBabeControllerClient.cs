@@ -12,11 +12,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-   using SubstrateNET.NetApi.Generated.Model.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
+   using SubstrateNET.NetApi.Generated.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    
    public interface IBabeControllerClient
    {

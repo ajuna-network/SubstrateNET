@@ -13,6 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class SchedulerControllerMockupClient : MockupBaseClient, ISchedulerControllerMockupClient
@@ -22,13 +23,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetAgenda(BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>> value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<bool> SetAgenda(BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Scheduler/Agenda", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletScheduler.SchedulerStorage.AgendaParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Scheduler/Agenda", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.AgendaParams(key));
       }
-      public async Task<bool> SetLookup(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> value, BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> key)
+      public async Task<bool> SetLookup(BaseTuple<U32, U32> value, BaseVec<U8> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Scheduler/Lookup", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletScheduler.SchedulerStorage.LookupParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Scheduler/Lookup", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.LookupParams(key));
       }
    }
 }

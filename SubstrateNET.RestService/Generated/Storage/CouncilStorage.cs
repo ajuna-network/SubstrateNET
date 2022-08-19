@@ -8,14 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-using SubstrateNET.NetApi.Generated.Model.PalletCollective;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -34,19 +28,19 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13 GetProposals();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13 GetProposals();
         
         /// <summary>
         /// >> ProposalOf
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall GetProposalOf(string key);
+        SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall GetProposalOf(string key);
         
         /// <summary>
         /// >> Voting
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes GetVoting(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes GetVoting(string key);
         
         /// <summary>
         /// >> ProposalCount
@@ -58,13 +52,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current members of the collective. This is stored sorted (just by value).
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetMembers();
         
         /// <summary>
         /// >> Prime
         ///  The prime member that helps determine the default vote behavior in case of absentations.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetPrime();
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetPrime();
     }
     
     /// <summary>
@@ -76,17 +70,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13> _proposalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13> _proposalsTypedStorage;
         
         /// <summary>
         /// _proposalOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall> _proposalOfTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> _proposalOfTypedStorage;
         
         /// <summary>
         /// _votingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes> _votingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes> _votingTypedStorage;
         
         /// <summary>
         /// _proposalCountTypedStorage typed storage field
@@ -96,30 +90,30 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> _membersTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> _membersTypedStorage;
         
         /// <summary>
         /// _primeTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _primeTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _primeTypedStorage;
         
         /// <summary>
         /// CouncilStorage constructor.
         /// </summary>
-        public CouncilStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public CouncilStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13>("Council.Proposals", storageDataProvider, storageChangeDelegate);
-            this.ProposalOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall>("Council.ProposalOf", storageDataProvider, storageChangeDelegate);
-            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes>("Council.Voting", storageDataProvider, storageChangeDelegate);
-            this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Council.ProposalCount", storageDataProvider, storageChangeDelegate);
-            this.MembersTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>("Council.Members", storageDataProvider, storageChangeDelegate);
-            this.PrimeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Council.Prime", storageDataProvider, storageChangeDelegate);
+            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13>("Council.Proposals", storageDataProvider, storageChangeDelegates);
+            this.ProposalOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>("Council.ProposalOf", storageDataProvider, storageChangeDelegates);
+            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes>("Council.Voting", storageDataProvider, storageChangeDelegates);
+            this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Council.ProposalCount", storageDataProvider, storageChangeDelegates);
+            this.MembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Council.Members", storageDataProvider, storageChangeDelegates);
+            this.PrimeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Council.Prime", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _proposalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13> ProposalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13> ProposalsTypedStorage
         {
             get
             {
@@ -134,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall> ProposalOfTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> ProposalOfTypedStorage
         {
             get
             {
@@ -149,7 +143,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes> VotingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes> VotingTypedStorage
         {
             get
             {
@@ -179,7 +173,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> MembersTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> MembersTypedStorage
         {
             get
             {
@@ -194,7 +188,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _primeTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> PrimeTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> PrimeTypedStorage
         {
             get
             {
@@ -232,7 +226,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT13 GetProposals()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13 GetProposals()
         {
             return ProposalsTypedStorage.Get();
         }
@@ -250,13 +244,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ProposalOf
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall GetProposalOf(string key)
+        public SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall GetProposalOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ProposalOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall result))
+            if (ProposalOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall result))
             {
                 return result;
             }
@@ -279,13 +273,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Voting
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes GetVoting(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes GetVoting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes result))
+            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes result))
             {
                 return result;
             }
@@ -326,7 +320,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current members of the collective. This is stored sorted (just by value).
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetMembers()
         {
             return MembersTypedStorage.Get();
         }
@@ -344,7 +338,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Prime
         ///  The prime member that helps determine the default vote behavior in case of absentations.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetPrime()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetPrime()
         {
             return PrimeTypedStorage.Get();
         }

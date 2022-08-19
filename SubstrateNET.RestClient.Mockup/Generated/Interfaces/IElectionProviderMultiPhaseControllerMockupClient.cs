@@ -12,9 +12,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpNposElections;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
+   using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    
    public interface IElectionProviderMultiPhaseControllerMockupClient
    {

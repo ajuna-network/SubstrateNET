@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -27,19 +27,19 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BoundedVecT34> GetTransactions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
+         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
       }
       public async Task<bool> SubscribeTransactions(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("TransactionStorage.Transactions", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
+         return await _subscriptionClient.SubscribeAsync("TransactionStorage.Transactions", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
       }
       public async Task<U32> GetChunkCount(U32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "transactionstorage/chunkcount", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.ChunkCountParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "transactionstorage/chunkcount", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.ChunkCountParams(key));
       }
       public async Task<bool> SubscribeChunkCount(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("TransactionStorage.ChunkCount", SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.ChunkCountParams(key));
+         return await _subscriptionClient.SubscribeAsync("TransactionStorage.ChunkCount", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.ChunkCountParams(key));
       }
       public async Task<U128> GetByteFee()
       {

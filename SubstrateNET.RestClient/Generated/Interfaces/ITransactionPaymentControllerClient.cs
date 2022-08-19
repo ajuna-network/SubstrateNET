@@ -11,8 +11,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point;
+   using SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment;
    
    public interface ITransactionPaymentControllerClient
    {

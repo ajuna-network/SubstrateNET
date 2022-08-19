@@ -13,10 +13,10 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletLottery;
+   using SubstrateNET.NetApi.Generated.Model.pallet_lottery;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class LotteryControllerClient : BaseClient, ILotteryControllerClient
@@ -46,11 +46,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BaseTuple<U32, BoundedVecT31>> GetParticipants(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<U32, BoundedVecT31>>(_httpClient, "lottery/participants", LotteryStorage.ParticipantsParams(key));
+         return await SendRequestAsync<BaseTuple<U32, BoundedVecT31>>(_httpClient, "lottery/participants", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.ParticipantsParams(key));
       }
       public async Task<bool> SubscribeParticipants(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Lottery.Participants", LotteryStorage.ParticipantsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Lottery.Participants", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.ParticipantsParams(key));
       }
       public async Task<U32> GetTicketsCount()
       {
@@ -62,11 +62,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<AccountId32> GetTickets(U32 key)
       {
-         return await SendRequestAsync<AccountId32>(_httpClient, "lottery/tickets", LotteryStorage.TicketsParams(key));
+         return await SendRequestAsync<AccountId32>(_httpClient, "lottery/tickets", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.TicketsParams(key));
       }
       public async Task<bool> SubscribeTickets(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Lottery.Tickets", LotteryStorage.TicketsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Lottery.Tickets", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.TicketsParams(key));
       }
       public async Task<BoundedVecT31> GetCallIndices()
       {

@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    
    public interface IImOnlineControllerClient
    {
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeKeys();
       Task<WrapperOpaque> GetReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
       Task<bool> SubscribeReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
-      Task<U32> GetAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
-      Task<bool> SubscribeAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
+      Task<U32> GetAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
+      Task<bool> SubscribeAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
    }
 }

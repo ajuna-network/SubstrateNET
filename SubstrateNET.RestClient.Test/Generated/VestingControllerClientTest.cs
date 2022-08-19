@@ -15,8 +15,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletVesting;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_vesting;
    
    public class VestingControllerClientTest : ClientTestBase
    {
@@ -26,29 +26,29 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo[] {
                   this.GetTestValue3()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingInfo();
+         SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo();
          result.Locked = this.GetTestValueU128();
          result.PerBlock = this.GetTestValueU128();
          result.StartingBlock = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -95,8 +95,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          VestingControllerClient rpcClient = new VestingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 mockupValue = this.GetTestValue2();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue4();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue4();
 
          Assert.IsTrue(await rpcClient.SubscribeVesting(mockupKey));
 
@@ -108,16 +108,16 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 rpcResult = await rpcClient.GetVesting(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 rpcResult = await rpcClient.GetVesting(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletVesting.Releases>());
+         SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_vesting.Releases>());
          return result;
       }
       [Test()]
@@ -131,7 +131,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          VestingControllerClient rpcClient = new VestingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases mockupValue = this.GetTestValue6();
+         SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases mockupValue = this.GetTestValue6();
 
 
          Assert.IsTrue(await rpcClient.SubscribeStorageVersion());
@@ -144,7 +144,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
+         SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

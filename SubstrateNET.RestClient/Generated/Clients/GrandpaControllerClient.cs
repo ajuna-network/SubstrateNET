@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletGrandpa;
+   using SubstrateNET.NetApi.Generated.Model.pallet_grandpa;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Generated.Interfaces;
@@ -68,11 +68,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<U32> GetSetIdSession(U64 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "grandpa/setidsession", GrandpaStorage.SetIdSessionParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "grandpa/setidsession", SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.SetIdSessionParams(key));
       }
       public async Task<bool> SubscribeSetIdSession(U64 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Grandpa.SetIdSession", GrandpaStorage.SetIdSessionParams(key));
+         return await _subscriptionClient.SubscribeAsync("Grandpa.SetIdSession", SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.SetIdSessionParams(key));
       }
    }
 }

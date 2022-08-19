@@ -14,7 +14,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.PalletDemocracy;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.types;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class DemocracyControllerMockupClient : MockupBaseClient, IDemocracyControllerMockupClient
@@ -26,55 +30,55 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetPublicPropCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/PublicPropCount", value.Encode(), DemocracyStorage.PublicPropCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/PublicPropCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PublicPropCountParams());
       }
-      public async Task<bool> SetPublicProps(BaseVec<BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> value)
+      public async Task<bool> SetPublicProps(BaseVec<BaseTuple<U32, H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/PublicProps", value.Encode(), DemocracyStorage.PublicPropsParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/PublicProps", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PublicPropsParams());
       }
-      public async Task<bool> SetDepositOf(BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, U128> value, U32 key)
+      public async Task<bool> SetDepositOf(BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, U128> value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/DepositOf", value.Encode(), DemocracyStorage.DepositOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/DepositOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.DepositOfParams(key));
       }
-      public async Task<bool> SetPreimages(EnumPreimageStatus value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetPreimages(EnumPreimageStatus value, H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/Preimages", value.Encode(), DemocracyStorage.PreimagesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/Preimages", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PreimagesParams(key));
       }
       public async Task<bool> SetReferendumCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/ReferendumCount", value.Encode(), DemocracyStorage.ReferendumCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/ReferendumCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.ReferendumCountParams());
       }
       public async Task<bool> SetLowestUnbaked(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/LowestUnbaked", value.Encode(), DemocracyStorage.LowestUnbakedParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/LowestUnbaked", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.LowestUnbakedParams());
       }
       public async Task<bool> SetReferendumInfoOf(EnumReferendumInfo value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/ReferendumInfoOf", value.Encode(), DemocracyStorage.ReferendumInfoOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/ReferendumInfoOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.ReferendumInfoOfParams(key));
       }
-      public async Task<bool> SetVotingOf(EnumVoting value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetVotingOf(EnumVoting value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/VotingOf", value.Encode(), DemocracyStorage.VotingOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/VotingOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.VotingOfParams(key));
       }
       public async Task<bool> SetLastTabledWasExternal(Bool value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/LastTabledWasExternal", value.Encode(), DemocracyStorage.LastTabledWasExternalParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/LastTabledWasExternal", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.LastTabledWasExternalParams());
       }
-      public async Task<bool> SetNextExternal(BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, EnumVoteThreshold> value)
+      public async Task<bool> SetNextExternal(BaseTuple<H256, EnumVoteThreshold> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/NextExternal", value.Encode(), DemocracyStorage.NextExternalParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/NextExternal", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.NextExternalParams());
       }
-      public async Task<bool> SetBlacklist(BaseTuple<U32, BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetBlacklist(BaseTuple<U32, BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/Blacklist", value.Encode(), DemocracyStorage.BlacklistParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/Blacklist", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.BlacklistParams(key));
       }
-      public async Task<bool> SetCancellations(Bool value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetCancellations(Bool value, H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/Cancellations", value.Encode(), DemocracyStorage.CancellationsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Democracy/Cancellations", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.CancellationsParams(key));
       }
       public async Task<bool> SetStorageVersion(EnumReleases value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/StorageVersion", value.Encode(), DemocracyStorage.StorageVersionParams());
+         return await SendMockupRequestAsync(_httpClient, "Democracy/StorageVersion", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.StorageVersionParams());
       }
    }
 }

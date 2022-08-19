@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -25,31 +25,31 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetTransactions(BoundedVecT34 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/Transactions", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.TransactionsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/Transactions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
       }
       public async Task<bool> SetChunkCount(U32 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ChunkCount", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.ChunkCountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ChunkCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.ChunkCountParams(key));
       }
       public async Task<bool> SetByteFee(U128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ByteFee", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.ByteFeeParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ByteFee", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.ByteFeeParams());
       }
       public async Task<bool> SetEntryFee(U128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/EntryFee", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.EntryFeeParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/EntryFee", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.EntryFeeParams());
       }
       public async Task<bool> SetStoragePeriod(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/StoragePeriod", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.StoragePeriodParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/StoragePeriod", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.StoragePeriodParams());
       }
       public async Task<bool> SetBlockTransactions(BoundedVecT34 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/BlockTransactions", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.BlockTransactionsParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/BlockTransactions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.BlockTransactionsParams());
       }
       public async Task<bool> SetProofChecked(Bool value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ProofChecked", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionStorageStorage.ProofCheckedParams());
+         return await SendMockupRequestAsync(_httpClient, "TransactionStorage/ProofChecked", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.ProofCheckedParams());
       }
    }
 }

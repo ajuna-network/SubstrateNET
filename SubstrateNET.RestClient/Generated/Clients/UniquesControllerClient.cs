@@ -12,9 +12,10 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletUniques;
+   using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class UniquesControllerClient : BaseClient, IUniquesControllerClient
@@ -28,75 +29,91 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<CollectionDetails> GetClass(U32 key)
       {
-         return await SendRequestAsync<CollectionDetails>(_httpClient, "uniques/class", UniquesStorage.ClassParams(key));
+         return await SendRequestAsync<CollectionDetails>(_httpClient, "uniques/class", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassParams(key));
       }
       public async Task<bool> SubscribeClass(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.Class", UniquesStorage.ClassParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.Class", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassParams(key));
       }
-      public async Task<U32> GetOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<U32> GetOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "uniques/ownershipacceptance", UniquesStorage.OwnershipAcceptanceParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "uniques/ownershipacceptance", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.OwnershipAcceptanceParams(key));
       }
-      public async Task<bool> SubscribeOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeOwnershipAcceptance(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.OwnershipAcceptance", UniquesStorage.OwnershipAcceptanceParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.OwnershipAcceptance", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.OwnershipAcceptanceParams(key));
       }
-      public async Task<BaseTuple> GetAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key)
+      public async Task<BaseTuple> GetAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key)
       {
-         return await SendRequestAsync<BaseTuple>(_httpClient, "uniques/account", UniquesStorage.AccountParams(key));
+         return await SendRequestAsync<BaseTuple>(_httpClient, "uniques/account", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AccountParams(key));
       }
-      public async Task<bool> SubscribeAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key)
+      public async Task<bool> SubscribeAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.Account", UniquesStorage.AccountParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.Account", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AccountParams(key));
       }
-      public async Task<BaseTuple> GetClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key)
+      public async Task<BaseTuple> GetClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key)
       {
-         return await SendRequestAsync<BaseTuple>(_httpClient, "uniques/classaccount", UniquesStorage.ClassAccountParams(key));
+         return await SendRequestAsync<BaseTuple>(_httpClient, "uniques/classaccount", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassAccountParams(key));
       }
-      public async Task<bool> SubscribeClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key)
+      public async Task<bool> SubscribeClassAccount(BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.ClassAccount", UniquesStorage.ClassAccountParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.ClassAccount", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassAccountParams(key));
       }
       public async Task<ItemDetails> GetAsset(BaseTuple<U32, U32> key)
       {
-         return await SendRequestAsync<ItemDetails>(_httpClient, "uniques/asset", UniquesStorage.AssetParams(key));
+         return await SendRequestAsync<ItemDetails>(_httpClient, "uniques/asset", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AssetParams(key));
       }
       public async Task<bool> SubscribeAsset(BaseTuple<U32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.Asset", UniquesStorage.AssetParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.Asset", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AssetParams(key));
       }
       public async Task<CollectionMetadata> GetClassMetadataOf(U32 key)
       {
-         return await SendRequestAsync<CollectionMetadata>(_httpClient, "uniques/classmetadataof", UniquesStorage.ClassMetadataOfParams(key));
+         return await SendRequestAsync<CollectionMetadata>(_httpClient, "uniques/classmetadataof", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassMetadataOfParams(key));
       }
       public async Task<bool> SubscribeClassMetadataOf(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.ClassMetadataOf", UniquesStorage.ClassMetadataOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.ClassMetadataOf", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassMetadataOfParams(key));
       }
       public async Task<ItemMetadata> GetInstanceMetadataOf(BaseTuple<U32, U32> key)
       {
-         return await SendRequestAsync<ItemMetadata>(_httpClient, "uniques/instancemetadataof", UniquesStorage.InstanceMetadataOfParams(key));
+         return await SendRequestAsync<ItemMetadata>(_httpClient, "uniques/instancemetadataof", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.InstanceMetadataOfParams(key));
       }
       public async Task<bool> SubscribeInstanceMetadataOf(BaseTuple<U32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.InstanceMetadataOf", UniquesStorage.InstanceMetadataOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.InstanceMetadataOf", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.InstanceMetadataOfParams(key));
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
+      public async Task<BaseTuple<BoundedVecT3, U128>> GetAttribute(BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128>>(_httpClient, "uniques/attribute", UniquesStorage.AttributeParams(key));
+         return await SendRequestAsync<BaseTuple<BoundedVecT3, U128>>(_httpClient, "uniques/attribute", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AttributeParams(key));
       }
-      public async Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
+      public async Task<bool> SubscribeAttribute(BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.Attribute", UniquesStorage.AttributeParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.Attribute", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AttributeParams(key));
+      }
+      public async Task<BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> GetItemPriceOf(BaseTuple<U32, U32> key)
+      {
+         return await SendRequestAsync<BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(_httpClient, "uniques/itempriceof", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ItemPriceOfParams(key));
+      }
+      public async Task<bool> SubscribeItemPriceOf(BaseTuple<U32, U32> key)
+      {
+         return await _subscriptionClient.SubscribeAsync("Uniques.ItemPriceOf", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ItemPriceOfParams(key));
       }
       public async Task<U32> GetCollectionMaxSupply(U32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "uniques/collectionmaxsupply", UniquesStorage.CollectionMaxSupplyParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "uniques/collectionmaxsupply", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.CollectionMaxSupplyParams(key));
       }
       public async Task<bool> SubscribeCollectionMaxSupply(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Uniques.CollectionMaxSupply", UniquesStorage.CollectionMaxSupplyParams(key));
+         return await _subscriptionClient.SubscribeAsync("Uniques.CollectionMaxSupply", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.CollectionMaxSupplyParams(key));
+      }
+      public async Task<U32> GetNextCollectionId()
+      {
+         return await SendRequestAsync<U32>(_httpClient, "uniques/nextcollectionid");
+      }
+      public async Task<bool> SubscribeNextCollectionId()
+      {
+         return await _subscriptionClient.SubscribeAsync("Uniques.NextCollectionId");
       }
    }
 }

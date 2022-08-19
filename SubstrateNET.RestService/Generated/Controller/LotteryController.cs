@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletLottery;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("LotteryIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "LotteryIndexParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "LotteryIndexParams")]
         public IActionResult GetLotteryIndex()
         {
             return this.Ok(_lotteryStorage.GetLotteryIndex());
@@ -57,8 +53,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The configuration for the current lottery.
         /// </summary>
         [HttpGet("Lottery")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryConfig), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "LotteryParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_lottery.LotteryConfig), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "LotteryParams")]
         public IActionResult GetLottery()
         {
             return this.Ok(_lotteryStorage.GetLottery());
@@ -69,8 +65,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
         /// </summary>
         [HttpGet("Participants")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "ParticipantsParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT31>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "ParticipantsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetParticipants(string key)
         {
             return this.Ok(_lotteryStorage.GetParticipants(key));
@@ -82,7 +78,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("TicketsCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "TicketsCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "TicketsCountParams")]
         public IActionResult GetTicketsCount()
         {
             return this.Ok(_lotteryStorage.GetTicketsCount());
@@ -96,8 +92,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  are actually valid ticket mappings.
         /// </summary>
         [HttpGet("Tickets")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "TicketsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "TicketsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetTickets(string key)
         {
             return this.Ok(_lotteryStorage.GetTickets(key));
@@ -109,8 +105,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  by `Config::ValidateCall`.
         /// </summary>
         [HttpGet("CallIndices")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT31), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletLottery.LotteryStorage), "CallIndicesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT31), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "CallIndicesParams")]
         public IActionResult GetCallIndices()
         {
             return this.Ok(_lotteryStorage.GetCallIndices());

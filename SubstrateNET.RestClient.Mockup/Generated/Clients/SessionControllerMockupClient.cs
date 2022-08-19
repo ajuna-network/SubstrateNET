@@ -13,9 +13,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class SessionControllerMockupClient : MockupBaseClient, ISessionControllerMockupClient
@@ -27,31 +27,31 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetValidators(BaseVec<AccountId32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/Validators", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.ValidatorsParams());
+         return await SendMockupRequestAsync(_httpClient, "Session/Validators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.ValidatorsParams());
       }
       public async Task<bool> SetCurrentIndex(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/CurrentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.CurrentIndexParams());
+         return await SendMockupRequestAsync(_httpClient, "Session/CurrentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.CurrentIndexParams());
       }
       public async Task<bool> SetQueuedChanged(Bool value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/QueuedChanged", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.QueuedChangedParams());
+         return await SendMockupRequestAsync(_httpClient, "Session/QueuedChanged", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.QueuedChangedParams());
       }
       public async Task<bool> SetQueuedKeys(BaseVec<BaseTuple<AccountId32, SessionKeys>> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/QueuedKeys", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.QueuedKeysParams());
+         return await SendMockupRequestAsync(_httpClient, "Session/QueuedKeys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.QueuedKeysParams());
       }
       public async Task<bool> SetDisabledValidators(BaseVec<U32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/DisabledValidators", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.DisabledValidatorsParams());
+         return await SendMockupRequestAsync(_httpClient, "Session/DisabledValidators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.DisabledValidatorsParams());
       }
       public async Task<bool> SetNextKeys(SessionKeys value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/NextKeys", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.NextKeysParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Session/NextKeys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.NextKeysParams(key));
       }
       public async Task<bool> SetKeyOwner(AccountId32 value, BaseTuple<KeyTypeId, BaseVec<U8>> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Session/KeyOwner", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.KeyOwnerParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Session/KeyOwner", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SessionStorage.KeyOwnerParams(key));
       }
    }
 }

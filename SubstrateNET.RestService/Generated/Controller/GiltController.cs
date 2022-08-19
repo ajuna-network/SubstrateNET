@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletGilt;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -49,8 +46,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
         [HttpGet("QueueTotals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "QueueTotalsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "QueueTotalsParams")]
         public IActionResult GetQueueTotals()
         {
             return this.Ok(_giltStorage.GetQueueTotals());
@@ -61,8 +58,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
         [HttpGet("Queues")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT33), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "QueuesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "QueuesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetQueues(string key)
         {
             return this.Ok(_giltStorage.GetQueues(key));
@@ -73,8 +70,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Information relating to the gilts currently active.
         /// </summary>
         [HttpGet("ActiveTotal")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGiltsTotal), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "ActiveTotalParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "ActiveTotalParams")]
         public IActionResult GetActiveTotal()
         {
             return this.Ok(_giltStorage.GetActiveTotal());
@@ -85,8 +82,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The currently active gilts, indexed according to the order of creation.
         /// </summary>
         [HttpGet("Active")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.ActiveGilt), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGilt.GiltStorage), "ActiveParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "ActiveParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetActive(string key)
         {
             return this.Ok(_giltStorage.GetActive(key));

@@ -13,9 +13,10 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpNposElections;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
+   using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ElectionProviderMultiPhaseControllerClient : BaseClient, IElectionProviderMultiPhaseControllerClient
@@ -93,11 +94,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<SignedSubmission> GetSignedSubmissionsMap(U32 key)
       {
-         return await SendRequestAsync<SignedSubmission>(_httpClient, "electionprovidermultiphase/signedsubmissionsmap", ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
+         return await SendRequestAsync<SignedSubmission>(_httpClient, "electionprovidermultiphase/signedsubmissionsmap", SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
       }
       public async Task<bool> SubscribeSignedSubmissionsMap(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("ElectionProviderMultiPhase.SignedSubmissionsMap", ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
+         return await _subscriptionClient.SubscribeAsync("ElectionProviderMultiPhase.SignedSubmissionsMap", SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionsMapParams(key));
       }
       public async Task<ElectionScore> GetMinimumUntrustedScore()
       {

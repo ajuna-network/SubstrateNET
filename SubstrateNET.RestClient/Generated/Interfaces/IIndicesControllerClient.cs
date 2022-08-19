@@ -12,10 +12,12 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IIndicesControllerClient
    {
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>> GetAccounts(Ajuna.NetApi.Model.Types.Primitive.U32 key);
-      Task<bool> SubscribeAccounts(Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<BaseTuple<AccountId32, U128, Bool>> GetAccounts(U32 key);
+      Task<bool> SubscribeAccounts(U32 key);
    }
 }

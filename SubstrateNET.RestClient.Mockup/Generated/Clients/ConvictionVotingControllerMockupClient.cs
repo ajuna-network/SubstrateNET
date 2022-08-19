@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletConvictionVoting;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ConvictionVotingControllerMockupClient : MockupBaseClient, IConvictionVotingControllerMockupClient
@@ -23,13 +23,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetVotingFor(EnumVoting value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key)
+      public async Task<bool> SetVotingFor(EnumVoting value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U16> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/VotingFor", value.Encode(), ConvictionVotingStorage.VotingForParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/VotingFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage.VotingForParams(key));
       }
-      public async Task<bool> SetClassLocksFor(BoundedVecT37 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetClassLocksFor(BoundedVecT37 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/ClassLocksFor", value.Encode(), ConvictionVotingStorage.ClassLocksForParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ConvictionVoting/ClassLocksFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage.ClassLocksForParams(key));
       }
    }
 }

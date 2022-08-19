@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletRecovery;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.pallet_recovery;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RecoveryControllerMockupClient : MockupBaseClient, IRecoveryControllerMockupClient
@@ -25,15 +25,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetRecoverable(RecoveryConfig value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Recovery/Recoverable", value.Encode(), RecoveryStorage.RecoverableParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Recovery/Recoverable", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.RecoverableParams(key));
       }
       public async Task<bool> SetActiveRecoveries(ActiveRecovery value, Ajuna.NetApi.Model.Types.Base.BaseTuple<AccountId32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Recovery/ActiveRecoveries", value.Encode(), RecoveryStorage.ActiveRecoveriesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Recovery/ActiveRecoveries", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ActiveRecoveriesParams(key));
       }
       public async Task<bool> SetProxy(AccountId32 value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Recovery/Proxy", value.Encode(), RecoveryStorage.ProxyParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Recovery/Proxy", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ProxyParams(key));
       }
    }
 }

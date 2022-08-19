@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpStaking;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The primary structure that holds all offence records keyed by report identifiers.
         /// </summary>
         [HttpGet("Reports")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage), "ReportsParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.OffencesStorage), "ReportsParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetReports(string key)
         {
             return this.Ok(_offencesStorage.GetReports(key));
@@ -58,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A vector of reports of the same kind that happened at the same time slot.
         /// </summary>
         [HttpGet("ConcurrentReportsIndex")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage), "ConcurrentReportsIndexParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8,BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.OffencesStorage), "ConcurrentReportsIndexParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>))]
         public IActionResult GetConcurrentReportsIndex(string key)
         {
             return this.Ok(_offencesStorage.GetConcurrentReportsIndex(key));
@@ -75,8 +71,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  different types are not supported at the moment so we are doing the manual serialization.
         /// </summary>
         [HttpGet("ReportsByKindIndex")]
-        [ProducesResponseType(typeof(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage), "ReportsByKindIndexParams", typeof(SubstrateNET.NetApi.Generated.Model.Base.Arr16U8))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.OffencesStorage), "ReportsByKindIndexParams", typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr16U8))]
         public IActionResult GetReportsByKindIndex(string key)
         {
             return this.Ok(_offencesStorage.GetReportsByKindIndex(key));

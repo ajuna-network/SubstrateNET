@@ -12,11 +12,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.pallet_society;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletSociety;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class SocietyControllerClient : BaseClient, ISocietyControllerClient
@@ -54,11 +54,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BaseTuple<U128, EnumBidKind>> GetSuspendedCandidates(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<U128, EnumBidKind>>(_httpClient, "society/suspendedcandidates", SocietyStorage.SuspendedCandidatesParams(key));
+         return await SendRequestAsync<BaseTuple<U128, EnumBidKind>>(_httpClient, "society/suspendedcandidates", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.SuspendedCandidatesParams(key));
       }
       public async Task<bool> SubscribeSuspendedCandidates(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.SuspendedCandidates", SocietyStorage.SuspendedCandidatesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.SuspendedCandidates", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.SuspendedCandidatesParams(key));
       }
       public async Task<U128> GetPot()
       {
@@ -86,11 +86,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<Bool> GetSuspendedMembers(AccountId32 key)
       {
-         return await SendRequestAsync<Bool>(_httpClient, "society/suspendedmembers", SocietyStorage.SuspendedMembersParams(key));
+         return await SendRequestAsync<Bool>(_httpClient, "society/suspendedmembers", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.SuspendedMembersParams(key));
       }
       public async Task<bool> SubscribeSuspendedMembers(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.SuspendedMembers", SocietyStorage.SuspendedMembersParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.SuspendedMembers", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.SuspendedMembersParams(key));
       }
       public async Task<BaseVec<Bid>> GetBids()
       {
@@ -102,35 +102,35 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<EnumVouchingStatus> GetVouching(AccountId32 key)
       {
-         return await SendRequestAsync<EnumVouchingStatus>(_httpClient, "society/vouching", SocietyStorage.VouchingParams(key));
+         return await SendRequestAsync<EnumVouchingStatus>(_httpClient, "society/vouching", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.VouchingParams(key));
       }
       public async Task<bool> SubscribeVouching(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.Vouching", SocietyStorage.VouchingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.Vouching", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.VouchingParams(key));
       }
       public async Task<BaseVec<BaseTuple<U32, U128>>> GetPayouts(AccountId32 key)
       {
-         return await SendRequestAsync<BaseVec<BaseTuple<U32, U128>>>(_httpClient, "society/payouts", SocietyStorage.PayoutsParams(key));
+         return await SendRequestAsync<BaseVec<BaseTuple<U32, U128>>>(_httpClient, "society/payouts", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.PayoutsParams(key));
       }
       public async Task<bool> SubscribePayouts(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.Payouts", SocietyStorage.PayoutsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.Payouts", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.PayoutsParams(key));
       }
       public async Task<U32> GetStrikes(AccountId32 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "society/strikes", SocietyStorage.StrikesParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "society/strikes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.StrikesParams(key));
       }
       public async Task<bool> SubscribeStrikes(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.Strikes", SocietyStorage.StrikesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.Strikes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.StrikesParams(key));
       }
       public async Task<EnumVote> GetVotes(BaseTuple<AccountId32, AccountId32> key)
       {
-         return await SendRequestAsync<EnumVote>(_httpClient, "society/votes", SocietyStorage.VotesParams(key));
+         return await SendRequestAsync<EnumVote>(_httpClient, "society/votes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.VotesParams(key));
       }
       public async Task<bool> SubscribeVotes(BaseTuple<AccountId32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.Votes", SocietyStorage.VotesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.Votes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.VotesParams(key));
       }
       public async Task<AccountId32> GetDefender()
       {
@@ -142,11 +142,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<EnumVote> GetDefenderVotes(AccountId32 key)
       {
-         return await SendRequestAsync<EnumVote>(_httpClient, "society/defendervotes", SocietyStorage.DefenderVotesParams(key));
+         return await SendRequestAsync<EnumVote>(_httpClient, "society/defendervotes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.DefenderVotesParams(key));
       }
       public async Task<bool> SubscribeDefenderVotes(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Society.DefenderVotes", SocietyStorage.DefenderVotesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Society.DefenderVotes", SubstrateNET.NetApi.Generated.Storage.SocietyStorage.DefenderVotesParams(key));
       }
       public async Task<U32> GetMaxMembers()
       {

@@ -8,13 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
-using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("EpochIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U64), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "EpochIndexParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "EpochIndexParams")]
         public IActionResult GetEpochIndex()
         {
             return this.Ok(_babeStorage.GetEpochIndex());
@@ -59,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current epoch authorities.
         /// </summary>
         [HttpGet("Authorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "AuthoritiesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "AuthoritiesParams")]
         public IActionResult GetAuthorities()
         {
             return this.Ok(_babeStorage.GetAuthorities());
@@ -72,8 +67,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  until the first block of the chain.
         /// </summary>
         [HttpGet("GenesisSlot")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "GenesisSlotParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "GenesisSlotParams")]
         public IActionResult GetGenesisSlot()
         {
             return this.Ok(_babeStorage.GetGenesisSlot());
@@ -84,8 +79,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current slot number.
         /// </summary>
         [HttpGet("CurrentSlot")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "CurrentSlotParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "CurrentSlotParams")]
         public IActionResult GetCurrentSlot()
         {
             return this.Ok(_babeStorage.GetCurrentSlot());
@@ -105,8 +100,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  adversary, for purposes such as public-coin zero-knowledge proofs.
         /// </summary>
         [HttpGet("Randomness")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "RandomnessParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "RandomnessParams")]
         public IActionResult GetRandomness()
         {
             return this.Ok(_babeStorage.GetRandomness());
@@ -117,8 +112,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Pending epoch configuration change that will be applied when the next epoch is enacted.
         /// </summary>
         [HttpGet("PendingEpochConfigChange")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "PendingEpochConfigChangeParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "PendingEpochConfigChangeParams")]
         public IActionResult GetPendingEpochConfigChange()
         {
             return this.Ok(_babeStorage.GetPendingEpochConfigChange());
@@ -129,8 +124,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Next epoch randomness.
         /// </summary>
         [HttpGet("NextRandomness")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "NextRandomnessParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "NextRandomnessParams")]
         public IActionResult GetNextRandomness()
         {
             return this.Ok(_babeStorage.GetNextRandomness());
@@ -141,8 +136,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Next epoch authorities.
         /// </summary>
         [HttpGet("NextAuthorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "NextAuthoritiesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "NextAuthoritiesParams")]
         public IActionResult GetNextAuthorities()
         {
             return this.Ok(_babeStorage.GetNextAuthorities());
@@ -162,7 +157,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("SegmentIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "SegmentIndexParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "SegmentIndexParams")]
         public IActionResult GetSegmentIndex()
         {
             return this.Ok(_babeStorage.GetSegmentIndex());
@@ -173,8 +168,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
         [HttpGet("UnderConstruction")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "UnderConstructionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "UnderConstructionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetUnderConstruction(string key)
         {
             return this.Ok(_babeStorage.GetUnderConstruction(key));
@@ -186,8 +181,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  if per-block initialization has already been called for current block.
         /// </summary>
         [HttpGet("Initialized")]
-        [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "InitializedParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "InitializedParams")]
         public IActionResult GetInitialized()
         {
             return this.Ok(_babeStorage.GetInitialized());
@@ -201,8 +196,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
         [HttpGet("AuthorVrfRandomness")]
-        [ProducesResponseType(typeof(BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "AuthorVrfRandomnessParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "AuthorVrfRandomnessParams")]
         public IActionResult GetAuthorVrfRandomness()
         {
             return this.Ok(_babeStorage.GetAuthorVrfRandomness());
@@ -217,8 +212,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  slots, which may be skipped, the block numbers may not line up with the slot numbers.
         /// </summary>
         [HttpGet("EpochStart")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "EpochStartParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "EpochStartParams")]
         public IActionResult GetEpochStart()
         {
             return this.Ok(_babeStorage.GetEpochStart());
@@ -234,7 +229,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Lateness")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "LatenessParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "LatenessParams")]
         public IActionResult GetLateness()
         {
             return this.Ok(_babeStorage.GetLateness());
@@ -246,8 +241,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  genesis.
         /// </summary>
         [HttpGet("EpochConfig")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "EpochConfigParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "EpochConfigParams")]
         public IActionResult GetEpochConfig()
         {
             return this.Ok(_babeStorage.GetEpochConfig());
@@ -259,8 +254,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  (you can fallback to `EpochConfig` instead in that case).
         /// </summary>
         [HttpGet("NextEpochConfig")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage), "NextEpochConfigParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "NextEpochConfigParams")]
         public IActionResult GetNextEpochConfig()
         {
             return this.Ok(_babeStorage.GetNextEpochConfig());

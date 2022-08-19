@@ -12,12 +12,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ISchedulerControllerClient
    {
-      Task<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>>> GetAgenda(Ajuna.NetApi.Model.Types.Primitive.U32 key);
-      Task<bool> SubscribeAgenda(Ajuna.NetApi.Model.Types.Primitive.U32 key);
-      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetLookup(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> key);
-      Task<bool> SubscribeLookup(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> key);
+      Task<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>> GetAgenda(U32 key);
+      Task<bool> SubscribeAgenda(U32 key);
+      Task<BaseTuple<U32, U32>> GetLookup(BaseVec<U8> key);
+      Task<bool> SubscribeLookup(BaseVec<U8> key);
    }
 }

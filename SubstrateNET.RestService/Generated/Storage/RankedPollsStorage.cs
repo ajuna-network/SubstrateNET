@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -37,7 +34,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ReferendumInfoFor
         ///  Information concerning any given referendum.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo GetReferendumInfoFor(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo GetReferendumInfoFor(string key);
         
         /// <summary>
         /// >> TrackQueue
@@ -46,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44 GetTrackQueue(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44 GetTrackQueue(string key);
         
         /// <summary>
         /// >> DecidingCount
@@ -69,12 +66,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _referendumInfoForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo> _referendumInfoForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo> _referendumInfoForTypedStorage;
         
         /// <summary>
         /// _trackQueueTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44> _trackQueueTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44> _trackQueueTypedStorage;
         
         /// <summary>
         /// _decidingCountTypedStorage typed storage field
@@ -84,12 +81,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// RankedPollsStorage constructor.
         /// </summary>
-        public RankedPollsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public RankedPollsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ReferendumCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedPolls.ReferendumCount", storageDataProvider, storageChangeDelegate);
-            this.ReferendumInfoForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo>("RankedPolls.ReferendumInfoFor", storageDataProvider, storageChangeDelegate);
-            this.TrackQueueTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44>("RankedPolls.TrackQueue", storageDataProvider, storageChangeDelegate);
-            this.DecidingCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedPolls.DecidingCount", storageDataProvider, storageChangeDelegate);
+            this.ReferendumCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedPolls.ReferendumCount", storageDataProvider, storageChangeDelegates);
+            this.ReferendumInfoForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo>("RankedPolls.ReferendumInfoFor", storageDataProvider, storageChangeDelegates);
+            this.TrackQueueTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44>("RankedPolls.TrackQueue", storageDataProvider, storageChangeDelegates);
+            this.DecidingCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedPolls.DecidingCount", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -110,7 +107,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _referendumInfoForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo> ReferendumInfoForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo> ReferendumInfoForTypedStorage
         {
             get
             {
@@ -125,7 +122,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _trackQueueTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44> TrackQueueTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44> TrackQueueTypedStorage
         {
             get
             {
@@ -194,13 +191,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ReferendumInfoFor
         ///  Information concerning any given referendum.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo GetReferendumInfoFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo GetReferendumInfoFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReferendumInfoForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo result))
+            if (ReferendumInfoForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo result))
             {
                 return result;
             }
@@ -226,13 +223,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44 GetTrackQueue(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44 GetTrackQueue(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (TrackQueueTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT44 result))
+            if (TrackQueueTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44 result))
             {
                 return result;
             }

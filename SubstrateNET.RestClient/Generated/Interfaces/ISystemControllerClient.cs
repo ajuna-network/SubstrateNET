@@ -11,17 +11,17 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.FrameSystem;
+   using SubstrateNET.NetApi.Generated.Model.frame_system;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.weights;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest;
    
    public interface ISystemControllerClient
    {
-      Task<AccountInfo> GetAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<AccountInfo> GetAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<U32> GetExtrinsicCount();
       Task<bool> SubscribeExtrinsicCount();
       Task<PerDispatchClassT1> GetBlockWeight();

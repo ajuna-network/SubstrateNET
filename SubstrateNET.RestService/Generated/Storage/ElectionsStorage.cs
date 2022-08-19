@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,7 +30,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Invariant: Always sorted based on account id.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder> GetMembers();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder> GetMembers();
         
         /// <summary>
         /// >> RunnersUp
@@ -42,7 +39,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Invariant: Always sorted based on rank (worse to best). Upon removal of a member, the
         ///  last (i.e. _best_) runner-up will be replaced.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder> GetRunnersUp();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder> GetRunnersUp();
         
         /// <summary>
         /// >> Candidates
@@ -53,7 +50,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Invariant: Always sorted based on account id.
         /// </summary>
-        BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>> GetCandidates();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetCandidates();
         
         /// <summary>
         /// >> ElectionRounds
@@ -67,7 +64,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: SAFE as `AccountId` is a crypto hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter GetVoting(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter GetVoting(string key);
     }
     
     /// <summary>
@@ -79,17 +76,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>> _membersTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>> _membersTypedStorage;
         
         /// <summary>
         /// _runnersUpTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>> _runnersUpTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>> _runnersUpTypedStorage;
         
         /// <summary>
         /// _candidatesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>>> _candidatesTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>> _candidatesTypedStorage;
         
         /// <summary>
         /// _electionRoundsTypedStorage typed storage field
@@ -99,24 +96,24 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter> _votingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter> _votingTypedStorage;
         
         /// <summary>
         /// ElectionsStorage constructor.
         /// </summary>
-        public ElectionsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public ElectionsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.MembersTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>>("Elections.Members", storageDataProvider, storageChangeDelegate);
-            this.RunnersUpTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>>("Elections.RunnersUp", storageDataProvider, storageChangeDelegate);
-            this.CandidatesTypedStorage = new TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>>>("Elections.Candidates", storageDataProvider, storageChangeDelegate);
-            this.ElectionRoundsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Elections.ElectionRounds", storageDataProvider, storageChangeDelegate);
-            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter>("Elections.Voting", storageDataProvider, storageChangeDelegate);
+            this.MembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>>("Elections.Members", storageDataProvider, storageChangeDelegates);
+            this.RunnersUpTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>>("Elections.RunnersUp", storageDataProvider, storageChangeDelegates);
+            this.CandidatesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>>("Elections.Candidates", storageDataProvider, storageChangeDelegates);
+            this.ElectionRoundsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Elections.ElectionRounds", storageDataProvider, storageChangeDelegates);
+            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter>("Elections.Voting", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>> MembersTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>> MembersTypedStorage
         {
             get
             {
@@ -131,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _runnersUpTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>> RunnersUpTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>> RunnersUpTypedStorage
         {
             get
             {
@@ -146,7 +143,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _candidatesTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>>> CandidatesTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>> CandidatesTypedStorage
         {
             get
             {
@@ -176,7 +173,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter> VotingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter> VotingTypedStorage
         {
             get
             {
@@ -215,7 +212,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Invariant: Always sorted based on account id.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder> GetMembers()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder> GetMembers()
         {
             return MembersTypedStorage.Get();
         }
@@ -236,7 +233,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Invariant: Always sorted based on rank (worse to best). Upon removal of a member, the
         ///  last (i.e. _best_) runner-up will be replaced.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder> GetRunnersUp()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder> GetRunnersUp()
         {
             return RunnersUpTypedStorage.Get();
         }
@@ -259,7 +256,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Invariant: Always sorted based on account id.
         /// </summary>
-        public BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>> GetCandidates()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetCandidates()
         {
             return CandidatesTypedStorage.Get();
         }
@@ -297,13 +294,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: SAFE as `AccountId` is a crypto hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter GetVoting(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter GetVoting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter result))
+            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter result))
             {
                 return result;
             }

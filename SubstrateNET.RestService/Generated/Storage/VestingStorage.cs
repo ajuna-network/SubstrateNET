@@ -10,9 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletVesting;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 GetVesting(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 GetVesting(string key);
         
         /// <summary>
         /// >> StorageVersion
@@ -39,7 +36,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  New networks start with latest version, as determined by the genesis build.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases GetStorageVersion();
+        SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases GetStorageVersion();
     }
     
     /// <summary>
@@ -51,26 +48,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _vestingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26> _vestingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26> _vestingTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases> _storageVersionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases> _storageVersionTypedStorage;
         
         /// <summary>
         /// VestingStorage constructor.
         /// </summary>
-        public VestingStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public VestingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26>("Vesting.Vesting", storageDataProvider, storageChangeDelegate);
-            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases>("Vesting.StorageVersion", storageDataProvider, storageChangeDelegate);
+            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26>("Vesting.Vesting", storageDataProvider, storageChangeDelegates);
+            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases>("Vesting.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _vestingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26> VestingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26> VestingTypedStorage
         {
             get
             {
@@ -85,7 +82,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _storageVersionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases> StorageVersionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases> StorageVersionTypedStorage
         {
             get
             {
@@ -119,13 +116,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 GetVesting(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 GetVesting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26 result))
+            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 result))
             {
                 return result;
             }
@@ -150,7 +147,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  New networks start with latest version, as determined by the genesis build.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases GetStorageVersion()
+        public SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases GetStorageVersion()
         {
             return StorageVersionTypedStorage.Get();
         }

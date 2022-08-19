@@ -3,7 +3,7 @@
       <TargetFramework>netstandard2.0</TargetFramework>
    </PropertyGroup>
    <ItemGroup>
-      <PackageReference Include="Ajuna.ServiceLayer.Model" Version="0.1.14" />
+      <PackageReference Include="Ajuna.ServiceLayer.Model" Version="0.1.24" />
    </ItemGroup>
    <ItemGroup>      
       <ProjectReference Include="..\SubstrateNET.RestClient\SubstrateNET.RestClient.csproj" />

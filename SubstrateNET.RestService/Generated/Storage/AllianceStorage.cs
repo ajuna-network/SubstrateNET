@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletAlliance;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -35,13 +31,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Any founder has a special one-vote veto right to the rule setting.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid GetRule();
+        SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid GetRule();
         
         /// <summary>
         /// >> Announcements
         ///  The current IPFS CIDs of any announcements.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39 GetAnnouncements();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39 GetAnnouncements();
         
         /// <summary>
         /// >> DepositOf
@@ -53,7 +49,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  Maps member type to members of each type.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40 GetMembers(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40 GetMembers(string key);
         
         /// <summary>
         /// >> UpForKicking
@@ -67,13 +63,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The current list of accounts deemed unscrupulous. These accounts non grata cannot submit
         ///  candidacy.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41 GetUnscrupulousAccounts();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41 GetUnscrupulousAccounts();
         
         /// <summary>
         /// >> UnscrupulousWebsites
         ///  The current list of websites deemed unscrupulous.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42 GetUnscrupulousWebsites();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42 GetUnscrupulousWebsites();
     }
     
     /// <summary>
@@ -85,12 +81,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _ruleTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid> _ruleTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid> _ruleTypedStorage;
         
         /// <summary>
         /// _announcementsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39> _announcementsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39> _announcementsTypedStorage;
         
         /// <summary>
         /// _depositOfTypedStorage typed storage field
@@ -100,7 +96,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40> _membersTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40> _membersTypedStorage;
         
         /// <summary>
         /// _upForKickingTypedStorage typed storage field
@@ -110,31 +106,31 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unscrupulousAccountsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41> _unscrupulousAccountsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41> _unscrupulousAccountsTypedStorage;
         
         /// <summary>
         /// _unscrupulousWebsitesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42> _unscrupulousWebsitesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42> _unscrupulousWebsitesTypedStorage;
         
         /// <summary>
         /// AllianceStorage constructor.
         /// </summary>
-        public AllianceStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public AllianceStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.RuleTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid>("Alliance.Rule", storageDataProvider, storageChangeDelegate);
-            this.AnnouncementsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39>("Alliance.Announcements", storageDataProvider, storageChangeDelegate);
-            this.DepositOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Alliance.DepositOf", storageDataProvider, storageChangeDelegate);
-            this.MembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40>("Alliance.Members", storageDataProvider, storageChangeDelegate);
-            this.UpForKickingTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Alliance.UpForKicking", storageDataProvider, storageChangeDelegate);
-            this.UnscrupulousAccountsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41>("Alliance.UnscrupulousAccounts", storageDataProvider, storageChangeDelegate);
-            this.UnscrupulousWebsitesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42>("Alliance.UnscrupulousWebsites", storageDataProvider, storageChangeDelegate);
+            this.RuleTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid>("Alliance.Rule", storageDataProvider, storageChangeDelegates);
+            this.AnnouncementsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39>("Alliance.Announcements", storageDataProvider, storageChangeDelegates);
+            this.DepositOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Alliance.DepositOf", storageDataProvider, storageChangeDelegates);
+            this.MembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40>("Alliance.Members", storageDataProvider, storageChangeDelegates);
+            this.UpForKickingTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Alliance.UpForKicking", storageDataProvider, storageChangeDelegates);
+            this.UnscrupulousAccountsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41>("Alliance.UnscrupulousAccounts", storageDataProvider, storageChangeDelegates);
+            this.UnscrupulousWebsitesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42>("Alliance.UnscrupulousWebsites", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _ruleTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid> RuleTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid> RuleTypedStorage
         {
             get
             {
@@ -149,7 +145,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _announcementsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39> AnnouncementsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39> AnnouncementsTypedStorage
         {
             get
             {
@@ -179,7 +175,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40> MembersTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40> MembersTypedStorage
         {
             get
             {
@@ -209,7 +205,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unscrupulousAccountsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41> UnscrupulousAccountsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41> UnscrupulousAccountsTypedStorage
         {
             get
             {
@@ -224,7 +220,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unscrupulousWebsitesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42> UnscrupulousWebsitesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42> UnscrupulousWebsitesTypedStorage
         {
             get
             {
@@ -266,7 +262,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Any founder has a special one-vote veto right to the rule setting.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid GetRule()
+        public SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid GetRule()
         {
             return RuleTypedStorage.Get();
         }
@@ -284,7 +280,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Announcements
         ///  The current IPFS CIDs of any announcements.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39 GetAnnouncements()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39 GetAnnouncements()
         {
             return AnnouncementsTypedStorage.Get();
         }
@@ -331,13 +327,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  Maps member type to members of each type.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40 GetMembers(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40 GetMembers(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40 result))
+            if (MembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40 result))
             {
                 return result;
             }
@@ -391,7 +387,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The current list of accounts deemed unscrupulous. These accounts non grata cannot submit
         ///  candidacy.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41 GetUnscrupulousAccounts()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41 GetUnscrupulousAccounts()
         {
             return UnscrupulousAccountsTypedStorage.Get();
         }
@@ -409,7 +405,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnscrupulousWebsites
         ///  The current list of websites deemed unscrupulous.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42 GetUnscrupulousWebsites()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42 GetUnscrupulousWebsites()
         {
             return UnscrupulousWebsitesTypedStorage.Get();
         }

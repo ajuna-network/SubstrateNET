@@ -5,20 +5,22 @@ using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.NetApi.Model.Types.Primitive;
 using Serilog;
 using SubstrateNET.NetApi.Generated;
-using SubstrateNET.NetApi.Generated.Model.FrameSystem;
-using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+using SubstrateNET.NetApi.Generated.Model.frame_system;
+using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+using SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress;
+using SubstrateNET.NetApi.Generated.Storage;
 using System.Diagnostics;
 
 namespace SubstrateNET.NetApi.Demo
 {
     internal class NetworkManager
     {
+        private const int MAX_RUNNIG = 500;
+
         private string _webSocketUrl;
 
         private SubstrateClientExt _client;
-        
+
         private ExtrinsicManager _extrinsicManger;
 
         private Random _random = new Random();
@@ -37,49 +39,76 @@ namespace SubstrateNET.NetApi.Demo
         public async Task RunAsync(Account[] accounts, int amount)
         {
             await _client.ConnectAsync(true, CancellationToken.None);
-            Console.WriteLine($"substrateClient.IsConnected {_client.IsConnected}");
+            Log.Information("Client is connected {state}", _client.IsConnected);
 
             var chain = await _client.GetMethodAsync<string>("system_chain");
-            Console.WriteLine($"connected to {chain}");
+            Log.Information("Connected to {chain}", chain);
 
             List<Task> allTasks = new List<Task>();
             var watch = new Stopwatch();
             watch.Start();
-            for (int i = 0; i < accounts.Length; i++)
+
+            var faulted = 0;
+
+            for (int i = 0; i < amount; i++)
             {
-                allTasks.Add(CreateAccountAsync($"T{i}", amount, accounts[i], _extrinsicManger));
+                foreach (var account in accounts)
+                {
+                    allTasks.Add(CreateAccountAsync(account, _extrinsicManger));
+                }
+
+
+                if (allTasks.Count > 200)
+                {
+                    while (allTasks.Any(p => !p.IsCompleted))
+                    {
+                        Thread.Sleep(1000);
+                    }
+                    Log.Information("Concurrent extrinsics RUN: {value1} RDY/FUT: {value2}/{value3} FIN/BLK: {value4}/{value5} DRP/INV: {value6}/{value7}", 
+                        _extrinsicManger.Running, _extrinsicManger.Ready, _extrinsicManger.Future, _extrinsicManger.Finalized, _extrinsicManger.InBlock, _extrinsicManger.Dropped, _extrinsicManger.Invalid);
+                    
+                    if (allTasks.Any(p => p.IsFaulted))
+                    {
+                        faulted += allTasks.Where(p => p.IsFaulted).Count();
+                    }
+                    allTasks.Clear();
+                }
             }
+
+            Log.Information("Faulted tasks {value}", faulted);
 
             while (allTasks.Any(p => !p.IsCompleted))
             {
                 Thread.Sleep(1000);
-                Console.WriteLine($"concurrent {_extrinsicManger.Running}");
+                Log.Information("Concurrent extrinsics RUN: {value1} RDY/FUT: {value2}/{value3} FIN/BLK: {value4}/{value5} DRP/INV: {value6}/{value7}", 
+                    _extrinsicManger.Running, _extrinsicManger.Ready, _extrinsicManger.Future, _extrinsicManger.Finalized, _extrinsicManger.InBlock, _extrinsicManger.Dropped, _extrinsicManger.Invalid);
             }
-           
+
             watch.Stop();
             while (_extrinsicManger.Running > 0)
             {
                 Thread.Sleep(1000);
-                Console.WriteLine($"Concurrent extrinsic {_extrinsicManger.Running}");
+                Log.Information("Concurrent extrinsics RUN: {value1} RDY/FUT: {value2}/{value3} FIN/BLK: {value4}/{value5} DRP/INV: {value6}/{value7}", 
+                    _extrinsicManger.Running, _extrinsicManger.Ready, _extrinsicManger.Future, _extrinsicManger.Finalized, _extrinsicManger.InBlock, _extrinsicManger.Dropped, _extrinsicManger.Invalid);
+
             }
 
-            Console.WriteLine($"creation of {amount* accounts.Length} accounts took {watch.Elapsed.TotalSeconds} sec.");
+            Log.Information("Creation of {amount} accounts took {time} sec.", amount * accounts.Length, watch.Elapsed.TotalSeconds);
 
             await _client.CloseAsync(CancellationToken.None);
-            Console.WriteLine($"substrateClient.IsConnected {_client.IsConnected}");
+
+            Log.Information("Client is connected {state}", _client.IsConnected);
         }
 
-        private async Task CreateAccountAsync(string name, int amount, Account main, ExtrinsicManager extrinsicManger)
+        private async Task CreateAccountAsync(Account main, ExtrinsicManager extrinsicManger)
         {
-            for (int i = 0; i < amount; i++)
+            var accountNew = CreateNewAccount();
+            var id = await TransferAsync(main, accountNew, 100000000000000);
+            if (id != null)
             {
-                var accountNew = CreateNewAccount();
-                var id = await TransferAsync(main, accountNew, 100000000000000);
-                if (id != null)
-                {
-                    _extrinsicManger.Add(id);
-                }
+                extrinsicManger.Add(id);
             }
+
         }
 
         private async Task<AccountInfo?> GetBalanceAsync(Account alice)

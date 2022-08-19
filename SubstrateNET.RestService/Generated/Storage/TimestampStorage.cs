@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
 using System.Collections.Generic;
@@ -57,10 +56,10 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// TimestampStorage constructor.
         /// </summary>
-        public TimestampStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public TimestampStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.NowTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Timestamp.Now", storageDataProvider, storageChangeDelegate);
-            this.DidUpdateTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Timestamp.DidUpdate", storageDataProvider, storageChangeDelegate);
+            this.NowTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Timestamp.Now", storageDataProvider, storageChangeDelegates);
+            this.DidUpdateTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Timestamp.DidUpdate", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>

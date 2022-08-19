@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -28,7 +27,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> WhitelistedCall
         /// </summary>
-        BaseTuple GetWhitelistedCall(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple GetWhitelistedCall(string key);
     }
     
     /// <summary>
@@ -40,20 +39,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _whitelistedCallTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple> _whitelistedCallTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple> _whitelistedCallTypedStorage;
         
         /// <summary>
         /// WhitelistStorage constructor.
         /// </summary>
-        public WhitelistStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public WhitelistStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.WhitelistedCallTypedStorage = new TypedMapStorage<BaseTuple>("Whitelist.WhitelistedCall", storageDataProvider, storageChangeDelegate);
+            this.WhitelistedCallTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple>("Whitelist.WhitelistedCall", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _whitelistedCallTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple> WhitelistedCallTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple> WhitelistedCallTypedStorage
         {
             get
             {
@@ -85,13 +84,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> WhitelistedCall
         /// </summary>
-        public BaseTuple GetWhitelistedCall(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple GetWhitelistedCall(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (WhitelistedCallTypedStorage.Dictionary.TryGetValue(key, out BaseTuple result))
+            if (WhitelistedCallTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple result))
             {
                 return result;
             }

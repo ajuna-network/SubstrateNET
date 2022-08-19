@@ -12,9 +12,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IIndicesControllerMockupClient
    {
-      Task<bool> SetAccounts(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool> value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<bool> SetAccounts(BaseTuple<AccountId32, U128, Bool> value, U32 key);
    }
 }

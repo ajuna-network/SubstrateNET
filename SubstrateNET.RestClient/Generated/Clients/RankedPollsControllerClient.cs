@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class RankedPollsControllerClient : BaseClient, IRankedPollsControllerClient
@@ -36,27 +36,27 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<EnumReferendumInfo> GetReferendumInfoFor(U32 key)
       {
-         return await SendRequestAsync<EnumReferendumInfo>(_httpClient, "rankedpolls/referenduminfofor", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.ReferendumInfoForParams(key));
+         return await SendRequestAsync<EnumReferendumInfo>(_httpClient, "rankedpolls/referenduminfofor", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.ReferendumInfoForParams(key));
       }
       public async Task<bool> SubscribeReferendumInfoFor(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedPolls.ReferendumInfoFor", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.ReferendumInfoForParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedPolls.ReferendumInfoFor", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.ReferendumInfoForParams(key));
       }
       public async Task<BoundedVecT44> GetTrackQueue(U16 key)
       {
-         return await SendRequestAsync<BoundedVecT44>(_httpClient, "rankedpolls/trackqueue", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.TrackQueueParams(key));
+         return await SendRequestAsync<BoundedVecT44>(_httpClient, "rankedpolls/trackqueue", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.TrackQueueParams(key));
       }
       public async Task<bool> SubscribeTrackQueue(U16 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedPolls.TrackQueue", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.TrackQueueParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedPolls.TrackQueue", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.TrackQueueParams(key));
       }
       public async Task<U32> GetDecidingCount(U16 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "rankedpolls/decidingcount", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.DecidingCountParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "rankedpolls/decidingcount", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.DecidingCountParams(key));
       }
       public async Task<bool> SubscribeDecidingCount(U16 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedPolls.DecidingCount", SubstrateNET.NetApi.Generated.Model.PalletRankedPolls.RankedPollsStorage.DecidingCountParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedPolls.DecidingCount", SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.DecidingCountParams(key));
       }
    }
 }

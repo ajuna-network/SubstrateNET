@@ -12,12 +12,12 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.FrameSystem;
+   using SubstrateNET.NetApi.Generated.Model.frame_system;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.weights;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class SystemControllerClient : BaseClient, ISystemControllerClient
@@ -29,13 +29,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<AccountInfo> GetAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<AccountInfo> GetAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<AccountInfo>(_httpClient, "system/account", SystemStorage.AccountParams(key));
+         return await SendRequestAsync<AccountInfo>(_httpClient, "system/account", SubstrateNET.NetApi.Generated.Storage.SystemStorage.AccountParams(key));
       }
-      public async Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("System.Account", SystemStorage.AccountParams(key));
+         return await _subscriptionClient.SubscribeAsync("System.Account", SubstrateNET.NetApi.Generated.Storage.SystemStorage.AccountParams(key));
       }
       public async Task<U32> GetExtrinsicCount()
       {
@@ -63,19 +63,19 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<H256> GetBlockHash(U32 key)
       {
-         return await SendRequestAsync<H256>(_httpClient, "system/blockhash", SystemStorage.BlockHashParams(key));
+         return await SendRequestAsync<H256>(_httpClient, "system/blockhash", SubstrateNET.NetApi.Generated.Storage.SystemStorage.BlockHashParams(key));
       }
       public async Task<bool> SubscribeBlockHash(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("System.BlockHash", SystemStorage.BlockHashParams(key));
+         return await _subscriptionClient.SubscribeAsync("System.BlockHash", SubstrateNET.NetApi.Generated.Storage.SystemStorage.BlockHashParams(key));
       }
       public async Task<BaseVec<U8>> GetExtrinsicData(U32 key)
       {
-         return await SendRequestAsync<BaseVec<U8>>(_httpClient, "system/extrinsicdata", SystemStorage.ExtrinsicDataParams(key));
+         return await SendRequestAsync<BaseVec<U8>>(_httpClient, "system/extrinsicdata", SubstrateNET.NetApi.Generated.Storage.SystemStorage.ExtrinsicDataParams(key));
       }
       public async Task<bool> SubscribeExtrinsicData(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("System.ExtrinsicData", SystemStorage.ExtrinsicDataParams(key));
+         return await _subscriptionClient.SubscribeAsync("System.ExtrinsicData", SubstrateNET.NetApi.Generated.Storage.SystemStorage.ExtrinsicDataParams(key));
       }
       public async Task<U32> GetNumber()
       {
@@ -119,11 +119,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BaseVec<BaseTuple<U32, U32>>> GetEventTopics(H256 key)
       {
-         return await SendRequestAsync<BaseVec<BaseTuple<U32, U32>>>(_httpClient, "system/eventtopics", SystemStorage.EventTopicsParams(key));
+         return await SendRequestAsync<BaseVec<BaseTuple<U32, U32>>>(_httpClient, "system/eventtopics", SubstrateNET.NetApi.Generated.Storage.SystemStorage.EventTopicsParams(key));
       }
       public async Task<bool> SubscribeEventTopics(H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("System.EventTopics", SystemStorage.EventTopicsParams(key));
+         return await _subscriptionClient.SubscribeAsync("System.EventTopics", SubstrateNET.NetApi.Generated.Storage.SystemStorage.EventTopicsParams(key));
       }
       public async Task<LastRuntimeUpgradeInfo> GetLastRuntimeUpgrade()
       {

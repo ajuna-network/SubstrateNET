@@ -8,13 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
-using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,20 +34,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Authorities
         ///  Current epoch authorities.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetAuthorities();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetAuthorities();
         
         /// <summary>
         /// >> GenesisSlot
         ///  The slot at which the first epoch actually started. This is 0
         ///  until the first block of the chain.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetGenesisSlot();
+        SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetGenesisSlot();
         
         /// <summary>
         /// >> CurrentSlot
         ///  Current slot number.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetCurrentSlot();
+        SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetCurrentSlot();
         
         /// <summary>
         /// >> Randomness
@@ -67,25 +62,25 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  used where a number is needed that cannot have been chosen by an
         ///  adversary, for purposes such as public-coin zero-knowledge proofs.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetRandomness();
+        SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetRandomness();
         
         /// <summary>
         /// >> PendingEpochConfigChange
         ///  Pending epoch configuration change that will be applied when the next epoch is enacted.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor GetPendingEpochConfigChange();
+        SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor GetPendingEpochConfigChange();
         
         /// <summary>
         /// >> NextRandomness
         ///  Next epoch randomness.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetNextRandomness();
+        SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetNextRandomness();
         
         /// <summary>
         /// >> NextAuthorities
         ///  Next epoch authorities.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetNextAuthorities();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetNextAuthorities();
         
         /// <summary>
         /// >> SegmentIndex
@@ -105,14 +100,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnderConstruction
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 GetUnderConstruction(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 GetUnderConstruction(string key);
         
         /// <summary>
         /// >> Initialized
         ///  Temporary value (cleared at block finalization) which is `Some`
         ///  if per-block initialization has already been called for current block.
         /// </summary>
-        BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> GetInitialized();
+        Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> GetInitialized();
         
         /// <summary>
         /// >> AuthorVrfRandomness
@@ -121,7 +116,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
-        BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetAuthorVrfRandomness();
+        Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> GetAuthorVrfRandomness();
         
         /// <summary>
         /// >> EpochStart
@@ -131,7 +126,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  entropy was fixed (i.e. it was known to chain observers). Since epochs are defined in
         ///  slots, which may be skipped, the block numbers may not line up with the slot numbers.
         /// </summary>
-        BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> GetEpochStart();
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetEpochStart();
         
         /// <summary>
         /// >> Lateness
@@ -148,14 +143,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The configuration for the current epoch. Should never be `None` as it is initialized in
         ///  genesis.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetEpochConfig();
+        SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetEpochConfig();
         
         /// <summary>
         /// >> NextEpochConfig
         ///  The configuration for the next epoch, `None` if the config will not change
         ///  (you can fallback to `EpochConfig` instead in that case).
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetNextEpochConfig();
+        SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetNextEpochConfig();
     }
     
     /// <summary>
@@ -172,37 +167,37 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _authoritiesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> _authoritiesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1> _authoritiesTypedStorage;
         
         /// <summary>
         /// _genesisSlotTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot> _genesisSlotTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot> _genesisSlotTypedStorage;
         
         /// <summary>
         /// _currentSlotTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot> _currentSlotTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot> _currentSlotTypedStorage;
         
         /// <summary>
         /// _randomnessTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> _randomnessTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> _randomnessTypedStorage;
         
         /// <summary>
         /// _pendingEpochConfigChangeTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor> _pendingEpochConfigChangeTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor> _pendingEpochConfigChangeTypedStorage;
         
         /// <summary>
         /// _nextRandomnessTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> _nextRandomnessTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> _nextRandomnessTypedStorage;
         
         /// <summary>
         /// _nextAuthoritiesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> _nextAuthoritiesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1> _nextAuthoritiesTypedStorage;
         
         /// <summary>
         /// _segmentIndexTypedStorage typed storage field
@@ -212,22 +207,22 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _underConstructionTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8> _underConstructionTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8> _underConstructionTypedStorage;
         
         /// <summary>
         /// _initializedTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>> _initializedTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest>> _initializedTypedStorage;
         
         /// <summary>
         /// _authorVrfRandomnessTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> _authorVrfRandomnessTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>> _authorVrfRandomnessTypedStorage;
         
         /// <summary>
         /// _epochStartTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> _epochStartTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> _epochStartTypedStorage;
         
         /// <summary>
         /// _latenessTypedStorage typed storage field
@@ -237,34 +232,34 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _epochConfigTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration> _epochConfigTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration> _epochConfigTypedStorage;
         
         /// <summary>
         /// _nextEpochConfigTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration> _nextEpochConfigTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration> _nextEpochConfigTypedStorage;
         
         /// <summary>
         /// BabeStorage constructor.
         /// </summary>
-        public BabeStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public BabeStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.EpochIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Babe.EpochIndex", storageDataProvider, storageChangeDelegate);
-            this.AuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1>("Babe.Authorities", storageDataProvider, storageChangeDelegate);
-            this.GenesisSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot>("Babe.GenesisSlot", storageDataProvider, storageChangeDelegate);
-            this.CurrentSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot>("Babe.CurrentSlot", storageDataProvider, storageChangeDelegate);
-            this.RandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>("Babe.Randomness", storageDataProvider, storageChangeDelegate);
-            this.PendingEpochConfigChangeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor>("Babe.PendingEpochConfigChange", storageDataProvider, storageChangeDelegate);
-            this.NextRandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>("Babe.NextRandomness", storageDataProvider, storageChangeDelegate);
-            this.NextAuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1>("Babe.NextAuthorities", storageDataProvider, storageChangeDelegate);
-            this.SegmentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.SegmentIndex", storageDataProvider, storageChangeDelegate);
-            this.UnderConstructionTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8>("Babe.UnderConstruction", storageDataProvider, storageChangeDelegate);
-            this.InitializedTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>>("Babe.Initialized", storageDataProvider, storageChangeDelegate);
-            this.AuthorVrfRandomnessTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>>("Babe.AuthorVrfRandomness", storageDataProvider, storageChangeDelegate);
-            this.EpochStartTypedStorage = new TypedStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>("Babe.EpochStart", storageDataProvider, storageChangeDelegate);
-            this.LatenessTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.Lateness", storageDataProvider, storageChangeDelegate);
-            this.EpochConfigTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration>("Babe.EpochConfig", storageDataProvider, storageChangeDelegate);
-            this.NextEpochConfigTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration>("Babe.NextEpochConfig", storageDataProvider, storageChangeDelegate);
+            this.EpochIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Babe.EpochIndex", storageDataProvider, storageChangeDelegates);
+            this.AuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1>("Babe.Authorities", storageDataProvider, storageChangeDelegates);
+            this.GenesisSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot>("Babe.GenesisSlot", storageDataProvider, storageChangeDelegates);
+            this.CurrentSlotTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot>("Babe.CurrentSlot", storageDataProvider, storageChangeDelegates);
+            this.RandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>("Babe.Randomness", storageDataProvider, storageChangeDelegates);
+            this.PendingEpochConfigChangeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor>("Babe.PendingEpochConfigChange", storageDataProvider, storageChangeDelegates);
+            this.NextRandomnessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>("Babe.NextRandomness", storageDataProvider, storageChangeDelegates);
+            this.NextAuthoritiesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1>("Babe.NextAuthorities", storageDataProvider, storageChangeDelegates);
+            this.SegmentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.SegmentIndex", storageDataProvider, storageChangeDelegates);
+            this.UnderConstructionTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8>("Babe.UnderConstruction", storageDataProvider, storageChangeDelegates);
+            this.InitializedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest>>("Babe.Initialized", storageDataProvider, storageChangeDelegates);
+            this.AuthorVrfRandomnessTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>>("Babe.AuthorVrfRandomness", storageDataProvider, storageChangeDelegates);
+            this.EpochStartTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>("Babe.EpochStart", storageDataProvider, storageChangeDelegates);
+            this.LatenessTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Babe.Lateness", storageDataProvider, storageChangeDelegates);
+            this.EpochConfigTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration>("Babe.EpochConfig", storageDataProvider, storageChangeDelegates);
+            this.NextEpochConfigTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration>("Babe.NextEpochConfig", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -285,7 +280,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _authoritiesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> AuthoritiesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1> AuthoritiesTypedStorage
         {
             get
             {
@@ -300,7 +295,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _genesisSlotTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot> GenesisSlotTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot> GenesisSlotTypedStorage
         {
             get
             {
@@ -315,7 +310,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _currentSlotTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot> CurrentSlotTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot> CurrentSlotTypedStorage
         {
             get
             {
@@ -330,7 +325,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _randomnessTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> RandomnessTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> RandomnessTypedStorage
         {
             get
             {
@@ -345,7 +340,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _pendingEpochConfigChangeTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor> PendingEpochConfigChangeTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor> PendingEpochConfigChangeTypedStorage
         {
             get
             {
@@ -360,7 +355,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextRandomnessTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> NextRandomnessTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> NextRandomnessTypedStorage
         {
             get
             {
@@ -375,7 +370,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextAuthoritiesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1> NextAuthoritiesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1> NextAuthoritiesTypedStorage
         {
             get
             {
@@ -405,7 +400,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _underConstructionTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8> UnderConstructionTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8> UnderConstructionTypedStorage
         {
             get
             {
@@ -420,7 +415,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _initializedTypedStorage property
         /// </summary>
-        public TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>> InitializedTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest>> InitializedTypedStorage
         {
             get
             {
@@ -435,7 +430,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _authorVrfRandomnessTypedStorage property
         /// </summary>
-        public TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>> AuthorVrfRandomnessTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>> AuthorVrfRandomnessTypedStorage
         {
             get
             {
@@ -450,7 +445,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _epochStartTypedStorage property
         /// </summary>
-        public TypedStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> EpochStartTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> EpochStartTypedStorage
         {
             get
             {
@@ -480,7 +475,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _epochConfigTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration> EpochConfigTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration> EpochConfigTypedStorage
         {
             get
             {
@@ -495,7 +490,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextEpochConfigTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration> NextEpochConfigTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration> NextEpochConfigTypedStorage
         {
             get
             {
@@ -561,7 +556,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Authorities
         ///  Current epoch authorities.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetAuthorities()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetAuthorities()
         {
             return AuthoritiesTypedStorage.Get();
         }
@@ -580,7 +575,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The slot at which the first epoch actually started. This is 0
         ///  until the first block of the chain.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetGenesisSlot()
+        public SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetGenesisSlot()
         {
             return GenesisSlotTypedStorage.Get();
         }
@@ -598,7 +593,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> CurrentSlot
         ///  Current slot number.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetCurrentSlot()
+        public SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetCurrentSlot()
         {
             return CurrentSlotTypedStorage.Get();
         }
@@ -625,7 +620,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  used where a number is needed that cannot have been chosen by an
         ///  adversary, for purposes such as public-coin zero-knowledge proofs.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetRandomness()
+        public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetRandomness()
         {
             return RandomnessTypedStorage.Get();
         }
@@ -643,7 +638,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PendingEpochConfigChange
         ///  Pending epoch configuration change that will be applied when the next epoch is enacted.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor GetPendingEpochConfigChange()
+        public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor GetPendingEpochConfigChange()
         {
             return PendingEpochConfigChangeTypedStorage.Get();
         }
@@ -661,7 +656,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextRandomness
         ///  Next epoch randomness.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetNextRandomness()
+        public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetNextRandomness()
         {
             return NextRandomnessTypedStorage.Get();
         }
@@ -679,7 +674,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextAuthorities
         ///  Next epoch authorities.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetNextAuthorities()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetNextAuthorities()
         {
             return NextAuthoritiesTypedStorage.Get();
         }
@@ -723,13 +718,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnderConstruction
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 GetUnderConstruction(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 GetUnderConstruction(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (UnderConstructionTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 result))
+            if (UnderConstructionTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 result))
             {
                 return result;
             }
@@ -753,7 +748,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Temporary value (cleared at block finalization) which is `Some`
         ///  if per-block initialization has already been called for current block.
         /// </summary>
-        public BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> GetInitialized()
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> GetInitialized()
         {
             return InitializedTypedStorage.Get();
         }
@@ -774,7 +769,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  It is set in `on_finalize`, before it will contain the value from the last block.
         /// </summary>
-        public BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetAuthorVrfRandomness()
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> GetAuthorVrfRandomness()
         {
             return AuthorVrfRandomnessTypedStorage.Get();
         }
@@ -796,7 +791,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  entropy was fixed (i.e. it was known to chain observers). Since epochs are defined in
         ///  slots, which may be skipped, the block numbers may not line up with the slot numbers.
         /// </summary>
-        public BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> GetEpochStart()
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetEpochStart()
         {
             return EpochStartTypedStorage.Get();
         }
@@ -837,7 +832,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The configuration for the current epoch. Should never be `None` as it is initialized in
         ///  genesis.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetEpochConfig()
+        public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetEpochConfig()
         {
             return EpochConfigTypedStorage.Get();
         }
@@ -856,7 +851,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The configuration for the next epoch, `None` if the config will not change
         ///  (you can fallback to `EpochConfig` instead in that case).
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetNextEpochConfig()
+        public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetNextEpochConfig()
         {
             return NextEpochConfigTypedStorage.Get();
         }

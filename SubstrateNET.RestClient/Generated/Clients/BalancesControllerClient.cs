@@ -13,8 +13,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_balances;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class BalancesControllerClient : BaseClient, IBalancesControllerClient
@@ -34,29 +35,29 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Balances.TotalIssuance");
       }
-      public async Task<AccountData> GetAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<AccountData> GetAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<AccountData>(_httpClient, "balances/account", BalancesStorage.AccountParams(key));
+         return await SendRequestAsync<AccountData>(_httpClient, "balances/account", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.AccountParams(key));
       }
-      public async Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Balances.Account", BalancesStorage.AccountParams(key));
+         return await _subscriptionClient.SubscribeAsync("Balances.Account", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.AccountParams(key));
       }
-      public async Task<WeakBoundedVecT2> GetLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<WeakBoundedVecT2> GetLocks(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<WeakBoundedVecT2>(_httpClient, "balances/locks", BalancesStorage.LocksParams(key));
+         return await SendRequestAsync<WeakBoundedVecT2>(_httpClient, "balances/locks", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.LocksParams(key));
       }
-      public async Task<bool> SubscribeLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeLocks(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Balances.Locks", BalancesStorage.LocksParams(key));
+         return await _subscriptionClient.SubscribeAsync("Balances.Locks", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.LocksParams(key));
       }
-      public async Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT10>(_httpClient, "balances/reserves", BalancesStorage.ReservesParams(key));
+         return await SendRequestAsync<BoundedVecT10>(_httpClient, "balances/reserves", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.ReservesParams(key));
       }
-      public async Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Balances.Reserves", BalancesStorage.ReservesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Balances.Reserves", SubstrateNET.NetApi.Generated.Storage.BalancesStorage.ReservesParams(key));
       }
       public async Task<EnumReleases> GetStorageVersion()
       {

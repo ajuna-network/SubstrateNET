@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -48,14 +44,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 GetKeys();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 GetKeys();
         
         /// <summary>
         /// >> ReceivedHeartbeats
         ///  For each session index, we keep a mapping of `SessionIndex` and `AuthIndex` to
         ///  `WrapperOpaque<BoundedOpaqueNetworkState>`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque GetReceivedHeartbeats(string key);
+        SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque GetReceivedHeartbeats(string key);
         
         /// <summary>
         /// >> AuthoredBlocks
@@ -79,12 +75,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keysTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4> _keysTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4> _keysTypedStorage;
         
         /// <summary>
         /// _receivedHeartbeatsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque> _receivedHeartbeatsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque> _receivedHeartbeatsTypedStorage;
         
         /// <summary>
         /// _authoredBlocksTypedStorage typed storage field
@@ -94,12 +90,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// ImOnlineStorage constructor.
         /// </summary>
-        public ImOnlineStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public ImOnlineStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.HeartbeatAfterTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.HeartbeatAfter", storageDataProvider, storageChangeDelegate);
-            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4>("ImOnline.Keys", storageDataProvider, storageChangeDelegate);
-            this.ReceivedHeartbeatsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque>("ImOnline.ReceivedHeartbeats", storageDataProvider, storageChangeDelegate);
-            this.AuthoredBlocksTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.AuthoredBlocks", storageDataProvider, storageChangeDelegate);
+            this.HeartbeatAfterTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.HeartbeatAfter", storageDataProvider, storageChangeDelegates);
+            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4>("ImOnline.Keys", storageDataProvider, storageChangeDelegates);
+            this.ReceivedHeartbeatsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque>("ImOnline.ReceivedHeartbeats", storageDataProvider, storageChangeDelegates);
+            this.AuthoredBlocksTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("ImOnline.AuthoredBlocks", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -120,7 +116,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keysTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4> KeysTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4> KeysTypedStorage
         {
             get
             {
@@ -135,7 +131,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _receivedHeartbeatsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque> ReceivedHeartbeatsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque> ReceivedHeartbeatsTypedStorage
         {
             get
             {
@@ -214,7 +210,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 GetKeys()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 GetKeys()
         {
             return KeysTypedStorage.Get();
         }
@@ -233,13 +229,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  For each session index, we keep a mapping of `SessionIndex` and `AuthIndex` to
         ///  `WrapperOpaque<BoundedOpaqueNetworkState>`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque GetReceivedHeartbeats(string key)
+        public SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque GetReceivedHeartbeats(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReceivedHeartbeatsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque result))
+            if (ReceivedHeartbeatsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque result))
             {
                 return result;
             }

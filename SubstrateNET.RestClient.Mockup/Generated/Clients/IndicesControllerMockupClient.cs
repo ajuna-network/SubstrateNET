@@ -13,6 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class IndicesControllerMockupClient : MockupBaseClient, IIndicesControllerMockupClient
@@ -22,9 +24,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetAccounts(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool> value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<bool> SetAccounts(BaseTuple<AccountId32, U128, Bool> value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Indices/Accounts", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletIndices.IndicesStorage.AccountsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Indices/Accounts", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IndicesStorage.AccountsParams(key));
       }
    }
 }

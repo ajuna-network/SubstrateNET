@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public class TransactionStorageControllerClientTest : ClientTestBase
@@ -26,32 +26,32 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo[] {
                   this.GetTestValue3()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo();
-         result.ChunkRoot = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo();
+         result.ChunkRoot = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ChunkRoot = this.GetTestValue4();
-         result.ContentHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         result.ContentHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ContentHash = this.GetTestValue5();
          result.Size = this.GetTestValueU32();
          result.BlockChunks = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -87,11 +87,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -138,7 +138,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 mockupValue = this.GetTestValue2();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeTransactions(mockupKey));
@@ -151,7 +151,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 rpcResult = await rpcClient.GetTransactions(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 rpcResult = await rpcClient.GetTransactions(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -272,32 +272,32 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 GetTestValue11()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo[] {
                   this.GetTestValue12()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletTransactionStorage.TransactionInfo();
-         result.ChunkRoot = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.TransactionInfo();
+         result.ChunkRoot = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ChunkRoot = this.GetTestValue13();
-         result.ContentHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         result.ContentHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ContentHash = this.GetTestValue14();
          result.Size = this.GetTestValueU32();
          result.BlockChunks = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue13()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -333,11 +333,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue14()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -384,7 +384,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          TransactionStorageControllerClient rpcClient = new TransactionStorageControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 mockupValue = this.GetTestValue11();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 mockupValue = this.GetTestValue11();
 
 
          Assert.IsTrue(await rpcClient.SubscribeBlockTransactions());
@@ -397,7 +397,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT34 rpcResult = await rpcClient.GetBlockTransactions();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34 rpcResult = await rpcClient.GetBlockTransactions();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

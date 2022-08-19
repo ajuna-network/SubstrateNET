@@ -8,14 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-using SubstrateNET.NetApi.Generated.Model.PalletCollective;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The hashes of the active proposals.
         /// </summary>
         [HttpGet("Proposals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT14), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "ProposalsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT14), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "ProposalsParams")]
         public IActionResult GetProposals()
         {
             return this.Ok(_technicalCommitteeStorage.GetProposals());
@@ -60,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
         [HttpGet("ProposalOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeCall), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "ProposalOfParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "ProposalOfParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetProposalOf(string key)
         {
             return this.Ok(_technicalCommitteeStorage.GetProposalOf(key));
@@ -72,8 +66,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
         [HttpGet("Voting")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletCollective.Votes), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "VotingParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "VotingParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetVoting(string key)
         {
             return this.Ok(_technicalCommitteeStorage.GetVoting(key));
@@ -85,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ProposalCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "ProposalCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "ProposalCountParams")]
         public IActionResult GetProposalCount()
         {
             return this.Ok(_technicalCommitteeStorage.GetProposalCount());
@@ -96,8 +90,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current members of the collective. This is stored sorted (just by value).
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "MembersParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "MembersParams")]
         public IActionResult GetMembers()
         {
             return this.Ok(_technicalCommitteeStorage.GetMembers());
@@ -108,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The prime member that helps determine the default vote behavior in case of absentations.
         /// </summary>
         [HttpGet("Prime")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTechnicalCommittee.TechnicalCommitteeStorage), "PrimeParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalCommitteeStorage), "PrimeParams")]
         public IActionResult GetPrime()
         {
             return this.Ok(_technicalCommitteeStorage.GetPrime());

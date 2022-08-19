@@ -12,12 +12,12 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletCollective;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class AllianceMotionControllerMockupClient : MockupBaseClient, IAllianceMotionControllerMockupClient
@@ -29,27 +29,27 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetProposals(BoundedVecT38 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Proposals", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.ProposalsParams());
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Proposals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalsParams());
       }
-      public async Task<bool> SetProposalOf(EnumNodeCall value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetProposalOf(EnumCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/ProposalOf", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.ProposalOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/ProposalOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
       }
-      public async Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.VotingParams(key));
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.VotingParams(key));
       }
       public async Task<bool> SetProposalCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/ProposalCount", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.ProposalCountParams());
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/ProposalCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalCountParams());
       }
       public async Task<bool> SetMembers(BaseVec<AccountId32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Members", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.MembersParams());
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.MembersParams());
       }
       public async Task<bool> SetPrime(AccountId32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Prime", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.PrimeParams());
+         return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Prime", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.PrimeParams());
       }
    }
 }

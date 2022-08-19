@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface INominationPoolsControllerClient
    {
@@ -27,8 +27,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeMaxPoolMembers();
       Task<U32> GetMaxPoolMembersPerPool();
       Task<bool> SubscribeMaxPoolMembersPerPool();
-      Task<PoolMember> GetPoolMembers(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribePoolMembers(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<PoolMember> GetPoolMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribePoolMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<U32> GetCounterForPoolMembers();
       Task<bool> SubscribeCounterForPoolMembers();
       Task<BondedPoolInner> GetBondedPools(U32 key);
@@ -49,8 +49,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeCounterForMetadata();
       Task<U32> GetLastPoolId();
       Task<bool> SubscribeLastPoolId();
-      Task<U32> GetReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<U32> GetReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeReversePoolIdLookup(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<U32> GetCounterForReversePoolIdLookup();
       Task<bool> SubscribeCounterForReversePoolIdLookup();
    }

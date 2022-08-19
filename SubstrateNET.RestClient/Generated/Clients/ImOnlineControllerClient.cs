@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ImOnlineControllerClient : BaseClient, IImOnlineControllerClient
@@ -44,19 +44,19 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<WrapperOpaque> GetReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key)
       {
-         return await SendRequestAsync<WrapperOpaque>(_httpClient, "imonline/receivedheartbeats", SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.ReceivedHeartbeatsParams(key));
+         return await SendRequestAsync<WrapperOpaque>(_httpClient, "imonline/receivedheartbeats", SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.ReceivedHeartbeatsParams(key));
       }
       public async Task<bool> SubscribeReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("ImOnline.ReceivedHeartbeats", SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.ReceivedHeartbeatsParams(key));
+         return await _subscriptionClient.SubscribeAsync("ImOnline.ReceivedHeartbeats", SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.ReceivedHeartbeatsParams(key));
       }
-      public async Task<U32> GetAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<U32> GetAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "imonline/authoredblocks", SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.AuthoredBlocksParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "imonline/authoredblocks", SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.AuthoredBlocksParams(key));
       }
-      public async Task<bool> SubscribeAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SubscribeAuthoredBlocks(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("ImOnline.AuthoredBlocks", SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.AuthoredBlocksParams(key));
+         return await _subscriptionClient.SubscribeAsync("ImOnline.AuthoredBlocks", SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.AuthoredBlocksParams(key));
       }
    }
 }

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstrateNET.RestClient.Moc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstrateNET.RestClient.Test", "SubstrateNET.RestClient.Test\SubstrateNET.RestClient.Test.csproj", "{B07FF3A4-5B10-47B6-A17B-5FD48100D6DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstrateNET.NetApi.Demo", "SubstrateNET.NetApi.Demo\SubstrateNET.NetApi.Demo.csproj", "{6D60CAA3-A162-4102-BF8C-E08FAD87F2F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstrateNET.NetApi.Demo", "SubstrateNET.NetApi.Demo\SubstrateNET.NetApi.Demo.csproj", "{6D60CAA3-A162-4102-BF8C-E08FAD87F2F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

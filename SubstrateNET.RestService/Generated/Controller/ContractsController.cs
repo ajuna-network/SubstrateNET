@@ -8,13 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletContracts;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
         [HttpGet("PristineCode")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT17), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "PristineCodeParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "PristineCodeParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetPristineCode(string key)
         {
             return this.Ok(_contractsStorage.GetPristineCode(key));
@@ -59,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A mapping between an original code hash and instrumented wasm code, ready for execution.
         /// </summary>
         [HttpGet("CodeStorage")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.PrefabWasmModule), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "CodeStorageParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.PrefabWasmModule), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "CodeStorageParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetCodeStorage(string key)
         {
             return this.Ok(_contractsStorage.GetCodeStorage(key));
@@ -71,8 +66,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A mapping between an original code hash and its owner information.
         /// </summary>
         [HttpGet("OwnerInfoOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.OwnerInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "OwnerInfoOfParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.OwnerInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "OwnerInfoOfParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetOwnerInfoOf(string key)
         {
             return this.Ok(_contractsStorage.GetOwnerInfoOf(key));
@@ -105,7 +100,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Nonce")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U64), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "NonceParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "NonceParams")]
         public IActionResult GetNonce()
         {
             return this.Ok(_contractsStorage.GetNonce());
@@ -118,8 +113,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: SAFE since `AccountId` is a secure hash.
         /// </summary>
         [HttpGet("ContractInfoOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.RawContractInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "ContractInfoOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "ContractInfoOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetContractInfoOf(string key)
         {
             return this.Ok(_contractsStorage.GetContractInfoOf(key));
@@ -133,8 +128,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
         [HttpGet("DeletionQueue")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT20), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletContracts.ContractsStorage), "DeletionQueueParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "DeletionQueueParams")]
         public IActionResult GetDeletionQueue()
         {
             return this.Ok(_contractsStorage.GetDeletionQueue());

@@ -15,6 +15,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IWhitelistControllerMockupClient
    {
-      Task<bool> SetWhitelistedCall(BaseTuple value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetWhitelistedCall(BaseTuple value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

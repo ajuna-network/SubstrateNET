@@ -14,9 +14,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class StakingControllerMockupClient : MockupBaseClient, IStakingControllerMockupClient
@@ -28,159 +29,155 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetHistoryDepth(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/HistoryDepth", value.Encode(), StakingStorage.HistoryDepthParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/HistoryDepth", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.HistoryDepthParams());
       }
       public async Task<bool> SetValidatorCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ValidatorCount", value.Encode(), StakingStorage.ValidatorCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/ValidatorCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorCountParams());
       }
       public async Task<bool> SetMinimumValidatorCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MinimumValidatorCount", value.Encode(), StakingStorage.MinimumValidatorCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MinimumValidatorCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MinimumValidatorCountParams());
       }
       public async Task<bool> SetInvulnerables(BaseVec<AccountId32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Invulnerables", value.Encode(), StakingStorage.InvulnerablesParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/Invulnerables", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.InvulnerablesParams());
       }
       public async Task<bool> SetBonded(AccountId32 value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Bonded", value.Encode(), StakingStorage.BondedParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/Bonded", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.BondedParams(key));
       }
       public async Task<bool> SetMinNominatorBond(U128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MinNominatorBond", value.Encode(), StakingStorage.MinNominatorBondParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MinNominatorBond", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MinNominatorBondParams());
       }
       public async Task<bool> SetMinValidatorBond(U128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MinValidatorBond", value.Encode(), StakingStorage.MinValidatorBondParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MinValidatorBond", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MinValidatorBondParams());
       }
       public async Task<bool> SetMinCommission(Perbill value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MinCommission", value.Encode(), StakingStorage.MinCommissionParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MinCommission", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MinCommissionParams());
       }
       public async Task<bool> SetLedger(StakingLedger value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Ledger", value.Encode(), StakingStorage.LedgerParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/Ledger", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.LedgerParams(key));
       }
       public async Task<bool> SetPayee(EnumRewardDestination value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Payee", value.Encode(), StakingStorage.PayeeParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/Payee", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.PayeeParams(key));
       }
       public async Task<bool> SetValidators(ValidatorPrefs value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Validators", value.Encode(), StakingStorage.ValidatorsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/Validators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorsParams(key));
       }
       public async Task<bool> SetCounterForValidators(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/CounterForValidators", value.Encode(), StakingStorage.CounterForValidatorsParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/CounterForValidators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.CounterForValidatorsParams());
       }
       public async Task<bool> SetMaxValidatorsCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MaxValidatorsCount", value.Encode(), StakingStorage.MaxValidatorsCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MaxValidatorsCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MaxValidatorsCountParams());
       }
       public async Task<bool> SetNominators(Nominations value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/Nominators", value.Encode(), StakingStorage.NominatorsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/Nominators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorsParams(key));
       }
       public async Task<bool> SetCounterForNominators(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/CounterForNominators", value.Encode(), StakingStorage.CounterForNominatorsParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/CounterForNominators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.CounterForNominatorsParams());
       }
       public async Task<bool> SetMaxNominatorsCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/MaxNominatorsCount", value.Encode(), StakingStorage.MaxNominatorsCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/MaxNominatorsCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.MaxNominatorsCountParams());
       }
       public async Task<bool> SetCurrentEra(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/CurrentEra", value.Encode(), StakingStorage.CurrentEraParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/CurrentEra", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.CurrentEraParams());
       }
       public async Task<bool> SetActiveEra(ActiveEraInfo value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ActiveEra", value.Encode(), StakingStorage.ActiveEraParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/ActiveEra", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ActiveEraParams());
       }
       public async Task<bool> SetErasStartSessionIndex(U32 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStartSessionIndex", value.Encode(), StakingStorage.ErasStartSessionIndexParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStartSessionIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStartSessionIndexParams(key));
       }
       public async Task<bool> SetErasStakers(Exposure value, BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStakers", value.Encode(), StakingStorage.ErasStakersParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStakers", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersParams(key));
       }
       public async Task<bool> SetErasStakersClipped(Exposure value, BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStakersClipped", value.Encode(), StakingStorage.ErasStakersClippedParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasStakersClipped", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasStakersClippedParams(key));
       }
       public async Task<bool> SetErasValidatorPrefs(ValidatorPrefs value, BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasValidatorPrefs", value.Encode(), StakingStorage.ErasValidatorPrefsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasValidatorPrefs", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorPrefsParams(key));
       }
       public async Task<bool> SetErasValidatorReward(U128 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasValidatorReward", value.Encode(), StakingStorage.ErasValidatorRewardParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasValidatorReward", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasValidatorRewardParams(key));
       }
       public async Task<bool> SetErasRewardPoints(EraRewardPoints value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasRewardPoints", value.Encode(), StakingStorage.ErasRewardPointsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasRewardPoints", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasRewardPointsParams(key));
       }
       public async Task<bool> SetErasTotalStake(U128 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ErasTotalStake", value.Encode(), StakingStorage.ErasTotalStakeParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ErasTotalStake", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ErasTotalStakeParams(key));
       }
       public async Task<bool> SetForceEra(EnumForcing value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ForceEra", value.Encode(), StakingStorage.ForceEraParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/ForceEra", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ForceEraParams());
       }
       public async Task<bool> SetSlashRewardFraction(Perbill value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/SlashRewardFraction", value.Encode(), StakingStorage.SlashRewardFractionParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/SlashRewardFraction", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.SlashRewardFractionParams());
       }
       public async Task<bool> SetCanceledSlashPayout(U128 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/CanceledSlashPayout", value.Encode(), StakingStorage.CanceledSlashPayoutParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/CanceledSlashPayout", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.CanceledSlashPayoutParams());
       }
       public async Task<bool> SetUnappliedSlashes(BaseVec<UnappliedSlash> value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/UnappliedSlashes", value.Encode(), StakingStorage.UnappliedSlashesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/UnappliedSlashes", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.UnappliedSlashesParams(key));
       }
       public async Task<bool> SetBondedEras(BaseVec<BaseTuple<U32, U32>> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/BondedEras", value.Encode(), StakingStorage.BondedErasParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/BondedEras", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.BondedErasParams());
       }
       public async Task<bool> SetValidatorSlashInEra(BaseTuple<Perbill, U128> value, BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ValidatorSlashInEra", value.Encode(), StakingStorage.ValidatorSlashInEraParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/ValidatorSlashInEra", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorSlashInEraParams(key));
       }
       public async Task<bool> SetNominatorSlashInEra(U128 value, BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/NominatorSlashInEra", value.Encode(), StakingStorage.NominatorSlashInEraParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/NominatorSlashInEra", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.NominatorSlashInEraParams(key));
       }
       public async Task<bool> SetSlashingSpans(SlashingSpans value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/SlashingSpans", value.Encode(), StakingStorage.SlashingSpansParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Staking/SlashingSpans", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.SlashingSpansParams(key));
       }
       public async Task<bool> SetSpanSlash(SpanRecord value, BaseTuple<AccountId32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/SpanSlash", value.Encode(), StakingStorage.SpanSlashParams(key));
-      }
-      public async Task<bool> SetEarliestUnappliedSlash(U32 value)
-      {
-         return await SendMockupRequestAsync(_httpClient, "Staking/EarliestUnappliedSlash", value.Encode(), StakingStorage.EarliestUnappliedSlashParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/SpanSlash", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.SpanSlashParams(key));
       }
       public async Task<bool> SetCurrentPlannedSession(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/CurrentPlannedSession", value.Encode(), StakingStorage.CurrentPlannedSessionParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/CurrentPlannedSession", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.CurrentPlannedSessionParams());
       }
       public async Task<bool> SetOffendingValidators(BaseVec<BaseTuple<U32, Bool>> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/OffendingValidators", value.Encode(), StakingStorage.OffendingValidatorsParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/OffendingValidators", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.OffendingValidatorsParams());
       }
       public async Task<bool> SetStorageVersion(EnumReleases value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/StorageVersion", value.Encode(), StakingStorage.StorageVersionParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/StorageVersion", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.StorageVersionParams());
       }
       public async Task<bool> SetChillThreshold(Percent value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Staking/ChillThreshold", value.Encode(), StakingStorage.ChillThresholdParams());
+         return await SendMockupRequestAsync(_httpClient, "Staking/ChillThreshold", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ChillThresholdParams());
       }
    }
 }

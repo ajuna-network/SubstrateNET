@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletRecovery;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.pallet_recovery;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class RecoveryControllerClient : BaseClient, IRecoveryControllerClient
@@ -27,27 +27,27 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<RecoveryConfig> GetRecoverable(AccountId32 key)
       {
-         return await SendRequestAsync<RecoveryConfig>(_httpClient, "recovery/recoverable", RecoveryStorage.RecoverableParams(key));
+         return await SendRequestAsync<RecoveryConfig>(_httpClient, "recovery/recoverable", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.RecoverableParams(key));
       }
       public async Task<bool> SubscribeRecoverable(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Recovery.Recoverable", RecoveryStorage.RecoverableParams(key));
+         return await _subscriptionClient.SubscribeAsync("Recovery.Recoverable", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.RecoverableParams(key));
       }
       public async Task<ActiveRecovery> GetActiveRecoveries(Ajuna.NetApi.Model.Types.Base.BaseTuple<AccountId32, AccountId32> key)
       {
-         return await SendRequestAsync<ActiveRecovery>(_httpClient, "recovery/activerecoveries", RecoveryStorage.ActiveRecoveriesParams(key));
+         return await SendRequestAsync<ActiveRecovery>(_httpClient, "recovery/activerecoveries", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ActiveRecoveriesParams(key));
       }
       public async Task<bool> SubscribeActiveRecoveries(Ajuna.NetApi.Model.Types.Base.BaseTuple<AccountId32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Recovery.ActiveRecoveries", RecoveryStorage.ActiveRecoveriesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Recovery.ActiveRecoveries", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ActiveRecoveriesParams(key));
       }
       public async Task<AccountId32> GetProxy(AccountId32 key)
       {
-         return await SendRequestAsync<AccountId32>(_httpClient, "recovery/proxy", RecoveryStorage.ProxyParams(key));
+         return await SendRequestAsync<AccountId32>(_httpClient, "recovery/proxy", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ProxyParams(key));
       }
       public async Task<bool> SubscribeProxy(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Recovery.Proxy", RecoveryStorage.ProxyParams(key));
+         return await _subscriptionClient.SubscribeAsync("Recovery.Proxy", SubstrateNET.NetApi.Generated.Storage.RecoveryStorage.ProxyParams(key));
       }
    }
 }

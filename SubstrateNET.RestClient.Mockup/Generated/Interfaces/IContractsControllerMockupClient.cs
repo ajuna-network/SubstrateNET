@@ -11,17 +11,18 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletContracts;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
    
    public interface IContractsControllerMockupClient
    {
-      Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SetCodeStorage(PrefabWasmModule value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SetOwnerInfoOf(OwnerInfo value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetCodeStorage(PrefabWasmModule value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetOwnerInfoOf(OwnerInfo value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SetNonce(U64 value);
-      Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SetDeletionQueue(BoundedVecT20 value);
    }
 }

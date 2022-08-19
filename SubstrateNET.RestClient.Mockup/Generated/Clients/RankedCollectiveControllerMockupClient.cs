@@ -13,9 +13,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletRankedCollective;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RankedCollectiveControllerMockupClient : MockupBaseClient, IRankedCollectiveControllerMockupClient
@@ -27,27 +27,27 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetMemberCount(U32 value, U16 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/MemberCount", value.Encode(), RankedCollectiveStorage.MemberCountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/MemberCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MemberCountParams(key));
       }
       public async Task<bool> SetMembers(MemberRecord value, AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/Members", value.Encode(), RankedCollectiveStorage.MembersParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MembersParams(key));
       }
       public async Task<bool> SetIdToIndex(U32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/IdToIndex", value.Encode(), RankedCollectiveStorage.IdToIndexParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/IdToIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IdToIndexParams(key));
       }
       public async Task<bool> SetIndexToId(AccountId32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/IndexToId", value.Encode(), RankedCollectiveStorage.IndexToIdParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/IndexToId", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IndexToIdParams(key));
       }
       public async Task<bool> SetVoting(EnumVoteRecord value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/Voting", value.Encode(), RankedCollectiveStorage.VotingParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingParams(key));
       }
       public async Task<bool> SetVotingCleanup(BoundedVecT45 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "RankedCollective/VotingCleanup", value.Encode(), RankedCollectiveStorage.VotingCleanupParams(key));
+         return await SendMockupRequestAsync(_httpClient, "RankedCollective/VotingCleanup", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingCleanupParams(key));
       }
    }
 }

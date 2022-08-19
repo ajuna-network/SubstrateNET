@@ -12,15 +12,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen;
    
    public interface IElectionsControllerMockupClient
    {
       Task<bool> SetMembers(BaseVec<SeatHolder> value);
       Task<bool> SetRunnersUp(BaseVec<SeatHolder> value);
-      Task<bool> SetCandidates(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U128>> value);
+      Task<bool> SetCandidates(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U128>> value);
       Task<bool> SetElectionRounds(U32 value);
-      Task<bool> SetVoting(Voter value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetVoting(Voter value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
    }
 }

@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletDemocracy;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("PublicPropCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "PublicPropCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "PublicPropCountParams")]
         public IActionResult GetPublicPropCount()
         {
             return this.Ok(_democracyStorage.GetPublicPropCount());
@@ -58,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The public proposals. Unsorted. The second item is the proposal's hash.
         /// </summary>
         [HttpGet("PublicProps")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "PublicPropsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "PublicPropsParams")]
         public IActionResult GetPublicProps()
         {
             return this.Ok(_democracyStorage.GetPublicProps());
@@ -72,8 +68,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: Safe, as increasing integer keys are safe.
         /// </summary>
         [HttpGet("DepositOf")]
-        [ProducesResponseType(typeof(BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "DepositOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "DepositOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetDepositOf(string key)
         {
             return this.Ok(_democracyStorage.GetDepositOf(key));
@@ -85,8 +81,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The block number is the block at which it was deposited.
         /// </summary>
         [HttpGet("Preimages")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "PreimagesParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "PreimagesParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetPreimages(string key)
         {
             return this.Ok(_democracyStorage.GetPreimages(key));
@@ -98,7 +94,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ReferendumCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "ReferendumCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "ReferendumCountParams")]
         public IActionResult GetReferendumCount()
         {
             return this.Ok(_democracyStorage.GetReferendumCount());
@@ -111,7 +107,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("LowestUnbaked")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "LowestUnbakedParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "LowestUnbakedParams")]
         public IActionResult GetLowestUnbaked()
         {
             return this.Ok(_democracyStorage.GetLowestUnbaked());
@@ -124,8 +120,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: SAFE as indexes are not under an attacker���s control.
         /// </summary>
         [HttpGet("ReferendumInfoOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "ReferendumInfoOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "ReferendumInfoOfParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetReferendumInfoOf(string key)
         {
             return this.Ok(_democracyStorage.GetReferendumInfoOf(key));
@@ -139,8 +135,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: SAFE as `AccountId`s are crypto hashes anyway.
         /// </summary>
         [HttpGet("VotingOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "VotingOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "VotingOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetVotingOf(string key)
         {
             return this.Ok(_democracyStorage.GetVotingOf(key));
@@ -153,7 +149,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("LastTabledWasExternal")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "LastTabledWasExternalParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "LastTabledWasExternalParams")]
         public IActionResult GetLastTabledWasExternal()
         {
             return this.Ok(_democracyStorage.GetLastTabledWasExternal());
@@ -167,8 +163,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  - `PublicProps` is empty.
         /// </summary>
         [HttpGet("NextExternal")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256,SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "NextExternalParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "NextExternalParams")]
         public IActionResult GetNextExternal()
         {
             return this.Ok(_democracyStorage.GetNextExternal());
@@ -180,8 +176,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  (until when it may not be resubmitted) and who vetoed it.
         /// </summary>
         [HttpGet("Blacklist")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "BlacklistParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "BlacklistParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetBlacklist(string key)
         {
             return this.Ok(_democracyStorage.GetBlacklist(key));
@@ -193,7 +189,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Cancellations")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "CancellationsParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "CancellationsParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetCancellations(string key)
         {
             return this.Ok(_democracyStorage.GetCancellations(key));
@@ -206,8 +202,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  New networks start with last version.
         /// </summary>
         [HttpGet("StorageVersion")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletDemocracy.DemocracyStorage), "StorageVersionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.DemocracyStorage), "StorageVersionParams")]
         public IActionResult GetStorageVersion()
         {
             return this.Ok(_democracyStorage.GetStorageVersion());

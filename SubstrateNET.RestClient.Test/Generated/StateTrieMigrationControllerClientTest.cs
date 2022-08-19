@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
+   using SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet;
    using Ajuna.NetApi.Model.Types.Base;
    
    public class StateTrieMigrationControllerClientTest : ClientTestBase
@@ -26,14 +26,14 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask();
-         result.ProgressTop = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.EnumProgress();
-         result.ProgressTop.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.Progress>(), this.GetTestValueBaseVoid());
-         result.ProgressChild = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.EnumProgress();
-         result.ProgressChild.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.Progress>(), this.GetTestValueBaseVoid());
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask();
+         result.ProgressTop = new SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumProgress();
+         result.ProgressTop.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.Progress>(), this.GetTestValueBaseVoid());
+         result.ProgressChild = new SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumProgress();
+         result.ProgressChild.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.Progress>(), this.GetTestValueBaseVoid());
          result.Size = this.GetTestValueU32();
          result.TopItems = this.GetTestValueU32();
          result.ChildItems = this.GetTestValueU32();
@@ -50,7 +50,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StateTrieMigrationControllerClient rpcClient = new StateTrieMigrationControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeMigrationProcess());
@@ -63,22 +63,22 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask rpcResult = await rpcClient.GetMigrationProcess();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask rpcResult = await rpcClient.GetMigrationProcess();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> GetTestValue4()
+      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> GetTestValue4()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>();
          result.Create(this.GetTestValue5());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits();
          result.Size = this.GetTestValueU32();
          result.Item = this.GetTestValueU32();
          return result;
@@ -94,7 +94,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StateTrieMigrationControllerClient rpcClient = new StateTrieMigrationControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> mockupValue = this.GetTestValue4();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> mockupValue = this.GetTestValue4();
 
 
          Assert.IsTrue(await rpcClient.SubscribeAutoLimits());
@@ -107,15 +107,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> rpcResult = await rpcClient.GetAutoLimits();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> rpcResult = await rpcClient.GetAutoLimits();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits();
          result.Size = this.GetTestValueU32();
          result.Item = this.GetTestValueU32();
          return result;
@@ -131,7 +131,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StateTrieMigrationControllerClient rpcClient = new StateTrieMigrationControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits mockupValue = this.GetTestValue7();
 
 
          Assert.IsTrue(await rpcClient.SubscribeSignedMigrationMaxLimits());
@@ -144,7 +144,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits rpcResult = await rpcClient.GetSignedMigrationMaxLimits();
+         SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits rpcResult = await rpcClient.GetSignedMigrationMaxLimits();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

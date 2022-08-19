@@ -13,6 +13,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class IndicesControllerClient : BaseClient, IIndicesControllerClient
@@ -24,13 +26,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>> GetAccounts(Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<BaseTuple<AccountId32, U128, Bool>> GetAccounts(U32 key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.Bool>>(_httpClient, "indices/accounts", SubstrateNET.NetApi.Generated.Model.PalletIndices.IndicesStorage.AccountsParams(key));
+         return await SendRequestAsync<BaseTuple<AccountId32, U128, Bool>>(_httpClient, "indices/accounts", SubstrateNET.NetApi.Generated.Storage.IndicesStorage.AccountsParams(key));
       }
-      public async Task<bool> SubscribeAccounts(Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<bool> SubscribeAccounts(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Indices.Accounts", SubstrateNET.NetApi.Generated.Model.PalletIndices.IndicesStorage.AccountsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Indices.Accounts", SubstrateNET.NetApi.Generated.Storage.IndicesStorage.AccountsParams(key));
       }
    }
 }

@@ -11,8 +11,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletRecovery;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.pallet_recovery;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface IRecoveryControllerMockupClient
    {

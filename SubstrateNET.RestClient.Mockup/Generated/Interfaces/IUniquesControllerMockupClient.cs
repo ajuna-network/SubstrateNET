@@ -11,20 +11,23 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletUniques;
+   using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface IUniquesControllerMockupClient
    {
       Task<bool> SetClass(CollectionDetails value, U32 key);
-      Task<bool> SetOwnershipAcceptance(U32 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SetAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key);
-      Task<bool> SetClassAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key);
+      Task<bool> SetOwnershipAcceptance(U32 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SetAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key);
+      Task<bool> SetClassAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key);
       Task<bool> SetAsset(ItemDetails value, BaseTuple<U32, U32> key);
       Task<bool> SetClassMetadataOf(CollectionMetadata value, U32 key);
       Task<bool> SetInstanceMetadataOf(ItemMetadata value, BaseTuple<U32, U32> key);
-      Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key);
+      Task<bool> SetAttribute(BaseTuple<BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key);
+      Task<bool> SetItemPriceOf(BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, BaseTuple<U32, U32> key);
       Task<bool> SetCollectionMaxSupply(U32 value, U32 key);
+      Task<bool> SetNextCollectionId(U32 value);
    }
 }

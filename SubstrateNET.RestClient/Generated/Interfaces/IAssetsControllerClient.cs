@@ -11,16 +11,16 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletAssets;
+   using SubstrateNET.NetApi.Generated.Model.pallet_assets.types;
    
    public interface IAssetsControllerClient
    {
       Task<AssetDetails> GetAsset(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SubscribeAsset(Ajuna.NetApi.Model.Types.Primitive.U32 key);
-      Task<AssetAccount> GetAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
-      Task<bool> SubscribeAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
-      Task<Approval> GetApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
-      Task<bool> SubscribeApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key);
+      Task<AssetAccount> GetAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
+      Task<bool> SubscribeAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
+      Task<Approval> GetApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
+      Task<bool> SubscribeApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key);
       Task<AssetMetadata> GetMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SubscribeMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 key);
    }

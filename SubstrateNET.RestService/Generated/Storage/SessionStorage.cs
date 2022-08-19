@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Validators
         ///  The current set of validators.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetValidators();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetValidators();
         
         /// <summary>
         /// >> CurrentIndex
@@ -51,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The queued keys for the next session. When the next session begins, these keys
         ///  will be used to determine the validator's session keys.
         /// </summary>
-        BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>> GetQueuedKeys();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> GetQueuedKeys();
         
         /// <summary>
         /// >> DisabledValidators
@@ -61,19 +58,19 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  disabled using binary search. It gets cleared when `on_session_ending` returns
         ///  a new set of identities.
         /// </summary>
-        BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> GetDisabledValidators();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> GetDisabledValidators();
         
         /// <summary>
         /// >> NextKeys
         ///  The next session keys for a validator.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys GetNextKeys(string key);
+        SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys GetNextKeys(string key);
         
         /// <summary>
         /// >> KeyOwner
         ///  The owner of a key. The key is the `KeyTypeId` + the encoded key.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetKeyOwner(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetKeyOwner(string key);
     }
     
     /// <summary>
@@ -85,7 +82,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _validatorsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> _validatorsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> _validatorsTypedStorage;
         
         /// <summary>
         /// _currentIndexTypedStorage typed storage field
@@ -100,41 +97,41 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queuedKeysTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>>> _queuedKeysTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>> _queuedKeysTypedStorage;
         
         /// <summary>
         /// _disabledValidatorsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>> _disabledValidatorsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>> _disabledValidatorsTypedStorage;
         
         /// <summary>
         /// _nextKeysTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys> _nextKeysTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys> _nextKeysTypedStorage;
         
         /// <summary>
         /// _keyOwnerTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _keyOwnerTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _keyOwnerTypedStorage;
         
         /// <summary>
         /// SessionStorage constructor.
         /// </summary>
-        public SessionStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public SessionStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ValidatorsTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>("Session.Validators", storageDataProvider, storageChangeDelegate);
-            this.CurrentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Session.CurrentIndex", storageDataProvider, storageChangeDelegate);
-            this.QueuedChangedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Session.QueuedChanged", storageDataProvider, storageChangeDelegate);
-            this.QueuedKeysTypedStorage = new TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>>>("Session.QueuedKeys", storageDataProvider, storageChangeDelegate);
-            this.DisabledValidatorsTypedStorage = new TypedStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>>("Session.DisabledValidators", storageDataProvider, storageChangeDelegate);
-            this.NextKeysTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>("Session.NextKeys", storageDataProvider, storageChangeDelegate);
-            this.KeyOwnerTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Session.KeyOwner", storageDataProvider, storageChangeDelegate);
+            this.ValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Session.Validators", storageDataProvider, storageChangeDelegates);
+            this.CurrentIndexTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Session.CurrentIndex", storageDataProvider, storageChangeDelegates);
+            this.QueuedChangedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Session.QueuedChanged", storageDataProvider, storageChangeDelegates);
+            this.QueuedKeysTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>>("Session.QueuedKeys", storageDataProvider, storageChangeDelegates);
+            this.DisabledValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>>("Session.DisabledValidators", storageDataProvider, storageChangeDelegates);
+            this.NextKeysTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>("Session.NextKeys", storageDataProvider, storageChangeDelegates);
+            this.KeyOwnerTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Session.KeyOwner", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _validatorsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> ValidatorsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> ValidatorsTypedStorage
         {
             get
             {
@@ -179,7 +176,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _queuedKeysTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>>> QueuedKeysTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>> QueuedKeysTypedStorage
         {
             get
             {
@@ -194,7 +191,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _disabledValidatorsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>> DisabledValidatorsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>> DisabledValidatorsTypedStorage
         {
             get
             {
@@ -209,7 +206,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextKeysTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys> NextKeysTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys> NextKeysTypedStorage
         {
             get
             {
@@ -224,7 +221,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keyOwnerTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> KeyOwnerTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> KeyOwnerTypedStorage
         {
             get
             {
@@ -263,7 +260,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Validators
         ///  The current set of validators.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetValidators()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetValidators()
         {
             return ValidatorsTypedStorage.Get();
         }
@@ -319,7 +316,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The queued keys for the next session. When the next session begins, these keys
         ///  will be used to determine the validator's session keys.
         /// </summary>
-        public BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>> GetQueuedKeys()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> GetQueuedKeys()
         {
             return QueuedKeysTypedStorage.Get();
         }
@@ -341,7 +338,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  disabled using binary search. It gets cleared when `on_session_ending` returns
         ///  a new set of identities.
         /// </summary>
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> GetDisabledValidators()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> GetDisabledValidators()
         {
             return DisabledValidatorsTypedStorage.Get();
         }
@@ -359,13 +356,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextKeys
         ///  The next session keys for a validator.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys GetNextKeys(string key)
+        public SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys GetNextKeys(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (NextKeysTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys result))
+            if (NextKeysTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys result))
             {
                 return result;
             }
@@ -388,13 +385,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> KeyOwner
         ///  The owner of a key. The key is the `KeyTypeId` + the encoded key.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetKeyOwner(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetKeyOwner(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (KeyOwnerTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result))
+            if (KeyOwnerTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result))
             {
                 return result;
             }

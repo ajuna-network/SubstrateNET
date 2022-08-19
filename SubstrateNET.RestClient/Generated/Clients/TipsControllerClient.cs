@@ -12,8 +12,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletTips;
+   using SubstrateNET.NetApi.Generated.Model.pallet_tips;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class TipsControllerClient : BaseClient, ITipsControllerClient
@@ -25,21 +26,21 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<OpenTip> GetTips(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<OpenTip> GetTips(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<OpenTip>(_httpClient, "tips/tips", TipsStorage.TipsParams(key));
+         return await SendRequestAsync<OpenTip>(_httpClient, "tips/tips", SubstrateNET.NetApi.Generated.Storage.TipsStorage.TipsParams(key));
       }
-      public async Task<bool> SubscribeTips(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeTips(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Tips.Tips", TipsStorage.TipsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Tips.Tips", SubstrateNET.NetApi.Generated.Storage.TipsStorage.TipsParams(key));
       }
-      public async Task<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetReasons(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<BaseVec<U8>> GetReasons(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>(_httpClient, "tips/reasons", TipsStorage.ReasonsParams(key));
+         return await SendRequestAsync<BaseVec<U8>>(_httpClient, "tips/reasons", SubstrateNET.NetApi.Generated.Storage.TipsStorage.ReasonsParams(key));
       }
-      public async Task<bool> SubscribeReasons(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeReasons(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Tips.Reasons", TipsStorage.ReasonsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Tips.Reasons", SubstrateNET.NetApi.Generated.Storage.TipsStorage.ReasonsParams(key));
       }
    }
 }

@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -26,15 +26,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetUncles(BoundedVecT9 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Authorship/Uncles", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage.UnclesParams());
+         return await SendMockupRequestAsync(_httpClient, "Authorship/Uncles", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage.UnclesParams());
       }
       public async Task<bool> SetAuthor(AccountId32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Authorship/Author", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage.AuthorParams());
+         return await SendMockupRequestAsync(_httpClient, "Authorship/Author", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage.AuthorParams());
       }
       public async Task<bool> SetDidSetUncles(Bool value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Authorship/DidSetUncles", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletAuthorship.AuthorshipStorage.DidSetUnclesParams());
+         return await SendMockupRequestAsync(_httpClient, "Authorship/DidSetUncles", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage.DidSetUnclesParams());
       }
    }
 }

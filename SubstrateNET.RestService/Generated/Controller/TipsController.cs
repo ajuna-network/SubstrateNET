@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletTips;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +44,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  guaranteed to be a secure hash.
         /// </summary>
         [HttpGet("Tips")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTips.TipsStorage), "TipsParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TipsStorage), "TipsParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetTips(string key)
         {
             return this.Ok(_tipsStorage.GetTips(key));
@@ -60,8 +57,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  insecure enumerable hash since the key is guaranteed to be the result of a secure hash.
         /// </summary>
         [HttpGet("Reasons")]
-        [ProducesResponseType(typeof(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTips.TipsStorage), "ReasonsParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TipsStorage), "ReasonsParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetReasons(string key)
         {
             return this.Ok(_tipsStorage.GetReasons(key));

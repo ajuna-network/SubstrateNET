@@ -11,18 +11,18 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletCollective;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface IAllianceMotionControllerMockupClient
    {
       Task<bool> SetProposals(BoundedVecT38 value);
-      Task<bool> SetProposalOf(EnumNodeCall value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetProposalOf(EnumCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SetProposalCount(U32 value);
       Task<bool> SetMembers(BaseVec<AccountId32> value);
       Task<bool> SetPrime(AccountId32 value);
