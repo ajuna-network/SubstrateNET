@@ -15,12 +15,12 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.FrameSystem;
+   using SubstrateNET.NetApi.Generated.Model.frame_system;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.weights;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest;
    
    public class SystemControllerClientTest : ClientTestBase
    {
@@ -30,33 +30,33 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo();
+         SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo();
          result.Nonce = this.GetTestValueU32();
          result.Consumers = this.GetTestValueU32();
          result.Providers = this.GetTestValueU32();
          result.Sufficients = this.GetTestValueU32();
-         result.Data = new SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData();
+         result.Data = new SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData();
          result.Data = this.GetTestValue3();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletBalances.AccountData();
+         SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData();
          result.Free = this.GetTestValueU128();
          result.Reserved = this.GetTestValueU128();
          result.MiscFrozen = this.GetTestValueU128();
          result.FeeFrozen = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -103,8 +103,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo mockupValue = this.GetTestValue2();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue4();
+         SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue4();
 
          Assert.IsTrue(await rpcClient.SubscribeAccount(mockupKey));
 
@@ -116,7 +116,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo rpcResult = await rpcClient.GetAccount(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo rpcResult = await rpcClient.GetAccount(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -150,10 +150,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1();
+         SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1();
          result.Normal = this.GetTestValueU64();
          result.Operational = this.GetTestValueU64();
          result.Mandatory = this.GetTestValueU64();
@@ -170,7 +170,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 mockupValue = this.GetTestValue7();
 
 
          Assert.IsTrue(await rpcClient.SubscribeBlockWeight());
@@ -183,7 +183,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 rpcResult = await rpcClient.GetBlockWeight();
+         SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 rpcResult = await rpcClient.GetBlockWeight();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -217,11 +217,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -268,7 +268,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupValue = this.GetTestValue10();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupValue = this.GetTestValue10();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeBlockHash(mockupKey));
@@ -281,7 +281,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 rpcResult = await rpcClient.GetBlockHash(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 rpcResult = await rpcClient.GetBlockHash(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -352,11 +352,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue15()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -403,7 +403,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupValue = this.GetTestValue15();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupValue = this.GetTestValue15();
 
 
          Assert.IsTrue(await rpcClient.SubscribeParentHash());
@@ -416,46 +416,28 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 rpcResult = await rpcClient.GetParentHash();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 rpcResult = await rpcClient.GetParentHash();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest GetTestValue17()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest();
-         result.Logs = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumDigestItem>();
-         result.Logs.Create(new SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumDigestItem[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest();
+         result.Logs = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.EnumDigestItem>();
+         result.Logs.Create(new SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.EnumDigestItem[] {
                   this.GetTestValue18()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumDigestItem GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.EnumDigestItem GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumDigestItem result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.EnumDigestItem();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpRuntime.DigestItem>(), this.GetTestValue19());
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.EnumDigestItem result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.EnumDigestItem();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.DigestItem>(), this.GetTestValue19());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr4U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetTestValue19()
-      {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr4U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr4U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>();
-         result.Create(this.GetTestValue20(), this.GetTestValue21());
-         return result;
-      }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr4U8 GetTestValue20()
-      {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr4U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr4U8();
-         result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8()});
-         return result;
-      }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetTestValue21()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetTestValue19()
       {
          Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
@@ -474,7 +456,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest mockupValue = this.GetTestValue17();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest mockupValue = this.GetTestValue17();
 
 
          Assert.IsTrue(await rpcClient.SubscribeDigest());
@@ -487,37 +469,55 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest rpcResult = await rpcClient.GetDigest();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest rpcResult = await rpcClient.GetDigest();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> GetTestValue23()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> GetTestValue21()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord[] {
-                  this.GetTestValue24()});
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord>();
+         result.Create(new SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord[] {
+                  this.GetTestValue22()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord GetTestValue24()
+      public SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord GetTestValue22()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord();
-         result.Phase = new SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase();
-         result.Phase.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.FrameSystem.Phase>(), this.GetTestValueU32());
-         result.Event = new SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumNodeEvent();
-         result.Event.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.NodeRuntime.NodeEvent>());
-         result.Topics = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>();
-         result.Topics.Create(new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256[] {
+         SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord();
+         result.Phase = new SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase();
+         result.Phase.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_system.Phase>(), this.GetTestValueU32());
+         result.Event = new SubstrateNET.NetApi.Generated.Model.node_runtime.EnumEvent();
+         result.Event.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.node_runtime.Event>(), this.GetTestValue23());
+         result.Topics = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>();
+         result.Topics.Create(new SubstrateNET.NetApi.Generated.Model.primitive_types.H256[] {
                   this.GetTestValue25()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue25()
+      public SubstrateNET.NetApi.Generated.Model.frame_system.pallet.EnumEvent GetTestValue23()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.frame_system.pallet.EnumEvent result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_system.pallet.EnumEvent();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_system.pallet.Event>(), this.GetTestValue24());
+         return result;
+      }
+      public SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchInfo GetTestValue24()
+      {
+         SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchInfo();
+         result.Weight = this.GetTestValueU64();
+         result.Class = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.EnumDispatchClass();
+         result.Class.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchClass>());
+         result.PaysFee = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.EnumPays();
+         result.PaysFee.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_support.weights.Pays>());
+         return result;
+      }
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue25()
+      {
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -564,7 +564,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> mockupValue = this.GetTestValue23();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> mockupValue = this.GetTestValue21();
 
 
          Assert.IsTrue(await rpcClient.SubscribeEvents());
@@ -577,7 +577,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> rpcResult = await rpcClient.GetEvents();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> rpcResult = await rpcClient.GetEvents();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -626,11 +626,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Create(this.GetTestValueU32(), this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue30()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue30()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -678,7 +678,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> mockupValue = this.GetTestValue28();
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue30();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupKey = this.GetTestValue30();
 
          Assert.IsTrue(await rpcClient.SubscribeEventTopics(mockupKey));
 
@@ -695,10 +695,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo GetTestValue32()
+      public SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo GetTestValue32()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo();
+         SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo();
          result.SpecVersion = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.SpecVersion.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          result.SpecName = this.GetTestValueStr();
@@ -715,7 +715,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo mockupValue = this.GetTestValue32();
+         SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo mockupValue = this.GetTestValue32();
 
 
          Assert.IsTrue(await rpcClient.SubscribeLastRuntimeUpgrade());
@@ -728,7 +728,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo rpcResult = await rpcClient.GetLastRuntimeUpgrade();
+         SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo rpcResult = await rpcClient.GetLastRuntimeUpgrade();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -791,11 +791,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase GetTestValue36()
+      public SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase GetTestValue36()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.FrameSystem.Phase>(), this.GetTestValueU32());
+         SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_system.Phase>(), this.GetTestValueU32());
          return result;
       }
       [Test()]
@@ -809,7 +809,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SystemControllerClient rpcClient = new SystemControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase mockupValue = this.GetTestValue36();
+         SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase mockupValue = this.GetTestValue36();
 
 
          Assert.IsTrue(await rpcClient.SubscribeExecutionPhase());
@@ -822,7 +822,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase rpcResult = await rpcClient.GetExecutionPhase();
+         SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase rpcResult = await rpcClient.GetExecutionPhase();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class GiltControllerClient : BaseClient, IGiltControllerClient
@@ -35,11 +35,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BoundedVecT33> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<BoundedVecT33>(_httpClient, "gilt/queues", GiltStorage.QueuesParams(key));
+         return await SendRequestAsync<BoundedVecT33>(_httpClient, "gilt/queues", SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueuesParams(key));
       }
       public async Task<bool> SubscribeQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Gilt.Queues", GiltStorage.QueuesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Gilt.Queues", SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueuesParams(key));
       }
       public async Task<ActiveGiltsTotal> GetActiveTotal()
       {
@@ -51,11 +51,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<ActiveGilt> GetActive(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<ActiveGilt>(_httpClient, "gilt/active", GiltStorage.ActiveParams(key));
+         return await SendRequestAsync<ActiveGilt>(_httpClient, "gilt/active", SubstrateNET.NetApi.Generated.Storage.GiltStorage.ActiveParams(key));
       }
       public async Task<bool> SubscribeActive(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Gilt.Active", GiltStorage.ActiveParams(key));
+         return await _subscriptionClient.SubscribeAsync("Gilt.Active", SubstrateNET.NetApi.Generated.Storage.GiltStorage.ActiveParams(key));
       }
    }
 }

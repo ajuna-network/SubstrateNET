@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("BountyCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.BountiesStorage), "BountyCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountyCountParams")]
         public IActionResult GetBountyCount()
         {
             return this.Ok(_bountiesStorage.GetBountyCount());
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Bounties that have been made.
         /// </summary>
         [HttpGet("Bounties")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.BountiesStorage), "BountiesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountiesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBounties(string key)
         {
             return this.Ok(_bountiesStorage.GetBounties(key));
@@ -69,8 +66,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The description of each bounty.
         /// </summary>
         [HttpGet("BountyDescriptions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.BountiesStorage), "BountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBountyDescriptions(string key)
         {
             return this.Ok(_bountiesStorage.GetBountyDescriptions(key));
@@ -81,8 +78,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Bounty indices that have been approved but not yet funded.
         /// </summary>
         [HttpGet("BountyApprovals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBounties.BountiesStorage), "BountyApprovalsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountyApprovalsParams")]
         public IActionResult GetBountyApprovals()
         {
             return this.Ok(_bountiesStorage.GetBountyApprovals());

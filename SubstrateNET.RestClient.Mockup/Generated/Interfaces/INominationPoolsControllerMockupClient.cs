@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface INominationPoolsControllerMockupClient
    {
@@ -22,7 +22,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetMaxPools(U32 value);
       Task<bool> SetMaxPoolMembers(U32 value);
       Task<bool> SetMaxPoolMembersPerPool(U32 value);
-      Task<bool> SetPoolMembers(PoolMember value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetPoolMembers(PoolMember value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SetCounterForPoolMembers(U32 value);
       Task<bool> SetBondedPools(BondedPoolInner value, U32 key);
       Task<bool> SetCounterForBondedPools(U32 value);
@@ -33,7 +33,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetMetadata(BoundedVecT43 value, U32 key);
       Task<bool> SetCounterForMetadata(U32 value);
       Task<bool> SetLastPoolId(U32 value);
-      Task<bool> SetReversePoolIdLookup(U32 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetReversePoolIdLookup(U32 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SetCounterForReversePoolIdLookup(U32 value);
    }
 }

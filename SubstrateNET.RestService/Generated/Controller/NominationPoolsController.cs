@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MinJoinBond")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MinJoinBondParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MinJoinBondParams")]
         public IActionResult GetMinJoinBond()
         {
             return this.Ok(_nominationPoolsStorage.GetMinJoinBond());
@@ -65,7 +61,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MinCreateBond")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MinCreateBondParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MinCreateBondParams")]
         public IActionResult GetMinCreateBond()
         {
             return this.Ok(_nominationPoolsStorage.GetMinCreateBond());
@@ -78,7 +74,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxPools")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MaxPoolsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MaxPoolsParams")]
         public IActionResult GetMaxPools()
         {
             return this.Ok(_nominationPoolsStorage.GetMaxPools());
@@ -91,7 +87,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxPoolMembers")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MaxPoolMembersParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MaxPoolMembersParams")]
         public IActionResult GetMaxPoolMembers()
         {
             return this.Ok(_nominationPoolsStorage.GetMaxPoolMembers());
@@ -104,7 +100,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxPoolMembersPerPool")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MaxPoolMembersPerPoolParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MaxPoolMembersPerPoolParams")]
         public IActionResult GetMaxPoolMembersPerPool()
         {
             return this.Ok(_nominationPoolsStorage.GetMaxPoolMembersPerPool());
@@ -115,8 +111,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Active members.
         /// </summary>
         [HttpGet("PoolMembers")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "PoolMembersParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "PoolMembersParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetPoolMembers(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetPoolMembers(key));
@@ -128,7 +124,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForPoolMembers")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForPoolMembersParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForPoolMembersParams")]
         public IActionResult GetCounterForPoolMembers()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForPoolMembers());
@@ -139,8 +135,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Storage for bonded pools.
         /// </summary>
         [HttpGet("BondedPools")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "BondedPoolsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "BondedPoolsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBondedPools(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetBondedPools(key));
@@ -152,7 +148,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForBondedPools")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForBondedPoolsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForBondedPoolsParams")]
         public IActionResult GetCounterForBondedPools()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForBondedPools());
@@ -164,8 +160,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  is claimed, the balance comes out fo the reward pool. Keyed by the bonded pools account.
         /// </summary>
         [HttpGet("RewardPools")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "RewardPoolsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "RewardPoolsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetRewardPools(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetRewardPools(key));
@@ -177,7 +173,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForRewardPools")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForRewardPoolsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForRewardPoolsParams")]
         public IActionResult GetCounterForRewardPools()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForRewardPools());
@@ -189,8 +185,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  hence the name sub-pools. Keyed by the bonded pools account.
         /// </summary>
         [HttpGet("SubPoolsStorage")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "SubPoolsStorageParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "SubPoolsStorageParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetSubPoolsStorage(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetSubPoolsStorage(key));
@@ -202,7 +198,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForSubPoolsStorage")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForSubPoolsStorageParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForSubPoolsStorageParams")]
         public IActionResult GetCounterForSubPoolsStorage()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForSubPoolsStorage());
@@ -213,8 +209,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata for the pool.
         /// </summary>
         [HttpGet("Metadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetMetadata(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetMetadata(key));
@@ -226,7 +222,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForMetadata")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForMetadataParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForMetadataParams")]
         public IActionResult GetCounterForMetadata()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForMetadata());
@@ -238,7 +234,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("LastPoolId")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "LastPoolIdParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "LastPoolIdParams")]
         public IActionResult GetLastPoolId()
         {
             return this.Ok(_nominationPoolsStorage.GetLastPoolId());
@@ -253,7 +249,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ReversePoolIdLookup")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "ReversePoolIdLookupParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "ReversePoolIdLookupParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetReversePoolIdLookup(string key)
         {
             return this.Ok(_nominationPoolsStorage.GetReversePoolIdLookup(key));
@@ -265,7 +261,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForReversePoolIdLookup")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletNominationPools.NominationPoolsStorage), "CounterForReversePoolIdLookupParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "CounterForReversePoolIdLookupParams")]
         public IActionResult GetCounterForReversePoolIdLookup()
         {
             return this.Ok(_nominationPoolsStorage.GetCounterForReversePoolIdLookup());

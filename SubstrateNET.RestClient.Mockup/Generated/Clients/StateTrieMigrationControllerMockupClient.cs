@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
+   using SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -25,15 +25,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetMigrationProcess(MigrationTask value)
       {
-         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/MigrationProcess", value.Encode(), StateTrieMigrationStorage.MigrationProcessParams());
+         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/MigrationProcess", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage.MigrationProcessParams());
       }
       public async Task<bool> SetAutoLimits(BaseOpt<MigrationLimits> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/AutoLimits", value.Encode(), StateTrieMigrationStorage.AutoLimitsParams());
+         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/AutoLimits", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage.AutoLimitsParams());
       }
       public async Task<bool> SetSignedMigrationMaxLimits(MigrationLimits value)
       {
-         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/SignedMigrationMaxLimits", value.Encode(), StateTrieMigrationStorage.SignedMigrationMaxLimitsParams());
+         return await SendMockupRequestAsync(_httpClient, "StateTrieMigration/SignedMigrationMaxLimits", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StateTrieMigrationStorage.SignedMigrationMaxLimitsParams());
       }
    }
 }

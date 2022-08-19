@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class TechnicalMembershipControllerClient : BaseClient, ITechnicalMembershipControllerClient

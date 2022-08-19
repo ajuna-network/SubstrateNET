@@ -12,19 +12,20 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletBalances;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_balances;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface IBalancesControllerClient
    {
       Task<U128> GetTotalIssuance();
       Task<bool> SubscribeTotalIssuance();
-      Task<AccountData> GetAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<WeakBoundedVecT2> GetLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeLocks(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<AccountData> GetAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeAccount(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<WeakBoundedVecT2> GetLocks(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeLocks(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<BoundedVecT10> GetReserves(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeReserves(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<EnumReleases> GetStorageVersion();
       Task<bool> SubscribeStorageVersion();
    }

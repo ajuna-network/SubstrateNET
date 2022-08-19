@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletGrandpa;
+   using SubstrateNET.NetApi.Generated.Model.pallet_grandpa;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
@@ -26,27 +26,27 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetState(EnumStoredState value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/State", value.Encode(), GrandpaStorage.StateParams());
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/State", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.StateParams());
       }
       public async Task<bool> SetPendingChange(StoredPendingChange value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/PendingChange", value.Encode(), GrandpaStorage.PendingChangeParams());
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/PendingChange", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.PendingChangeParams());
       }
       public async Task<bool> SetNextForced(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/NextForced", value.Encode(), GrandpaStorage.NextForcedParams());
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/NextForced", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.NextForcedParams());
       }
       public async Task<bool> SetStalled(BaseTuple<U32, U32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/Stalled", value.Encode(), GrandpaStorage.StalledParams());
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/Stalled", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.StalledParams());
       }
       public async Task<bool> SetCurrentSetId(U64 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/CurrentSetId", value.Encode(), GrandpaStorage.CurrentSetIdParams());
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/CurrentSetId", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.CurrentSetIdParams());
       }
       public async Task<bool> SetSetIdSession(U32 value, U64 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Grandpa/SetIdSession", value.Encode(), GrandpaStorage.SetIdSessionParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Grandpa/SetIdSession", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GrandpaStorage.SetIdSessionParams(key));
       }
    }
 }

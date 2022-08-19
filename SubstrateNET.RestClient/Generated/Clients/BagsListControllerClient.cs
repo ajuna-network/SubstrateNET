@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,13 +25,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<Node> GetListNodes(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<Node> GetListNodes(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<Node>(_httpClient, "bagslist/listnodes", BagsListStorage.ListNodesParams(key));
+         return await SendRequestAsync<Node>(_httpClient, "bagslist/listnodes", SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListNodesParams(key));
       }
-      public async Task<bool> SubscribeListNodes(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeListNodes(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("BagsList.ListNodes", BagsListStorage.ListNodesParams(key));
+         return await _subscriptionClient.SubscribeAsync("BagsList.ListNodes", SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListNodesParams(key));
       }
       public async Task<U32> GetCounterForListNodes()
       {
@@ -43,11 +43,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<Bag> GetListBags(U64 key)
       {
-         return await SendRequestAsync<Bag>(_httpClient, "bagslist/listbags", BagsListStorage.ListBagsParams(key));
+         return await SendRequestAsync<Bag>(_httpClient, "bagslist/listbags", SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListBagsParams(key));
       }
       public async Task<bool> SubscribeListBags(U64 key)
       {
-         return await _subscriptionClient.SubscribeAsync("BagsList.ListBags", BagsListStorage.ListBagsParams(key));
+         return await _subscriptionClient.SubscribeAsync("BagsList.ListBags", SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListBagsParams(key));
       }
    }
 }

@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletSociety;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -32,26 +28,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Founder
         ///  The first member.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetFounder();
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetFounder();
         
         /// <summary>
         /// >> Rules
         ///  A hash of the rules of this society concerning membership. Can only be set once and
         ///  only by the founder.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetRules();
+        SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetRules();
         
         /// <summary>
         /// >> Candidates
         ///  The current set of candidates; bidders that are attempting to become members.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid> GetCandidates();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid> GetCandidates();
         
         /// <summary>
         /// >> SuspendedCandidates
         ///  The set of suspended candidates.
         /// </summary>
-        BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind> GetSuspendedCandidates(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind> GetSuspendedCandidates(string key);
         
         /// <summary>
         /// >> Pot
@@ -63,13 +59,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Head
         ///  The most primary from the most recently approved members.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetHead();
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetHead();
         
         /// <summary>
         /// >> Members
         ///  The current set of members, ordered.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetMembers();
         
         /// <summary>
         /// >> SuspendedMembers
@@ -81,19 +77,19 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Bids
         ///  The current bids, stored ordered by the value of the bid.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid> GetBids();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid> GetBids();
         
         /// <summary>
         /// >> Vouching
         ///  Members currently vouching or banned from vouching again
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus GetVouching(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus GetVouching(string key);
         
         /// <summary>
         /// >> Payouts
         ///  Pending payouts; ordered by block number, with the amount that should be paid out.
         /// </summary>
-        BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>> GetPayouts(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetPayouts(string key);
         
         /// <summary>
         /// >> Strikes
@@ -105,19 +101,19 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Votes
         ///  Double map from Candidate -> Voter -> (Maybe) Vote.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote GetVotes(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote GetVotes(string key);
         
         /// <summary>
         /// >> Defender
         ///  The defending member currently being challenged.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetDefender();
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetDefender();
         
         /// <summary>
         /// >> DefenderVotes
         ///  Votes for the defender.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote GetDefenderVotes(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote GetDefenderVotes(string key);
         
         /// <summary>
         /// >> MaxMembers
@@ -135,22 +131,22 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _founderTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _founderTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _founderTypedStorage;
         
         /// <summary>
         /// _rulesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _rulesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> _rulesTypedStorage;
         
         /// <summary>
         /// _candidatesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>> _candidatesTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>> _candidatesTypedStorage;
         
         /// <summary>
         /// _suspendedCandidatesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind>> _suspendedCandidatesTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind>> _suspendedCandidatesTypedStorage;
         
         /// <summary>
         /// _potTypedStorage typed storage field
@@ -160,12 +156,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _headTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _headTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _headTypedStorage;
         
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> _membersTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> _membersTypedStorage;
         
         /// <summary>
         /// _suspendedMembersTypedStorage typed storage field
@@ -175,17 +171,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bidsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>> _bidsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>> _bidsTypedStorage;
         
         /// <summary>
         /// _vouchingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus> _vouchingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus> _vouchingTypedStorage;
         
         /// <summary>
         /// _payoutsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>>> _payoutsTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>> _payoutsTypedStorage;
         
         /// <summary>
         /// _strikesTypedStorage typed storage field
@@ -195,17 +191,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote> _votesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote> _votesTypedStorage;
         
         /// <summary>
         /// _defenderTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _defenderTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _defenderTypedStorage;
         
         /// <summary>
         /// _defenderVotesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote> _defenderVotesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote> _defenderVotesTypedStorage;
         
         /// <summary>
         /// _maxMembersTypedStorage typed storage field
@@ -215,30 +211,30 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// SocietyStorage constructor.
         /// </summary>
-        public SocietyStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public SocietyStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.FounderTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Society.Founder", storageDataProvider, storageChangeDelegate);
-            this.RulesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>("Society.Rules", storageDataProvider, storageChangeDelegate);
-            this.CandidatesTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>>("Society.Candidates", storageDataProvider, storageChangeDelegate);
-            this.SuspendedCandidatesTypedStorage = new TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind>>("Society.SuspendedCandidates", storageDataProvider, storageChangeDelegate);
-            this.PotTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Society.Pot", storageDataProvider, storageChangeDelegate);
-            this.HeadTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Society.Head", storageDataProvider, storageChangeDelegate);
-            this.MembersTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>("Society.Members", storageDataProvider, storageChangeDelegate);
-            this.SuspendedMembersTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Society.SuspendedMembers", storageDataProvider, storageChangeDelegate);
-            this.BidsTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>>("Society.Bids", storageDataProvider, storageChangeDelegate);
-            this.VouchingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus>("Society.Vouching", storageDataProvider, storageChangeDelegate);
-            this.PayoutsTypedStorage = new TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>>>("Society.Payouts", storageDataProvider, storageChangeDelegate);
-            this.StrikesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Society.Strikes", storageDataProvider, storageChangeDelegate);
-            this.VotesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote>("Society.Votes", storageDataProvider, storageChangeDelegate);
-            this.DefenderTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Society.Defender", storageDataProvider, storageChangeDelegate);
-            this.DefenderVotesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote>("Society.DefenderVotes", storageDataProvider, storageChangeDelegate);
-            this.MaxMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Society.MaxMembers", storageDataProvider, storageChangeDelegate);
+            this.FounderTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Society.Founder", storageDataProvider, storageChangeDelegates);
+            this.RulesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>("Society.Rules", storageDataProvider, storageChangeDelegates);
+            this.CandidatesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>>("Society.Candidates", storageDataProvider, storageChangeDelegates);
+            this.SuspendedCandidatesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind>>("Society.SuspendedCandidates", storageDataProvider, storageChangeDelegates);
+            this.PotTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Society.Pot", storageDataProvider, storageChangeDelegates);
+            this.HeadTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Society.Head", storageDataProvider, storageChangeDelegates);
+            this.MembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Society.Members", storageDataProvider, storageChangeDelegates);
+            this.SuspendedMembersTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Society.SuspendedMembers", storageDataProvider, storageChangeDelegates);
+            this.BidsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>>("Society.Bids", storageDataProvider, storageChangeDelegates);
+            this.VouchingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus>("Society.Vouching", storageDataProvider, storageChangeDelegates);
+            this.PayoutsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>>("Society.Payouts", storageDataProvider, storageChangeDelegates);
+            this.StrikesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Society.Strikes", storageDataProvider, storageChangeDelegates);
+            this.VotesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote>("Society.Votes", storageDataProvider, storageChangeDelegates);
+            this.DefenderTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Society.Defender", storageDataProvider, storageChangeDelegates);
+            this.DefenderVotesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote>("Society.DefenderVotes", storageDataProvider, storageChangeDelegates);
+            this.MaxMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Society.MaxMembers", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _founderTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> FounderTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> FounderTypedStorage
         {
             get
             {
@@ -253,7 +249,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _rulesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> RulesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> RulesTypedStorage
         {
             get
             {
@@ -268,7 +264,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _candidatesTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>> CandidatesTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>> CandidatesTypedStorage
         {
             get
             {
@@ -283,7 +279,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _suspendedCandidatesTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind>> SuspendedCandidatesTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind>> SuspendedCandidatesTypedStorage
         {
             get
             {
@@ -313,7 +309,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _headTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> HeadTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> HeadTypedStorage
         {
             get
             {
@@ -328,7 +324,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> MembersTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> MembersTypedStorage
         {
             get
             {
@@ -358,7 +354,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bidsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>> BidsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>> BidsTypedStorage
         {
             get
             {
@@ -373,7 +369,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _vouchingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus> VouchingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus> VouchingTypedStorage
         {
             get
             {
@@ -388,7 +384,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _payoutsTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>>> PayoutsTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>> PayoutsTypedStorage
         {
             get
             {
@@ -418,7 +414,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote> VotesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote> VotesTypedStorage
         {
             get
             {
@@ -433,7 +429,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _defenderTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> DefenderTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> DefenderTypedStorage
         {
             get
             {
@@ -448,7 +444,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _defenderVotesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote> DefenderVotesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote> DefenderVotesTypedStorage
         {
             get
             {
@@ -511,7 +507,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Founder
         ///  The first member.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetFounder()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetFounder()
         {
             return FounderTypedStorage.Get();
         }
@@ -530,7 +526,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  A hash of the rules of this society concerning membership. Can only be set once and
         ///  only by the founder.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetRules()
+        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetRules()
         {
             return RulesTypedStorage.Get();
         }
@@ -548,7 +544,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Candidates
         ///  The current set of candidates; bidders that are attempting to become members.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid> GetCandidates()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid> GetCandidates()
         {
             return CandidatesTypedStorage.Get();
         }
@@ -566,13 +562,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> SuspendedCandidates
         ///  The set of suspended candidates.
         /// </summary>
-        public BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind> GetSuspendedCandidates(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind> GetSuspendedCandidates(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (SuspendedCandidatesTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind> result))
+            if (SuspendedCandidatesTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind> result))
             {
                 return result;
             }
@@ -613,7 +609,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Head
         ///  The most primary from the most recently approved members.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetHead()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetHead()
         {
             return HeadTypedStorage.Get();
         }
@@ -631,7 +627,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current set of members, ordered.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetMembers()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetMembers()
         {
             return MembersTypedStorage.Get();
         }
@@ -678,7 +674,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Bids
         ///  The current bids, stored ordered by the value of the bid.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid> GetBids()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid> GetBids()
         {
             return BidsTypedStorage.Get();
         }
@@ -696,13 +692,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vouching
         ///  Members currently vouching or banned from vouching again
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus GetVouching(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus GetVouching(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VouchingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus result))
+            if (VouchingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus result))
             {
                 return result;
             }
@@ -725,13 +721,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Payouts
         ///  Pending payouts; ordered by block number, with the amount that should be paid out.
         /// </summary>
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>> GetPayouts(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetPayouts(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PayoutsTypedStorage.Dictionary.TryGetValue(key, out BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>> result))
+            if (PayoutsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>> result))
             {
                 return result;
             }
@@ -783,13 +779,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Votes
         ///  Double map from Candidate -> Voter -> (Maybe) Vote.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote GetVotes(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote GetVotes(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote result))
+            if (VotesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote result))
             {
                 return result;
             }
@@ -812,7 +808,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Defender
         ///  The defending member currently being challenged.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetDefender()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetDefender()
         {
             return DefenderTypedStorage.Get();
         }
@@ -830,13 +826,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> DefenderVotes
         ///  Votes for the defender.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote GetDefenderVotes(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote GetDefenderVotes(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (DefenderVotesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote result))
+            if (DefenderVotesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote result))
             {
                 return result;
             }

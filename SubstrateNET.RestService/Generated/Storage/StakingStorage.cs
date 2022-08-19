@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletStaking;
-using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -58,13 +54,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  easy to initialize and the performance hit is minimal (we expect no more than four
         ///  invulnerables) and restricted to testnets.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetInvulnerables();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetInvulnerables();
         
         /// <summary>
         /// >> Bonded
         ///  Map from all locked "stash" accounts to the controller account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetBonded(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetBonded(string key);
         
         /// <summary>
         /// >> MinNominatorBond
@@ -84,25 +80,25 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If set to `0`, no limit exists.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill GetMinCommission();
+        SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetMinCommission();
         
         /// <summary>
         /// >> Ledger
         ///  Map from all (unlocked) "controller" accounts to the info regarding the staking.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger GetLedger(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger GetLedger(string key);
         
         /// <summary>
         /// >> Payee
         ///  Where the reward payment should be made. Keyed by stash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination GetPayee(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination GetPayee(string key);
         
         /// <summary>
         /// >> Validators
         ///  The map from (wannabe) validator stash key to the preferences of that validator.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs GetValidators(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs GetValidators(string key);
         
         /// <summary>
         /// >> CounterForValidators
@@ -137,7 +133,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Lastly, if any of the nominators become non-decodable, they can be chilled immediately via
         ///  [`Call::chill_other`] dispatchable by anyone.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations GetNominators(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations GetNominators(string key);
         
         /// <summary>
         /// >> CounterForNominators
@@ -169,7 +165,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The active era is the era being currently rewarded. Validator set of this era must be
         ///  equal to [`SessionInterface::validators`].
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo GetActiveEra();
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo GetActiveEra();
         
         /// <summary>
         /// >> ErasStartSessionIndex
@@ -189,7 +185,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Is it removed after `HISTORY_DEPTH` eras.
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure GetErasStakers(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure GetErasStakers(string key);
         
         /// <summary>
         /// >> ErasStakersClipped
@@ -205,7 +201,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Is it removed after `HISTORY_DEPTH` eras.
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure GetErasStakersClipped(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure GetErasStakersClipped(string key);
         
         /// <summary>
         /// >> ErasValidatorPrefs
@@ -215,7 +211,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Is it removed after `HISTORY_DEPTH` eras.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs GetErasValidatorPrefs(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs GetErasValidatorPrefs(string key);
         
         /// <summary>
         /// >> ErasValidatorReward
@@ -230,7 +226,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Rewards for the last `HISTORY_DEPTH` eras.
         ///  If reward hasn't been set or has been removed then 0 reward is returned.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints GetErasRewardPoints(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints GetErasRewardPoints(string key);
         
         /// <summary>
         /// >> ErasTotalStake
@@ -243,7 +239,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ForceEra
         ///  Mode of era forcing.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing GetForceEra();
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing GetForceEra();
         
         /// <summary>
         /// >> SlashRewardFraction
@@ -251,7 +247,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  The rest of the slashed value is handled by the `Slash`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill GetSlashRewardFraction();
+        SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetSlashRewardFraction();
         
         /// <summary>
         /// >> CanceledSlashPayout
@@ -264,7 +260,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnappliedSlashes
         ///  All unapplied slashes that are queued for later.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash> GetUnappliedSlashes(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash> GetUnappliedSlashes(string key);
         
         /// <summary>
         /// >> BondedEras
@@ -273,14 +269,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Must contains information for eras for the range:
         ///  `[active_era - bounding_duration; active_era]`
         /// </summary>
-        BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> GetBondedEras();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetBondedEras();
         
         /// <summary>
         /// >> ValidatorSlashInEra
         ///  All slashing events on validators, mapped by era to the highest slash proportion
         ///  and slash value of the era.
         /// </summary>
-        BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128> GetValidatorSlashInEra(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128> GetValidatorSlashInEra(string key);
         
         /// <summary>
         /// >> NominatorSlashInEra
@@ -292,20 +288,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> SlashingSpans
         ///  Slashing spans for stash accounts.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans GetSlashingSpans(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans GetSlashingSpans(string key);
         
         /// <summary>
         /// >> SpanSlash
         ///  Records information about the maximum slash of a stash within a slashing span,
         ///  as well as how much reward has been paid out.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord GetSpanSlash(string key);
-        
-        /// <summary>
-        /// >> EarliestUnappliedSlash
-        ///  The earliest era for which we have a pending, unapplied slash.
-        /// </summary>
-        Ajuna.NetApi.Model.Types.Primitive.U32 GetEarliestUnappliedSlash();
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord GetSpanSlash(string key);
         
         /// <summary>
         /// >> CurrentPlannedSession
@@ -327,7 +317,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  whether a given validator has previously offended using binary search. It gets cleared when
         ///  the era ends.
         /// </summary>
-        BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>> GetOffendingValidators();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>> GetOffendingValidators();
         
         /// <summary>
         /// >> StorageVersion
@@ -336,7 +326,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is set to v7.0.0 for new networks.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases GetStorageVersion();
+        SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases GetStorageVersion();
         
         /// <summary>
         /// >> ChillThreshold
@@ -344,7 +334,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  nominators. The threshold is compared to the actual number of validators / nominators
         ///  (`CountFor*`) in the system compared to the configured max (`Max*Count`).
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent GetChillThreshold();
+        SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent GetChillThreshold();
     }
     
     /// <summary>
@@ -371,12 +361,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _invulnerablesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> _invulnerablesTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> _invulnerablesTypedStorage;
         
         /// <summary>
         /// _bondedTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _bondedTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _bondedTypedStorage;
         
         /// <summary>
         /// _minNominatorBondTypedStorage typed storage field
@@ -391,22 +381,22 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _minCommissionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill> _minCommissionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill> _minCommissionTypedStorage;
         
         /// <summary>
         /// _ledgerTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger> _ledgerTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger> _ledgerTypedStorage;
         
         /// <summary>
         /// _payeeTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination> _payeeTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination> _payeeTypedStorage;
         
         /// <summary>
         /// _validatorsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs> _validatorsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs> _validatorsTypedStorage;
         
         /// <summary>
         /// _counterForValidatorsTypedStorage typed storage field
@@ -421,7 +411,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nominatorsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations> _nominatorsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations> _nominatorsTypedStorage;
         
         /// <summary>
         /// _counterForNominatorsTypedStorage typed storage field
@@ -441,7 +431,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _activeEraTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo> _activeEraTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo> _activeEraTypedStorage;
         
         /// <summary>
         /// _erasStartSessionIndexTypedStorage typed storage field
@@ -451,17 +441,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasStakersTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure> _erasStakersTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure> _erasStakersTypedStorage;
         
         /// <summary>
         /// _erasStakersClippedTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure> _erasStakersClippedTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure> _erasStakersClippedTypedStorage;
         
         /// <summary>
         /// _erasValidatorPrefsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs> _erasValidatorPrefsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs> _erasValidatorPrefsTypedStorage;
         
         /// <summary>
         /// _erasValidatorRewardTypedStorage typed storage field
@@ -471,7 +461,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasRewardPointsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints> _erasRewardPointsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints> _erasRewardPointsTypedStorage;
         
         /// <summary>
         /// _erasTotalStakeTypedStorage typed storage field
@@ -481,12 +471,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _forceEraTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing> _forceEraTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing> _forceEraTypedStorage;
         
         /// <summary>
         /// _slashRewardFractionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill> _slashRewardFractionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill> _slashRewardFractionTypedStorage;
         
         /// <summary>
         /// _canceledSlashPayoutTypedStorage typed storage field
@@ -496,17 +486,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unappliedSlashesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash>> _unappliedSlashesTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash>> _unappliedSlashesTypedStorage;
         
         /// <summary>
         /// _bondedErasTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>> _bondedErasTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>> _bondedErasTypedStorage;
         
         /// <summary>
         /// _validatorSlashInEraTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128>> _validatorSlashInEraTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128>> _validatorSlashInEraTypedStorage;
         
         /// <summary>
         /// _nominatorSlashInEraTypedStorage typed storage field
@@ -516,17 +506,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _slashingSpansTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans> _slashingSpansTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans> _slashingSpansTypedStorage;
         
         /// <summary>
         /// _spanSlashTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord> _spanSlashTypedStorage;
-        
-        /// <summary>
-        /// _earliestUnappliedSlashTypedStorage typed storage field
-        /// </summary>
-        private TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _earliestUnappliedSlashTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord> _spanSlashTypedStorage;
         
         /// <summary>
         /// _currentPlannedSessionTypedStorage typed storage field
@@ -536,62 +521,61 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _offendingValidatorsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>>> _offendingValidatorsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>>> _offendingValidatorsTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases> _storageVersionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases> _storageVersionTypedStorage;
         
         /// <summary>
         /// _chillThresholdTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent> _chillThresholdTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent> _chillThresholdTypedStorage;
         
         /// <summary>
         /// StakingStorage constructor.
         /// </summary>
-        public StakingStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public StakingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.HistoryDepthTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.HistoryDepth", storageDataProvider, storageChangeDelegate);
-            this.ValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.ValidatorCount", storageDataProvider, storageChangeDelegate);
-            this.MinimumValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MinimumValidatorCount", storageDataProvider, storageChangeDelegate);
-            this.InvulnerablesTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>("Staking.Invulnerables", storageDataProvider, storageChangeDelegate);
-            this.BondedTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Staking.Bonded", storageDataProvider, storageChangeDelegate);
-            this.MinNominatorBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.MinNominatorBond", storageDataProvider, storageChangeDelegate);
-            this.MinValidatorBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.MinValidatorBond", storageDataProvider, storageChangeDelegate);
-            this.MinCommissionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill>("Staking.MinCommission", storageDataProvider, storageChangeDelegate);
-            this.LedgerTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger>("Staking.Ledger", storageDataProvider, storageChangeDelegate);
-            this.PayeeTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination>("Staking.Payee", storageDataProvider, storageChangeDelegate);
-            this.ValidatorsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs>("Staking.Validators", storageDataProvider, storageChangeDelegate);
-            this.CounterForValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CounterForValidators", storageDataProvider, storageChangeDelegate);
-            this.MaxValidatorsCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MaxValidatorsCount", storageDataProvider, storageChangeDelegate);
-            this.NominatorsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations>("Staking.Nominators", storageDataProvider, storageChangeDelegate);
-            this.CounterForNominatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CounterForNominators", storageDataProvider, storageChangeDelegate);
-            this.MaxNominatorsCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MaxNominatorsCount", storageDataProvider, storageChangeDelegate);
-            this.CurrentEraTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CurrentEra", storageDataProvider, storageChangeDelegate);
-            this.ActiveEraTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo>("Staking.ActiveEra", storageDataProvider, storageChangeDelegate);
-            this.ErasStartSessionIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.ErasStartSessionIndex", storageDataProvider, storageChangeDelegate);
-            this.ErasStakersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure>("Staking.ErasStakers", storageDataProvider, storageChangeDelegate);
-            this.ErasStakersClippedTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure>("Staking.ErasStakersClipped", storageDataProvider, storageChangeDelegate);
-            this.ErasValidatorPrefsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs>("Staking.ErasValidatorPrefs", storageDataProvider, storageChangeDelegate);
-            this.ErasValidatorRewardTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.ErasValidatorReward", storageDataProvider, storageChangeDelegate);
-            this.ErasRewardPointsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints>("Staking.ErasRewardPoints", storageDataProvider, storageChangeDelegate);
-            this.ErasTotalStakeTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.ErasTotalStake", storageDataProvider, storageChangeDelegate);
-            this.ForceEraTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing>("Staking.ForceEra", storageDataProvider, storageChangeDelegate);
-            this.SlashRewardFractionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill>("Staking.SlashRewardFraction", storageDataProvider, storageChangeDelegate);
-            this.CanceledSlashPayoutTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.CanceledSlashPayout", storageDataProvider, storageChangeDelegate);
-            this.UnappliedSlashesTypedStorage = new TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash>>("Staking.UnappliedSlashes", storageDataProvider, storageChangeDelegate);
-            this.BondedErasTypedStorage = new TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>>("Staking.BondedEras", storageDataProvider, storageChangeDelegate);
-            this.ValidatorSlashInEraTypedStorage = new TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128>>("Staking.ValidatorSlashInEra", storageDataProvider, storageChangeDelegate);
-            this.NominatorSlashInEraTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.NominatorSlashInEra", storageDataProvider, storageChangeDelegate);
-            this.SlashingSpansTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans>("Staking.SlashingSpans", storageDataProvider, storageChangeDelegate);
-            this.SpanSlashTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord>("Staking.SpanSlash", storageDataProvider, storageChangeDelegate);
-            this.EarliestUnappliedSlashTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.EarliestUnappliedSlash", storageDataProvider, storageChangeDelegate);
-            this.CurrentPlannedSessionTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CurrentPlannedSession", storageDataProvider, storageChangeDelegate);
-            this.OffendingValidatorsTypedStorage = new TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>>>("Staking.OffendingValidators", storageDataProvider, storageChangeDelegate);
-            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases>("Staking.StorageVersion", storageDataProvider, storageChangeDelegate);
-            this.ChillThresholdTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent>("Staking.ChillThreshold", storageDataProvider, storageChangeDelegate);
+            this.HistoryDepthTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.HistoryDepth", storageDataProvider, storageChangeDelegates);
+            this.ValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.ValidatorCount", storageDataProvider, storageChangeDelegates);
+            this.MinimumValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MinimumValidatorCount", storageDataProvider, storageChangeDelegates);
+            this.InvulnerablesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Staking.Invulnerables", storageDataProvider, storageChangeDelegates);
+            this.BondedTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Staking.Bonded", storageDataProvider, storageChangeDelegates);
+            this.MinNominatorBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.MinNominatorBond", storageDataProvider, storageChangeDelegates);
+            this.MinValidatorBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.MinValidatorBond", storageDataProvider, storageChangeDelegates);
+            this.MinCommissionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>("Staking.MinCommission", storageDataProvider, storageChangeDelegates);
+            this.LedgerTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger>("Staking.Ledger", storageDataProvider, storageChangeDelegates);
+            this.PayeeTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination>("Staking.Payee", storageDataProvider, storageChangeDelegates);
+            this.ValidatorsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs>("Staking.Validators", storageDataProvider, storageChangeDelegates);
+            this.CounterForValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CounterForValidators", storageDataProvider, storageChangeDelegates);
+            this.MaxValidatorsCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MaxValidatorsCount", storageDataProvider, storageChangeDelegates);
+            this.NominatorsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations>("Staking.Nominators", storageDataProvider, storageChangeDelegates);
+            this.CounterForNominatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CounterForNominators", storageDataProvider, storageChangeDelegates);
+            this.MaxNominatorsCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MaxNominatorsCount", storageDataProvider, storageChangeDelegates);
+            this.CurrentEraTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CurrentEra", storageDataProvider, storageChangeDelegates);
+            this.ActiveEraTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo>("Staking.ActiveEra", storageDataProvider, storageChangeDelegates);
+            this.ErasStartSessionIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.ErasStartSessionIndex", storageDataProvider, storageChangeDelegates);
+            this.ErasStakersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure>("Staking.ErasStakers", storageDataProvider, storageChangeDelegates);
+            this.ErasStakersClippedTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure>("Staking.ErasStakersClipped", storageDataProvider, storageChangeDelegates);
+            this.ErasValidatorPrefsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs>("Staking.ErasValidatorPrefs", storageDataProvider, storageChangeDelegates);
+            this.ErasValidatorRewardTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.ErasValidatorReward", storageDataProvider, storageChangeDelegates);
+            this.ErasRewardPointsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints>("Staking.ErasRewardPoints", storageDataProvider, storageChangeDelegates);
+            this.ErasTotalStakeTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.ErasTotalStake", storageDataProvider, storageChangeDelegates);
+            this.ForceEraTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing>("Staking.ForceEra", storageDataProvider, storageChangeDelegates);
+            this.SlashRewardFractionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>("Staking.SlashRewardFraction", storageDataProvider, storageChangeDelegates);
+            this.CanceledSlashPayoutTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.CanceledSlashPayout", storageDataProvider, storageChangeDelegates);
+            this.UnappliedSlashesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash>>("Staking.UnappliedSlashes", storageDataProvider, storageChangeDelegates);
+            this.BondedErasTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>>("Staking.BondedEras", storageDataProvider, storageChangeDelegates);
+            this.ValidatorSlashInEraTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128>>("Staking.ValidatorSlashInEra", storageDataProvider, storageChangeDelegates);
+            this.NominatorSlashInEraTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Staking.NominatorSlashInEra", storageDataProvider, storageChangeDelegates);
+            this.SlashingSpansTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans>("Staking.SlashingSpans", storageDataProvider, storageChangeDelegates);
+            this.SpanSlashTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord>("Staking.SpanSlash", storageDataProvider, storageChangeDelegates);
+            this.CurrentPlannedSessionTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.CurrentPlannedSession", storageDataProvider, storageChangeDelegates);
+            this.OffendingValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>>>("Staking.OffendingValidators", storageDataProvider, storageChangeDelegates);
+            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases>("Staking.StorageVersion", storageDataProvider, storageChangeDelegates);
+            this.ChillThresholdTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent>("Staking.ChillThreshold", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -642,7 +626,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _invulnerablesTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> InvulnerablesTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> InvulnerablesTypedStorage
         {
             get
             {
@@ -657,7 +641,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bondedTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> BondedTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> BondedTypedStorage
         {
             get
             {
@@ -702,7 +686,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _minCommissionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill> MinCommissionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill> MinCommissionTypedStorage
         {
             get
             {
@@ -717,7 +701,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _ledgerTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger> LedgerTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger> LedgerTypedStorage
         {
             get
             {
@@ -732,7 +716,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _payeeTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination> PayeeTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination> PayeeTypedStorage
         {
             get
             {
@@ -747,7 +731,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _validatorsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs> ValidatorsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs> ValidatorsTypedStorage
         {
             get
             {
@@ -792,7 +776,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nominatorsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations> NominatorsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations> NominatorsTypedStorage
         {
             get
             {
@@ -852,7 +836,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _activeEraTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo> ActiveEraTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo> ActiveEraTypedStorage
         {
             get
             {
@@ -882,7 +866,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasStakersTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure> ErasStakersTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure> ErasStakersTypedStorage
         {
             get
             {
@@ -897,7 +881,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasStakersClippedTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure> ErasStakersClippedTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure> ErasStakersClippedTypedStorage
         {
             get
             {
@@ -912,7 +896,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasValidatorPrefsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs> ErasValidatorPrefsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs> ErasValidatorPrefsTypedStorage
         {
             get
             {
@@ -942,7 +926,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _erasRewardPointsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints> ErasRewardPointsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints> ErasRewardPointsTypedStorage
         {
             get
             {
@@ -972,7 +956,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _forceEraTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing> ForceEraTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing> ForceEraTypedStorage
         {
             get
             {
@@ -987,7 +971,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _slashRewardFractionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill> SlashRewardFractionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill> SlashRewardFractionTypedStorage
         {
             get
             {
@@ -1017,7 +1001,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unappliedSlashesTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash>> UnappliedSlashesTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash>> UnappliedSlashesTypedStorage
         {
             get
             {
@@ -1032,7 +1016,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bondedErasTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>> BondedErasTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>> BondedErasTypedStorage
         {
             get
             {
@@ -1047,7 +1031,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _validatorSlashInEraTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128>> ValidatorSlashInEraTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128>> ValidatorSlashInEraTypedStorage
         {
             get
             {
@@ -1077,7 +1061,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _slashingSpansTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans> SlashingSpansTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans> SlashingSpansTypedStorage
         {
             get
             {
@@ -1092,7 +1076,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _spanSlashTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord> SpanSlashTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord> SpanSlashTypedStorage
         {
             get
             {
@@ -1101,21 +1085,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             set
             {
                 _spanSlashTypedStorage = value;
-            }
-        }
-        
-        /// <summary>
-        /// _earliestUnappliedSlashTypedStorage property
-        /// </summary>
-        public TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> EarliestUnappliedSlashTypedStorage
-        {
-            get
-            {
-                return _earliestUnappliedSlashTypedStorage;
-            }
-            set
-            {
-                _earliestUnappliedSlashTypedStorage = value;
             }
         }
         
@@ -1137,7 +1106,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _offendingValidatorsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>>> OffendingValidatorsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>>> OffendingValidatorsTypedStorage
         {
             get
             {
@@ -1152,7 +1121,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _storageVersionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases> StorageVersionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases> StorageVersionTypedStorage
         {
             get
             {
@@ -1167,7 +1136,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _chillThresholdTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent> ChillThresholdTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent> ChillThresholdTypedStorage
         {
             get
             {
@@ -1218,7 +1187,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             await NominatorSlashInEraTypedStorage.InitializeAsync("Staking", "NominatorSlashInEra");
             await SlashingSpansTypedStorage.InitializeAsync("Staking", "SlashingSpans");
             await SpanSlashTypedStorage.InitializeAsync("Staking", "SpanSlash");
-            await EarliestUnappliedSlashTypedStorage.InitializeAsync("Staking", "EarliestUnappliedSlash");
             await CurrentPlannedSessionTypedStorage.InitializeAsync("Staking", "CurrentPlannedSession");
             await OffendingValidatorsTypedStorage.InitializeAsync("Staking", "OffendingValidators");
             await StorageVersionTypedStorage.InitializeAsync("Staking", "StorageVersion");
@@ -1300,7 +1268,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  easy to initialize and the performance hit is minimal (we expect no more than four
         ///  invulnerables) and restricted to testnets.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetInvulnerables()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetInvulnerables()
         {
             return InvulnerablesTypedStorage.Get();
         }
@@ -1318,13 +1286,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Bonded
         ///  Map from all locked "stash" accounts to the controller account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetBonded(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetBonded(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BondedTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result))
+            if (BondedTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result))
             {
                 return result;
             }
@@ -1385,7 +1353,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If set to `0`, no limit exists.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill GetMinCommission()
+        public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetMinCommission()
         {
             return MinCommissionTypedStorage.Get();
         }
@@ -1403,13 +1371,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Ledger
         ///  Map from all (unlocked) "controller" accounts to the info regarding the staking.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger GetLedger(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger GetLedger(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (LedgerTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.StakingLedger result))
+            if (LedgerTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger result))
             {
                 return result;
             }
@@ -1432,13 +1400,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Payee
         ///  Where the reward payment should be made. Keyed by stash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination GetPayee(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination GetPayee(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PayeeTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumRewardDestination result))
+            if (PayeeTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination result))
             {
                 return result;
             }
@@ -1461,13 +1429,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Validators
         ///  The map from (wannabe) validator stash key to the preferences of that validator.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs GetValidators(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs GetValidators(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ValidatorsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs result))
+            if (ValidatorsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs result))
             {
                 return result;
             }
@@ -1543,13 +1511,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Lastly, if any of the nominators become non-decodable, they can be chilled immediately via
         ///  [`Call::chill_other`] dispatchable by anyone.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations GetNominators(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations GetNominators(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (NominatorsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.Nominations result))
+            if (NominatorsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations result))
             {
                 return result;
             }
@@ -1634,7 +1602,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The active era is the era being currently rewarded. Validator set of this era must be
         ///  equal to [`SessionInterface::validators`].
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.ActiveEraInfo GetActiveEra()
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.ActiveEraInfo GetActiveEra()
         {
             return ActiveEraTypedStorage.Get();
         }
@@ -1689,13 +1657,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Is it removed after `HISTORY_DEPTH` eras.
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure GetErasStakers(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure GetErasStakers(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ErasStakersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure result))
+            if (ErasStakersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure result))
             {
                 return result;
             }
@@ -1728,13 +1696,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Is it removed after `HISTORY_DEPTH` eras.
         ///  If stakers hasn't been set or has been removed then empty exposure is returned.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure GetErasStakersClipped(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure GetErasStakersClipped(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ErasStakersClippedTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure result))
+            if (ErasStakersClippedTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure result))
             {
                 return result;
             }
@@ -1761,13 +1729,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Is it removed after `HISTORY_DEPTH` eras.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs GetErasValidatorPrefs(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs GetErasValidatorPrefs(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ErasValidatorPrefsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.ValidatorPrefs result))
+            if (ErasValidatorPrefsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs result))
             {
                 return result;
             }
@@ -1822,13 +1790,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Rewards for the last `HISTORY_DEPTH` eras.
         ///  If reward hasn't been set or has been removed then 0 reward is returned.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints GetErasRewardPoints(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints GetErasRewardPoints(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ErasRewardPointsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.EraRewardPoints result))
+            if (ErasRewardPointsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints result))
             {
                 return result;
             }
@@ -1881,7 +1849,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ForceEra
         ///  Mode of era forcing.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumForcing GetForceEra()
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumForcing GetForceEra()
         {
             return ForceEraTypedStorage.Get();
         }
@@ -1901,7 +1869,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  The rest of the slashed value is handled by the `Slash`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill GetSlashRewardFraction()
+        public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetSlashRewardFraction()
         {
             return SlashRewardFractionTypedStorage.Get();
         }
@@ -1938,13 +1906,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> UnappliedSlashes
         ///  All unapplied slashes that are queued for later.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash> GetUnappliedSlashes(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash> GetUnappliedSlashes(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (UnappliedSlashesTypedStorage.Dictionary.TryGetValue(key, out BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.UnappliedSlash> result))
+            if (UnappliedSlashesTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnappliedSlash> result))
             {
                 return result;
             }
@@ -1970,7 +1938,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Must contains information for eras for the range:
         ///  `[active_era - bounding_duration; active_era]`
         /// </summary>
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> GetBondedEras()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetBondedEras()
         {
             return BondedErasTypedStorage.Get();
         }
@@ -1989,13 +1957,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  All slashing events on validators, mapped by era to the highest slash proportion
         ///  and slash value of the era.
         /// </summary>
-        public BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128> GetValidatorSlashInEra(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128> GetValidatorSlashInEra(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ValidatorSlashInEraTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<SubstrateNET.NetApi.Generated.Model.SpArithmetic.Perbill,Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            if (ValidatorSlashInEraTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }
@@ -2047,13 +2015,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> SlashingSpans
         ///  Slashing spans for stash accounts.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans GetSlashingSpans(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans GetSlashingSpans(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (SlashingSpansTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.SlashingSpans result))
+            if (SlashingSpansTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SlashingSpans result))
             {
                 return result;
             }
@@ -2077,13 +2045,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Records information about the maximum slash of a stash within a slashing span,
         ///  as well as how much reward has been paid out.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord GetSpanSlash(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord GetSpanSlash(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (SpanSlashTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletStaking.SpanRecord result))
+            if (SpanSlashTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord result))
             {
                 return result;
             }
@@ -2091,24 +2059,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             {
                 return null;
             }
-        }
-        
-        /// <summary>
-        /// Implements any storage change for Staking.EarliestUnappliedSlash
-        /// </summary>
-        [StorageChange("Staking", "EarliestUnappliedSlash")]
-        public void OnUpdateEarliestUnappliedSlash(string data)
-        {
-            EarliestUnappliedSlashTypedStorage.Update(data);
-        }
-        
-        /// <summary>
-        /// >> EarliestUnappliedSlash
-        ///  The earliest era for which we have a pending, unapplied slash.
-        /// </summary>
-        public Ajuna.NetApi.Model.Types.Primitive.U32 GetEarliestUnappliedSlash()
-        {
-            return EarliestUnappliedSlashTypedStorage.Get();
         }
         
         /// <summary>
@@ -2152,7 +2102,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  whether a given validator has previously offended using binary search. It gets cleared when
         ///  the era ends.
         /// </summary>
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.Bool>> GetOffendingValidators()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>> GetOffendingValidators()
         {
             return OffendingValidatorsTypedStorage.Get();
         }
@@ -2173,7 +2123,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This is set to v7.0.0 for new networks.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStaking.EnumReleases GetStorageVersion()
+        public SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases GetStorageVersion()
         {
             return StorageVersionTypedStorage.Get();
         }
@@ -2193,7 +2143,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  nominators. The threshold is compared to the actual number of validators / nominators
         ///  (`CountFor*`) in the system compared to the configured max (`Max*Count`).
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpArithmetic.Percent GetChillThreshold()
+        public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent GetChillThreshold()
         {
             return ChillThresholdTypedStorage.Get();
         }

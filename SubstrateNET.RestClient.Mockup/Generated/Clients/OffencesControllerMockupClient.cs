@@ -12,8 +12,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_staking.offence;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class OffencesControllerMockupClient : MockupBaseClient, IOffencesControllerMockupClient
@@ -23,17 +25,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetReports(OffenceDetails value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetReports(OffenceDetails value, H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Offences/Reports", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage.ReportsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Offences/Reports", value.Encode(), SubstrateNET.NetApi.Generated.Storage.OffencesStorage.ReportsParams(key));
       }
-      public async Task<bool> SetConcurrentReportsIndex(BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> value, BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> key)
+      public async Task<bool> SetConcurrentReportsIndex(BaseVec<H256> value, BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, BaseVec<U8>> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Offences/ConcurrentReportsIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage.ConcurrentReportsIndexParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Offences/ConcurrentReportsIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.OffencesStorage.ConcurrentReportsIndexParams(key));
       }
-      public async Task<bool> SetReportsByKindIndex(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> value, SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 key)
+      public async Task<bool> SetReportsByKindIndex(BaseVec<U8> value, SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Offences/ReportsByKindIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletOffences.OffencesStorage.ReportsByKindIndexParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Offences/ReportsByKindIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.OffencesStorage.ReportsByKindIndexParams(key));
       }
    }
 }

@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -71,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PoolMembers
         ///  Active members.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember GetPoolMembers(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember GetPoolMembers(string key);
         
         /// <summary>
         /// >> CounterForPoolMembers
@@ -83,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BondedPools
         ///  Storage for bonded pools.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner GetBondedPools(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner GetBondedPools(string key);
         
         /// <summary>
         /// >> CounterForBondedPools
@@ -96,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Reward pools. This is where there rewards for each pool accumulate. When a members payout
         ///  is claimed, the balance comes out fo the reward pool. Keyed by the bonded pools account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool GetRewardPools(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool GetRewardPools(string key);
         
         /// <summary>
         /// >> CounterForRewardPools
@@ -109,7 +105,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Groups of unbonding pools. Each group of unbonding pools belongs to a bonded pool,
         ///  hence the name sub-pools. Keyed by the bonded pools account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools GetSubPoolsStorage(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools GetSubPoolsStorage(string key);
         
         /// <summary>
         /// >> CounterForSubPoolsStorage
@@ -121,7 +117,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetMetadata(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 GetMetadata(string key);
         
         /// <summary>
         /// >> CounterForMetadata
@@ -185,7 +181,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _poolMembersTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember> _poolMembersTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember> _poolMembersTypedStorage;
         
         /// <summary>
         /// _counterForPoolMembersTypedStorage typed storage field
@@ -195,7 +191,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bondedPoolsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner> _bondedPoolsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner> _bondedPoolsTypedStorage;
         
         /// <summary>
         /// _counterForBondedPoolsTypedStorage typed storage field
@@ -205,7 +201,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _rewardPoolsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool> _rewardPoolsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool> _rewardPoolsTypedStorage;
         
         /// <summary>
         /// _counterForRewardPoolsTypedStorage typed storage field
@@ -215,7 +211,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _subPoolsStorageTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools> _subPoolsStorageTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools> _subPoolsStorageTypedStorage;
         
         /// <summary>
         /// _counterForSubPoolsStorageTypedStorage typed storage field
@@ -225,7 +221,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43> _metadataTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43> _metadataTypedStorage;
         
         /// <summary>
         /// _counterForMetadataTypedStorage typed storage field
@@ -250,26 +246,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// NominationPoolsStorage constructor.
         /// </summary>
-        public NominationPoolsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public NominationPoolsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.MinJoinBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("NominationPools.MinJoinBond", storageDataProvider, storageChangeDelegate);
-            this.MinCreateBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("NominationPools.MinCreateBond", storageDataProvider, storageChangeDelegate);
-            this.MaxPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPools", storageDataProvider, storageChangeDelegate);
-            this.MaxPoolMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPoolMembers", storageDataProvider, storageChangeDelegate);
-            this.MaxPoolMembersPerPoolTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPoolMembersPerPool", storageDataProvider, storageChangeDelegate);
-            this.PoolMembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember>("NominationPools.PoolMembers", storageDataProvider, storageChangeDelegate);
-            this.CounterForPoolMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForPoolMembers", storageDataProvider, storageChangeDelegate);
-            this.BondedPoolsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner>("NominationPools.BondedPools", storageDataProvider, storageChangeDelegate);
-            this.CounterForBondedPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForBondedPools", storageDataProvider, storageChangeDelegate);
-            this.RewardPoolsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool>("NominationPools.RewardPools", storageDataProvider, storageChangeDelegate);
-            this.CounterForRewardPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForRewardPools", storageDataProvider, storageChangeDelegate);
-            this.SubPoolsStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools>("NominationPools.SubPoolsStorage", storageDataProvider, storageChangeDelegate);
-            this.CounterForSubPoolsStorageTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForSubPoolsStorage", storageDataProvider, storageChangeDelegate);
-            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43>("NominationPools.Metadata", storageDataProvider, storageChangeDelegate);
-            this.CounterForMetadataTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForMetadata", storageDataProvider, storageChangeDelegate);
-            this.LastPoolIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.LastPoolId", storageDataProvider, storageChangeDelegate);
-            this.ReversePoolIdLookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.ReversePoolIdLookup", storageDataProvider, storageChangeDelegate);
-            this.CounterForReversePoolIdLookupTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForReversePoolIdLookup", storageDataProvider, storageChangeDelegate);
+            this.MinJoinBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("NominationPools.MinJoinBond", storageDataProvider, storageChangeDelegates);
+            this.MinCreateBondTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("NominationPools.MinCreateBond", storageDataProvider, storageChangeDelegates);
+            this.MaxPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPools", storageDataProvider, storageChangeDelegates);
+            this.MaxPoolMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPoolMembers", storageDataProvider, storageChangeDelegates);
+            this.MaxPoolMembersPerPoolTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.MaxPoolMembersPerPool", storageDataProvider, storageChangeDelegates);
+            this.PoolMembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember>("NominationPools.PoolMembers", storageDataProvider, storageChangeDelegates);
+            this.CounterForPoolMembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForPoolMembers", storageDataProvider, storageChangeDelegates);
+            this.BondedPoolsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner>("NominationPools.BondedPools", storageDataProvider, storageChangeDelegates);
+            this.CounterForBondedPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForBondedPools", storageDataProvider, storageChangeDelegates);
+            this.RewardPoolsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool>("NominationPools.RewardPools", storageDataProvider, storageChangeDelegates);
+            this.CounterForRewardPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForRewardPools", storageDataProvider, storageChangeDelegates);
+            this.SubPoolsStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools>("NominationPools.SubPoolsStorage", storageDataProvider, storageChangeDelegates);
+            this.CounterForSubPoolsStorageTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForSubPoolsStorage", storageDataProvider, storageChangeDelegates);
+            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43>("NominationPools.Metadata", storageDataProvider, storageChangeDelegates);
+            this.CounterForMetadataTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForMetadata", storageDataProvider, storageChangeDelegates);
+            this.LastPoolIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.LastPoolId", storageDataProvider, storageChangeDelegates);
+            this.ReversePoolIdLookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.ReversePoolIdLookup", storageDataProvider, storageChangeDelegates);
+            this.CounterForReversePoolIdLookupTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForReversePoolIdLookup", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -350,7 +346,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _poolMembersTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember> PoolMembersTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember> PoolMembersTypedStorage
         {
             get
             {
@@ -380,7 +376,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _bondedPoolsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner> BondedPoolsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner> BondedPoolsTypedStorage
         {
             get
             {
@@ -410,7 +406,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _rewardPoolsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool> RewardPoolsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool> RewardPoolsTypedStorage
         {
             get
             {
@@ -440,7 +436,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _subPoolsStorageTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools> SubPoolsStorageTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools> SubPoolsStorageTypedStorage
         {
             get
             {
@@ -470,7 +466,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43> MetadataTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43> MetadataTypedStorage
         {
             get
             {
@@ -679,13 +675,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PoolMembers
         ///  Active members.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember GetPoolMembers(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember GetPoolMembers(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PoolMembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember result))
+            if (PoolMembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember result))
             {
                 return result;
             }
@@ -726,13 +722,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BondedPools
         ///  Storage for bonded pools.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner GetBondedPools(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner GetBondedPools(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BondedPoolsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner result))
+            if (BondedPoolsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner result))
             {
                 return result;
             }
@@ -774,13 +770,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Reward pools. This is where there rewards for each pool accumulate. When a members payout
         ///  is claimed, the balance comes out fo the reward pool. Keyed by the bonded pools account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool GetRewardPools(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool GetRewardPools(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (RewardPoolsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool result))
+            if (RewardPoolsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool result))
             {
                 return result;
             }
@@ -822,13 +818,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Groups of unbonding pools. Each group of unbonding pools belongs to a bonded pool,
         ///  hence the name sub-pools. Keyed by the bonded pools account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools GetSubPoolsStorage(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools GetSubPoolsStorage(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (SubPoolsStorageTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools result))
+            if (SubPoolsStorageTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools result))
             {
                 return result;
             }
@@ -869,13 +865,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetMetadata(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 GetMetadata(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 result))
+            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 result))
             {
                 return result;
             }

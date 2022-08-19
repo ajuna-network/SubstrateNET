@@ -11,21 +11,21 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletCollective;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface ICouncilControllerClient
    {
       Task<BoundedVecT13> GetProposals();
       Task<bool> SubscribeProposals();
-      Task<EnumNodeCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<EnumCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<U32> GetProposalCount();
       Task<bool> SubscribeProposalCount();
       Task<BaseVec<AccountId32>> GetMembers();

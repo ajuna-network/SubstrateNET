@@ -17,7 +17,11 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.PalletDemocracy;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.types;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold;
    
    public class DemocracyControllerClientTest : ClientTestBase
    {
@@ -56,26 +60,26 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> GetTestValue3()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetTestValue3()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>();
-         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>();
+         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>[] {
                   this.GetTestValue4()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetTestValue4()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue4()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Create(this.GetTestValueU32(), this.GetTestValue5(), this.GetTestValue6());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -111,11 +115,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -162,7 +166,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> mockupValue = this.GetTestValue3();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> mockupValue = this.GetTestValue3();
 
 
          Assert.IsTrue(await rpcClient.SubscribePublicProps());
@@ -175,31 +179,31 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> rpcResult = await rpcClient.GetPublicProps();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> rpcResult = await rpcClient.GetPublicProps();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue8()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue8()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Create(this.GetTestValue9(), this.GetTestValueU128());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetTestValue9()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue9()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue10()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -246,7 +250,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> mockupValue = this.GetTestValue8();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> mockupValue = this.GetTestValue8();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeDepositOf(mockupKey));
@@ -259,23 +263,23 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> rpcResult = await rpcClient.GetDepositOf(mockupKey);
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> rpcResult = await rpcClient.GetDepositOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PreimageStatus>(), this.GetTestValueU32());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.PreimageStatus>(), this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue13()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -322,8 +326,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus mockupValue = this.GetTestValue12();
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue13();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus mockupValue = this.GetTestValue12();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupKey = this.GetTestValue13();
 
          Assert.IsTrue(await rpcClient.SubscribePreimages(mockupKey));
 
@@ -335,7 +339,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumPreimageStatus rpcResult = await rpcClient.GetPreimages(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus rpcResult = await rpcClient.GetPreimages(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -398,32 +402,32 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo GetTestValue17()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.ReferendumInfo>(), this.GetTestValue18());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.ReferendumInfo>(), this.GetTestValue18());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.ReferendumStatus GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.ReferendumStatus GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.ReferendumStatus result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.ReferendumStatus();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.ReferendumStatus result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.ReferendumStatus();
          result.End = this.GetTestValueU32();
-         result.ProposalHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         result.ProposalHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ProposalHash = this.GetTestValue19();
-         result.Threshold = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold();
-         result.Threshold.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.VoteThreshold>());
+         result.Threshold = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold();
+         result.Threshold.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.VoteThreshold>());
          result.Delay = this.GetTestValueU32();
-         result.Tally = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Tally();
+         result.Tally = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Tally();
          result.Tally = this.GetTestValue20();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue19()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue19()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -459,10 +463,10 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Tally GetTestValue20()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Tally GetTestValue20()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Tally result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Tally();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Tally result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Tally();
          result.Ayes = this.GetTestValueU128();
          result.Nays = this.GetTestValueU128();
          result.Turnout = this.GetTestValueU128();
@@ -479,7 +483,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo mockupValue = this.GetTestValue17();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo mockupValue = this.GetTestValue17();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeReferendumInfoOf(mockupKey));
@@ -492,82 +496,82 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReferendumInfo rpcResult = await rpcClient.GetReferendumInfoOf(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo rpcResult = await rpcClient.GetReferendumInfoOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting GetTestValue22()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting GetTestValue22()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Voting>(), this.GetTestValue23());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Voting>(), this.GetTestValue23());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock> GetTestValue23()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock> GetTestValue23()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>>, SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>();
          result.Create(this.GetTestValue24(), this.GetTestValue29(), this.GetTestValue30());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>> GetTestValue24()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>> GetTestValue24()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>>();
-         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>>();
+         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>[] {
                   this.GetTestValue25()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote> GetTestValue25()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote> GetTestValue25()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote>();
          result.Create(this.GetTestValueU32(), this.GetTestValue26());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote GetTestValue26()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote GetTestValue26()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumAccountVote();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.AccountVote>(), this.GetTestValue27());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumAccountVote();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.AccountVote>(), this.GetTestValue27());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue27()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue27()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote, Ajuna.NetApi.Model.Types.Primitive.U128>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Create(this.GetTestValue28(), this.GetTestValueU128());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote GetTestValue28()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote GetTestValue28()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Vote();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.Vote();
          result.Value = this.GetTestValueU8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations GetTestValue29()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations GetTestValue29()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Delegations();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.Delegations();
          result.Votes = this.GetTestValueU128();
          result.Capital = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock GetTestValue30()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock GetTestValue30()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.PriorLock();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.PriorLock();
          result.BlockNumber = this.GetTestValueU32();
          result.Balance = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue31()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -614,8 +618,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting mockupValue = this.GetTestValue22();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue31();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting mockupValue = this.GetTestValue22();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue31();
 
          Assert.IsTrue(await rpcClient.SubscribeVotingOf(mockupKey));
 
@@ -627,7 +631,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoting rpcResult = await rpcClient.GetVotingOf(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting rpcResult = await rpcClient.GetVotingOf(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -661,18 +665,18 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold> GetTestValue34()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> GetTestValue34()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>();
          result.Create(this.GetTestValue35(), this.GetTestValue36());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue35()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue35()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -708,11 +712,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold GetTestValue36()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold GetTestValue36()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.VoteThreshold>());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.VoteThreshold>());
          return result;
       }
       [Test()]
@@ -726,7 +730,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold> mockupValue = this.GetTestValue34();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> mockupValue = this.GetTestValue34();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextExternal());
@@ -739,31 +743,31 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256, SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumVoteThreshold> rpcResult = await rpcClient.GetNextExternal();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> rpcResult = await rpcClient.GetNextExternal();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> GetTestValue38()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetTestValue38()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>();
          result.Create(this.GetTestValueU32(), this.GetTestValue39());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetTestValue39()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue39()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue40()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue40()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue40()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -799,11 +803,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue41()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue41()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -850,8 +854,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> mockupValue = this.GetTestValue38();
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue41();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> mockupValue = this.GetTestValue38();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupKey = this.GetTestValue41();
 
          Assert.IsTrue(await rpcClient.SubscribeBlacklist(mockupKey));
 
@@ -863,16 +867,16 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>> rpcResult = await rpcClient.GetBlacklist(mockupKey);
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> rpcResult = await rpcClient.GetBlacklist(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue43()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue43()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -920,7 +924,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Primitive.Bool mockupValue = this.GetTestValueBool();
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue43();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupKey = this.GetTestValue43();
 
          Assert.IsTrue(await rpcClient.SubscribeCancellations(mockupKey));
 
@@ -937,11 +941,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases GetTestValue45()
+      public SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases GetTestValue45()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletDemocracy.Releases>());
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_democracy.Releases>());
          return result;
       }
       [Test()]
@@ -955,7 +959,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          DemocracyControllerClient rpcClient = new DemocracyControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases mockupValue = this.GetTestValue45();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases mockupValue = this.GetTestValue45();
 
 
          Assert.IsTrue(await rpcClient.SubscribeStorageVersion());
@@ -968,7 +972,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletDemocracy.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
+         SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases rpcResult = await rpcClient.GetStorageVersion();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

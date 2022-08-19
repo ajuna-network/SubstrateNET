@@ -11,8 +11,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    
    public interface IGiltControllerClient
    {

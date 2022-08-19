@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletAssets;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Details of an asset.
         /// </summary>
         [HttpGet("Asset")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetsStorage), "AssetParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AssetsStorage), "AssetParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetAsset(string key)
         {
             return this.Ok(_assetsStorage.GetAsset(key));
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
         [HttpGet("Account")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetsStorage), "AccountParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AssetsStorage), "AccountParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetAccount(string key)
         {
             return this.Ok(_assetsStorage.GetAccount(key));
@@ -71,8 +68,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
         [HttpGet("Approvals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetsStorage), "ApprovalsParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AssetsStorage), "ApprovalsParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetApprovals(string key)
         {
             return this.Ok(_assetsStorage.GetApprovals(key));
@@ -83,8 +80,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata of an asset.
         /// </summary>
         [HttpGet("Metadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AssetsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetMetadata(string key)
         {
             return this.Ok(_assetsStorage.GetMetadata(key));

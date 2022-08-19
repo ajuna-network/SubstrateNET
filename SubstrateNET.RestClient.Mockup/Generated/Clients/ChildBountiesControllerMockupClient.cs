@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletChildBounties;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_child_bounties;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ChildBountiesControllerMockupClient : MockupBaseClient, IChildBountiesControllerMockupClient
@@ -26,23 +26,23 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetChildBountyCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBountyCount", value.Encode(), ChildBountiesStorage.ChildBountyCountParams());
+         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBountyCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountyCountParams());
       }
       public async Task<bool> SetParentChildBounties(U32 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ParentChildBounties", value.Encode(), ChildBountiesStorage.ParentChildBountiesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ParentChildBounties", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ParentChildBountiesParams(key));
       }
       public async Task<bool> SetChildBounties(ChildBounty value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBounties", value.Encode(), ChildBountiesStorage.ChildBountiesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBounties", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountiesParams(key));
       }
       public async Task<bool> SetChildBountyDescriptions(BoundedVecT30 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBountyDescriptions", value.Encode(), ChildBountiesStorage.ChildBountyDescriptionsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildBountyDescriptions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountyDescriptionsParams(key));
       }
       public async Task<bool> SetChildrenCuratorFees(U128 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildrenCuratorFees", value.Encode(), ChildBountiesStorage.ChildrenCuratorFeesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ChildBounties/ChildrenCuratorFees", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildrenCuratorFeesParams(key));
       }
    }
 }

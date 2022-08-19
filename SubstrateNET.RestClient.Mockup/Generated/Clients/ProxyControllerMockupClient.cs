@@ -13,6 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ProxyControllerMockupClient : MockupBaseClient, IProxyControllerMockupClient
@@ -22,13 +24,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetProxies(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetProxies(BaseTuple<BoundedVecT28, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Proxy/Proxies", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.ProxiesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Proxy/Proxies", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ProxyStorage.ProxiesParams(key));
       }
-      public async Task<bool> SetAnnouncements(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetAnnouncements(BaseTuple<BoundedVecT29, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Proxy/Announcements", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage.AnnouncementsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Proxy/Announcements", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ProxyStorage.AnnouncementsParams(key));
       }
    }
 }

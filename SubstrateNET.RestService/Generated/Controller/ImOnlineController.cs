@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -57,7 +53,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("HeartbeatAfter")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage), "HeartbeatAfterParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage), "HeartbeatAfterParams")]
         public IActionResult GetHeartbeatAfter()
         {
             return this.Ok(_imOnlineStorage.GetHeartbeatAfter());
@@ -68,8 +64,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
         [HttpGet("Keys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage), "KeysParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage), "KeysParams")]
         public IActionResult GetKeys()
         {
             return this.Ok(_imOnlineStorage.GetKeys());
@@ -81,8 +77,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  `WrapperOpaque<BoundedOpaqueNetworkState>`.
         /// </summary>
         [HttpGet("ReceivedHeartbeats")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage), "ReceivedHeartbeatsParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage), "ReceivedHeartbeatsParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetReceivedHeartbeats(string key)
         {
             return this.Ok(_imOnlineStorage.GetReceivedHeartbeats(key));
@@ -95,7 +91,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("AuthoredBlocks")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage), "AuthoredBlocksParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage), "AuthoredBlocksParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetAuthoredBlocks(string key)
         {
             return this.Ok(_imOnlineStorage.GetAuthoredBlocks(key));

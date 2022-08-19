@@ -11,7 +11,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
+   using SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet;
    using Ajuna.NetApi.Model.Types.Base;
    
    public interface IStateTrieMigrationControllerMockupClient

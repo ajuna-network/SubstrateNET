@@ -8,14 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-using SubstrateNET.NetApi.Generated.Model.FrameSystem;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -34,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Account
         ///  The full account information for a particular account ID.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo GetAccount(string key);
+        SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo GetAccount(string key);
         
         /// <summary>
         /// >> ExtrinsicCount
@@ -46,7 +40,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BlockWeight
         ///  The current weight for the block.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 GetBlockWeight();
+        SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 GetBlockWeight();
         
         /// <summary>
         /// >> AllExtrinsicsLen
@@ -58,13 +52,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BlockHash
         ///  Map of block numbers to block hashes.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetBlockHash(string key);
+        SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetBlockHash(string key);
         
         /// <summary>
         /// >> ExtrinsicData
         ///  Extrinsics data for the current block (maps an extrinsic's index to its data).
         /// </summary>
-        BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetExtrinsicData(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetExtrinsicData(string key);
         
         /// <summary>
         /// >> Number
@@ -76,13 +70,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ParentHash
         ///  Hash of the previous block.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetParentHash();
+        SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetParentHash();
         
         /// <summary>
         /// >> Digest
         ///  Digest of the current block, also part of the block header.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest GetDigest();
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest GetDigest();
         
         /// <summary>
         /// >> Events
@@ -94,7 +88,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Events have a large in-memory size. Box the events to not go out-of-memory
         ///  just in case someone still reads them from within the runtime.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> GetEvents();
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> GetEvents();
         
         /// <summary>
         /// >> EventCount
@@ -115,13 +109,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  the `EventIndex` then in case if the topic has the same contents on the next block
         ///  no notification will be triggered thus the event might be lost.
         /// </summary>
-        BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> GetEventTopics(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetEventTopics(string key);
         
         /// <summary>
         /// >> LastRuntimeUpgrade
         ///  Stores the `spec_version` and `spec_name` of when the last runtime upgrade happened.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo GetLastRuntimeUpgrade();
+        SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo GetLastRuntimeUpgrade();
         
         /// <summary>
         /// >> UpgradedToU32RefCount
@@ -140,7 +134,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ExecutionPhase
         ///  The execution phase of the block.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase GetExecutionPhase();
+        SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase GetExecutionPhase();
     }
     
     /// <summary>
@@ -152,7 +146,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _accountTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo> _accountTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo> _accountTypedStorage;
         
         /// <summary>
         /// _extrinsicCountTypedStorage typed storage field
@@ -162,7 +156,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockWeightTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1> _blockWeightTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1> _blockWeightTypedStorage;
         
         /// <summary>
         /// _allExtrinsicsLenTypedStorage typed storage field
@@ -172,12 +166,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockHashTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _blockHashTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> _blockHashTypedStorage;
         
         /// <summary>
         /// _extrinsicDataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _extrinsicDataTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _extrinsicDataTypedStorage;
         
         /// <summary>
         /// _numberTypedStorage typed storage field
@@ -187,17 +181,17 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _parentHashTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _parentHashTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> _parentHashTypedStorage;
         
         /// <summary>
         /// _digestTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest> _digestTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest> _digestTypedStorage;
         
         /// <summary>
         /// _eventsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>> _eventsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord>> _eventsTypedStorage;
         
         /// <summary>
         /// _eventCountTypedStorage typed storage field
@@ -207,12 +201,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _eventTopicsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>> _eventTopicsTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>> _eventTopicsTypedStorage;
         
         /// <summary>
         /// _lastRuntimeUpgradeTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo> _lastRuntimeUpgradeTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo> _lastRuntimeUpgradeTypedStorage;
         
         /// <summary>
         /// _upgradedToU32RefCountTypedStorage typed storage field
@@ -227,35 +221,35 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _executionPhaseTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase> _executionPhaseTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase> _executionPhaseTypedStorage;
         
         /// <summary>
         /// SystemStorage constructor.
         /// </summary>
-        public SystemStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public SystemStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo>("System.Account", storageDataProvider, storageChangeDelegate);
-            this.ExtrinsicCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.ExtrinsicCount", storageDataProvider, storageChangeDelegate);
-            this.BlockWeightTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1>("System.BlockWeight", storageDataProvider, storageChangeDelegate);
-            this.AllExtrinsicsLenTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.AllExtrinsicsLen", storageDataProvider, storageChangeDelegate);
-            this.BlockHashTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>("System.BlockHash", storageDataProvider, storageChangeDelegate);
-            this.ExtrinsicDataTypedStorage = new TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("System.ExtrinsicData", storageDataProvider, storageChangeDelegate);
-            this.NumberTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.Number", storageDataProvider, storageChangeDelegate);
-            this.ParentHashTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>("System.ParentHash", storageDataProvider, storageChangeDelegate);
-            this.DigestTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest>("System.Digest", storageDataProvider, storageChangeDelegate);
-            this.EventsTypedStorage = new TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>>("System.Events", storageDataProvider, storageChangeDelegate);
-            this.EventCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.EventCount", storageDataProvider, storageChangeDelegate);
-            this.EventTopicsTypedStorage = new TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>>("System.EventTopics", storageDataProvider, storageChangeDelegate);
-            this.LastRuntimeUpgradeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo>("System.LastRuntimeUpgrade", storageDataProvider, storageChangeDelegate);
-            this.UpgradedToU32RefCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("System.UpgradedToU32RefCount", storageDataProvider, storageChangeDelegate);
-            this.UpgradedToTripleRefCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("System.UpgradedToTripleRefCount", storageDataProvider, storageChangeDelegate);
-            this.ExecutionPhaseTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase>("System.ExecutionPhase", storageDataProvider, storageChangeDelegate);
+            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo>("System.Account", storageDataProvider, storageChangeDelegates);
+            this.ExtrinsicCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.ExtrinsicCount", storageDataProvider, storageChangeDelegates);
+            this.BlockWeightTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1>("System.BlockWeight", storageDataProvider, storageChangeDelegates);
+            this.AllExtrinsicsLenTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.AllExtrinsicsLen", storageDataProvider, storageChangeDelegates);
+            this.BlockHashTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>("System.BlockHash", storageDataProvider, storageChangeDelegates);
+            this.ExtrinsicDataTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("System.ExtrinsicData", storageDataProvider, storageChangeDelegates);
+            this.NumberTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.Number", storageDataProvider, storageChangeDelegates);
+            this.ParentHashTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>("System.ParentHash", storageDataProvider, storageChangeDelegates);
+            this.DigestTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest>("System.Digest", storageDataProvider, storageChangeDelegates);
+            this.EventsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord>>("System.Events", storageDataProvider, storageChangeDelegates);
+            this.EventCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("System.EventCount", storageDataProvider, storageChangeDelegates);
+            this.EventTopicsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>>("System.EventTopics", storageDataProvider, storageChangeDelegates);
+            this.LastRuntimeUpgradeTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo>("System.LastRuntimeUpgrade", storageDataProvider, storageChangeDelegates);
+            this.UpgradedToU32RefCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("System.UpgradedToU32RefCount", storageDataProvider, storageChangeDelegates);
+            this.UpgradedToTripleRefCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("System.UpgradedToTripleRefCount", storageDataProvider, storageChangeDelegates);
+            this.ExecutionPhaseTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase>("System.ExecutionPhase", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _accountTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo> AccountTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo> AccountTypedStorage
         {
             get
             {
@@ -285,7 +279,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockWeightTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1> BlockWeightTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1> BlockWeightTypedStorage
         {
             get
             {
@@ -315,7 +309,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blockHashTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> BlockHashTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> BlockHashTypedStorage
         {
             get
             {
@@ -330,7 +324,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _extrinsicDataTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ExtrinsicDataTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ExtrinsicDataTypedStorage
         {
             get
             {
@@ -360,7 +354,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _parentHashTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> ParentHashTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> ParentHashTypedStorage
         {
             get
             {
@@ -375,7 +369,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _digestTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest> DigestTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest> DigestTypedStorage
         {
             get
             {
@@ -390,7 +384,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _eventsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>> EventsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord>> EventsTypedStorage
         {
             get
             {
@@ -420,7 +414,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _eventTopicsTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>> EventTopicsTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>> EventTopicsTypedStorage
         {
             get
             {
@@ -435,7 +429,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _lastRuntimeUpgradeTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo> LastRuntimeUpgradeTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo> LastRuntimeUpgradeTypedStorage
         {
             get
             {
@@ -480,7 +474,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _executionPhaseTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase> ExecutionPhaseTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase> ExecutionPhaseTypedStorage
         {
             get
             {
@@ -528,13 +522,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Account
         ///  The full account information for a particular account ID.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo GetAccount(string key)
+        public SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo GetAccount(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo result))
+            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo result))
             {
                 return result;
             }
@@ -575,7 +569,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BlockWeight
         ///  The current weight for the block.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1 GetBlockWeight()
+        public SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1 GetBlockWeight()
         {
             return BlockWeightTypedStorage.Get();
         }
@@ -611,13 +605,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> BlockHash
         ///  Map of block numbers to block hashes.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetBlockHash(string key)
+        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetBlockHash(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BlockHashTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result))
+            if (BlockHashTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result))
             {
                 return result;
             }
@@ -640,13 +634,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ExtrinsicData
         ///  Extrinsics data for the current block (maps an extrinsic's index to its data).
         /// </summary>
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetExtrinsicData(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetExtrinsicData(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ExtrinsicDataTypedStorage.Dictionary.TryGetValue(key, out BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
+            if (ExtrinsicDataTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
             {
                 return result;
             }
@@ -687,7 +681,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ParentHash
         ///  Hash of the previous block.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetParentHash()
+        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetParentHash()
         {
             return ParentHashTypedStorage.Get();
         }
@@ -705,7 +699,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Digest
         ///  Digest of the current block, also part of the block header.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest GetDigest()
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest GetDigest()
         {
             return DigestTypedStorage.Get();
         }
@@ -729,7 +723,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Events have a large in-memory size. Box the events to not go out-of-memory
         ///  just in case someone still reads them from within the runtime.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord> GetEvents()
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord> GetEvents()
         {
             return EventsTypedStorage.Get();
         }
@@ -774,13 +768,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  the `EventIndex` then in case if the topic has the same contents on the next block
         ///  no notification will be triggered thus the event might be lost.
         /// </summary>
-        public BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> GetEventTopics(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> GetEventTopics(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (EventTopicsTypedStorage.Dictionary.TryGetValue(key, out BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> result))
+            if (EventTopicsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> result))
             {
                 return result;
             }
@@ -803,7 +797,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> LastRuntimeUpgrade
         ///  Stores the `spec_version` and `spec_name` of when the last runtime upgrade happened.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo GetLastRuntimeUpgrade()
+        public SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo GetLastRuntimeUpgrade()
         {
             return LastRuntimeUpgradeTypedStorage.Get();
         }
@@ -858,7 +852,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ExecutionPhase
         ///  The execution phase of the block.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase GetExecutionPhase()
+        public SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase GetExecutionPhase()
         {
             return ExecutionPhaseTypedStorage.Get();
         }

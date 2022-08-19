@@ -12,9 +12,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+   using SubstrateNET.NetApi.Generated.Model.pallet_identity.types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class IdentityControllerClient : BaseClient, IIdentityControllerClient
@@ -26,29 +28,29 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<Registration> GetIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<Registration> GetIdentityOf(AccountId32 key)
       {
-         return await SendRequestAsync<Registration>(_httpClient, "identity/identityof", IdentityStorage.IdentityOfParams(key));
+         return await SendRequestAsync<Registration>(_httpClient, "identity/identityof", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.IdentityOfParams(key));
       }
-      public async Task<bool> SubscribeIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeIdentityOf(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Identity.IdentityOf", IdentityStorage.IdentityOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Identity.IdentityOf", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.IdentityOfParams(key));
       }
-      public async Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData>> GetSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BaseTuple<AccountId32, EnumData>> GetSuperOf(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData>>(_httpClient, "identity/superof", IdentityStorage.SuperOfParams(key));
+         return await SendRequestAsync<BaseTuple<AccountId32, EnumData>>(_httpClient, "identity/superof", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SuperOfParams(key));
       }
-      public async Task<bool> SubscribeSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeSuperOf(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Identity.SuperOf", IdentityStorage.SuperOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Identity.SuperOf", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SuperOfParams(key));
       }
-      public async Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BaseTuple<U128, BoundedVecT23>> GetSubsOf(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>>(_httpClient, "identity/subsof", IdentityStorage.SubsOfParams(key));
+         return await SendRequestAsync<BaseTuple<U128, BoundedVecT23>>(_httpClient, "identity/subsof", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SubsOfParams(key));
       }
-      public async Task<bool> SubscribeSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeSubsOf(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Identity.SubsOf", IdentityStorage.SubsOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Identity.SubsOf", SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SubsOfParams(key));
       }
       public async Task<BoundedVecT24> GetRegistrars()
       {

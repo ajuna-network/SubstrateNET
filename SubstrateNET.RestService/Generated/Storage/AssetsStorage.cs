@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletAssets;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Asset
         ///  Details of an asset.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails GetAsset(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails GetAsset(string key);
         
         /// <summary>
         /// >> Account
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount GetAccount(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount GetAccount(string key);
         
         /// <summary>
         /// >> Approvals
@@ -45,13 +42,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval GetApprovals(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval GetApprovals(string key);
         
         /// <summary>
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata GetMetadata(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata GetMetadata(string key);
     }
     
     /// <summary>
@@ -63,38 +60,38 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _assetTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails> _assetTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails> _assetTypedStorage;
         
         /// <summary>
         /// _accountTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount> _accountTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount> _accountTypedStorage;
         
         /// <summary>
         /// _approvalsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval> _approvalsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval> _approvalsTypedStorage;
         
         /// <summary>
         /// _metadataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata> _metadataTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata> _metadataTypedStorage;
         
         /// <summary>
         /// AssetsStorage constructor.
         /// </summary>
-        public AssetsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public AssetsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails>("Assets.Asset", storageDataProvider, storageChangeDelegate);
-            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount>("Assets.Account", storageDataProvider, storageChangeDelegate);
-            this.ApprovalsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval>("Assets.Approvals", storageDataProvider, storageChangeDelegate);
-            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata>("Assets.Metadata", storageDataProvider, storageChangeDelegate);
+            this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails>("Assets.Asset", storageDataProvider, storageChangeDelegates);
+            this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount>("Assets.Account", storageDataProvider, storageChangeDelegates);
+            this.ApprovalsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval>("Assets.Approvals", storageDataProvider, storageChangeDelegates);
+            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata>("Assets.Metadata", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _assetTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails> AssetTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails> AssetTypedStorage
         {
             get
             {
@@ -109,7 +106,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _accountTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount> AccountTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount> AccountTypedStorage
         {
             get
             {
@@ -124,7 +121,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _approvalsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval> ApprovalsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval> ApprovalsTypedStorage
         {
             get
             {
@@ -139,7 +136,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata> MetadataTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata> MetadataTypedStorage
         {
             get
             {
@@ -175,13 +172,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Asset
         ///  Details of an asset.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails GetAsset(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails GetAsset(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AssetTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetDetails result))
+            if (AssetTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetDetails result))
             {
                 return result;
             }
@@ -204,13 +201,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Account
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount GetAccount(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount GetAccount(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetAccount result))
+            if (AccountTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetAccount result))
             {
                 return result;
             }
@@ -235,13 +232,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval GetApprovals(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval GetApprovals(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ApprovalsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletAssets.Approval result))
+            if (ApprovalsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_assets.types.Approval result))
             {
                 return result;
             }
@@ -264,13 +261,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata GetMetadata(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata GetMetadata(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletAssets.AssetMetadata result))
+            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata result))
             {
                 return result;
             }

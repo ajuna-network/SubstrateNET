@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,17 +23,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetListNodes(Node value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetListNodes(Node value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "BagsList/ListNodes", value.Encode(), BagsListStorage.ListNodesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "BagsList/ListNodes", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListNodesParams(key));
       }
       public async Task<bool> SetCounterForListNodes(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "BagsList/CounterForListNodes", value.Encode(), BagsListStorage.CounterForListNodesParams());
+         return await SendMockupRequestAsync(_httpClient, "BagsList/CounterForListNodes", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BagsListStorage.CounterForListNodesParams());
       }
       public async Task<bool> SetListBags(Bag value, U64 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "BagsList/ListBags", value.Encode(), BagsListStorage.ListBagsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "BagsList/ListBags", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BagsListStorage.ListBagsParams(key));
       }
    }
 }

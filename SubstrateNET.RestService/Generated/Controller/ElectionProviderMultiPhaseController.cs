@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase;
-using SubstrateNET.NetApi.Generated.Model.SpNposElections;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -52,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Round")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "RoundParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "RoundParams")]
         public IActionResult GetRound()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetRound());
@@ -63,8 +59,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current phase.
         /// </summary>
         [HttpGet("CurrentPhase")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.EnumPhase), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "CurrentPhaseParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.EnumPhase), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "CurrentPhaseParams")]
         public IActionResult GetCurrentPhase()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetCurrentPhase());
@@ -75,8 +71,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current best solution, signed or unsigned, queued to be returned upon `elect`.
         /// </summary>
         [HttpGet("QueuedSolution")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ReadySolution), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "QueuedSolutionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.ReadySolution), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "QueuedSolutionParams")]
         public IActionResult GetQueuedSolution()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetQueuedSolution());
@@ -89,8 +85,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This is created at the beginning of the signed phase and cleared upon calling `elect`.
         /// </summary>
         [HttpGet("Snapshot")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.RoundSnapshot), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SnapshotParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RoundSnapshot), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SnapshotParams")]
         public IActionResult GetSnapshot()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetSnapshot());
@@ -104,7 +100,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("DesiredTargets")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "DesiredTargetsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "DesiredTargetsParams")]
         public IActionResult GetDesiredTargets()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetDesiredTargets());
@@ -117,8 +113,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Only exists when [`Snapshot`] is present.
         /// </summary>
         [HttpGet("SnapshotMetadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.SolutionOrSnapshotSize), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SnapshotMetadataParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.SolutionOrSnapshotSize), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SnapshotMetadataParams")]
         public IActionResult GetSnapshotMetadata()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetSnapshotMetadata());
@@ -138,7 +134,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("SignedSubmissionNextIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SignedSubmissionNextIndexParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SignedSubmissionNextIndexParams")]
         public IActionResult GetSignedSubmissionNextIndex()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetSignedSubmissionNextIndex());
@@ -154,8 +150,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  them one at a time instead of reading and decoding all of them at once.
         /// </summary>
         [HttpGet("SignedSubmissionIndices")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT1), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SignedSubmissionIndicesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SignedSubmissionIndicesParams")]
         public IActionResult GetSignedSubmissionIndices()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetSignedSubmissionIndices());
@@ -172,8 +168,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  affect; we shouldn't need a cryptographically secure hasher.
         /// </summary>
         [HttpGet("SignedSubmissionsMap")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.SignedSubmission), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "SignedSubmissionsMapParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SignedSubmissionsMapParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetSignedSubmissionsMap(string key)
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetSignedSubmissionsMap(key));
@@ -187,8 +183,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Can be set via `set_minimum_untrusted_score`.
         /// </summary>
         [HttpGet("MinimumUntrustedScore")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpNposElections.ElectionScore), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionProviderMultiPhase.ElectionProviderMultiPhaseStorage), "MinimumUntrustedScoreParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "MinimumUntrustedScoreParams")]
         public IActionResult GetMinimumUntrustedScore()
         {
             return this.Ok(_electionProviderMultiPhaseStorage.GetMinimumUntrustedScore());

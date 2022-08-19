@@ -8,13 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-using SubstrateNET.NetApi.Generated.Model.PalletMultisig;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The set of open multisig operations.
         /// </summary>
         [HttpGet("Multisigs")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletMultisig.Multisig), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletMultisig.MultisigStorage), "MultisigsParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MultisigStorage), "MultisigsParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>))]
         public IActionResult GetMultisigs(string key)
         {
             return this.Ok(_multisigStorage.GetMultisigs(key));
@@ -58,8 +53,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> Calls
         /// </summary>
         [HttpGet("Calls")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperKeepOpaque,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletMultisig.MultisigStorage), "CallsParams", typeof(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MultisigStorage), "CallsParams", typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8))]
         public IActionResult GetCalls(string key)
         {
             return this.Ok(_multisigStorage.GetCalls(key));

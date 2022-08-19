@@ -13,9 +13,10 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing;
    
    public interface IStakingControllerClient
    {
@@ -87,8 +88,6 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeSlashingSpans(AccountId32 key);
       Task<SpanRecord> GetSpanSlash(BaseTuple<AccountId32, U32> key);
       Task<bool> SubscribeSpanSlash(BaseTuple<AccountId32, U32> key);
-      Task<U32> GetEarliestUnappliedSlash();
-      Task<bool> SubscribeEarliestUnappliedSlash();
       Task<U32> GetCurrentPlannedSession();
       Task<bool> SubscribeCurrentPlannedSession();
       Task<BaseVec<BaseTuple<U32, Bool>>> GetOffendingValidators();

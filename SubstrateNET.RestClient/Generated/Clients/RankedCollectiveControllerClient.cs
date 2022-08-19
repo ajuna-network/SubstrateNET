@@ -13,9 +13,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletRankedCollective;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class RankedCollectiveControllerClient : BaseClient, IRankedCollectiveControllerClient
@@ -29,51 +29,51 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<U32> GetMemberCount(U16 key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "rankedcollective/membercount", RankedCollectiveStorage.MemberCountParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "rankedcollective/membercount", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MemberCountParams(key));
       }
       public async Task<bool> SubscribeMemberCount(U16 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.MemberCount", RankedCollectiveStorage.MemberCountParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.MemberCount", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MemberCountParams(key));
       }
       public async Task<MemberRecord> GetMembers(AccountId32 key)
       {
-         return await SendRequestAsync<MemberRecord>(_httpClient, "rankedcollective/members", RankedCollectiveStorage.MembersParams(key));
+         return await SendRequestAsync<MemberRecord>(_httpClient, "rankedcollective/members", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MembersParams(key));
       }
       public async Task<bool> SubscribeMembers(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.Members", RankedCollectiveStorage.MembersParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.Members", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.MembersParams(key));
       }
       public async Task<U32> GetIdToIndex(Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, AccountId32> key)
       {
-         return await SendRequestAsync<U32>(_httpClient, "rankedcollective/idtoindex", RankedCollectiveStorage.IdToIndexParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "rankedcollective/idtoindex", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IdToIndexParams(key));
       }
       public async Task<bool> SubscribeIdToIndex(Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.IdToIndex", RankedCollectiveStorage.IdToIndexParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.IdToIndex", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IdToIndexParams(key));
       }
       public async Task<AccountId32> GetIndexToId(Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, U32> key)
       {
-         return await SendRequestAsync<AccountId32>(_httpClient, "rankedcollective/indextoid", RankedCollectiveStorage.IndexToIdParams(key));
+         return await SendRequestAsync<AccountId32>(_httpClient, "rankedcollective/indextoid", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IndexToIdParams(key));
       }
       public async Task<bool> SubscribeIndexToId(Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, U32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.IndexToId", RankedCollectiveStorage.IndexToIdParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.IndexToId", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.IndexToIdParams(key));
       }
       public async Task<EnumVoteRecord> GetVoting(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, AccountId32> key)
       {
-         return await SendRequestAsync<EnumVoteRecord>(_httpClient, "rankedcollective/voting", RankedCollectiveStorage.VotingParams(key));
+         return await SendRequestAsync<EnumVoteRecord>(_httpClient, "rankedcollective/voting", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingParams(key));
       }
       public async Task<bool> SubscribeVoting(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.Voting", RankedCollectiveStorage.VotingParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.Voting", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingParams(key));
       }
       public async Task<BoundedVecT45> GetVotingCleanup(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT45>(_httpClient, "rankedcollective/votingcleanup", RankedCollectiveStorage.VotingCleanupParams(key));
+         return await SendRequestAsync<BoundedVecT45>(_httpClient, "rankedcollective/votingcleanup", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingCleanupParams(key));
       }
       public async Task<bool> SubscribeVotingCleanup(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("RankedCollective.VotingCleanup", RankedCollectiveStorage.VotingCleanupParams(key));
+         return await _subscriptionClient.SubscribeAsync("RankedCollective.VotingCleanup", SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingCleanupParams(key));
       }
    }
 }

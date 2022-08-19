@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletVesting;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_vesting;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class VestingControllerClient : BaseClient, IVestingControllerClient
@@ -25,13 +25,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT26> GetVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<BoundedVecT26> GetVesting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT26>(_httpClient, "vesting/vesting", VestingStorage.VestingParams(key));
+         return await SendRequestAsync<BoundedVecT26>(_httpClient, "vesting/vesting", SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
       }
-      public async Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Vesting.Vesting", VestingStorage.VestingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Vesting.Vesting", SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
       }
       public async Task<EnumReleases> GetStorageVersion()
       {

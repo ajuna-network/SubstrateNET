@@ -16,8 +16,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    
    public class ImOnlineControllerClientTest : ClientTestBase
    {
@@ -56,28 +56,28 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletImOnline.Public>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.PalletImOnline.Public[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Public>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Public[] {
                   this.GetTestValue4()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletImOnline.Public GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Public GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletImOnline.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletImOnline.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
+         SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
          result.Value = this.GetTestValue5();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -124,7 +124,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ImOnlineControllerClient rpcClient = new ImOnlineControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 mockupValue = this.GetTestValue3();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 mockupValue = this.GetTestValue3();
 
 
          Assert.IsTrue(await rpcClient.SubscribeKeys());
@@ -137,53 +137,53 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT4 rpcResult = await rpcClient.GetKeys();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4 rpcResult = await rpcClient.GetKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque();
+         SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque();
          result.Value0 = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Value0.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
-         result.T = new SubstrateNET.NetApi.Generated.Model.PalletImOnline.BoundedOpaqueNetworkState();
+         result.T = new SubstrateNET.NetApi.Generated.Model.pallet_im_online.BoundedOpaqueNetworkState();
          result.T = this.GetTestValue8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletImOnline.BoundedOpaqueNetworkState GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.pallet_im_online.BoundedOpaqueNetworkState GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletImOnline.BoundedOpaqueNetworkState result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletImOnline.BoundedOpaqueNetworkState();
-         result.PeerId = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5();
+         SubstrateNET.NetApi.Generated.Model.pallet_im_online.BoundedOpaqueNetworkState result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_im_online.BoundedOpaqueNetworkState();
+         result.PeerId = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5();
          result.PeerId = this.GetTestValue9();
-         result.ExternalAddresses = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6();
+         result.ExternalAddresses = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT6();
          result.ExternalAddresses = this.GetTestValue10();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5 GetTestValue9()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6 GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT6 GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT6();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT6 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT6();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5[] {
                   this.GetTestValue11()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5 GetTestValue11()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT5();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT5();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -207,7 +207,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ImOnlineControllerClient rpcClient = new ImOnlineControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque mockupValue = this.GetTestValue7();
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> mockupKey = this.GetTestValue12();
 
          Assert.IsTrue(await rpcClient.SubscribeReceivedHeartbeats(mockupKey));
@@ -220,23 +220,23 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperOpaque rpcResult = await rpcClient.GetReceivedHeartbeats(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperOpaque rpcResult = await rpcClient.GetReceivedHeartbeats(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> GetTestValue14()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue14()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Create(this.GetTestValueU32(), this.GetTestValue15());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue15()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -284,7 +284,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          ImOnlineControllerClient rpcClient = new ImOnlineControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> mockupKey = this.GetTestValue14();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> mockupKey = this.GetTestValue14();
 
          Assert.IsTrue(await rpcClient.SubscribeAuthoredBlocks(mockupKey));
 

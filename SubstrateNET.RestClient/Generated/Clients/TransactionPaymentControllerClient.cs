@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point;
+   using SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class TransactionPaymentControllerClient : BaseClient, ITransactionPaymentControllerClient

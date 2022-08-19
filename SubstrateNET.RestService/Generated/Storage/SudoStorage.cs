@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -29,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Key
         ///  The `AccountId` of the sudo key.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetKey();
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetKey();
     }
     
     /// <summary>
@@ -41,20 +40,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keyTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _keyTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _keyTypedStorage;
         
         /// <summary>
         /// SudoStorage constructor.
         /// </summary>
-        public SudoStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public SudoStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.KeyTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Sudo.Key", storageDataProvider, storageChangeDelegate);
+            this.KeyTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Sudo.Key", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _keyTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> KeyTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> KeyTypedStorage
         {
             get
             {
@@ -87,7 +86,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Key
         ///  The `AccountId` of the sudo key.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetKey()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetKey()
         {
             return KeyTypedStorage.Get();
         }

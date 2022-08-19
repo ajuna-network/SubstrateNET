@@ -8,14 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.FrameSupport;
-using SubstrateNET.NetApi.Generated.Model.FrameSystem;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The full account information for a particular account ID.
         /// </summary>
         [HttpGet("Account")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.AccountInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "AccountParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "AccountParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetAccount(string key)
         {
             return this.Ok(_systemStorage.GetAccount(key));
@@ -61,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ExtrinsicCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "ExtrinsicCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "ExtrinsicCountParams")]
         public IActionResult GetExtrinsicCount()
         {
             return this.Ok(_systemStorage.GetExtrinsicCount());
@@ -72,8 +66,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current weight for the block.
         /// </summary>
         [HttpGet("BlockWeight")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSupport.PerDispatchClassT1), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "BlockWeightParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "BlockWeightParams")]
         public IActionResult GetBlockWeight()
         {
             return this.Ok(_systemStorage.GetBlockWeight());
@@ -85,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("AllExtrinsicsLen")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "AllExtrinsicsLenParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "AllExtrinsicsLenParams")]
         public IActionResult GetAllExtrinsicsLen()
         {
             return this.Ok(_systemStorage.GetAllExtrinsicsLen());
@@ -96,8 +90,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Map of block numbers to block hashes.
         /// </summary>
         [HttpGet("BlockHash")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "BlockHashParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "BlockHashParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBlockHash(string key)
         {
             return this.Ok(_systemStorage.GetBlockHash(key));
@@ -108,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Extrinsics data for the current block (maps an extrinsic's index to its data).
         /// </summary>
         [HttpGet("ExtrinsicData")]
-        [ProducesResponseType(typeof(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "ExtrinsicDataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "ExtrinsicDataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetExtrinsicData(string key)
         {
             return this.Ok(_systemStorage.GetExtrinsicData(key));
@@ -121,7 +115,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Number")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "NumberParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "NumberParams")]
         public IActionResult GetNumber()
         {
             return this.Ok(_systemStorage.GetNumber());
@@ -132,8 +126,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Hash of the previous block.
         /// </summary>
         [HttpGet("ParentHash")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "ParentHashParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "ParentHashParams")]
         public IActionResult GetParentHash()
         {
             return this.Ok(_systemStorage.GetParentHash());
@@ -144,8 +138,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Digest of the current block, also part of the block header.
         /// </summary>
         [HttpGet("Digest")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.Digest), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "DigestParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest.Digest), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "DigestParams")]
         public IActionResult GetDigest()
         {
             return this.Ok(_systemStorage.GetDigest());
@@ -162,8 +156,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  just in case someone still reads them from within the runtime.
         /// </summary>
         [HttpGet("Events")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.FrameSystem.EventRecord>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "EventsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.frame_system.EventRecord>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "EventsParams")]
         public IActionResult GetEvents()
         {
             return this.Ok(_systemStorage.GetEvents());
@@ -175,7 +169,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("EventCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "EventCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "EventCountParams")]
         public IActionResult GetEventCount()
         {
             return this.Ok(_systemStorage.GetEventCount());
@@ -195,8 +189,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  no notification will be triggered thus the event might be lost.
         /// </summary>
         [HttpGet("EventTopics")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "EventTopicsParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "EventTopicsParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetEventTopics(string key)
         {
             return this.Ok(_systemStorage.GetEventTopics(key));
@@ -207,8 +201,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Stores the `spec_version` and `spec_name` of when the last runtime upgrade happened.
         /// </summary>
         [HttpGet("LastRuntimeUpgrade")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.LastRuntimeUpgradeInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "LastRuntimeUpgradeParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "LastRuntimeUpgradeParams")]
         public IActionResult GetLastRuntimeUpgrade()
         {
             return this.Ok(_systemStorage.GetLastRuntimeUpgrade());
@@ -220,7 +214,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("UpgradedToU32RefCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "UpgradedToU32RefCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "UpgradedToU32RefCountParams")]
         public IActionResult GetUpgradedToU32RefCount()
         {
             return this.Ok(_systemStorage.GetUpgradedToU32RefCount());
@@ -233,7 +227,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("UpgradedToTripleRefCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "UpgradedToTripleRefCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "UpgradedToTripleRefCountParams")]
         public IActionResult GetUpgradedToTripleRefCount()
         {
             return this.Ok(_systemStorage.GetUpgradedToTripleRefCount());
@@ -244,8 +238,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The execution phase of the block.
         /// </summary>
         [HttpGet("ExecutionPhase")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.EnumPhase), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.FrameSystem.SystemStorage), "ExecutionPhaseParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "ExecutionPhaseParams")]
         public IActionResult GetExecutionPhase()
         {
             return this.Ok(_systemStorage.GetExecutionPhase());

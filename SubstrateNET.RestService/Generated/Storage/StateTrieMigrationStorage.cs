@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -32,7 +31,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  This stores the snapshot of the last migrated keys. It can be set into motion and move
         ///  forward by any of the means provided by this pallet.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask GetMigrationProcess();
+        SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask GetMigrationProcess();
         
         /// <summary>
         /// >> AutoLimits
@@ -40,7 +39,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If set to None, then no automatic migration happens.
         /// </summary>
-        BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> GetAutoLimits();
+        Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> GetAutoLimits();
         
         /// <summary>
         /// >> SignedMigrationMaxLimits
@@ -48,7 +47,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If not set, no signed submission is allowed.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits GetSignedMigrationMaxLimits();
+        SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits GetSignedMigrationMaxLimits();
     }
     
     /// <summary>
@@ -60,32 +59,32 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _migrationProcessTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask> _migrationProcessTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask> _migrationProcessTypedStorage;
         
         /// <summary>
         /// _autoLimitsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>> _autoLimitsTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>> _autoLimitsTypedStorage;
         
         /// <summary>
         /// _signedMigrationMaxLimitsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> _signedMigrationMaxLimitsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> _signedMigrationMaxLimitsTypedStorage;
         
         /// <summary>
         /// StateTrieMigrationStorage constructor.
         /// </summary>
-        public StateTrieMigrationStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public StateTrieMigrationStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.MigrationProcessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask>("StateTrieMigration.MigrationProcess", storageDataProvider, storageChangeDelegate);
-            this.AutoLimitsTypedStorage = new TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>>("StateTrieMigration.AutoLimits", storageDataProvider, storageChangeDelegate);
-            this.SignedMigrationMaxLimitsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>("StateTrieMigration.SignedMigrationMaxLimits", storageDataProvider, storageChangeDelegate);
+            this.MigrationProcessTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask>("StateTrieMigration.MigrationProcess", storageDataProvider, storageChangeDelegates);
+            this.AutoLimitsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>>("StateTrieMigration.AutoLimits", storageDataProvider, storageChangeDelegates);
+            this.SignedMigrationMaxLimitsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>("StateTrieMigration.SignedMigrationMaxLimits", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _migrationProcessTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask> MigrationProcessTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask> MigrationProcessTypedStorage
         {
             get
             {
@@ -100,7 +99,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _autoLimitsTypedStorage property
         /// </summary>
-        public TypedStorage<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits>> AutoLimitsTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>> AutoLimitsTypedStorage
         {
             get
             {
@@ -115,7 +114,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _signedMigrationMaxLimitsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> SignedMigrationMaxLimitsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> SignedMigrationMaxLimitsTypedStorage
         {
             get
             {
@@ -153,7 +152,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  This stores the snapshot of the last migrated keys. It can be set into motion and move
         ///  forward by any of the means provided by this pallet.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationTask GetMigrationProcess()
+        public SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask GetMigrationProcess()
         {
             return MigrationProcessTypedStorage.Get();
         }
@@ -173,7 +172,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If set to None, then no automatic migration happens.
         /// </summary>
-        public BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits> GetAutoLimits()
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits> GetAutoLimits()
         {
             return AutoLimitsTypedStorage.Get();
         }
@@ -193,7 +192,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  If not set, no signed submission is allowed.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration.MigrationLimits GetSignedMigrationMaxLimits()
+        public SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits GetSignedMigrationMaxLimits()
         {
             return SignedMigrationMaxLimitsTypedStorage.Get();
         }

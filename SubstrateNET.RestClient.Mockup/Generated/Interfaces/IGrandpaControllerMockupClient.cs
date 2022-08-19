@@ -11,7 +11,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletGrandpa;
+   using SubstrateNET.NetApi.Generated.Model.pallet_grandpa;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
    

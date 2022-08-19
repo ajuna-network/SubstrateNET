@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.Base;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpStaking;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -32,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Reports
         ///  The primary structure that holds all offence records keyed by report identifiers.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails GetReports(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails GetReports(string key);
         
         /// <summary>
         /// >> ConcurrentReportsIndex
         ///  A vector of reports of the same kind that happened at the same time slot.
         /// </summary>
-        BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> GetConcurrentReportsIndex(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> GetConcurrentReportsIndex(string key);
         
         /// <summary>
         /// >> ReportsByKindIndex
@@ -49,7 +45,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Note that the actual type of this mapping is `Vec<u8>`, this is because values of
         ///  different types are not supported at the moment so we are doing the manual serialization.
         /// </summary>
-        BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReportsByKindIndex(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReportsByKindIndex(string key);
     }
     
     /// <summary>
@@ -61,32 +57,32 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _reportsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails> _reportsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails> _reportsTypedStorage;
         
         /// <summary>
         /// _concurrentReportsIndexTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>> _concurrentReportsIndexTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>> _concurrentReportsIndexTypedStorage;
         
         /// <summary>
         /// _reportsByKindIndexTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _reportsByKindIndexTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _reportsByKindIndexTypedStorage;
         
         /// <summary>
         /// OffencesStorage constructor.
         /// </summary>
-        public OffencesStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public OffencesStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ReportsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails>("Offences.Reports", storageDataProvider, storageChangeDelegate);
-            this.ConcurrentReportsIndexTypedStorage = new TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>>("Offences.ConcurrentReportsIndex", storageDataProvider, storageChangeDelegate);
-            this.ReportsByKindIndexTypedStorage = new TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("Offences.ReportsByKindIndex", storageDataProvider, storageChangeDelegate);
+            this.ReportsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails>("Offences.Reports", storageDataProvider, storageChangeDelegates);
+            this.ConcurrentReportsIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>>("Offences.ConcurrentReportsIndex", storageDataProvider, storageChangeDelegates);
+            this.ReportsByKindIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("Offences.ReportsByKindIndex", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _reportsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails> ReportsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails> ReportsTypedStorage
         {
             get
             {
@@ -101,7 +97,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _concurrentReportsIndexTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>> ConcurrentReportsIndexTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>> ConcurrentReportsIndexTypedStorage
         {
             get
             {
@@ -116,7 +112,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _reportsByKindIndexTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ReportsByKindIndexTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ReportsByKindIndexTypedStorage
         {
             get
             {
@@ -151,13 +147,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Reports
         ///  The primary structure that holds all offence records keyed by report identifiers.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails GetReports(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails GetReports(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReportsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails result))
+            if (ReportsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails result))
             {
                 return result;
             }
@@ -180,13 +176,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ConcurrentReportsIndex
         ///  A vector of reports of the same kind that happened at the same time slot.
         /// </summary>
-        public BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> GetConcurrentReportsIndex(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> GetConcurrentReportsIndex(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ConcurrentReportsIndexTypedStorage.Dictionary.TryGetValue(key, out BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> result))
+            if (ConcurrentReportsIndexTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> result))
             {
                 return result;
             }
@@ -214,13 +210,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Note that the actual type of this mapping is `Vec<u8>`, this is because values of
         ///  different types are not supported at the moment so we are doing the manual serialization.
         /// </summary>
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReportsByKindIndex(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReportsByKindIndex(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReportsByKindIndexTypedStorage.Dictionary.TryGetValue(key, out BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
+            if (ReportsByKindIndexTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
             {
                 return result;
             }

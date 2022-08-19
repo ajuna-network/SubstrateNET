@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.FrameSupport;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ImOnlineControllerMockupClient : MockupBaseClient, IImOnlineControllerMockupClient
@@ -26,19 +26,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetHeartbeatAfter(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ImOnline/HeartbeatAfter", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.HeartbeatAfterParams());
+         return await SendMockupRequestAsync(_httpClient, "ImOnline/HeartbeatAfter", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.HeartbeatAfterParams());
       }
       public async Task<bool> SetKeys(WeakBoundedVecT4 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "ImOnline/Keys", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.KeysParams());
+         return await SendMockupRequestAsync(_httpClient, "ImOnline/Keys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.KeysParams());
       }
       public async Task<bool> SetReceivedHeartbeats(WrapperOpaque value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ImOnline/ReceivedHeartbeats", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.ReceivedHeartbeatsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ImOnline/ReceivedHeartbeats", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.ReceivedHeartbeatsParams(key));
       }
-      public async Task<bool> SetAuthoredBlocks(U32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SetAuthoredBlocks(U32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "ImOnline/AuthoredBlocks", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletImOnline.ImOnlineStorage.AuthoredBlocksParams(key));
+         return await SendMockupRequestAsync(_httpClient, "ImOnline/AuthoredBlocks", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.AuthoredBlocksParams(key));
       }
    }
 }

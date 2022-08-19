@@ -16,8 +16,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public class ReferendaControllerClientTest : ClientTestBase
    {
@@ -56,50 +56,50 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumInfo>(), this.GetTestValue4());
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.ReferendumInfo>(), this.GetTestValue4());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.ReferendumStatusT2 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendumStatusT2();
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.ReferendumStatusT2 result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.ReferendumStatusT2();
          result.Track = this.GetTestValueU16();
-         result.Origin = new SubstrateNET.NetApi.Generated.Model.NodeRuntime.EnumOriginCaller();
-         result.Origin.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.NodeRuntime.OriginCaller>(), this.GetTestValue5());
-         result.ProposalHash = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
+         result.Origin = new SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller();
+         result.Origin.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.node_runtime.OriginCaller>(), this.GetTestValue5());
+         result.ProposalHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
          result.ProposalHash = this.GetTestValue6();
-         result.Enactment = new SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumDispatchTime();
-         result.Enactment.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.FrameSupport.DispatchTime>(), this.GetTestValueU32());
+         result.Enactment = new SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime();
+         result.Enactment.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.DispatchTime>(), this.GetTestValueU32());
          result.Submitted = this.GetTestValueU32();
-         result.SubmissionDeposit = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit();
+         result.SubmissionDeposit = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit();
          result.SubmissionDeposit = this.GetTestValue7();
-         result.DecisionDeposit = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit>();
+         result.DecisionDeposit = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit>();
          result.DecisionDeposit.Create(this.GetTestValue9());
-         result.Deciding = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletReferenda.DecidingStatus>();
+         result.Deciding = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.DecidingStatus>();
          result.Deciding.Create(this.GetTestValue11());
-         result.Tally = new SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally();
+         result.Tally = new SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.Tally();
          result.Tally = this.GetTestValue12();
          result.InQueue = this.GetTestValueBool();
          result.Alarm = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>>();
          result.Alarm.Create(this.GetTestValue13());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin result;
-         result = new SubstrateNET.NetApi.Generated.Model.FrameSupport.EnumRawOrigin();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.FrameSupport.RawOrigin>(), this.GetTestValueBaseVoid());
+         SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin result;
+         result = new SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.RawOrigin>(), this.GetTestValueBaseVoid());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -135,20 +135,20 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit();
-         result.Who = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit();
+         result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Who = this.GetTestValue8();
          result.Amount = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -184,20 +184,20 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit GetTestValue9()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.Deposit();
-         result.Who = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit();
+         result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Who = this.GetTestValue10();
          result.Amount = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -233,19 +233,19 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletReferenda.DecidingStatus GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.DecidingStatus GetTestValue11()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.DecidingStatus result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletReferenda.DecidingStatus();
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.DecidingStatus result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.DecidingStatus();
          result.Since = this.GetTestValueU32();
          result.Confirming = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Confirming.Create(this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.Tally GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.Tally();
+         SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.Tally result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.Tally();
          result.BareAyes = this.GetTestValueU32();
          result.Ayes = this.GetTestValueU32();
          result.Nays = this.GetTestValueU32();
@@ -276,7 +276,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ReferendaControllerClient rpcClient = new ReferendaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo mockupValue = this.GetTestValue3();
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo mockupValue = this.GetTestValue3();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeReferendumInfoFor(mockupKey));
@@ -289,15 +289,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo rpcResult = await rpcClient.GetReferendumInfoFor(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo rpcResult = await rpcClient.GetReferendumInfoFor(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
                   this.GetTestValue17()});
@@ -321,7 +321,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ReferendaControllerClient rpcClient = new ReferendaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 mockupValue = this.GetTestValue16();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 mockupValue = this.GetTestValue16();
          Ajuna.NetApi.Model.Types.Primitive.U16 mockupKey = this.GetTestValueU16();
 
          Assert.IsTrue(await rpcClient.SubscribeTrackQueue(mockupKey));
@@ -334,7 +334,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 rpcResult = await rpcClient.GetTrackQueue(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

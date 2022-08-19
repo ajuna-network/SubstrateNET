@@ -10,8 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
-using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -29,12 +27,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> NextFeeMultiplier
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 GetNextFeeMultiplier();
+        SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 GetNextFeeMultiplier();
         
         /// <summary>
         /// >> StorageVersion
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases GetStorageVersion();
+        SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases GetStorageVersion();
     }
     
     /// <summary>
@@ -46,26 +44,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextFeeMultiplierTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128> _nextFeeMultiplierTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> _nextFeeMultiplierTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases> _storageVersionTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases> _storageVersionTypedStorage;
         
         /// <summary>
         /// TransactionPaymentStorage constructor.
         /// </summary>
-        public TransactionPaymentStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public TransactionPaymentStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.NextFeeMultiplierTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128>("TransactionPayment.NextFeeMultiplier", storageDataProvider, storageChangeDelegate);
-            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases>("TransactionPayment.StorageVersion", storageDataProvider, storageChangeDelegate);
+            this.NextFeeMultiplierTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>("TransactionPayment.NextFeeMultiplier", storageDataProvider, storageChangeDelegates);
+            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases>("TransactionPayment.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _nextFeeMultiplierTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128> NextFeeMultiplierTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> NextFeeMultiplierTypedStorage
         {
             get
             {
@@ -80,7 +78,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _storageVersionTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases> StorageVersionTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases> StorageVersionTypedStorage
         {
             get
             {
@@ -113,7 +111,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> NextFeeMultiplier
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128 GetNextFeeMultiplier()
+        public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 GetNextFeeMultiplier()
         {
             return NextFeeMultiplierTypedStorage.Get();
         }
@@ -130,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> StorageVersion
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases GetStorageVersion()
+        public SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases GetStorageVersion()
         {
             return StorageVersionTypedStorage.Get();
         }

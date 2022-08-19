@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletRankedCollective;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,7 +44,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MemberCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "MemberCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "MemberCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
         public IActionResult GetMemberCount(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetMemberCount(key));
@@ -59,8 +55,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current members of the collective.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "MembersParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "MembersParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetMembers(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetMembers(key));
@@ -72,7 +68,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("IdToIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "IdToIndexParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "IdToIndexParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetIdToIndex(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetIdToIndex(key));
@@ -84,8 +80,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  return `Some`, however a member's index is not guaranteed to remain unchanged over time.
         /// </summary>
         [HttpGet("IndexToId")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "IndexToIdParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "IndexToIdParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetIndexToId(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetIndexToId(key));
@@ -96,8 +92,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
         [HttpGet("Voting")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "VotingParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "VotingParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetVoting(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetVoting(key));
@@ -107,8 +103,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> VotingCleanup
         /// </summary>
         [HttpGet("VotingCleanup")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.RankedCollectiveStorage), "VotingCleanupParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "VotingCleanupParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetVotingCleanup(string key)
         {
             return this.Ok(_rankedCollectiveStorage.GetVotingCleanup(key));

@@ -10,8 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletRecovery;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Recoverable
         ///  The set of recoverable accounts and their recovery configuration.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig GetRecoverable(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig GetRecoverable(string key);
         
         /// <summary>
         /// >> ActiveRecoveries
@@ -39,7 +37,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  First account is the account to be recovered, and the second account
         ///  is the user trying to recover the account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery GetActiveRecoveries(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery GetActiveRecoveries(string key);
         
         /// <summary>
         /// >> Proxy
@@ -47,7 +45,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Map from the user who can access it to the recovered account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetProxy(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetProxy(string key);
     }
     
     /// <summary>
@@ -59,32 +57,32 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _recoverableTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig> _recoverableTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig> _recoverableTypedStorage;
         
         /// <summary>
         /// _activeRecoveriesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery> _activeRecoveriesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery> _activeRecoveriesTypedStorage;
         
         /// <summary>
         /// _proxyTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _proxyTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _proxyTypedStorage;
         
         /// <summary>
         /// RecoveryStorage constructor.
         /// </summary>
-        public RecoveryStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public RecoveryStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.RecoverableTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig>("Recovery.Recoverable", storageDataProvider, storageChangeDelegate);
-            this.ActiveRecoveriesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery>("Recovery.ActiveRecoveries", storageDataProvider, storageChangeDelegate);
-            this.ProxyTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("Recovery.Proxy", storageDataProvider, storageChangeDelegate);
+            this.RecoverableTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig>("Recovery.Recoverable", storageDataProvider, storageChangeDelegates);
+            this.ActiveRecoveriesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery>("Recovery.ActiveRecoveries", storageDataProvider, storageChangeDelegates);
+            this.ProxyTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Recovery.Proxy", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _recoverableTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig> RecoverableTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig> RecoverableTypedStorage
         {
             get
             {
@@ -99,7 +97,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _activeRecoveriesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery> ActiveRecoveriesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery> ActiveRecoveriesTypedStorage
         {
             get
             {
@@ -114,7 +112,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proxyTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> ProxyTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> ProxyTypedStorage
         {
             get
             {
@@ -149,13 +147,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Recoverable
         ///  The set of recoverable accounts and their recovery configuration.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig GetRecoverable(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig GetRecoverable(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (RecoverableTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletRecovery.RecoveryConfig result))
+            if (RecoverableTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_recovery.RecoveryConfig result))
             {
                 return result;
             }
@@ -181,13 +179,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  First account is the account to be recovered, and the second account
         ///  is the user trying to recover the account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery GetActiveRecoveries(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery GetActiveRecoveries(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ActiveRecoveriesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletRecovery.ActiveRecovery result))
+            if (ActiveRecoveriesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_recovery.ActiveRecovery result))
             {
                 return result;
             }
@@ -212,13 +210,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Map from the user who can access it to the recovered account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetProxy(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetProxy(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ProxyTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result))
+            if (ProxyTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result))
             {
                 return result;
             }

@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletGrandpa;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -44,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  State of the current authority set.
         /// </summary>
         [HttpGet("State")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "StateParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "StateParams")]
         public IActionResult GetState()
         {
             return this.Ok(_grandpaStorage.GetState());
@@ -56,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Pending change: (signaled at, scheduled change).
         /// </summary>
         [HttpGet("PendingChange")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "PendingChangeParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "PendingChangeParams")]
         public IActionResult GetPendingChange()
         {
             return this.Ok(_grandpaStorage.GetPendingChange());
@@ -69,7 +67,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("NextForced")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "NextForcedParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "NextForcedParams")]
         public IActionResult GetNextForced()
         {
             return this.Ok(_grandpaStorage.GetNextForced());
@@ -80,8 +78,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  `true` if we are currently stalled.
         /// </summary>
         [HttpGet("Stalled")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "StalledParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "StalledParams")]
         public IActionResult GetStalled()
         {
             return this.Ok(_grandpaStorage.GetStalled());
@@ -94,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CurrentSetId")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U64), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "CurrentSetIdParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "CurrentSetIdParams")]
         public IActionResult GetCurrentSetId()
         {
             return this.Ok(_grandpaStorage.GetCurrentSetId());
@@ -109,7 +107,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("SetIdSession")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletGrandpa.GrandpaStorage), "SetIdSessionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GrandpaStorage), "SetIdSessionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
         public IActionResult GetSetIdSession(string key)
         {
             return this.Ok(_grandpaStorage.GetSetIdSession(key));

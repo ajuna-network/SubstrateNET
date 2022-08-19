@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletVesting;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_vesting;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class VestingControllerMockupClient : MockupBaseClient, IVestingControllerMockupClient
@@ -23,13 +23,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetVesting(BoundedVecT26 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetVesting(BoundedVecT26 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Vesting/Vesting", value.Encode(), VestingStorage.VestingParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Vesting/Vesting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
       }
       public async Task<bool> SetStorageVersion(EnumReleases value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Vesting/StorageVersion", value.Encode(), VestingStorage.StorageVersionParams());
+         return await SendMockupRequestAsync(_httpClient, "Vesting/StorageVersion", value.Encode(), SubstrateNET.NetApi.Generated.Storage.VestingStorage.StorageVersionParams());
       }
    }
 }

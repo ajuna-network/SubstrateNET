@@ -11,12 +11,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletTips;
+   using SubstrateNET.NetApi.Generated.Model.pallet_tips;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITipsControllerMockupClient
    {
-      Task<bool> SetTips(OpenTip value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SetReasons(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<bool> SetTips(OpenTip value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetReasons(BaseVec<U8> value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

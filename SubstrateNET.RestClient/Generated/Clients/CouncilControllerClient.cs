@@ -12,12 +12,12 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletCollective;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class CouncilControllerClient : BaseClient, ICouncilControllerClient
@@ -37,21 +37,21 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Council.Proposals");
       }
-      public async Task<EnumNodeCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<EnumCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<EnumNodeCall>(_httpClient, "council/proposalof", SubstrateNET.NetApi.Generated.Model.PalletCouncil.CouncilStorage.ProposalOfParams(key));
+         return await SendRequestAsync<EnumCall>(_httpClient, "council/proposalof", SubstrateNET.NetApi.Generated.Storage.CouncilStorage.ProposalOfParams(key));
       }
-      public async Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Council.ProposalOf", SubstrateNET.NetApi.Generated.Model.PalletCouncil.CouncilStorage.ProposalOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Council.ProposalOf", SubstrateNET.NetApi.Generated.Storage.CouncilStorage.ProposalOfParams(key));
       }
-      public async Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<Votes>(_httpClient, "council/voting", SubstrateNET.NetApi.Generated.Model.PalletCouncil.CouncilStorage.VotingParams(key));
+         return await SendRequestAsync<Votes>(_httpClient, "council/voting", SubstrateNET.NetApi.Generated.Storage.CouncilStorage.VotingParams(key));
       }
-      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Council.Voting", SubstrateNET.NetApi.Generated.Model.PalletCouncil.CouncilStorage.VotingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Council.Voting", SubstrateNET.NetApi.Generated.Storage.CouncilStorage.VotingParams(key));
       }
       public async Task<U32> GetProposalCount()
       {

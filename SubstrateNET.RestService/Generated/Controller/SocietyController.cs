@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletSociety;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The first member.
         /// </summary>
         [HttpGet("Founder")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "FounderParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "FounderParams")]
         public IActionResult GetFounder()
         {
             return this.Ok(_societyStorage.GetFounder());
@@ -59,8 +55,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  only by the founder.
         /// </summary>
         [HttpGet("Rules")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "RulesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "RulesParams")]
         public IActionResult GetRules()
         {
             return this.Ok(_societyStorage.GetRules());
@@ -71,8 +67,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of candidates; bidders that are attempting to become members.
         /// </summary>
         [HttpGet("Candidates")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "CandidatesParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "CandidatesParams")]
         public IActionResult GetCandidates()
         {
             return this.Ok(_societyStorage.GetCandidates());
@@ -83,8 +79,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The set of suspended candidates.
         /// </summary>
         [HttpGet("SuspendedCandidates")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumBidKind>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "SuspendedCandidatesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumBidKind>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "SuspendedCandidatesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetSuspendedCandidates(string key)
         {
             return this.Ok(_societyStorage.GetSuspendedCandidates(key));
@@ -96,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Pot")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "PotParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "PotParams")]
         public IActionResult GetPot()
         {
             return this.Ok(_societyStorage.GetPot());
@@ -107,8 +103,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The most primary from the most recently approved members.
         /// </summary>
         [HttpGet("Head")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "HeadParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "HeadParams")]
         public IActionResult GetHead()
         {
             return this.Ok(_societyStorage.GetHead());
@@ -119,8 +115,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of members, ordered.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "MembersParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "MembersParams")]
         public IActionResult GetMembers()
         {
             return this.Ok(_societyStorage.GetMembers());
@@ -132,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("SuspendedMembers")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "SuspendedMembersParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "SuspendedMembersParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetSuspendedMembers(string key)
         {
             return this.Ok(_societyStorage.GetSuspendedMembers(key));
@@ -143,8 +139,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current bids, stored ordered by the value of the bid.
         /// </summary>
         [HttpGet("Bids")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletSociety.Bid>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "BidsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_society.Bid>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "BidsParams")]
         public IActionResult GetBids()
         {
             return this.Ok(_societyStorage.GetBids());
@@ -155,8 +151,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Members currently vouching or banned from vouching again
         /// </summary>
         [HttpGet("Vouching")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVouchingStatus), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "VouchingParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVouchingStatus), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "VouchingParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetVouching(string key)
         {
             return this.Ok(_societyStorage.GetVouching(key));
@@ -167,8 +163,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Pending payouts; ordered by block number, with the amount that should be paid out.
         /// </summary>
         [HttpGet("Payouts")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U128>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "PayoutsParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "PayoutsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetPayouts(string key)
         {
             return this.Ok(_societyStorage.GetPayouts(key));
@@ -180,7 +176,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Strikes")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "StrikesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "StrikesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetStrikes(string key)
         {
             return this.Ok(_societyStorage.GetStrikes(key));
@@ -191,8 +187,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Double map from Candidate -> Voter -> (Maybe) Vote.
         /// </summary>
         [HttpGet("Votes")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "VotesParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "VotesParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>))]
         public IActionResult GetVotes(string key)
         {
             return this.Ok(_societyStorage.GetVotes(key));
@@ -203,8 +199,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The defending member currently being challenged.
         /// </summary>
         [HttpGet("Defender")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "DefenderParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "DefenderParams")]
         public IActionResult GetDefender()
         {
             return this.Ok(_societyStorage.GetDefender());
@@ -215,8 +211,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Votes for the defender.
         /// </summary>
         [HttpGet("DefenderVotes")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.EnumVote), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "DefenderVotesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_society.EnumVote), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "DefenderVotesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetDefenderVotes(string key)
         {
             return this.Ok(_societyStorage.GetDefenderVotes(key));
@@ -228,7 +224,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("MaxMembers")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSociety.SocietyStorage), "MaxMembersParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SocietyStorage), "MaxMembersParams")]
         public IActionResult GetMaxMembers()
         {
             return this.Ok(_societyStorage.GetMaxMembers());

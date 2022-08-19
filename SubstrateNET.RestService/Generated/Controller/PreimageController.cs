@@ -10,9 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletPreimage;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The request status of a given hash.
         /// </summary>
         [HttpGet("StatusFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletPreimage.PreimageStorage), "StatusForParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.PreimageStorage), "StatusForParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetStatusFor(string key)
         {
             return this.Ok(_preimageStorage.GetStatusFor(key));
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The preimages stored by this pallet.
         /// </summary>
         [HttpGet("PreimageFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletPreimage.PreimageStorage), "PreimageForParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.PreimageStorage), "PreimageForParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetPreimageFor(string key)
         {
             return this.Ok(_preimageStorage.GetPreimageFor(key));

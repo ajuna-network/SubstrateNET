@@ -12,9 +12,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletContracts;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ContractsControllerMockupClient : MockupBaseClient, IContractsControllerMockupClient
@@ -24,29 +25,29 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/PristineCode", value.Encode(), ContractsStorage.PristineCodeParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Contracts/PristineCode", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
       }
-      public async Task<bool> SetCodeStorage(PrefabWasmModule value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetCodeStorage(PrefabWasmModule value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/CodeStorage", value.Encode(), ContractsStorage.CodeStorageParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Contracts/CodeStorage", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.CodeStorageParams(key));
       }
-      public async Task<bool> SetOwnerInfoOf(OwnerInfo value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetOwnerInfoOf(OwnerInfo value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/OwnerInfoOf", value.Encode(), ContractsStorage.OwnerInfoOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Contracts/OwnerInfoOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.OwnerInfoOfParams(key));
       }
       public async Task<bool> SetNonce(U64 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/Nonce", value.Encode(), ContractsStorage.NonceParams());
+         return await SendMockupRequestAsync(_httpClient, "Contracts/Nonce", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.NonceParams());
       }
-      public async Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/ContractInfoOf", value.Encode(), ContractsStorage.ContractInfoOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Contracts/ContractInfoOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
       public async Task<bool> SetDeletionQueue(BoundedVecT20 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Contracts/DeletionQueue", value.Encode(), ContractsStorage.DeletionQueueParams());
+         return await SendMockupRequestAsync(_httpClient, "Contracts/DeletionQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.DeletionQueueParams());
       }
    }
 }

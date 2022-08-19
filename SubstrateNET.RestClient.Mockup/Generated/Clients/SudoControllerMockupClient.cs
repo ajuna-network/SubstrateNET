@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class SudoControllerMockupClient : MockupBaseClient, ISudoControllerMockupClient
@@ -24,7 +24,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetKey(AccountId32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Sudo/Key", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletSudo.SudoStorage.KeyParams());
+         return await SendMockupRequestAsync(_httpClient, "Sudo/Key", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SudoStorage.KeyParams());
       }
    }
 }

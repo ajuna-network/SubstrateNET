@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,7 +30,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Nodes store links forward and back within their respective bags.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node GetListNodes(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node GetListNodes(string key);
         
         /// <summary>
         /// >> CounterForListNodes
@@ -47,7 +44,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Stores a `Bag` struct, which stores head and tail pointers to itself.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag GetListBags(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag GetListBags(string key);
     }
     
     /// <summary>
@@ -59,7 +56,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _listNodesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node> _listNodesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node> _listNodesTypedStorage;
         
         /// <summary>
         /// _counterForListNodesTypedStorage typed storage field
@@ -69,22 +66,22 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _listBagsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag> _listBagsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag> _listBagsTypedStorage;
         
         /// <summary>
         /// BagsListStorage constructor.
         /// </summary>
-        public BagsListStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public BagsListStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ListNodesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node>("BagsList.ListNodes", storageDataProvider, storageChangeDelegate);
-            this.CounterForListNodesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("BagsList.CounterForListNodes", storageDataProvider, storageChangeDelegate);
-            this.ListBagsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag>("BagsList.ListBags", storageDataProvider, storageChangeDelegate);
+            this.ListNodesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node>("BagsList.ListNodes", storageDataProvider, storageChangeDelegates);
+            this.CounterForListNodesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("BagsList.CounterForListNodes", storageDataProvider, storageChangeDelegates);
+            this.ListBagsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag>("BagsList.ListBags", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _listNodesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node> ListNodesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node> ListNodesTypedStorage
         {
             get
             {
@@ -114,7 +111,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _listBagsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag> ListBagsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag> ListBagsTypedStorage
         {
             get
             {
@@ -151,13 +148,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Nodes store links forward and back within their respective bags.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node GetListNodes(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node GetListNodes(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ListNodesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node result))
+            if (ListNodesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node result))
             {
                 return result;
             }
@@ -200,13 +197,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  Stores a `Bag` struct, which stores head and tail pointers to itself.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag GetListBags(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag GetListBags(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ListBagsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag result))
+            if (ListBagsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag result))
             {
                 return result;
             }

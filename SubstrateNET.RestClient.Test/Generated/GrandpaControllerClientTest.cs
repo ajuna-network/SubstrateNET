@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.PalletGrandpa;
+   using SubstrateNET.NetApi.Generated.Model.pallet_grandpa;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
    
@@ -27,11 +27,11 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredState>(), this.GetTestValueBaseVoid());
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredState>(), this.GetTestValueBaseVoid());
          return result;
       }
       [Test()]
@@ -45,7 +45,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GrandpaControllerClient rpcClient = new GrandpaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeState());
@@ -58,52 +58,52 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.EnumStoredState rpcResult = await rpcClient.GetState();
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.EnumStoredState rpcResult = await rpcClient.GetState();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange();
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange();
          result.ScheduledAt = this.GetTestValueU32();
          result.Delay = this.GetTestValueU32();
-         result.NextAuthorities = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3();
+         result.NextAuthorities = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3();
          result.NextAuthorities = this.GetTestValue5();
          result.Forced = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Forced.Create(this.GetTestValueU32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT3();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
                   this.GetTestValue6()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue6()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue6()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
          result.Create(this.GetTestValue7(), this.GetTestValueU64());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpFinalityGrandpa.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
+         SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.ed25519.Public();
          result.Value = this.GetTestValue8();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.ed25519.Public GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.ed25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.ed25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -150,7 +150,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          GrandpaControllerClient rpcClient = new GrandpaControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange mockupValue = this.GetTestValue4();
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange mockupValue = this.GetTestValue4();
 
 
          Assert.IsTrue(await rpcClient.SubscribePendingChange());
@@ -163,7 +163,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletGrandpa.StoredPendingChange rpcResult = await rpcClient.GetPendingChange();
+         SubstrateNET.NetApi.Generated.Model.pallet_grandpa.StoredPendingChange rpcResult = await rpcClient.GetPendingChange();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

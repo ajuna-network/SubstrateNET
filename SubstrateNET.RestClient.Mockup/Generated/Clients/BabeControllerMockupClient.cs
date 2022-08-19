@@ -13,11 +13,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-   using SubstrateNET.NetApi.Generated.Model.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
+   using SubstrateNET.NetApi.Generated.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class BabeControllerMockupClient : MockupBaseClient, IBabeControllerMockupClient
@@ -29,67 +31,67 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetEpochIndex(U64 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/EpochIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.EpochIndexParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/EpochIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.EpochIndexParams());
       }
       public async Task<bool> SetAuthorities(WeakBoundedVecT1 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/Authorities", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.AuthoritiesParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/Authorities", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.AuthoritiesParams());
       }
       public async Task<bool> SetGenesisSlot(Slot value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/GenesisSlot", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.GenesisSlotParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/GenesisSlot", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.GenesisSlotParams());
       }
       public async Task<bool> SetCurrentSlot(Slot value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/CurrentSlot", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.CurrentSlotParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/CurrentSlot", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.CurrentSlotParams());
       }
       public async Task<bool> SetRandomness(Arr32U8 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/Randomness", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.RandomnessParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/Randomness", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.RandomnessParams());
       }
       public async Task<bool> SetPendingEpochConfigChange(EnumNextConfigDescriptor value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/PendingEpochConfigChange", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.PendingEpochConfigChangeParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/PendingEpochConfigChange", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.PendingEpochConfigChangeParams());
       }
       public async Task<bool> SetNextRandomness(Arr32U8 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/NextRandomness", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.NextRandomnessParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/NextRandomness", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.NextRandomnessParams());
       }
       public async Task<bool> SetNextAuthorities(WeakBoundedVecT1 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/NextAuthorities", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.NextAuthoritiesParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/NextAuthorities", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.NextAuthoritiesParams());
       }
       public async Task<bool> SetSegmentIndex(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/SegmentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.SegmentIndexParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/SegmentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.SegmentIndexParams());
       }
       public async Task<bool> SetUnderConstruction(BoundedVecT8 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/UnderConstruction", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Babe/UnderConstruction", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.UnderConstructionParams(key));
       }
       public async Task<bool> SetInitialized(BaseOpt<EnumPreDigest> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/Initialized", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.InitializedParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/Initialized", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.InitializedParams());
       }
       public async Task<bool> SetAuthorVrfRandomness(BaseOpt<Arr32U8> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/AuthorVrfRandomness", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.AuthorVrfRandomnessParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/AuthorVrfRandomness", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.AuthorVrfRandomnessParams());
       }
       public async Task<bool> SetEpochStart(BaseTuple<U32, U32> value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/EpochStart", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.EpochStartParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/EpochStart", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.EpochStartParams());
       }
       public async Task<bool> SetLateness(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/Lateness", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.LatenessParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/Lateness", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.LatenessParams());
       }
       public async Task<bool> SetEpochConfig(BabeEpochConfiguration value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/EpochConfig", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.EpochConfigParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/EpochConfig", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.EpochConfigParams());
       }
       public async Task<bool> SetNextEpochConfig(BabeEpochConfiguration value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Babe/NextEpochConfig", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.NextEpochConfigParams());
+         return await SendMockupRequestAsync(_httpClient, "Babe/NextEpochConfig", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.NextEpochConfigParams());
       }
    }
 }

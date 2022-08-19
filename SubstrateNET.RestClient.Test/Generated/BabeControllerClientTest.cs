@@ -16,11 +16,13 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-   using SubstrateNET.NetApi.Generated.Model.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
+   using SubstrateNET.NetApi.Generated.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    
    public class BabeControllerClientTest : ClientTestBase
    {
@@ -59,35 +61,35 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
                   this.GetTestValue4()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue4()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue4()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
          result.Create(this.GetTestValue5(), this.GetTestValueU64());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
          result.Value = this.GetTestValue6();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -134,7 +136,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 mockupValue = this.GetTestValue3();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 mockupValue = this.GetTestValue3();
 
 
          Assert.IsTrue(await rpcClient.SubscribeAuthorities());
@@ -147,15 +149,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 rpcResult = await rpcClient.GetAuthorities();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 rpcResult = await rpcClient.GetAuthorities();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot();
          result.Value = this.GetTestValueU64();
          return result;
       }
@@ -170,7 +172,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot mockupValue = this.GetTestValue8();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot mockupValue = this.GetTestValue8();
 
 
          Assert.IsTrue(await rpcClient.SubscribeGenesisSlot());
@@ -183,15 +185,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot rpcResult = await rpcClient.GetGenesisSlot();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot rpcResult = await rpcClient.GetGenesisSlot();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot();
          result.Value = this.GetTestValueU64();
          return result;
       }
@@ -206,7 +208,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot mockupValue = this.GetTestValue10();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot mockupValue = this.GetTestValue10();
 
 
          Assert.IsTrue(await rpcClient.SubscribeCurrentSlot());
@@ -219,15 +221,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot rpcResult = await rpcClient.GetCurrentSlot();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.Slot rpcResult = await rpcClient.GetCurrentSlot();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetTestValue12()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -274,7 +276,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 mockupValue = this.GetTestValue12();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 mockupValue = this.GetTestValue12();
 
 
          Assert.IsTrue(await rpcClient.SubscribeRandomness());
@@ -287,37 +289,16 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 rpcResult = await rpcClient.GetRandomness();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 rpcResult = await rpcClient.GetRandomness();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor GetTestValue14()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.NextConfigDescriptor>(), this.GetTestValue15());
-         return result;
-      }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>, SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots> GetTestValue15()
-      {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>, SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>, SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots>();
-         result.Create(this.GetTestValue16(), this.GetTestValue17());
-         return result;
-      }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue16()
-      {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>();
-         result.Create(this.GetTestValueU64(), this.GetTestValueU64());
-         return result;
-      }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots GetTestValue17()
-      {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.AllowedSlots>());
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.NextConfigDescriptor>(), this.GetTestValueBaseVoid());
          return result;
       }
       [Test()]
@@ -331,7 +312,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor mockupValue = this.GetTestValue14();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor mockupValue = this.GetTestValue14();
 
 
          Assert.IsTrue(await rpcClient.SubscribePendingEpochConfigChange());
@@ -344,15 +325,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumNextConfigDescriptor rpcResult = await rpcClient.GetPendingEpochConfigChange();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor rpcResult = await rpcClient.GetPendingEpochConfigChange();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetTestValue19()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -399,7 +380,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 mockupValue = this.GetTestValue19();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 mockupValue = this.GetTestValue16();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextRandomness());
@@ -412,40 +393,40 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 rpcResult = await rpcClient.GetNextRandomness();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 rpcResult = await rpcClient.GetNextRandomness();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 GetTestValue21()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
-                  this.GetTestValue22()});
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>[] {
+                  this.GetTestValue19()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue22()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> GetTestValue19()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
-         result.Create(this.GetTestValue23(), this.GetTestValueU64());
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public, Ajuna.NetApi.Model.Types.Primitive.U64>();
+         result.Create(this.GetTestValue20(), this.GetTestValueU64());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public GetTestValue23()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public GetTestValue20()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = this.GetTestValue24();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = this.GetTestValue21();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.Public GetTestValue24()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public GetTestValue21()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.Public result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.Public();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.sr25519.Public();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -492,7 +473,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 mockupValue = this.GetTestValue21();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 mockupValue = this.GetTestValue18();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextAuthorities());
@@ -505,7 +486,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT1 rpcResult = await rpcClient.GetNextAuthorities();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1 rpcResult = await rpcClient.GetNextAuthorities();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -539,19 +520,19 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 GetTestValue27()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 GetTestValue24()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>();
-         result.Value.Create(new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8[] {
-                  this.GetTestValue28()});
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>();
+         result.Value.Create(new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8[] {
+                  this.GetTestValue25()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetTestValue28()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetTestValue25()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -598,7 +579,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 mockupValue = this.GetTestValue27();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 mockupValue = this.GetTestValue24();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeUnderConstruction(mockupKey));
@@ -611,139 +592,23 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT8 rpcResult = await rpcClient.GetUnderConstruction(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8 rpcResult = await rpcClient.GetUnderConstruction(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> GetTestValue30()
+      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> GetTestValue27()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest>();
-         result.Create(this.GetTestValue31());
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest>();
+         result.Create(this.GetTestValue28());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest GetTestValue28()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest();
-         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.PreDigest>(), this.GetTestValue32());
-         return result;
-      }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.PrimaryPreDigest GetTestValue32()
-      {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.PrimaryPreDigest result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.PrimaryPreDigest();
-         result.AuthorityIndex = this.GetTestValueU32();
-         result.Slot = new SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot();
-         result.Slot = this.GetTestValue33();
-         result.VrfOutput = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
-         result.VrfOutput.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8()});
-         result.VrfProof = new SubstrateNET.NetApi.Generated.Model.Base.Arr64U8();
-         result.VrfProof.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8(),
-                  this.GetTestValueU8()});
-         return result;
-      }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot GetTestValue33()
-      {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusSlots.Slot();
-         result.Value = this.GetTestValueU64();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest();
+         result.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.PreDigest>(), this.GetTestValueBaseVoid());
          return result;
       }
       [Test()]
@@ -757,7 +622,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> mockupValue = this.GetTestValue30();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> mockupValue = this.GetTestValue27();
 
 
          Assert.IsTrue(await rpcClient.SubscribeInitialized());
@@ -770,22 +635,22 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumPreDigest> rpcResult = await rpcClient.GetInitialized();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumPreDigest> rpcResult = await rpcClient.GetInitialized();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> GetTestValue35()
+      public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> GetTestValue30()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8>();
-         result.Create(this.GetTestValue36());
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>();
+         result.Create(this.GetTestValue31());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 GetTestValue36()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 GetTestValue31()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -832,7 +697,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> mockupValue = this.GetTestValue35();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> mockupValue = this.GetTestValue30();
 
 
          Assert.IsTrue(await rpcClient.SubscribeAuthorVrfRandomness());
@@ -845,12 +710,12 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> rpcResult = await rpcClient.GetAuthorVrfRandomness();
+         Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> rpcResult = await rpcClient.GetAuthorVrfRandomness();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue38()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue33()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>();
@@ -868,7 +733,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> mockupValue = this.GetTestValue38();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> mockupValue = this.GetTestValue33();
 
 
          Assert.IsTrue(await rpcClient.SubscribeEpochStart());
@@ -915,14 +780,14 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetTestValue41()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetTestValue36()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration();
          result.C = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>();
          result.C.Create(this.GetTestValueU64(), this.GetTestValueU64());
-         result.AllowedSlots = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots();
-         result.AllowedSlots.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.AllowedSlots>());
+         result.AllowedSlots = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.EnumAllowedSlots();
+         result.AllowedSlots.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.AllowedSlots>());
          return result;
       }
       [Test()]
@@ -936,7 +801,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration mockupValue = this.GetTestValue41();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration mockupValue = this.GetTestValue36();
 
 
          Assert.IsTrue(await rpcClient.SubscribeEpochConfig());
@@ -949,19 +814,19 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration rpcResult = await rpcClient.GetEpochConfig();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration rpcResult = await rpcClient.GetEpochConfig();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration GetTestValue43()
+      public SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration GetTestValue38()
       {
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration();
          result.C = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U64, Ajuna.NetApi.Model.Types.Primitive.U64>();
          result.C.Create(this.GetTestValueU64(), this.GetTestValueU64());
-         result.AllowedSlots = new SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.EnumAllowedSlots();
-         result.AllowedSlots.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.AllowedSlots>());
+         result.AllowedSlots = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.EnumAllowedSlots();
+         result.AllowedSlots.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.AllowedSlots>());
          return result;
       }
       [Test()]
@@ -975,7 +840,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BabeControllerClient rpcClient = new BabeControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration mockupValue = this.GetTestValue43();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration mockupValue = this.GetTestValue38();
 
 
          Assert.IsTrue(await rpcClient.SubscribeNextEpochConfig());
@@ -988,7 +853,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpConsensusBabe.BabeEpochConfiguration rpcResult = await rpcClient.GetNextEpochConfig();
+         SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.BabeEpochConfiguration rpcResult = await rpcClient.GetNextEpochConfig();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

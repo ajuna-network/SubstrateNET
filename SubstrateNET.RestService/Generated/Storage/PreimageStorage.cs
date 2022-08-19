@@ -10,9 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletPreimage;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> StatusFor
         ///  The request status of a given hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus GetStatusFor(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus GetStatusFor(string key);
         
         /// <summary>
         /// >> PreimageFor
         ///  The preimages stored by this pallet.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 GetPreimageFor(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 GetPreimageFor(string key);
     }
     
     /// <summary>
@@ -49,26 +46,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _statusForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus> _statusForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus> _statusForTypedStorage;
         
         /// <summary>
         /// _preimageForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27> _preimageForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27> _preimageForTypedStorage;
         
         /// <summary>
         /// PreimageStorage constructor.
         /// </summary>
-        public PreimageStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public PreimageStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.StatusForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus>("Preimage.StatusFor", storageDataProvider, storageChangeDelegate);
-            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegate);
+            this.StatusForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus>("Preimage.StatusFor", storageDataProvider, storageChangeDelegates);
+            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _statusForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus> StatusForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus> StatusForTypedStorage
         {
             get
             {
@@ -83,7 +80,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _preimageForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27> PreimageForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27> PreimageForTypedStorage
         {
             get
             {
@@ -117,13 +114,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> StatusFor
         ///  The request status of a given hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus GetStatusFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus GetStatusFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (StatusForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletPreimage.EnumRequestStatus result))
+            if (StatusForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus result))
             {
                 return result;
             }
@@ -146,13 +143,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PreimageFor
         ///  The preimages stored by this pallet.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 GetPreimageFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 GetPreimageFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT27 result))
+            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 result))
             {
                 return result;
             }

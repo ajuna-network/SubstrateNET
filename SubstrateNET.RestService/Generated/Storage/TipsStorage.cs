@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletTips;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,14 +30,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  This has the insecure enumerable hash function since the key itself is already
         ///  guaranteed to be a secure hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip GetTips(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip GetTips(string key);
         
         /// <summary>
         /// >> Reasons
         ///  Simple preimage lookup from the reason's hash to the original data. Again, has an
         ///  insecure enumerable hash since the key is guaranteed to be the result of a secure hash.
         /// </summary>
-        BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReasons(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReasons(string key);
     }
     
     /// <summary>
@@ -52,26 +49,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _tipsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip> _tipsTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip> _tipsTypedStorage;
         
         /// <summary>
         /// _reasonsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _reasonsTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> _reasonsTypedStorage;
         
         /// <summary>
         /// TipsStorage constructor.
         /// </summary>
-        public TipsStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public TipsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.TipsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip>("Tips.Tips", storageDataProvider, storageChangeDelegate);
-            this.ReasonsTypedStorage = new TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("Tips.Reasons", storageDataProvider, storageChangeDelegate);
+            this.TipsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip>("Tips.Tips", storageDataProvider, storageChangeDelegates);
+            this.ReasonsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>("Tips.Reasons", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _tipsTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip> TipsTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip> TipsTypedStorage
         {
             get
             {
@@ -86,7 +83,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _reasonsTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ReasonsTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> ReasonsTypedStorage
         {
             get
             {
@@ -122,13 +119,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  This has the insecure enumerable hash function since the key itself is already
         ///  guaranteed to be a secure hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip GetTips(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip GetTips(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (TipsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletTips.OpenTip result))
+            if (TipsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_tips.OpenTip result))
             {
                 return result;
             }
@@ -152,13 +149,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Simple preimage lookup from the reason's hash to the original data. Again, has an
         ///  insecure enumerable hash since the key is guaranteed to be the result of a secure hash.
         /// </summary>
-        public BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReasons(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> GetReasons(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReasonsTypedStorage.Dictionary.TryGetValue(key, out BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
+            if (ReasonsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> result))
             {
                 return result;
             }

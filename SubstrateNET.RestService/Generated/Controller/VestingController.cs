@@ -10,9 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletVesting;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Information regarding the vesting of a given account.
         /// </summary>
         [HttpGet("Vesting")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT26), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingStorage), "VestingParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.VestingStorage), "VestingParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetVesting(string key)
         {
             return this.Ok(_vestingStorage.GetVesting(key));
@@ -59,8 +56,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  New networks start with latest version, as determined by the genesis build.
         /// </summary>
         [HttpGet("StorageVersion")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletVesting.EnumReleases), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletVesting.VestingStorage), "StorageVersionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.VestingStorage), "StorageVersionParams")]
         public IActionResult GetStorageVersion()
         {
             return this.Ok(_vestingStorage.GetStorageVersion());

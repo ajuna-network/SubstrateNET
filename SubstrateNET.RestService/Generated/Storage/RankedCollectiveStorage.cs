@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletRankedCollective;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,7 +35,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current members of the collective.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord GetMembers(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord GetMembers(string key);
         
         /// <summary>
         /// >> IdToIndex
@@ -52,18 +48,18 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The members in the collective by index. All indices in the range `0..MemberCount` will
         ///  return `Some`, however a member's index is not guaranteed to remain unchanged over time.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetIndexToId(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetIndexToId(string key);
         
         /// <summary>
         /// >> Voting
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord GetVoting(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord GetVoting(string key);
         
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45 GetVotingCleanup(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 GetVotingCleanup(string key);
     }
     
     /// <summary>
@@ -80,7 +76,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord> _membersTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord> _membersTypedStorage;
         
         /// <summary>
         /// _idToIndexTypedStorage typed storage field
@@ -90,29 +86,29 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _indexToIdTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> _indexToIdTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _indexToIdTypedStorage;
         
         /// <summary>
         /// _votingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord> _votingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord> _votingTypedStorage;
         
         /// <summary>
         /// _votingCleanupTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45> _votingCleanupTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45> _votingCleanupTypedStorage;
         
         /// <summary>
         /// RankedCollectiveStorage constructor.
         /// </summary>
-        public RankedCollectiveStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public RankedCollectiveStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.MemberCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedCollective.MemberCount", storageDataProvider, storageChangeDelegate);
-            this.MembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord>("RankedCollective.Members", storageDataProvider, storageChangeDelegate);
-            this.IdToIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedCollective.IdToIndex", storageDataProvider, storageChangeDelegate);
-            this.IndexToIdTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>("RankedCollective.IndexToId", storageDataProvider, storageChangeDelegate);
-            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord>("RankedCollective.Voting", storageDataProvider, storageChangeDelegate);
-            this.VotingCleanupTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45>("RankedCollective.VotingCleanup", storageDataProvider, storageChangeDelegate);
+            this.MemberCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedCollective.MemberCount", storageDataProvider, storageChangeDelegates);
+            this.MembersTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord>("RankedCollective.Members", storageDataProvider, storageChangeDelegates);
+            this.IdToIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedCollective.IdToIndex", storageDataProvider, storageChangeDelegates);
+            this.IndexToIdTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("RankedCollective.IndexToId", storageDataProvider, storageChangeDelegates);
+            this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord>("RankedCollective.Voting", storageDataProvider, storageChangeDelegates);
+            this.VotingCleanupTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45>("RankedCollective.VotingCleanup", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -133,7 +129,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _membersTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord> MembersTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord> MembersTypedStorage
         {
             get
             {
@@ -163,7 +159,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _indexToIdTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> IndexToIdTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> IndexToIdTypedStorage
         {
             get
             {
@@ -178,7 +174,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord> VotingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord> VotingTypedStorage
         {
             get
             {
@@ -193,7 +189,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingCleanupTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45> VotingCleanupTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45> VotingCleanupTypedStorage
         {
             get
             {
@@ -261,13 +257,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Members
         ///  The current members of the collective.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord GetMembers(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord GetMembers(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.MemberRecord result))
+            if (MembersTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.MemberRecord result))
             {
                 return result;
             }
@@ -320,13 +316,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The members in the collective by index. All indices in the range `0..MemberCount` will
         ///  return `Some`, however a member's index is not guaranteed to remain unchanged over time.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetIndexToId(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetIndexToId(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (IndexToIdTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result))
+            if (IndexToIdTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result))
             {
                 return result;
             }
@@ -349,13 +345,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Voting
         ///  Votes on a given proposal, if it is ongoing.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord GetVoting(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord GetVoting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PalletRankedCollective.EnumVoteRecord result))
+            if (VotingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord result))
             {
                 return result;
             }
@@ -377,13 +373,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45 GetVotingCleanup(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 GetVotingCleanup(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingCleanupTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT45 result))
+            if (VotingCleanupTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 result))
             {
                 return result;
             }

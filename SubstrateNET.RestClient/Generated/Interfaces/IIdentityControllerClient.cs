@@ -11,18 +11,20 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
+   using SubstrateNET.NetApi.Generated.Model.pallet_identity.types;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface IIdentityControllerClient
    {
-      Task<Registration> GetIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeIdentityOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, EnumData>> GetSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeSuperOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, BoundedVecT23>> GetSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeSubsOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<Registration> GetIdentityOf(AccountId32 key);
+      Task<bool> SubscribeIdentityOf(AccountId32 key);
+      Task<BaseTuple<AccountId32, EnumData>> GetSuperOf(AccountId32 key);
+      Task<bool> SubscribeSuperOf(AccountId32 key);
+      Task<BaseTuple<U128, BoundedVecT23>> GetSubsOf(AccountId32 key);
+      Task<bool> SubscribeSubsOf(AccountId32 key);
       Task<BoundedVecT24> GetRegistrars();
       Task<bool> SubscribeRegistrars();
    }

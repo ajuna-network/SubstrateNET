@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -43,11 +43,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<H256> GetNodes(U64 key)
       {
-         return await SendRequestAsync<H256>(_httpClient, "mmr/nodes", SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage.NodesParams(key));
+         return await SendRequestAsync<H256>(_httpClient, "mmr/nodes", SubstrateNET.NetApi.Generated.Storage.MmrStorage.NodesParams(key));
       }
       public async Task<bool> SubscribeNodes(U64 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Mmr.Nodes", SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage.NodesParams(key));
+         return await _subscriptionClient.SubscribeAsync("Mmr.Nodes", SubstrateNET.NetApi.Generated.Storage.MmrStorage.NodesParams(key));
       }
    }
 }

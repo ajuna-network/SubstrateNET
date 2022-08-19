@@ -11,14 +11,15 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletTips;
+   using SubstrateNET.NetApi.Generated.Model.pallet_tips;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITipsControllerClient
    {
-      Task<OpenTip> GetTips(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeTips(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetReasons(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeReasons(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<OpenTip> GetTips(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeTips(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<BaseVec<U8>> GetReasons(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeReasons(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

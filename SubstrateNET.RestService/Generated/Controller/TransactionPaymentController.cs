@@ -10,8 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment;
-using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -43,8 +41,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> NextFeeMultiplier
         /// </summary>
         [HttpGet("NextFeeMultiplier")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpArithmetic.FixedU128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.TransactionPaymentStorage), "NextFeeMultiplierParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionPaymentStorage), "NextFeeMultiplierParams")]
         public IActionResult GetNextFeeMultiplier()
         {
             return this.Ok(_transactionPaymentStorage.GetNextFeeMultiplier());
@@ -54,8 +52,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> StorageVersion
         /// </summary>
         [HttpGet("StorageVersion")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.EnumReleases), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTransactionPayment.TransactionPaymentStorage), "StorageVersionParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionPaymentStorage), "StorageVersionParams")]
         public IActionResult GetStorageVersion()
         {
             return this.Ok(_transactionPaymentStorage.GetStorageVersion());

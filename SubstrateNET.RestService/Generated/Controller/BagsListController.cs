@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +44,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Nodes store links forward and back within their respective bags.
         /// </summary>
         [HttpGet("ListNodes")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletBagsList.Node), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBagsList.BagsListStorage), "ListNodesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Node), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BagsListStorage), "ListNodesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetListNodes(string key)
         {
             return this.Ok(_bagsListStorage.GetListNodes(key));
@@ -60,7 +57,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CounterForListNodes")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBagsList.BagsListStorage), "CounterForListNodesParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BagsListStorage), "CounterForListNodesParams")]
         public IActionResult GetCounterForListNodes()
         {
             return this.Ok(_bagsListStorage.GetCounterForListNodes());
@@ -73,8 +70,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Stores a `Bag` struct, which stores head and tail pointers to itself.
         /// </summary>
         [HttpGet("ListBags")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletBagsList.Bag), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletBagsList.BagsListStorage), "ListBagsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list.Bag), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BagsListStorage), "ListBagsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U64))]
         public IActionResult GetListBags(string key)
         {
             return this.Ok(_bagsListStorage.GetListBags(key));

@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletChildBounties;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ChildBountyCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage), "ChildBountyCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ChildBountyCountParams")]
         public IActionResult GetChildBountyCount()
         {
             return this.Ok(_childBountiesStorage.GetChildBountyCount());
@@ -59,7 +56,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ParentChildBounties")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage), "ParentChildBountiesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ParentChildBountiesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetParentChildBounties(string key)
         {
             return this.Ok(_childBountiesStorage.GetParentChildBounties(key));
@@ -70,8 +67,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Child bounties that have been added.
         /// </summary>
         [HttpGet("ChildBounties")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBounty), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage), "ChildBountiesParams", typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_child_bounties.ChildBounty), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ChildBountiesParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetChildBounties(string key)
         {
             return this.Ok(_childBountiesStorage.GetChildBounties(key));
@@ -82,8 +79,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The description of each child-bounty.
         /// </summary>
         [HttpGet("ChildBountyDescriptions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage), "ChildBountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ChildBountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetChildBountyDescriptions(string key)
         {
             return this.Ok(_childBountiesStorage.GetChildBountyDescriptions(key));
@@ -95,7 +92,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ChildrenCuratorFees")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletChildBounties.ChildBountiesStorage), "ChildrenCuratorFeesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ChildrenCuratorFeesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetChildrenCuratorFees(string key)
         {
             return this.Ok(_childBountiesStorage.GetChildrenCuratorFees(key));

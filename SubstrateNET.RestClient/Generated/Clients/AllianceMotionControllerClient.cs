@@ -12,12 +12,12 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletCollective;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class AllianceMotionControllerClient : BaseClient, IAllianceMotionControllerClient
@@ -37,21 +37,21 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("AllianceMotion.Proposals");
       }
-      public async Task<EnumNodeCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<EnumCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<EnumNodeCall>(_httpClient, "alliancemotion/proposalof", SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.ProposalOfParams(key));
+         return await SendRequestAsync<EnumCall>(_httpClient, "alliancemotion/proposalof", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
       }
-      public async Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("AllianceMotion.ProposalOf", SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.ProposalOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("AllianceMotion.ProposalOf", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
       }
-      public async Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<Votes>(_httpClient, "alliancemotion/voting", SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.VotingParams(key));
+         return await SendRequestAsync<Votes>(_httpClient, "alliancemotion/voting", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.VotingParams(key));
       }
-      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("AllianceMotion.Voting", SubstrateNET.NetApi.Generated.Model.PalletAllianceMotion.AllianceMotionStorage.VotingParams(key));
+         return await _subscriptionClient.SubscribeAsync("AllianceMotion.Voting", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.VotingParams(key));
       }
       public async Task<U32> GetProposalCount()
       {

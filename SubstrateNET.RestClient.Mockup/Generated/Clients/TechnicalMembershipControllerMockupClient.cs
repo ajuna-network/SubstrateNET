@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class TechnicalMembershipControllerMockupClient : MockupBaseClient, ITechnicalMembershipControllerMockupClient
@@ -25,11 +25,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetMembers(BoundedVecT15 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Members", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership.TechnicalMembershipStorage.MembersParams());
+         return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TechnicalMembershipStorage.MembersParams());
       }
       public async Task<bool> SetPrime(AccountId32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Prime", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTechnicalMembership.TechnicalMembershipStorage.PrimeParams());
+         return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Prime", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TechnicalMembershipStorage.PrimeParams());
       }
    }
 }

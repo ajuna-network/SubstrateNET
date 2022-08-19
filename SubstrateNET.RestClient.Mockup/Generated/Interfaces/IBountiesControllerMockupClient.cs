@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public interface IBountiesControllerMockupClient
    {

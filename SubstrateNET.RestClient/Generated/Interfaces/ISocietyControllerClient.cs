@@ -11,11 +11,11 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.pallet_society;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletSociety;
    
    public interface ISocietyControllerClient
    {

@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletReferenda;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ReferendumCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage), "ReferendumCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ReferendaStorage), "ReferendumCountParams")]
         public IActionResult GetReferendumCount()
         {
             return this.Ok(_referendaStorage.GetReferendumCount());
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Information concerning any given referendum.
         /// </summary>
         [HttpGet("ReferendumInfoFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.EnumReferendumInfo), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage), "ReferendumInfoForParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ReferendaStorage), "ReferendumInfoForParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetReferendumInfoFor(string key)
         {
             return this.Ok(_referendaStorage.GetReferendumInfoFor(key));
@@ -72,8 +69,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
         [HttpGet("TrackQueue")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT35), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage), "TrackQueueParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ReferendaStorage), "TrackQueueParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
         public IActionResult GetTrackQueue(string key)
         {
             return this.Ok(_referendaStorage.GetTrackQueue(key));
@@ -85,7 +82,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("DecidingCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletReferenda.ReferendaStorage), "DecidingCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ReferendaStorage), "DecidingCountParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
         public IActionResult GetDecidingCount(string key)
         {
             return this.Ok(_referendaStorage.GetDecidingCount(key));

@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletGilt;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class GiltControllerMockupClient : MockupBaseClient, IGiltControllerMockupClient
@@ -25,19 +25,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetQueueTotals(BoundedVecT32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Gilt/QueueTotals", value.Encode(), GiltStorage.QueueTotalsParams());
+         return await SendMockupRequestAsync(_httpClient, "Gilt/QueueTotals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueueTotalsParams());
       }
       public async Task<bool> SetQueues(BoundedVecT33 value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Gilt/Queues", value.Encode(), GiltStorage.QueuesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Gilt/Queues", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueuesParams(key));
       }
       public async Task<bool> SetActiveTotal(ActiveGiltsTotal value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Gilt/ActiveTotal", value.Encode(), GiltStorage.ActiveTotalParams());
+         return await SendMockupRequestAsync(_httpClient, "Gilt/ActiveTotal", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GiltStorage.ActiveTotalParams());
       }
       public async Task<bool> SetActive(ActiveGilt value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Gilt/Active", value.Encode(), GiltStorage.ActiveParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Gilt/Active", value.Encode(), SubstrateNET.NetApi.Generated.Storage.GiltStorage.ActiveParams(key));
       }
    }
 }

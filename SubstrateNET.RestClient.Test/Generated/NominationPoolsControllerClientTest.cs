@@ -16,8 +16,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletNominationPools;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public class NominationPoolsControllerClientTest : ClientTestBase
    {
@@ -172,46 +172,54 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember();
          result.PoolId = this.GetTestValueU32();
          result.Points = this.GetTestValueU128();
-         result.RewardPoolTotalEarnings = this.GetTestValueU128();
-         result.UnbondingEras = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2();
-         result.UnbondingEras = this.GetTestValue8();
+         result.LastRecordedRewardCounter = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128();
+         result.LastRecordedRewardCounter = this.GetTestValue8();
+         result.UnbondingEras = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT2();
+         result.UnbondingEras = this.GetTestValue9();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT2();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT3();
-         result.Value = this.GetTestValue9();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128();
+         result.Value = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT3 GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT2 GetTestValue9()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT3 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT3();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT2 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT2();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT3();
+         result.Value = this.GetTestValue10();
+         return result;
+      }
+      public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT3 GetTestValue10()
+      {
+         SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT3 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT3();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>[] {
-                  this.GetTestValue10()});
+                  this.GetTestValue11()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue10()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128> GetTestValue11()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Create(this.GetTestValueU32(), this.GetTestValueU128());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue12()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -258,8 +266,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember mockupValue = this.GetTestValue7();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue11();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue12();
 
          Assert.IsTrue(await rpcClient.SubscribePoolMembers(mockupKey));
 
@@ -271,7 +279,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolMember rpcResult = await rpcClient.GetPoolMembers(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolMember rpcResult = await rpcClient.GetPoolMembers(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -305,37 +313,37 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner GetTestValue14()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner GetTestValue15()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner();
          result.Points = this.GetTestValueU128();
-         result.State = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.EnumPoolState();
-         result.State.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolState>());
+         result.State = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumPoolState();
+         result.State.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolState>());
          result.MemberCounter = this.GetTestValueU32();
-         result.Roles = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolRoles();
-         result.Roles = this.GetTestValue15();
+         result.Roles = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolRoles();
+         result.Roles = this.GetTestValue16();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolRoles GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolRoles GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolRoles result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.PoolRoles();
-         result.Depositor = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Depositor = this.GetTestValue16();
-         result.Root = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.Root.Create(this.GetTestValue17());
-         result.Nominator = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.Nominator.Create(this.GetTestValue18());
-         result.StateToggler = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.StateToggler.Create(this.GetTestValue19());
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolRoles result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.PoolRoles();
+         result.Depositor = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Depositor = this.GetTestValue17();
+         result.Root = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.Root.Create(this.GetTestValue18());
+         result.Nominator = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.Nominator.Create(this.GetTestValue19());
+         result.StateToggler = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.StateToggler.Create(this.GetTestValue20());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue17()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -371,11 +379,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -411,11 +419,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue19()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -451,11 +459,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue19()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue20()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -502,7 +510,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner mockupValue = this.GetTestValue14();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner mockupValue = this.GetTestValue15();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeBondedPools(mockupKey));
@@ -515,7 +523,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.BondedPoolInner rpcResult = await rpcClient.GetBondedPools(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.BondedPoolInner rpcResult = await rpcClient.GetBondedPools(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -549,26 +557,21 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool GetTestValue22()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool GetTestValue23()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool();
-         result.Balance = this.GetTestValueU128();
-         result.TotalEarnings = this.GetTestValueU128();
-         result.Points = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.U256();
-         result.Points = this.GetTestValue23();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool();
+         result.LastRecordedRewardCounter = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128();
+         result.LastRecordedRewardCounter = this.GetTestValue24();
+         result.LastRecordedTotalPayouts = this.GetTestValueU128();
+         result.TotalRewardsClaimed = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.U256 GetTestValue23()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 GetTestValue24()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.U256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.U256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr4U64();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U64[] {
-                  this.GetTestValueU64(),
-                  this.GetTestValueU64(),
-                  this.GetTestValueU64(),
-                  this.GetTestValueU64()});
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128();
+         result.Value = this.GetTestValueU128();
          return result;
       }
       [Test()]
@@ -582,7 +585,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool mockupValue = this.GetTestValue22();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool mockupValue = this.GetTestValue23();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeRewardPools(mockupKey));
@@ -595,7 +598,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.RewardPool rpcResult = await rpcClient.GetRewardPools(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.RewardPool rpcResult = await rpcClient.GetRewardPools(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -629,52 +632,52 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools GetTestValue26()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools GetTestValue27()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools();
-         result.NoEra = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool();
-         result.NoEra = this.GetTestValue27();
-         result.WithEra = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3();
-         result.WithEra = this.GetTestValue28();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools();
+         result.NoEra = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool();
+         result.NoEra = this.GetTestValue28();
+         result.WithEra = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT3();
+         result.WithEra = this.GetTestValue29();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool GetTestValue27()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool GetTestValue28()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool();
          result.Points = this.GetTestValueU128();
          result.Balance = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 GetTestValue28()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT3 GetTestValue29()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedBTreeMapT3();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT4();
-         result.Value = this.GetTestValue29();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT3 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT3();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT4();
+         result.Value = this.GetTestValue30();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT4 GetTestValue29()
+      public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT4 GetTestValue30()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT4 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.BTreeMapT4();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool>[] {
-                  this.GetTestValue30()});
+         SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT4 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT4();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool>[] {
+                  this.GetTestValue31()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool> GetTestValue30()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool> GetTestValue31()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool>();
-         result.Create(this.GetTestValueU32(), this.GetTestValue31());
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool>();
+         result.Create(this.GetTestValueU32(), this.GetTestValue32());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool GetTestValue32()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletNominationPools.UnbondPool();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.UnbondPool();
          result.Points = this.GetTestValueU128();
          result.Balance = this.GetTestValueU128();
          return result;
@@ -690,7 +693,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools mockupValue = this.GetTestValue26();
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools mockupValue = this.GetTestValue27();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeSubPoolsStorage(mockupKey));
@@ -703,7 +706,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletNominationPools.SubPools rpcResult = await rpcClient.GetSubPoolsStorage(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools rpcResult = await rpcClient.GetSubPoolsStorage(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -737,10 +740,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 GetTestValue34()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 GetTestValue35()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -757,7 +760,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 mockupValue = this.GetTestValue34();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 mockupValue = this.GetTestValue35();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeMetadata(mockupKey));
@@ -770,7 +773,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT43 rpcResult = await rpcClient.GetMetadata(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 rpcResult = await rpcClient.GetMetadata(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -833,11 +836,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue38()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue39()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -885,7 +888,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          NominationPoolsControllerClient rpcClient = new NominationPoolsControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 mockupKey = this.GetTestValue38();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue39();
 
          Assert.IsTrue(await rpcClient.SubscribeReversePoolIdLookup(mockupKey));
 

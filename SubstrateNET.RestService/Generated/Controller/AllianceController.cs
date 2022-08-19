@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletAlliance;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -49,8 +45,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Any founder has a special one-vote veto right to the rule setting.
         /// </summary>
         [HttpGet("Rule")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.Cid), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "RuleParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "RuleParams")]
         public IActionResult GetRule()
         {
             return this.Ok(_allianceStorage.GetRule());
@@ -61,8 +57,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current IPFS CIDs of any announcements.
         /// </summary>
         [HttpGet("Announcements")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT39), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "AnnouncementsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "AnnouncementsParams")]
         public IActionResult GetAnnouncements()
         {
             return this.Ok(_allianceStorage.GetAnnouncements());
@@ -74,7 +70,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("DepositOf")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U128), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "DepositOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "DepositOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetDepositOf(string key)
         {
             return this.Ok(_allianceStorage.GetDepositOf(key));
@@ -85,8 +81,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Maps member type to members of each type.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT40), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "MembersParams", typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.EnumMemberRole))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "MembersParams", typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole))]
         public IActionResult GetMembers(string key)
         {
             return this.Ok(_allianceStorage.GetMembers(key));
@@ -99,7 +95,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("UpForKicking")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "UpForKickingParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UpForKickingParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetUpForKicking(string key)
         {
             return this.Ok(_allianceStorage.GetUpForKicking(key));
@@ -111,8 +107,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  candidacy.
         /// </summary>
         [HttpGet("UnscrupulousAccounts")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT41), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "UnscrupulousAccountsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UnscrupulousAccountsParams")]
         public IActionResult GetUnscrupulousAccounts()
         {
             return this.Ok(_allianceStorage.GetUnscrupulousAccounts());
@@ -123,8 +119,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current list of websites deemed unscrupulous.
         /// </summary>
         [HttpGet("UnscrupulousWebsites")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT42), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAlliance.AllianceStorage), "UnscrupulousWebsitesParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UnscrupulousWebsitesParams")]
         public IActionResult GetUnscrupulousWebsites()
         {
             return this.Ok(_allianceStorage.GetUnscrupulousWebsites());

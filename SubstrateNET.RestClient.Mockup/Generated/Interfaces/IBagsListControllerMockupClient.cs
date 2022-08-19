@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IBagsListControllerMockupClient
    {
-      Task<bool> SetListNodes(Node value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<bool> SetListNodes(Node value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SetCounterForListNodes(U32 value);
       Task<bool> SetListBags(Bag value, U64 key);
    }

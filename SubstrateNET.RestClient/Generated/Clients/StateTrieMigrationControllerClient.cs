@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletStateTrieMigration;
+   using SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Generated.Interfaces;
    

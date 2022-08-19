@@ -22,9 +22,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetWhitelistedCall(BaseTuple value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetWhitelistedCall(BaseTuple value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Whitelist/WhitelistedCall", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage.WhitelistedCallParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Whitelist/WhitelistedCall", value.Encode(), SubstrateNET.NetApi.Generated.Storage.WhitelistStorage.WhitelistedCallParams(key));
       }
    }
 }

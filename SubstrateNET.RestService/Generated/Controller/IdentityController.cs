@@ -8,12 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletIdentity;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,8 +44,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
         [HttpGet("IdentityOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.Registration), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "IdentityOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_identity.types.Registration), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.IdentityStorage), "IdentityOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetIdentityOf(string key)
         {
             return this.Ok(_identityStorage.GetIdentityOf(key));
@@ -61,8 +57,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  context. If the account is not some other account's sub-identity, then just `None`.
         /// </summary>
         [HttpGet("SuperOf")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.PalletIdentity.EnumData>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "SuperOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumData>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.IdentityStorage), "SuperOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetSuperOf(string key)
         {
             return this.Ok(_identityStorage.GetSuperOf(key));
@@ -77,8 +73,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
         [HttpGet("SubsOf")]
-        [ProducesResponseType(typeof(BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128,SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT23>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "SubsOfParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.IdentityStorage), "SubsOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetSubsOf(string key)
         {
             return this.Ok(_identityStorage.GetSubsOf(key));
@@ -92,8 +88,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
         [HttpGet("Registrars")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT24), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletIdentity.IdentityStorage), "RegistrarsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.IdentityStorage), "RegistrarsParams")]
         public IActionResult GetRegistrars()
         {
             return this.Ok(_identityStorage.GetRegistrars());

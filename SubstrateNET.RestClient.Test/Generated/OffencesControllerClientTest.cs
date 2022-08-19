@@ -15,8 +15,10 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.SpStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_staking.offence;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public class OffencesControllerClientTest : ClientTestBase
    {
@@ -26,22 +28,22 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails();
-         result.Offender = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure>();
+         SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails();
+         result.Offender = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure>();
          result.Offender.Create(this.GetTestValue3(), this.GetTestValue4());
-         result.Reporters = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>();
-         result.Reporters.Create(new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32[] {
+         result.Reporters = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+         result.Reporters.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue7()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -77,34 +79,34 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletStaking.Exposure();
+         SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.Exposure();
          result.Total = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Total.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
          result.Own = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Own.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
-         result.Others = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PalletStaking.IndividualExposure>();
-         result.Others.Create(new SubstrateNET.NetApi.Generated.Model.PalletStaking.IndividualExposure[] {
+         result.Others = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.IndividualExposure>();
+         result.Others.Create(new SubstrateNET.NetApi.Generated.Model.pallet_staking.IndividualExposure[] {
                   this.GetTestValue5()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletStaking.IndividualExposure GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.pallet_staking.IndividualExposure GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletStaking.IndividualExposure result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletStaking.IndividualExposure();
-         result.Who = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         SubstrateNET.NetApi.Generated.Model.pallet_staking.IndividualExposure result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.IndividualExposure();
+         result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Who = this.GetTestValue6();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Value.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -140,11 +142,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue7()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue7()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -180,11 +182,11 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -231,8 +233,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          OffencesControllerClient rpcClient = new OffencesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails mockupValue = this.GetTestValue2();
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupKey = this.GetTestValue8();
+         SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupKey = this.GetTestValue8();
 
          Assert.IsTrue(await rpcClient.SubscribeReports(mockupKey));
 
@@ -244,24 +246,24 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpStaking.OffenceDetails rpcResult = await rpcClient.GetReports(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_staking.offence.OffenceDetails rpcResult = await rpcClient.GetReports(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> GetTestValue10()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> GetTestValue10()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>();
-         result.Create(new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>();
+         result.Create(new SubstrateNET.NetApi.Generated.Model.primitive_types.H256[] {
                   this.GetTestValue11()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue11()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue11()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -297,17 +299,17 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetTestValue12()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetTestValue12()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>();
          result.Create(this.GetTestValue13(), this.GetTestValue14());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 GetTestValue13()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr16U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr16U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -346,8 +348,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          OffencesControllerClient rpcClient = new OffencesControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> mockupValue = this.GetTestValue10();
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> mockupKey = this.GetTestValue12();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> mockupValue = this.GetTestValue10();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> mockupKey = this.GetTestValue12();
 
          Assert.IsTrue(await rpcClient.SubscribeConcurrentReportsIndex(mockupKey));
 
@@ -359,7 +361,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> rpcResult = await rpcClient.GetConcurrentReportsIndex(mockupKey);
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> rpcResult = await rpcClient.GetConcurrentReportsIndex(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -372,10 +374,10 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 GetTestValue17()
       {
-         SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 result;
-         result = new SubstrateNET.NetApi.Generated.Model.Base.Arr16U8();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.Arr16U8();
          result.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -407,7 +409,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Construct new RPC client to test with.
          OffencesControllerClient rpcClient = new OffencesControllerClient(_httpClient, subscriptionClient);
          Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> mockupValue = this.GetTestValue16();
-         SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 mockupKey = this.GetTestValue17();
+         SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 mockupKey = this.GetTestValue17();
 
          Assert.IsTrue(await rpcClient.SubscribeReportsByKindIndex(mockupKey));
 

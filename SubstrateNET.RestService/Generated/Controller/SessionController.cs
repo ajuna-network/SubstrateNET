@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -45,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of validators.
         /// </summary>
         [HttpGet("Validators")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "ValidatorsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "ValidatorsParams")]
         public IActionResult GetValidators()
         {
             return this.Ok(_sessionStorage.GetValidators());
@@ -58,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("CurrentIndex")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "CurrentIndexParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "CurrentIndexParams")]
         public IActionResult GetCurrentIndex()
         {
             return this.Ok(_sessionStorage.GetCurrentIndex());
@@ -71,7 +68,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("QueuedChanged")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "QueuedChangedParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "QueuedChangedParams")]
         public IActionResult GetQueuedChanged()
         {
             return this.Ok(_sessionStorage.GetQueuedChanged());
@@ -83,8 +80,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  will be used to determine the validator's session keys.
         /// </summary>
         [HttpGet("QueuedKeys")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "QueuedKeysParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "QueuedKeysParams")]
         public IActionResult GetQueuedKeys()
         {
             return this.Ok(_sessionStorage.GetQueuedKeys());
@@ -99,8 +96,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  a new set of identities.
         /// </summary>
         [HttpGet("DisabledValidators")]
-        [ProducesResponseType(typeof(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "DisabledValidatorsParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "DisabledValidatorsParams")]
         public IActionResult GetDisabledValidators()
         {
             return this.Ok(_sessionStorage.GetDisabledValidators());
@@ -111,8 +108,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The next session keys for a validator.
         /// </summary>
         [HttpGet("NextKeys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.NodeRuntime.SessionKeys), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "NextKeysParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "NextKeysParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetNextKeys(string key)
         {
             return this.Ok(_sessionStorage.GetNextKeys(key));
@@ -123,8 +120,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The owner of a key. The key is the `KeyTypeId` + the encoded key.
         /// </summary>
         [HttpGet("KeyOwner")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage), "KeyOwnerParams", typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.KeyTypeId,BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "KeyOwnerParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.KeyTypeId, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>))]
         public IActionResult GetKeyOwner(string key)
         {
             return this.Ok(_sessionStorage.GetKeyOwner(key));

@@ -16,8 +16,8 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    
    public class BountiesControllerClientTest : ClientTestBase
    {
@@ -56,25 +56,25 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty GetTestValue3()
+      public SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty GetTestValue3()
       {
-         SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty result;
-         result = new SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty();
-         result.Proposer = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
+         SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty result;
+         result = new SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty();
+         result.Proposer = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
          result.Proposer = this.GetTestValue4();
          result.Value = this.GetTestValueU128();
          result.Fee = this.GetTestValueU128();
          result.CuratorDeposit = this.GetTestValueU128();
          result.Bond = this.GetTestValueU128();
-         result.Status = new SubstrateNET.NetApi.Generated.Model.PalletBounties.EnumBountyStatus();
-         result.Status.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.PalletBounties.BountyStatus>(), this.GetTestValueBaseVoid());
+         result.Status = new SubstrateNET.NetApi.Generated.Model.pallet_bounties.EnumBountyStatus();
+         result.Status.Create(this.GetTestValueEnum<SubstrateNET.NetApi.Generated.Model.pallet_bounties.BountyStatus>(), this.GetTestValueBaseVoid());
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 GetTestValue4()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue4()
       {
-         SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -121,7 +121,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BountiesControllerClient rpcClient = new BountiesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty mockupValue = this.GetTestValue3();
+         SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty mockupValue = this.GetTestValue3();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeBounties(mockupKey));
@@ -134,15 +134,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PalletBounties.Bounty rpcResult = await rpcClient.GetBounties(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.pallet_bounties.Bounty rpcResult = await rpcClient.GetBounties(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30 GetTestValue6()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
@@ -159,7 +159,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BountiesControllerClient rpcClient = new BountiesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 mockupValue = this.GetTestValue6();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30 mockupValue = this.GetTestValue6();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeBountyDescriptions(mockupKey));
@@ -172,15 +172,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT30 rpcResult = await rpcClient.GetBountyDescriptions(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30 rpcResult = await rpcClient.GetBountyDescriptions(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 GetTestValue8()
       {
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 result;
-         result = new SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U32[] {
                   this.GetTestValueU32()});
@@ -197,7 +197,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          BountiesControllerClient rpcClient = new BountiesControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 mockupValue = this.GetTestValue8();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 mockupValue = this.GetTestValue8();
 
 
          Assert.IsTrue(await rpcClient.SubscribeBountyApprovals());
@@ -210,7 +210,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16 rpcResult = await rpcClient.GetBountyApprovals();
+         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 rpcResult = await rpcClient.GetBountyApprovals();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

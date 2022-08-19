@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,8 +43,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
         [HttpGet("Proxies")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT28,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage), "ProxiesParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ProxyStorage), "ProxiesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetProxies(string key)
         {
             return this.Ok(_proxyStorage.GetProxies(key));
@@ -58,8 +55,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The announcements made by the proxy (key).
         /// </summary>
         [HttpGet("Announcements")]
-        [ProducesResponseType(typeof(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT29,Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletProxy.ProxyStorage), "AnnouncementsParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ProxyStorage), "AnnouncementsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetAnnouncements(string key)
         {
             return this.Ok(_proxyStorage.GetAnnouncements(key));

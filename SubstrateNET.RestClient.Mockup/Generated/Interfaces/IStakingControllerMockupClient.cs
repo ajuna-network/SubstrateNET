@@ -13,9 +13,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
-   using SubstrateNET.NetApi.Generated.Model.SpArithmetic;
-   using SubstrateNET.NetApi.Generated.Model.PalletStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking;
+   using SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing;
    
    public interface IStakingControllerMockupClient
    {
@@ -53,7 +54,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetNominatorSlashInEra(U128 value, BaseTuple<U32, AccountId32> key);
       Task<bool> SetSlashingSpans(SlashingSpans value, AccountId32 key);
       Task<bool> SetSpanSlash(SpanRecord value, BaseTuple<AccountId32, U32> key);
-      Task<bool> SetEarliestUnappliedSlash(U32 value);
       Task<bool> SetCurrentPlannedSession(U32 value);
       Task<bool> SetOffendingValidators(BaseVec<BaseTuple<U32, Bool>> value);
       Task<bool> SetStorageVersion(EnumReleases value);

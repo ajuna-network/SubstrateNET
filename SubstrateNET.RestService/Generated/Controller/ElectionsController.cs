@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen;
-using SubstrateNET.NetApi.Generated.Model.SpCore;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,8 +44,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Invariant: Always sorted based on account id.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage), "MembersParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionsStorage), "MembersParams")]
         public IActionResult GetMembers()
         {
             return this.Ok(_electionsStorage.GetMembers());
@@ -62,8 +59,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  last (i.e. _best_) runner-up will be replaced.
         /// </summary>
         [HttpGet("RunnersUp")]
-        [ProducesResponseType(typeof(BaseVec<SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.SeatHolder>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage), "RunnersUpParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.SeatHolder>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionsStorage), "RunnersUpParams")]
         public IActionResult GetRunnersUp()
         {
             return this.Ok(_electionsStorage.GetRunnersUp());
@@ -79,8 +76,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Invariant: Always sorted based on account id.
         /// </summary>
         [HttpGet("Candidates")]
-        [ProducesResponseType(typeof(BaseVec<BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32,Ajuna.NetApi.Model.Types.Primitive.U128>>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage), "CandidatesParams")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionsStorage), "CandidatesParams")]
         public IActionResult GetCandidates()
         {
             return this.Ok(_electionsStorage.GetCandidates());
@@ -92,7 +89,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ElectionRounds")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage), "ElectionRoundsParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionsStorage), "ElectionRoundsParams")]
         public IActionResult GetElectionRounds()
         {
             return this.Ok(_electionsStorage.GetElectionRounds());
@@ -105,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: SAFE as `AccountId` is a crypto hash.
         /// </summary>
         [HttpGet("Voting")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletElectionsPhragmen.Voter), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletElections.ElectionsStorage), "VotingParams", typeof(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.Voter), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionsStorage), "VotingParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetVoting(string key)
         {
             return this.Ok(_electionsStorage.GetVoting(key));

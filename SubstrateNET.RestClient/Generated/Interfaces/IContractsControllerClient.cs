@@ -11,22 +11,23 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletContracts;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
    
    public interface IContractsControllerClient
    {
-      Task<BoundedVecT17> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<PrefabWasmModule> GetCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<OwnerInfo> GetOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
+      Task<BoundedVecT17> GetPristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<PrefabWasmModule> GetCodeStorage(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeCodeStorage(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<OwnerInfo> GetOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<U64> GetNonce();
       Task<bool> SubscribeNonce();
-      Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<BoundedVecT20> GetDeletionQueue();
       Task<bool> SubscribeDeletionQueue();
    }

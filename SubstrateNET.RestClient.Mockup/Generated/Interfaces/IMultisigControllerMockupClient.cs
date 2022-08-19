@@ -11,12 +11,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletMultisig;
+   using SubstrateNET.NetApi.Generated.Model.pallet_multisig;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IMultisigControllerMockupClient
    {
-      Task<bool> SetMultisigs(Multisig value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> key);
-      Task<bool> SetCalls(BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 key);
+      Task<bool> SetMultisigs(Multisig value, BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key);
+      Task<bool> SetCalls(BaseTuple<WrapperKeepOpaque, AccountId32, U128> value, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key);
    }
 }

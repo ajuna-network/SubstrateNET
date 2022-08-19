@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletBagsList;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IBagsListControllerClient
    {
-      Task<Node> GetListNodes(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
-      Task<bool> SubscribeListNodes(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key);
+      Task<Node> GetListNodes(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeListNodes(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<U32> GetCounterForListNodes();
       Task<bool> SubscribeCounterForListNodes();
       Task<Bag> GetListBags(U64 key);

@@ -13,8 +13,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.PalletBounties;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
+   using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class BountiesControllerMockupClient : MockupBaseClient, IBountiesControllerMockupClient
@@ -26,19 +26,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetBountyCount(U32 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyCount", value.Encode(), BountiesStorage.BountyCountParams());
+         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyCountParams());
       }
       public async Task<bool> SetBounties(Bounty value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Bounties/Bounties", value.Encode(), BountiesStorage.BountiesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Bounties/Bounties", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountiesParams(key));
       }
       public async Task<bool> SetBountyDescriptions(BoundedVecT30 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyDescriptions", value.Encode(), BountiesStorage.BountyDescriptionsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyDescriptions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyDescriptionsParams(key));
       }
       public async Task<bool> SetBountyApprovals(BoundedVecT16 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyApprovals", value.Encode(), BountiesStorage.BountyApprovalsParams());
+         return await SendMockupRequestAsync(_httpClient, "Bounties/BountyApprovals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyApprovalsParams());
       }
    }
 }

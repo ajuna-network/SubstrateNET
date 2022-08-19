@@ -13,11 +13,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusSlots;
-   using SubstrateNET.NetApi.Generated.Model.Base;
-   using SubstrateNET.NetApi.Generated.Model.SpConsensusBabe;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
+   using SubstrateNET.NetApi.Generated.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class BabeControllerClient : BaseClient, IBabeControllerClient
@@ -103,11 +105,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<BoundedVecT8> GetUnderConstruction(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT8>(_httpClient, "babe/underconstruction", SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
+         return await SendRequestAsync<BoundedVecT8>(_httpClient, "babe/underconstruction", SubstrateNET.NetApi.Generated.Storage.BabeStorage.UnderConstructionParams(key));
       }
       public async Task<bool> SubscribeUnderConstruction(U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Babe.UnderConstruction", SubstrateNET.NetApi.Generated.Model.PalletBabe.BabeStorage.UnderConstructionParams(key));
+         return await _subscriptionClient.SubscribeAsync("Babe.UnderConstruction", SubstrateNET.NetApi.Generated.Storage.BabeStorage.UnderConstructionParams(key));
       }
       public async Task<BaseOpt<EnumPreDigest>> GetInitialized()
       {

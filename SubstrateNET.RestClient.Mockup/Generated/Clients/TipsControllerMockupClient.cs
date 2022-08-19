@@ -12,8 +12,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletTips;
+   using SubstrateNET.NetApi.Generated.Model.pallet_tips;
    using Ajuna.NetApi.Model.Types.Base;
+   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class TipsControllerMockupClient : MockupBaseClient, ITipsControllerMockupClient
@@ -23,13 +24,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetTips(OpenTip value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetTips(OpenTip value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Tips/Tips", value.Encode(), TipsStorage.TipsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Tips/Tips", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TipsStorage.TipsParams(key));
       }
-      public async Task<bool> SetReasons(BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> value, SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SetReasons(BaseVec<U8> value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Tips/Reasons", value.Encode(), TipsStorage.ReasonsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Tips/Reasons", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TipsStorage.ReasonsParams(key));
       }
    }
 }

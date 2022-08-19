@@ -12,9 +12,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletUniques;
+   using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class UniquesControllerMockupClient : MockupBaseClient, IUniquesControllerMockupClient
@@ -26,39 +27,47 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetClass(CollectionDetails value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/Class", value.Encode(), UniquesStorage.ClassParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/Class", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassParams(key));
       }
-      public async Task<bool> SetOwnershipAcceptance(U32 value, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SetOwnershipAcceptance(U32 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/OwnershipAcceptance", value.Encode(), UniquesStorage.OwnershipAcceptanceParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/OwnershipAcceptance", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.OwnershipAcceptanceParams(key));
       }
-      public async Task<bool> SetAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32, U32> key)
+      public async Task<bool> SetAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/Account", value.Encode(), UniquesStorage.AccountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/Account", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AccountParams(key));
       }
-      public async Task<bool> SetClassAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, U32> key)
+      public async Task<bool> SetClassAccount(BaseTuple value, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/ClassAccount", value.Encode(), UniquesStorage.ClassAccountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/ClassAccount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassAccountParams(key));
       }
       public async Task<bool> SetAsset(ItemDetails value, BaseTuple<U32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/Asset", value.Encode(), UniquesStorage.AssetParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/Asset", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AssetParams(key));
       }
       public async Task<bool> SetClassMetadataOf(CollectionMetadata value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/ClassMetadataOf", value.Encode(), UniquesStorage.ClassMetadataOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/ClassMetadataOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ClassMetadataOfParams(key));
       }
       public async Task<bool> SetInstanceMetadataOf(ItemMetadata value, BaseTuple<U32, U32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/InstanceMetadataOf", value.Encode(), UniquesStorage.InstanceMetadataOfParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/InstanceMetadataOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.InstanceMetadataOfParams(key));
       }
-      public async Task<bool> SetAttribute(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT2> key)
+      public async Task<bool> SetAttribute(BaseTuple<BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/Attribute", value.Encode(), UniquesStorage.AttributeParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/Attribute", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.AttributeParams(key));
+      }
+      public async Task<bool> SetItemPriceOf(BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, BaseTuple<U32, U32> key)
+      {
+         return await SendMockupRequestAsync(_httpClient, "Uniques/ItemPriceOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.ItemPriceOfParams(key));
       }
       public async Task<bool> SetCollectionMaxSupply(U32 value, U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Uniques/CollectionMaxSupply", value.Encode(), UniquesStorage.CollectionMaxSupplyParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Uniques/CollectionMaxSupply", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.CollectionMaxSupplyParams(key));
+      }
+      public async Task<bool> SetNextCollectionId(U32 value)
+      {
+         return await SendMockupRequestAsync(_httpClient, "Uniques/NextCollectionId", value.Encode(), SubstrateNET.NetApi.Generated.Storage.UniquesStorage.NextCollectionIdParams());
       }
    }
 }

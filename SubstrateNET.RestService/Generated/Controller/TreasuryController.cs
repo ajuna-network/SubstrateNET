@@ -8,11 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PalletTreasury;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("ProposalCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTreasury.TreasuryStorage), "ProposalCountParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TreasuryStorage), "ProposalCountParams")]
         public IActionResult GetProposalCount()
         {
             return this.Ok(_treasuryStorage.GetProposalCount());
@@ -57,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Proposals that have been made.
         /// </summary>
         [HttpGet("Proposals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.PalletTreasury.Proposal), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTreasury.TreasuryStorage), "ProposalsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_treasury.Proposal), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TreasuryStorage), "ProposalsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetProposals(string key)
         {
             return this.Ok(_treasuryStorage.GetProposals(key));
@@ -69,8 +66,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
         [HttpGet("Approvals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.BoundedVecT16), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTreasury.TreasuryStorage), "ApprovalsParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TreasuryStorage), "ApprovalsParams")]
         public IActionResult GetApprovals()
         {
             return this.Ok(_treasuryStorage.GetApprovals());

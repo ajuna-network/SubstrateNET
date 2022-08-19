@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> RootHash
         ///  Latest MMR Root hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetRootHash();
+        SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetRootHash();
         
         /// <summary>
         /// >> NumberOfLeaves
@@ -45,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Note this collection only contains MMR peaks, the inner nodes (and leaves)
         ///  are pruned and only stored in the Offchain DB.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetNodes(string key);
+        SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetNodes(string key);
     }
     
     /// <summary>
@@ -57,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _rootHashTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _rootHashTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> _rootHashTypedStorage;
         
         /// <summary>
         /// _numberOfLeavesTypedStorage typed storage field
@@ -67,22 +65,22 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nodesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> _nodesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> _nodesTypedStorage;
         
         /// <summary>
         /// MmrStorage constructor.
         /// </summary>
-        public MmrStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public MmrStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.RootHashTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>("Mmr.RootHash", storageDataProvider, storageChangeDelegate);
-            this.NumberOfLeavesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Mmr.NumberOfLeaves", storageDataProvider, storageChangeDelegate);
-            this.NodesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>("Mmr.Nodes", storageDataProvider, storageChangeDelegate);
+            this.RootHashTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>("Mmr.RootHash", storageDataProvider, storageChangeDelegates);
+            this.NumberOfLeavesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Mmr.NumberOfLeaves", storageDataProvider, storageChangeDelegates);
+            this.NodesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>("Mmr.Nodes", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _rootHashTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> RootHashTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> RootHashTypedStorage
         {
             get
             {
@@ -112,7 +110,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nodesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256> NodesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.primitive_types.H256> NodesTypedStorage
         {
             get
             {
@@ -147,7 +145,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> RootHash
         ///  Latest MMR Root hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetRootHash()
+        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetRootHash()
         {
             return RootHashTypedStorage.Get();
         }
@@ -186,13 +184,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Note this collection only contains MMR peaks, the inner nodes (and leaves)
         ///  are pruned and only stored in the Offchain DB.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetNodes(string key)
+        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetNodes(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (NodesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result))
+            if (NodesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result))
             {
                 return result;
             }

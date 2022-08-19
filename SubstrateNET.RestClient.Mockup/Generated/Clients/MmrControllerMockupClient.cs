@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -25,15 +25,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetRootHash(H256 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Mmr/RootHash", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage.RootHashParams());
+         return await SendMockupRequestAsync(_httpClient, "Mmr/RootHash", value.Encode(), SubstrateNET.NetApi.Generated.Storage.MmrStorage.RootHashParams());
       }
       public async Task<bool> SetNumberOfLeaves(U64 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Mmr/NumberOfLeaves", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage.NumberOfLeavesParams());
+         return await SendMockupRequestAsync(_httpClient, "Mmr/NumberOfLeaves", value.Encode(), SubstrateNET.NetApi.Generated.Storage.MmrStorage.NumberOfLeavesParams());
       }
       public async Task<bool> SetNodes(H256 value, U64 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Mmr/Nodes", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletMmr.MmrStorage.NodesParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Mmr/Nodes", value.Encode(), SubstrateNET.NetApi.Generated.Storage.MmrStorage.NodesParams(key));
       }
    }
 }

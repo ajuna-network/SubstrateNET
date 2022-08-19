@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using System.Net.Http;
    using SubstrateNET.RestClient.Mockup.Generated.Clients;
    using SubstrateNET.RestClient.Generated.Clients;
-   using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public class MmrControllerClientTest : ClientTestBase
@@ -26,11 +26,11 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          _httpClient = CreateHttpClient();
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue2()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue2()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -77,7 +77,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          MmrControllerClient rpcClient = new MmrControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupValue = this.GetTestValue2();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupValue = this.GetTestValue2();
 
 
          Assert.IsTrue(await rpcClient.SubscribeRootHash());
@@ -90,7 +90,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 rpcResult = await rpcClient.GetRootHash();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 rpcResult = await rpcClient.GetRootHash();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -124,11 +124,11 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 GetTestValue5()
+      public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 GetTestValue5()
       {
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 result;
-         result = new SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256();
-         result.Value = new SubstrateNET.NetApi.Generated.Model.Base.Arr32U8();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 result;
+         result = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
+         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.Arr32U8();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8(),
                   this.GetTestValueU8(),
@@ -175,7 +175,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          MmrControllerClient rpcClient = new MmrControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 mockupValue = this.GetTestValue5();
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 mockupValue = this.GetTestValue5();
          Ajuna.NetApi.Model.Types.Primitive.U64 mockupKey = this.GetTestValueU64();
 
          Assert.IsTrue(await rpcClient.SubscribeNodes(mockupKey));
@@ -188,7 +188,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 rpcResult = await rpcClient.GetNodes(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.primitive_types.H256 rpcResult = await rpcClient.GetNodes(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

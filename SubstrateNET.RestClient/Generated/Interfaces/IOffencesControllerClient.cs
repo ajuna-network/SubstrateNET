@@ -11,16 +11,18 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.SpStaking;
+   using SubstrateNET.NetApi.Generated.Model.sp_staking.offence;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IOffencesControllerClient
    {
-      Task<OffenceDetails> GetReports(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<bool> SubscribeReports(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key);
-      Task<BaseVec<SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256>> GetConcurrentReportsIndex(BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> key);
-      Task<bool> SubscribeConcurrentReportsIndex(BaseTuple<SubstrateNET.NetApi.Generated.Model.Base.Arr16U8, BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> key);
-      Task<BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>> GetReportsByKindIndex(SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 key);
-      Task<bool> SubscribeReportsByKindIndex(SubstrateNET.NetApi.Generated.Model.Base.Arr16U8 key);
+      Task<OffenceDetails> GetReports(H256 key);
+      Task<bool> SubscribeReports(H256 key);
+      Task<BaseVec<H256>> GetConcurrentReportsIndex(BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, BaseVec<U8>> key);
+      Task<bool> SubscribeConcurrentReportsIndex(BaseTuple<SubstrateNET.NetApi.Generated.Types.Base.Arr16U8, BaseVec<U8>> key);
+      Task<BaseVec<U8>> GetReportsByKindIndex(SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 key);
+      Task<bool> SubscribeReportsByKindIndex(SubstrateNET.NetApi.Generated.Types.Base.Arr16U8 key);
    }
 }

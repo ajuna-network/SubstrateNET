@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.SpRuntime;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -43,8 +42,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Keys of the current authority set.
         /// </summary>
         [HttpGet("Keys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAuthorityDiscovery.AuthorityDiscoveryStorage), "KeysParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage), "KeysParams")]
         public IActionResult GetKeys()
         {
             return this.Ok(_authorityDiscoveryStorage.GetKeys());
@@ -55,8 +54,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Keys of the next authority set.
         /// </summary>
         [HttpGet("NextKeys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.SpRuntime.WeakBoundedVecT7), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletAuthorityDiscovery.AuthorityDiscoveryStorage), "NextKeysParams")]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage), "NextKeysParams")]
         public IActionResult GetNextKeys()
         {
             return this.Ok(_authorityDiscoveryStorage.GetNextKeys());

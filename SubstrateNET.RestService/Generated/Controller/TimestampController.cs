@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using SubstrateNET.RestService.Generated.Storage;
@@ -44,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("Now")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U64), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTimestamp.TimestampStorage), "NowParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TimestampStorage), "NowParams")]
         public IActionResult GetNow()
         {
             return this.Ok(_timestampStorage.GetNow());
@@ -56,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// </summary>
         [HttpGet("DidUpdate")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletTimestamp.TimestampStorage), "DidUpdateParams")]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TimestampStorage), "DidUpdateParams")]
         public IActionResult GetDidUpdate()
         {
             return this.Ok(_timestampStorage.GetDidUpdate());

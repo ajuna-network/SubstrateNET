@@ -24,11 +24,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetNow(U64 value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Timestamp/Now", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTimestamp.TimestampStorage.NowParams());
+         return await SendMockupRequestAsync(_httpClient, "Timestamp/Now", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TimestampStorage.NowParams());
       }
       public async Task<bool> SetDidUpdate(Bool value)
       {
-         return await SendMockupRequestAsync(_httpClient, "Timestamp/DidUpdate", value.Encode(), SubstrateNET.NetApi.Generated.Model.PalletTimestamp.TimestampStorage.DidUpdateParams());
+         return await SendMockupRequestAsync(_httpClient, "Timestamp/DidUpdate", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TimestampStorage.DidUpdateParams());
       }
    }
 }

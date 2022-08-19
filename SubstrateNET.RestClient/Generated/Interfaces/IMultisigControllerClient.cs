@@ -11,14 +11,17 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.PalletMultisig;
+   using SubstrateNET.NetApi.Generated.Model.pallet_multisig;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
+   using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IMultisigControllerClient
    {
-      Task<Multisig> GetMultisigs(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> key);
-      Task<bool> SubscribeMultisigs(BaseTuple<SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.Base.Arr32U8> key);
-      Task<BaseTuple<SubstrateNET.NetApi.Generated.Model.FrameSupport.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> GetCalls(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 key);
-      Task<bool> SubscribeCalls(SubstrateNET.NetApi.Generated.Model.Base.Arr32U8 key);
+      Task<Multisig> GetMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key);
+      Task<bool> SubscribeMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key);
+      Task<BaseTuple<WrapperKeepOpaque, AccountId32, U128>> GetCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key);
+      Task<bool> SubscribeCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key);
    }
 }

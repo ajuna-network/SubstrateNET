@@ -8,10 +8,8 @@
 //------------------------------------------------------------------------------
 
 using Ajuna.NetApi.Model.Types.Base;
-using Ajuna.NetApi.Model.Types.Primitive;
 using Ajuna.ServiceLayer.Attributes;
 using Ajuna.ServiceLayer.Storage;
-using SubstrateNET.NetApi.Generated.Model.PalletScheduler;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Agenda
         ///  Items to be executed, indexed by the block number that they should be executed on.
         /// </summary>
-        BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>> GetAgenda(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> GetAgenda(string key);
         
         /// <summary>
         /// >> Lookup
         ///  Lookup from identity to the block number and index of the task.
         /// </summary>
-        BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> GetLookup(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetLookup(string key);
     }
     
     /// <summary>
@@ -48,26 +46,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _agendaTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>>> _agendaTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>> _agendaTypedStorage;
         
         /// <summary>
         /// _lookupTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> _lookupTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> _lookupTypedStorage;
         
         /// <summary>
         /// SchedulerStorage constructor.
         /// </summary>
-        public SchedulerStorage(IStorageDataProvider storageDataProvider, IStorageChangeDelegate storageChangeDelegate)
+        public SchedulerStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.AgendaTypedStorage = new TypedMapStorage<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>>>("Scheduler.Agenda", storageDataProvider, storageChangeDelegate);
-            this.LookupTypedStorage = new TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>>("Scheduler.Lookup", storageDataProvider, storageChangeDelegate);
+            this.AgendaTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>>("Scheduler.Agenda", storageDataProvider, storageChangeDelegates);
+            this.LookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>("Scheduler.Lookup", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _agendaTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>>> AgendaTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>> AgendaTypedStorage
         {
             get
             {
@@ -82,7 +80,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _lookupTypedStorage property
         /// </summary>
-        public TypedMapStorage<BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32>> LookupTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> LookupTypedStorage
         {
             get
             {
@@ -116,13 +114,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Agenda
         ///  Items to be executed, indexed by the block number that they should be executed on.
         /// </summary>
-        public BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>> GetAgenda(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> GetAgenda(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AgendaTypedStorage.Dictionary.TryGetValue(key, out BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.PalletScheduler.ScheduledV3>> result))
+            if (AgendaTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> result))
             {
                 return result;
             }
@@ -145,13 +143,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Lookup
         ///  Lookup from identity to the block number and index of the task.
         /// </summary>
-        public BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> GetLookup(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetLookup(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (LookupTypedStorage.Dictionary.TryGetValue(key, out BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32,Ajuna.NetApi.Model.Types.Primitive.U32> result))
+            if (LookupTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> result))
             {
                 return result;
             }

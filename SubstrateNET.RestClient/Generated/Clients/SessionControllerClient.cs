@@ -13,9 +13,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.NodeRuntime;
-   using SubstrateNET.NetApi.Generated.Model.SpCore;
+   using SubstrateNET.NetApi.Generated.Model.node_runtime;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class SessionControllerClient : BaseClient, ISessionControllerClient
@@ -69,19 +69,19 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<SessionKeys> GetNextKeys(AccountId32 key)
       {
-         return await SendRequestAsync<SessionKeys>(_httpClient, "session/nextkeys", SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.NextKeysParams(key));
+         return await SendRequestAsync<SessionKeys>(_httpClient, "session/nextkeys", SubstrateNET.NetApi.Generated.Storage.SessionStorage.NextKeysParams(key));
       }
       public async Task<bool> SubscribeNextKeys(AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Session.NextKeys", SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.NextKeysParams(key));
+         return await _subscriptionClient.SubscribeAsync("Session.NextKeys", SubstrateNET.NetApi.Generated.Storage.SessionStorage.NextKeysParams(key));
       }
       public async Task<AccountId32> GetKeyOwner(BaseTuple<KeyTypeId, BaseVec<U8>> key)
       {
-         return await SendRequestAsync<AccountId32>(_httpClient, "session/keyowner", SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.KeyOwnerParams(key));
+         return await SendRequestAsync<AccountId32>(_httpClient, "session/keyowner", SubstrateNET.NetApi.Generated.Storage.SessionStorage.KeyOwnerParams(key));
       }
       public async Task<bool> SubscribeKeyOwner(BaseTuple<KeyTypeId, BaseVec<U8>> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Session.KeyOwner", SubstrateNET.NetApi.Generated.Model.PalletSession.SessionStorage.KeyOwnerParams(key));
+         return await _subscriptionClient.SubscribeAsync("Session.KeyOwner", SubstrateNET.NetApi.Generated.Storage.SessionStorage.KeyOwnerParams(key));
       }
    }
 }

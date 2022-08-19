@@ -12,9 +12,10 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.SpRuntime;
-   using SubstrateNET.NetApi.Generated.Model.PalletContracts;
+   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ContractsControllerClient : BaseClient, IContractsControllerClient
@@ -26,29 +27,29 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT17> GetPristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<BoundedVecT17> GetPristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<BoundedVecT17>(_httpClient, "contracts/pristinecode", ContractsStorage.PristineCodeParams(key));
+         return await SendRequestAsync<BoundedVecT17>(_httpClient, "contracts/pristinecode", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
       }
-      public async Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Contracts.PristineCode", ContractsStorage.PristineCodeParams(key));
+         return await _subscriptionClient.SubscribeAsync("Contracts.PristineCode", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
       }
-      public async Task<PrefabWasmModule> GetCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<PrefabWasmModule> GetCodeStorage(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<PrefabWasmModule>(_httpClient, "contracts/codestorage", ContractsStorage.CodeStorageParams(key));
+         return await SendRequestAsync<PrefabWasmModule>(_httpClient, "contracts/codestorage", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.CodeStorageParams(key));
       }
-      public async Task<bool> SubscribeCodeStorage(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeCodeStorage(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Contracts.CodeStorage", ContractsStorage.CodeStorageParams(key));
+         return await _subscriptionClient.SubscribeAsync("Contracts.CodeStorage", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.CodeStorageParams(key));
       }
-      public async Task<OwnerInfo> GetOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<OwnerInfo> GetOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<OwnerInfo>(_httpClient, "contracts/ownerinfoof", ContractsStorage.OwnerInfoOfParams(key));
+         return await SendRequestAsync<OwnerInfo>(_httpClient, "contracts/ownerinfoof", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.OwnerInfoOfParams(key));
       }
-      public async Task<bool> SubscribeOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeOwnerInfoOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Contracts.OwnerInfoOf", ContractsStorage.OwnerInfoOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Contracts.OwnerInfoOf", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.OwnerInfoOfParams(key));
       }
       public async Task<U64> GetNonce()
       {
@@ -58,13 +59,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Contracts.Nonce");
       }
-      public async Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<RawContractInfo>(_httpClient, "contracts/contractinfoof", ContractsStorage.ContractInfoOfParams(key));
+         return await SendRequestAsync<RawContractInfo>(_httpClient, "contracts/contractinfoof", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
-      public async Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32 key)
+      public async Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Contracts.ContractInfoOf", ContractsStorage.ContractInfoOfParams(key));
+         return await _subscriptionClient.SubscribeAsync("Contracts.ContractInfoOf", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
       public async Task<BoundedVecT20> GetDeletionQueue()
       {

@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletAssets;
+   using SubstrateNET.NetApi.Generated.Model.pallet_assets.types;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class AssetsControllerMockupClient : MockupBaseClient, IAssetsControllerMockupClient
@@ -24,19 +24,19 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       }
       public async Task<bool> SetAsset(AssetDetails value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Assets/Asset", value.Encode(), AssetsStorage.AssetParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Assets/Asset", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AssetParams(key));
       }
-      public async Task<bool> SetAccount(AssetAccount value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SetAccount(AssetAccount value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Assets/Account", value.Encode(), AssetsStorage.AccountParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Assets/Account", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AccountParams(key));
       }
-      public async Task<bool> SetApprovals(Approval value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SetApprovals(Approval value, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Assets/Approvals", value.Encode(), AssetsStorage.ApprovalsParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Assets/Approvals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AssetsStorage.ApprovalsParams(key));
       }
       public async Task<bool> SetMetadata(AssetMetadata value, Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendMockupRequestAsync(_httpClient, "Assets/Metadata", value.Encode(), AssetsStorage.MetadataParams(key));
+         return await SendMockupRequestAsync(_httpClient, "Assets/Metadata", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AssetsStorage.MetadataParams(key));
       }
    }
 }

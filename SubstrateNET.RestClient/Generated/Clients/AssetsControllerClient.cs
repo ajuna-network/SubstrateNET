@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.PalletAssets;
+   using SubstrateNET.NetApi.Generated.Model.pallet_assets.types;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class AssetsControllerClient : BaseClient, IAssetsControllerClient
@@ -26,35 +26,35 @@ namespace SubstrateNET.RestClient.Generated.Clients
       }
       public async Task<AssetDetails> GetAsset(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<AssetDetails>(_httpClient, "assets/asset", AssetsStorage.AssetParams(key));
+         return await SendRequestAsync<AssetDetails>(_httpClient, "assets/asset", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AssetParams(key));
       }
       public async Task<bool> SubscribeAsset(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Assets.Asset", AssetsStorage.AssetParams(key));
+         return await _subscriptionClient.SubscribeAsync("Assets.Asset", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AssetParams(key));
       }
-      public async Task<AssetAccount> GetAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<AssetAccount> GetAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendRequestAsync<AssetAccount>(_httpClient, "assets/account", AssetsStorage.AccountParams(key));
+         return await SendRequestAsync<AssetAccount>(_httpClient, "assets/account", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AccountParams(key));
       }
-      public async Task<bool> SubscribeAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SubscribeAccount(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Assets.Account", AssetsStorage.AccountParams(key));
+         return await _subscriptionClient.SubscribeAsync("Assets.Account", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.AccountParams(key));
       }
-      public async Task<Approval> GetApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<Approval> GetApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await SendRequestAsync<Approval>(_httpClient, "assets/approvals", AssetsStorage.ApprovalsParams(key));
+         return await SendRequestAsync<Approval>(_httpClient, "assets/approvals", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.ApprovalsParams(key));
       }
-      public async Task<bool> SubscribeApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32, SubstrateNET.NetApi.Generated.Model.SpCore.AccountId32> key)
+      public async Task<bool> SubscribeApprovals(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
       {
-         return await _subscriptionClient.SubscribeAsync("Assets.Approvals", AssetsStorage.ApprovalsParams(key));
+         return await _subscriptionClient.SubscribeAsync("Assets.Approvals", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.ApprovalsParams(key));
       }
       public async Task<AssetMetadata> GetMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<AssetMetadata>(_httpClient, "assets/metadata", AssetsStorage.MetadataParams(key));
+         return await SendRequestAsync<AssetMetadata>(_httpClient, "assets/metadata", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.MetadataParams(key));
       }
       public async Task<bool> SubscribeMetadata(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Assets.Metadata", AssetsStorage.MetadataParams(key));
+         return await _subscriptionClient.SubscribeAsync("Assets.Metadata", SubstrateNET.NetApi.Generated.Storage.AssetsStorage.MetadataParams(key));
       }
    }
 }

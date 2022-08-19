@@ -24,13 +24,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseTuple> GetWhitelistedCall(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<BaseTuple> GetWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<BaseTuple>(_httpClient, "whitelist/whitelistedcall", SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage.WhitelistedCallParams(key));
+         return await SendRequestAsync<BaseTuple>(_httpClient, "whitelist/whitelistedcall", SubstrateNET.NetApi.Generated.Storage.WhitelistStorage.WhitelistedCallParams(key));
       }
-      public async Task<bool> SubscribeWhitelistedCall(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256 key)
+      public async Task<bool> SubscribeWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Whitelist.WhitelistedCall", SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage.WhitelistedCallParams(key));
+         return await _subscriptionClient.SubscribeAsync("Whitelist.WhitelistedCall", SubstrateNET.NetApi.Generated.Storage.WhitelistStorage.WhitelistedCallParams(key));
       }
    }
 }

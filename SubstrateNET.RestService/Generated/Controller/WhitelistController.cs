@@ -10,7 +10,6 @@
 using Ajuna.NetApi.Model.Types.Base;
 using Ajuna.ServiceLayer.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using SubstrateNET.NetApi.Generated.Model.PrimitiveTypes;
 using SubstrateNET.RestService.Generated.Storage;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -42,8 +41,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> WhitelistedCall
         /// </summary>
         [HttpGet("WhitelistedCall")]
-        [ProducesResponseType(typeof(BaseTuple), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Model.PalletWhitelist.WhitelistStorage), "WhitelistedCallParams", typeof(SubstrateNET.NetApi.Generated.Model.PrimitiveTypes.H256))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.WhitelistStorage), "WhitelistedCallParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetWhitelistedCall(string key)
         {
             return this.Ok(_whitelistStorage.GetWhitelistedCall(key));
