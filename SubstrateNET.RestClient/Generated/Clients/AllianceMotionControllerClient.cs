@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
@@ -29,17 +29,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT38> GetProposals()
+      public async Task<BoundedVecT43> GetProposals()
       {
-         return await SendRequestAsync<BoundedVecT38>(_httpClient, "alliancemotion/proposals");
+         return await SendRequestAsync<BoundedVecT43>(_httpClient, "alliancemotion/proposals");
       }
       public async Task<bool> SubscribeProposals()
       {
          return await _subscriptionClient.SubscribeAsync("AllianceMotion.Proposals");
       }
-      public async Task<EnumCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<EnumRuntimeCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<EnumCall>(_httpClient, "alliancemotion/proposalof", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
+         return await SendRequestAsync<EnumRuntimeCall>(_httpClient, "alliancemotion/proposalof", SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
       }
       public async Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {

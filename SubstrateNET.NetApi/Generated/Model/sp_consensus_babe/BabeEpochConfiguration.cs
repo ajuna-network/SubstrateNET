@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_consensus_babe
     
     
     /// <summary>
-    /// >> 386 - Composite[sp_consensus_babe.BabeEpochConfiguration]
+    /// >> 391 - Composite[sp_consensus_babe.BabeEpochConfiguration]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BabeEpochConfiguration : BaseType

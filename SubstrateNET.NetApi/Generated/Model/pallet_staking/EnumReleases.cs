@@ -37,10 +37,14 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
         V9_0_0 = 8,
         
         V10_0_0 = 9,
+        
+        V11_0_0 = 10,
+        
+        V12_0_0 = 11,
     }
     
     /// <summary>
-    /// >> 437 - Variant[pallet_staking.Releases]
+    /// >> 443 - Variant[pallet_staking.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

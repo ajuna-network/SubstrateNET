@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list
     }
     
     /// <summary>
-    /// >> 600 - Variant[pallet_bags_list.list.ListError]
+    /// >> 607 - Variant[pallet_bags_list.list.ListError]
     /// </summary>
     public sealed class EnumListError : BaseEnum<ListError>
     {

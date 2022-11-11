@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT15> GetMembers()
+      public async Task<BoundedVecT21> GetMembers()
       {
-         return await SendRequestAsync<BoundedVecT15>(_httpClient, "technicalmembership/members");
+         return await SendRequestAsync<BoundedVecT21>(_httpClient, "technicalmembership/members");
       }
       public async Task<bool> SubscribeMembers()
       {

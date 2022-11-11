@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT15), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT21), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TechnicalMembershipStorage), "MembersParams")]
         public IActionResult GetMembers()
         {

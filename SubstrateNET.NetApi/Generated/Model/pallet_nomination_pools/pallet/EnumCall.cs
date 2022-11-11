@@ -32,24 +32,26 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.pallet
         
         create = 6,
         
-        nominate = 7,
+        create_with_pool_id = 7,
         
-        set_state = 8,
+        nominate = 8,
         
-        set_metadata = 9,
+        set_state = 9,
         
-        set_configs = 10,
+        set_metadata = 10,
         
-        update_roles = 11,
+        set_configs = 11,
         
-        chill = 12,
+        update_roles = 12,
+        
+        chill = 13,
     }
     
     /// <summary>
-    /// >> 367 - Variant[pallet_nomination_pools.pallet.Call]
+    /// >> 338 - Variant[pallet_nomination_pools.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumBondExtra, BaseVoid, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumPoolState>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp>, Ajuna.NetApi.Model.Types.Primitive.U32>
+    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumBondExtra, BaseVoid, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumPoolState>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.EnumConfigOp>, Ajuna.NetApi.Model.Types.Primitive.U32>
     {
     }
 }

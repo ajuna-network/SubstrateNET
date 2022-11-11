@@ -69,7 +69,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
         [HttpGet("TrackQueue")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ReferendaStorage), "TrackQueueParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U16))]
         public IActionResult GetTrackQueue(string key)
         {

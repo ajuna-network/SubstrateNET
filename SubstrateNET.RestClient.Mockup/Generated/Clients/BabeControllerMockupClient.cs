@@ -13,11 +13,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
    using SubstrateNET.NetApi.Generated.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
@@ -65,7 +65,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/SegmentIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.SegmentIndexParams());
       }
-      public async Task<bool> SetUnderConstruction(BoundedVecT8 value, U32 key)
+      public async Task<bool> SetUnderConstruction(BoundedVecT9 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Babe/UnderConstruction", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BabeStorage.UnderConstructionParams(key));
       }

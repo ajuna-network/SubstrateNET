@@ -24,9 +24,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.pallet
     }
     
     /// <summary>
-    /// >> 109 - Variant[pallet_conviction_voting.pallet.Event]
+    /// >> 350 - Variant[pallet_conviction_voting.pallet.Event]
     /// 
-    ///			The [event](https://docs.substrate.io/v3/runtime/events-and-errors) emitted
+    ///			The [event](https://docs.substrate.io/main-docs/build/events-errors/) emitted
     ///			by this pallet.
     ///			
     /// </summary>

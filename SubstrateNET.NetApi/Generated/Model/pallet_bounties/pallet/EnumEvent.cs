@@ -34,9 +34,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_bounties.pallet
     }
     
     /// <summary>
-    /// >> 90 - Variant[pallet_bounties.pallet.Event]
+    /// >> 91 - Variant[pallet_bounties.pallet.Event]
     /// 
-    ///			The [event](https://docs.substrate.io/v3/runtime/events-and-errors) emitted
+    ///			The [event](https://docs.substrate.io/main-docs/build/events-errors/) emitted
     ///			by this pallet.
     ///			
     /// </summary>

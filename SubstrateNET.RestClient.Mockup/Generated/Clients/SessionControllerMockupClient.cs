@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class SessionControllerMockupClient : MockupBaseClient, ISessionControllerMockupClient

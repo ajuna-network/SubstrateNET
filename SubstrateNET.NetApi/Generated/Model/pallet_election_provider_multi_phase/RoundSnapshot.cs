@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     
     
     /// <summary>
-    /// >> 408 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
+    /// >> 413 - Composite[pallet_election_provider_multi_phase.RoundSnapshot]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RoundSnapshot : BaseType
@@ -27,14 +27,14 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         /// <summary>
         /// >> voters
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>> _voters;
+        private Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>> _voters;
         
         /// <summary>
         /// >> targets
         /// </summary>
         private Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _targets;
         
-        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>> Voters
+        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>> Voters
         {
             get
             {
@@ -74,7 +74,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Voters = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>>();
+            Voters = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>>();
             Voters.Decode(byteArray, ref p);
             Targets = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
             Targets.Decode(byteArray, ref p);

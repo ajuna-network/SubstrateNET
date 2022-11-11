@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class UniquesControllerClient : BaseClient, IUniquesControllerClient
@@ -106,14 +106,6 @@ namespace SubstrateNET.RestClient.Generated.Clients
       public async Task<bool> SubscribeCollectionMaxSupply(U32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Uniques.CollectionMaxSupply", SubstrateNET.NetApi.Generated.Storage.UniquesStorage.CollectionMaxSupplyParams(key));
-      }
-      public async Task<U32> GetNextCollectionId()
-      {
-         return await SendRequestAsync<U32>(_httpClient, "uniques/nextcollectionid");
-      }
-      public async Task<bool> SubscribeNextCollectionId()
-      {
-         return await _subscriptionClient.SubscribeAsync("Uniques.NextCollectionId");
       }
    }
 }

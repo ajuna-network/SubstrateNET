@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 656 - Composite[pallet_referenda.types.ReferendumStatusT2]
+    /// >> 667 - Composite[pallet_referenda.types.ReferendumStatusT2]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatusT2 : BaseType
@@ -32,12 +32,12 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
         /// <summary>
         /// >> origin
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller _origin;
+        private SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller _origin;
         
         /// <summary>
-        /// >> proposal_hash
+        /// >> proposal
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.primitive_types.H256 _proposalHash;
+        private SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded _proposal;
         
         /// <summary>
         /// >> enactment
@@ -91,7 +91,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller Origin
+        public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller Origin
         {
             get
             {
@@ -103,15 +103,15 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 ProposalHash
+        public SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded Proposal
         {
             get
             {
-                return this._proposalHash;
+                return this._proposal;
             }
             set
             {
-                this._proposalHash = value;
+                this._proposal = value;
             }
         }
         
@@ -221,7 +221,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
             var result = new List<byte>();
             result.AddRange(Track.Encode());
             result.AddRange(Origin.Encode());
-            result.AddRange(ProposalHash.Encode());
+            result.AddRange(Proposal.Encode());
             result.AddRange(Enactment.Encode());
             result.AddRange(Submitted.Encode());
             result.AddRange(SubmissionDeposit.Encode());
@@ -238,10 +238,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
             var start = p;
             Track = new Ajuna.NetApi.Model.Types.Primitive.U16();
             Track.Decode(byteArray, ref p);
-            Origin = new SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller();
+            Origin = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller();
             Origin.Decode(byteArray, ref p);
-            ProposalHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
-            ProposalHash.Decode(byteArray, ref p);
+            Proposal = new SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded();
+            Proposal.Decode(byteArray, ref p);
             Enactment = new SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime();
             Enactment.Decode(byteArray, ref p);
             Submitted = new Ajuna.NetApi.Model.Types.Primitive.U32();

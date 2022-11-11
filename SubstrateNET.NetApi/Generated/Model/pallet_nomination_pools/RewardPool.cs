@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 645 - Composite[pallet_nomination_pools.RewardPool]
+    /// >> 656 - Composite[pallet_nomination_pools.RewardPool]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RewardPool : BaseType

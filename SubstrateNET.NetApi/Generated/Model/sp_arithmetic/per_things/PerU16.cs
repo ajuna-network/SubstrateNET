@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 184 - Composite[sp_arithmetic.per_things.PerU16]
+    /// >> 151 - Composite[sp_arithmetic.per_things.PerU16]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PerU16 : BaseType

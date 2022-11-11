@@ -120,7 +120,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> as_recovered
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AsRecovered(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 account, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method AsRecovered(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress account, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
@@ -132,7 +132,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> set_recovered
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SetRecovered(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 lost, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 rescuer)
+        public static Method SetRecovered(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress lost, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress rescuer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(lost.Encode());
@@ -157,7 +157,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> initiate_recovery
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method InitiateRecovery(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method InitiateRecovery(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
@@ -168,7 +168,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> vouch_recovery
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method VouchRecovery(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 lost, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 rescuer)
+        public static Method VouchRecovery(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress lost, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress rescuer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(lost.Encode());
@@ -180,7 +180,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> claim_recovery
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ClaimRecovery(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method ClaimRecovery(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
@@ -191,7 +191,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> close_recovery
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method CloseRecovery(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 rescuer)
+        public static Method CloseRecovery(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress rescuer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(rescuer.Encode());
@@ -212,7 +212,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> cancel_recovered
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method CancelRecovered(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method CancelRecovered(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());

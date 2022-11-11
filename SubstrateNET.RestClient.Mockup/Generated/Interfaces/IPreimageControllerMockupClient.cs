@@ -12,11 +12,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.pallet_preimage;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IPreimageControllerMockupClient
    {
       Task<bool> SetStatusFor(EnumRequestStatus value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
-      Task<bool> SetPreimageFor(BoundedVecT27 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetPreimageFor(BoundedVecT32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key);
    }
 }

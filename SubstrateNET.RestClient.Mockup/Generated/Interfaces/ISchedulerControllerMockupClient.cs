@@ -11,12 +11,14 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using Ajuna.NetApi.Model.Types.Base;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using Ajuna.NetApi.Model.Types.Base;
    
    public interface ISchedulerControllerMockupClient
    {
-      Task<bool> SetAgenda(BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> value, U32 key);
-      Task<bool> SetLookup(BaseTuple<U32, U32> value, BaseVec<U8> key);
+      Task<bool> SetIncompleteSince(U32 value);
+      Task<bool> SetAgenda(BoundedVecT31 value, U32 key);
+      Task<bool> SetLookup(BaseTuple<U32, U32> value, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key);
    }
 }

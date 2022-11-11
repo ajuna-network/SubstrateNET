@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class NominationPoolsControllerMockupClient : MockupBaseClient, INominationPoolsControllerMockupClient
@@ -76,7 +76,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "NominationPools/CounterForSubPoolsStorage", value.Encode(), SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.CounterForSubPoolsStorageParams());
       }
-      public async Task<bool> SetMetadata(BoundedVecT43 value, U32 key)
+      public async Task<bool> SetMetadata(BoundedVecT47 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "NominationPools/Metadata", value.Encode(), SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage.MetadataParams(key));
       }

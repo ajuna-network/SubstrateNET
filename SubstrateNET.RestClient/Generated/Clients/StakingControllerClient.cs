@@ -29,14 +29,6 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<U32> GetHistoryDepth()
-      {
-         return await SendRequestAsync<U32>(_httpClient, "staking/historydepth");
-      }
-      public async Task<bool> SubscribeHistoryDepth()
-      {
-         return await _subscriptionClient.SubscribeAsync("Staking.HistoryDepth");
-      }
       public async Task<U32> GetValidatorCount()
       {
          return await SendRequestAsync<U32>(_httpClient, "staking/validatorcount");

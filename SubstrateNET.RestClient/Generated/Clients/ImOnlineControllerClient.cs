@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -34,9 +34,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ImOnline.HeartbeatAfter");
       }
-      public async Task<WeakBoundedVecT4> GetKeys()
+      public async Task<WeakBoundedVecT5> GetKeys()
       {
-         return await SendRequestAsync<WeakBoundedVecT4>(_httpClient, "imonline/keys");
+         return await SendRequestAsync<WeakBoundedVecT5>(_httpClient, "imonline/keys");
       }
       public async Task<bool> SubscribeKeys()
       {

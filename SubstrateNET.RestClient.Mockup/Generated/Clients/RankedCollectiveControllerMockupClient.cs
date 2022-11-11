@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RankedCollectiveControllerMockupClient : MockupBaseClient, IRankedCollectiveControllerMockupClient
@@ -45,7 +45,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "RankedCollective/Voting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingParams(key));
       }
-      public async Task<bool> SetVotingCleanup(BoundedVecT45 value, U32 key)
+      public async Task<bool> SetVotingCleanup(BoundedVecT49 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "RankedCollective/VotingCleanup", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage.VotingCleanupParams(key));
       }

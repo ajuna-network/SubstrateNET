@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface ITechnicalMembershipControllerMockupClient
    {
-      Task<bool> SetMembers(BoundedVecT15 value);
+      Task<bool> SetMembers(BoundedVecT21 value);
       Task<bool> SetPrime(AccountId32 value);
    }
 }

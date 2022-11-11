@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public RandomnessCollectiveFlipStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("RandomnessCollectiveFlip", "RandomMaterial"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("RandomnessCollectiveFlip", "RandomMaterial"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25)));
         }
         
         /// <summary>
@@ -50,10 +50,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  is arranged as a ring buffer with `block_number % 81` being the index into the `Vec` of
         ///  the oldest hash.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21> RandomMaterial(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25> RandomMaterial(CancellationToken token)
         {
             string parameters = RandomnessCollectiveFlipStorage.RandomMaterialParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25>(parameters, token);
         }
     }
     

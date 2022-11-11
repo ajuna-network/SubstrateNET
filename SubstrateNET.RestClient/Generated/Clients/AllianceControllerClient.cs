@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_alliance.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -34,9 +34,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Alliance.Rule");
       }
-      public async Task<BoundedVecT39> GetAnnouncements()
+      public async Task<BoundedVecT44> GetAnnouncements()
       {
-         return await SendRequestAsync<BoundedVecT39>(_httpClient, "alliance/announcements");
+         return await SendRequestAsync<BoundedVecT44>(_httpClient, "alliance/announcements");
       }
       public async Task<bool> SubscribeAnnouncements()
       {
@@ -50,33 +50,33 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Alliance.DepositOf", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.DepositOfParams(key));
       }
-      public async Task<BoundedVecT40> GetMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
+      public async Task<BoundedVecT45> GetMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
       {
-         return await SendRequestAsync<BoundedVecT40>(_httpClient, "alliance/members", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
+         return await SendRequestAsync<BoundedVecT45>(_httpClient, "alliance/members", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
       }
       public async Task<bool> SubscribeMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key)
       {
          return await _subscriptionClient.SubscribeAsync("Alliance.Members", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.MembersParams(key));
       }
-      public async Task<Bool> GetUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<U32> GetRetiringMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<Bool>(_httpClient, "alliance/upforkicking", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UpForKickingParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "alliance/retiringmembers", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.RetiringMembersParams(key));
       }
-      public async Task<bool> SubscribeUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SubscribeRetiringMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await _subscriptionClient.SubscribeAsync("Alliance.UpForKicking", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.UpForKickingParams(key));
+         return await _subscriptionClient.SubscribeAsync("Alliance.RetiringMembers", SubstrateNET.NetApi.Generated.Storage.AllianceStorage.RetiringMembersParams(key));
       }
-      public async Task<BoundedVecT41> GetUnscrupulousAccounts()
+      public async Task<BoundedVecT17> GetUnscrupulousAccounts()
       {
-         return await SendRequestAsync<BoundedVecT41>(_httpClient, "alliance/unscrupulousaccounts");
+         return await SendRequestAsync<BoundedVecT17>(_httpClient, "alliance/unscrupulousaccounts");
       }
       public async Task<bool> SubscribeUnscrupulousAccounts()
       {
          return await _subscriptionClient.SubscribeAsync("Alliance.UnscrupulousAccounts");
       }
-      public async Task<BoundedVecT42> GetUnscrupulousWebsites()
+      public async Task<BoundedVecT46> GetUnscrupulousWebsites()
       {
-         return await SendRequestAsync<BoundedVecT42>(_httpClient, "alliance/unscrupulouswebsites");
+         return await SendRequestAsync<BoundedVecT46>(_httpClient, "alliance/unscrupulouswebsites");
       }
       public async Task<bool> SubscribeUnscrupulousWebsites()
       {

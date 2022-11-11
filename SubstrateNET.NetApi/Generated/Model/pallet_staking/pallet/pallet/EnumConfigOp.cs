@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet
     }
     
     /// <summary>
-    /// >> 240 - Variant[pallet_staking.pallet.pallet.ConfigOp]
+    /// >> 206 - Variant[pallet_staking.pallet.pallet.ConfigOp]
     /// </summary>
     public sealed class EnumConfigOp : BaseEnumExt<ConfigOp, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill, BaseVoid>
     {

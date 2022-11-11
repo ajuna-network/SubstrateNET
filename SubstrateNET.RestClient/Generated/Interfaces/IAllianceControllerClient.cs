@@ -12,24 +12,24 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.pallet_alliance.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IAllianceControllerClient
    {
       Task<Cid> GetRule();
       Task<bool> SubscribeRule();
-      Task<BoundedVecT39> GetAnnouncements();
+      Task<BoundedVecT44> GetAnnouncements();
       Task<bool> SubscribeAnnouncements();
       Task<U128> GetDepositOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SubscribeDepositOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<BoundedVecT40> GetMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key);
+      Task<BoundedVecT45> GetMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key);
       Task<bool> SubscribeMembers(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key);
-      Task<Bool> GetUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<bool> SubscribeUpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<BoundedVecT41> GetUnscrupulousAccounts();
+      Task<U32> GetRetiringMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SubscribeRetiringMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<BoundedVecT17> GetUnscrupulousAccounts();
       Task<bool> SubscribeUnscrupulousAccounts();
-      Task<BoundedVecT42> GetUnscrupulousWebsites();
+      Task<BoundedVecT46> GetUnscrupulousWebsites();
       Task<bool> SubscribeUnscrupulousWebsites();
    }
 }

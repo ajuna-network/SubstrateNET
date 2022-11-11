@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
     
     
     /// <summary>
-    /// >> 119 - Composite[pallet_alliance.types.Multihash]
+    /// >> 333 - Composite[pallet_alliance.types.Multihash]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Multihash : BaseType
@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
         /// <summary>
         /// >> digest
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT4 _digest;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT6 _digest;
         
         public Ajuna.NetApi.Model.Types.Primitive.U64 Code
         {
@@ -46,7 +46,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT4 Digest
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT6 Digest
         {
             get
             {
@@ -76,7 +76,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
             var start = p;
             Code = new Ajuna.NetApi.Model.Types.Primitive.U64();
             Code.Decode(byteArray, ref p);
-            Digest = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT4();
+            Digest = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT6();
             Digest.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

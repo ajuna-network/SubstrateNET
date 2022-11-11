@@ -30,9 +30,9 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public GiltStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Gilt", "QueueTotals"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Gilt", "QueueTotals"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT37)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Gilt", "Queues"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT38)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Gilt", "ActiveTotal"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGiltsTotal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Gilt", "Active"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet.ActiveGilt)));
@@ -59,10 +59,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  The vector is indexed by duration in `Period`s, offset by one, so information on the queue
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32> QueueTotals(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT37> QueueTotals(CancellationToken token)
         {
             string parameters = GiltStorage.QueueTotalsParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT37>(parameters, token);
         }
         
         /// <summary>
@@ -80,10 +80,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Queues
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33> Queues(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT38> Queues(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = GiltStorage.QueuesParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT38>(parameters, token);
         }
         
         /// <summary>

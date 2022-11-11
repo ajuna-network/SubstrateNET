@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 343 - Variant[pallet_state_trie_migration.pallet.Call]
+    /// >> 312 - Variant[pallet_state_trie_migration.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits, Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationTask>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.MigrationLimits, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumProgress, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumProgress>>

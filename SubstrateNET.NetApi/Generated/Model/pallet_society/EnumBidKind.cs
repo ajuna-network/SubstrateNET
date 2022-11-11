@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_society
     }
     
     /// <summary>
-    /// >> 521 - Variant[pallet_society.BidKind]
+    /// >> 527 - Variant[pallet_society.BidKind]
     /// </summary>
     public sealed class EnumBidKind : BaseEnumExt<BidKind, Ajuna.NetApi.Model.Types.Primitive.U128, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>
     {

@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface INominationPoolsControllerClient
    {
@@ -43,7 +43,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeSubPoolsStorage(U32 key);
       Task<U32> GetCounterForSubPoolsStorage();
       Task<bool> SubscribeCounterForSubPoolsStorage();
-      Task<BoundedVecT43> GetMetadata(U32 key);
+      Task<BoundedVecT47> GetMetadata(U32 key);
       Task<bool> SubscribeMetadata(U32 key);
       Task<U32> GetCounterForMetadata();
       Task<bool> SubscribeCounterForMetadata();

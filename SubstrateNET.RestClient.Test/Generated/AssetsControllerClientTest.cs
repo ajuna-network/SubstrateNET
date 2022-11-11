@@ -452,27 +452,27 @@ namespace SubstrateNET.RestClient.Test.Generated
          SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_assets.types.AssetMetadata();
          result.Deposit = this.GetTestValueU128();
-         result.Name = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+         result.Name = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
          result.Name = this.GetTestValue18();
-         result.Symbol = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+         result.Symbol = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
          result.Symbol = this.GetTestValue19();
          result.Decimals = this.GetTestValueU8();
          result.IsFrozen = this.GetTestValueBool();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 GetTestValue18()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 GetTestValue19()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 GetTestValue19()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U8[] {
                   this.GetTestValueU8()});

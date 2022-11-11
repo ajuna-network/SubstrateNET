@@ -25,12 +25,14 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_scheduler.pallet
         TargetBlockNumberInPast = 2,
         
         RescheduleNoChange = 3,
+        
+        Named = 4,
     }
     
     /// <summary>
-    /// >> 540 - Variant[pallet_scheduler.pallet.Error]
+    /// >> 547 - Variant[pallet_scheduler.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

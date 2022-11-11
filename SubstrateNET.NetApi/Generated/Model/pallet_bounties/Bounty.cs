@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_bounties
     
     
     /// <summary>
-    /// >> 558 - Composite[pallet_bounties.Bounty]
+    /// >> 565 - Composite[pallet_bounties.Bounty]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Bounty : BaseType

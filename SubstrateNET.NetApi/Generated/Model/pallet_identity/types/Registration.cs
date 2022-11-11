@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 508 - Composite[pallet_identity.types.Registration]
+    /// >> 514 - Composite[pallet_identity.types.Registration]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Registration : BaseType
@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         /// <summary>
         /// >> judgements
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT22 _judgements;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT26 _judgements;
         
         /// <summary>
         /// >> deposit
@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.pallet_identity.types.IdentityInfo _info;
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT22 Judgements
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT26 Judgements
         {
             get
             {
@@ -92,7 +92,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Judgements = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT22();
+            Judgements = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT26();
             Judgements.Decode(byteArray, ref p);
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);

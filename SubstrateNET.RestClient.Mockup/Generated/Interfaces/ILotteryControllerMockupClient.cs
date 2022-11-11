@@ -14,16 +14,16 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_lottery;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface ILotteryControllerMockupClient
    {
       Task<bool> SetLotteryIndex(U32 value);
       Task<bool> SetLottery(LotteryConfig value);
-      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT31> value, AccountId32 key);
+      Task<bool> SetParticipants(BaseTuple<U32, BoundedVecT36> value, AccountId32 key);
       Task<bool> SetTicketsCount(U32 value);
       Task<bool> SetTickets(AccountId32 value, U32 key);
-      Task<bool> SetCallIndices(BoundedVecT31 value);
+      Task<bool> SetCallIndices(BoundedVecT36 value);
    }
 }

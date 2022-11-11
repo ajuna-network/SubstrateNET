@@ -79,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The description of each child-bounty.
         /// </summary>
         [HttpGet("ChildBountyDescriptions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT35), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage), "ChildBountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetChildBountyDescriptions(string key)
         {

@@ -28,9 +28,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig.pallet
     }
     
     /// <summary>
-    /// >> 88 - Variant[pallet_multisig.pallet.Event]
+    /// >> 89 - Variant[pallet_multisig.pallet.Event]
     /// 
-    ///			The [event](https://docs.substrate.io/v3/runtime/events-and-errors) emitted
+    ///			The [event](https://docs.substrate.io/main-docs/build/events-errors/) emitted
     ///			by this pallet.
     ///			
     /// </summary>

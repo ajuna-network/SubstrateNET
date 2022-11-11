@@ -24,9 +24,9 @@ namespace SubstrateNET.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 111 - Variant[Result]
+    /// >> 352 - Variant[Result]
     /// </summary>
-    public sealed class EnumResult : BaseEnumExt<Result, SubstrateNET.NetApi.Generated.Model.frame_support.weights.PostDispatchInfo, SubstrateNET.NetApi.Generated.Model.sp_runtime.DispatchErrorWithPostInfo>
+    public sealed class EnumResult : BaseEnumExt<Result, SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo, SubstrateNET.NetApi.Generated.Model.sp_runtime.DispatchErrorWithPostInfo>
     {
     }
 }

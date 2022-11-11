@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_society
     }
     
     /// <summary>
-    /// >> 527 - Variant[pallet_society.Vote]
+    /// >> 533 - Variant[pallet_society.Vote]
     /// </summary>
     public sealed class EnumVote : BaseEnum<Vote>
     {

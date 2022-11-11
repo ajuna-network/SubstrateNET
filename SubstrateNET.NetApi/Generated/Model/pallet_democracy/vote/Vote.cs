@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote
     
     
     /// <summary>
-    /// >> 49 - Composite[pallet_democracy.vote.Vote]
+    /// >> 50 - Composite[pallet_democracy.vote.Vote]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Vote : BaseType

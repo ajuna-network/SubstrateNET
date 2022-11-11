@@ -12,11 +12,11 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_slots;
    using SubstrateNET.NetApi.Generated.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_consensus_babe;
    
@@ -40,7 +40,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeNextAuthorities();
       Task<U32> GetSegmentIndex();
       Task<bool> SubscribeSegmentIndex();
-      Task<BoundedVecT8> GetUnderConstruction(U32 key);
+      Task<BoundedVecT9> GetUnderConstruction(U32 key);
       Task<bool> SubscribeUnderConstruction(U32 key);
       Task<BaseOpt<EnumPreDigest>> GetInitialized();
       Task<bool> SubscribeInitialized();

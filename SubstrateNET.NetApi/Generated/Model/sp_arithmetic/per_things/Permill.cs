@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 477 - Composite[sp_arithmetic.per_things.Permill]
+    /// >> 484 - Composite[sp_arithmetic.per_things.Permill]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Permill : BaseType

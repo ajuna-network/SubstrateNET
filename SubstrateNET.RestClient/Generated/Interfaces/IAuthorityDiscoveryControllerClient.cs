@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    
    public interface IAuthorityDiscoveryControllerClient
    {
-      Task<WeakBoundedVecT7> GetKeys();
+      Task<WeakBoundedVecT8> GetKeys();
       Task<bool> SubscribeKeys();
-      Task<WeakBoundedVecT7> GetNextKeys();
+      Task<WeakBoundedVecT8> GetNextKeys();
       Task<bool> SubscribeNextKeys();
    }
 }

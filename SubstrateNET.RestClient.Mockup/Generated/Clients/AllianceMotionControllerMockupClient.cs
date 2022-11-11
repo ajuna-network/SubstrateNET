@@ -12,8 +12,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
@@ -27,11 +27,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetProposals(BoundedVecT38 value)
+      public async Task<bool> SetProposals(BoundedVecT43 value)
       {
          return await SendMockupRequestAsync(_httpClient, "AllianceMotion/Proposals", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalsParams());
       }
-      public async Task<bool> SetProposalOf(EnumCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<bool> SetProposalOf(EnumRuntimeCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "AllianceMotion/ProposalOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AllianceMotionStorage.ProposalOfParams(key));
       }

@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
     }
     
     /// <summary>
-    /// >> 118 - Variant[pallet_alliance.types.Version]
+    /// >> 332 - Variant[pallet_alliance.types.Version]
     /// </summary>
     public sealed class EnumVersion : BaseEnum<Version>
     {

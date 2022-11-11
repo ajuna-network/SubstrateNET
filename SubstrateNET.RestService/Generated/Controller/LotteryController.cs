@@ -65,7 +65,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Users who have purchased a ticket. (Lottery Index, Tickets Purchased)
         /// </summary>
         [HttpGet("Participants")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT31>), 200)]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT36>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "ParticipantsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetParticipants(string key)
         {
@@ -105,7 +105,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  by `Config::ValidateCall`.
         /// </summary>
         [HttpGet("CallIndices")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT31), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT36), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.LotteryStorage), "CallIndicesParams")]
         public IActionResult GetCallIndices()
         {

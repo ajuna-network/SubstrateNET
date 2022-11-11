@@ -12,8 +12,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class SchedulerControllerClient : BaseClient, ISchedulerControllerClient
@@ -25,19 +26,27 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>> GetAgenda(U32 key)
+      public async Task<U32> GetIncompleteSince()
       {
-         return await SendRequestAsync<BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>>(_httpClient, "scheduler/agenda", SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.AgendaParams(key));
+         return await SendRequestAsync<U32>(_httpClient, "scheduler/incompletesince");
+      }
+      public async Task<bool> SubscribeIncompleteSince()
+      {
+         return await _subscriptionClient.SubscribeAsync("Scheduler.IncompleteSince");
+      }
+      public async Task<BoundedVecT31> GetAgenda(U32 key)
+      {
+         return await SendRequestAsync<BoundedVecT31>(_httpClient, "scheduler/agenda", SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.AgendaParams(key));
       }
       public async Task<bool> SubscribeAgenda(U32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Scheduler.Agenda", SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.AgendaParams(key));
       }
-      public async Task<BaseTuple<U32, U32>> GetLookup(BaseVec<U8> key)
+      public async Task<BaseTuple<U32, U32>> GetLookup(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
       {
          return await SendRequestAsync<BaseTuple<U32, U32>>(_httpClient, "scheduler/lookup", SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.LookupParams(key));
       }
-      public async Task<bool> SubscribeLookup(BaseVec<U8> key)
+      public async Task<bool> SubscribeLookup(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
       {
          return await _subscriptionClient.SubscribeAsync("Scheduler.Lookup", SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.LookupParams(key));
       }

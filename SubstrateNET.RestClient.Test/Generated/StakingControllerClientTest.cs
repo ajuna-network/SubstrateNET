@@ -31,35 +31,6 @@ namespace SubstrateNET.RestClient.Test.Generated
          _httpClient = CreateHttpClient();
       }
       [Test()]
-      public async System.Threading.Tasks.Task TestHistoryDepth()
-      {
-         // Construct new Mockup client to test with.
-         StakingControllerMockupClient mockupClient = new StakingControllerMockupClient(_httpClient);
-
-         // Construct new subscription client to test with.
-         var subscriptionClient = CreateSubscriptionClient();
-
-         // Construct new RPC client to test with.
-         StakingControllerClient rpcClient = new StakingControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Primitive.U32 mockupValue = this.GetTestValueU32();
-
-
-         Assert.IsTrue(await rpcClient.SubscribeHistoryDepth());
-
-         // Save the previously generated mockup value in RPC service storage.
-         bool mockupSetResult = await mockupClient.SetHistoryDepth(mockupValue);
-
-         // Test that the expected mockup value was handled successfully from RPC service.
-         Assert.IsTrue(mockupSetResult);
-         var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
-         Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
-
-         Ajuna.NetApi.Model.Types.Primitive.U32 rpcResult = await rpcClient.GetHistoryDepth();
-
-         // Test that the expected mockup value matches the actual result from RPC service.
-         Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
-      }
-      [Test()]
       public async System.Threading.Tasks.Task TestValidatorCount()
       {
          // Construct new Mockup client to test with.
@@ -117,15 +88,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue5()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> GetTestValue4()
       {
          Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
-                  this.GetTestValue6()});
+                  this.GetTestValue5()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue6()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue5()
       {
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
@@ -176,7 +147,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StakingControllerClient rpcClient = new StakingControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> mockupValue = this.GetTestValue5();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> mockupValue = this.GetTestValue4();
 
 
          Assert.IsTrue(await rpcClient.SubscribeInvulnerables());
@@ -194,7 +165,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue8()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue7()
       {
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
@@ -234,7 +205,7 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue9()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue8()
       {
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
@@ -285,8 +256,8 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StakingControllerClient rpcClient = new StakingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupValue = this.GetTestValue8();
-         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue9();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupValue = this.GetTestValue7();
+         SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue8();
 
          Assert.IsTrue(await rpcClient.SubscribeBonded(mockupKey));
 
@@ -361,7 +332,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetTestValue13()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill GetTestValue12()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
@@ -379,7 +350,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StakingControllerClient rpcClient = new StakingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill mockupValue = this.GetTestValue13();
+         SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill mockupValue = this.GetTestValue12();
 
 
          Assert.IsTrue(await rpcClient.SubscribeMinCommission());
@@ -397,24 +368,23 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger GetTestValue15()
+      public SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger GetTestValue14()
       {
          SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger();
          result.Stash = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
-         result.Stash = this.GetTestValue16();
+         result.Stash = this.GetTestValue15();
          result.Total = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Total.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
          result.Active = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
          result.Active.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
-         result.Unlocking = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12();
-         result.Unlocking = this.GetTestValue17();
-         result.ClaimedRewards = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
-         result.ClaimedRewards.Create(new Ajuna.NetApi.Model.Types.Primitive.U32[] {
-                  this.GetTestValueU32()});
+         result.Unlocking = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14();
+         result.Unlocking = this.GetTestValue16();
+         result.ClaimedRewards = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15();
+         result.ClaimedRewards = this.GetTestValue18();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue15()
       {
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
@@ -454,16 +424,16 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12 GetTestValue17()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk[] {
-                  this.GetTestValue18()});
+                  this.GetTestValue17()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk GetTestValue18()
+      public SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk GetTestValue17()
       {
          SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.UnlockChunk();
@@ -471,6 +441,15 @@ namespace SubstrateNET.RestClient.Test.Generated
          result.Value.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU128().Value));
          result.Era = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Era.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
+         return result;
+      }
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15 GetTestValue18()
+      {
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Primitive.U32[] {
+                  this.GetTestValueU32()});
          return result;
       }
       public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue19()
@@ -524,7 +503,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          StakingControllerClient rpcClient = new StakingControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger mockupValue = this.GetTestValue15();
+         SubstrateNET.NetApi.Generated.Model.pallet_staking.StakingLedger mockupValue = this.GetTestValue14();
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue19();
 
          Assert.IsTrue(await rpcClient.SubscribeLedger(mockupKey));
@@ -765,16 +744,16 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.Nominations();
-         result.Targets = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11();
+         result.Targets = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12();
          result.Targets = this.GetTestValue31();
          result.SubmittedIn = this.GetTestValueU32();
          result.Suppressed = this.GetTestValueBool();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11 GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12 GetTestValue31()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue32()});
@@ -1447,14 +1426,14 @@ namespace SubstrateNET.RestClient.Test.Generated
          SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_staking.EraRewardPoints();
          result.Total = this.GetTestValueU32();
-         result.Individual = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2();
+         result.Individual = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1();
          result.Individual = this.GetTestValue60();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2 GetTestValue60()
+      public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 GetTestValue60()
       {
-         SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2 result;
-         result = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2();
+         SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 result;
+         result = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>>();
          result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>[] {
                   this.GetTestValue61()});

@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RandomnessCollectiveFlipControllerMockupClient : MockupBaseClient, IRandomnessCollectiveFlipControllerMockupClient
@@ -22,7 +22,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetRandomMaterial(BoundedVecT21 value)
+      public async Task<bool> SetRandomMaterial(BoundedVecT25 value)
       {
          return await SendMockupRequestAsync(_httpClient, "RandomnessCollectiveFlip/RandomMaterial", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RandomnessCollectiveFlipStorage.RandomMaterialParams());
       }

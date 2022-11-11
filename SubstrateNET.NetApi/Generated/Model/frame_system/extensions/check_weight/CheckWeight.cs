@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.extensions.check_weig
     
     
     /// <summary>
-    /// >> 676 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 691 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

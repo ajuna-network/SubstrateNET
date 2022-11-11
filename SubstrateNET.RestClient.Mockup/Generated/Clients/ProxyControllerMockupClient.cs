@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -24,11 +24,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetProxies(BaseTuple<BoundedVecT28, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SetProxies(BaseTuple<BoundedVecT33, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Proxy/Proxies", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ProxyStorage.ProxiesParams(key));
       }
-      public async Task<bool> SetAnnouncements(BaseTuple<BoundedVecT29, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SetAnnouncements(BaseTuple<BoundedVecT34, U128> value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Proxy/Announcements", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ProxyStorage.AnnouncementsParams(key));
       }

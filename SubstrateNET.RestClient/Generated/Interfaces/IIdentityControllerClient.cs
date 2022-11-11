@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IIdentityControllerClient
    {
@@ -23,9 +23,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeIdentityOf(AccountId32 key);
       Task<BaseTuple<AccountId32, EnumData>> GetSuperOf(AccountId32 key);
       Task<bool> SubscribeSuperOf(AccountId32 key);
-      Task<BaseTuple<U128, BoundedVecT23>> GetSubsOf(AccountId32 key);
+      Task<BaseTuple<U128, BoundedVecT27>> GetSubsOf(AccountId32 key);
       Task<bool> SubscribeSubsOf(AccountId32 key);
-      Task<BoundedVecT24> GetRegistrars();
+      Task<BoundedVecT28> GetRegistrars();
       Task<bool> SubscribeRegistrars();
    }
 }

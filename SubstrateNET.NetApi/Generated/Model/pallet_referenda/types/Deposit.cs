@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 607 - Composite[pallet_referenda.types.Deposit]
+    /// >> 613 - Composite[pallet_referenda.types.Deposit]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Deposit : BaseType

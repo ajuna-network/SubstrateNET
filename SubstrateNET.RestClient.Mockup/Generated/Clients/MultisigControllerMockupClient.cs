@@ -13,10 +13,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_multisig;
-   using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
-   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
-   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class MultisigControllerMockupClient : MockupBaseClient, IMultisigControllerMockupClient
@@ -26,13 +22,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetMultisigs(Multisig value, BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
+      public async Task<bool> SetMultisigs(Multisig value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Multisig/Multisigs", value.Encode(), SubstrateNET.NetApi.Generated.Storage.MultisigStorage.MultisigsParams(key));
-      }
-      public async Task<bool> SetCalls(BaseTuple<WrapperKeepOpaque, AccountId32, U128> value, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
-      {
-         return await SendMockupRequestAsync(_httpClient, "Multisig/Calls", value.Encode(), SubstrateNET.NetApi.Generated.Storage.MultisigStorage.CallsParams(key));
       }
    }
 }

@@ -36,9 +36,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet
     }
     
     /// <summary>
-    /// >> 582 - Variant[pallet_gilt.pallet.Error]
+    /// >> 589 - Variant[pallet_gilt.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

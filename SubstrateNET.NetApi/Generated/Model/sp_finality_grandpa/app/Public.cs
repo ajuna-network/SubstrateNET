@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app
     
     
     /// <summary>
-    /// >> 59 - Composite[sp_finality_grandpa.app.Public]
+    /// >> 60 - Composite[sp_finality_grandpa.app.Public]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

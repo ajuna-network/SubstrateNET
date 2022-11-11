@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 555 - Composite[pallet_multisig.Multisig]
+    /// >> 563 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType
@@ -42,7 +42,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> approvals
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> _approvals;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17 _approvals;
         
         public SubstrateNET.NetApi.Generated.Model.pallet_multisig.Timepoint When
         {
@@ -80,7 +80,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> Approvals
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17 Approvals
         {
             get
             {
@@ -116,7 +116,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig
             Deposit.Decode(byteArray, ref p);
             Depositor = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+            Approvals = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17();
             Approvals.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

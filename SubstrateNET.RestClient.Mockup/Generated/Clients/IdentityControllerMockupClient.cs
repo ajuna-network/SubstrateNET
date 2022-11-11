@@ -16,7 +16,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class IdentityControllerMockupClient : MockupBaseClient, IIdentityControllerMockupClient
@@ -34,11 +34,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Identity/SuperOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SuperOfParams(key));
       }
-      public async Task<bool> SetSubsOf(BaseTuple<U128, BoundedVecT23> value, AccountId32 key)
+      public async Task<bool> SetSubsOf(BaseTuple<U128, BoundedVecT27> value, AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Identity/SubsOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.SubsOfParams(key));
       }
-      public async Task<bool> SetRegistrars(BoundedVecT24 value)
+      public async Task<bool> SetRegistrars(BoundedVecT28 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Identity/Registrars", value.Encode(), SubstrateNET.NetApi.Generated.Storage.IdentityStorage.RegistrarsParams());
       }

@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Current epoch authorities.
         /// </summary>
         [HttpGet("Authorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "AuthoritiesParams")]
         public IActionResult GetAuthorities()
         {
@@ -136,7 +136,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Next epoch authorities.
         /// </summary>
         [HttpGet("NextAuthorities")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "NextAuthoritiesParams")]
         public IActionResult GetNextAuthorities()
         {
@@ -168,7 +168,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: `SegmentIndex` is an increasing integer, so this is okay.
         /// </summary>
         [HttpGet("UnderConstruction")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT8), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT9), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BabeStorage), "UnderConstructionParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetUnderConstruction(string key)
         {

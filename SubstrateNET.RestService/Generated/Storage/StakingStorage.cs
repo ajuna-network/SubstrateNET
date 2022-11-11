@@ -25,20 +25,8 @@ namespace SubstrateNET.RestService.Generated.Storage
     {
         
         /// <summary>
-        /// >> HistoryDepth
-        ///  Number of eras to keep in history.
-        /// 
-        ///  Information is kept for eras in `[current_era - history_depth; current_era]`.
-        /// 
-        ///  Must be more than the number of eras delayed by session otherwise. I.e. active era must
-        ///  always be in history. I.e. `active_era > current_era - history_depth` must be
-        ///  guaranteed.
-        /// </summary>
-        Ajuna.NetApi.Model.Types.Primitive.U32 GetHistoryDepth();
-        
-        /// <summary>
         /// >> ValidatorCount
-        ///  The ideal number of staking participants.
+        ///  The ideal number of active validators.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetValidatorCount();
         
@@ -344,11 +332,6 @@ namespace SubstrateNET.RestService.Generated.Storage
     {
         
         /// <summary>
-        /// _historyDepthTypedStorage typed storage field
-        /// </summary>
-        private TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _historyDepthTypedStorage;
-        
-        /// <summary>
         /// _validatorCountTypedStorage typed storage field
         /// </summary>
         private TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _validatorCountTypedStorage;
@@ -538,7 +521,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public StakingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.HistoryDepthTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.HistoryDepth", storageDataProvider, storageChangeDelegates);
             this.ValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.ValidatorCount", storageDataProvider, storageChangeDelegates);
             this.MinimumValidatorCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Staking.MinimumValidatorCount", storageDataProvider, storageChangeDelegates);
             this.InvulnerablesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Staking.Invulnerables", storageDataProvider, storageChangeDelegates);
@@ -576,21 +558,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.OffendingValidatorsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>>>("Staking.OffendingValidators", storageDataProvider, storageChangeDelegates);
             this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumReleases>("Staking.StorageVersion", storageDataProvider, storageChangeDelegates);
             this.ChillThresholdTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent>("Staking.ChillThreshold", storageDataProvider, storageChangeDelegates);
-        }
-        
-        /// <summary>
-        /// _historyDepthTypedStorage property
-        /// </summary>
-        public TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> HistoryDepthTypedStorage
-        {
-            get
-            {
-                return _historyDepthTypedStorage;
-            }
-            set
-            {
-                _historyDepthTypedStorage = value;
-            }
         }
         
         /// <summary>
@@ -1153,7 +1120,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public async Task InitializeAsync(Ajuna.ServiceLayer.Storage.IStorageDataProvider dataProvider)
         {
-            await HistoryDepthTypedStorage.InitializeAsync("Staking", "HistoryDepth");
             await ValidatorCountTypedStorage.InitializeAsync("Staking", "ValidatorCount");
             await MinimumValidatorCountTypedStorage.InitializeAsync("Staking", "MinimumValidatorCount");
             await InvulnerablesTypedStorage.InitializeAsync("Staking", "Invulnerables");
@@ -1194,30 +1160,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         }
         
         /// <summary>
-        /// Implements any storage change for Staking.HistoryDepth
-        /// </summary>
-        [StorageChange("Staking", "HistoryDepth")]
-        public void OnUpdateHistoryDepth(string data)
-        {
-            HistoryDepthTypedStorage.Update(data);
-        }
-        
-        /// <summary>
-        /// >> HistoryDepth
-        ///  Number of eras to keep in history.
-        /// 
-        ///  Information is kept for eras in `[current_era - history_depth; current_era]`.
-        /// 
-        ///  Must be more than the number of eras delayed by session otherwise. I.e. active era must
-        ///  always be in history. I.e. `active_era > current_era - history_depth` must be
-        ///  guaranteed.
-        /// </summary>
-        public Ajuna.NetApi.Model.Types.Primitive.U32 GetHistoryDepth()
-        {
-            return HistoryDepthTypedStorage.Get();
-        }
-        
-        /// <summary>
         /// Implements any storage change for Staking.ValidatorCount
         /// </summary>
         [StorageChange("Staking", "ValidatorCount")]
@@ -1228,7 +1170,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> ValidatorCount
-        ///  The ideal number of staking participants.
+        ///  The ideal number of active validators.
         /// </summary>
         public Ajuna.NetApi.Model.Types.Primitive.U32 GetValidatorCount()
         {

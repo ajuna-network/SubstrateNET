@@ -142,15 +142,15 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> SignedSubmissionIndices
-        ///  A sorted, bounded set of `(score, index)`, where each `index` points to a value in
-        ///  `SignedSubmissions`.
+        ///  A sorted, bounded vector of `(score, block_number, index)`, where each `index` points to a
+        ///  value in `SignedSubmissions`.
         /// 
         ///  We never need to process more than a single signed submission at a time. Signed submissions
         ///  can be quite large, so we're willing to pay the cost of multiple database accesses to access
         ///  them one at a time instead of reading and decoding all of them at once.
         /// </summary>
         [HttpGet("SignedSubmissionIndices")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage), "SignedSubmissionIndicesParams")]
         public IActionResult GetSignedSubmissionIndices()
         {

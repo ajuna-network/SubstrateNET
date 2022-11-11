@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class RandomnessCollectiveFlipControllerClient : BaseClient, IRandomnessCollectiveFlipControllerClient
@@ -24,9 +24,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT21> GetRandomMaterial()
+      public async Task<BoundedVecT25> GetRandomMaterial()
       {
-         return await SendRequestAsync<BoundedVecT21>(_httpClient, "randomnesscollectiveflip/randommaterial");
+         return await SendRequestAsync<BoundedVecT25>(_httpClient, "randomnesscollectiveflip/randommaterial");
       }
       public async Task<bool> SubscribeRandomMaterial()
       {

@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
@@ -25,7 +25,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetPristineCode(BoundedVecT17 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<bool> SetPristineCode(BoundedVecT23 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/PristineCode", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
       }
@@ -41,11 +41,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/Nonce", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.NonceParams());
       }
-      public async Task<bool> SetContractInfoOf(RawContractInfo value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SetContractInfoOf(ContractInfo value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/ContractInfoOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
-      public async Task<bool> SetDeletionQueue(BoundedVecT20 value)
+      public async Task<bool> SetDeletionQueue(BoundedVecT24 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Contracts/DeletionQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ContractsStorage.DeletionQueueParams());
       }

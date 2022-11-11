@@ -35,8 +35,8 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "SuperOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumData>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "SubsOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "Registrars"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "Registrars"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28)));
         }
         
         /// <summary>
@@ -110,10 +110,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>> SubsOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>> SubsOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
         {
             string parameters = IdentityStorage.SubsOfParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>>(parameters, token);
         }
         
         /// <summary>
@@ -135,10 +135,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// 
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24> Registrars(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28> Registrars(CancellationToken token)
         {
             string parameters = IdentityStorage.RegistrarsParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28>(parameters, token);
         }
     }
     
@@ -149,7 +149,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> add_registrar
         /// Identity pallet declaration.
         /// </summary>
-        public static Method AddRegistrar(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method AddRegistrar(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
@@ -227,7 +227,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> set_account_id
         /// Identity pallet declaration.
         /// </summary>
-        public static Method SetAccountId(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @new)
+        public static Method SetAccountId(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(index.Encode());
@@ -251,12 +251,13 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> provide_judgement
         /// Identity pallet declaration.
         /// </summary>
-        public static Method ProvideJudgement(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> reg_index, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumJudgement judgement)
+        public static Method ProvideJudgement(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> reg_index, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumJudgement judgement, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 identity)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(reg_index.Encode());
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(judgement.Encode());
+            byteArray.AddRange(identity.Encode());
             return new Method(26, "Identity", 9, "provide_judgement", byteArray.ToArray());
         }
         
@@ -415,5 +416,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Sub-account isn't owned by sender.
         /// </summary>
         NotOwned,
+        
+        /// <summary>
+        /// >> JudgementForDifferentIdentity
+        /// The provided judgement was for a different identity.
+        /// </summary>
+        JudgementForDifferentIdentity,
+        
+        /// <summary>
+        /// >> JudgementPaymentFailed
+        /// Error that occurs when there is an issue paying for judgement.
+        /// </summary>
+        JudgementPaymentFailed,
     }
 }

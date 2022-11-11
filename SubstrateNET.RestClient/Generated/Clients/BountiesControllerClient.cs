@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class BountiesControllerClient : BaseClient, IBountiesControllerClient
@@ -42,17 +42,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Bounties.Bounties", SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountiesParams(key));
       }
-      public async Task<BoundedVecT30> GetBountyDescriptions(U32 key)
+      public async Task<BoundedVecT35> GetBountyDescriptions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT30>(_httpClient, "bounties/bountydescriptions", SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyDescriptionsParams(key));
+         return await SendRequestAsync<BoundedVecT35>(_httpClient, "bounties/bountydescriptions", SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyDescriptionsParams(key));
       }
       public async Task<bool> SubscribeBountyDescriptions(U32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Bounties.BountyDescriptions", SubstrateNET.NetApi.Generated.Storage.BountiesStorage.BountyDescriptionsParams(key));
       }
-      public async Task<BoundedVecT16> GetBountyApprovals()
+      public async Task<BoundedVecT22> GetBountyApprovals()
       {
-         return await SendRequestAsync<BoundedVecT16>(_httpClient, "bounties/bountyapprovals");
+         return await SendRequestAsync<BoundedVecT22>(_httpClient, "bounties/bountyapprovals");
       }
       public async Task<bool> SubscribeBountyApprovals()
       {

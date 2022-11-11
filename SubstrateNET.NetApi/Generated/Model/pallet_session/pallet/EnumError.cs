@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 443 - Variant[pallet_session.pallet.Error]
+    /// >> 449 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

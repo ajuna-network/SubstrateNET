@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using SubstrateNET.NetApi.Generated.Model.pallet_uniques.types;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IUniquesControllerMockupClient
    {
@@ -28,6 +28,5 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetAttribute(BaseTuple<BoundedVecT3, U128> value, BaseTuple<U32, BaseOpt<U32>, BoundedVecT2> key);
       Task<bool> SetItemPriceOf(BaseTuple<U128, BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, BaseTuple<U32, U32> key);
       Task<bool> SetCollectionMaxSupply(U32 value, U32 key);
-      Task<bool> SetNextCollectionId(U32 value);
    }
 }

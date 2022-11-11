@@ -18,7 +18,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    
    public class SessionControllerClientTest : ClientTestBase
    {
@@ -163,18 +163,18 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> GetTestValue7()
+      public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>> GetTestValue7()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>();
-         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>[] {
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>>();
+         result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>[] {
                   this.GetTestValue8()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys> GetTestValue8()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys> GetTestValue8()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>();
          result.Create(this.GetTestValue9(), this.GetTestValue10());
          return result;
       }
@@ -218,10 +218,10 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys GetTestValue10()
+      public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys GetTestValue10()
       {
-         SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys result;
-         result = new SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys();
+         SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys result;
+         result = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys();
          result.Grandpa = new SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public();
          result.Grandpa = this.GetTestValue11();
          result.Babe = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public();
@@ -435,7 +435,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SessionControllerClient rpcClient = new SessionControllerClient(_httpClient, subscriptionClient);
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> mockupValue = this.GetTestValue7();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>> mockupValue = this.GetTestValue7();
 
 
          Assert.IsTrue(await rpcClient.SubscribeQueuedKeys());
@@ -448,7 +448,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>> rpcResult = await rpcClient.GetQueuedKeys();
+         Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>> rpcResult = await rpcClient.GetQueuedKeys();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
@@ -490,10 +490,10 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys GetTestValue22()
+      public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys GetTestValue22()
       {
-         SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys result;
-         result = new SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys();
+         SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys result;
+         result = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys();
          result.Grandpa = new SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.app.Public();
          result.Grandpa = this.GetTestValue23();
          result.Babe = new SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.app.Public();
@@ -747,7 +747,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          SessionControllerClient rpcClient = new SessionControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys mockupValue = this.GetTestValue22();
+         SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys mockupValue = this.GetTestValue22();
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 mockupKey = this.GetTestValue31();
 
          Assert.IsTrue(await rpcClient.SubscribeNextKeys(mockupKey));
@@ -760,7 +760,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys rpcResult = await rpcClient.GetNextKeys(mockupKey);
+         SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys rpcResult = await rpcClient.GetNextKeys(mockupKey);
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());

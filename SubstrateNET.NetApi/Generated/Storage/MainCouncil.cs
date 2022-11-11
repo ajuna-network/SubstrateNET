@@ -30,9 +30,9 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public CouncilStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Proposals"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Proposals"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "ProposalOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Voting"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "ProposalCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
@@ -53,10 +53,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13> Proposals(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19> Proposals(CancellationToken token)
         {
             string parameters = CouncilStorage.ProposalsParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19>(parameters, token);
         }
         
         /// <summary>
@@ -74,10 +74,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> ProposalOf
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> ProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> ProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
         {
             string parameters = CouncilStorage.ProposalOfParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>(parameters, token);
         }
         
         /// <summary>
@@ -179,7 +179,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> execute
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Execute(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        public static Method Execute(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal.Encode());
@@ -191,7 +191,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> propose
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Propose(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> threshold, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        public static Method Propose(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> threshold, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());
@@ -214,17 +214,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> close
+        /// >> close_old_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Close(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U64> proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        public static Method CloseOldWeight(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_weights.OldWeight> proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_hash.Encode());
             byteArray.AddRange(index.Encode());
             byteArray.AddRange(proposal_weight_bound.Encode());
             byteArray.AddRange(length_bound.Encode());
-            return new Method(13, "Council", 4, "close", byteArray.ToArray());
+            return new Method(13, "Council", 4, "close_old_weight", byteArray.ToArray());
         }
         
         /// <summary>
@@ -236,6 +236,20 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_hash.Encode());
             return new Method(13, "Council", 5, "disapprove_proposal", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> close
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Close(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(index.Encode());
+            byteArray.AddRange(proposal_weight_bound.Encode());
+            byteArray.AddRange(length_bound.Encode());
+            return new Method(13, "Council", 6, "close", byteArray.ToArray());
         }
     }
     

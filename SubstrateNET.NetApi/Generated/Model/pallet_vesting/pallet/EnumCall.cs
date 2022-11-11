@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_vesting.pallet
     }
     
     /// <summary>
-    /// >> 318 - Variant[pallet_vesting.pallet.Call]
+    /// >> 288 - Variant[pallet_vesting.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.pallet_vesting.vesting_info.VestingInfo>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>

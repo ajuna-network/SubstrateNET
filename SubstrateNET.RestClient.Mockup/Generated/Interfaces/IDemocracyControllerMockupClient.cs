@@ -12,27 +12,25 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.pallet_democracy;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.types;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote;
-   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold;
    
    public interface IDemocracyControllerMockupClient
    {
       Task<bool> SetPublicPropCount(U32 value);
-      Task<bool> SetPublicProps(BaseVec<BaseTuple<U32, H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value);
-      Task<bool> SetDepositOf(BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, U128> value, U32 key);
-      Task<bool> SetPreimages(EnumPreimageStatus value, H256 key);
+      Task<bool> SetPublicProps(BoundedVecT16 value);
+      Task<bool> SetDepositOf(BaseTuple<BoundedVecT17, U128> value, U32 key);
       Task<bool> SetReferendumCount(U32 value);
       Task<bool> SetLowestUnbaked(U32 value);
       Task<bool> SetReferendumInfoOf(EnumReferendumInfo value, U32 key);
       Task<bool> SetVotingOf(EnumVoting value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SetLastTabledWasExternal(Bool value);
-      Task<bool> SetNextExternal(BaseTuple<H256, EnumVoteThreshold> value);
-      Task<bool> SetBlacklist(BaseTuple<U32, BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, H256 key);
-      Task<bool> SetCancellations(Bool value, H256 key);
-      Task<bool> SetStorageVersion(EnumReleases value);
+      Task<bool> SetNextExternal(BaseTuple<EnumBounded, EnumVoteThreshold> value);
+      Task<bool> SetBlacklist(BaseTuple<U32, BoundedVecT17> value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetCancellations(Bool value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

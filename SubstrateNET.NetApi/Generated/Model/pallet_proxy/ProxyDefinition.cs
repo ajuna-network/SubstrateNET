@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 547 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 555 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType
@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> proxy_type
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType _proxyType;
+        private SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType _proxyType;
         
         /// <summary>
         /// >> delay
@@ -51,7 +51,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType ProxyType
+        public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType ProxyType
         {
             get
             {
@@ -94,7 +94,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy
             var start = p;
             Delegate = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Delegate.Decode(byteArray, ref p);
-            ProxyType = new SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType();
+            ProxyType = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType();
             ProxyType.Decode(byteArray, ref p);
             Delay = new Ajuna.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);

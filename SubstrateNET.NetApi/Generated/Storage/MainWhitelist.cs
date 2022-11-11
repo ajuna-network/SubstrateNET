@@ -83,7 +83,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> dispatch_whitelisted_call
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method DispatchWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash, Ajuna.NetApi.Model.Types.Primitive.U64 call_weight_witness)
+        public static Method DispatchWhitelistedCall(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight call_weight_witness)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call_hash.Encode());
@@ -95,7 +95,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> dispatch_whitelisted_call_with_preimage
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method DispatchWhitelistedCallWithPreimage(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method DispatchWhitelistedCallWithPreimage(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());

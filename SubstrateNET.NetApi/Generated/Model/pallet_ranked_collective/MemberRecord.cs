@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective
     
     
     /// <summary>
-    /// >> 659 - Composite[pallet_ranked_collective.MemberRecord]
+    /// >> 670 - Composite[pallet_ranked_collective.MemberRecord]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class MemberRecord : BaseType

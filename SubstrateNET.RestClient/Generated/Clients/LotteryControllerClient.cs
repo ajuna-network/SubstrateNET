@@ -15,7 +15,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_lottery;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -44,9 +44,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Lottery.Lottery");
       }
-      public async Task<BaseTuple<U32, BoundedVecT31>> GetParticipants(AccountId32 key)
+      public async Task<BaseTuple<U32, BoundedVecT36>> GetParticipants(AccountId32 key)
       {
-         return await SendRequestAsync<BaseTuple<U32, BoundedVecT31>>(_httpClient, "lottery/participants", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.ParticipantsParams(key));
+         return await SendRequestAsync<BaseTuple<U32, BoundedVecT36>>(_httpClient, "lottery/participants", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.ParticipantsParams(key));
       }
       public async Task<bool> SubscribeParticipants(AccountId32 key)
       {
@@ -68,9 +68,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Lottery.Tickets", SubstrateNET.NetApi.Generated.Storage.LotteryStorage.TicketsParams(key));
       }
-      public async Task<BoundedVecT31> GetCallIndices()
+      public async Task<BoundedVecT36> GetCallIndices()
       {
-         return await SendRequestAsync<BoundedVecT31>(_httpClient, "lottery/callindices");
+         return await SendRequestAsync<BoundedVecT36>(_httpClient, "lottery/callindices");
       }
       public async Task<bool> SubscribeCallIndices()
       {

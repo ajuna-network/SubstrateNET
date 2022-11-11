@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IRankedCollectiveControllerClient
    {
@@ -28,7 +28,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeIndexToId(Ajuna.NetApi.Model.Types.Base.BaseTuple<U16, U32> key);
       Task<EnumVoteRecord> GetVoting(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, AccountId32> key);
       Task<bool> SubscribeVoting(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, AccountId32> key);
-      Task<BoundedVecT45> GetVotingCleanup(U32 key);
+      Task<BoundedVecT49> GetVotingCleanup(U32 key);
       Task<bool> SubscribeVotingCleanup(U32 key);
    }
 }

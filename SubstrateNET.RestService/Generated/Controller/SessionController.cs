@@ -80,7 +80,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  will be used to determine the validator's session keys.
         /// </summary>
         [HttpGet("QueuedKeys")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys>>), 200)]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys>>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "QueuedKeysParams")]
         public IActionResult GetQueuedKeys()
         {
@@ -108,7 +108,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The next session keys for a validator.
         /// </summary>
         [HttpGet("NextKeys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SessionStorage), "NextKeysParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetNextKeys(string key)
         {

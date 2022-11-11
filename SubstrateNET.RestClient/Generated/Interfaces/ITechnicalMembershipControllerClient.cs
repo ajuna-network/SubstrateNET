@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    
    public interface ITechnicalMembershipControllerClient
    {
-      Task<BoundedVecT15> GetMembers();
+      Task<BoundedVecT21> GetMembers();
       Task<bool> SubscribeMembers();
       Task<AccountId32> GetPrime();
       Task<bool> SubscribePrime();

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 647 - Composite[pallet_nomination_pools.UnbondPool]
+    /// >> 658 - Composite[pallet_nomination_pools.UnbondPool]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class UnbondPool : BaseType

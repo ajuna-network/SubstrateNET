@@ -17,7 +17,7 @@ namespace SubstrateNET.RestClient.Test.Generated
    using SubstrateNET.RestClient.Generated.Clients;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
    using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    
@@ -253,18 +253,18 @@ namespace SubstrateNET.RestClient.Test.Generated
       {
          SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RoundSnapshot result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RoundSnapshot();
-         result.Voters = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>>();
-         result.Voters.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>[] {
+         result.Voters = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>>();
+         result.Voters.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>[] {
                   this.GetTestValue14()});
          result.Targets = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Targets.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue18()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11> GetTestValue14()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12> GetTestValue14()
       {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11>();
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U64, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12>();
          result.Create(this.GetTestValue15(), this.GetTestValueU64(), this.GetTestValue16());
          return result;
       }
@@ -308,10 +308,10 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11 GetTestValue16()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12 GetTestValue16()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT11();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT12();
          result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
          result.Value.Create(new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32[] {
                   this.GetTestValue17()});
@@ -523,31 +523,23 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1 GetTestValue24()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13 GetTestValue24()
       {
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1 result;
-         result = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1();
-         result.Value = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1();
-         result.Value = this.GetTestValue25();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13 result;
+         result = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13();
+         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>();
+         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>[] {
+                  this.GetTestValue25()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 GetTestValue25()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue25()
       {
-         SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 result;
-         result = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1();
-         result.Value = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32>>();
-         result.Value.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32>[] {
-                  this.GetTestValue26()});
+         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32> result;
+         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>();
+         result.Create(this.GetTestValue26(), this.GetTestValueU32(), this.GetTestValueU32());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue26()
-      {
-         Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32> result;
-         result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore, Ajuna.NetApi.Model.Types.Primitive.U32>();
-         result.Create(this.GetTestValue27(), this.GetTestValueU32());
-         return result;
-      }
-      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue27()
+      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue26()
       {
          SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore();
@@ -567,7 +559,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ElectionProviderMultiPhaseControllerClient rpcClient = new ElectionProviderMultiPhaseControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1 mockupValue = this.GetTestValue24();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13 mockupValue = this.GetTestValue24();
 
 
          Assert.IsTrue(await rpcClient.SubscribeSignedSubmissionIndices());
@@ -580,24 +572,24 @@ namespace SubstrateNET.RestClient.Test.Generated
          var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(1));
          Assert.IsTrue(await subscriptionClient.ReceiveNextAsync(cts.Token));
 
-         SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map.BoundedBTreeMapT1 rpcResult = await rpcClient.GetSignedSubmissionIndices();
+         SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT13 rpcResult = await rpcClient.GetSignedSubmissionIndices();
 
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission GetTestValue29()
+      public SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission GetTestValue28()
       {
          SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission();
          result.Who = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
-         result.Who = this.GetTestValue30();
+         result.Who = this.GetTestValue29();
          result.Deposit = this.GetTestValueU128();
          result.RawSolution = new SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution();
-         result.RawSolution = this.GetTestValue31();
+         result.RawSolution = this.GetTestValue30();
          result.CallFee = this.GetTestValueU128();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue30()
+      public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 GetTestValue29()
       {
          SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32();
@@ -637,3985 +629,3985 @@ namespace SubstrateNET.RestClient.Test.Generated
                   this.GetTestValueU8()});
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution GetTestValue31()
+      public SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution GetTestValue30()
       {
          SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution result;
          result = new SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution();
-         result.Solution = new SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16();
-         result.Solution = this.GetTestValue32();
+         result.Solution = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16();
+         result.Solution = this.GetTestValue31();
          result.Score = new SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore();
-         result.Score = this.GetTestValue575();
+         result.Score = this.GetTestValue574();
          result.Round = this.GetTestValueU32();
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16 GetTestValue32()
+      public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16 GetTestValue31()
       {
-         SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16 result;
-         result = new SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16();
+         SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16 result;
+         result = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16();
          result.Votes1 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes1.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue33()});
+                  this.GetTestValue32()});
          result.Votes2 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes2.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue36()});
+                  this.GetTestValue35()});
          result.Votes3 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes3.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue43()});
+                  this.GetTestValue42()});
          result.Votes4 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes4.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue55()});
+                  this.GetTestValue54()});
          result.Votes5 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes5.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue71()});
+                  this.GetTestValue70()});
          result.Votes6 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes6.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue91()});
+                  this.GetTestValue90()});
          result.Votes7 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes7.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue115()});
+                  this.GetTestValue114()});
          result.Votes8 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes8.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue143()});
+                  this.GetTestValue142()});
          result.Votes9 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes9.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue175()});
+                  this.GetTestValue174()});
          result.Votes10 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes10.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue211()});
+                  this.GetTestValue210()});
          result.Votes11 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes11.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue251()});
+                  this.GetTestValue250()});
          result.Votes12 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes12.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue295()});
+                  this.GetTestValue294()});
          result.Votes13 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes13.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue343()});
+                  this.GetTestValue342()});
          result.Votes14 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes14.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue395()});
+                  this.GetTestValue394()});
          result.Votes15 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes15.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue451()});
+                  this.GetTestValue450()});
          result.Votes16 = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>>();
          result.Votes16.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>[] {
-                  this.GetTestValue511()});
+                  this.GetTestValue510()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue33()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue32()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue34(), this.GetTestValue35());
+         result.Create(this.GetTestValue33(), this.GetTestValue34());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue34()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue33()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue35()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue34()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue36()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue35()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue37(), this.GetTestValue38(), this.GetTestValue42());
+         result.Create(this.GetTestValue36(), this.GetTestValue37(), this.GetTestValue41());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue37()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue36()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue38()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue37()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue39(), this.GetTestValue40());
+         result.Create(this.GetTestValue38(), this.GetTestValue39());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue39()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue38()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue40()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue39()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue41().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue40().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue41()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue40()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue42()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue41()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue43()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue42()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue44(), this.GetTestValue45(), this.GetTestValue54());
+         result.Create(this.GetTestValue43(), this.GetTestValue44(), this.GetTestValue53());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue44()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue43()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple GetTestValue45()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple GetTestValue44()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr2BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue46(),
-                  this.GetTestValue50()});
+                  this.GetTestValue45(),
+                  this.GetTestValue49()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue46()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue45()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue47(), this.GetTestValue48());
+         result.Create(this.GetTestValue46(), this.GetTestValue47());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue47()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue46()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue48()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue47()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue49().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue48().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue49()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue48()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue50()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue49()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue51(), this.GetTestValue52());
+         result.Create(this.GetTestValue50(), this.GetTestValue51());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue51()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue50()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue52()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue51()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue53().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue52().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue53()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue52()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue54()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue53()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue55()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue54()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue56(), this.GetTestValue57(), this.GetTestValue70());
+         result.Create(this.GetTestValue55(), this.GetTestValue56(), this.GetTestValue69());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue56()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue55()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple GetTestValue57()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple GetTestValue56()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr3BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue58(),
-                  this.GetTestValue62(),
-                  this.GetTestValue66()});
+                  this.GetTestValue57(),
+                  this.GetTestValue61(),
+                  this.GetTestValue65()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue58()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue57()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue59(), this.GetTestValue60());
+         result.Create(this.GetTestValue58(), this.GetTestValue59());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue59()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue58()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue60()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue59()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue61().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue60().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue61()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue60()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue62()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue61()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue63(), this.GetTestValue64());
+         result.Create(this.GetTestValue62(), this.GetTestValue63());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue63()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue62()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue64()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue63()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue65().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue64().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue65()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue64()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue66()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue65()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue67(), this.GetTestValue68());
+         result.Create(this.GetTestValue66(), this.GetTestValue67());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue67()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue66()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue68()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue67()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue69().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue68().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue69()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue68()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue70()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue69()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue71()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue70()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue72(), this.GetTestValue73(), this.GetTestValue90());
+         result.Create(this.GetTestValue71(), this.GetTestValue72(), this.GetTestValue89());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue72()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue71()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple GetTestValue73()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple GetTestValue72()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr4BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue74(),
-                  this.GetTestValue78(),
-                  this.GetTestValue82(),
-                  this.GetTestValue86()});
+                  this.GetTestValue73(),
+                  this.GetTestValue77(),
+                  this.GetTestValue81(),
+                  this.GetTestValue85()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue74()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue73()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue75(), this.GetTestValue76());
+         result.Create(this.GetTestValue74(), this.GetTestValue75());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue75()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue74()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue76()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue75()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue77().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue76().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue77()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue76()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue78()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue77()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue79(), this.GetTestValue80());
+         result.Create(this.GetTestValue78(), this.GetTestValue79());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue79()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue78()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue80()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue79()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue81().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue80().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue81()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue80()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue82()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue81()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue83(), this.GetTestValue84());
+         result.Create(this.GetTestValue82(), this.GetTestValue83());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue83()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue82()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue84()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue83()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue85().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue84().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue85()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue84()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue86()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue85()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue87(), this.GetTestValue88());
+         result.Create(this.GetTestValue86(), this.GetTestValue87());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue87()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue86()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue88()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue87()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue89().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue88().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue89()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue88()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue90()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue89()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue91()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue90()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue92(), this.GetTestValue93(), this.GetTestValue114());
+         result.Create(this.GetTestValue91(), this.GetTestValue92(), this.GetTestValue113());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue92()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue91()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple GetTestValue93()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple GetTestValue92()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr5BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue94(),
-                  this.GetTestValue98(),
-                  this.GetTestValue102(),
-                  this.GetTestValue106(),
-                  this.GetTestValue110()});
+                  this.GetTestValue93(),
+                  this.GetTestValue97(),
+                  this.GetTestValue101(),
+                  this.GetTestValue105(),
+                  this.GetTestValue109()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue94()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue93()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue95(), this.GetTestValue96());
+         result.Create(this.GetTestValue94(), this.GetTestValue95());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue95()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue94()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue96()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue95()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue97().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue96().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue97()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue96()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue98()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue97()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue99(), this.GetTestValue100());
+         result.Create(this.GetTestValue98(), this.GetTestValue99());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue99()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue98()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue100()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue99()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue101().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue100().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue101()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue100()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue102()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue101()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue103(), this.GetTestValue104());
+         result.Create(this.GetTestValue102(), this.GetTestValue103());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue103()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue102()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue104()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue103()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue105().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue104().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue105()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue104()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue106()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue105()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue107(), this.GetTestValue108());
+         result.Create(this.GetTestValue106(), this.GetTestValue107());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue107()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue106()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue108()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue107()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue109().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue108().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue109()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue108()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue110()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue109()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue111(), this.GetTestValue112());
+         result.Create(this.GetTestValue110(), this.GetTestValue111());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue111()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue110()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue112()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue111()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue113().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue112().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue113()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue112()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue114()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue113()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue115()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue114()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue116(), this.GetTestValue117(), this.GetTestValue142());
+         result.Create(this.GetTestValue115(), this.GetTestValue116(), this.GetTestValue141());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue116()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue115()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple GetTestValue117()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple GetTestValue116()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr6BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue118(),
-                  this.GetTestValue122(),
-                  this.GetTestValue126(),
-                  this.GetTestValue130(),
-                  this.GetTestValue134(),
-                  this.GetTestValue138()});
+                  this.GetTestValue117(),
+                  this.GetTestValue121(),
+                  this.GetTestValue125(),
+                  this.GetTestValue129(),
+                  this.GetTestValue133(),
+                  this.GetTestValue137()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue118()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue117()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue119(), this.GetTestValue120());
+         result.Create(this.GetTestValue118(), this.GetTestValue119());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue119()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue118()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue120()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue119()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue121().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue120().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue121()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue120()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue122()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue121()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue123(), this.GetTestValue124());
+         result.Create(this.GetTestValue122(), this.GetTestValue123());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue123()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue122()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue124()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue123()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue125().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue124().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue125()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue124()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue126()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue125()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue127(), this.GetTestValue128());
+         result.Create(this.GetTestValue126(), this.GetTestValue127());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue127()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue126()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue128()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue127()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue129().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue128().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue129()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue128()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue130()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue129()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue131(), this.GetTestValue132());
+         result.Create(this.GetTestValue130(), this.GetTestValue131());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue131()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue130()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue132()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue131()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue133().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue132().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue133()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue132()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue134()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue133()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue135(), this.GetTestValue136());
+         result.Create(this.GetTestValue134(), this.GetTestValue135());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue135()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue134()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue136()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue135()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue137().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue136().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue137()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue136()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue138()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue137()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue139(), this.GetTestValue140());
+         result.Create(this.GetTestValue138(), this.GetTestValue139());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue139()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue138()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue140()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue139()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue141().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue140().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue141()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue140()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue142()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue141()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue143()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue142()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue144(), this.GetTestValue145(), this.GetTestValue174());
+         result.Create(this.GetTestValue143(), this.GetTestValue144(), this.GetTestValue173());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue144()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue143()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple GetTestValue145()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple GetTestValue144()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr7BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue146(),
-                  this.GetTestValue150(),
-                  this.GetTestValue154(),
-                  this.GetTestValue158(),
-                  this.GetTestValue162(),
-                  this.GetTestValue166(),
-                  this.GetTestValue170()});
+                  this.GetTestValue145(),
+                  this.GetTestValue149(),
+                  this.GetTestValue153(),
+                  this.GetTestValue157(),
+                  this.GetTestValue161(),
+                  this.GetTestValue165(),
+                  this.GetTestValue169()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue146()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue145()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue147(), this.GetTestValue148());
+         result.Create(this.GetTestValue146(), this.GetTestValue147());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue147()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue146()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue148()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue147()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue149().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue148().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue149()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue148()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue150()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue149()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue151(), this.GetTestValue152());
+         result.Create(this.GetTestValue150(), this.GetTestValue151());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue151()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue150()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue152()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue151()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue153().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue152().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue153()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue152()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue154()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue153()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue155(), this.GetTestValue156());
+         result.Create(this.GetTestValue154(), this.GetTestValue155());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue155()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue154()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue156()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue155()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue157().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue156().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue157()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue156()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue158()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue157()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue159(), this.GetTestValue160());
+         result.Create(this.GetTestValue158(), this.GetTestValue159());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue159()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue158()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue160()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue159()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue161().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue160().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue161()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue160()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue162()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue161()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue163(), this.GetTestValue164());
+         result.Create(this.GetTestValue162(), this.GetTestValue163());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue163()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue162()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue164()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue163()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue165().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue164().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue165()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue164()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue166()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue165()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue167(), this.GetTestValue168());
+         result.Create(this.GetTestValue166(), this.GetTestValue167());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue167()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue166()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue168()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue167()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue169().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue168().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue169()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue168()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue170()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue169()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue171(), this.GetTestValue172());
+         result.Create(this.GetTestValue170(), this.GetTestValue171());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue171()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue170()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue172()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue171()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue173().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue172().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue173()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue172()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue174()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue173()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue175()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue174()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue176(), this.GetTestValue177(), this.GetTestValue210());
+         result.Create(this.GetTestValue175(), this.GetTestValue176(), this.GetTestValue209());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue176()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue175()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple GetTestValue177()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple GetTestValue176()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr8BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue178(),
-                  this.GetTestValue182(),
-                  this.GetTestValue186(),
-                  this.GetTestValue190(),
-                  this.GetTestValue194(),
-                  this.GetTestValue198(),
-                  this.GetTestValue202(),
-                  this.GetTestValue206()});
+                  this.GetTestValue177(),
+                  this.GetTestValue181(),
+                  this.GetTestValue185(),
+                  this.GetTestValue189(),
+                  this.GetTestValue193(),
+                  this.GetTestValue197(),
+                  this.GetTestValue201(),
+                  this.GetTestValue205()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue178()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue177()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue179(), this.GetTestValue180());
+         result.Create(this.GetTestValue178(), this.GetTestValue179());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue179()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue178()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue180()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue179()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue181().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue180().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue181()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue180()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue182()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue181()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue183(), this.GetTestValue184());
+         result.Create(this.GetTestValue182(), this.GetTestValue183());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue183()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue182()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue184()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue183()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue185().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue184().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue185()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue184()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue186()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue185()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue187(), this.GetTestValue188());
+         result.Create(this.GetTestValue186(), this.GetTestValue187());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue187()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue186()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue188()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue187()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue189().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue188().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue189()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue188()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue190()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue189()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue191(), this.GetTestValue192());
+         result.Create(this.GetTestValue190(), this.GetTestValue191());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue191()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue190()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue192()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue191()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue193().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue192().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue193()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue192()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue194()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue193()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue195(), this.GetTestValue196());
+         result.Create(this.GetTestValue194(), this.GetTestValue195());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue195()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue194()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue196()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue195()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue197().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue196().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue197()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue196()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue198()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue197()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue199(), this.GetTestValue200());
+         result.Create(this.GetTestValue198(), this.GetTestValue199());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue199()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue198()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue200()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue199()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue201().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue200().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue201()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue200()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue202()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue201()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue203(), this.GetTestValue204());
+         result.Create(this.GetTestValue202(), this.GetTestValue203());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue203()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue202()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue204()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue203()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue205().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue204().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue205()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue204()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue206()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue205()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue207(), this.GetTestValue208());
+         result.Create(this.GetTestValue206(), this.GetTestValue207());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue207()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue206()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue208()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue207()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue209().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue208().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue209()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue208()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue210()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue209()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue211()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue210()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue212(), this.GetTestValue213(), this.GetTestValue250());
+         result.Create(this.GetTestValue211(), this.GetTestValue212(), this.GetTestValue249());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue212()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue211()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple GetTestValue213()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple GetTestValue212()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr9BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue214(),
-                  this.GetTestValue218(),
-                  this.GetTestValue222(),
-                  this.GetTestValue226(),
-                  this.GetTestValue230(),
-                  this.GetTestValue234(),
-                  this.GetTestValue238(),
-                  this.GetTestValue242(),
-                  this.GetTestValue246()});
+                  this.GetTestValue213(),
+                  this.GetTestValue217(),
+                  this.GetTestValue221(),
+                  this.GetTestValue225(),
+                  this.GetTestValue229(),
+                  this.GetTestValue233(),
+                  this.GetTestValue237(),
+                  this.GetTestValue241(),
+                  this.GetTestValue245()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue214()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue213()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue215(), this.GetTestValue216());
+         result.Create(this.GetTestValue214(), this.GetTestValue215());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue215()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue214()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue216()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue215()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue217().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue216().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue217()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue216()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue218()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue217()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue219(), this.GetTestValue220());
+         result.Create(this.GetTestValue218(), this.GetTestValue219());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue219()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue218()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue220()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue219()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue221().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue220().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue221()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue220()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue222()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue221()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue223(), this.GetTestValue224());
+         result.Create(this.GetTestValue222(), this.GetTestValue223());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue223()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue222()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue224()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue223()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue225().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue224().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue225()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue224()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue226()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue225()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue227(), this.GetTestValue228());
+         result.Create(this.GetTestValue226(), this.GetTestValue227());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue227()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue226()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue228()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue227()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue229().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue228().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue229()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue228()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue230()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue229()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue231(), this.GetTestValue232());
+         result.Create(this.GetTestValue230(), this.GetTestValue231());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue231()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue230()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue232()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue231()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue233().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue232().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue233()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue232()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue234()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue233()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue235(), this.GetTestValue236());
+         result.Create(this.GetTestValue234(), this.GetTestValue235());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue235()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue234()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue236()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue235()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue237().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue236().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue237()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue236()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue238()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue237()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue239(), this.GetTestValue240());
+         result.Create(this.GetTestValue238(), this.GetTestValue239());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue239()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue238()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue240()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue239()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue241().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue240().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue241()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue240()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue242()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue241()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue243(), this.GetTestValue244());
+         result.Create(this.GetTestValue242(), this.GetTestValue243());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue243()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue242()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue244()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue243()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue245().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue244().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue245()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue244()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue246()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue245()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue247(), this.GetTestValue248());
+         result.Create(this.GetTestValue246(), this.GetTestValue247());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue247()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue246()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue248()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue247()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue249().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue248().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue249()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue248()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue250()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue249()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue251()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue250()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue252(), this.GetTestValue253(), this.GetTestValue294());
+         result.Create(this.GetTestValue251(), this.GetTestValue252(), this.GetTestValue293());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue252()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue251()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple GetTestValue253()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple GetTestValue252()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr10BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue254(),
-                  this.GetTestValue258(),
-                  this.GetTestValue262(),
-                  this.GetTestValue266(),
-                  this.GetTestValue270(),
-                  this.GetTestValue274(),
-                  this.GetTestValue278(),
-                  this.GetTestValue282(),
-                  this.GetTestValue286(),
-                  this.GetTestValue290()});
+                  this.GetTestValue253(),
+                  this.GetTestValue257(),
+                  this.GetTestValue261(),
+                  this.GetTestValue265(),
+                  this.GetTestValue269(),
+                  this.GetTestValue273(),
+                  this.GetTestValue277(),
+                  this.GetTestValue281(),
+                  this.GetTestValue285(),
+                  this.GetTestValue289()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue254()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue253()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue255(), this.GetTestValue256());
+         result.Create(this.GetTestValue254(), this.GetTestValue255());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue255()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue254()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue256()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue255()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue257().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue256().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue257()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue256()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue258()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue257()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue259(), this.GetTestValue260());
+         result.Create(this.GetTestValue258(), this.GetTestValue259());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue259()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue258()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue260()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue259()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue261().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue260().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue261()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue260()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue262()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue261()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue263(), this.GetTestValue264());
+         result.Create(this.GetTestValue262(), this.GetTestValue263());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue263()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue262()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue264()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue263()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue265().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue264().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue265()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue264()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue266()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue265()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue267(), this.GetTestValue268());
+         result.Create(this.GetTestValue266(), this.GetTestValue267());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue267()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue266()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue268()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue267()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue269().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue268().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue269()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue268()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue270()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue269()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue271(), this.GetTestValue272());
+         result.Create(this.GetTestValue270(), this.GetTestValue271());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue271()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue270()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue272()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue271()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue273().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue272().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue273()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue272()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue274()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue273()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue275(), this.GetTestValue276());
+         result.Create(this.GetTestValue274(), this.GetTestValue275());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue275()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue274()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue276()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue275()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue277().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue276().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue277()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue276()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue278()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue277()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue279(), this.GetTestValue280());
+         result.Create(this.GetTestValue278(), this.GetTestValue279());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue279()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue278()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue280()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue279()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue281().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue280().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue281()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue280()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue282()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue281()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue283(), this.GetTestValue284());
+         result.Create(this.GetTestValue282(), this.GetTestValue283());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue283()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue282()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue284()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue283()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue285().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue284().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue285()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue284()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue286()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue285()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue287(), this.GetTestValue288());
+         result.Create(this.GetTestValue286(), this.GetTestValue287());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue287()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue286()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue288()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue287()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue289().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue288().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue289()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue288()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue290()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue289()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue291(), this.GetTestValue292());
+         result.Create(this.GetTestValue290(), this.GetTestValue291());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue291()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue290()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue292()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue291()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue293().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue292().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue293()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue292()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue294()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue293()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue295()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue294()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue296(), this.GetTestValue297(), this.GetTestValue342());
+         result.Create(this.GetTestValue295(), this.GetTestValue296(), this.GetTestValue341());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue296()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue295()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple GetTestValue297()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple GetTestValue296()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr11BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue298(),
-                  this.GetTestValue302(),
-                  this.GetTestValue306(),
-                  this.GetTestValue310(),
-                  this.GetTestValue314(),
-                  this.GetTestValue318(),
-                  this.GetTestValue322(),
-                  this.GetTestValue326(),
-                  this.GetTestValue330(),
-                  this.GetTestValue334(),
-                  this.GetTestValue338()});
+                  this.GetTestValue297(),
+                  this.GetTestValue301(),
+                  this.GetTestValue305(),
+                  this.GetTestValue309(),
+                  this.GetTestValue313(),
+                  this.GetTestValue317(),
+                  this.GetTestValue321(),
+                  this.GetTestValue325(),
+                  this.GetTestValue329(),
+                  this.GetTestValue333(),
+                  this.GetTestValue337()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue298()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue297()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue299(), this.GetTestValue300());
+         result.Create(this.GetTestValue298(), this.GetTestValue299());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue299()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue298()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue300()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue299()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue301().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue300().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue301()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue300()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue302()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue301()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue303(), this.GetTestValue304());
+         result.Create(this.GetTestValue302(), this.GetTestValue303());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue303()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue302()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue304()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue303()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue305().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue304().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue305()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue304()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue306()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue305()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue307(), this.GetTestValue308());
+         result.Create(this.GetTestValue306(), this.GetTestValue307());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue307()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue306()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue308()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue307()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue309().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue308().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue309()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue308()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue310()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue309()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue311(), this.GetTestValue312());
+         result.Create(this.GetTestValue310(), this.GetTestValue311());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue311()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue310()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue312()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue311()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue313().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue312().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue313()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue312()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue314()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue313()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue315(), this.GetTestValue316());
+         result.Create(this.GetTestValue314(), this.GetTestValue315());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue315()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue314()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue316()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue315()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue317().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue316().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue317()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue316()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue318()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue317()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue319(), this.GetTestValue320());
+         result.Create(this.GetTestValue318(), this.GetTestValue319());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue319()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue318()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue320()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue319()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue321().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue320().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue321()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue320()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue322()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue321()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue323(), this.GetTestValue324());
+         result.Create(this.GetTestValue322(), this.GetTestValue323());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue323()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue322()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue324()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue323()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue325().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue324().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue325()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue324()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue326()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue325()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue327(), this.GetTestValue328());
+         result.Create(this.GetTestValue326(), this.GetTestValue327());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue327()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue326()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue328()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue327()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue329().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue328().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue329()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue328()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue330()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue329()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue331(), this.GetTestValue332());
+         result.Create(this.GetTestValue330(), this.GetTestValue331());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue331()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue330()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue332()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue331()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue333().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue332().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue333()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue332()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue334()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue333()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue335(), this.GetTestValue336());
+         result.Create(this.GetTestValue334(), this.GetTestValue335());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue335()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue334()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue336()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue335()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue337().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue336().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue337()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue336()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue338()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue337()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue339(), this.GetTestValue340());
+         result.Create(this.GetTestValue338(), this.GetTestValue339());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue339()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue338()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue340()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue339()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue341().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue340().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue341()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue340()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue342()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue341()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue343()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue342()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue344(), this.GetTestValue345(), this.GetTestValue394());
+         result.Create(this.GetTestValue343(), this.GetTestValue344(), this.GetTestValue393());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue344()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue343()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple GetTestValue345()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple GetTestValue344()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr12BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue346(),
-                  this.GetTestValue350(),
-                  this.GetTestValue354(),
-                  this.GetTestValue358(),
-                  this.GetTestValue362(),
-                  this.GetTestValue366(),
-                  this.GetTestValue370(),
-                  this.GetTestValue374(),
-                  this.GetTestValue378(),
-                  this.GetTestValue382(),
-                  this.GetTestValue386(),
-                  this.GetTestValue390()});
+                  this.GetTestValue345(),
+                  this.GetTestValue349(),
+                  this.GetTestValue353(),
+                  this.GetTestValue357(),
+                  this.GetTestValue361(),
+                  this.GetTestValue365(),
+                  this.GetTestValue369(),
+                  this.GetTestValue373(),
+                  this.GetTestValue377(),
+                  this.GetTestValue381(),
+                  this.GetTestValue385(),
+                  this.GetTestValue389()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue346()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue345()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue347(), this.GetTestValue348());
+         result.Create(this.GetTestValue346(), this.GetTestValue347());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue347()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue346()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue348()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue347()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue349().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue348().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue349()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue348()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue350()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue349()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue351(), this.GetTestValue352());
+         result.Create(this.GetTestValue350(), this.GetTestValue351());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue351()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue350()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue352()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue351()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue353().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue352().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue353()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue352()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue354()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue353()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue355(), this.GetTestValue356());
+         result.Create(this.GetTestValue354(), this.GetTestValue355());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue355()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue354()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue356()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue355()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue357().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue356().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue357()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue356()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue358()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue357()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue359(), this.GetTestValue360());
+         result.Create(this.GetTestValue358(), this.GetTestValue359());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue359()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue358()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue360()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue359()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue361().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue360().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue361()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue360()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue362()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue361()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue363(), this.GetTestValue364());
+         result.Create(this.GetTestValue362(), this.GetTestValue363());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue363()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue362()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue364()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue363()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue365().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue364().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue365()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue364()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue366()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue365()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue367(), this.GetTestValue368());
+         result.Create(this.GetTestValue366(), this.GetTestValue367());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue367()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue366()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue368()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue367()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue369().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue368().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue369()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue368()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue370()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue369()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue371(), this.GetTestValue372());
+         result.Create(this.GetTestValue370(), this.GetTestValue371());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue371()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue370()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue372()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue371()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue373().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue372().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue373()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue372()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue374()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue373()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue375(), this.GetTestValue376());
+         result.Create(this.GetTestValue374(), this.GetTestValue375());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue375()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue374()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue376()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue375()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue377().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue376().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue377()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue376()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue378()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue377()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue379(), this.GetTestValue380());
+         result.Create(this.GetTestValue378(), this.GetTestValue379());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue379()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue378()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue380()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue379()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue381().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue380().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue381()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue380()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue382()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue381()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue383(), this.GetTestValue384());
+         result.Create(this.GetTestValue382(), this.GetTestValue383());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue383()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue382()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue384()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue383()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue385().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue384().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue385()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue384()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue386()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue385()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue387(), this.GetTestValue388());
+         result.Create(this.GetTestValue386(), this.GetTestValue387());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue387()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue386()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue388()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue387()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue389().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue388().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue389()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue388()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue390()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue389()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue391(), this.GetTestValue392());
+         result.Create(this.GetTestValue390(), this.GetTestValue391());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue391()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue390()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue392()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue391()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue393().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue392().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue393()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue392()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue394()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue393()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue395()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue394()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue396(), this.GetTestValue397(), this.GetTestValue450());
+         result.Create(this.GetTestValue395(), this.GetTestValue396(), this.GetTestValue449());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue396()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue395()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple GetTestValue397()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple GetTestValue396()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr13BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue398(),
-                  this.GetTestValue402(),
-                  this.GetTestValue406(),
-                  this.GetTestValue410(),
-                  this.GetTestValue414(),
-                  this.GetTestValue418(),
-                  this.GetTestValue422(),
-                  this.GetTestValue426(),
-                  this.GetTestValue430(),
-                  this.GetTestValue434(),
-                  this.GetTestValue438(),
-                  this.GetTestValue442(),
-                  this.GetTestValue446()});
+                  this.GetTestValue397(),
+                  this.GetTestValue401(),
+                  this.GetTestValue405(),
+                  this.GetTestValue409(),
+                  this.GetTestValue413(),
+                  this.GetTestValue417(),
+                  this.GetTestValue421(),
+                  this.GetTestValue425(),
+                  this.GetTestValue429(),
+                  this.GetTestValue433(),
+                  this.GetTestValue437(),
+                  this.GetTestValue441(),
+                  this.GetTestValue445()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue398()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue397()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue399(), this.GetTestValue400());
+         result.Create(this.GetTestValue398(), this.GetTestValue399());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue399()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue398()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue400()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue399()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue401().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue400().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue401()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue400()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue402()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue401()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue403(), this.GetTestValue404());
+         result.Create(this.GetTestValue402(), this.GetTestValue403());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue403()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue402()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue404()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue403()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue405().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue404().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue405()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue404()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue406()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue405()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue407(), this.GetTestValue408());
+         result.Create(this.GetTestValue406(), this.GetTestValue407());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue407()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue406()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue408()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue407()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue409().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue408().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue409()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue408()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue410()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue409()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue411(), this.GetTestValue412());
+         result.Create(this.GetTestValue410(), this.GetTestValue411());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue411()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue410()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue412()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue411()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue413().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue412().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue413()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue412()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue414()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue413()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue415(), this.GetTestValue416());
+         result.Create(this.GetTestValue414(), this.GetTestValue415());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue415()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue414()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue416()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue415()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue417().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue416().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue417()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue416()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue418()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue417()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue419(), this.GetTestValue420());
+         result.Create(this.GetTestValue418(), this.GetTestValue419());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue419()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue418()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue420()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue419()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue421().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue420().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue421()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue420()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue422()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue421()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue423(), this.GetTestValue424());
+         result.Create(this.GetTestValue422(), this.GetTestValue423());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue423()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue422()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue424()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue423()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue425().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue424().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue425()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue424()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue426()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue425()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue427(), this.GetTestValue428());
+         result.Create(this.GetTestValue426(), this.GetTestValue427());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue427()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue426()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue428()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue427()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue429().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue428().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue429()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue428()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue430()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue429()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue431(), this.GetTestValue432());
+         result.Create(this.GetTestValue430(), this.GetTestValue431());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue431()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue430()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue432()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue431()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue433().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue432().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue433()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue432()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue434()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue433()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue435(), this.GetTestValue436());
+         result.Create(this.GetTestValue434(), this.GetTestValue435());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue435()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue434()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue436()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue435()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue437().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue436().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue437()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue436()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue438()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue437()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue439(), this.GetTestValue440());
+         result.Create(this.GetTestValue438(), this.GetTestValue439());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue439()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue438()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue440()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue439()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue441().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue440().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue441()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue440()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue442()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue441()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue443(), this.GetTestValue444());
+         result.Create(this.GetTestValue442(), this.GetTestValue443());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue443()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue442()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue444()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue443()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue445().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue444().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue445()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue444()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue446()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue445()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue447(), this.GetTestValue448());
+         result.Create(this.GetTestValue446(), this.GetTestValue447());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue447()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue446()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue448()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue447()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue449().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue448().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue449()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue448()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue450()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue449()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue451()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue450()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue452(), this.GetTestValue453(), this.GetTestValue510());
+         result.Create(this.GetTestValue451(), this.GetTestValue452(), this.GetTestValue509());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue452()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue451()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple GetTestValue453()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple GetTestValue452()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr14BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue454(),
-                  this.GetTestValue458(),
-                  this.GetTestValue462(),
-                  this.GetTestValue466(),
-                  this.GetTestValue470(),
-                  this.GetTestValue474(),
-                  this.GetTestValue478(),
-                  this.GetTestValue482(),
-                  this.GetTestValue486(),
-                  this.GetTestValue490(),
-                  this.GetTestValue494(),
-                  this.GetTestValue498(),
-                  this.GetTestValue502(),
-                  this.GetTestValue506()});
+                  this.GetTestValue453(),
+                  this.GetTestValue457(),
+                  this.GetTestValue461(),
+                  this.GetTestValue465(),
+                  this.GetTestValue469(),
+                  this.GetTestValue473(),
+                  this.GetTestValue477(),
+                  this.GetTestValue481(),
+                  this.GetTestValue485(),
+                  this.GetTestValue489(),
+                  this.GetTestValue493(),
+                  this.GetTestValue497(),
+                  this.GetTestValue501(),
+                  this.GetTestValue505()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue454()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue453()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue455(), this.GetTestValue456());
+         result.Create(this.GetTestValue454(), this.GetTestValue455());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue455()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue454()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue456()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue455()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue457().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue456().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue457()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue456()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue458()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue457()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue459(), this.GetTestValue460());
+         result.Create(this.GetTestValue458(), this.GetTestValue459());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue459()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue458()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue460()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue459()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue461().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue460().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue461()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue460()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue462()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue461()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue463(), this.GetTestValue464());
+         result.Create(this.GetTestValue462(), this.GetTestValue463());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue463()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue462()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue464()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue463()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue465().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue464().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue465()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue464()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue466()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue465()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue467(), this.GetTestValue468());
+         result.Create(this.GetTestValue466(), this.GetTestValue467());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue467()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue466()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue468()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue467()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue469().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue468().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue469()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue468()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue470()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue469()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue471(), this.GetTestValue472());
+         result.Create(this.GetTestValue470(), this.GetTestValue471());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue471()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue470()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue472()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue471()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue473().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue472().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue473()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue472()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue474()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue473()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue475(), this.GetTestValue476());
+         result.Create(this.GetTestValue474(), this.GetTestValue475());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue475()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue474()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue476()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue475()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue477().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue476().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue477()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue476()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue478()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue477()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue479(), this.GetTestValue480());
+         result.Create(this.GetTestValue478(), this.GetTestValue479());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue479()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue478()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue480()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue479()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue481().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue480().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue481()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue480()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue482()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue481()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue483(), this.GetTestValue484());
+         result.Create(this.GetTestValue482(), this.GetTestValue483());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue483()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue482()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue484()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue483()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue485().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue484().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue485()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue484()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue486()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue485()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue487(), this.GetTestValue488());
+         result.Create(this.GetTestValue486(), this.GetTestValue487());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue487()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue486()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue488()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue487()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue489().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue488().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue489()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue488()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue490()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue489()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue491(), this.GetTestValue492());
+         result.Create(this.GetTestValue490(), this.GetTestValue491());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue491()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue490()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue492()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue491()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue493().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue492().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue493()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue492()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue494()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue493()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue495(), this.GetTestValue496());
+         result.Create(this.GetTestValue494(), this.GetTestValue495());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue495()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue494()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue496()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue495()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue497().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue496().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue497()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue496()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue498()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue497()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue499(), this.GetTestValue500());
+         result.Create(this.GetTestValue498(), this.GetTestValue499());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue499()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue498()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue500()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue499()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue501().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue500().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue501()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue500()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue502()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue501()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue503(), this.GetTestValue504());
+         result.Create(this.GetTestValue502(), this.GetTestValue503());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue503()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue502()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue504()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue503()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue505().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue504().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue505()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue504()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue506()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue505()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue507(), this.GetTestValue508());
+         result.Create(this.GetTestValue506(), this.GetTestValue507());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue507()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue506()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue508()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue507()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue509().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue508().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue509()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue508()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue510()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue509()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue511()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> GetTestValue510()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>>();
-         result.Create(this.GetTestValue512(), this.GetTestValue513(), this.GetTestValue574());
+         result.Create(this.GetTestValue511(), this.GetTestValue512(), this.GetTestValue573());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue512()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> GetTestValue511()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU32().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple GetTestValue513()
+      public SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple GetTestValue512()
       {
          SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple result;
          result = new SubstrateNET.NetApi.Generated.Types.Base.Arr15BaseTuple();
          result.Create(new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>[] {
-                  this.GetTestValue514(),
-                  this.GetTestValue518(),
-                  this.GetTestValue522(),
-                  this.GetTestValue526(),
-                  this.GetTestValue530(),
-                  this.GetTestValue534(),
-                  this.GetTestValue538(),
-                  this.GetTestValue542(),
-                  this.GetTestValue546(),
-                  this.GetTestValue550(),
-                  this.GetTestValue554(),
-                  this.GetTestValue558(),
-                  this.GetTestValue562(),
-                  this.GetTestValue566(),
-                  this.GetTestValue570()});
+                  this.GetTestValue513(),
+                  this.GetTestValue517(),
+                  this.GetTestValue521(),
+                  this.GetTestValue525(),
+                  this.GetTestValue529(),
+                  this.GetTestValue533(),
+                  this.GetTestValue537(),
+                  this.GetTestValue541(),
+                  this.GetTestValue545(),
+                  this.GetTestValue549(),
+                  this.GetTestValue553(),
+                  this.GetTestValue557(),
+                  this.GetTestValue561(),
+                  this.GetTestValue565(),
+                  this.GetTestValue569()});
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue514()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue513()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue515(), this.GetTestValue516());
+         result.Create(this.GetTestValue514(), this.GetTestValue515());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue515()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue514()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue516()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue515()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue517().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue516().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue517()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue516()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue518()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue517()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue519(), this.GetTestValue520());
+         result.Create(this.GetTestValue518(), this.GetTestValue519());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue519()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue518()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue520()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue519()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue521().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue520().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue521()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue520()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue522()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue521()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue523(), this.GetTestValue524());
+         result.Create(this.GetTestValue522(), this.GetTestValue523());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue523()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue522()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue524()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue523()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue525().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue524().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue525()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue524()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue526()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue525()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue527(), this.GetTestValue528());
+         result.Create(this.GetTestValue526(), this.GetTestValue527());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue527()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue526()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue528()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue527()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue529().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue528().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue529()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue528()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue530()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue529()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue531(), this.GetTestValue532());
+         result.Create(this.GetTestValue530(), this.GetTestValue531());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue531()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue530()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue532()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue531()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue533().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue532().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue533()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue532()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue534()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue533()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue535(), this.GetTestValue536());
+         result.Create(this.GetTestValue534(), this.GetTestValue535());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue535()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue534()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue536()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue535()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue537().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue536().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue537()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue536()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue538()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue537()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue539(), this.GetTestValue540());
+         result.Create(this.GetTestValue538(), this.GetTestValue539());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue539()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue538()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue540()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue539()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue541().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue540().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue541()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue540()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue542()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue541()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue543(), this.GetTestValue544());
+         result.Create(this.GetTestValue542(), this.GetTestValue543());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue543()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue542()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue544()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue543()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue545().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue544().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue545()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue544()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue546()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue545()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue547(), this.GetTestValue548());
+         result.Create(this.GetTestValue546(), this.GetTestValue547());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue547()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue546()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue548()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue547()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue549().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue548().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue549()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue548()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue550()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue549()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue551(), this.GetTestValue552());
+         result.Create(this.GetTestValue550(), this.GetTestValue551());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue551()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue550()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue552()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue551()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue553().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue552().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue553()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue552()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue554()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue553()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue555(), this.GetTestValue556());
+         result.Create(this.GetTestValue554(), this.GetTestValue555());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue555()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue554()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue556()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue555()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue557().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue556().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue557()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue556()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue558()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue557()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue559(), this.GetTestValue560());
+         result.Create(this.GetTestValue558(), this.GetTestValue559());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue559()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue558()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue560()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue559()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue561().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue560().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue561()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue560()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue562()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue561()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue563(), this.GetTestValue564());
+         result.Create(this.GetTestValue562(), this.GetTestValue563());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue563()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue562()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue564()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue563()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue565().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue564().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue565()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue564()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue566()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue565()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue567(), this.GetTestValue568());
+         result.Create(this.GetTestValue566(), this.GetTestValue567());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue567()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue566()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue568()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue567()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue569().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue568().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue569()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue568()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue570()
+      public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> GetTestValue569()
       {
          Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>>();
-         result.Create(this.GetTestValue571(), this.GetTestValue572());
+         result.Create(this.GetTestValue570(), this.GetTestValue571());
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue571()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue570()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue572()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> GetTestValue571()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16>();
-         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue573().Value));
+         result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValue572().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue573()
+      public SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 GetTestValue572()
       {
          SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16 result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.PerU16();
          result.Value = this.GetTestValueU16();
          return result;
       }
-      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue574()
+      public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> GetTestValue573()
       {
          Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16> result;
          result = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U16>();
          result.Create(new Ajuna.NetApi.CompactInteger(this.GetTestValueU16().Value));
          return result;
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue575()
+      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue574()
       {
          SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore();
@@ -4635,7 +4627,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ElectionProviderMultiPhaseControllerClient rpcClient = new ElectionProviderMultiPhaseControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission mockupValue = this.GetTestValue29();
+         SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed.SignedSubmission mockupValue = this.GetTestValue28();
          Ajuna.NetApi.Model.Types.Primitive.U32 mockupKey = this.GetTestValueU32();
 
          Assert.IsTrue(await rpcClient.SubscribeSignedSubmissionsMap(mockupKey));
@@ -4653,7 +4645,7 @@ namespace SubstrateNET.RestClient.Test.Generated
          // Test that the expected mockup value matches the actual result from RPC service.
          Assert.AreEqual(mockupValue.Encode(), rpcResult.Encode());
       }
-      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue577()
+      public SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore GetTestValue576()
       {
          SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore result;
          result = new SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore();
@@ -4673,7 +4665,7 @@ namespace SubstrateNET.RestClient.Test.Generated
 
          // Construct new RPC client to test with.
          ElectionProviderMultiPhaseControllerClient rpcClient = new ElectionProviderMultiPhaseControllerClient(_httpClient, subscriptionClient);
-         SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore mockupValue = this.GetTestValue577();
+         SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore mockupValue = this.GetTestValue576();
 
 
          Assert.IsTrue(await rpcClient.SubscribeMinimumUntrustedScore());

@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Collection of transaction metadata by block number.
         /// </summary>
         [HttpGet("Transactions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT39), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "TransactionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetTransactions(string key)
         {
@@ -102,7 +102,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> BlockTransactions
         /// </summary>
         [HttpGet("BlockTransactions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT34), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT39), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage), "BlockTransactionsParams")]
         public IActionResult GetBlockTransactions()
         {

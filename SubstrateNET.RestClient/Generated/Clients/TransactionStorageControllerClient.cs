@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT34> GetTransactions(U32 key)
+      public async Task<BoundedVecT39> GetTransactions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
+         return await SendRequestAsync<BoundedVecT39>(_httpClient, "transactionstorage/transactions", SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
       }
       public async Task<bool> SubscribeTransactions(U32 key)
       {
@@ -65,9 +65,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("TransactionStorage.StoragePeriod");
       }
-      public async Task<BoundedVecT34> GetBlockTransactions()
+      public async Task<BoundedVecT39> GetBlockTransactions()
       {
-         return await SendRequestAsync<BoundedVecT34>(_httpClient, "transactionstorage/blocktransactions");
+         return await SendRequestAsync<BoundedVecT39>(_httpClient, "transactionstorage/blocktransactions");
       }
       public async Task<bool> SubscribeBlockTransactions()
       {

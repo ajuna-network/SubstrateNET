@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
    using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    using SubstrateNET.RestClient.Generated.Interfaces;
@@ -84,9 +84,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ElectionProviderMultiPhase.SignedSubmissionNextIndex");
       }
-      public async Task<BoundedBTreeMapT1> GetSignedSubmissionIndices()
+      public async Task<BoundedVecT13> GetSignedSubmissionIndices()
       {
-         return await SendRequestAsync<BoundedBTreeMapT1>(_httpClient, "electionprovidermultiphase/signedsubmissionindices");
+         return await SendRequestAsync<BoundedVecT13>(_httpClient, "electionprovidermultiphase/signedsubmissionindices");
       }
       public async Task<bool> SubscribeSignedSubmissionIndices()
       {

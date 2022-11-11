@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
     
     
     /// <summary>
-    /// >> 491 - Composite[pallet_contracts.schedule.InstructionWeights]
+    /// >> 497 - Composite[pallet_contracts.schedule.InstructionWeights]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class InstructionWeights : BaseType
@@ -28,6 +28,11 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
         /// >> version
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U32 _version;
+        
+        /// <summary>
+        /// >> fallback
+        /// </summary>
+        private Ajuna.NetApi.Model.Types.Primitive.U32 _fallback;
         
         /// <summary>
         /// >> i64const
@@ -293,6 +298,18 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
             set
             {
                 this._version = value;
+            }
+        }
+        
+        public Ajuna.NetApi.Model.Types.Primitive.U32 Fallback
+        {
+            get
+            {
+                return this._fallback;
+            }
+            set
+            {
+                this._fallback = value;
             }
         }
         
@@ -917,6 +934,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
         {
             var result = new List<byte>();
             result.AddRange(Version.Encode());
+            result.AddRange(Fallback.Encode());
             result.AddRange(I64const.Encode());
             result.AddRange(I64load.Encode());
             result.AddRange(I64store.Encode());
@@ -976,6 +994,8 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
             var start = p;
             Version = new Ajuna.NetApi.Model.Types.Primitive.U32();
             Version.Decode(byteArray, ref p);
+            Fallback = new Ajuna.NetApi.Model.Types.Primitive.U32();
+            Fallback.Decode(byteArray, ref p);
             I64const = new Ajuna.NetApi.Model.Types.Primitive.U32();
             I64const.Decode(byteArray, ref p);
             I64load = new Ajuna.NetApi.Model.Types.Primitive.U32();

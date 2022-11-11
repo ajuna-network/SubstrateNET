@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Uncles
         /// </summary>
         [HttpGet("Uncles")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorshipStorage), "UnclesParams")]
         public IActionResult GetUncles()
         {

@@ -44,7 +44,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("RankedCollective", "VotingCleanup"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49)));
         }
         
         /// <summary>
@@ -169,10 +169,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45> VotingCleanup(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49> VotingCleanup(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = RankedCollectiveStorage.VotingCleanupParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49>(parameters, token);
         }
     }
     
@@ -183,7 +183,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> add_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AddMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method AddMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -194,7 +194,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> promote_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method PromoteMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method PromoteMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -205,7 +205,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> demote_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method DemoteMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method DemoteMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -216,7 +216,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> remove_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Ajuna.NetApi.Model.Types.Primitive.U16 min_rank)
+        public static Method RemoveMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Ajuna.NetApi.Model.Types.Primitive.U16 min_rank)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());

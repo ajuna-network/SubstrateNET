@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_authorship
     }
     
     /// <summary>
-    /// >> 389 - Variant[pallet_authorship.UncleEntryItem]
+    /// >> 394 - Variant[pallet_authorship.UncleEntryItem]
     /// </summary>
     public sealed class EnumUncleEntryItem : BaseEnumExt<UncleEntryItem, Ajuna.NetApi.Model.Types.Primitive.U32, BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>
     {

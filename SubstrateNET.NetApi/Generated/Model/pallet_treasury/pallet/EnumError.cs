@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_treasury.pallet
     }
     
     /// <summary>
-    /// >> 479 - Variant[pallet_treasury.pallet.Error]
+    /// >> 486 - Variant[pallet_treasury.pallet.Error]
     /// Error for the treasury pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

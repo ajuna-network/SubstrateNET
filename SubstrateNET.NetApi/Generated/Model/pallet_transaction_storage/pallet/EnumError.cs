@@ -46,9 +46,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.pallet
     }
     
     /// <summary>
-    /// >> 595 - Variant[pallet_transaction_storage.pallet.Error]
+    /// >> 602 - Variant[pallet_transaction_storage.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

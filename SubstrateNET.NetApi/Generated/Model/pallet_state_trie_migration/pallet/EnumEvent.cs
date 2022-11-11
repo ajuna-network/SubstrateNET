@@ -28,10 +28,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 103 - Variant[pallet_state_trie_migration.pallet.Event]
+    /// >> 104 - Variant[pallet_state_trie_migration.pallet.Event]
     /// Inner events of this pallet.
     /// </summary>
-    public sealed class EnumEvent : BaseEnumExt<Event, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumMigrationCompute>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, BaseVoid, BaseVoid>
+    public sealed class EnumEvent : BaseEnumExt<Event, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumMigrationCompute>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, BaseVoid, SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumError>
     {
     }
 }

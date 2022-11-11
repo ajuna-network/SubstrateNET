@@ -33,7 +33,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Account"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.frame_system.AccountInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AllExtrinsicsLen"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockHash"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256)));
@@ -105,10 +105,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> BlockWeight
         ///  The current weight for the block.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1> BlockWeight(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1> BlockWeight(CancellationToken token)
         {
             string parameters = SystemStorage.BlockWeightParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1>(parameters, token);
         }
         
         /// <summary>

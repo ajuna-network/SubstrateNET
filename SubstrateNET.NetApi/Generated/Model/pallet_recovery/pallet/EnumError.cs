@@ -52,9 +52,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery.pallet
     }
     
     /// <summary>
-    /// >> 532 - Variant[pallet_recovery.pallet.Error]
+    /// >> 538 - Variant[pallet_recovery.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

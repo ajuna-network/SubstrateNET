@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_vesting;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetVesting(BoundedVecT26 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SetVesting(BoundedVecT30 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Vesting/Vesting", value.Encode(), SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
       }

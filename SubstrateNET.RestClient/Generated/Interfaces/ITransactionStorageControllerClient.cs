@@ -11,12 +11,12 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITransactionStorageControllerClient
    {
-      Task<BoundedVecT34> GetTransactions(U32 key);
+      Task<BoundedVecT39> GetTransactions(U32 key);
       Task<bool> SubscribeTransactions(U32 key);
       Task<U32> GetChunkCount(U32 key);
       Task<bool> SubscribeChunkCount(U32 key);
@@ -26,7 +26,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeEntryFee();
       Task<U32> GetStoragePeriod();
       Task<bool> SubscribeStoragePeriod();
-      Task<BoundedVecT34> GetBlockTransactions();
+      Task<BoundedVecT39> GetBlockTransactions();
       Task<bool> SubscribeBlockTransactions();
       Task<Bool> GetProofChecked();
       Task<bool> SubscribeProofChecked();

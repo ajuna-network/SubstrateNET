@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 587 - Composite[pallet_uniques.types.ItemMetadata]
+    /// >> 594 - Composite[pallet_uniques.types.ItemMetadata]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ItemMetadata : BaseType
@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_uniques.types
         /// <summary>
         /// >> data
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 _data;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 _data;
         
         /// <summary>
         /// >> is_frozen
@@ -51,7 +51,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_uniques.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 Data
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 Data
         {
             get
             {
@@ -94,7 +94,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_uniques.types
             var start = p;
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Data = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+            Data = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
             Data.Decode(byteArray, ref p);
             IsFrozen = new Ajuna.NetApi.Model.Types.Primitive.Bool();
             IsFrozen.Decode(byteArray, ref p);

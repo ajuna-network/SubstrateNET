@@ -48,7 +48,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForSubPoolsStorage"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "Metadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForMetadata"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "LastPoolId"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "ReversePoolIdLookup"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
@@ -348,10 +348,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47> Metadata(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = NominationPoolsStorage.MetadataParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47>(parameters, token);
         }
         
         /// <summary>
@@ -479,7 +479,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> unbond
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Unbond(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 member_account, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> unbonding_points)
+        public static Method Unbond(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress member_account, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> unbonding_points)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(member_account.Encode());
@@ -503,7 +503,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> withdraw_unbonded
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method WithdrawUnbonded(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 member_account, Ajuna.NetApi.Model.Types.Primitive.U32 num_slashing_spans)
+        public static Method WithdrawUnbonded(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress member_account, Ajuna.NetApi.Model.Types.Primitive.U32 num_slashing_spans)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(member_account.Encode());
@@ -515,7 +515,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> create
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Create(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> amount, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 root, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 nominator, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 state_toggler)
+        public static Method Create(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> amount, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress root, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress nominator, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress state_toggler)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(amount.Encode());
@@ -523,6 +523,21 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(nominator.Encode());
             byteArray.AddRange(state_toggler.Encode());
             return new Method(51, "NominationPools", 6, "create", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> create_with_pool_id
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method CreateWithPoolId(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> amount, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress root, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress nominator, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress state_toggler, Ajuna.NetApi.Model.Types.Primitive.U32 pool_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(amount.Encode());
+            byteArray.AddRange(root.Encode());
+            byteArray.AddRange(nominator.Encode());
+            byteArray.AddRange(state_toggler.Encode());
+            byteArray.AddRange(pool_id.Encode());
+            return new Method(51, "NominationPools", 7, "create_with_pool_id", byteArray.ToArray());
         }
         
         /// <summary>
@@ -534,7 +549,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(validators.Encode());
-            return new Method(51, "NominationPools", 7, "nominate", byteArray.ToArray());
+            return new Method(51, "NominationPools", 8, "nominate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -546,7 +561,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(state.Encode());
-            return new Method(51, "NominationPools", 8, "set_state", byteArray.ToArray());
+            return new Method(51, "NominationPools", 9, "set_state", byteArray.ToArray());
         }
         
         /// <summary>
@@ -558,7 +573,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(metadata.Encode());
-            return new Method(51, "NominationPools", 9, "set_metadata", byteArray.ToArray());
+            return new Method(51, "NominationPools", 10, "set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -573,7 +588,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(max_pools.Encode());
             byteArray.AddRange(max_members.Encode());
             byteArray.AddRange(max_members_per_pool.Encode());
-            return new Method(51, "NominationPools", 10, "set_configs", byteArray.ToArray());
+            return new Method(51, "NominationPools", 11, "set_configs", byteArray.ToArray());
         }
         
         /// <summary>
@@ -587,7 +602,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(new_root.Encode());
             byteArray.AddRange(new_nominator.Encode());
             byteArray.AddRange(new_state_toggler.Encode());
-            return new Method(51, "NominationPools", 11, "update_roles", byteArray.ToArray());
+            return new Method(51, "NominationPools", 12, "update_roles", byteArray.ToArray());
         }
         
         /// <summary>
@@ -598,7 +613,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
-            return new Method(51, "NominationPools", 12, "chill", byteArray.ToArray());
+            return new Method(51, "NominationPools", 13, "chill", byteArray.ToArray());
         }
     }
     
@@ -738,5 +753,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Partial unbonding now allowed permissionlessly.
         /// </summary>
         PartialUnbondNotAllowedPermissionlessly,
+        
+        /// <summary>
+        /// >> PoolIdInUse
+        /// Pool id currently in use.
+        /// </summary>
+        PoolIdInUse,
+        
+        /// <summary>
+        /// >> InvalidPoolId
+        /// Pool id provided is not correct/usable.
+        /// </summary>
+        InvalidPoolId,
     }
 }

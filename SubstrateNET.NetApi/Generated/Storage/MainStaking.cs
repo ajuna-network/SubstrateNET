@@ -30,7 +30,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public StakingStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "HistoryDepth"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "ValidatorCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "MinimumValidatorCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "Invulnerables"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>)));
@@ -93,39 +92,8 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> HistoryDepthParams
-        ///  Number of eras to keep in history.
-        /// 
-        ///  Information is kept for eras in `[current_era - history_depth; current_era]`.
-        /// 
-        ///  Must be more than the number of eras delayed by session otherwise. I.e. active era must
-        ///  always be in history. I.e. `active_era > current_era - history_depth` must be
-        ///  guaranteed.
-        /// </summary>
-        public static string HistoryDepthParams()
-        {
-            return RequestGenerator.GetStorage("Staking", "HistoryDepth", Ajuna.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> HistoryDepth
-        ///  Number of eras to keep in history.
-        /// 
-        ///  Information is kept for eras in `[current_era - history_depth; current_era]`.
-        /// 
-        ///  Must be more than the number of eras delayed by session otherwise. I.e. active era must
-        ///  always be in history. I.e. `active_era > current_era - history_depth` must be
-        ///  guaranteed.
-        /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> HistoryDepth(CancellationToken token)
-        {
-            string parameters = StakingStorage.HistoryDepthParams();
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
-        }
-        
-        /// <summary>
         /// >> ValidatorCountParams
-        ///  The ideal number of staking participants.
+        ///  The ideal number of active validators.
         /// </summary>
         public static string ValidatorCountParams()
         {
@@ -134,7 +102,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ValidatorCount
-        ///  The ideal number of staking participants.
+        ///  The ideal number of active validators.
         /// </summary>
         public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> ValidatorCount(CancellationToken token)
         {
@@ -1242,18 +1210,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> set_history_depth
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method SetHistoryDepth(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> new_history_depth, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> era_items_deleted)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(new_history_depth.Encode());
-            byteArray.AddRange(era_items_deleted.Encode());
-            return new Method(10, "Staking", 20, "set_history_depth", byteArray.ToArray());
-        }
-        
-        /// <summary>
         /// >> reap_stash
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
@@ -1262,7 +1218,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(stash.Encode());
             byteArray.AddRange(num_slashing_spans.Encode());
-            return new Method(10, "Staking", 21, "reap_stash", byteArray.ToArray());
+            return new Method(10, "Staking", 20, "reap_stash", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1273,7 +1229,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
-            return new Method(10, "Staking", 22, "kick", byteArray.ToArray());
+            return new Method(10, "Staking", 21, "kick", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1289,7 +1245,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(max_validator_count.Encode());
             byteArray.AddRange(chill_threshold.Encode());
             byteArray.AddRange(min_commission.Encode());
-            return new Method(10, "Staking", 23, "set_staking_configs", byteArray.ToArray());
+            return new Method(10, "Staking", 22, "set_staking_configs", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1300,7 +1256,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(controller.Encode());
-            return new Method(10, "Staking", 24, "chill_other", byteArray.ToArray());
+            return new Method(10, "Staking", 23, "chill_other", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1311,7 +1267,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(validator_stash.Encode());
-            return new Method(10, "Staking", 25, "force_apply_min_commission", byteArray.ToArray());
+            return new Method(10, "Staking", 24, "force_apply_min_commission", byteArray.ToArray());
         }
     }
     
@@ -1465,5 +1421,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Commission is too low. Must be at least `MinCommission`.
         /// </summary>
         CommissionTooLow,
+        
+        /// <summary>
+        /// >> BoundNotMet
+        /// Some bound is not met.
+        /// </summary>
+        BoundNotMet,
     }
 }

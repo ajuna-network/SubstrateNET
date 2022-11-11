@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 618 - Composite[pallet_conviction_voting.vote.Casting]
+    /// >> 630 - Composite[pallet_conviction_voting.vote.Casting]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Casting : BaseType
@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
         /// <summary>
         /// >> votes
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36 _votes;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT41 _votes;
         
         /// <summary>
         /// >> delegations
@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.PriorLock _prior;
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36 Votes
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT41 Votes
         {
             get
             {
@@ -92,7 +92,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Votes = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT36();
+            Votes = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT41();
             Votes.Decode(byteArray, ref p);
             Delegations = new SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations();
             Delegations.Decode(byteArray, ref p);

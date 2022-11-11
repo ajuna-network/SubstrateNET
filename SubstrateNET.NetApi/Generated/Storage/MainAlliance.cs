@@ -31,15 +31,15 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "Rule"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.Cid)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "Announcements"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "Announcements"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT44)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "DepositOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "Members"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "UpForKicking"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "UnscrupulousAccounts"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "UnscrupulousWebsites"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT45)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "RetiringMembers"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "UnscrupulousAccounts"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Alliance", "UnscrupulousWebsites"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT46)));
         }
         
         /// <summary>
@@ -80,10 +80,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Announcements
         ///  The current IPFS CIDs of any announcements.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39> Announcements(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT44> Announcements(CancellationToken token)
         {
             string parameters = AllianceStorage.AnnouncementsParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT44>(parameters, token);
         }
         
         /// <summary>
@@ -122,33 +122,33 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Members
         ///  Maps member type to members of each type.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40> Members(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT45> Members(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key, CancellationToken token)
         {
             string parameters = AllianceStorage.MembersParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT45>(parameters, token);
         }
         
         /// <summary>
-        /// >> UpForKickingParams
-        ///  A set of members that are (potentially) being kicked out. They cannot retire until the
-        ///  motion is settled.
+        /// >> RetiringMembersParams
+        ///  A set of members who gave a retirement notice. They can retire after the end of retirement
+        ///  period stored as a future block number.
         /// </summary>
-        public static string UpForKickingParams(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string RetiringMembersParams(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
-            return RequestGenerator.GetStorage("Alliance", "UpForKicking", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("Alliance", "RetiringMembers", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Ajuna.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> UpForKicking
-        ///  A set of members that are (potentially) being kicked out. They cannot retire until the
-        ///  motion is settled.
+        /// >> RetiringMembers
+        ///  A set of members who gave a retirement notice. They can retire after the end of retirement
+        ///  period stored as a future block number.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Primitive.Bool> UpForKicking(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> RetiringMembers(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
         {
-            string parameters = AllianceStorage.UpForKickingParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.Bool>(parameters, token);
+            string parameters = AllianceStorage.RetiringMembersParams(key);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
         }
         
         /// <summary>
@@ -166,10 +166,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  The current list of accounts deemed unscrupulous. These accounts non grata cannot submit
         ///  candidacy.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41> UnscrupulousAccounts(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17> UnscrupulousAccounts(CancellationToken token)
         {
             string parameters = AllianceStorage.UnscrupulousAccountsParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>(parameters, token);
         }
         
         /// <summary>
@@ -185,10 +185,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> UnscrupulousWebsites
         ///  The current list of websites deemed unscrupulous.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42> UnscrupulousWebsites(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT46> UnscrupulousWebsites(CancellationToken token)
         {
             string parameters = AllianceStorage.UnscrupulousWebsitesParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT46>(parameters, token);
         }
     }
     
@@ -199,7 +199,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> propose
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Propose(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> threshold, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        public static Method Propose(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> threshold, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());
@@ -233,17 +233,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> close
+        /// >> close_old_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Close(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U64> proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        public static Method CloseOldWeight(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_weights.OldWeight> proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_hash.Encode());
             byteArray.AddRange(index.Encode());
             byteArray.AddRange(proposal_weight_bound.Encode());
             byteArray.AddRange(length_bound.Encode());
-            return new Method(50, "Alliance", 3, "close", byteArray.ToArray());
+            return new Method(50, "Alliance", 3, "close_old_weight", byteArray.ToArray());
         }
         
         /// <summary>
@@ -260,6 +260,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> disband
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Disband(SubstrateNET.NetApi.Generated.Model.pallet_alliance.types.DisbandWitness witness)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(witness.Encode());
+            return new Method(50, "Alliance", 5, "disband", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> set_rule
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
@@ -267,7 +278,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(rule.Encode());
-            return new Method(50, "Alliance", 5, "set_rule", byteArray.ToArray());
+            return new Method(50, "Alliance", 6, "set_rule", byteArray.ToArray());
         }
         
         /// <summary>
@@ -278,7 +289,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(announcement.Encode());
-            return new Method(50, "Alliance", 6, "announce", byteArray.ToArray());
+            return new Method(50, "Alliance", 7, "announce", byteArray.ToArray());
         }
         
         /// <summary>
@@ -289,7 +300,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(announcement.Encode());
-            return new Method(50, "Alliance", 7, "remove_announcement", byteArray.ToArray());
+            return new Method(50, "Alliance", 8, "remove_announcement", byteArray.ToArray());
         }
         
         /// <summary>
@@ -299,7 +310,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public static Method JoinAlliance()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(50, "Alliance", 8, "join_alliance", byteArray.ToArray());
+            return new Method(50, "Alliance", 9, "join_alliance", byteArray.ToArray());
         }
         
         /// <summary>
@@ -310,7 +321,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
-            return new Method(50, "Alliance", 9, "nominate_ally", byteArray.ToArray());
+            return new Method(50, "Alliance", 10, "nominate_ally", byteArray.ToArray());
         }
         
         /// <summary>
@@ -321,7 +332,17 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(ally.Encode());
-            return new Method(50, "Alliance", 10, "elevate_ally", byteArray.ToArray());
+            return new Method(50, "Alliance", 11, "elevate_ally", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> give_retirement_notice
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method GiveRetirementNotice()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(50, "Alliance", 12, "give_retirement_notice", byteArray.ToArray());
         }
         
         /// <summary>
@@ -331,7 +352,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public static Method Retire()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(50, "Alliance", 11, "retire", byteArray.ToArray());
+            return new Method(50, "Alliance", 13, "retire", byteArray.ToArray());
         }
         
         /// <summary>
@@ -342,7 +363,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
-            return new Method(50, "Alliance", 12, "kick_member", byteArray.ToArray());
+            return new Method(50, "Alliance", 14, "kick_member", byteArray.ToArray());
         }
         
         /// <summary>
@@ -353,7 +374,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(items.Encode());
-            return new Method(50, "Alliance", 13, "add_unscrupulous_items", byteArray.ToArray());
+            return new Method(50, "Alliance", 15, "add_unscrupulous_items", byteArray.ToArray());
         }
         
         /// <summary>
@@ -364,7 +385,21 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(items.Encode());
-            return new Method(50, "Alliance", 14, "remove_unscrupulous_items", byteArray.ToArray());
+            return new Method(50, "Alliance", 16, "remove_unscrupulous_items", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> close
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Close(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> index, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight proposal_weight_bound, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> length_bound)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(index.Encode());
+            byteArray.AddRange(proposal_weight_bound.Encode());
+            byteArray.AddRange(length_bound.Encode());
+            return new Method(50, "Alliance", 17, "close", byteArray.ToArray());
         }
     }
     
@@ -372,16 +407,16 @@ namespace SubstrateNET.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> AllianceAlreadyInitialized
-        /// The founders/fellows/allies have already been initialized.
-        /// </summary>
-        AllianceAlreadyInitialized,
-        
-        /// <summary>
         /// >> AllianceNotYetInitialized
         /// The Alliance has not been initialized yet, therefore accounts cannot join it.
         /// </summary>
         AllianceNotYetInitialized,
+        
+        /// <summary>
+        /// >> AllianceAlreadyInitialized
+        /// The Alliance has been initialized, therefore cannot be initialized again.
+        /// </summary>
+        AllianceAlreadyInitialized,
         
         /// <summary>
         /// >> AlreadyMember
@@ -406,12 +441,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Account is not a founder.
         /// </summary>
         NotFounder,
-        
-        /// <summary>
-        /// >> UpForKicking
-        /// This member is up for being kicked from the Alliance and cannot perform this operation.
-        /// </summary>
-        UpForKicking,
         
         /// <summary>
         /// >> NoVotingRights
@@ -503,5 +532,35 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Number of announcements exceeds `MaxAnnouncementsCount`.
         /// </summary>
         TooManyAnnouncements,
+        
+        /// <summary>
+        /// >> BadWitness
+        /// Invalid witness data given.
+        /// </summary>
+        BadWitness,
+        
+        /// <summary>
+        /// >> AlreadyRetiring
+        /// Account already gave retirement notice
+        /// </summary>
+        AlreadyRetiring,
+        
+        /// <summary>
+        /// >> RetirementNoticeNotGiven
+        /// Account did not give a retirement notice required to retire.
+        /// </summary>
+        RetirementNoticeNotGiven,
+        
+        /// <summary>
+        /// >> RetirementPeriodNotPassed
+        /// Retirement period has not passed.
+        /// </summary>
+        RetirementPeriodNotPassed,
+        
+        /// <summary>
+        /// >> FoundersMissing
+        /// Founders must be provided to initialize the Alliance.
+        /// </summary>
+        FoundersMissing,
     }
 }

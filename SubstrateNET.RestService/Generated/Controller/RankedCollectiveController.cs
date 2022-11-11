@@ -103,7 +103,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         /// >> VotingCleanup
         /// </summary>
         [HttpGet("VotingCleanup")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.RankedCollectiveStorage), "VotingCleanupParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetVotingCleanup(string key)
         {

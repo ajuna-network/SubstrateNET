@@ -28,10 +28,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 364 - Variant[pallet_whitelist.pallet.Call]
+    /// >> 327 - Variant[pallet_whitelist.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U64>, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>
+    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight>, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>
     {
     }
 }

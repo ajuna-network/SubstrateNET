@@ -14,8 +14,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_balances;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class BalancesControllerMockupClient : MockupBaseClient, IBalancesControllerMockupClient
@@ -37,7 +37,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Balances/Locks", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BalancesStorage.LocksParams(key));
       }
-      public async Task<bool> SetReserves(BoundedVecT10 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<bool> SetReserves(BoundedVecT11 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Balances/Reserves", value.Encode(), SubstrateNET.NetApi.Generated.Storage.BalancesStorage.ReservesParams(key));
       }

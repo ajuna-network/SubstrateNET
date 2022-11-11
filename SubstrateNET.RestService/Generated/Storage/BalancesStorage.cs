@@ -64,13 +64,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key);
         
         /// <summary>
         /// >> Reserves
         ///  Named reserves on some account balances.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 GetReserves(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11 GetReserves(string key);
         
         /// <summary>
         /// >> StorageVersion
@@ -100,12 +100,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _locksTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2> _locksTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2> _locksTypedStorage;
         
         /// <summary>
         /// _reservesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10> _reservesTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11> _reservesTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
@@ -119,8 +119,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.TotalIssuanceTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U128>("Balances.TotalIssuance", storageDataProvider, storageChangeDelegates);
             this.AccountTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.AccountData>("Balances.Account", storageDataProvider, storageChangeDelegates);
-            this.LocksTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2>("Balances.Locks", storageDataProvider, storageChangeDelegates);
-            this.ReservesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10>("Balances.Reserves", storageDataProvider, storageChangeDelegates);
+            this.LocksTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2>("Balances.Locks", storageDataProvider, storageChangeDelegates);
+            this.ReservesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11>("Balances.Reserves", storageDataProvider, storageChangeDelegates);
             this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_balances.EnumReleases>("Balances.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
@@ -157,7 +157,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _locksTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2> LocksTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2> LocksTypedStorage
         {
             get
             {
@@ -172,7 +172,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _reservesTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10> ReservesTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11> ReservesTypedStorage
         {
             get
             {
@@ -295,13 +295,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2 GetLocks(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (LocksTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2 result))
+            if (LocksTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2 result))
             {
                 return result;
             }
@@ -324,13 +324,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Reserves
         ///  Named reserves on some account balances.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 GetReserves(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11 GetReserves(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ReservesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10 result))
+            if (ReservesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11 result))
             {
                 return result;
             }

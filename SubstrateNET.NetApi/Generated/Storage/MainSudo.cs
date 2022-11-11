@@ -60,7 +60,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> sudo
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Sudo(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method Sudo(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());
@@ -71,7 +71,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> sudo_unchecked_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SudoUncheckedWeight(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call, Ajuna.NetApi.Model.Types.Primitive.U64 weight)
+        public static Method SudoUncheckedWeight(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());
@@ -94,7 +94,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> sudo_as
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SudoAs(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method SudoAs(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());

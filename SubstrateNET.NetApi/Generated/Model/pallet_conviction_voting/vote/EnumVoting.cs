@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
     }
     
     /// <summary>
-    /// >> 617 - Variant[pallet_conviction_voting.vote.Voting]
+    /// >> 629 - Variant[pallet_conviction_voting.vote.Voting]
     /// </summary>
     public sealed class EnumVoting : BaseEnumExt<Voting, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Casting, SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Delegating>
     {

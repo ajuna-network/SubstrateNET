@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_child_bounties;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ChildBountiesControllerClient : BaseClient, IChildBountiesControllerClient
@@ -50,9 +50,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ChildBounties.ChildBounties", SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountiesParams(key));
       }
-      public async Task<BoundedVecT30> GetChildBountyDescriptions(U32 key)
+      public async Task<BoundedVecT35> GetChildBountyDescriptions(U32 key)
       {
-         return await SendRequestAsync<BoundedVecT30>(_httpClient, "childbounties/childbountydescriptions", SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountyDescriptionsParams(key));
+         return await SendRequestAsync<BoundedVecT35>(_httpClient, "childbounties/childbountydescriptions", SubstrateNET.NetApi.Generated.Storage.ChildBountiesStorage.ChildBountyDescriptionsParams(key));
       }
       public async Task<bool> SubscribeChildBountyDescriptions(U32 key)
       {

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective
     
     
     /// <summary>
-    /// >> 128 - Composite[pallet_ranked_collective.Tally]
+    /// >> 360 - Composite[pallet_ranked_collective.Tally]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

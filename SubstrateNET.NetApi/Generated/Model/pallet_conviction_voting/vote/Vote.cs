@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 361 - Composite[pallet_conviction_voting.vote.Vote]
+    /// >> 324 - Composite[pallet_conviction_voting.vote.Vote]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Vote : BaseType

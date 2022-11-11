@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetTransactions(BoundedVecT34 value, U32 key)
+      public async Task<bool> SetTransactions(BoundedVecT39 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/Transactions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.TransactionsParams(key));
       }
@@ -43,7 +43,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/StoragePeriod", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.StoragePeriodParams());
       }
-      public async Task<bool> SetBlockTransactions(BoundedVecT34 value)
+      public async Task<bool> SetBlockTransactions(BoundedVecT39 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TransactionStorage/BlockTransactions", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TransactionStorageStorage.BlockTransactionsParams());
       }

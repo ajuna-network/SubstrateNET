@@ -48,16 +48,5 @@ namespace SubstrateNET.RestService.Generated.Controller
         {
             return this.Ok(_multisigStorage.GetMultisigs(key));
         }
-        
-        /// <summary>
-        /// >> Calls
-        /// </summary>
-        [HttpGet("Calls")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.MultisigStorage), "CallsParams", typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8))]
-        public IActionResult GetCalls(string key)
-        {
-            return this.Ok(_multisigStorage.GetCalls(key));
-        }
     }
 }

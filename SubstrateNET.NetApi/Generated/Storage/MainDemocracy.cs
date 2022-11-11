@@ -31,11 +31,9 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicPropCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicProps"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicProps"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "DepositOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "Preimages"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "ReferendumCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "LowestUnbaked"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "ReferendumInfoOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
@@ -43,12 +41,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "VotingOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "LastTabledWasExternal"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "NextExternal"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "NextExternal"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "Blacklist"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "Cancellations"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(Ajuna.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "StorageVersion"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases)));
         }
         
         /// <summary>
@@ -72,7 +69,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PublicPropsParams
-        ///  The public proposals. Unsorted. The second item is the proposal's hash.
+        ///  The public proposals. Unsorted. The second item is the proposal.
         /// </summary>
         public static string PublicPropsParams()
         {
@@ -81,12 +78,12 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PublicProps
-        ///  The public proposals. Unsorted. The second item is the proposal's hash.
+        ///  The public proposals. Unsorted. The second item is the proposal.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> PublicProps(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16> PublicProps(CancellationToken token)
         {
             string parameters = DemocracyStorage.PublicPropsParams();
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16>(parameters, token);
         }
         
         /// <summary>
@@ -108,33 +105,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: Safe, as increasing integer keys are safe.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>> DepositOf(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>> DepositOf(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = DemocracyStorage.DepositOfParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
-        }
-        
-        /// <summary>
-        /// >> PreimagesParams
-        ///  Map of hashes to the proposal preimage, along with who registered it and their deposit.
-        ///  The block number is the block at which it was deposited.
-        /// </summary>
-        public static string PreimagesParams(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
-        {
-            return RequestGenerator.GetStorage("Democracy", "Preimages", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                        Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, new Ajuna.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> Preimages
-        ///  Map of hashes to the proposal preimage, along with who registered it and their deposit.
-        ///  The block number is the block at which it was deposited.
-        /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus> Preimages(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
-        {
-            string parameters = DemocracyStorage.PreimagesParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
         
         /// <summary>
@@ -269,10 +243,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  - `LastTabledWasExternal` is `false`; or
         ///  - `PublicProps` is empty.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> NextExternal(CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> NextExternal(CancellationToken token)
         {
             string parameters = DemocracyStorage.NextExternalParams();
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>>(parameters, token);
         }
         
         /// <summary>
@@ -292,10 +266,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  A record of who vetoed what. Maps proposal hash to a possible existent block number
         ///  (until when it may not be resubmitted) and who vetoed it.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> Blacklist(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>> Blacklist(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
         {
             string parameters = DemocracyStorage.BlacklistParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>>(parameters, token);
         }
         
         /// <summary>
@@ -318,29 +292,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
             string parameters = DemocracyStorage.CancellationsParams(key);
             return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.Bool>(parameters, token);
         }
-        
-        /// <summary>
-        /// >> StorageVersionParams
-        ///  Storage version of the pallet.
-        /// 
-        ///  New networks start with last version.
-        /// </summary>
-        public static string StorageVersionParams()
-        {
-            return RequestGenerator.GetStorage("Democracy", "StorageVersion", Ajuna.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> StorageVersion
-        ///  Storage version of the pallet.
-        /// 
-        ///  New networks start with last version.
-        /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases> StorageVersion(CancellationToken token)
-        {
-            string parameters = DemocracyStorage.StorageVersionParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases>(parameters, token);
-        }
     }
     
     public sealed class DemocracyCalls
@@ -350,10 +301,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> propose
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Propose(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value)
+        public static Method Propose(SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(proposal.Encode());
             byteArray.AddRange(value.Encode());
             return new Method(12, "Democracy", 0, "propose", byteArray.ToArray());
         }
@@ -362,11 +313,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> second
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Second(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> proposal, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> seconds_upper_bound)
+        public static Method Second(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> proposal)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal.Encode());
-            byteArray.AddRange(seconds_upper_bound.Encode());
             return new Method(12, "Democracy", 1, "second", byteArray.ToArray());
         }
         
@@ -397,10 +347,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> external_propose
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ExternalPropose(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        public static Method ExternalPropose(SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded proposal)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(proposal.Encode());
             return new Method(12, "Democracy", 4, "external_propose", byteArray.ToArray());
         }
         
@@ -408,10 +358,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> external_propose_majority
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ExternalProposeMajority(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        public static Method ExternalProposeMajority(SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded proposal)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(proposal.Encode());
             return new Method(12, "Democracy", 5, "external_propose_majority", byteArray.ToArray());
         }
         
@@ -419,10 +369,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> external_propose_default
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ExternalProposeDefault(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        public static Method ExternalProposeDefault(SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded proposal)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(proposal.Encode());
             return new Method(12, "Democracy", 6, "external_propose_default", byteArray.ToArray());
         }
         
@@ -462,27 +412,16 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> cancel_queued
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method CancelQueued(Ajuna.NetApi.Model.Types.Primitive.U32 which)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(which.Encode());
-            return new Method(12, "Democracy", 10, "cancel_queued", byteArray.ToArray());
-        }
-        
-        /// <summary>
         /// >> delegate
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Delegate(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 to, SubstrateNET.NetApi.Generated.Model.pallet_democracy.conviction.EnumConviction conviction, Ajuna.NetApi.Model.Types.Primitive.U128 balance)
+        public static Method Delegate(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress to, SubstrateNET.NetApi.Generated.Model.pallet_democracy.conviction.EnumConviction conviction, Ajuna.NetApi.Model.Types.Primitive.U128 balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(to.Encode());
             byteArray.AddRange(conviction.Encode());
             byteArray.AddRange(balance.Encode());
-            return new Method(12, "Democracy", 11, "delegate", byteArray.ToArray());
+            return new Method(12, "Democracy", 10, "delegate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -492,7 +431,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public static Method Undelegate()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(12, "Democracy", 12, "undelegate", byteArray.ToArray());
+            return new Method(12, "Democracy", 11, "undelegate", byteArray.ToArray());
         }
         
         /// <summary>
@@ -502,74 +441,18 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public static Method ClearPublicProposals()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(12, "Democracy", 13, "clear_public_proposals", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> note_preimage
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method NotePreimage(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> encoded_proposal)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(encoded_proposal.Encode());
-            return new Method(12, "Democracy", 14, "note_preimage", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> note_preimage_operational
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method NotePreimageOperational(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> encoded_proposal)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(encoded_proposal.Encode());
-            return new Method(12, "Democracy", 15, "note_preimage_operational", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> note_imminent_preimage
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method NoteImminentPreimage(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> encoded_proposal)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(encoded_proposal.Encode());
-            return new Method(12, "Democracy", 16, "note_imminent_preimage", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> note_imminent_preimage_operational
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method NoteImminentPreimageOperational(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> encoded_proposal)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(encoded_proposal.Encode());
-            return new Method(12, "Democracy", 17, "note_imminent_preimage_operational", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> reap_preimage
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method ReapPreimage(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> proposal_len_upper_bound)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
-            byteArray.AddRange(proposal_len_upper_bound.Encode());
-            return new Method(12, "Democracy", 18, "reap_preimage", byteArray.ToArray());
+            return new Method(12, "Democracy", 12, "clear_public_proposals", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> unlock
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Unlock(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 target)
+        public static Method Unlock(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(target.Encode());
-            return new Method(12, "Democracy", 19, "unlock", byteArray.ToArray());
+            return new Method(12, "Democracy", 13, "unlock", byteArray.ToArray());
         }
         
         /// <summary>
@@ -580,31 +463,19 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(index.Encode());
-            return new Method(12, "Democracy", 20, "remove_vote", byteArray.ToArray());
+            return new Method(12, "Democracy", 14, "remove_vote", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> remove_other_vote
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveOtherVote(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 target, Ajuna.NetApi.Model.Types.Primitive.U32 index)
+        public static Method RemoveOtherVote(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Ajuna.NetApi.Model.Types.Primitive.U32 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(index.Encode());
-            return new Method(12, "Democracy", 21, "remove_other_vote", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> enact_proposal
-        /// Contains one variant per dispatchable that can be called by an extrinsic.
-        /// </summary>
-        public static Method EnactProposal(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, Ajuna.NetApi.Model.Types.Primitive.U32 index)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_hash.Encode());
-            byteArray.AddRange(index.Encode());
-            return new Method(12, "Democracy", 22, "enact_proposal", byteArray.ToArray());
+            return new Method(12, "Democracy", 15, "remove_other_vote", byteArray.ToArray());
         }
         
         /// <summary>
@@ -616,7 +487,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_hash.Encode());
             byteArray.AddRange(maybe_ref_index.Encode());
-            return new Method(12, "Democracy", 23, "blacklist", byteArray.ToArray());
+            return new Method(12, "Democracy", 16, "blacklist", byteArray.ToArray());
         }
         
         /// <summary>
@@ -627,7 +498,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(prop_index.Encode());
-            return new Method(12, "Democracy", 24, "cancel_proposal", byteArray.ToArray());
+            return new Method(12, "Democracy", 17, "cancel_proposal", byteArray.ToArray());
         }
     }
     
@@ -689,46 +560,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         AlreadyVetoed,
         
         /// <summary>
-        /// >> DuplicatePreimage
-        /// Preimage already noted
-        /// </summary>
-        DuplicatePreimage,
-        
-        /// <summary>
-        /// >> NotImminent
-        /// Not imminent
-        /// </summary>
-        NotImminent,
-        
-        /// <summary>
-        /// >> TooEarly
-        /// Too early
-        /// </summary>
-        TooEarly,
-        
-        /// <summary>
-        /// >> Imminent
-        /// Imminent
-        /// </summary>
-        Imminent,
-        
-        /// <summary>
-        /// >> PreimageMissing
-        /// Preimage not found
-        /// </summary>
-        PreimageMissing,
-        
-        /// <summary>
         /// >> ReferendumInvalid
         /// Vote given for invalid referendum
         /// </summary>
         ReferendumInvalid,
-        
-        /// <summary>
-        /// >> PreimageInvalid
-        /// Invalid preimage
-        /// </summary>
-        PreimageInvalid,
         
         /// <summary>
         /// >> NoneWaiting
@@ -798,10 +633,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         MaxVotesReached,
         
         /// <summary>
-        /// >> TooManyProposals
-        /// Maximum number of proposals reached.
+        /// >> TooMany
+        /// Maximum number of items reached.
         /// </summary>
-        TooManyProposals,
+        TooMany,
         
         /// <summary>
         /// >> VotingPeriodLow

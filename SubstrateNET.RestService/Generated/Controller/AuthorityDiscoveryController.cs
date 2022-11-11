@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Keys of the current authority set.
         /// </summary>
         [HttpGet("Keys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage), "KeysParams")]
         public IActionResult GetKeys()
         {
@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Keys of the next authority set.
         /// </summary>
         [HttpGet("NextKeys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage), "NextKeysParams")]
         public IActionResult GetNextKeys()
         {

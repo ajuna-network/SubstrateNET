@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_grandpa.pallet
     }
     
     /// <summary>
-    /// >> 251 - Variant[pallet_grandpa.pallet.Call]
+    /// >> 219 - Variant[pallet_grandpa.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.EquivocationProof, SubstrateNET.NetApi.Generated.Model.sp_session.MembershipProof>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_finality_grandpa.EquivocationProof, SubstrateNET.NetApi.Generated.Model.sp_session.MembershipProof>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_society
     
     
     /// <summary>
-    /// >> 520 - Composite[pallet_society.Bid]
+    /// >> 526 - Composite[pallet_society.Bid]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Bid : BaseType

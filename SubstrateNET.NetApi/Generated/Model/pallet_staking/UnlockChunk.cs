@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 420 - Composite[pallet_staking.UnlockChunk]
+    /// >> 424 - Composite[pallet_staking.UnlockChunk]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class UnlockChunk : BaseType

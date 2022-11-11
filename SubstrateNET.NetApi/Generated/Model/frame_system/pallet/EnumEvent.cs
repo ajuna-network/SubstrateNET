@@ -32,10 +32,10 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 18 - Variant[frame_system.pallet.Event]
+    /// >> 20 - Variant[frame_system.pallet.Event]
     /// Event for the System pallet.
     /// </summary>
-    public sealed class EnumEvent : BaseEnumExt<Event, SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchInfo, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.EnumDispatchError, SubstrateNET.NetApi.Generated.Model.frame_support.weights.DispatchInfo>, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>>
+    public sealed class EnumEvent : BaseEnumExt<Event, SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.EnumDispatchError, SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>>
     {
     }
 }

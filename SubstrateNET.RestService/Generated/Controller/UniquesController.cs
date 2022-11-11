@@ -128,8 +128,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Attributes of a collection.
         /// </summary>
         [HttpGet("Attribute")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "AttributeParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT2>))]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "AttributeParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT2>))]
         public IActionResult GetAttribute(string key)
         {
             return this.Ok(_uniquesStorage.GetAttribute(key));
@@ -157,19 +157,6 @@ namespace SubstrateNET.RestService.Generated.Controller
         public IActionResult GetCollectionMaxSupply(string key)
         {
             return this.Ok(_uniquesStorage.GetCollectionMaxSupply(key));
-        }
-        
-        /// <summary>
-        /// >> NextCollectionId
-        ///  Stores the `CollectionId` that is going to be used for the next collection.
-        ///  This gets incremented by 1 whenever a new collection is created.
-        /// </summary>
-        [HttpGet("NextCollectionId")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.UniquesStorage), "NextCollectionIdParams")]
-        public IActionResult GetNextCollectionId()
-        {
-            return this.Ok(_uniquesStorage.GetNextCollectionId());
         }
     }
 }

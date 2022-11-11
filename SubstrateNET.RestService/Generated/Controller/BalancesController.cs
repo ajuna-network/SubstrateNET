@@ -90,7 +90,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
         /// </summary>
         [HttpGet("Locks")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT2), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT2), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "LocksParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetLocks(string key)
         {
@@ -102,7 +102,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Named reserves on some account balances.
         /// </summary>
         [HttpGet("Reserves")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT10), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT11), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BalancesStorage), "ReservesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetReserves(string key)
         {

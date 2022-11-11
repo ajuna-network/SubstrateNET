@@ -72,7 +72,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key);
         
         /// <summary>
         /// >> ItemPriceOf
@@ -85,13 +85,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Keeps track of the number of items a collection might have.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.U32 GetCollectionMaxSupply(string key);
-        
-        /// <summary>
-        /// >> NextCollectionId
-        ///  Stores the `CollectionId` that is going to be used for the next collection.
-        ///  This gets incremented by 1 whenever a new collection is created.
-        /// </summary>
-        Ajuna.NetApi.Model.Types.Primitive.U32 GetNextCollectionId();
     }
     
     /// <summary>
@@ -138,7 +131,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _attributeTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>> _attributeTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>> _attributeTypedStorage;
         
         /// <summary>
         /// _itemPriceOfTypedStorage typed storage field
@@ -149,11 +142,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// _collectionMaxSupplyTypedStorage typed storage field
         /// </summary>
         private TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _collectionMaxSupplyTypedStorage;
-        
-        /// <summary>
-        /// _nextCollectionIdTypedStorage typed storage field
-        /// </summary>
-        private TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> _nextCollectionIdTypedStorage;
         
         /// <summary>
         /// UniquesStorage constructor.
@@ -167,10 +155,9 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.AssetTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.ItemDetails>("Uniques.Asset", storageDataProvider, storageChangeDelegates);
             this.ClassMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.CollectionMetadata>("Uniques.ClassMetadataOf", storageDataProvider, storageChangeDelegates);
             this.InstanceMetadataOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_uniques.types.ItemMetadata>("Uniques.InstanceMetadataOf", storageDataProvider, storageChangeDelegates);
-            this.AttributeTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>>("Uniques.Attribute", storageDataProvider, storageChangeDelegates);
+            this.AttributeTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>>("Uniques.Attribute", storageDataProvider, storageChangeDelegates);
             this.ItemPriceOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>("Uniques.ItemPriceOf", storageDataProvider, storageChangeDelegates);
             this.CollectionMaxSupplyTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Uniques.CollectionMaxSupply", storageDataProvider, storageChangeDelegates);
-            this.NextCollectionIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Uniques.NextCollectionId", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -281,7 +268,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _attributeTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>> AttributeTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128>> AttributeTypedStorage
         {
             get
             {
@@ -324,21 +311,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         }
         
         /// <summary>
-        /// _nextCollectionIdTypedStorage property
-        /// </summary>
-        public TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32> NextCollectionIdTypedStorage
-        {
-            get
-            {
-                return _nextCollectionIdTypedStorage;
-            }
-            set
-            {
-                _nextCollectionIdTypedStorage = value;
-            }
-        }
-        
-        /// <summary>
         /// Connects to all storages and initializes the change subscription handling.
         /// </summary>
         public async Task InitializeAsync(Ajuna.ServiceLayer.Storage.IStorageDataProvider dataProvider)
@@ -353,7 +325,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             await AttributeTypedStorage.InitializeAsync("Uniques", "Attribute");
             await ItemPriceOfTypedStorage.InitializeAsync("Uniques", "ItemPriceOf");
             await CollectionMaxSupplyTypedStorage.InitializeAsync("Uniques", "CollectionMaxSupply");
-            await NextCollectionIdTypedStorage.InitializeAsync("Uniques", "NextCollectionId");
         }
         
         /// <summary>
@@ -574,13 +545,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> GetAttribute(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AttributeTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            if (AttributeTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT3, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }
@@ -646,25 +617,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             {
                 return null;
             }
-        }
-        
-        /// <summary>
-        /// Implements any storage change for Uniques.NextCollectionId
-        /// </summary>
-        [StorageChange("Uniques", "NextCollectionId")]
-        public void OnUpdateNextCollectionId(string data)
-        {
-            NextCollectionIdTypedStorage.Update(data);
-        }
-        
-        /// <summary>
-        /// >> NextCollectionId
-        ///  Stores the `CollectionId` that is going to be used for the next collection.
-        ///  This gets incremented by 1 whenever a new collection is created.
-        /// </summary>
-        public Ajuna.NetApi.Model.Types.Primitive.U32 GetNextCollectionId()
-        {
-            return NextCollectionIdTypedStorage.Get();
         }
     }
 }

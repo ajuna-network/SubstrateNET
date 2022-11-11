@@ -34,7 +34,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("RankedPolls", "ReferendumInfoFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("RankedPolls", "TrackQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U16), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U16), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT48)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("RankedPolls", "DecidingCount"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U16), typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
         }
@@ -100,10 +100,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U16 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT48> TrackQueue(Ajuna.NetApi.Model.Types.Primitive.U16 key, CancellationToken token)
         {
             string parameters = RankedPollsStorage.TrackQueueParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT44>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT48>(parameters, token);
         }
         
         /// <summary>
@@ -135,11 +135,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> submit
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Submit(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller proposal_origin, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 proposal_hash, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime enactment_moment)
+        public static Method Submit(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller proposal_origin, SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded proposal, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime enactment_moment)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_origin.Encode());
-            byteArray.AddRange(proposal_hash.Encode());
+            byteArray.AddRange(proposal.Encode());
             byteArray.AddRange(enactment_moment.Encode());
             return new Method(52, "RankedPolls", 0, "submit", byteArray.ToArray());
         }
@@ -234,7 +234,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Full
-        /// There are already a full complement of referendums in progress for this track.
+        /// There are already a full complement of referenda in progress for this track.
         /// </summary>
         Full,
         

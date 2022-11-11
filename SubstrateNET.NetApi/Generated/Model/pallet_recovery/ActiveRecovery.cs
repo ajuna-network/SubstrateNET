@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery
     
     
     /// <summary>
-    /// >> 531 - Composite[pallet_recovery.ActiveRecovery]
+    /// >> 537 - Composite[pallet_recovery.ActiveRecovery]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveRecovery : BaseType
@@ -37,7 +37,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery
         /// <summary>
         /// >> friends
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT25 _friends;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT29 _friends;
         
         public Ajuna.NetApi.Model.Types.Primitive.U32 Created
         {
@@ -63,7 +63,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT25 Friends
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT29 Friends
         {
             get
             {
@@ -96,7 +96,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery
             Created.Decode(byteArray, ref p);
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Friends = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT25();
+            Friends = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT29();
             Friends.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

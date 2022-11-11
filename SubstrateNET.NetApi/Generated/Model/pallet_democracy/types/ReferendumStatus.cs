@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 449 - Composite[pallet_democracy.types.ReferendumStatus]
+    /// >> 456 - Composite[pallet_democracy.types.ReferendumStatus]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatus : BaseType
@@ -30,9 +30,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.types
         private Ajuna.NetApi.Model.Types.Primitive.U32 _end;
         
         /// <summary>
-        /// >> proposal_hash
+        /// >> proposal
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.primitive_types.H256 _proposalHash;
+        private SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded _proposal;
         
         /// <summary>
         /// >> threshold
@@ -61,15 +61,15 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.primitive_types.H256 ProposalHash
+        public SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded Proposal
         {
             get
             {
-                return this._proposalHash;
+                return this._proposal;
             }
             set
             {
-                this._proposalHash = value;
+                this._proposal = value;
             }
         }
         
@@ -118,7 +118,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.types
         {
             var result = new List<byte>();
             result.AddRange(End.Encode());
-            result.AddRange(ProposalHash.Encode());
+            result.AddRange(Proposal.Encode());
             result.AddRange(Threshold.Encode());
             result.AddRange(Delay.Encode());
             result.AddRange(Tally.Encode());
@@ -130,8 +130,8 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.types
             var start = p;
             End = new Ajuna.NetApi.Model.Types.Primitive.U32();
             End.Decode(byteArray, ref p);
-            ProposalHash = new SubstrateNET.NetApi.Generated.Model.primitive_types.H256();
-            ProposalHash.Decode(byteArray, ref p);
+            Proposal = new SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded();
+            Proposal.Decode(byteArray, ref p);
             Threshold = new SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold();
             Threshold.Decode(byteArray, ref p);
             Delay = new Ajuna.NetApi.Model.Types.Primitive.U32();

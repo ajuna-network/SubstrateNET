@@ -28,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  Keys of the current authority set.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetKeys();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8 GetKeys();
         
         /// <summary>
         /// >> NextKeys
         ///  Keys of the next authority set.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetNextKeys();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8 GetNextKeys();
     }
     
     /// <summary>
@@ -46,26 +46,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _keysTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7> _keysTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8> _keysTypedStorage;
         
         /// <summary>
         /// _nextKeysTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7> _nextKeysTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8> _nextKeysTypedStorage;
         
         /// <summary>
         /// AuthorityDiscoveryStorage constructor.
         /// </summary>
         public AuthorityDiscoveryStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7>("AuthorityDiscovery.Keys", storageDataProvider, storageChangeDelegates);
-            this.NextKeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7>("AuthorityDiscovery.NextKeys", storageDataProvider, storageChangeDelegates);
+            this.KeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8>("AuthorityDiscovery.Keys", storageDataProvider, storageChangeDelegates);
+            this.NextKeysTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8>("AuthorityDiscovery.NextKeys", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _keysTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7> KeysTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8> KeysTypedStorage
         {
             get
             {
@@ -80,7 +80,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextKeysTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7> NextKeysTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8> NextKeysTypedStorage
         {
             get
             {
@@ -114,7 +114,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Keys
         ///  Keys of the current authority set.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetKeys()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8 GetKeys()
         {
             return KeysTypedStorage.Get();
         }
@@ -132,7 +132,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> NextKeys
         ///  Keys of the next authority set.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT7 GetNextKeys()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT8 GetNextKeys()
         {
             return NextKeysTypedStorage.Get();
         }

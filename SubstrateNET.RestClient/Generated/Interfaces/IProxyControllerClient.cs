@@ -12,14 +12,14 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IProxyControllerClient
    {
-      Task<BaseTuple<BoundedVecT28, U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<BaseTuple<BoundedVecT33, U128>> GetProxies(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SubscribeProxies(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<BaseTuple<BoundedVecT29, U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<BaseTuple<BoundedVecT34, U128>> GetAnnouncements(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<bool> SubscribeAnnouncements(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
    }
 }

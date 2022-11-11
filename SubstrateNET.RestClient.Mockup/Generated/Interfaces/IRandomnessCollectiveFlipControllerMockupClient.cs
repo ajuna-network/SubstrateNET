@@ -11,10 +11,10 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IRandomnessCollectiveFlipControllerMockupClient
    {
-      Task<bool> SetRandomMaterial(BoundedVecT21 value);
+      Task<bool> SetRandomMaterial(BoundedVecT25 value);
    }
 }

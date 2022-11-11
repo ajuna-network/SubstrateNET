@@ -51,11 +51,10 @@ namespace SubstrateNET.RestService.Generated.Controller
         
         /// <summary>
         /// >> PreimageFor
-        ///  The preimages stored by this pallet.
         /// </summary>
         [HttpGet("PreimageFor")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.PreimageStorage), "PreimageForParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.PreimageStorage), "PreimageForParams", typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32>))]
         public IActionResult GetPreimageFor(string key)
         {
             return this.Ok(_preimageStorage.GetPreimageFor(key));

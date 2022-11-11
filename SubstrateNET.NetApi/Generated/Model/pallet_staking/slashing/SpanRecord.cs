@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking.slashing
     
     
     /// <summary>
-    /// >> 434 - Composite[pallet_staking.slashing.SpanRecord]
+    /// >> 440 - Composite[pallet_staking.slashing.SpanRecord]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SpanRecord : BaseType

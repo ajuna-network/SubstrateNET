@@ -30,10 +30,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_utility.pallet
     }
     
     /// <summary>
-    /// >> 153 - Variant[pallet_utility.pallet.Call]
+    /// >> 115 - Variant[pallet_utility.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, BaseTuple<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>>
+    public sealed class EnumCall : BaseEnumExt<Call, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U16, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, BaseTuple<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>>
     {
     }
 }

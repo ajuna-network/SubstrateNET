@@ -38,26 +38,8 @@ namespace SubstrateNET.RestService.Generated.Controller
         }
         
         /// <summary>
-        /// >> HistoryDepth
-        ///  Number of eras to keep in history.
-        /// 
-        ///  Information is kept for eras in `[current_era - history_depth; current_era]`.
-        /// 
-        ///  Must be more than the number of eras delayed by session otherwise. I.e. active era must
-        ///  always be in history. I.e. `active_era > current_era - history_depth` must be
-        ///  guaranteed.
-        /// </summary>
-        [HttpGet("HistoryDepth")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.StakingStorage), "HistoryDepthParams")]
-        public IActionResult GetHistoryDepth()
-        {
-            return this.Ok(_stakingStorage.GetHistoryDepth());
-        }
-        
-        /// <summary>
         /// >> ValidatorCount
-        ///  The ideal number of staking participants.
+        ///  The ideal number of active validators.
         /// </summary>
         [HttpGet("ValidatorCount")]
         [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]

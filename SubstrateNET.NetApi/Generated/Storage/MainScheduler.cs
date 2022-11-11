@@ -30,10 +30,28 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public SchedulerStorage(SubstrateClientExt client)
         {
             this._client = client;
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "IncompleteSince"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Agenda"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Primitive.U32), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT31)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Lookup"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>)));
+        }
+        
+        /// <summary>
+        /// >> IncompleteSinceParams
+        /// </summary>
+        public static string IncompleteSinceParams()
+        {
+            return RequestGenerator.GetStorage("Scheduler", "IncompleteSince", Ajuna.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> IncompleteSince
+        /// </summary>
+        public async Task<Ajuna.NetApi.Model.Types.Primitive.U32> IncompleteSince(CancellationToken token)
+        {
+            string parameters = SchedulerStorage.IncompleteSinceParams();
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Primitive.U32>(parameters, token);
         }
         
         /// <summary>
@@ -51,17 +69,20 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Agenda
         ///  Items to be executed, indexed by the block number that they should be executed on.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>> Agenda(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT31> Agenda(Ajuna.NetApi.Model.Types.Primitive.U32 key, CancellationToken token)
         {
             string parameters = SchedulerStorage.AgendaParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>>>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT31>(parameters, token);
         }
         
         /// <summary>
         /// >> LookupParams
-        ///  Lookup from identity to the block number and index of the task.
+        ///  Lookup from a name to the block number and index of the task.
+        /// 
+        ///  For v3 -> v4 the previously unbounded identities are Blake2-256 hashed to form the v4
+        ///  identities.
         /// </summary>
-        public static string LookupParams(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> key)
+        public static string LookupParams(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
         {
             return RequestGenerator.GetStorage("Scheduler", "Lookup", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Ajuna.NetApi.Model.Types.IType[] {
@@ -70,9 +91,12 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Lookup
-        ///  Lookup from identity to the block number and index of the task.
+        ///  Lookup from a name to the block number and index of the task.
+        /// 
+        ///  For v3 -> v4 the previously unbounded identities are Blake2-256 hashed to form the v4
+        ///  identities.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> Lookup(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> Lookup(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key, CancellationToken token)
         {
             string parameters = SchedulerStorage.LookupParams(key);
             return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>>(parameters, token);
@@ -86,7 +110,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> schedule
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Schedule(Ajuna.NetApi.Model.Types.Primitive.U32 when, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumMaybeHashed call)
+        public static Method Schedule(Ajuna.NetApi.Model.Types.Primitive.U32 when, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(when.Encode());
@@ -112,7 +136,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> schedule_named
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ScheduleNamed(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> id, Ajuna.NetApi.Model.Types.Primitive.U32 when, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumMaybeHashed call)
+        public static Method ScheduleNamed(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 id, Ajuna.NetApi.Model.Types.Primitive.U32 when, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -127,7 +151,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> cancel_named
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method CancelNamed(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> id)
+        public static Method CancelNamed(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -138,7 +162,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> schedule_after
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ScheduleAfter(Ajuna.NetApi.Model.Types.Primitive.U32 after, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumMaybeHashed call)
+        public static Method ScheduleAfter(Ajuna.NetApi.Model.Types.Primitive.U32 after, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(after.Encode());
@@ -152,7 +176,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> schedule_named_after
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ScheduleNamedAfter(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> id, Ajuna.NetApi.Model.Types.Primitive.U32 after, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumMaybeHashed call)
+        public static Method ScheduleNamedAfter(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 id, Ajuna.NetApi.Model.Types.Primitive.U32 after, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Ajuna.NetApi.Model.Types.Primitive.U8 priority, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -190,5 +214,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// Reschedule failed because it does not change scheduled time.
         /// </summary>
         RescheduleNoChange,
+        
+        /// <summary>
+        /// >> Named
+        /// Attempt to use a non-named function on a named task.
+        /// </summary>
+        Named,
     }
 }

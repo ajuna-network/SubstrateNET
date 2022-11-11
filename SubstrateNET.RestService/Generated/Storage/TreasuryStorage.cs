@@ -40,7 +40,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Approvals
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 GetApprovals();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22 GetApprovals();
     }
     
     /// <summary>
@@ -62,7 +62,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _approvalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16> _approvalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22> _approvalsTypedStorage;
         
         /// <summary>
         /// TreasuryStorage constructor.
@@ -71,7 +71,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Treasury.ProposalCount", storageDataProvider, storageChangeDelegates);
             this.ProposalsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_treasury.Proposal>("Treasury.Proposals", storageDataProvider, storageChangeDelegates);
-            this.ApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16>("Treasury.Approvals", storageDataProvider, storageChangeDelegates);
+            this.ApprovalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22>("Treasury.Approvals", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -107,7 +107,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _approvalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16> ApprovalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22> ApprovalsTypedStorage
         {
             get
             {
@@ -189,7 +189,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Approvals
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16 GetApprovals()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22 GetApprovals()
         {
             return ApprovalsTypedStorage.Get();
         }

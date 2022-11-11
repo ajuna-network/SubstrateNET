@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 104 - Variant[pallet_state_trie_migration.pallet.MigrationCompute]
+    /// >> 105 - Variant[pallet_state_trie_migration.pallet.MigrationCompute]
     /// </summary>
     public sealed class EnumMigrationCompute : BaseEnum<MigrationCompute>
     {

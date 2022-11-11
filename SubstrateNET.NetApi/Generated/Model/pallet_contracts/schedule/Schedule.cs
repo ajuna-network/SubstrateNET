@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
     
     
     /// <summary>
-    /// >> 489 - Composite[pallet_contracts.schedule.Schedule]
+    /// >> 495 - Composite[pallet_contracts.schedule.Schedule]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Schedule : BaseType

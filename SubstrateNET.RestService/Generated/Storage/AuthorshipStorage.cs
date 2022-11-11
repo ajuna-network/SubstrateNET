@@ -28,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Uncles
         ///  Uncles
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9 GetUncles();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10 GetUncles();
         
         /// <summary>
         /// >> Author
@@ -52,7 +52,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unclesTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9> _unclesTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10> _unclesTypedStorage;
         
         /// <summary>
         /// _authorTypedStorage typed storage field
@@ -69,7 +69,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public AuthorshipStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.UnclesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9>("Authorship.Uncles", storageDataProvider, storageChangeDelegates);
+            this.UnclesTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10>("Authorship.Uncles", storageDataProvider, storageChangeDelegates);
             this.AuthorTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("Authorship.Author", storageDataProvider, storageChangeDelegates);
             this.DidSetUnclesTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Authorship.DidSetUncles", storageDataProvider, storageChangeDelegates);
         }
@@ -77,7 +77,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _unclesTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9> UnclesTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10> UnclesTypedStorage
         {
             get
             {
@@ -142,7 +142,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Uncles
         ///  Uncles
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT9 GetUncles()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT10 GetUncles()
         {
             return UnclesTypedStorage.Get();
         }

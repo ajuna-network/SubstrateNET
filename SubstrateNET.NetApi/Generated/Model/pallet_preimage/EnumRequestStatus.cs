@@ -24,9 +24,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_preimage
     }
     
     /// <summary>
-    /// >> 541 - Variant[pallet_preimage.RequestStatus]
+    /// >> 548 - Variant[pallet_preimage.RequestStatus]
     /// </summary>
-    public sealed class EnumRequestStatus : BaseEnumExt<RequestStatus, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>, Ajuna.NetApi.Model.Types.Primitive.U32>
+    public sealed class EnumRequestStatus : BaseEnumExt<RequestStatus, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>>>
     {
     }
 }

@@ -13,13 +13,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IBountiesControllerMockupClient
    {
       Task<bool> SetBountyCount(U32 value);
       Task<bool> SetBounties(Bounty value, U32 key);
-      Task<bool> SetBountyDescriptions(BoundedVecT30 value, U32 key);
-      Task<bool> SetBountyApprovals(BoundedVecT16 value);
+      Task<bool> SetBountyDescriptions(BoundedVecT35 value, U32 key);
+      Task<bool> SetBountyApprovals(BoundedVecT22 value);
    }
 }

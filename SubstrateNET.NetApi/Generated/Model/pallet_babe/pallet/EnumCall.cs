@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_babe.pallet
     }
     
     /// <summary>
-    /// >> 156 - Variant[pallet_babe.pallet.Call]
+    /// >> 123 - Variant[pallet_babe.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.EquivocationProof, SubstrateNET.NetApi.Generated.Model.sp_session.MembershipProof>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_consensus_slots.EquivocationProof, SubstrateNET.NetApi.Generated.Model.sp_session.MembershipProof>, SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.EnumNextConfigDescriptor>

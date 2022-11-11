@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_bounties;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IBountiesControllerClient
    {
@@ -21,9 +21,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeBountyCount();
       Task<Bounty> GetBounties(U32 key);
       Task<bool> SubscribeBounties(U32 key);
-      Task<BoundedVecT30> GetBountyDescriptions(U32 key);
+      Task<BoundedVecT35> GetBountyDescriptions(U32 key);
       Task<bool> SubscribeBountyDescriptions(U32 key);
-      Task<BoundedVecT16> GetBountyApprovals();
+      Task<BoundedVecT22> GetBountyApprovals();
       Task<bool> SubscribeBountyApprovals();
    }
 }

@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_preimage;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class PreimageControllerMockupClient : MockupBaseClient, IPreimageControllerMockupClient
@@ -27,7 +27,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Preimage/StatusFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.PreimageStorage.StatusForParams(key));
       }
-      public async Task<bool> SetPreimageFor(BoundedVecT27 value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<bool> SetPreimageFor(BoundedVecT32 value, Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key)
       {
          return await SendMockupRequestAsync(_httpClient, "Preimage/PreimageFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.PreimageStorage.PreimageForParams(key));
       }

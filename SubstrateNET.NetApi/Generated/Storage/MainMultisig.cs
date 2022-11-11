@@ -33,8 +33,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Multisig", "Multisigs"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8>), typeof(SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Multisig", "Calls"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -57,25 +55,6 @@ namespace SubstrateNET.NetApi.Generated.Storage
             string parameters = MultisigStorage.MultisigsParams(key);
             return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig>(parameters, token);
         }
-        
-        /// <summary>
-        /// >> CallsParams
-        /// </summary>
-        public static string CallsParams(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
-        {
-            return RequestGenerator.GetStorage("Multisig", "Calls", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                        Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, new Ajuna.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> Calls
-        /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> Calls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key, CancellationToken token)
-        {
-            string parameters = MultisigStorage.CallsParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
-        }
     }
     
     public sealed class MultisigCalls
@@ -85,7 +64,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> as_multi_threshold_1
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AsMultiThreshold1(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method AsMultiThreshold1(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(other_signatories.Encode());
@@ -97,14 +76,13 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> as_multi
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AsMulti(Ajuna.NetApi.Model.Types.Primitive.U16 threshold, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque call, Ajuna.NetApi.Model.Types.Primitive.Bool store_call, Ajuna.NetApi.Model.Types.Primitive.U64 max_weight)
+        public static Method AsMulti(Ajuna.NetApi.Model.Types.Primitive.U16 threshold, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(maybe_timepoint.Encode());
             byteArray.AddRange(call.Encode());
-            byteArray.AddRange(store_call.Encode());
             byteArray.AddRange(max_weight.Encode());
             return new Method(33, "Multisig", 1, "as_multi", byteArray.ToArray());
         }
@@ -113,7 +91,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> approve_as_multi
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ApproveAsMulti(Ajuna.NetApi.Model.Types.Primitive.U16 threshold, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 call_hash, Ajuna.NetApi.Model.Types.Primitive.U64 max_weight)
+        public static Method ApproveAsMulti(Ajuna.NetApi.Model.Types.Primitive.U16 threshold, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 call_hash, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());

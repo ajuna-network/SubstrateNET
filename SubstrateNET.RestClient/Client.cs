@@ -25,7 +25,6 @@ namespace SubstrateNET.RestClient
       public IAuthorityDiscoveryControllerClient AuthorityDiscoveryControllerClient;
       public IAuthorshipControllerClient AuthorshipControllerClient;
       public IBabeControllerClient BabeControllerClient;
-      public IBagsListControllerClient BagsListControllerClient;
       public IBalancesControllerClient BalancesControllerClient;
       public IBountiesControllerClient BountiesControllerClient;
       public IChildBountiesControllerClient ChildBountiesControllerClient;
@@ -35,6 +34,7 @@ namespace SubstrateNET.RestClient
       public IDemocracyControllerClient DemocracyControllerClient;
       public IElectionProviderMultiPhaseControllerClient ElectionProviderMultiPhaseControllerClient;
       public IElectionsControllerClient ElectionsControllerClient;
+      public IFastUnstakeControllerClient FastUnstakeControllerClient;
       public IGiltControllerClient GiltControllerClient;
       public IGrandpaControllerClient GrandpaControllerClient;
       public IIdentityControllerClient IdentityControllerClient;
@@ -68,6 +68,7 @@ namespace SubstrateNET.RestClient
       public ITreasuryControllerClient TreasuryControllerClient;
       public IUniquesControllerClient UniquesControllerClient;
       public IVestingControllerClient VestingControllerClient;
+      public IVoterListControllerClient VoterListControllerClient;
       public IWhitelistControllerClient WhitelistControllerClient;
       public Client(HttpClient httpClient, BaseSubscriptionClient subscriptionClient)
       {
@@ -79,7 +80,6 @@ namespace SubstrateNET.RestClient
          AuthorityDiscoveryControllerClient = new AuthorityDiscoveryControllerClient(_httpClient, _subscriptionClient);
          AuthorshipControllerClient = new AuthorshipControllerClient(_httpClient, _subscriptionClient);
          BabeControllerClient = new BabeControllerClient(_httpClient, _subscriptionClient);
-         BagsListControllerClient = new BagsListControllerClient(_httpClient, _subscriptionClient);
          BalancesControllerClient = new BalancesControllerClient(_httpClient, _subscriptionClient);
          BountiesControllerClient = new BountiesControllerClient(_httpClient, _subscriptionClient);
          ChildBountiesControllerClient = new ChildBountiesControllerClient(_httpClient, _subscriptionClient);
@@ -89,6 +89,7 @@ namespace SubstrateNET.RestClient
          DemocracyControllerClient = new DemocracyControllerClient(_httpClient, _subscriptionClient);
          ElectionProviderMultiPhaseControllerClient = new ElectionProviderMultiPhaseControllerClient(_httpClient, _subscriptionClient);
          ElectionsControllerClient = new ElectionsControllerClient(_httpClient, _subscriptionClient);
+         FastUnstakeControllerClient = new FastUnstakeControllerClient(_httpClient, _subscriptionClient);
          GiltControllerClient = new GiltControllerClient(_httpClient, _subscriptionClient);
          GrandpaControllerClient = new GrandpaControllerClient(_httpClient, _subscriptionClient);
          IdentityControllerClient = new IdentityControllerClient(_httpClient, _subscriptionClient);
@@ -122,6 +123,7 @@ namespace SubstrateNET.RestClient
          TreasuryControllerClient = new TreasuryControllerClient(_httpClient, _subscriptionClient);
          UniquesControllerClient = new UniquesControllerClient(_httpClient, _subscriptionClient);
          VestingControllerClient = new VestingControllerClient(_httpClient, _subscriptionClient);
+         VoterListControllerClient = new VoterListControllerClient(_httpClient, _subscriptionClient);
          WhitelistControllerClient = new WhitelistControllerClient(_httpClient, _subscriptionClient);
       }
    }

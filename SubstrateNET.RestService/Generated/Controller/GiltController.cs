@@ -46,7 +46,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  whose duration is one `Period` would be storage `0`.
         /// </summary>
         [HttpGet("QueueTotals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT32), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT37), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "QueueTotalsParams")]
         public IActionResult GetQueueTotals()
         {
@@ -58,7 +58,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The queues of bids ready to become gilts. Indexed by duration (in `Period`s).
         /// </summary>
         [HttpGet("Queues")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT33), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT38), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.GiltStorage), "QueuesParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetQueues(string key)
         {

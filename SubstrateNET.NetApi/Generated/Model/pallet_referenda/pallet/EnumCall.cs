@@ -34,10 +34,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.pallet
     }
     
     /// <summary>
-    /// >> 372 - Variant[pallet_referenda.pallet.Call]
+    /// >> 344 - Variant[pallet_referenda.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime>, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U16>
+    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller, SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.frame_support.traits.schedule.EnumDispatchTime>, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U16>
     {
     }
 }

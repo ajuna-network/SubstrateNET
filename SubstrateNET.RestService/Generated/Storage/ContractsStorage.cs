@@ -28,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17 GetPristineCode(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23 GetPristineCode(string key);
         
         /// <summary>
         /// >> CodeStorage
@@ -75,7 +75,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: SAFE since `AccountId` is a secure hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo GetContractInfoOf(string key);
+        SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo GetContractInfoOf(string key);
         
         /// <summary>
         /// >> DeletionQueue
@@ -84,7 +84,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20 GetDeletionQueue();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24 GetDeletionQueue();
     }
     
     /// <summary>
@@ -96,7 +96,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _pristineCodeTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17> _pristineCodeTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23> _pristineCodeTypedStorage;
         
         /// <summary>
         /// _codeStorageTypedStorage typed storage field
@@ -116,30 +116,30 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _contractInfoOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo> _contractInfoOfTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo> _contractInfoOfTypedStorage;
         
         /// <summary>
         /// _deletionQueueTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20> _deletionQueueTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24> _deletionQueueTypedStorage;
         
         /// <summary>
         /// ContractsStorage constructor.
         /// </summary>
         public ContractsStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.PristineCodeTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17>("Contracts.PristineCode", storageDataProvider, storageChangeDelegates);
+            this.PristineCodeTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23>("Contracts.PristineCode", storageDataProvider, storageChangeDelegates);
             this.CodeStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.PrefabWasmModule>("Contracts.CodeStorage", storageDataProvider, storageChangeDelegates);
             this.OwnerInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.OwnerInfo>("Contracts.OwnerInfoOf", storageDataProvider, storageChangeDelegates);
             this.NonceTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U64>("Contracts.Nonce", storageDataProvider, storageChangeDelegates);
-            this.ContractInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo>("Contracts.ContractInfoOf", storageDataProvider, storageChangeDelegates);
-            this.DeletionQueueTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20>("Contracts.DeletionQueue", storageDataProvider, storageChangeDelegates);
+            this.ContractInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo>("Contracts.ContractInfoOf", storageDataProvider, storageChangeDelegates);
+            this.DeletionQueueTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24>("Contracts.DeletionQueue", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _pristineCodeTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17> PristineCodeTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23> PristineCodeTypedStorage
         {
             get
             {
@@ -199,7 +199,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _contractInfoOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo> ContractInfoOfTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo> ContractInfoOfTypedStorage
         {
             get
             {
@@ -214,7 +214,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _deletionQueueTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20> DeletionQueueTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24> DeletionQueueTypedStorage
         {
             get
             {
@@ -252,13 +252,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17 GetPristineCode(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23 GetPristineCode(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PristineCodeTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17 result))
+            if (PristineCodeTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23 result))
             {
                 return result;
             }
@@ -380,13 +380,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: SAFE since `AccountId` is a secure hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo GetContractInfoOf(string key)
+        public SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo GetContractInfoOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ContractInfoOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo result))
+            if (ContractInfoOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo result))
             {
                 return result;
             }
@@ -412,7 +412,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20 GetDeletionQueue()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24 GetDeletionQueue()
         {
             return DeletionQueueTypedStorage.Get();
         }

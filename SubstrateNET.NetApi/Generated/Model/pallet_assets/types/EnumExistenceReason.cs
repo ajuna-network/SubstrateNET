@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 566 - Variant[pallet_assets.types.ExistenceReason]
+    /// >> 573 - Variant[pallet_assets.types.ExistenceReason]
     /// </summary>
     public sealed class EnumExistenceReason : BaseEnumExt<ExistenceReason, BaseVoid, BaseVoid, Ajuna.NetApi.Model.Types.Primitive.U128, BaseVoid>
     {

@@ -32,9 +32,9 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> PublicProps
-        ///  The public proposals. Unsorted. The second item is the proposal's hash.
+        ///  The public proposals. Unsorted. The second item is the proposal.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetPublicProps();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16 GetPublicProps();
         
         /// <summary>
         /// >> DepositOf
@@ -42,14 +42,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: Safe, as increasing integer keys are safe.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> GetDepositOf(string key);
-        
-        /// <summary>
-        /// >> Preimages
-        ///  Map of hashes to the proposal preimage, along with who registered it and their deposit.
-        ///  The block number is the block at which it was deposited.
-        /// </summary>
-        SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus GetPreimages(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128> GetDepositOf(string key);
         
         /// <summary>
         /// >> ReferendumCount
@@ -95,28 +88,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  - `LastTabledWasExternal` is `false`; or
         ///  - `PublicProps` is empty.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> GetNextExternal();
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> GetNextExternal();
         
         /// <summary>
         /// >> Blacklist
         ///  A record of who vetoed what. Maps proposal hash to a possible existent block number
         ///  (until when it may not be resubmitted) and who vetoed it.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetBlacklist(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17> GetBlacklist(string key);
         
         /// <summary>
         /// >> Cancellations
         ///  Record of all proposals that have been subject to emergency cancellation.
         /// </summary>
         Ajuna.NetApi.Model.Types.Primitive.Bool GetCancellations(string key);
-        
-        /// <summary>
-        /// >> StorageVersion
-        ///  Storage version of the pallet.
-        /// 
-        ///  New networks start with last version.
-        /// </summary>
-        SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases GetStorageVersion();
     }
     
     /// <summary>
@@ -133,17 +118,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _publicPropsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> _publicPropsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16> _publicPropsTypedStorage;
         
         /// <summary>
         /// _depositOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>> _depositOfTypedStorage;
-        
-        /// <summary>
-        /// _preimagesTypedStorage typed storage field
-        /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus> _preimagesTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>> _depositOfTypedStorage;
         
         /// <summary>
         /// _referendumCountTypedStorage typed storage field
@@ -173,12 +153,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextExternalTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> _nextExternalTypedStorage;
+        private TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> _nextExternalTypedStorage;
         
         /// <summary>
         /// _blacklistTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> _blacklistTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>> _blacklistTypedStorage;
         
         /// <summary>
         /// _cancellationsTypedStorage typed storage field
@@ -186,28 +166,21 @@ namespace SubstrateNET.RestService.Generated.Storage
         private TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool> _cancellationsTypedStorage;
         
         /// <summary>
-        /// _storageVersionTypedStorage typed storage field
-        /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases> _storageVersionTypedStorage;
-        
-        /// <summary>
         /// DemocracyStorage constructor.
         /// </summary>
         public DemocracyStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
             this.PublicPropCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Democracy.PublicPropCount", storageDataProvider, storageChangeDelegates);
-            this.PublicPropsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>("Democracy.PublicProps", storageDataProvider, storageChangeDelegates);
-            this.DepositOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>>("Democracy.DepositOf", storageDataProvider, storageChangeDelegates);
-            this.PreimagesTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus>("Democracy.Preimages", storageDataProvider, storageChangeDelegates);
+            this.PublicPropsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16>("Democracy.PublicProps", storageDataProvider, storageChangeDelegates);
+            this.DepositOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>>("Democracy.DepositOf", storageDataProvider, storageChangeDelegates);
             this.ReferendumCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Democracy.ReferendumCount", storageDataProvider, storageChangeDelegates);
             this.LowestUnbakedTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Democracy.LowestUnbaked", storageDataProvider, storageChangeDelegates);
             this.ReferendumInfoOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.types.EnumReferendumInfo>("Democracy.ReferendumInfoOf", storageDataProvider, storageChangeDelegates);
             this.VotingOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote.EnumVoting>("Democracy.VotingOf", storageDataProvider, storageChangeDelegates);
             this.LastTabledWasExternalTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Democracy.LastTabledWasExternal", storageDataProvider, storageChangeDelegates);
-            this.NextExternalTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>>("Democracy.NextExternal", storageDataProvider, storageChangeDelegates);
-            this.BlacklistTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>("Democracy.Blacklist", storageDataProvider, storageChangeDelegates);
+            this.NextExternalTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>>("Democracy.NextExternal", storageDataProvider, storageChangeDelegates);
+            this.BlacklistTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>>("Democracy.Blacklist", storageDataProvider, storageChangeDelegates);
             this.CancellationsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.Bool>("Democracy.Cancellations", storageDataProvider, storageChangeDelegates);
-            this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases>("Democracy.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -228,7 +201,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _publicPropsTypedStorage property
         /// </summary>
-        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> PublicPropsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16> PublicPropsTypedStorage
         {
             get
             {
@@ -243,7 +216,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _depositOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128>> DepositOfTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128>> DepositOfTypedStorage
         {
             get
             {
@@ -252,21 +225,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             set
             {
                 _depositOfTypedStorage = value;
-            }
-        }
-        
-        /// <summary>
-        /// _preimagesTypedStorage property
-        /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus> PreimagesTypedStorage
-        {
-            get
-            {
-                return _preimagesTypedStorage;
-            }
-            set
-            {
-                _preimagesTypedStorage = value;
             }
         }
         
@@ -348,7 +306,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _nextExternalTypedStorage property
         /// </summary>
-        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> NextExternalTypedStorage
+        public TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>> NextExternalTypedStorage
         {
             get
             {
@@ -363,7 +321,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _blacklistTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> BlacklistTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17>> BlacklistTypedStorage
         {
             get
             {
@@ -391,21 +349,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         }
         
         /// <summary>
-        /// _storageVersionTypedStorage property
-        /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases> StorageVersionTypedStorage
-        {
-            get
-            {
-                return _storageVersionTypedStorage;
-            }
-            set
-            {
-                _storageVersionTypedStorage = value;
-            }
-        }
-        
-        /// <summary>
         /// Connects to all storages and initializes the change subscription handling.
         /// </summary>
         public async Task InitializeAsync(Ajuna.ServiceLayer.Storage.IStorageDataProvider dataProvider)
@@ -413,7 +356,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             await PublicPropCountTypedStorage.InitializeAsync("Democracy", "PublicPropCount");
             await PublicPropsTypedStorage.InitializeAsync("Democracy", "PublicProps");
             await DepositOfTypedStorage.InitializeAsync("Democracy", "DepositOf");
-            await PreimagesTypedStorage.InitializeAsync("Democracy", "Preimages");
             await ReferendumCountTypedStorage.InitializeAsync("Democracy", "ReferendumCount");
             await LowestUnbakedTypedStorage.InitializeAsync("Democracy", "LowestUnbaked");
             await ReferendumInfoOfTypedStorage.InitializeAsync("Democracy", "ReferendumInfoOf");
@@ -422,7 +364,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             await NextExternalTypedStorage.InitializeAsync("Democracy", "NextExternal");
             await BlacklistTypedStorage.InitializeAsync("Democracy", "Blacklist");
             await CancellationsTypedStorage.InitializeAsync("Democracy", "Cancellations");
-            await StorageVersionTypedStorage.InitializeAsync("Democracy", "StorageVersion");
         }
         
         /// <summary>
@@ -454,9 +395,9 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> PublicProps
-        ///  The public proposals. Unsorted. The second item is the proposal's hash.
+        ///  The public proposals. Unsorted. The second item is the proposal.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetPublicProps()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT16 GetPublicProps()
         {
             return PublicPropsTypedStorage.Get();
         }
@@ -476,43 +417,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: Safe, as increasing integer keys are safe.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> GetDepositOf(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128> GetDepositOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (DepositOfTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Ajuna.NetApi.Model.Types.Primitive.U128> result))
-            {
-                return result;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        
-        /// <summary>
-        /// Implements any storage change for Democracy.Preimages
-        /// </summary>
-        [StorageChange("Democracy", "Preimages")]
-        public void OnUpdatePreimages(string key, string data)
-        {
-            PreimagesTypedStorage.Update(key, data);
-        }
-        
-        /// <summary>
-        /// >> Preimages
-        ///  Map of hashes to the proposal preimage, along with who registered it and their deposit.
-        ///  The block number is the block at which it was deposited.
-        /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus GetPreimages(string key)
-        {
-            if ((key == null))
-            {
-                return null;
-            }
-            if (PreimagesTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumPreimageStatus result))
+            if (DepositOfTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }
@@ -657,7 +568,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  - `LastTabledWasExternal` is `false`; or
         ///  - `PublicProps` is empty.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> GetNextExternal()
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold> GetNextExternal()
         {
             return NextExternalTypedStorage.Get();
         }
@@ -676,13 +587,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  A record of who vetoed what. Maps proposal hash to a possible existent block number
         ///  (until when it may not be resubmitted) and who vetoed it.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> GetBlacklist(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17> GetBlacklist(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (BlacklistTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> result))
+            if (BlacklistTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17> result))
             {
                 return result;
             }
@@ -719,26 +630,6 @@ namespace SubstrateNET.RestService.Generated.Storage
             {
                 return null;
             }
-        }
-        
-        /// <summary>
-        /// Implements any storage change for Democracy.StorageVersion
-        /// </summary>
-        [StorageChange("Democracy", "StorageVersion")]
-        public void OnUpdateStorageVersion(string data)
-        {
-            StorageVersionTypedStorage.Update(data);
-        }
-        
-        /// <summary>
-        /// >> StorageVersion
-        ///  Storage version of the pallet.
-        /// 
-        ///  New networks start with last version.
-        /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.pallet_democracy.EnumReleases GetStorageVersion()
-        {
-            return StorageVersionTypedStorage.Get();
         }
     }
 }

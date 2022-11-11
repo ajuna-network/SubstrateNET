@@ -209,7 +209,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Metadata for the pool.
         /// </summary>
         [HttpGet("Metadata")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.NominationPoolsStorage), "MetadataParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetMetadata(string key)
         {

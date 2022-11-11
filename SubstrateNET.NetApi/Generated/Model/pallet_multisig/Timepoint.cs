@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 89 - Composite[pallet_multisig.Timepoint]
+    /// >> 90 - Composite[pallet_multisig.Timepoint]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Timepoint : BaseType

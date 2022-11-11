@@ -24,10 +24,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 241 - Variant[pallet_session.pallet.Call]
+    /// >> 207 - Variant[pallet_session.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.node_runtime.SessionKeys, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, BaseVoid>
+    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.SessionKeys, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>, BaseVoid>
     {
     }
 }

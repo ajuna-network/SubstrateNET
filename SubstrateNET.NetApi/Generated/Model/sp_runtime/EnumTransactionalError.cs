@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 26 - Variant[sp_runtime.TransactionalError]
+    /// >> 28 - Variant[sp_runtime.TransactionalError]
     /// </summary>
     public sealed class EnumTransactionalError : BaseEnum<TransactionalError>
     {

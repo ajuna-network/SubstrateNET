@@ -43,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
         [HttpGet("Proxies")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ProxyStorage), "ProxiesParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetProxies(string key)
         {
@@ -55,7 +55,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The announcements made by the proxy (key).
         /// </summary>
         [HttpGet("Announcements")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ProxyStorage), "AnnouncementsParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetAnnouncements(string key)
         {

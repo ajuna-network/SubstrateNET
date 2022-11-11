@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.frame_system;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.frame_support.weights;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.dispatch;
    using SubstrateNET.NetApi.Generated.Model.primitive_types;
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_runtime.generic.digest;

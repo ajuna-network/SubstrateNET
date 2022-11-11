@@ -31,9 +31,9 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Proxies"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Announcements"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -53,10 +53,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>> Proxies(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>> Proxies(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
         {
             string parameters = ProxyStorage.ProxiesParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
         
         /// <summary>
@@ -74,10 +74,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>> Announcements(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
+        public async Task<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>> Announcements(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
         {
             string parameters = ProxyStorage.AnnouncementsParams(key);
-            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
+            return await _client.GetStorageAsync<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>>(parameters, token);
         }
     }
     
@@ -88,7 +88,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> proxy
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Proxy(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 real, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType> force_proxy_type, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method Proxy(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType> force_proxy_type, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -101,7 +101,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> add_proxy
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AddProxy(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @delegate, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method AddProxy(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -114,7 +114,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> remove_proxy
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveProxy(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @delegate, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method RemoveProxy(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -134,23 +134,23 @@ namespace SubstrateNET.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> anonymous
+        /// >> create_pure
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Anonymous(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay, Ajuna.NetApi.Model.Types.Primitive.U16 index)
+        public static Method CreatePure(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U32 delay, Ajuna.NetApi.Model.Types.Primitive.U16 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proxy_type.Encode());
             byteArray.AddRange(delay.Encode());
             byteArray.AddRange(index.Encode());
-            return new Method(32, "Proxy", 4, "anonymous", byteArray.ToArray());
+            return new Method(32, "Proxy", 4, "create_pure", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> kill_anonymous
+        /// >> kill_pure
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method KillAnonymous(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 spawner, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U16 index, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> height, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> ext_index)
+        public static Method KillPure(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType proxy_type, Ajuna.NetApi.Model.Types.Primitive.U16 index, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> height, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> ext_index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(spawner.Encode());
@@ -158,14 +158,14 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(index.Encode());
             byteArray.AddRange(height.Encode());
             byteArray.AddRange(ext_index.Encode());
-            return new Method(32, "Proxy", 5, "kill_anonymous", byteArray.ToArray());
+            return new Method(32, "Proxy", 5, "kill_pure", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> announce
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Announce(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 real, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method Announce(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -177,7 +177,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> remove_announcement
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveAnnouncement(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 real, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method RemoveAnnouncement(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -189,7 +189,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> reject_announcement
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RejectAnnouncement(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @delegate, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method RejectAnnouncement(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -201,7 +201,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> proxy_announced
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ProxyAnnounced(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @delegate, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 real, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType> force_proxy_type, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method ProxyAnnounced(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType> force_proxy_type, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 16 - Composite[frame_system.EventRecord]
+    /// >> 18 - Composite[frame_system.EventRecord]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EventRecord : BaseType
@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> event
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.node_runtime.EnumEvent _event;
+        private SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeEvent _event;
         
         /// <summary>
         /// >> topics
@@ -51,7 +51,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.node_runtime.EnumEvent Event
+        public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeEvent Event
         {
             get
             {
@@ -94,7 +94,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system
             var start = p;
             Phase = new SubstrateNET.NetApi.Generated.Model.frame_system.EnumPhase();
             Phase.Decode(byteArray, ref p);
-            Event = new SubstrateNET.NetApi.Generated.Model.node_runtime.EnumEvent();
+            Event = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeEvent();
             Event.Decode(byteArray, ref p);
             Topics = new Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.primitive_types.H256>();
             Topics.Decode(byteArray, ref p);

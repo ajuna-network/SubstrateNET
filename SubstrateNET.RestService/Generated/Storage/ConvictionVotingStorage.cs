@@ -37,7 +37,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 GetClassLocksFor(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42 GetClassLocksFor(string key);
     }
     
     /// <summary>
@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classLocksForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37> _classLocksForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42> _classLocksForTypedStorage;
         
         /// <summary>
         /// ConvictionVotingStorage constructor.
@@ -62,7 +62,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         public ConvictionVotingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
             this.VotingForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting>("ConvictionVoting.VotingFor", storageDataProvider, storageChangeDelegates);
-            this.ClassLocksForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegates);
+            this.ClassLocksForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42>("ConvictionVoting.ClassLocksFor", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _classLocksForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37> ClassLocksForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42> ClassLocksForTypedStorage
         {
             get
             {
@@ -149,13 +149,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 GetClassLocksFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42 GetClassLocksFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT37 result))
+            if (ClassLocksForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT42 result))
             {
                 return result;
             }

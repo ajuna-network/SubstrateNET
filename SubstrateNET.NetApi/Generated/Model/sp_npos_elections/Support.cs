@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_npos_elections
     
     
     /// <summary>
-    /// >> 232 - Composite[sp_npos_elections.Support]
+    /// >> 198 - Composite[sp_npos_elections.Support]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Support : BaseType
