@@ -58,24 +58,22 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet
         
         rebond = 19,
         
-        set_history_depth = 20,
+        reap_stash = 20,
         
-        reap_stash = 21,
+        kick = 21,
         
-        kick = 22,
+        set_staking_configs = 22,
         
-        set_staking_configs = 23,
+        chill_other = 23,
         
-        chill_other = 24,
-        
-        force_apply_min_commission = 25,
+        force_apply_min_commission = 24,
     }
     
     /// <summary>
-    /// >> 233 - Variant[pallet_staking.pallet.pallet.Call]
+    /// >> 199 - Variant[pallet_staking.pallet.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>, BaseVoid, SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent, BaseVoid, BaseVoid, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp>, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>
+    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_staking.ValidatorPrefs, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>, BaseVoid, SubstrateNET.NetApi.Generated.Model.pallet_staking.EnumRewardDestination, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_arithmetic.per_things.Percent, BaseVoid, BaseVoid, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp, SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumConfigOp>, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>
     {
     }
 }

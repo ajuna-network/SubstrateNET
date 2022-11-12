@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.extensions.check_tx_v
     
     
     /// <summary>
-    /// >> 671 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 686 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType

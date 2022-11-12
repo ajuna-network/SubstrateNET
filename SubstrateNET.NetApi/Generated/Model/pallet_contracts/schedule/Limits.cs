@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.schedule
     
     
     /// <summary>
-    /// >> 490 - Composite[pallet_contracts.schedule.Limits]
+    /// >> 496 - Composite[pallet_contracts.schedule.Limits]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Limits : BaseType

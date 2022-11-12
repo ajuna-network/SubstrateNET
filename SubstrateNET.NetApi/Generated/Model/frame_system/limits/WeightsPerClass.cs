@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 143 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 371 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType
@@ -27,24 +27,24 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
         /// <summary>
         /// >> base_extrinsic
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Primitive.U64 _baseExtrinsic;
+        private SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight _baseExtrinsic;
         
         /// <summary>
         /// >> max_extrinsic
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> _maxExtrinsic;
+        private Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> _maxExtrinsic;
         
         /// <summary>
         /// >> max_total
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> _maxTotal;
+        private Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> _maxTotal;
         
         /// <summary>
         /// >> reserved
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> _reserved;
+        private Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> _reserved;
         
-        public Ajuna.NetApi.Model.Types.Primitive.U64 BaseExtrinsic
+        public SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight BaseExtrinsic
         {
             get
             {
@@ -56,7 +56,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> MaxExtrinsic
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxExtrinsic
         {
             get
             {
@@ -68,7 +68,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> MaxTotal
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxTotal
         {
             get
             {
@@ -80,7 +80,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64> Reserved
+        public Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight> Reserved
         {
             get
             {
@@ -110,13 +110,13 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            BaseExtrinsic = new Ajuna.NetApi.Model.Types.Primitive.U64();
+            BaseExtrinsic = new SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
             BaseExtrinsic.Decode(byteArray, ref p);
-            MaxExtrinsic = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64>();
+            MaxExtrinsic = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             MaxExtrinsic.Decode(byteArray, ref p);
-            MaxTotal = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64>();
+            MaxTotal = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             MaxTotal.Decode(byteArray, ref p);
-            Reserved = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U64>();
+            Reserved = new Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             Reserved.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

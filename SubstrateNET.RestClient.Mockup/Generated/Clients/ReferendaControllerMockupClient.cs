@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class ReferendaControllerMockupClient : MockupBaseClient, IReferendaControllerMockupClient
@@ -32,7 +32,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Referenda/ReferendumInfoFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.ReferendumInfoForParams(key));
       }
-      public async Task<bool> SetTrackQueue(BoundedVecT35 value, U16 key)
+      public async Task<bool> SetTrackQueue(BoundedVecT40 value, U16 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Referenda/TrackQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.TrackQueueParams(key));
       }

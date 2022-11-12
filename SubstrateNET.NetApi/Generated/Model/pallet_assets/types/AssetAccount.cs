@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 565 - Composite[pallet_assets.types.AssetAccount]
+    /// >> 572 - Composite[pallet_assets.types.AssetAccount]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class AssetAccount : BaseType

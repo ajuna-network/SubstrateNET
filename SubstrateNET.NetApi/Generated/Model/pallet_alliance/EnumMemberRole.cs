@@ -23,10 +23,12 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance
         Fellow = 1,
         
         Ally = 2,
+        
+        Retiring = 3,
     }
     
     /// <summary>
-    /// >> 634 - Variant[pallet_alliance.MemberRole]
+    /// >> 646 - Variant[pallet_alliance.MemberRole]
     /// </summary>
     public sealed class EnumMemberRole : BaseEnum<MemberRole>
     {

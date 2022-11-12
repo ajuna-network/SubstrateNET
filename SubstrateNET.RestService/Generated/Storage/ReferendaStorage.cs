@@ -43,7 +43,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 GetTrackQueue(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40 GetTrackQueue(string key);
         
         /// <summary>
         /// >> DecidingCount
@@ -71,7 +71,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _trackQueueTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35> _trackQueueTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40> _trackQueueTypedStorage;
         
         /// <summary>
         /// _decidingCountTypedStorage typed storage field
@@ -85,7 +85,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.ReferendumCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Referenda.ReferendumCount", storageDataProvider, storageChangeDelegates);
             this.ReferendumInfoForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo>("Referenda.ReferendumInfoFor", storageDataProvider, storageChangeDelegates);
-            this.TrackQueueTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35>("Referenda.TrackQueue", storageDataProvider, storageChangeDelegates);
+            this.TrackQueueTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40>("Referenda.TrackQueue", storageDataProvider, storageChangeDelegates);
             this.DecidingCountTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Referenda.DecidingCount", storageDataProvider, storageChangeDelegates);
         }
         
@@ -122,7 +122,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _trackQueueTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35> TrackQueueTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40> TrackQueueTypedStorage
         {
             get
             {
@@ -223,13 +223,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 GetTrackQueue(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40 GetTrackQueue(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (TrackQueueTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT35 result))
+            if (TrackQueueTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT40 result))
             {
                 return result;
             }

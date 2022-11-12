@@ -22,7 +22,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_im_online.pallet
     }
     
     /// <summary>
-    /// >> 267 - Variant[pallet_im_online.pallet.Call]
+    /// >> 236 - Variant[pallet_im_online.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_im_online.Heartbeat, SubstrateNET.NetApi.Generated.Model.pallet_im_online.sr25519.app_sr25519.Signature>>

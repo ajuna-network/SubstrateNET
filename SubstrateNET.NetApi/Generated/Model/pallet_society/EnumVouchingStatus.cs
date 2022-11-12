@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_society
     }
     
     /// <summary>
-    /// >> 523 - Variant[pallet_society.VouchingStatus]
+    /// >> 529 - Variant[pallet_society.VouchingStatus]
     /// </summary>
     public sealed class EnumVouchingStatus : BaseEnum<VouchingStatus>
     {

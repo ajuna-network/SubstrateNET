@@ -92,7 +92,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> report_awesome
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ReportAwesome(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> reason, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method ReportAwesome(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> reason, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(reason.Encode());
@@ -115,7 +115,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> tip_new
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method TipNew(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> reason, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> tip_value)
+        public static Method TipNew(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> reason, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> tip_value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(reason.Encode());

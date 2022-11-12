@@ -34,7 +34,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 24 - Variant[sp_runtime.TokenError]
+    /// >> 26 - Variant[sp_runtime.TokenError]
     /// </summary>
     public sealed class EnumTokenError : BaseEnum<TokenError>
     {

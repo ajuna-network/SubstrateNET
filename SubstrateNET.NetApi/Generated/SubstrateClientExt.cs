@@ -236,9 +236,9 @@ namespace SubstrateNET.NetApi.Generated
         public TransactionStorageStorage TransactionStorageStorage;
         
         /// <summary>
-        /// BagsListStorage storage calls.
+        /// VoterListStorage storage calls.
         /// </summary>
-        public BagsListStorage BagsListStorage;
+        public VoterListStorage VoterListStorage;
         
         /// <summary>
         /// StateTrieMigrationStorage storage calls.
@@ -295,6 +295,11 @@ namespace SubstrateNET.NetApi.Generated
         /// </summary>
         public RankedCollectiveStorage RankedCollectiveStorage;
         
+        /// <summary>
+        /// FastUnstakeStorage storage calls.
+        /// </summary>
+        public FastUnstakeStorage FastUnstakeStorage;
+        
         public SubstrateClientExt(System.Uri uri) : 
                 base(uri)
         {
@@ -341,7 +346,7 @@ namespace SubstrateNET.NetApi.Generated
             this.GiltStorage = new GiltStorage(this);
             this.UniquesStorage = new UniquesStorage(this);
             this.TransactionStorageStorage = new TransactionStorageStorage(this);
-            this.BagsListStorage = new BagsListStorage(this);
+            this.VoterListStorage = new VoterListStorage(this);
             this.StateTrieMigrationStorage = new StateTrieMigrationStorage(this);
             this.ChildBountiesStorage = new ChildBountiesStorage(this);
             this.ReferendaStorage = new ReferendaStorage(this);
@@ -353,6 +358,7 @@ namespace SubstrateNET.NetApi.Generated
             this.NominationPoolsStorage = new NominationPoolsStorage(this);
             this.RankedPollsStorage = new RankedPollsStorage(this);
             this.RankedCollectiveStorage = new RankedCollectiveStorage(this);
+            this.FastUnstakeStorage = new FastUnstakeStorage(this);
         }
     }
 }

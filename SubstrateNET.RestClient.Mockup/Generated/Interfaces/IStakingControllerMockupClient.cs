@@ -20,7 +20,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface IStakingControllerMockupClient
    {
-      Task<bool> SetHistoryDepth(U32 value);
       Task<bool> SetValidatorCount(U32 value);
       Task<bool> SetMinimumValidatorCount(U32 value);
       Task<bool> SetInvulnerables(BaseVec<AccountId32> value);

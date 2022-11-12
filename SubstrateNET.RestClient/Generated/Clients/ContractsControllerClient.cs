@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage;
@@ -27,9 +27,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT17> GetPristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<BoundedVecT23> GetPristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
-         return await SendRequestAsync<BoundedVecT17>(_httpClient, "contracts/pristinecode", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
+         return await SendRequestAsync<BoundedVecT23>(_httpClient, "contracts/pristinecode", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.PristineCodeParams(key));
       }
       public async Task<bool> SubscribePristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
@@ -59,17 +59,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Contracts.Nonce");
       }
-      public async Task<RawContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<ContractInfo> GetContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<RawContractInfo>(_httpClient, "contracts/contractinfoof", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
+         return await SendRequestAsync<ContractInfo>(_httpClient, "contracts/contractinfoof", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
       public async Task<bool> SubscribeContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
          return await _subscriptionClient.SubscribeAsync("Contracts.ContractInfoOf", SubstrateNET.NetApi.Generated.Storage.ContractsStorage.ContractInfoOfParams(key));
       }
-      public async Task<BoundedVecT20> GetDeletionQueue()
+      public async Task<BoundedVecT24> GetDeletionQueue()
       {
-         return await SendRequestAsync<BoundedVecT20>(_httpClient, "contracts/deletionqueue");
+         return await SendRequestAsync<BoundedVecT24>(_httpClient, "contracts/deletionqueue");
       }
       public async Task<bool> SubscribeDeletionQueue()
       {

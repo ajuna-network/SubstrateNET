@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_im_online
     
     
     /// <summary>
-    /// >> 268 - Composite[pallet_im_online.Heartbeat]
+    /// >> 237 - Composite[pallet_im_online.Heartbeat]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Heartbeat : BaseType

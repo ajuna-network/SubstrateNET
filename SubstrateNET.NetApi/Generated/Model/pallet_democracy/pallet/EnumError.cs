@@ -36,51 +36,39 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.pallet
         
         AlreadyVetoed = 8,
         
-        DuplicatePreimage = 9,
+        ReferendumInvalid = 9,
         
-        NotImminent = 10,
+        NoneWaiting = 10,
         
-        TooEarly = 11,
+        NotVoter = 11,
         
-        Imminent = 12,
+        NoPermission = 12,
         
-        PreimageMissing = 13,
+        AlreadyDelegating = 13,
         
-        ReferendumInvalid = 14,
+        InsufficientFunds = 14,
         
-        PreimageInvalid = 15,
+        NotDelegating = 15,
         
-        NoneWaiting = 16,
+        VotesExist = 16,
         
-        NotVoter = 17,
+        InstantNotAllowed = 17,
         
-        NoPermission = 18,
+        Nonsense = 18,
         
-        AlreadyDelegating = 19,
+        WrongUpperBound = 19,
         
-        InsufficientFunds = 20,
+        MaxVotesReached = 20,
         
-        NotDelegating = 21,
+        TooMany = 21,
         
-        VotesExist = 22,
-        
-        InstantNotAllowed = 23,
-        
-        Nonsense = 24,
-        
-        WrongUpperBound = 25,
-        
-        MaxVotesReached = 26,
-        
-        TooManyProposals = 27,
-        
-        VotingPeriodLow = 28,
+        VotingPeriodLow = 22,
     }
     
     /// <summary>
-    /// >> 459 - Variant[pallet_democracy.pallet.Error]
+    /// >> 466 - Variant[pallet_democracy.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

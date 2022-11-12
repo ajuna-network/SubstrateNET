@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 475 - Composite[pallet_treasury.Proposal]
+    /// >> 482 - Composite[pallet_treasury.Proposal]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType

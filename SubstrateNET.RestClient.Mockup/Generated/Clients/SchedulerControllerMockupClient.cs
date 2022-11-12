@@ -12,8 +12,9 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using Ajuna.NetApi.Model.Types.Base;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class SchedulerControllerMockupClient : MockupBaseClient, ISchedulerControllerMockupClient
@@ -23,11 +24,15 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetAgenda(BaseVec<BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_scheduler.ScheduledV3>> value, U32 key)
+      public async Task<bool> SetIncompleteSince(U32 value)
+      {
+         return await SendMockupRequestAsync(_httpClient, "Scheduler/IncompleteSince", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.IncompleteSinceParams());
+      }
+      public async Task<bool> SetAgenda(BoundedVecT31 value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Scheduler/Agenda", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.AgendaParams(key));
       }
-      public async Task<bool> SetLookup(BaseTuple<U32, U32> value, BaseVec<U8> key)
+      public async Task<bool> SetLookup(BaseTuple<U32, U32> value, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Scheduler/Lookup", value.Encode(), SubstrateNET.NetApi.Generated.Storage.SchedulerStorage.LookupParams(key));
       }

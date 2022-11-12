@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The hashes of the active proposals.
         /// </summary>
         [HttpGet("Proposals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.CouncilStorage), "ProposalsParams")]
         public IActionResult GetProposals()
         {
@@ -54,7 +54,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
         [HttpGet("ProposalOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.CouncilStorage), "ProposalOfParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetProposalOf(string key)
         {

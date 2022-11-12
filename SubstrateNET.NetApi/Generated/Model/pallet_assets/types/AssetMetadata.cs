@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 569 - Composite[pallet_assets.types.AssetMetadata]
+    /// >> 576 - Composite[pallet_assets.types.AssetMetadata]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadata : BaseType
@@ -32,12 +32,12 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> name
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 _name;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 _name;
         
         /// <summary>
         /// >> symbol
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 _symbol;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 _symbol;
         
         /// <summary>
         /// >> decimals
@@ -61,7 +61,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 Name
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 Name
         {
             get
             {
@@ -73,7 +73,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1 Symbol
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1 Symbol
         {
             get
             {
@@ -130,9 +130,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Deposit = new Ajuna.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Name = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+            Name = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
             Name.Decode(byteArray, ref p);
-            Symbol = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT1();
+            Symbol = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT1();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Ajuna.NetApi.Model.Types.Primitive.U8();
             Decimals.Decode(byteArray, ref p);

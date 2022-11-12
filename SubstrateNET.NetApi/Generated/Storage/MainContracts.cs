@@ -31,15 +31,15 @@ namespace SubstrateNET.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "PristineCode"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "CodeStorage"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.PrefabWasmModule)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "OwnerInfoOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.OwnerInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "Nonce"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Ajuna.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "ContractInfoOf"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "DeletionQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Contracts", "DeletionQueue"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24)));
         }
         
         /// <summary>
@@ -57,10 +57,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> PristineCode
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17> PristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23> PristineCode(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
         {
             string parameters = ContractsStorage.PristineCodeParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23>(parameters, token);
         }
         
         /// <summary>
@@ -185,10 +185,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: SAFE since `AccountId` is a secure hash.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo> ContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo> ContractInfoOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, CancellationToken token)
         {
             string parameters = ContractsStorage.ContractInfoOfParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo>(parameters, token);
         }
         
         /// <summary>
@@ -210,10 +210,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         ///  Child trie deletion is a heavy operation depending on the amount of storage items
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20> DeletionQueue(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24> DeletionQueue(CancellationToken token)
         {
             string parameters = ContractsStorage.DeletionQueueParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24>(parameters, token);
         }
     }
     
@@ -221,10 +221,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> call
+        /// >> call_old_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Call(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U64> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data)
+        public static Method CallOldWeight(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_weights.OldWeight> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -232,14 +232,14 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(gas_limit.Encode());
             byteArray.AddRange(storage_deposit_limit.Encode());
             byteArray.AddRange(data.Encode());
-            return new Method(19, "Contracts", 0, "call", byteArray.ToArray());
+            return new Method(19, "Contracts", 0, "call_old_weight", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> instantiate_with_code
+        /// >> instantiate_with_code_old_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method InstantiateWithCode(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U64> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> code, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
+        public static Method InstantiateWithCodeOldWeight(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_weights.OldWeight> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> code, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(value.Encode());
@@ -248,14 +248,14 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(code.Encode());
             byteArray.AddRange(data.Encode());
             byteArray.AddRange(salt.Encode());
-            return new Method(19, "Contracts", 1, "instantiate_with_code", byteArray.ToArray());
+            return new Method(19, "Contracts", 1, "instantiate_with_code_old_weight", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> instantiate
+        /// >> instantiate_old_weight
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Instantiate(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U64> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 code_hash, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
+        public static Method InstantiateOldWeight(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, Ajuna.NetApi.Model.Types.Base.BaseCom<SubstrateNET.NetApi.Generated.Model.sp_weights.OldWeight> gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 code_hash, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(value.Encode());
@@ -264,18 +264,19 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(code_hash.Encode());
             byteArray.AddRange(data.Encode());
             byteArray.AddRange(salt.Encode());
-            return new Method(19, "Contracts", 2, "instantiate", byteArray.ToArray());
+            return new Method(19, "Contracts", 2, "instantiate_old_weight", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> upload_code
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method UploadCode(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> code, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit)
+        public static Method UploadCode(Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> code, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.EnumDeterminism determinism)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code.Encode());
             byteArray.AddRange(storage_deposit_limit.Encode());
+            byteArray.AddRange(determinism.Encode());
             return new Method(19, "Contracts", 3, "upload_code", byteArray.ToArray());
         }
         
@@ -300,6 +301,53 @@ namespace SubstrateNET.NetApi.Generated.Storage
             byteArray.AddRange(dest.Encode());
             byteArray.AddRange(code_hash.Encode());
             return new Method(19, "Contracts", 5, "set_code", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> call
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Call(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(dest.Encode());
+            byteArray.AddRange(value.Encode());
+            byteArray.AddRange(gas_limit.Encode());
+            byteArray.AddRange(storage_deposit_limit.Encode());
+            byteArray.AddRange(data.Encode());
+            return new Method(19, "Contracts", 6, "call", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> instantiate_with_code
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method InstantiateWithCode(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> code, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(value.Encode());
+            byteArray.AddRange(gas_limit.Encode());
+            byteArray.AddRange(storage_deposit_limit.Encode());
+            byteArray.AddRange(code.Encode());
+            byteArray.AddRange(data.Encode());
+            byteArray.AddRange(salt.Encode());
+            return new Method(19, "Contracts", 7, "instantiate_with_code", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> instantiate
+        /// Contains one variant per dispatchable that can be called by an extrinsic.
+        /// </summary>
+        public static Method Instantiate(Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128> value, SubstrateNET.NetApi.Generated.Model.sp_weights.weight_v2.Weight gas_limit, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>> storage_deposit_limit, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 code_hash, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> data, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> salt)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(value.Encode());
+            byteArray.AddRange(gas_limit.Encode());
+            byteArray.AddRange(storage_deposit_limit.Encode());
+            byteArray.AddRange(code_hash.Encode());
+            byteArray.AddRange(data.Encode());
+            byteArray.AddRange(salt.Encode());
+            return new Method(19, "Contracts", 8, "instantiate", byteArray.ToArray());
         }
     }
     
@@ -496,5 +544,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// or in the debug buffer which is returned to RPC clients.
         /// </summary>
         CodeRejected,
+        
+        /// <summary>
+        /// >> Indeterministic
+        /// An indetermistic code was used in a context where this is not permitted.
+        /// </summary>
+        Indeterministic,
     }
 }

@@ -13,13 +13,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IReferendaControllerMockupClient
    {
       Task<bool> SetReferendumCount(U32 value);
       Task<bool> SetReferendumInfoFor(EnumReferendumInfo value, U32 key);
-      Task<bool> SetTrackQueue(BoundedVecT35 value, U16 key);
+      Task<bool> SetTrackQueue(BoundedVecT40 value, U16 key);
       Task<bool> SetDecidingCount(U32 value, U16 key);
    }
 }

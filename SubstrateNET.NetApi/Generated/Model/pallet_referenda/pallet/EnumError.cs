@@ -42,9 +42,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.pallet
     }
     
     /// <summary>
-    /// >> 658 - Variant[pallet_referenda.pallet.Error]
+    /// >> 669 - Variant[pallet_referenda.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

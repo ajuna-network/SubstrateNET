@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IAuthorshipControllerMockupClient
    {
-      Task<bool> SetUncles(BoundedVecT9 value);
+      Task<bool> SetUncles(BoundedVecT10 value);
       Task<bool> SetAuthor(AccountId32 value);
       Task<bool> SetDidSetUncles(Bool value);
    }

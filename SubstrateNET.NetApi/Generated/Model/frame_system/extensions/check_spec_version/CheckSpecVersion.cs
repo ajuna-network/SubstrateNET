@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.extensions.check_spec
     
     
     /// <summary>
-    /// >> 670 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+    /// >> 685 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class CheckSpecVersion : BaseType

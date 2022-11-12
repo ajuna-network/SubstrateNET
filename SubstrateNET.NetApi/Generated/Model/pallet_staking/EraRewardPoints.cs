@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 425 - Composite[pallet_staking.EraRewardPoints]
+    /// >> 431 - Composite[pallet_staking.EraRewardPoints]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EraRewardPoints : BaseType
@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
         /// <summary>
         /// >> individual
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2 _individual;
+        private SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 _individual;
         
         public Ajuna.NetApi.Model.Types.Primitive.U32 Total
         {
@@ -46,7 +46,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2 Individual
+        public SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1 Individual
         {
             get
             {
@@ -76,7 +76,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
             var start = p;
             Total = new Ajuna.NetApi.Model.Types.Primitive.U32();
             Total.Decode(byteArray, ref p);
-            Individual = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT2();
+            Individual = new SubstrateNET.NetApi.Generated.Types.Base.BTreeMapT1();
             Individual.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

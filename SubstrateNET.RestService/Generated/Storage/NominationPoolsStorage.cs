@@ -117,7 +117,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 GetMetadata(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47 GetMetadata(string key);
         
         /// <summary>
         /// >> CounterForMetadata
@@ -221,7 +221,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43> _metadataTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47> _metadataTypedStorage;
         
         /// <summary>
         /// _counterForMetadataTypedStorage typed storage field
@@ -261,7 +261,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.CounterForRewardPoolsTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForRewardPools", storageDataProvider, storageChangeDelegates);
             this.SubPoolsStorageTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.SubPools>("NominationPools.SubPoolsStorage", storageDataProvider, storageChangeDelegates);
             this.CounterForSubPoolsStorageTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForSubPoolsStorage", storageDataProvider, storageChangeDelegates);
-            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43>("NominationPools.Metadata", storageDataProvider, storageChangeDelegates);
+            this.MetadataTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47>("NominationPools.Metadata", storageDataProvider, storageChangeDelegates);
             this.CounterForMetadataTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.CounterForMetadata", storageDataProvider, storageChangeDelegates);
             this.LastPoolIdTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.LastPoolId", storageDataProvider, storageChangeDelegates);
             this.ReversePoolIdLookupTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("NominationPools.ReversePoolIdLookup", storageDataProvider, storageChangeDelegates);
@@ -466,7 +466,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _metadataTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43> MetadataTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47> MetadataTypedStorage
         {
             get
             {
@@ -865,13 +865,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 GetMetadata(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47 GetMetadata(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT43 result))
+            if (MetadataTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT47 result))
             {
                 return result;
             }

@@ -74,7 +74,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> transfer
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Transfer(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @new, Ajuna.NetApi.Model.Types.Primitive.U32 index)
+        public static Method Transfer(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new, Ajuna.NetApi.Model.Types.Primitive.U32 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@new.Encode());
@@ -97,7 +97,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> force_transfer
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ForceTransfer(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @new, Ajuna.NetApi.Model.Types.Primitive.U32 index, Ajuna.NetApi.Model.Types.Primitive.Bool freeze)
+        public static Method ForceTransfer(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new, Ajuna.NetApi.Model.Types.Primitive.U32 index, Ajuna.NetApi.Model.Types.Primitive.Bool freeze)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@new.Encode());

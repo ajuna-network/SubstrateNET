@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 161 - Composite[sp_consensus_slots.Slot]
+    /// >> 129 - Composite[sp_consensus_slots.Slot]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Slot : BaseType

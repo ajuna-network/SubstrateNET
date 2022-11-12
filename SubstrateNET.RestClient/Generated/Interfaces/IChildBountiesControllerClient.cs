@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_child_bounties;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IChildBountiesControllerClient
    {
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeParentChildBounties(U32 key);
       Task<ChildBounty> GetChildBounties(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
       Task<bool> SubscribeChildBounties(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
-      Task<BoundedVecT30> GetChildBountyDescriptions(U32 key);
+      Task<BoundedVecT35> GetChildBountyDescriptions(U32 key);
       Task<bool> SubscribeChildBountyDescriptions(U32 key);
       Task<U128> GetChildrenCuratorFees(U32 key);
       Task<bool> SubscribeChildrenCuratorFees(U32 key);

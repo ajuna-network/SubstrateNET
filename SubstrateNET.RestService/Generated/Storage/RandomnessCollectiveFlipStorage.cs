@@ -30,7 +30,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is arranged as a ring buffer with `block_number % 81` being the index into the `Vec` of
         ///  the oldest hash.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21 GetRandomMaterial();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25 GetRandomMaterial();
     }
     
     /// <summary>
@@ -42,20 +42,20 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _randomMaterialTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21> _randomMaterialTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25> _randomMaterialTypedStorage;
         
         /// <summary>
         /// RandomnessCollectiveFlipStorage constructor.
         /// </summary>
         public RandomnessCollectiveFlipStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.RandomMaterialTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21>("RandomnessCollectiveFlip.RandomMaterial", storageDataProvider, storageChangeDelegates);
+            this.RandomMaterialTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25>("RandomnessCollectiveFlip.RandomMaterial", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _randomMaterialTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21> RandomMaterialTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25> RandomMaterialTypedStorage
         {
             get
             {
@@ -90,7 +90,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  is arranged as a ring buffer with `block_number % 81` being the index into the `Vec` of
         ///  the oldest hash.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT21 GetRandomMaterial()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT25 GetRandomMaterial()
         {
             return RandomMaterialTypedStorage.Get();
         }

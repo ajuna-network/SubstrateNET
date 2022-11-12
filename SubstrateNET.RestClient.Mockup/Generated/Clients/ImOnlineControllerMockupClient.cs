@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -28,7 +28,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "ImOnline/HeartbeatAfter", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.HeartbeatAfterParams());
       }
-      public async Task<bool> SetKeys(WeakBoundedVecT4 value)
+      public async Task<bool> SetKeys(WeakBoundedVecT5 value)
       {
          return await SendMockupRequestAsync(_httpClient, "ImOnline/Keys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage.KeysParams());
       }

@@ -22,23 +22,25 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         
         ElectionFinalized = 1,
         
-        Rewarded = 2,
+        ElectionFailed = 2,
         
-        Slashed = 3,
+        Rewarded = 3,
         
-        SignedPhaseStarted = 4,
+        Slashed = 4,
         
-        UnsignedPhaseStarted = 5,
+        SignedPhaseStarted = 5,
+        
+        UnsignedPhaseStarted = 6,
     }
     
     /// <summary>
-    /// >> 36 - Variant[pallet_election_provider_multi_phase.pallet.Event]
+    /// >> 38 - Variant[pallet_election_provider_multi_phase.pallet.Event]
     /// 
-    ///			The [event](https://docs.substrate.io/v3/runtime/events-and-errors) emitted
+    ///			The [event](https://docs.substrate.io/main-docs/build/events-errors/) emitted
     ///			by this pallet.
     ///			
     /// </summary>
-    public sealed class EnumEvent : BaseEnumExt<Event, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.EnumElectionCompute, Ajuna.NetApi.Model.Types.Primitive.Bool>, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.EnumElectionCompute>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>
+    public sealed class EnumEvent : BaseEnumExt<Event, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.EnumElectionCompute, Ajuna.NetApi.Model.Types.Primitive.Bool>, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.EnumElectionCompute, SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore>, BaseVoid, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>
     {
     }
 }

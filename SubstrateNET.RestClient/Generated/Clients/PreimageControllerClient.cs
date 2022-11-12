@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_preimage;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class PreimageControllerClient : BaseClient, IPreimageControllerClient
@@ -33,11 +33,11 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Preimage.StatusFor", SubstrateNET.NetApi.Generated.Storage.PreimageStorage.StatusForParams(key));
       }
-      public async Task<BoundedVecT27> GetPreimageFor(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<BoundedVecT32> GetPreimageFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key)
       {
-         return await SendRequestAsync<BoundedVecT27>(_httpClient, "preimage/preimagefor", SubstrateNET.NetApi.Generated.Storage.PreimageStorage.PreimageForParams(key));
+         return await SendRequestAsync<BoundedVecT32>(_httpClient, "preimage/preimagefor", SubstrateNET.NetApi.Generated.Storage.PreimageStorage.PreimageForParams(key));
       }
-      public async Task<bool> SubscribePreimageFor(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+      public async Task<bool> SubscribePreimageFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key)
       {
          return await _subscriptionClient.SubscribeAsync("Preimage.PreimageFor", SubstrateNET.NetApi.Generated.Storage.PreimageStorage.PreimageForParams(key));
       }

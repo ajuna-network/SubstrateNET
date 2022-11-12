@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.types
     
     
     /// <summary>
-    /// >> 117 - Composite[pallet_alliance.types.Cid]
+    /// >> 331 - Composite[pallet_alliance.types.Cid]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Cid : BaseType

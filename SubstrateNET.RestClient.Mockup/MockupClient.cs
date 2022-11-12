@@ -24,7 +24,6 @@ namespace SubstrateNET.RestClient.Mockup
       public IAuthorityDiscoveryControllerMockupClient AuthorityDiscoveryControllerClient;
       public IAuthorshipControllerMockupClient AuthorshipControllerClient;
       public IBabeControllerMockupClient BabeControllerClient;
-      public IBagsListControllerMockupClient BagsListControllerClient;
       public IBalancesControllerMockupClient BalancesControllerClient;
       public IBountiesControllerMockupClient BountiesControllerClient;
       public IChildBountiesControllerMockupClient ChildBountiesControllerClient;
@@ -34,6 +33,7 @@ namespace SubstrateNET.RestClient.Mockup
       public IDemocracyControllerMockupClient DemocracyControllerClient;
       public IElectionProviderMultiPhaseControllerMockupClient ElectionProviderMultiPhaseControllerClient;
       public IElectionsControllerMockupClient ElectionsControllerClient;
+      public IFastUnstakeControllerMockupClient FastUnstakeControllerClient;
       public IGiltControllerMockupClient GiltControllerClient;
       public IGrandpaControllerMockupClient GrandpaControllerClient;
       public IIdentityControllerMockupClient IdentityControllerClient;
@@ -67,6 +67,7 @@ namespace SubstrateNET.RestClient.Mockup
       public ITreasuryControllerMockupClient TreasuryControllerClient;
       public IUniquesControllerMockupClient UniquesControllerClient;
       public IVestingControllerMockupClient VestingControllerClient;
+      public IVoterListControllerMockupClient VoterListControllerClient;
       public IWhitelistControllerMockupClient WhitelistControllerClient;
       public MockupClient(HttpClient httpClient)
       {
@@ -77,7 +78,6 @@ namespace SubstrateNET.RestClient.Mockup
          AuthorityDiscoveryControllerClient = new AuthorityDiscoveryControllerMockupClient(_httpClient);
          AuthorshipControllerClient = new AuthorshipControllerMockupClient(_httpClient);
          BabeControllerClient = new BabeControllerMockupClient(_httpClient);
-         BagsListControllerClient = new BagsListControllerMockupClient(_httpClient);
          BalancesControllerClient = new BalancesControllerMockupClient(_httpClient);
          BountiesControllerClient = new BountiesControllerMockupClient(_httpClient);
          ChildBountiesControllerClient = new ChildBountiesControllerMockupClient(_httpClient);
@@ -87,6 +87,7 @@ namespace SubstrateNET.RestClient.Mockup
          DemocracyControllerClient = new DemocracyControllerMockupClient(_httpClient);
          ElectionProviderMultiPhaseControllerClient = new ElectionProviderMultiPhaseControllerMockupClient(_httpClient);
          ElectionsControllerClient = new ElectionsControllerMockupClient(_httpClient);
+         FastUnstakeControllerClient = new FastUnstakeControllerMockupClient(_httpClient);
          GiltControllerClient = new GiltControllerMockupClient(_httpClient);
          GrandpaControllerClient = new GrandpaControllerMockupClient(_httpClient);
          IdentityControllerClient = new IdentityControllerMockupClient(_httpClient);
@@ -120,6 +121,7 @@ namespace SubstrateNET.RestClient.Mockup
          TreasuryControllerClient = new TreasuryControllerMockupClient(_httpClient);
          UniquesControllerClient = new UniquesControllerMockupClient(_httpClient);
          VestingControllerClient = new VestingControllerMockupClient(_httpClient);
+         VoterListControllerClient = new VoterListControllerMockupClient(_httpClient);
          WhitelistControllerClient = new WhitelistControllerMockupClient(_httpClient);
       }
    }

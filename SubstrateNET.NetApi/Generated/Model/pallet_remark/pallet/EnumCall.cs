@@ -22,7 +22,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_remark.pallet
     }
     
     /// <summary>
-    /// >> 358 - Variant[pallet_remark.pallet.Call]
+    /// >> 321 - Variant[pallet_remark.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>>

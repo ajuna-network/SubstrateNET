@@ -66,7 +66,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
         [HttpGet("Approvals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.TreasuryStorage), "ApprovalsParams")]
         public IActionResult GetApprovals()
         {

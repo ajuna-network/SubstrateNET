@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_vesting.pallet
     }
     
     /// <summary>
-    /// >> 536 - Variant[pallet_vesting.pallet.Error]
+    /// >> 542 - Variant[pallet_vesting.pallet.Error]
     /// Error for the vesting pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

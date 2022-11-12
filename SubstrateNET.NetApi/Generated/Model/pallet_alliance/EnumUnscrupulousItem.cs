@@ -24,9 +24,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance
     }
     
     /// <summary>
-    /// >> 123 - Variant[pallet_alliance.UnscrupulousItem]
+    /// >> 336 - Variant[pallet_alliance.UnscrupulousItem]
     /// </summary>
-    public sealed class EnumUnscrupulousItem : BaseEnumExt<UnscrupulousItem, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT5>
+    public sealed class EnumUnscrupulousItem : BaseEnumExt<UnscrupulousItem, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT7>
     {
     }
 }

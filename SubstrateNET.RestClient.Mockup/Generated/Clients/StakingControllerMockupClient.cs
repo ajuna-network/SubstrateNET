@@ -27,10 +27,6 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetHistoryDepth(U32 value)
-      {
-         return await SendMockupRequestAsync(_httpClient, "Staking/HistoryDepth", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.HistoryDepthParams());
-      }
       public async Task<bool> SetValidatorCount(U32 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Staking/ValidatorCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.StakingStorage.ValidatorCountParams());

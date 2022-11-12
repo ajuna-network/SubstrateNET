@@ -75,12 +75,14 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.pallet
         ContractReverted = 27,
         
         CodeRejected = 28,
+        
+        Indeterministic = 29,
     }
     
     /// <summary>
-    /// >> 493 - Variant[pallet_contracts.pallet.Error]
+    /// >> 499 - Variant[pallet_contracts.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

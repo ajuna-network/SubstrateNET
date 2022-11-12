@@ -12,17 +12,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using SubstrateNET.NetApi.Generated.Model.pallet_alliance.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface IAllianceControllerMockupClient
    {
       Task<bool> SetRule(Cid value);
-      Task<bool> SetAnnouncements(BoundedVecT39 value);
+      Task<bool> SetAnnouncements(BoundedVecT44 value);
       Task<bool> SetDepositOf(U128 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<bool> SetMembers(BoundedVecT40 value, SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key);
-      Task<bool> SetUpForKicking(Bool value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
-      Task<bool> SetUnscrupulousAccounts(BoundedVecT41 value);
-      Task<bool> SetUnscrupulousWebsites(BoundedVecT42 value);
+      Task<bool> SetMembers(BoundedVecT45 value, SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole key);
+      Task<bool> SetRetiringMembers(U32 value, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
+      Task<bool> SetUnscrupulousAccounts(BoundedVecT17 value);
+      Task<bool> SetUnscrupulousWebsites(BoundedVecT46 value);
    }
 }

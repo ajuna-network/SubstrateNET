@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_core.sr25519
     
     
     /// <summary>
-    /// >> 274 - Composite[sp_core.sr25519.Signature]
+    /// >> 243 - Composite[sp_core.sr25519.Signature]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

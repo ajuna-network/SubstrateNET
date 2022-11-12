@@ -12,23 +12,21 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.pallet_democracy;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.types;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote;
-   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold;
    
    public interface IDemocracyControllerClient
    {
       Task<U32> GetPublicPropCount();
       Task<bool> SubscribePublicPropCount();
-      Task<BaseVec<BaseTuple<U32, H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> GetPublicProps();
+      Task<BoundedVecT16> GetPublicProps();
       Task<bool> SubscribePublicProps();
-      Task<BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, U128>> GetDepositOf(U32 key);
+      Task<BaseTuple<BoundedVecT17, U128>> GetDepositOf(U32 key);
       Task<bool> SubscribeDepositOf(U32 key);
-      Task<EnumPreimageStatus> GetPreimages(H256 key);
-      Task<bool> SubscribePreimages(H256 key);
       Task<U32> GetReferendumCount();
       Task<bool> SubscribeReferendumCount();
       Task<U32> GetLowestUnbaked();
@@ -39,13 +37,11 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeVotingOf(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key);
       Task<Bool> GetLastTabledWasExternal();
       Task<bool> SubscribeLastTabledWasExternal();
-      Task<BaseTuple<H256, EnumVoteThreshold>> GetNextExternal();
+      Task<BaseTuple<EnumBounded, EnumVoteThreshold>> GetNextExternal();
       Task<bool> SubscribeNextExternal();
-      Task<BaseTuple<U32, BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> GetBlacklist(H256 key);
-      Task<bool> SubscribeBlacklist(H256 key);
-      Task<Bool> GetCancellations(H256 key);
-      Task<bool> SubscribeCancellations(H256 key);
-      Task<EnumReleases> GetStorageVersion();
-      Task<bool> SubscribeStorageVersion();
+      Task<BaseTuple<U32, BoundedVecT17>> GetBlacklist(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeBlacklist(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<Bool> GetCancellations(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SubscribeCancellations(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
    }
 }

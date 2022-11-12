@@ -11,8 +11,8 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
@@ -20,9 +20,9 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface ITechnicalCommitteeControllerClient
    {
-      Task<BoundedVecT14> GetProposals();
+      Task<BoundedVecT20> GetProposals();
       Task<bool> SubscribeProposals();
-      Task<EnumCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<EnumRuntimeCall> GetProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SubscribeProposalOf(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<Votes> GetVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SubscribeVoting(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);

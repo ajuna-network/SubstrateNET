@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_core
     
     
     /// <summary>
-    /// >> 270 - Composite[sp_core.OpaquePeerId]
+    /// >> 239 - Composite[sp_core.OpaquePeerId]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OpaquePeerId : BaseType

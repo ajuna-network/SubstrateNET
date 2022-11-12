@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 418 - Composite[pallet_staking.StakingLedger]
+    /// >> 422 - Composite[pallet_staking.StakingLedger]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StakingLedger : BaseType
@@ -42,12 +42,12 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
         /// <summary>
         /// >> unlocking
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12 _unlocking;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14 _unlocking;
         
         /// <summary>
         /// >> claimed_rewards
         /// </summary>
-        private Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> _claimedRewards;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15 _claimedRewards;
         
         public SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 Stash
         {
@@ -85,7 +85,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12 Unlocking
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14 Unlocking
         {
             get
             {
@@ -97,7 +97,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
             }
         }
         
-        public Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32> ClaimedRewards
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15 ClaimedRewards
         {
             get
             {
@@ -134,9 +134,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking
             Total.Decode(byteArray, ref p);
             Active = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U128>();
             Active.Decode(byteArray, ref p);
-            Unlocking = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT12();
+            Unlocking = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT14();
             Unlocking.Decode(byteArray, ref p);
-            ClaimedRewards = new Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U32>();
+            ClaimedRewards = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT15();
             ClaimedRewards.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

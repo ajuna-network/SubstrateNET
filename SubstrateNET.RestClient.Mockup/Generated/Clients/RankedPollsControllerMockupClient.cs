@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class RankedPollsControllerMockupClient : MockupBaseClient, IRankedPollsControllerMockupClient
@@ -32,7 +32,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "RankedPolls/ReferendumInfoFor", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.ReferendumInfoForParams(key));
       }
-      public async Task<bool> SetTrackQueue(BoundedVecT44 value, U16 key)
+      public async Task<bool> SetTrackQueue(BoundedVecT48 value, U16 key)
       {
          return await SendMockupRequestAsync(_httpClient, "RankedPolls/TrackQueue", value.Encode(), SubstrateNET.NetApi.Generated.Storage.RankedPollsStorage.TrackQueueParams(key));
       }

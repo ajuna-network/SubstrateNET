@@ -33,7 +33,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Preimage", "StatusFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                             Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Preimage", "PreimageFor"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
-                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256), typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27)));
+                            Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32>), typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32)));
         }
         
         /// <summary>
@@ -59,9 +59,8 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PreimageForParams
-        ///  The preimages stored by this pallet.
         /// </summary>
-        public static string PreimageForParams(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
+        public static string PreimageForParams(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key)
         {
             return RequestGenerator.GetStorage("Preimage", "PreimageFor", Ajuna.NetApi.Model.Meta.Storage.Type.Map, new Ajuna.NetApi.Model.Meta.Storage.Hasher[] {
                         Ajuna.NetApi.Model.Meta.Storage.Hasher.Identity}, new Ajuna.NetApi.Model.Types.IType[] {
@@ -70,12 +69,11 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PreimageFor
-        ///  The preimages stored by this pallet.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27> PreimageFor(SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key, CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32> PreimageFor(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.primitive_types.H256, Ajuna.NetApi.Model.Types.Primitive.U32> key, CancellationToken token)
         {
             string parameters = PreimageStorage.PreimageForParams(key);
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32>(parameters, token);
         }
     }
     
@@ -131,10 +129,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> TooLarge
+        /// >> TooBig
         /// Preimage is too large to store on-chain.
         /// </summary>
-        TooLarge,
+        TooBig,
         
         /// <summary>
         /// >> AlreadyNoted

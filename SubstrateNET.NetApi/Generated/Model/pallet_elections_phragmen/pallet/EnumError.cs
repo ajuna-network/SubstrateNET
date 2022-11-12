@@ -54,9 +54,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_elections_phragmen.pallet
     }
     
     /// <summary>
-    /// >> 468 - Variant[pallet_elections_phragmen.pallet.Error]
+    /// >> 475 - Variant[pallet_elections_phragmen.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

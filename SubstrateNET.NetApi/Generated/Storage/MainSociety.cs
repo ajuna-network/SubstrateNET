@@ -406,7 +406,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> vouch
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Vouch(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Ajuna.NetApi.Model.Types.Primitive.U128 value, Ajuna.NetApi.Model.Types.Primitive.U128 tip)
+        public static Method Vouch(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Ajuna.NetApi.Model.Types.Primitive.U128 value, Ajuna.NetApi.Model.Types.Primitive.U128 tip)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -463,7 +463,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> found
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Found(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 founder, Ajuna.NetApi.Model.Types.Primitive.U32 max_members, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> rules)
+        public static Method Found(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress founder, Ajuna.NetApi.Model.Types.Primitive.U32 max_members, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8> rules)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(founder.Encode());
@@ -486,7 +486,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> judge_suspended_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method JudgeSuspendedMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Ajuna.NetApi.Model.Types.Primitive.Bool forgive)
+        public static Method JudgeSuspendedMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Ajuna.NetApi.Model.Types.Primitive.Bool forgive)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -498,7 +498,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> judge_suspended_candidate
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method JudgeSuspendedCandidate(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumJudgement judgement)
+        public static Method JudgeSuspendedCandidate(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, SubstrateNET.NetApi.Generated.Model.pallet_society.EnumJudgement judgement)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());

@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     }
     
     /// <summary>
-    /// >> 174 - Variant[pallet_election_provider_multi_phase.pallet.Call]
+    /// >> 141 - Variant[pallet_election_provider_multi_phase.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution, SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.SolutionOrSnapshotSize>, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore>, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_npos_elections.Support>>, SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution, BaseTuple<Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>>>

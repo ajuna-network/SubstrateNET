@@ -30,9 +30,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 629 - Variant[pallet_whitelist.pallet.Error]
+    /// >> 641 - Variant[pallet_whitelist.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

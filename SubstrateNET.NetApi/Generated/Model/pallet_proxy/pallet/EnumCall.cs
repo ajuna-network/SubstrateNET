@@ -26,9 +26,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy.pallet
         
         remove_proxies = 3,
         
-        anonymous = 4,
+        create_pure = 4,
         
-        kill_anonymous = 5,
+        kill_pure = 5,
         
         announce = 6,
         
@@ -40,10 +40,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_proxy.pallet
     }
     
     /// <summary>
-    /// >> 324 - Variant[pallet_proxy.pallet.Call]
+    /// >> 293 - Variant[pallet_proxy.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType>, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid, BaseTuple<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U16>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U16, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumProxyType>, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>>
+    public sealed class EnumCall : BaseEnumExt<Call, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType>, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid, BaseTuple<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U16>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType, Ajuna.NetApi.Model.Types.Primitive.U16, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.primitive_types.H256>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumProxyType>, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>>
     {
     }
 }

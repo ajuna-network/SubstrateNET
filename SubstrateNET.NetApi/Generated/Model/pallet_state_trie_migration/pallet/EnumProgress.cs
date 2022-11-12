@@ -26,9 +26,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 347 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 316 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
-    public sealed class EnumProgress : BaseEnumExt<Progress, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT7, BaseVoid>
+    public sealed class EnumProgress : BaseEnumExt<Progress, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT5, BaseVoid>
     {
     }
 }

@@ -57,7 +57,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current IPFS CIDs of any announcements.
         /// </summary>
         [HttpGet("Announcements")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT39), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT44), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "AnnouncementsParams")]
         public IActionResult GetAnnouncements()
         {
@@ -81,7 +81,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Maps member type to members of each type.
         /// </summary>
         [HttpGet("Members")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT40), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT45), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "MembersParams", typeof(SubstrateNET.NetApi.Generated.Model.pallet_alliance.EnumMemberRole))]
         public IActionResult GetMembers(string key)
         {
@@ -89,16 +89,16 @@ namespace SubstrateNET.RestService.Generated.Controller
         }
         
         /// <summary>
-        /// >> UpForKicking
-        ///  A set of members that are (potentially) being kicked out. They cannot retire until the
-        ///  motion is settled.
+        /// >> RetiringMembers
+        ///  A set of members who gave a retirement notice. They can retire after the end of retirement
+        ///  period stored as a future block number.
         /// </summary>
-        [HttpGet("UpForKicking")]
-        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.Bool), 200)]
-        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UpForKickingParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
-        public IActionResult GetUpForKicking(string key)
+        [HttpGet("RetiringMembers")]
+        [ProducesResponseType(typeof(Ajuna.NetApi.Model.Types.Primitive.U32), 200)]
+        [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "RetiringMembersParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
+        public IActionResult GetRetiringMembers(string key)
         {
-            return this.Ok(_allianceStorage.GetUpForKicking(key));
+            return this.Ok(_allianceStorage.GetRetiringMembers(key));
         }
         
         /// <summary>
@@ -107,7 +107,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  candidacy.
         /// </summary>
         [HttpGet("UnscrupulousAccounts")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT41), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT17), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UnscrupulousAccountsParams")]
         public IActionResult GetUnscrupulousAccounts()
         {
@@ -119,7 +119,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current list of websites deemed unscrupulous.
         /// </summary>
         [HttpGet("UnscrupulousWebsites")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT42), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT46), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.AllianceStorage), "UnscrupulousWebsitesParams")]
         public IActionResult GetUnscrupulousWebsites()
         {

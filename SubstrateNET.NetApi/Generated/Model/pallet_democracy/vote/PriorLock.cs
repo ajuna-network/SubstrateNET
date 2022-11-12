@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote
     
     
     /// <summary>
-    /// >> 455 - Composite[pallet_democracy.vote.PriorLock]
+    /// >> 463 - Composite[pallet_democracy.vote.PriorLock]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PriorLock : BaseType

@@ -26,15 +26,15 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
         
         BadWitness = 3,
         
-        SizeUpperBoundExceeded = 4,
+        SignedMigrationNotAllowed = 4,
         
-        SignedMigrationNotAllowed = 5,
+        BadChildRoot = 5,
     }
     
     /// <summary>
-    /// >> 601 - Variant[pallet_state_trie_migration.pallet.Error]
+    /// >> 106 - Variant[pallet_state_trie_migration.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 516 - Composite[pallet_identity.types.RegistrarInfo]
+    /// >> 522 - Composite[pallet_identity.types.RegistrarInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RegistrarInfo : BaseType

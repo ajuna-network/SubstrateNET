@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 172 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 138 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumExt<MultiAddress, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8, SubstrateNET.NetApi.Generated.Types.Base.Arr20U8>
     {

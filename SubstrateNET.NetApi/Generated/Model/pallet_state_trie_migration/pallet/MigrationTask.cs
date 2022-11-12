@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     
     
     /// <summary>
-    /// >> 346 - Composite[pallet_state_trie_migration.pallet.MigrationTask]
+    /// >> 315 - Composite[pallet_state_trie_migration.pallet.MigrationTask]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationTask : BaseType

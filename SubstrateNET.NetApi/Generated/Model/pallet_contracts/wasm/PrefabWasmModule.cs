@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
     
     
     /// <summary>
-    /// >> 481 - Composite[pallet_contracts.wasm.PrefabWasmModule]
+    /// >> 488 - Composite[pallet_contracts.wasm.PrefabWasmModule]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PrefabWasmModule : BaseType
@@ -42,7 +42,12 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
         /// <summary>
         /// >> code
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT18 _code;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT4 _code;
+        
+        /// <summary>
+        /// >> determinism
+        /// </summary>
+        private SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.EnumDeterminism _determinism;
         
         public Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32> InstructionWeightsVersion
         {
@@ -80,7 +85,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT18 Code
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT4 Code
         {
             get
             {
@@ -89,6 +94,18 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
             set
             {
                 this._code = value;
+            }
+        }
+        
+        public SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.EnumDeterminism Determinism
+        {
+            get
+            {
+                return this._determinism;
+            }
+            set
+            {
+                this._determinism = value;
             }
         }
         
@@ -104,6 +121,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
             result.AddRange(Initial.Encode());
             result.AddRange(Maximum.Encode());
             result.AddRange(Code.Encode());
+            result.AddRange(Determinism.Encode());
             return result.ToArray();
         }
         
@@ -116,8 +134,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
             Initial.Decode(byteArray, ref p);
             Maximum = new Ajuna.NetApi.Model.Types.Base.BaseCom<Ajuna.NetApi.Model.Types.Primitive.U32>();
             Maximum.Decode(byteArray, ref p);
-            Code = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT18();
+            Code = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT4();
             Code.Decode(byteArray, ref p);
+            Determinism = new SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm.EnumDeterminism();
+            Determinism.Decode(byteArray, ref p);
             TypeSize = p - start;
         }
     }

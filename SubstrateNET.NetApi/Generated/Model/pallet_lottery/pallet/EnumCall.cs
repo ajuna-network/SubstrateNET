@@ -28,10 +28,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_lottery.pallet
     }
     
     /// <summary>
-    /// >> 333 - Variant[pallet_lottery.pallet.Call]
+    /// >> 301 - Variant[pallet_lottery.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>, BaseVoid>
+    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall, Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.Bool>, BaseVoid>
     {
     }
 }

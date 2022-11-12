@@ -59,7 +59,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 GetVotingCleanup(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49 GetVotingCleanup(string key);
     }
     
     /// <summary>
@@ -96,7 +96,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingCleanupTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45> _votingCleanupTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49> _votingCleanupTypedStorage;
         
         /// <summary>
         /// RankedCollectiveStorage constructor.
@@ -108,7 +108,7 @@ namespace SubstrateNET.RestService.Generated.Storage
             this.IdToIndexTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("RankedCollective.IdToIndex", storageDataProvider, storageChangeDelegates);
             this.IndexToIdTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>("RankedCollective.IndexToId", storageDataProvider, storageChangeDelegates);
             this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord>("RankedCollective.Voting", storageDataProvider, storageChangeDelegates);
-            this.VotingCleanupTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45>("RankedCollective.VotingCleanup", storageDataProvider, storageChangeDelegates);
+            this.VotingCleanupTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49>("RankedCollective.VotingCleanup", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -189,7 +189,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _votingCleanupTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45> VotingCleanupTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49> VotingCleanupTypedStorage
         {
             get
             {
@@ -373,13 +373,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 GetVotingCleanup(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49 GetVotingCleanup(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VotingCleanupTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT45 result))
+            if (VotingCleanupTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT49 result))
             {
                 return result;
             }

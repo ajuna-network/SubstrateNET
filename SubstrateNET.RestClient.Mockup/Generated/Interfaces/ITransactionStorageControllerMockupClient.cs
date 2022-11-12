@@ -11,17 +11,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Primitive;
    
    public interface ITransactionStorageControllerMockupClient
    {
-      Task<bool> SetTransactions(BoundedVecT34 value, U32 key);
+      Task<bool> SetTransactions(BoundedVecT39 value, U32 key);
       Task<bool> SetChunkCount(U32 value, U32 key);
       Task<bool> SetByteFee(U128 value);
       Task<bool> SetEntryFee(U128 value);
       Task<bool> SetStoragePeriod(U32 value);
-      Task<bool> SetBlockTransactions(BoundedVecT34 value);
+      Task<bool> SetBlockTransactions(BoundedVecT39 value);
       Task<bool> SetProofChecked(Bool value);
    }
 }

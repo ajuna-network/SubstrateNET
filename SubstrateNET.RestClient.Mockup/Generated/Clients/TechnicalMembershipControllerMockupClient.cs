@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -23,7 +23,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetMembers(BoundedVecT15 value)
+      public async Task<bool> SetMembers(BoundedVecT21 value)
       {
          return await SendMockupRequestAsync(_httpClient, "TechnicalMembership/Members", value.Encode(), SubstrateNET.NetApi.Generated.Storage.TechnicalMembershipStorage.MembersParams());
       }

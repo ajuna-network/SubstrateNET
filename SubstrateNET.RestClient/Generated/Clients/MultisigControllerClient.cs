@@ -13,10 +13,6 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_multisig;
-   using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
-   using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
-   using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class MultisigControllerClient : BaseClient, IMultisigControllerClient
@@ -28,21 +24,13 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<Multisig> GetMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
+      public async Task<Multisig> GetMultisigs(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
       {
          return await SendRequestAsync<Multisig>(_httpClient, "multisig/multisigs", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.MultisigsParams(key));
       }
-      public async Task<bool> SubscribeMultisigs(BaseTuple<AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
+      public async Task<bool> SubscribeMultisigs(Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Types.Base.Arr32U8> key)
       {
          return await _subscriptionClient.SubscribeAsync("Multisig.Multisigs", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.MultisigsParams(key));
-      }
-      public async Task<BaseTuple<WrapperKeepOpaque, AccountId32, U128>> GetCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
-      {
-         return await SendRequestAsync<BaseTuple<WrapperKeepOpaque, AccountId32, U128>>(_httpClient, "multisig/calls", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.CallsParams(key));
-      }
-      public async Task<bool> SubscribeCalls(SubstrateNET.NetApi.Generated.Types.Base.Arr32U8 key)
-      {
-         return await _subscriptionClient.SubscribeAsync("Multisig.Calls", SubstrateNET.NetApi.Generated.Storage.MultisigStorage.CallsParams(key));
       }
    }
 }

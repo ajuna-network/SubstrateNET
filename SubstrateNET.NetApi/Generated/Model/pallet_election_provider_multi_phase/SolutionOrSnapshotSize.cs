@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     
     
     /// <summary>
-    /// >> 228 - Composite[pallet_election_provider_multi_phase.SolutionOrSnapshotSize]
+    /// >> 194 - Composite[pallet_election_provider_multi_phase.SolutionOrSnapshotSize]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class SolutionOrSnapshotSize : BaseType

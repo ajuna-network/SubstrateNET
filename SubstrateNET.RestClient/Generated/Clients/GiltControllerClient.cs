@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,17 +25,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT32> GetQueueTotals()
+      public async Task<BoundedVecT37> GetQueueTotals()
       {
-         return await SendRequestAsync<BoundedVecT32>(_httpClient, "gilt/queuetotals");
+         return await SendRequestAsync<BoundedVecT37>(_httpClient, "gilt/queuetotals");
       }
       public async Task<bool> SubscribeQueueTotals()
       {
          return await _subscriptionClient.SubscribeAsync("Gilt.QueueTotals");
       }
-      public async Task<BoundedVecT33> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
+      public async Task<BoundedVecT38> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {
-         return await SendRequestAsync<BoundedVecT33>(_httpClient, "gilt/queues", SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueuesParams(key));
+         return await SendRequestAsync<BoundedVecT38>(_httpClient, "gilt/queues", SubstrateNET.NetApi.Generated.Storage.GiltStorage.QueuesParams(key));
       }
       public async Task<bool> SubscribeQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key)
       {

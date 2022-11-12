@@ -11,11 +11,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    
    public interface IAuthorityDiscoveryControllerMockupClient
    {
-      Task<bool> SetKeys(WeakBoundedVecT7 value);
-      Task<bool> SetNextKeys(WeakBoundedVecT7 value);
+      Task<bool> SetKeys(WeakBoundedVecT8 value);
+      Task<bool> SetNextKeys(WeakBoundedVecT8 value);
    }
 }

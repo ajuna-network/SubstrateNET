@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 157 - Composite[sp_consensus_slots.EquivocationProof]
+    /// >> 124 - Composite[sp_consensus_slots.EquivocationProof]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class EquivocationProof : BaseType

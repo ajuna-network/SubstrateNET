@@ -49,12 +49,16 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.pallet
         NotSub = 14,
         
         NotOwned = 15,
+        
+        JudgementForDifferentIdentity = 16,
+        
+        JudgementPaymentFailed = 17,
     }
     
     /// <summary>
-    /// >> 518 - Variant[pallet_identity.pallet.Error]
+    /// >> 524 - Variant[pallet_identity.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

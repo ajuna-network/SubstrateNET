@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
    public sealed class AuthorityDiscoveryControllerMockupClient : MockupBaseClient, IAuthorityDiscoveryControllerMockupClient
@@ -22,11 +22,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          _httpClient = httpClient;
       }
-      public async Task<bool> SetKeys(WeakBoundedVecT7 value)
+      public async Task<bool> SetKeys(WeakBoundedVecT8 value)
       {
          return await SendMockupRequestAsync(_httpClient, "AuthorityDiscovery/Keys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage.KeysParams());
       }
-      public async Task<bool> SetNextKeys(WeakBoundedVecT7 value)
+      public async Task<bool> SetNextKeys(WeakBoundedVecT8 value)
       {
          return await SendMockupRequestAsync(_httpClient, "AuthorityDiscovery/NextKeys", value.Encode(), SubstrateNET.NetApi.Generated.Storage.AuthorityDiscoveryStorage.NextKeysParams());
       }

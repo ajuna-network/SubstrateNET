@@ -32,9 +32,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> PreimageFor
-        ///  The preimages stored by this pallet.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 GetPreimageFor(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32 GetPreimageFor(string key);
     }
     
     /// <summary>
@@ -51,7 +50,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _preimageForTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27> _preimageForTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32> _preimageForTypedStorage;
         
         /// <summary>
         /// PreimageStorage constructor.
@@ -59,7 +58,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         public PreimageStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
             this.StatusForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_preimage.EnumRequestStatus>("Preimage.StatusFor", storageDataProvider, storageChangeDelegates);
-            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegates);
+            this.PreimageForTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32>("Preimage.PreimageFor", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -80,7 +79,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _preimageForTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27> PreimageForTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32> PreimageForTypedStorage
         {
             get
             {
@@ -141,15 +140,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         
         /// <summary>
         /// >> PreimageFor
-        ///  The preimages stored by this pallet.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 GetPreimageFor(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32 GetPreimageFor(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT27 result))
+            if (PreimageForTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT32 result))
             {
                 return result;
             }

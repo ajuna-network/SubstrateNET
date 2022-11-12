@@ -66,7 +66,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current weight for the block.
         /// </summary>
         [HttpGet("BlockWeight")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT1), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.SystemStorage), "BlockWeightParams")]
         public IActionResult GetBlockWeight()
         {

@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 134 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 367 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType

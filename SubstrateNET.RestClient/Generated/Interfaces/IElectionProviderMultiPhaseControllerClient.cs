@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
    using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    
@@ -33,7 +33,7 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
       Task<bool> SubscribeSnapshotMetadata();
       Task<U32> GetSignedSubmissionNextIndex();
       Task<bool> SubscribeSignedSubmissionNextIndex();
-      Task<BoundedBTreeMapT1> GetSignedSubmissionIndices();
+      Task<BoundedVecT13> GetSignedSubmissionIndices();
       Task<bool> SubscribeSignedSubmissionIndices();
       Task<SignedSubmission> GetSignedSubmissionsMap(U32 key);
       Task<bool> SubscribeSignedSubmissionsMap(U32 key);

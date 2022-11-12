@@ -64,7 +64,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The current set of keys that may issue a heartbeat.
         /// </summary>
         [HttpGet("Keys")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT4), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT5), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ImOnlineStorage), "KeysParams")]
         public IActionResult GetKeys()
         {

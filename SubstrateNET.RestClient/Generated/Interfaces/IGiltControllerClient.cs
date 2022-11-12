@@ -11,14 +11,14 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    
    public interface IGiltControllerClient
    {
-      Task<BoundedVecT32> GetQueueTotals();
+      Task<BoundedVecT37> GetQueueTotals();
       Task<bool> SubscribeQueueTotals();
-      Task<BoundedVecT33> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<BoundedVecT38> GetQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SubscribeQueues(Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<ActiveGiltsTotal> GetActiveTotal();
       Task<bool> SubscribeActiveTotal();

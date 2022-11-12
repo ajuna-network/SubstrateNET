@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_recovery.pallet
     }
     
     /// <summary>
-    /// >> 78 - Variant[pallet_recovery.pallet.Event]
+    /// >> 80 - Variant[pallet_recovery.pallet.Event]
     /// Events type.
     /// </summary>
     public sealed class EnumEvent : BaseEnumExt<Event, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>

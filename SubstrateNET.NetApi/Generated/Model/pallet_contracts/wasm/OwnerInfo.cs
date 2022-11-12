@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.wasm
     
     
     /// <summary>
-    /// >> 483 - Composite[pallet_contracts.wasm.OwnerInfo]
+    /// >> 490 - Composite[pallet_contracts.wasm.OwnerInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class OwnerInfo : BaseType

@@ -11,8 +11,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
-   using SubstrateNET.NetApi.Generated.Model.node_runtime;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.kitchensink_runtime;
    using SubstrateNET.NetApi.Generated.Model.pallet_collective;
    using Ajuna.NetApi.Model.Types.Primitive;
    using Ajuna.NetApi.Model.Types.Base;
@@ -20,8 +20,8 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    
    public interface ITechnicalCommitteeControllerMockupClient
    {
-      Task<bool> SetProposals(BoundedVecT14 value);
-      Task<bool> SetProposalOf(EnumCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
+      Task<bool> SetProposals(BoundedVecT20 value);
+      Task<bool> SetProposalOf(EnumRuntimeCall value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SetVoting(Votes value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key);
       Task<bool> SetProposalCount(U32 value);
       Task<bool> SetMembers(BaseVec<AccountId32> value);

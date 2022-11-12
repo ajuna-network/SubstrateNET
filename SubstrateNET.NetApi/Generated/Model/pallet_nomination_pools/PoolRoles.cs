@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 644 - Composite[pallet_nomination_pools.PoolRoles]
+    /// >> 655 - Composite[pallet_nomination_pools.PoolRoles]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class PoolRoles : BaseType

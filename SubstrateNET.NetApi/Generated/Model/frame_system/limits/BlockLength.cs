@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 144 - Composite[frame_system.limits.BlockLength]
+    /// >> 372 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType
@@ -27,9 +27,9 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
         /// <summary>
         /// >> max
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT3 _max;
+        private SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3 _max;
         
-        public SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT3 Max
+        public SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3 Max
         {
             get
             {
@@ -56,7 +56,7 @@ namespace SubstrateNET.NetApi.Generated.Model.frame_system.limits
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Max = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.PerDispatchClassT3();
+            Max = new SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3();
             Max.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

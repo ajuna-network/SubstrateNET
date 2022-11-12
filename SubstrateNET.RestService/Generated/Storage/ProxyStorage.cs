@@ -29,13 +29,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128> GetProxies(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128> GetProxies(string key);
         
         /// <summary>
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128> GetAnnouncements(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128> GetAnnouncements(string key);
     }
     
     /// <summary>
@@ -47,26 +47,26 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proxiesTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>> _proxiesTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>> _proxiesTypedStorage;
         
         /// <summary>
         /// _announcementsTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>> _announcementsTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>> _announcementsTypedStorage;
         
         /// <summary>
         /// ProxyStorage constructor.
         /// </summary>
         public ProxyStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ProxiesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>>("Proxy.Proxies", storageDataProvider, storageChangeDelegates);
-            this.AnnouncementsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>>("Proxy.Announcements", storageDataProvider, storageChangeDelegates);
+            this.ProxiesTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>>("Proxy.Proxies", storageDataProvider, storageChangeDelegates);
+            this.AnnouncementsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>>("Proxy.Announcements", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _proxiesTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128>> ProxiesTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128>> ProxiesTypedStorage
         {
             get
             {
@@ -81,7 +81,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _announcementsTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128>> AnnouncementsTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128>> AnnouncementsTypedStorage
         {
             get
             {
@@ -116,13 +116,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128> GetProxies(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128> GetProxies(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ProxiesTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT28, Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            if (ProxiesTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT33, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }
@@ -145,13 +145,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128> GetAnnouncements(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128> GetAnnouncements(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (AnnouncementsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT29, Ajuna.NetApi.Model.Types.Primitive.U128> result))
+            if (AnnouncementsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT34, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }

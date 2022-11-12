@@ -65,12 +65,14 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_staking.pallet.pallet
         TooManyValidators = 22,
         
         CommissionTooLow = 23,
+        
+        BoundNotMet = 24,
     }
     
     /// <summary>
-    /// >> 438 - Variant[pallet_staking.pallet.pallet.Error]
+    /// >> 444 - Variant[pallet_staking.pallet.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

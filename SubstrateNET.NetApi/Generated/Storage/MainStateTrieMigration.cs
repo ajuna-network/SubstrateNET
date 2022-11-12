@@ -188,7 +188,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MaxSignedLimits
-        /// max signed limits not respected.
+        /// Max signed limits not respected.
         /// </summary>
         MaxSignedLimits,
         
@@ -212,20 +212,20 @@ namespace SubstrateNET.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BadWitness
-        /// bad witness data provided.
+        /// Bad witness data provided.
         /// </summary>
         BadWitness,
-        
-        /// <summary>
-        /// >> SizeUpperBoundExceeded
-        /// upper bound of size is exceeded,
-        /// </summary>
-        SizeUpperBoundExceeded,
         
         /// <summary>
         /// >> SignedMigrationNotAllowed
         /// Signed migration is not allowed because the maximum limit is not set yet.
         /// </summary>
         SignedMigrationNotAllowed,
+        
+        /// <summary>
+        /// >> BadChildRoot
+        /// Bad child root provided.
+        /// </summary>
+        BadChildRoot,
     }
 }

@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
    using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    
@@ -26,7 +26,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
       Task<bool> SetDesiredTargets(U32 value);
       Task<bool> SetSnapshotMetadata(SolutionOrSnapshotSize value);
       Task<bool> SetSignedSubmissionNextIndex(U32 value);
-      Task<bool> SetSignedSubmissionIndices(BoundedBTreeMapT1 value);
+      Task<bool> SetSignedSubmissionIndices(BoundedVecT13 value);
       Task<bool> SetSignedSubmissionsMap(SignedSubmission value, U32 key);
       Task<bool> SetMinimumUntrustedScore(ElectionScore value);
    }

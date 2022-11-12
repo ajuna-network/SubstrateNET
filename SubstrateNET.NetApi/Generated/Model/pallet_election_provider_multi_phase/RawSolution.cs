@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     
     
     /// <summary>
-    /// >> 175 - Composite[pallet_election_provider_multi_phase.RawSolution]
+    /// >> 142 - Composite[pallet_election_provider_multi_phase.RawSolution]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class RawSolution : BaseType
@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         /// <summary>
         /// >> solution
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16 _solution;
+        private SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16 _solution;
         
         /// <summary>
         /// >> score
@@ -39,7 +39,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         /// </summary>
         private Ajuna.NetApi.Model.Types.Primitive.U32 _round;
         
-        public SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16 Solution
+        public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16 Solution
         {
             get
             {
@@ -92,7 +92,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Solution = new SubstrateNET.NetApi.Generated.Model.node_runtime.NposSolution16();
+            Solution = new SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.NposSolution16();
             Solution.Decode(byteArray, ref p);
             Score = new SubstrateNET.NetApi.Generated.Model.sp_npos_elections.ElectionScore();
             Score.Decode(byteArray, ref p);

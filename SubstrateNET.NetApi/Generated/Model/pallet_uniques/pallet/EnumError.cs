@@ -48,19 +48,17 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_uniques.pallet
         
         MaxSupplyTooSmall = 14,
         
-        NextIdNotUsed = 15,
+        UnknownItem = 15,
         
-        UnknownItem = 16,
+        NotForSale = 16,
         
-        NotForSale = 17,
-        
-        BidTooLow = 18,
+        BidTooLow = 17,
     }
     
     /// <summary>
-    /// >> 591 - Variant[pallet_uniques.pallet.Error]
+    /// >> 598 - Variant[pallet_uniques.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

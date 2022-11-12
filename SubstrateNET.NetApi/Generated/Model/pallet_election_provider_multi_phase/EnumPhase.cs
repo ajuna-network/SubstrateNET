@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     }
     
     /// <summary>
-    /// >> 405 - Variant[pallet_election_provider_multi_phase.Phase]
+    /// >> 410 - Variant[pallet_election_provider_multi_phase.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumExt<Phase, BaseVoid, BaseVoid, Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.Bool, Ajuna.NetApi.Model.Types.Primitive.U32>, BaseVoid>
     {

@@ -20,8 +20,6 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    
    public interface IStakingControllerClient
    {
-      Task<U32> GetHistoryDepth();
-      Task<bool> SubscribeHistoryDepth();
       Task<U32> GetValidatorCount();
       Task<bool> SubscribeValidatorCount();
       Task<U32> GetMinimumValidatorCount();

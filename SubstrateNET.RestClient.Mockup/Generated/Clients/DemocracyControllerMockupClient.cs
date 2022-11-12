@@ -13,11 +13,11 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using Ajuna.NetApi.Model.Types.Base;
-   using SubstrateNET.NetApi.Generated.Model.pallet_democracy;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.types;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote;
-   using SubstrateNET.NetApi.Generated.Model.primitive_types;
+   using SubstrateNET.NetApi.Generated.Model.frame_support.traits.preimages;
    using SubstrateNET.NetApi.Generated.Model.pallet_democracy.vote_threshold;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
    
@@ -32,17 +32,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/PublicPropCount", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PublicPropCountParams());
       }
-      public async Task<bool> SetPublicProps(BaseVec<BaseTuple<U32, H256, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value)
+      public async Task<bool> SetPublicProps(BoundedVecT16 value)
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/PublicProps", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PublicPropsParams());
       }
-      public async Task<bool> SetDepositOf(BaseTuple<BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>, U128> value, U32 key)
+      public async Task<bool> SetDepositOf(BaseTuple<BoundedVecT17, U128> value, U32 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/DepositOf", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.DepositOfParams(key));
-      }
-      public async Task<bool> SetPreimages(EnumPreimageStatus value, H256 key)
-      {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/Preimages", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.PreimagesParams(key));
       }
       public async Task<bool> SetReferendumCount(U32 value)
       {
@@ -64,21 +60,17 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/LastTabledWasExternal", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.LastTabledWasExternalParams());
       }
-      public async Task<bool> SetNextExternal(BaseTuple<H256, EnumVoteThreshold> value)
+      public async Task<bool> SetNextExternal(BaseTuple<EnumBounded, EnumVoteThreshold> value)
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/NextExternal", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.NextExternalParams());
       }
-      public async Task<bool> SetBlacklist(BaseTuple<U32, BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>> value, H256 key)
+      public async Task<bool> SetBlacklist(BaseTuple<U32, BoundedVecT17> value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/Blacklist", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.BlacklistParams(key));
       }
-      public async Task<bool> SetCancellations(Bool value, H256 key)
+      public async Task<bool> SetCancellations(Bool value, SubstrateNET.NetApi.Generated.Model.primitive_types.H256 key)
       {
          return await SendMockupRequestAsync(_httpClient, "Democracy/Cancellations", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.CancellationsParams(key));
-      }
-      public async Task<bool> SetStorageVersion(EnumReleases value)
-      {
-         return await SendMockupRequestAsync(_httpClient, "Democracy/StorageVersion", value.Encode(), SubstrateNET.NetApi.Generated.Storage.DemocracyStorage.StorageVersionParams());
       }
    }
 }

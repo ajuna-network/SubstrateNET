@@ -28,7 +28,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 GetVesting(string key);
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30 GetVesting(string key);
         
         /// <summary>
         /// >> StorageVersion
@@ -48,7 +48,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _vestingTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26> _vestingTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30> _vestingTypedStorage;
         
         /// <summary>
         /// _storageVersionTypedStorage typed storage field
@@ -60,14 +60,14 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public VestingStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26>("Vesting.Vesting", storageDataProvider, storageChangeDelegates);
+            this.VestingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30>("Vesting.Vesting", storageDataProvider, storageChangeDelegates);
             this.StorageVersionTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.pallet_vesting.EnumReleases>("Vesting.StorageVersion", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
         /// _vestingTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26> VestingTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30> VestingTypedStorage
         {
             get
             {
@@ -116,13 +116,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 GetVesting(string key)
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30 GetVesting(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT26 result))
+            if (VestingTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT30 result))
             {
                 return result;
             }

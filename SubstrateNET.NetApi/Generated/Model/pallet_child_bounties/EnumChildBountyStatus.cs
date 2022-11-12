@@ -28,7 +28,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_child_bounties
     }
     
     /// <summary>
-    /// >> 603 - Variant[pallet_child_bounties.ChildBountyStatus]
+    /// >> 609 - Variant[pallet_child_bounties.ChildBountyStatus]
     /// </summary>
     public sealed class EnumChildBountyStatus : BaseEnumExt<ChildBountyStatus, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U32>>
     {

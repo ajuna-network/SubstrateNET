@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class AuthorityDiscoveryControllerClient : BaseClient, IAuthorityDiscoveryControllerClient
@@ -24,17 +24,17 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<WeakBoundedVecT7> GetKeys()
+      public async Task<WeakBoundedVecT8> GetKeys()
       {
-         return await SendRequestAsync<WeakBoundedVecT7>(_httpClient, "authoritydiscovery/keys");
+         return await SendRequestAsync<WeakBoundedVecT8>(_httpClient, "authoritydiscovery/keys");
       }
       public async Task<bool> SubscribeKeys()
       {
          return await _subscriptionClient.SubscribeAsync("AuthorityDiscovery.Keys");
       }
-      public async Task<WeakBoundedVecT7> GetNextKeys()
+      public async Task<WeakBoundedVecT8> GetNextKeys()
       {
-         return await SendRequestAsync<WeakBoundedVecT7>(_httpClient, "authoritydiscovery/nextkeys");
+         return await SendRequestAsync<WeakBoundedVecT8>(_httpClient, "authoritydiscovery/nextkeys");
       }
       public async Task<bool> SubscribeNextKeys()
       {

@@ -28,13 +28,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13 GetProposals();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19 GetProposals();
         
         /// <summary>
         /// >> ProposalOf
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall GetProposalOf(string key);
+        SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall GetProposalOf(string key);
         
         /// <summary>
         /// >> Voting
@@ -70,12 +70,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13> _proposalsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19> _proposalsTypedStorage;
         
         /// <summary>
         /// _proposalOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> _proposalOfTypedStorage;
+        private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> _proposalOfTypedStorage;
         
         /// <summary>
         /// _votingTypedStorage typed storage field
@@ -102,8 +102,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// </summary>
         public CouncilStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
-            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13>("Council.Proposals", storageDataProvider, storageChangeDelegates);
-            this.ProposalOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall>("Council.ProposalOf", storageDataProvider, storageChangeDelegates);
+            this.ProposalsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19>("Council.Proposals", storageDataProvider, storageChangeDelegates);
+            this.ProposalOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall>("Council.ProposalOf", storageDataProvider, storageChangeDelegates);
             this.VotingTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_collective.Votes>("Council.Voting", storageDataProvider, storageChangeDelegates);
             this.ProposalCountTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Primitive.U32>("Council.ProposalCount", storageDataProvider, storageChangeDelegates);
             this.MembersTypedStorage = new TypedStorage<Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>>("Council.Members", storageDataProvider, storageChangeDelegates);
@@ -113,7 +113,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13> ProposalsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19> ProposalsTypedStorage
         {
             get
             {
@@ -128,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _proposalOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> ProposalOfTypedStorage
+        public TypedMapStorage<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> ProposalOfTypedStorage
         {
             get
             {
@@ -226,7 +226,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT13 GetProposals()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT19 GetProposals()
         {
             return ProposalsTypedStorage.Get();
         }
@@ -244,13 +244,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// >> ProposalOf
         ///  Actual proposal for a given hash, if it's current.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall GetProposalOf(string key)
+        public SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall GetProposalOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (ProposalOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall result))
+            if (ProposalOfTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall result))
             {
                 return result;
             }

@@ -24,10 +24,10 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_bags_list.pallet
     }
     
     /// <summary>
-    /// >> 342 - Variant[pallet_bags_list.pallet.Call]
+    /// >> 311 - Variant[pallet_bags_list.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
-    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32>
+    public sealed class EnumCall : BaseEnumExt<Call, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>
     {
     }
 }

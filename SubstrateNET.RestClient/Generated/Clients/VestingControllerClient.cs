@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_vesting;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
@@ -25,9 +25,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT26> GetVesting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<BoundedVecT30> GetVesting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT26>(_httpClient, "vesting/vesting", SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
+         return await SendRequestAsync<BoundedVecT30>(_httpClient, "vesting/vesting", SubstrateNET.NetApi.Generated.Storage.VestingStorage.VestingParams(key));
       }
       public async Task<bool> SubscribeVesting(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {

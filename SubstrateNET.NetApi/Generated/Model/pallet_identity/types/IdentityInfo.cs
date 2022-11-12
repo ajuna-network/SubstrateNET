@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 276 - Composite[pallet_identity.types.IdentityInfo]
+    /// >> 245 - Composite[pallet_identity.types.IdentityInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class IdentityInfo : BaseType
@@ -27,7 +27,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         /// <summary>
         /// >> additional
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT6 _additional;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT4 _additional;
         
         /// <summary>
         /// >> display
@@ -69,7 +69,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumData _twitter;
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT6 Additional
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT4 Additional
         {
             get
             {
@@ -200,7 +200,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_identity.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Additional = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT6();
+            Additional = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT4();
             Additional.Decode(byteArray, ref p);
             Display = new SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumData();
             Display.Decode(byteArray, ref p);

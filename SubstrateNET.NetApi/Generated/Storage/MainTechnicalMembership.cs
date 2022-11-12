@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         public TechnicalMembershipStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Members"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT15)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Members"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT21)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalMembership", "Prime"), new System.Tuple<Ajuna.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
         }
         
@@ -47,10 +47,10 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> Members
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
-        public async Task<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT15> Members(CancellationToken token)
+        public async Task<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT21> Members(CancellationToken token)
         {
             string parameters = TechnicalMembershipStorage.MembersParams();
-            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT15>(parameters, token);
+            return await _client.GetStorageAsync<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT21>(parameters, token);
         }
         
         /// <summary>
@@ -80,7 +80,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> add_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AddMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method AddMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -91,7 +91,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> remove_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method RemoveMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method RemoveMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
@@ -102,7 +102,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> swap_member
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SwapMember(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 remove, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 add)
+        public static Method SwapMember(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress remove, SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress add)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(remove.Encode());
@@ -125,7 +125,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> change_key
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ChangeKey(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 @new)
+        public static Method ChangeKey(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@new.Encode());
@@ -136,7 +136,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> set_prime
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method SetPrime(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 who)
+        public static Method SetPrime(SubstrateNET.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());

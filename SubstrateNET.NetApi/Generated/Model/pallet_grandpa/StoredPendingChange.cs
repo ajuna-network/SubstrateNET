@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_grandpa
     
     
     /// <summary>
-    /// >> 472 - Composite[pallet_grandpa.StoredPendingChange]
+    /// >> 479 - Composite[pallet_grandpa.StoredPendingChange]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class StoredPendingChange : BaseType
@@ -37,7 +37,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_grandpa
         /// <summary>
         /// >> next_authorities
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3 _nextAuthorities;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT3 _nextAuthorities;
         
         /// <summary>
         /// >> forced
@@ -68,7 +68,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_grandpa
             }
         }
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3 NextAuthorities
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT3 NextAuthorities
         {
             get
             {
@@ -114,7 +114,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_grandpa
             ScheduledAt.Decode(byteArray, ref p);
             Delay = new Ajuna.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);
-            NextAuthorities = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec.WeakBoundedVecT3();
+            NextAuthorities = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec.WeakBoundedVecT3();
             NextAuthorities.Decode(byteArray, ref p);
             Forced = new Ajuna.NetApi.Model.Types.Base.BaseOpt<Ajuna.NetApi.Model.Types.Primitive.U32>();
             Forced.Decode(byteArray, ref p);

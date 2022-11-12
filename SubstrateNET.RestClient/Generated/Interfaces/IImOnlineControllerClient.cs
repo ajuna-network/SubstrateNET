@@ -12,14 +12,14 @@ namespace SubstrateNET.RestClient.Generated.Interfaces
    using System;
    using System.Threading.Tasks;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.weak_bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.weak_bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc;
    
    public interface IImOnlineControllerClient
    {
       Task<U32> GetHeartbeatAfter();
       Task<bool> SubscribeHeartbeatAfter();
-      Task<WeakBoundedVecT4> GetKeys();
+      Task<WeakBoundedVecT5> GetKeys();
       Task<bool> SubscribeKeys();
       Task<WrapperOpaque> GetReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);
       Task<bool> SubscribeReceivedHeartbeats(Ajuna.NetApi.Model.Types.Base.BaseTuple<U32, U32> key);

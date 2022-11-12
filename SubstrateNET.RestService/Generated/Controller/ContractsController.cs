@@ -42,7 +42,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  A mapping from an original code hash to the original code, untouched by instrumentation.
         /// </summary>
         [HttpGet("PristineCode")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT17), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT23), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "PristineCodeParams", typeof(SubstrateNET.NetApi.Generated.Model.primitive_types.H256))]
         public IActionResult GetPristineCode(string key)
         {
@@ -113,7 +113,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  TWOX-NOTE: SAFE since `AccountId` is a secure hash.
         /// </summary>
         [HttpGet("ContractInfoOf")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.RawContractInfo), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage.ContractInfo), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "ContractInfoOfParams", typeof(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32))]
         public IActionResult GetContractInfoOf(string key)
         {
@@ -128,7 +128,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  stored in said trie. Therefore this operation is performed lazily in `on_initialize`.
         /// </summary>
         [HttpGet("DeletionQueue")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT20), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT24), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.ContractsStorage), "DeletionQueueParams")]
         public IActionResult GetDeletionQueue()
         {

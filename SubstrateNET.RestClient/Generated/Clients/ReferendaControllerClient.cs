@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_referenda.types;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ReferendaControllerClient : BaseClient, IReferendaControllerClient
@@ -42,9 +42,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("Referenda.ReferendumInfoFor", SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.ReferendumInfoForParams(key));
       }
-      public async Task<BoundedVecT35> GetTrackQueue(U16 key)
+      public async Task<BoundedVecT40> GetTrackQueue(U16 key)
       {
-         return await SendRequestAsync<BoundedVecT35>(_httpClient, "referenda/trackqueue", SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.TrackQueueParams(key));
+         return await SendRequestAsync<BoundedVecT40>(_httpClient, "referenda/trackqueue", SubstrateNET.NetApi.Generated.Storage.ReferendaStorage.TrackQueueParams(key));
       }
       public async Task<bool> SubscribeTrackQueue(U16 key)
       {

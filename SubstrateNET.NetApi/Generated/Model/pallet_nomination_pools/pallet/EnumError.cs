@@ -59,16 +59,20 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.pallet
         Defensive = 19,
         
         PartialUnbondNotAllowedPermissionlessly = 20,
+        
+        PoolIdInUse = 21,
+        
+        InvalidPoolId = 22,
     }
     
     /// <summary>
-    /// >> 653 - Variant[pallet_nomination_pools.pallet.Error]
+    /// >> 664 - Variant[pallet_nomination_pools.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>
-    public sealed class EnumError : BaseEnumExt<Error, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumDefensiveError, BaseVoid>
+    public sealed class EnumError : BaseEnumExt<Error, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, BaseVoid, SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumDefensiveError, BaseVoid, BaseVoid, BaseVoid>
     {
     }
 }

@@ -14,7 +14,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
    using System.Net.Http;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_btree_map;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_phase.signed;
    using SubstrateNET.NetApi.Generated.Model.sp_npos_elections;
    using SubstrateNET.RestClient.Mockup.Generated.Interfaces;
@@ -54,7 +54,7 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Clients
       {
          return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionNextIndex", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionNextIndexParams());
       }
-      public async Task<bool> SetSignedSubmissionIndices(BoundedBTreeMapT1 value)
+      public async Task<bool> SetSignedSubmissionIndices(BoundedVecT13 value)
       {
          return await SendMockupRequestAsync(_httpClient, "ElectionProviderMultiPhase/SignedSubmissionIndices", value.Encode(), SubstrateNET.NetApi.Generated.Storage.ElectionProviderMultiPhaseStorage.SignedSubmissionIndicesParams());
       }

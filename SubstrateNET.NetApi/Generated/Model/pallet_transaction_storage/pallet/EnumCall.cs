@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_transaction_storage.pallet
     }
     
     /// <summary>
-    /// >> 340 - Variant[pallet_transaction_storage.pallet.Call]
+    /// >> 309 - Variant[pallet_transaction_storage.pallet.Call]
     /// Contains one variant per dispatchable that can be called by an extrinsic.
     /// </summary>
     public sealed class EnumCall : BaseEnumExt<Call, Ajuna.NetApi.Model.Types.Base.BaseVec<Ajuna.NetApi.Model.Types.Primitive.U8>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>, SubstrateNET.NetApi.Generated.Model.sp_transaction_storage_proof.TransactionStorageProof>

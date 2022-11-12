@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_bags_list.list
     
     
     /// <summary>
-    /// >> 596 - Composite[pallet_bags_list.list.Node]
+    /// >> 603 - Composite[pallet_bags_list.list.Node]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class Node : BaseType

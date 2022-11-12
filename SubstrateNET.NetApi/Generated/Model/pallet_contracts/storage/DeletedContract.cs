@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage
     
     
     /// <summary>
-    /// >> 487 - Composite[pallet_contracts.storage.DeletedContract]
+    /// >> 493 - Composite[pallet_contracts.storage.DeletedContract]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DeletedContract : BaseType
@@ -27,9 +27,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage
         /// <summary>
         /// >> trie_id
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT19 _trieId;
+        private SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT8 _trieId;
         
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT19 TrieId
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT8 TrieId
         {
             get
             {
@@ -56,7 +56,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_contracts.storage
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            TrieId = new SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT19();
+            TrieId = new SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT8();
             TrieId.Decode(byteArray, ref p);
             TypeSize = p - start;
         }

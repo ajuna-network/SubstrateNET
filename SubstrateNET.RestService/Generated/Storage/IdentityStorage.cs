@@ -47,7 +47,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23> GetSubsOf(string key);
+        Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27> GetSubsOf(string key);
         
         /// <summary>
         /// >> Registrars
@@ -56,7 +56,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
-        SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24 GetRegistrars();
+        SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28 GetRegistrars();
     }
     
     /// <summary>
@@ -78,12 +78,12 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _subsOfTypedStorage typed storage field
         /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>> _subsOfTypedStorage;
+        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>> _subsOfTypedStorage;
         
         /// <summary>
         /// _registrarsTypedStorage typed storage field
         /// </summary>
-        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24> _registrarsTypedStorage;
+        private TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28> _registrarsTypedStorage;
         
         /// <summary>
         /// IdentityStorage constructor.
@@ -92,8 +92,8 @@ namespace SubstrateNET.RestService.Generated.Storage
         {
             this.IdentityOfTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_identity.types.Registration>("Identity.IdentityOf", storageDataProvider, storageChangeDelegates);
             this.SuperOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, SubstrateNET.NetApi.Generated.Model.pallet_identity.types.EnumData>>("Identity.SuperOf", storageDataProvider, storageChangeDelegates);
-            this.SubsOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>>("Identity.SubsOf", storageDataProvider, storageChangeDelegates);
-            this.RegistrarsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24>("Identity.Registrars", storageDataProvider, storageChangeDelegates);
+            this.SubsOfTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>>("Identity.SubsOf", storageDataProvider, storageChangeDelegates);
+            this.RegistrarsTypedStorage = new TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28>("Identity.Registrars", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -129,7 +129,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _subsOfTypedStorage property
         /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23>> SubsOfTypedStorage
+        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27>> SubsOfTypedStorage
         {
             get
             {
@@ -144,7 +144,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// <summary>
         /// _registrarsTypedStorage property
         /// </summary>
-        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24> RegistrarsTypedStorage
+        public TypedStorage<SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28> RegistrarsTypedStorage
         {
             get
             {
@@ -245,13 +245,13 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23> GetSubsOf(string key)
+        public Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27> GetSubsOf(string key)
         {
             if ((key == null))
             {
                 return null;
             }
-            if (SubsOfTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT23> result))
+            if (SubsOfTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT27> result))
             {
                 return result;
             }
@@ -277,7 +277,7 @@ namespace SubstrateNET.RestService.Generated.Storage
         /// 
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
-        public SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT24 GetRegistrars()
+        public SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT28 GetRegistrars()
         {
             return RegistrarsTypedStorage.Get();
         }

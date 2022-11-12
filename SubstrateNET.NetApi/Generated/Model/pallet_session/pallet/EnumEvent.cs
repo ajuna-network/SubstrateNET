@@ -22,9 +22,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 44 - Variant[pallet_session.pallet.Event]
+    /// >> 46 - Variant[pallet_session.pallet.Event]
     /// 
-    ///			The [event](https://docs.substrate.io/v3/runtime/events-and-errors) emitted
+    ///			The [event](https://docs.substrate.io/main-docs/build/events-errors/) emitted
     ///			by this pallet.
     ///			
     /// </summary>

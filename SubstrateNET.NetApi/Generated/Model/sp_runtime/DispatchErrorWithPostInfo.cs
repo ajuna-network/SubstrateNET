@@ -18,7 +18,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime
     
     
     /// <summary>
-    /// >> 114 - Composite[sp_runtime.DispatchErrorWithPostInfo]
+    /// >> 355 - Composite[sp_runtime.DispatchErrorWithPostInfo]
     /// </summary>
     [AjunaNodeType(TypeDefEnum.Composite)]
     public sealed class DispatchErrorWithPostInfo : BaseType
@@ -27,14 +27,14 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime
         /// <summary>
         /// >> post_info
         /// </summary>
-        private SubstrateNET.NetApi.Generated.Model.frame_support.weights.PostDispatchInfo _postInfo;
+        private SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo _postInfo;
         
         /// <summary>
         /// >> error
         /// </summary>
         private SubstrateNET.NetApi.Generated.Model.sp_runtime.EnumDispatchError _error;
         
-        public SubstrateNET.NetApi.Generated.Model.frame_support.weights.PostDispatchInfo PostInfo
+        public SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo PostInfo
         {
             get
             {
@@ -74,7 +74,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_runtime
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            PostInfo = new SubstrateNET.NetApi.Generated.Model.frame_support.weights.PostDispatchInfo();
+            PostInfo = new SubstrateNET.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo();
             PostInfo.Decode(byteArray, ref p);
             Error = new SubstrateNET.NetApi.Generated.Model.sp_runtime.EnumDispatchError();
             Error.Decode(byteArray, ref p);

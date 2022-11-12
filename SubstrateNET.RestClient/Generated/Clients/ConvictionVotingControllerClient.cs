@@ -13,7 +13,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System.Threading.Tasks;
    using System.Net.Http;
    using SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.RestClient.Generated.Interfaces;
    
    public sealed class ConvictionVotingControllerClient : BaseClient, IConvictionVotingControllerClient
@@ -33,9 +33,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
       {
          return await _subscriptionClient.SubscribeAsync("ConvictionVoting.VotingFor", SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage.VotingForParams(key));
       }
-      public async Task<BoundedVecT37> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+      public async Task<BoundedVecT42> GetClassLocksFor(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {
-         return await SendRequestAsync<BoundedVecT37>(_httpClient, "convictionvoting/classlocksfor", SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage.ClassLocksForParams(key));
+         return await SendRequestAsync<BoundedVecT42>(_httpClient, "convictionvoting/classlocksfor", SubstrateNET.NetApi.Generated.Storage.ConvictionVotingStorage.ClassLocksForParams(key));
       }
       public async Task<bool> SubscribeClassLocksFor(SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
       {

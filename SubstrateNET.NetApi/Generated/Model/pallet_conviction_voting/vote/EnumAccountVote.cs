@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote
     }
     
     /// <summary>
-    /// >> 360 - Variant[pallet_conviction_voting.vote.AccountVote]
+    /// >> 323 - Variant[pallet_conviction_voting.vote.AccountVote]
     /// </summary>
     public sealed class EnumAccountVote : BaseEnumExt<AccountVote, BaseTuple<SubstrateNET.NetApi.Generated.Model.pallet_conviction_voting.vote.Vote, Ajuna.NetApi.Model.Types.Primitive.U128>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U128, Ajuna.NetApi.Model.Types.Primitive.U128>>
     {

@@ -32,7 +32,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 655 - Variant[pallet_referenda.types.ReferendumInfo]
+    /// >> 666 - Variant[pallet_referenda.types.ReferendumInfo]
     /// </summary>
     public sealed class EnumReferendumInfo : BaseEnumExt<ReferendumInfo, SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.ReferendumStatusT2, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit>>, BaseTuple<Ajuna.NetApi.Model.Types.Primitive.U32, SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit, Ajuna.NetApi.Model.Types.Base.BaseOpt<SubstrateNET.NetApi.Generated.Model.pallet_referenda.types.Deposit>>, Ajuna.NetApi.Model.Types.Primitive.U32>
     {

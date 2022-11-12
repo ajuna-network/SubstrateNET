@@ -30,7 +30,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_election_provider_multi_pha
     }
     
     /// <summary>
-    /// >> 37 - Variant[pallet_election_provider_multi_phase.ElectionCompute]
+    /// >> 39 - Variant[pallet_election_provider_multi_phase.ElectionCompute]
     /// </summary>
     public sealed class EnumElectionCompute : BaseEnum<ElectionCompute>
     {

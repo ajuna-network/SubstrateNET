@@ -12,7 +12,7 @@ namespace SubstrateNET.RestClient.Generated.Clients
    using System;
    using System.Threading.Tasks;
    using System.Net.Http;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
    using SubstrateNET.RestClient.Generated.Interfaces;
@@ -26,9 +26,9 @@ namespace SubstrateNET.RestClient.Generated.Clients
          _httpClient = httpClient;
          _subscriptionClient = subscriptionClient;
       }
-      public async Task<BoundedVecT9> GetUncles()
+      public async Task<BoundedVecT10> GetUncles()
       {
-         return await SendRequestAsync<BoundedVecT9>(_httpClient, "authorship/uncles");
+         return await SendRequestAsync<BoundedVecT10>(_httpClient, "authorship/uncles");
       }
       public async Task<bool> SubscribeUncles()
       {

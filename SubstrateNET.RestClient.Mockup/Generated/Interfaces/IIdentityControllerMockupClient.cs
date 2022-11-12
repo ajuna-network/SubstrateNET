@@ -15,13 +15,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
    using Ajuna.NetApi.Model.Types.Base;
    using SubstrateNET.NetApi.Generated.Model.sp_core.crypto;
    using Ajuna.NetApi.Model.Types.Primitive;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    
    public interface IIdentityControllerMockupClient
    {
       Task<bool> SetIdentityOf(Registration value, AccountId32 key);
       Task<bool> SetSuperOf(BaseTuple<AccountId32, EnumData> value, AccountId32 key);
-      Task<bool> SetSubsOf(BaseTuple<U128, BoundedVecT23> value, AccountId32 key);
-      Task<bool> SetRegistrars(BoundedVecT24 value);
+      Task<bool> SetSubsOf(BaseTuple<U128, BoundedVecT27> value, AccountId32 key);
+      Task<bool> SetRegistrars(BoundedVecT28 value);
    }
 }

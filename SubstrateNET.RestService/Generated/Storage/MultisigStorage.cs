@@ -29,11 +29,6 @@ namespace SubstrateNET.RestService.Generated.Storage
         ///  The set of open multisig operations.
         /// </summary>
         SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig GetMultisigs(string key);
-        
-        /// <summary>
-        /// >> Calls
-        /// </summary>
-        Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128> GetCalls(string key);
     }
     
     /// <summary>
@@ -48,17 +43,11 @@ namespace SubstrateNET.RestService.Generated.Storage
         private TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig> _multisigsTypedStorage;
         
         /// <summary>
-        /// _callsTypedStorage typed storage field
-        /// </summary>
-        private TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> _callsTypedStorage;
-        
-        /// <summary>
         /// MultisigStorage constructor.
         /// </summary>
         public MultisigStorage(IStorageDataProvider storageDataProvider, List<IStorageChangeDelegate> storageChangeDelegates)
         {
             this.MultisigsTypedStorage = new TypedMapStorage<SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig>("Multisig.Multisigs", storageDataProvider, storageChangeDelegates);
-            this.CallsTypedStorage = new TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>>("Multisig.Calls", storageDataProvider, storageChangeDelegates);
         }
         
         /// <summary>
@@ -77,27 +66,11 @@ namespace SubstrateNET.RestService.Generated.Storage
         }
         
         /// <summary>
-        /// _callsTypedStorage property
-        /// </summary>
-        public TypedMapStorage<Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128>> CallsTypedStorage
-        {
-            get
-            {
-                return _callsTypedStorage;
-            }
-            set
-            {
-                _callsTypedStorage = value;
-            }
-        }
-        
-        /// <summary>
         /// Connects to all storages and initializes the change subscription handling.
         /// </summary>
         public async Task InitializeAsync(Ajuna.ServiceLayer.Storage.IStorageDataProvider dataProvider)
         {
             await MultisigsTypedStorage.InitializeAsync("Multisig", "Multisigs");
-            await CallsTypedStorage.InitializeAsync("Multisig", "Calls");
         }
         
         /// <summary>
@@ -120,34 +93,6 @@ namespace SubstrateNET.RestService.Generated.Storage
                 return null;
             }
             if (MultisigsTypedStorage.Dictionary.TryGetValue(key, out SubstrateNET.NetApi.Generated.Model.pallet_multisig.Multisig result))
-            {
-                return result;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        
-        /// <summary>
-        /// Implements any storage change for Multisig.Calls
-        /// </summary>
-        [StorageChange("Multisig", "Calls")]
-        public void OnUpdateCalls(string key, string data)
-        {
-            CallsTypedStorage.Update(key, data);
-        }
-        
-        /// <summary>
-        /// >> Calls
-        /// </summary>
-        public Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128> GetCalls(string key)
-        {
-            if ((key == null))
-            {
-                return null;
-            }
-            if (CallsTypedStorage.Dictionary.TryGetValue(key, out Ajuna.NetApi.Model.Types.Base.BaseTuple<SubstrateNET.NetApi.Generated.Model.frame_support.traits.misc.WrapperKeepOpaque, SubstrateNET.NetApi.Generated.Model.sp_core.crypto.AccountId32, Ajuna.NetApi.Model.Types.Primitive.U128> result))
             {
                 return result;
             }

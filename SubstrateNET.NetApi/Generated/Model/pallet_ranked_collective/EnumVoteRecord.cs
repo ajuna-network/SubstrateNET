@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_ranked_collective
     }
     
     /// <summary>
-    /// >> 130 - Variant[pallet_ranked_collective.VoteRecord]
+    /// >> 362 - Variant[pallet_ranked_collective.VoteRecord]
     /// </summary>
     public sealed class EnumVoteRecord : BaseEnumExt<VoteRecord, Ajuna.NetApi.Model.Types.Primitive.U32, Ajuna.NetApi.Model.Types.Primitive.U32>
     {

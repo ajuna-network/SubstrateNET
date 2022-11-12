@@ -26,7 +26,7 @@ namespace SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests
     }
     
     /// <summary>
-    /// >> 381 - Variant[sp_consensus_babe.digests.PreDigest]
+    /// >> 387 - Variant[sp_consensus_babe.digests.PreDigest]
     /// </summary>
     public sealed class EnumPreDigest : BaseEnumExt<PreDigest, BaseVoid, SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.PrimaryPreDigest, SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.SecondaryPlainPreDigest, SubstrateNET.NetApi.Generated.Model.sp_consensus_babe.digests.SecondaryVRFPreDigest>
     {

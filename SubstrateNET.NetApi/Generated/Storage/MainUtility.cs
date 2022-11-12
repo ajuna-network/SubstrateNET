@@ -40,7 +40,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> batch
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method Batch(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> calls)
+        public static Method Batch(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());
@@ -51,7 +51,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> as_derivative
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method AsDerivative(Ajuna.NetApi.Model.Types.Primitive.U16 index, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method AsDerivative(Ajuna.NetApi.Model.Types.Primitive.U16 index, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(index.Encode());
@@ -63,7 +63,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> batch_all
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method BatchAll(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> calls)
+        public static Method BatchAll(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());
@@ -74,7 +74,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> dispatch_as
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method DispatchAs(SubstrateNET.NetApi.Generated.Model.node_runtime.EnumOriginCaller as_origin, SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall call)
+        public static Method DispatchAs(SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumOriginCaller as_origin, SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(as_origin.Encode());
@@ -86,7 +86,7 @@ namespace SubstrateNET.NetApi.Generated.Storage
         /// >> force_batch
         /// Contains one variant per dispatchable that can be called by an extrinsic.
         /// </summary>
-        public static Method ForceBatch(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.node_runtime.EnumCall> calls)
+        public static Method ForceBatch(Ajuna.NetApi.Model.Types.Base.BaseVec<SubstrateNET.NetApi.Generated.Model.kitchensink_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());

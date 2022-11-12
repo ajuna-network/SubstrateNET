@@ -66,7 +66,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  The description of each bounty.
         /// </summary>
         [HttpGet("BountyDescriptions")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT30), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT35), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountyDescriptionsParams", typeof(Ajuna.NetApi.Model.Types.Primitive.U32))]
         public IActionResult GetBountyDescriptions(string key)
         {
@@ -78,7 +78,7 @@ namespace SubstrateNET.RestService.Generated.Controller
         ///  Bounty indices that have been approved but not yet funded.
         /// </summary>
         [HttpGet("BountyApprovals")]
-        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec.BoundedVecT16), 200)]
+        [ProducesResponseType(typeof(SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec.BoundedVecT22), 200)]
         [StorageKeyBuilder(typeof(SubstrateNET.NetApi.Generated.Storage.BountiesStorage), "BountyApprovalsParams")]
         public IActionResult GetBountyApprovals()
         {

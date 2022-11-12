@@ -24,7 +24,7 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 368 - Variant[pallet_nomination_pools.BondExtra]
+    /// >> 339 - Variant[pallet_nomination_pools.BondExtra]
     /// </summary>
     public sealed class EnumBondExtra : BaseEnumExt<BondExtra, Ajuna.NetApi.Model.Types.Primitive.U128, BaseVoid>
     {

@@ -18,9 +18,9 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.pallet
     public enum Error
     {
         
-        AllianceAlreadyInitialized = 0,
+        AllianceNotYetInitialized = 0,
         
-        AllianceNotYetInitialized = 1,
+        AllianceAlreadyInitialized = 1,
         
         AlreadyMember = 2,
         
@@ -30,43 +30,51 @@ namespace SubstrateNET.NetApi.Generated.Model.pallet_alliance.pallet
         
         NotFounder = 5,
         
-        UpForKicking = 6,
+        NoVotingRights = 6,
         
-        NoVotingRights = 7,
+        AlreadyElevated = 7,
         
-        AlreadyElevated = 8,
+        AlreadyUnscrupulous = 8,
         
-        AlreadyUnscrupulous = 9,
+        AccountNonGrata = 9,
         
-        AccountNonGrata = 10,
+        NotListedAsUnscrupulous = 10,
         
-        NotListedAsUnscrupulous = 11,
+        TooManyUnscrupulousItems = 11,
         
-        TooManyUnscrupulousItems = 12,
+        TooLongWebsiteUrl = 12,
         
-        TooLongWebsiteUrl = 13,
+        InsufficientFunds = 13,
         
-        InsufficientFunds = 14,
+        WithoutIdentityDisplayAndWebsite = 14,
         
-        WithoutIdentityDisplayAndWebsite = 15,
+        WithoutGoodIdentityJudgement = 15,
         
-        WithoutGoodIdentityJudgement = 16,
+        MissingProposalHash = 16,
         
-        MissingProposalHash = 17,
+        NotVetoableProposal = 17,
         
-        NotVetoableProposal = 18,
+        MissingAnnouncement = 18,
         
-        MissingAnnouncement = 19,
+        TooManyMembers = 19,
         
-        TooManyMembers = 20,
+        TooManyAnnouncements = 20,
         
-        TooManyAnnouncements = 21,
+        BadWitness = 21,
+        
+        AlreadyRetiring = 22,
+        
+        RetirementNoticeNotGiven = 23,
+        
+        RetirementPeriodNotPassed = 24,
+        
+        FoundersMissing = 25,
     }
     
     /// <summary>
-    /// >> 639 - Variant[pallet_alliance.pallet.Error]
+    /// >> 650 - Variant[pallet_alliance.pallet.Error]
     /// 
-    ///			Custom [dispatch errors](https://docs.substrate.io/v3/runtime/events-and-errors)
+    ///			Custom [dispatch errors](https://docs.substrate.io/main-docs/build/events-errors/)
     ///			of this pallet.
     ///			
     /// </summary>

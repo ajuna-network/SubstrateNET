@@ -11,13 +11,13 @@ namespace SubstrateNET.RestClient.Mockup.Generated.Interfaces
 {
    using System;
    using System.Threading.Tasks;
-   using SubstrateNET.NetApi.Generated.Model.sp_runtime.bounded.bounded_vec;
+   using SubstrateNET.NetApi.Generated.Model.sp_core.bounded.bounded_vec;
    using SubstrateNET.NetApi.Generated.Model.pallet_gilt.pallet;
    
    public interface IGiltControllerMockupClient
    {
-      Task<bool> SetQueueTotals(BoundedVecT32 value);
-      Task<bool> SetQueues(BoundedVecT33 value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
+      Task<bool> SetQueueTotals(BoundedVecT37 value);
+      Task<bool> SetQueues(BoundedVecT38 value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
       Task<bool> SetActiveTotal(ActiveGiltsTotal value);
       Task<bool> SetActive(ActiveGilt value, Ajuna.NetApi.Model.Types.Primitive.U32 key);
    }
