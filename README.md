@@ -8,10 +8,10 @@ This is a NET playground repo for the published monthly substrate [tags](https:/
 ## How to use
 
 ### Run local substrate node
-Currently you should find for the most actual monthly build a pre-generated tag in this repo, so make sure you chose a supported monthly substrate tag (ex. monthly-2022-07)
+Currently you should find for the most actual monthly build a pre-generated tag in this repo, so make sure you chose a supported monthly substrate tag (ex. monthly-2022-11)
 
 ```bash
-git clone -b monthly-2022-07 --single-branch https://github.com/paritytech/substrate.git
+git clone -b monthly-2022-11 --single-branch https://github.com/paritytech/substrate.git
 cargo build -p node-cli --release
 ./target/release/substrate --dev
 ```
@@ -20,7 +20,7 @@ cargo build -p node-cli --release
 Use the same tag for the SubstrateNET.
 
 ```bash
-git clone -b monthly-2022-07 --single-branch https://github.com/ajuna-network/SubstrateNET.git
+git clone -b monthly-2022-11 --single-branch https://github.com/ajuna-network/SubstrateNET.git
 ```
 
 ### Launch Solution
